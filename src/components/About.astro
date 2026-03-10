@@ -1,0 +1,60 @@
+---
+const stats = [
+  { value: '150+', label: 'Tamamlanan Proje' },
+  { value: '8+',   label: 'Yıllık Deneyim' },
+  { value: '200+', label: 'Mutlu Müşteri' },
+  { value: '3',    label: 'Şehir' },
+];
+---
+
+<section id="hakkimizda" class="py-24 bg-warm-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Left: Image placeholder -->
+      <div class="relative reveal">
+        <div class="aspect-[4/5] bg-[#DDD5C8] flex flex-col items-center justify-center gap-3">
+          <div class="w-10 h-px bg-gold opacity-60"></div>
+          <span class="text-xs tracking-[0.3em] uppercase text-[#B0A090]">[ Ekip / Showroom Fotoğrafı ]</span>
+          <div class="w-10 h-px bg-gold opacity-60"></div>
+        </div>
+        <!-- Decorative gold border -->
+        <div class="absolute -bottom-4 -right-4 w-2/3 h-2/3 border border-gold opacity-40 pointer-events-none"></div>
+      </div>
+
+      <!-- Right: Content -->
+      <div>
+        <div class="flex items-center gap-3 mb-5 reveal">
+          <span class="w-8 h-px bg-gold"></span>
+          <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Hakkımızda</span>
+        </div>
+
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-charcoal leading-tight mb-6 reveal reveal-d1">
+          Tasarım &amp;<br />Uygulamada<br />Güvenilir Adres
+        </h2>
+
+        <p class="text-muted leading-relaxed mb-5 reveal reveal-d2">
+          Master İç Mimarlık olarak 8 yılı aşkın deneyimimizle İstanbul'da yüzlerce evi, villayı ve
+          ticari mekanı yeniledik. Her projeye özgün bir bakış açısı, titiz bir işçilik ve
+          müşteri memnuniyetini ön planda tutan bir anlayışla yaklaşıyoruz.
+        </p>
+
+        <p class="text-muted leading-relaxed mb-10 reveal reveal-d2">
+          Tasarım sürecinden anahtar teslime kadar tüm aşamaları sizin adınıza yönetiyoruz.
+          İstanbul'da ana hizmet bölgemiz olmakla birlikte, büyük projelerde çevre illere de gidiyoruz.
+        </p>
+
+        <!-- Stats grid -->
+        <div class="grid grid-cols-2 gap-6 reveal reveal-d3">
+          {stats.map((s) => (
+            <div class="border-l-2 border-gold pl-5">
+              <p class="font-display text-3xl font-bold text-charcoal">{s.value}</p>
+              <p class="text-xs tracking-wide text-muted mt-1">{s.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

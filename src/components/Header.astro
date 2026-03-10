@@ -1,0 +1,100 @@
+---
+---
+
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 py-5 transition-all duration-300">
+  <div class="max-w-6xl mx-auto px-6 flex items-center justify-between">
+
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-3 group">
+      <div class="w-9 h-9 bg-gold flex items-center justify-center shrink-0">
+        <span class="text-white font-display font-bold text-base leading-none">M</span>
+      </div>
+      <div class="leading-none">
+        <span class="block font-display font-semibold text-[17px] tracking-wide text-white">Master</span>
+        <span class="block text-[10px] tracking-[0.25em] uppercase mt-0.5 text-white/55">İç Mimarlık</span>
+      </div>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex items-center gap-8">
+      <a href="/#hizmetler" class="nav-link text-sm tracking-wide text-white/80 hover:text-gold transition-colors duration-200">Hizmetler</a>
+      <a href="/#hakkimizda" class="nav-link text-sm tracking-wide text-white/80 hover:text-gold transition-colors duration-200">Hakkımızda</a>
+      <a href="/projeler" class="nav-link text-sm tracking-wide text-white/80 hover:text-gold transition-colors duration-200">Projeler</a>
+      <a
+        href="https://wa.me/905330391565?text=Merhaba%2C%20bilgi%20almak%20istiyorum."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-sm tracking-wide border border-white/30 text-white px-6 py-2.5 hover:bg-gold hover:border-gold transition-colors duration-200"
+      >
+        İletişim
+      </a>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-btn" class="md:hidden p-2 flex flex-col gap-1.5" aria-label="Menü aç">
+      <span class="block w-6 h-px bg-white transition-all duration-300" id="ml1"></span>
+      <span class="block w-6 h-px bg-white transition-all duration-300" id="ml2"></span>
+      <span class="block w-4 h-px bg-white transition-all duration-300" id="ml3"></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden hidden border-t border-white/10 mt-3" style="background: rgba(20,20,18,0.97);">
+    <nav class="max-w-6xl mx-auto px-6 py-6 flex flex-col gap-5">
+      <a href="/#hizmetler" class="text-sm tracking-wide text-white/70 hover:text-gold transition-colors mobile-link">Hizmetler</a>
+      <a href="/#hakkimizda" class="text-sm tracking-wide text-white/70 hover:text-gold transition-colors mobile-link">Hakkımızda</a>
+      <a href="/projeler" class="text-sm tracking-wide text-white/70 hover:text-gold transition-colors mobile-link">Projeler</a>
+      <a href="/#iletisim" class="text-sm tracking-wide text-white/70 hover:text-gold transition-colors mobile-link">İletişim</a>
+      <div class="flex gap-3 pt-2">
+        <a
+          href="https://wa.me/905330391565?text=Merhaba%2C%20bilgi%20almak%20istiyorum."
+          target="_blank"
+          class="flex-1 text-sm bg-[#25D366] text-white text-center py-3 tracking-wide font-medium"
+        >
+          WhatsApp
+        </a>
+        <a
+          href="tel:+905330391565"
+          class="flex-1 text-sm bg-white/10 border border-white/20 text-white text-center py-3 tracking-wide font-medium"
+        >
+          Ara
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const header = document.getElementById('site-header')!;
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) {
+      header.classList.add('is-scrolled');
+    } else {
+      header.classList.remove('is-scrolled');
+    }
+  }, { passive: true });
+
+  btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+
+  document.querySelectorAll('.mobile-link').forEach((link) => {
+    link.addEventListener('click', () => menu?.classList.add('hidden'));
+  });
+</script>
+
+<style>
+  #site-header {
+    background: rgba(20, 20, 18, 0.60);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  #site-header.is-scrolled {
+    background: rgba(20, 20, 18, 0.88);
+    box-shadow: 0 1px 24px rgba(0, 0, 0, 0.35);
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+</style>

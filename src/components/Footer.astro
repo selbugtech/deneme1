@@ -1,0 +1,54 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-charcoal border-t border-white/10 py-12">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+
+      <!-- Logo & tagline -->
+      <div>
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-8 h-8 bg-gold flex items-center justify-center">
+            <span class="text-white font-display font-bold text-sm leading-none">M</span>
+          </div>
+          <div class="leading-none">
+            <span class="block font-display font-semibold text-base text-white tracking-wide">Master</span>
+            <span class="block text-[10px] tracking-[0.25em] uppercase text-white/40 mt-0.5">İç Mimarlık</span>
+          </div>
+        </div>
+        <p class="text-white/40 text-xs tracking-wide max-w-xs">
+          İstanbul'da anahtar teslim ev, villa ve ticari mekan yenileme hizmetleri.
+        </p>
+      </div>
+
+      <!-- Nav links -->
+      <nav class="flex flex-wrap gap-6">
+        <a href="#hizmetler" class="text-xs tracking-[0.15em] uppercase text-white/40 hover:text-gold transition-colors">Hizmetler</a>
+        <a href="#hakkimizda" class="text-xs tracking-[0.15em] uppercase text-white/40 hover:text-gold transition-colors">Hakkımızda</a>
+        <a href="#projeler" class="text-xs tracking-[0.15em] uppercase text-white/40 hover:text-gold transition-colors">Projeler</a>
+        <a href="#iletisim" class="text-xs tracking-[0.15em] uppercase text-white/40 hover:text-gold transition-colors">İletişim</a>
+      </nav>
+
+      <!-- Contact -->
+      <div class="text-right">
+        <a href="tel:+905330391565" class="block text-white font-semibold hover:text-gold transition-colors mb-1">
+          0533 039 15 65
+        </a>
+        <a
+          href="https://wa.me/905330391565"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-xs text-[#25D366] hover:text-[#1EBD5A] transition-colors tracking-wide"
+        >
+          WhatsApp ile ulaşın →
+        </a>
+      </div>
+    </div>
+
+    <div class="mt-10 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-3">
+      <p class="text-white/25 text-xs">© {year} Master İç Mimarlık. Tüm hakları saklıdır.</p>
+      <p class="text-white/25 text-xs">İstanbul &amp; Çevre İller</p>
+    </div>
+  </div>
+</footer>

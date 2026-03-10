@@ -1,0 +1,87 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Master İç Mimarlık | Anahtar Teslim Ev, Villa ve Mağaza Yenileme | İstanbul',
+  description = 'İstanbul\'da anahtar teslim ev yenileme, villa yenileme, mağaza ve ofis yenileme hizmetleri. Master İç Mimarlık ile mekanınızı hayalinizdeki tasarıma kavuşturun. 0533 039 15 65',
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="iç mimarlık istanbul, ev yenileme istanbul, villa yenileme, mağaza yenileme, ofis yenileme, anahtar teslim tadilat, dekorasyon istanbul, master iç mimarlık" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Master İç Mimarlık" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="tr_TR" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+    <!-- Schema.org Local Business -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Master İç Mimarlık",
+        "description": "İstanbul'da anahtar teslim ev yenileme, villa yenileme, mağaza ve ofis yenileme hizmetleri.",
+        "telephone": "+90-533-039-15-65",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "İstanbul",
+          "addressCountry": "TR"
+        },
+        "areaServed": "İstanbul",
+        "priceRange": "₺₺₺"
+      }
+    </script>
+  </head>
+  <body class="bg-warm-white text-charcoal font-sans antialiased">
+    <slot />
+
+    <script>
+      // Scroll reveal
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+      document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  html { scroll-behavior: smooth; }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .reveal.is-visible { opacity: 1; transform: translateY(0); }
+  .reveal-d1 { transition-delay: 0.1s; }
+  .reveal-d2 { transition-delay: 0.2s; }
+  .reveal-d3 { transition-delay: 0.3s; }
+  .reveal-d4 { transition-delay: 0.4s; }
+  .reveal-d5 { transition-delay: 0.5s; }
+</style>
