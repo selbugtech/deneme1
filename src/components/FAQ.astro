@@ -1,0 +1,74 @@
+---
+const faqs = [
+  {
+    question: 'İç mimarlık hizmeti ne kadar sürer?',
+    answer: 'Projenin büyüklüğüne göre değişmekle birlikte, standart bir daire yenilemesi 4–8 hafta, villa yenilemesi 8–16 hafta sürmektedir. Anahtar teslim projelerimizde başlangıçta belirlenen süreye uyumu taahhüt ediyoruz.',
+  },
+  {
+    question: 'Anahtar teslim ev yenileme maliyeti nedir?',
+    answer: 'İstanbul\'da anahtar teslim ev yenileme maliyeti metrekare başına 3.000 ₺ ile 8.000 ₺ arasında değişmektedir. Fiyat; mevcut yapı durumu, seçilen malzemeler ve dairenin büyüklüğüne göre şekillenir. Kesin rakam için ücretsiz keşif randevusu alabilirsiniz.',
+  },
+  {
+    question: 'Hizmet bölgeniz neresi?',
+    answer: 'Ana hizmet bölgemiz İstanbul\'dur. Beşiktaş, Kadıköy, Levent, Nişantaşı, Zekeriyaköy, Ataşehir, Acıbadem, Şişli ve diğer tüm ilçelere hizmet veriyoruz. Büyük projelerde İstanbul dışına da çıkıyoruz.',
+  },
+  {
+    question: 'Sadece tasarım mı yapıyorsunuz, uygulama da var mı?',
+    answer: 'Tasarımdan uygulamaya tüm süreçleri kapsayan hizmet sunuyoruz. İç mimari proje, 3D görselleştirme, malzeme seçimi ve şantiye yönetimi dahil anahtar teslim çalışıyoruz. Tek muhatap, tek sorumluluk.',
+  },
+  {
+    question: '3D tasarım hizmeti veriyor musunuz?',
+    answer: 'Evet, uygulamaya başlamadan önce mekanınızı gerçekçi 3D görseller ile deneyimleyebilirsiniz. Bu sayede malzeme ve renk seçimlerini somut olarak görerek onaylarsınız; sürprizle karşılaşmazsınız.',
+  },
+  {
+    question: 'Villa yenileme ile daire yenileme arasındaki fark nedir?',
+    answer: 'Villa yenileme projeleri genellikle daha büyük alanlı, bahçe ve dış cephe düzenlemesini de kapsayan, daha uzun süreli çalışmalardır. Anahtar teslim villa yenileme hizmetimizde iç ve dış tüm mekanlar için tasarım ve uygulama sunuyoruz.',
+  },
+];
+---
+
+<section id="sss" class="py-24 bg-warm-white reveal">
+  <div class="max-w-4xl mx-auto px-6">
+
+    <!-- Header -->
+    <div class="mb-12">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="w-8 h-px bg-gold"></span>
+        <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">SSS</span>
+      </div>
+      <h2 class="font-display text-4xl font-bold text-charcoal leading-tight">
+        Sıkça Sorulan<br />
+        <em class="not-italic text-gold">Sorular</em>
+      </h2>
+      <p class="text-muted mt-4 text-sm leading-relaxed max-w-lg">
+        İç mimarlık ve ev yenileme hakkında en çok merak edilenler. Cevabını bulamazsanız <a href="https://wa.me/905330391565" class="text-gold hover:underline">WhatsApp'tan yazın</a>.
+      </p>
+    </div>
+
+    <!-- Accordion -->
+    <div class="divide-y divide-border">
+      {faqs.map((faq) => (
+        <details class="group py-5">
+          <summary class="flex items-center justify-between cursor-pointer list-none gap-4">
+            <span class="font-semibold text-charcoal text-base group-open:text-gold transition-colors">{faq.question}</span>
+            <svg class="shrink-0 w-5 h-5 text-gold group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <p class="mt-4 text-muted leading-relaxed text-sm pr-8">{faq.answer}</p>
+        </details>
+      ))}
+    </div>
+
+    <!-- Link to full FAQ page -->
+    <div class="mt-8 pt-6 border-t border-border">
+      <a href={`${import.meta.env.BASE_URL}sikca-sorulan-sorular`} class="text-sm text-gold hover:underline inline-flex items-center gap-2">
+        Tüm soruları görüntüle
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>

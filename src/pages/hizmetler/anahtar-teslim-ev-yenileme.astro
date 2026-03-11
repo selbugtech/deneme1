@@ -1,0 +1,153 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import { CANONICAL_BASE } from '../../config';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Anahtar Teslim Ev Yenileme",
+  "name": "Anahtar Teslim Ev Yenileme İstanbul",
+  "description": "İstanbul'da tasarımdan uygulamaya tüm süreci kapsayan anahtar teslim ev yenileme hizmeti. Müteahhit, iç mimar ve ustaları tek çatı altında.",
+  "provider": {
+    "@type": "InteriorDesigner",
+    "@id": `${CANONICAL_BASE}/#business`,
+    "name": "Master İç Mimarlık"
+  },
+  "areaServed": { "@type": "City", "name": "İstanbul" },
+  "url": `${CANONICAL_BASE}/hizmetler/anahtar-teslim-ev-yenileme`
+};
+---
+
+<ServiceLayout
+  title="Anahtar Teslim Ev Yenileme İstanbul | Master İç Mimarlık"
+  description="İstanbul'da anahtar teslim ev yenileme. Tasarımdan uygulamaya her şey dahil. Beşiktaş, Kadıköy, Levent ve tüm İstanbul ilçelerinde hizmet. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/hizmetler/anahtar-teslim-ev-yenileme`}
+  h1="İstanbul'da Anahtar Teslim Ev Yenileme"
+  eyebrow="Hizmet"
+  lead="Tasarımdan uygulamaya tüm süreçleri biz yönetiyoruz. Siz anahtarı teslim alırken eviniz tamamen hazır."
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
+    { label: "Anahtar Teslim Ev Yenileme" }
+  ]}
+  structuredData={serviceSchema}
+>
+
+  <!-- What is it -->
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Anahtar Teslim Ev Yenileme Nedir?</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Anahtar teslim ev yenileme; iç mimari tasarım, malzeme tedariki, usta koordinasyonu ve uygulama dahil tüm sürecin tek bir firma tarafından yönetildiği kapsamlı yenileme modelidir.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Geleneksel tadilat modelinde müşteri her ustayı ayrı ayrı bulmak, malzeme tedarikini koordine etmek ve şantiyeyi yönetmek zorunda kalır. Anahtar teslimde ise tüm bu yük Master İç Mimarlık'a devredilir.
+      </p>
+      <p class="text-muted leading-relaxed">
+        İstanbul genelinde Beşiktaş'tan Kadıköy'e, Levent'ten Ataşehir'e tüm ilçelerde anahtar teslim ev yenileme hizmeti sunuyoruz.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4">Hizmete Dahil Olanlar</h3>
+      <ul class="space-y-3">
+        {[
+          'İç mimari konsept tasarım',
+          'Gerçekçi 3D görselleştirme',
+          'Malzeme seçimi ve tedariki',
+          'Şantiye yönetimi ve koordinasyon',
+          'Elektrik, tesisat, alçıpan uygulamaları',
+          'Zemin, duvar ve tavan kaplamaları',
+          'Mutfak ve banyo yenileme',
+          'Boya ve dekor uygulamaları',
+          'Son temizlik ve teslim',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <!-- Process -->
+  <div class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Süreç Nasıl İşler?</h2>
+    <div class="grid md:grid-cols-5 gap-6">
+      {[
+        { step: '01', title: 'Ücretsiz Keşif', desc: 'Projenizi yerinde değerlendirip ilk fikirlerimizi paylaşıyoruz.' },
+        { step: '02', title: '3D Tasarım', desc: 'Mekanınızı gerçekçi görsellerle deneyimleyin, onaylayın.' },
+        { step: '03', title: 'Sözleşme', desc: 'Kesin bütçe ve takvim belirlenerek sözleşme imzalanır.' },
+        { step: '04', title: 'Uygulama', desc: 'Şantiye yönetimi tamamen bizde. Sizi düzenli bilgilendiriyoruz.' },
+        { step: '05', title: 'Teslim', desc: 'Temizlenmiş, eksiksiz hazır evinizi teslim alırsınız.' },
+      ].map((item) => (
+        <div class="text-center">
+          <div class="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-3">
+            <span class="text-gold font-display font-bold text-sm">{item.step}</span>
+          </div>
+          <h3 class="font-semibold text-charcoal text-sm mb-2">{item.title}</h3>
+          <p class="text-muted text-xs leading-relaxed">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Pricing & Areas -->
+  <div class="grid md:grid-cols-2 gap-12 py-12">
+    <div>
+      <h2 class="font-display text-2xl font-bold text-charcoal mb-4">Maliyet Hakkında</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        İstanbul'da anahtar teslim ev yenileme maliyeti metrekare başına yaklaşık <strong class="text-charcoal">3.000 ₺ – 8.000 ₺</strong> arasında değişmektedir.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Fiyatı etkileyen başlıca faktörler: dairenin büyüklüğü, mevcut yapı durumu, seçilen malzeme kalitesi ve uygulanacak işlerin kapsamı.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Ücretsiz keşif ziyaretimizde projenizi değerlendirip size tahmini bütçe ve süre sunuyoruz.
+      </p>
+    </div>
+    <div>
+      <h2 class="font-display text-2xl font-bold text-charcoal mb-4">Hizmet Bölgelerimiz</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Anahtar teslim ev yenileme hizmetimizi İstanbul'un tüm ilçelerinde sunuyoruz:
+      </p>
+      <div class="flex flex-wrap gap-2">
+        {['Beşiktaş','Kadıköy','Levent','Nişantaşı','Zekeriyaköy','Ataşehir','Acıbadem','Şişli','Sarıyer','Üsküdar','Bakırköy','Maltepe'].map(ilce => (
+          <span class="px-3 py-1 bg-charcoal/5 text-charcoal text-xs rounded-full">{ilce}</span>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- Reference projects -->
+  <div class="py-12 border-t border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Tamamlanan Projeler</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      {[
+        { title: 'Beşiktaş Dairesi', detail: '120 m² · Komple yenileme · 2024' },
+        { title: 'Ataşehir Residence', detail: '95 m² · Anahtar teslim · 2023' },
+      ].map(p => (
+        <div class="border border-border p-6">
+          <div class="w-full h-40 bg-charcoal/5 flex items-center justify-center mb-4" aria-label={`${p.title} proje fotoğrafı`}>
+            <span class="text-muted/30 text-xs tracking-widest uppercase">[ Proje Fotoğrafı ]</span>
+          </div>
+          <h3 class="font-display font-semibold text-charcoal">{p.title}</h3>
+          <p class="text-muted text-xs mt-1">{p.detail}</p>
+        </div>
+      ))}
+    </div>
+    <div class="mt-6">
+      <a href={`${CANONICAL_BASE}/projeler`} class="text-sm text-gold hover:underline inline-flex items-center gap-2">
+        Tüm projelerimizi görün
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+</ServiceLayout>

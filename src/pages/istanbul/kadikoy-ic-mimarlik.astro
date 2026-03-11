@@ -1,0 +1,86 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import { CANONICAL_BASE } from '../../config';
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "InteriorDesigner",
+  "name": "Master İç Mimarlık",
+  "@id": `${CANONICAL_BASE}/#business`,
+  "areaServed": { "@type": "Place", "name": "Kadıköy, İstanbul" },
+  "url": `${CANONICAL_BASE}/istanbul/kadikoy-ic-mimarlik`
+};
+---
+
+<ServiceLayout
+  title="Kadıköy İç Mimarlık ve Ev Yenileme | Master İç Mimarlık İstanbul"
+  description="Kadıköy'de iç mimarlık, anahtar teslim ev yenileme ve tadilat hizmetleri. Master İç Mimarlık ile Kadıköy dairelerinizi yenileyin. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/istanbul/kadikoy-ic-mimarlik`}
+  h1="Kadıköy İç Mimarlık ve Ev Yenileme"
+  eyebrow="İstanbul · Kadıköy"
+  lead="Kadıköy'ün kendine özgü karakterine uygun, modern ve yaşanabilir mekanlar tasarlıyoruz. Anadolu yakasının en dinamik ilçesinde 8+ yıllık deneyimimizle hizmet veriyoruz."
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İstanbul", href: `${CANONICAL_BASE}/hizmetler` },
+    { label: "Kadıköy" }
+  ]}
+  structuredData={localSchema}
+>
+
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Kadıköy'de İç Mimarlık Hizmeti</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Kadıköy; birbirinden farklı mimari dönemlerden kalma binaları, yaratıcı sakinleri ve canlı yaşamıyla İstanbul'un en ilgi çekici ilçelerinden biridir. Buradaki konutlar genellikle büyük balkonlar, yüksek tavanlar ve karakterli detaylar içerir.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Kadıköy'deki ev yenileme projelerimizde bu özgün yapı karakterini korurken modern konfor ve estetik anlayışımızı harmanlıyoruz. Referans müşterimiz Ayşe K., Kadıköy'deki dairesinin yenilenmesinden son derece memnun kaldı.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Kadıköy, Moda, Fenerbahçe, Göztepe ve çevre mahallelerde aktif olarak hizmet veriyoruz.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4">Kadıköy'de Sunduğumuz Hizmetler</h3>
+      <ul class="space-y-3">
+        {[
+          'Anahtar teslim daire yenileme',
+          'Mutfak ve banyo yenileme',
+          'Salon ve yatak odası tasarımı',
+          '3D görselleştirme ile tasarım onayı',
+          'Malzeme seçimi ve tedarik',
+          'İç mimarlık danışmanlığı',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+        <p class="text-sm text-charcoal font-medium">Müşteri Yorumu</p>
+        <p class="text-muted text-sm mt-2 italic">"Dairemizin tüm yenileme sürecini Master İç Mimarlık yönetti. Hem tasarım hem uygulama aşamasında son derece profesyoneldiler."</p>
+        <p class="text-xs text-gold mt-2">— Ayşe K., Kadıköy · 5 yıldız</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="py-12">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Hizmetlerimiz</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Anahtar Teslim Ev Yenileme', href: `${CANONICAL_BASE}/hizmetler/anahtar-teslim-ev-yenileme` },
+        { label: 'Villa Yenileme', href: `${CANONICAL_BASE}/hizmetler/villa-yenileme` },
+        { label: 'Ofis Yenileme', href: `${CANONICAL_BASE}/hizmetler/ofis-yenileme` },
+        { label: '3D Tasarım', href: `${CANONICAL_BASE}/hizmetler/3d-tasarim` },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </div>
+
+</ServiceLayout>

@@ -1,0 +1,67 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import { CANONICAL_BASE } from '../../config';
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "InteriorDesigner",
+  "name": "Master İç Mimarlık",
+  "@id": `${CANONICAL_BASE}/#business`,
+  "areaServed": { "@type": "Place", "name": "Levent, İstanbul" },
+  "url": `${CANONICAL_BASE}/istanbul/levent-ic-mimarlik`
+};
+---
+
+<ServiceLayout
+  title="Levent İç Mimarlık, Ev ve Ofis Yenileme | Master İç Mimarlık"
+  description="Levent'te iç mimarlık, ev yenileme ve ofis yenileme hizmetleri. Kurumsal mekan ve lüks daire projelerinde Master İç Mimarlık. 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/istanbul/levent-ic-mimarlik`}
+  h1="Levent İç Mimarlık ve Ofis Yenileme"
+  eyebrow="İstanbul · Levent"
+  lead="Levent'in kurumsal ve lüks konut dokusuna uygun, hem ev hem ofis yenileme projelerinde deneyimli ekibimizle hizmetinizdeyiz. Levent Ofis projemiz referanslarımız arasında yer almaktadır."
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İstanbul", href: `${CANONICAL_BASE}/hizmetler` },
+    { label: "Levent" }
+  ]}
+  structuredData={localSchema}
+>
+
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Levent'te İç Mimarlık ve Yenileme</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Levent; İstanbul'un finans ve iş merkezi olmasının yanı sıra, üst gelir grubuna hitap eden lüks rezidans ve konutlarıyla da öne çıkan bir semttir. Bu yapı, hem kurumsal ofis projelerinde hem de lüks ev yenilemelerinde uzmanlaşmamızı gerektirdi.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Levent Ofis projemizde 320 m²'lik kurumsal bir alanı yeniledik. Açık ofis alanları, toplantı odaları ve lobi tasarımıyla çalışan motivasyonunu artıran bir ortam yarattık.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Serra D., Levent'teki ofis yenileme projemizden sonraki değerlendirmesinde "çalışanlar ve müşteriler değişimden çok etkilendi" dedi.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4">Levent'te Sunduğumuz Hizmetler</h3>
+      <ul class="space-y-3">
+        {[
+          'Kurumsal ofis yenileme',
+          'Lüks konut iç mimarlığı',
+          'Anahtar teslim ev yenileme',
+          'Toplantı odası ve lobi tasarımı',
+          'Açık ofis ve çalışma alanı planlaması',
+          '3D görselleştirme ve proje',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+</ServiceLayout>

@@ -1,0 +1,56 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import { CANONICAL_BASE } from '../../config';
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "InteriorDesigner",
+  "name": "Master İç Mimarlık",
+  "@id": `${CANONICAL_BASE}/#business`,
+  "areaServed": { "@type": "Place", "name": "Ataşehir, İstanbul" },
+  "url": `${CANONICAL_BASE}/istanbul/atasehir-ic-mimarlik`
+};
+---
+
+<ServiceLayout
+  title="Ataşehir İç Mimarlık ve Ev Yenileme | Master İç Mimarlık"
+  description="Ataşehir'de iç mimarlık ve anahtar teslim ev yenileme hizmetleri. Ataşehir Residence projemizle referansımızı kanıtladık. 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/istanbul/atasehir-ic-mimarlik`}
+  h1="Ataşehir İç Mimarlık ve Ev Yenileme"
+  eyebrow="İstanbul · Ataşehir"
+  lead="Ataşehir'in modern rezidans ve konut projelerine uygun, çağdaş ve yaşanabilir iç mekan tasarımları sunuyoruz. Ataşehir Residence projemiz bu ilçedeki başarılı çalışmalarımızdan biridir."
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İstanbul", href: `${CANONICAL_BASE}/hizmetler` },
+    { label: "Ataşehir" }
+  ]}
+  structuredData={localSchema}
+>
+
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Ataşehir'de İç Mimarlık</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Ataşehir; İstanbul'un Anadolu yakasında hızla gelişen, modern rezidans kompleksleri ve yeni nesil konut projelerine ev sahipliği yapan dinamik bir ilçedir. Bölgedeki yeni yapı stoku, yüksek standartlarda iç mekan beklentisi getiriyor.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Ataşehir Residence projemizde 95 m²'lik modern bir daireyi anahtar teslim olarak yeniledik. Açık mutfak-salon düzeni, özel depolama çözümleri ve konforlu yatak odaları müşterimizin hayalindeki evi yarattı.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Ataşehir, Acıbadem, Maltepe ve Anadolu yakasının tüm ilçelerinde hizmet veriyoruz.
+      </p>
+    </div>
+    <div>
+      <h2 class="font-display text-2xl font-bold text-charcoal mb-4">Referans Proje</h2>
+      <div class="border border-border p-6">
+        <div class="w-full h-40 bg-charcoal/5 flex items-center justify-center mb-4" aria-label="Ataşehir Residence ev yenileme projesi">
+          <span class="text-muted/30 text-xs tracking-widest uppercase">[ Ataşehir Residence Fotoğrafı ]</span>
+        </div>
+        <h3 class="font-display font-semibold text-charcoal">Ataşehir Residence</h3>
+        <p class="text-muted text-xs mt-1">95 m² · Anahtar teslim ev yenileme · 2023</p>
+        <p class="text-muted text-xs mt-2">Modern rezidans dairesi için açık plan düzenleme, mutfak yenileme ve yatak odaları projesi.</p>
+      </div>
+    </div>
+  </div>
+
+</ServiceLayout>

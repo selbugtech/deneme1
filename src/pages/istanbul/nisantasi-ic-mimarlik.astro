@@ -1,0 +1,56 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import { CANONICAL_BASE } from '../../config';
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "InteriorDesigner",
+  "name": "Master İç Mimarlık",
+  "@id": `${CANONICAL_BASE}/#business`,
+  "areaServed": { "@type": "Place", "name": "Nişantaşı, İstanbul" },
+  "url": `${CANONICAL_BASE}/istanbul/nisantasi-ic-mimarlik`
+};
+---
+
+<ServiceLayout
+  title="Nişantaşı İç Mimarlık ve Butik Tasarım | Master İç Mimarlık"
+  description="Nişantaşı'nda iç mimarlık, lüks daire yenileme ve butik mağaza tasarımı. Master İç Mimarlık ile Nişantaşı'nın ruhuna uygun projeler. 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/istanbul/nisantasi-ic-mimarlik`}
+  h1="Nişantaşı İç Mimarlık ve Lüks Mekan Tasarımı"
+  eyebrow="İstanbul · Nişantaşı"
+  lead="Nişantaşı'nın sofistike ve avangard ruhuna uygun, lüks konut ve ticari mekan projeleri geliştiriyoruz. Nişantaşı Butik projemiz hem estetik hem de marka kimliği yansıtma açısından başarılı bir referans örneğidir."
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İstanbul", href: `${CANONICAL_BASE}/hizmetler` },
+    { label: "Nişantaşı" }
+  ]}
+  structuredData={localSchema}
+>
+
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Nişantaşı'nda İç Mimarlık</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Nişantaşı; İstanbul'un en seçkin alışveriş ve yaşam bölgesi olarak lüks marka butikleri, galeriler ve kozmopolit bir yaşam tarzını barındırır. Bu semtte tasarım, sadece estetik değil — bir kimlik ifadesidir.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Nişantaşı Butik projemizde 180 m²'lik bir moda mağazasını marka kimliğini yansıtan bir iç mekan tasarımıyla donattık. Müşteri akışı, aydınlatma ve vitrin tasarımı entegre biçimde ele alındı.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Nişantaşı ve çevresinde (Şişli, Teşvikiye, Harbiye) hem konut hem de ticari mekan projelerinde aktif olarak hizmet veriyoruz.
+      </p>
+    </div>
+    <div>
+      <h2 class="font-display text-2xl font-bold text-charcoal mb-4">Referans Proje</h2>
+      <div class="border border-border p-6">
+        <div class="w-full h-40 bg-charcoal/5 flex items-center justify-center mb-4" aria-label="Nişantaşı butik mağaza yenileme projesi">
+          <span class="text-muted/30 text-xs tracking-widest uppercase">[ Nişantaşı Butik Fotoğrafı ]</span>
+        </div>
+        <h3 class="font-display font-semibold text-charcoal">Nişantaşı Butik</h3>
+        <p class="text-muted text-xs mt-1">180 m² · Mağaza yenileme · 2024</p>
+        <p class="text-muted text-xs mt-2">Lüks moda markası için marka kimliği odaklı butik mağaza iç mekan tasarımı.</p>
+      </div>
+    </div>
+  </div>
+
+</ServiceLayout>

@@ -1,13 +1,102 @@
 ---
+import { CANONICAL_BASE, OG_IMAGE, SITE_NAME, SITE_PHONE } from '../config';
+
 interface Props {
   title?: string;
   description?: string;
+  canonicalUrl?: string;
+  ogImage?: string;
+  ogType?: string;
+  structuredData?: object | object[];
 }
 
 const {
   title = 'Master İç Mimarlık | Anahtar Teslim Ev, Villa ve Mağaza Yenileme | İstanbul',
   description = 'İstanbul\'da anahtar teslim ev yenileme, villa yenileme, mağaza ve ofis yenileme hizmetleri. Master İç Mimarlık ile mekanınızı hayalinizdeki tasarıma kavuşturun. 0533 039 15 65',
+  canonicalUrl,
+  ogImage = OG_IMAGE,
+  ogType = 'website',
+  structuredData,
 } = Astro.props;
+
+const canonical = canonicalUrl ?? `${CANONICAL_BASE}${Astro.url.pathname}`;
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "InteriorDesigner",
+  "@id": `${CANONICAL_BASE}/#business`,
+  "name": SITE_NAME,
+  "url": `${CANONICAL_BASE}/`,
+  "logo": `${CANONICAL_BASE}/favicon.svg`,
+  "image": OG_IMAGE,
+  "description": "İstanbul'da anahtar teslim ev yenileme, villa yenileme, mağaza ve ofis yenileme hizmetleri.",
+  "telephone": SITE_PHONE,
+  "priceRange": "₺₺₺",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "09:00",
+      "closes": "19:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "10:00",
+      "closes": "17:00"
+    }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "İstanbul",
+    "addressRegion": "İstanbul",
+    "addressCountry": "TR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 41.0082,
+    "longitude": 28.9784
+  },
+  "areaServed": [
+    { "@type": "City", "name": "İstanbul" },
+    { "@type": "AdministrativeArea", "name": "İstanbul ili" }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "3",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Ayşe K." },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Dairemizin tüm yenileme sürecini Master İç Mimarlık yönetti. Hem tasarım hem de uygulama aşamasında son derece profesyoneldiler. Hayal ettiğimizden daha güzel bir ev çıktı ortaya.",
+      "datePublished": "2024-01-15"
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Murat B." },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Villayı yeniletirken 3D görselleştirme sayesinde her şeyi önceden gördük. Süreç tam vaat edildiği gibi ilerledi, teslimatta sürprizle karşılaşmadık.",
+      "datePublished": "2024-02-20"
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Serra D." },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Ofisimizi kısa sürede ve bütçemize uygun teslim aldık. Hem çalışanlar hem müşteriler ofisimizin değişiminden çok etkilendi.",
+      "datePublished": "2024-03-10"
+    }
+  ]
+};
+
+const allStructuredData = [
+  localBusinessSchema,
+  ...(structuredData ? (Array.isArray(structuredData) ? structuredData : [structuredData]) : [])
+];
 ---
 
 <!DOCTYPE html>
@@ -21,34 +110,34 @@ const {
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Master İç Mimarlık" />
 
+    <!-- Canonical -->
+    <link rel="canonical" href={canonical} />
+
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:locale" content="tr_TR" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Master İç Mimarlık — İstanbul İç Mimarlık ve Ev Yenileme" />
+    <meta property="og:site_name" content="Master İç Mimarlık" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-    <!-- Schema.org Local Business -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Master İç Mimarlık",
-        "description": "İstanbul'da anahtar teslim ev yenileme, villa yenileme, mağaza ve ofis yenileme hizmetleri.",
-        "telephone": "+90-533-039-15-65",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "İstanbul",
-          "addressCountry": "TR"
-        },
-        "areaServed": "İstanbul",
-        "priceRange": "₺₺₺"
-      }
-    </script>
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(allStructuredData)} />
   </head>
   <body class="bg-warm-white text-charcoal font-sans antialiased">
     <slot />

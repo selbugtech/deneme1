@@ -1,0 +1,89 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import { CANONICAL_BASE } from '../../config';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Mağaza Yenileme",
+  "name": "Mağaza ve Ticari Mekan Yenileme İstanbul",
+  "description": "İstanbul'da mağaza, butik, showroom ve ticari mekan yenileme hizmetleri. Nişantaşı, Levent ve tüm İstanbul'da hizmet.",
+  "provider": {
+    "@type": "InteriorDesigner",
+    "@id": `${CANONICAL_BASE}/#business`,
+    "name": "Master İç Mimarlık"
+  },
+  "areaServed": { "@type": "City", "name": "İstanbul" },
+  "url": `${CANONICAL_BASE}/hizmetler/magaza-yenileme`
+};
+---
+
+<ServiceLayout
+  title="Mağaza Yenileme İstanbul | Ticari Mekan İç Mimarlık | Master"
+  description="İstanbul'da mağaza, butik, showroom ve ticari mekan yenileme. Markanızı güçlendiren, müşteri deneyimini artıran tasarımlar. 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/hizmetler/magaza-yenileme`}
+  h1="Mağaza ve Ticari Mekan Yenileme"
+  eyebrow="Hizmet"
+  lead="Markanızı güçlendiren, müşteri deneyimini artıran çarpıcı ticari mekanlar tasarlıyoruz. Nişantaşı'ndan Levent'e İstanbul'un prestijli ticaret bölgelerinde referans projelerimiz var."
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
+    { label: "Mağaza Yenileme" }
+  ]}
+  structuredData={serviceSchema}
+>
+
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Ticari Mekan Tasarımı</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Ticari mekan tasarımı, marka kimliğinin fiziksel bir yansımasıdır. Doğru bir mağaza tasarımı müşterinin dikkatini çeker, markaya duyulan güveni artırır ve satışları olumlu etkiler.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Nişantaşı Butik projemiz başta olmak üzere yöneticiliğini üstlendiğimiz ticari mekan projelerinde hızlı uygulama süreleri ile işletme kesintisini minimum tutuyoruz.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Butik, showroom, mağaza, restoran, kafe gibi tüm ticari mekan tiplerinde deneyimliyiz.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4">Ticari Mekan Hizmetlerimiz</h3>
+      <ul class="space-y-3">
+        {[
+          'Marka kimliğine uygun konsept tasarım',
+          'Müşteri akışı ve vitrin optimizasyonu',
+          'Aydınlatma tasarımı (ürün vitrin aydınlatması)',
+          'Zemin, duvar ve tavan kaplamaları',
+          'Özel raf, stand ve display sistemleri',
+          'Kasa ve servis alanı tasarımı',
+          'Kasiyerlik ve müşteri deneyimi akışı',
+          'Hızlı uygulama ile işletme kesintisi minimum',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <div class="py-12">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Referans Proje</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="border border-border p-6">
+        <div class="w-full h-40 bg-charcoal/5 flex items-center justify-center mb-4" aria-label="Nişantaşı Butik mağaza yenileme projesi">
+          <span class="text-muted/30 text-xs tracking-widest uppercase">[ Nişantaşı Butik Fotoğrafı ]</span>
+        </div>
+        <h3 class="font-display font-semibold text-charcoal">Nişantaşı Butik</h3>
+        <p class="text-muted text-xs mt-1">180 m² · Mağaza yenileme · 2024</p>
+        <p class="text-muted text-xs mt-2">Butik moda mağazası için marka kimliğine uygun lüks iç mekan tasarımı ve uygulaması.</p>
+      </div>
+    </div>
+  </div>
+
+</ServiceLayout>

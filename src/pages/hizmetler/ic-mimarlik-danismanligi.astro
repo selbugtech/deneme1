@@ -1,0 +1,91 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import { CANONICAL_BASE } from '../../config';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "İç Mimarlık Danışmanlığı",
+  "name": "İç Mimarlık Danışmanlığı İstanbul",
+  "description": "İstanbul'da iç mimarlık danışmanlığı hizmetleri. Malzeme seçimi, uygulama rehberliği ve bağımsız profesyonel görüş.",
+  "provider": {
+    "@type": "InteriorDesigner",
+    "@id": `${CANONICAL_BASE}/#business`,
+    "name": "Master İç Mimarlık"
+  },
+  "areaServed": { "@type": "City", "name": "İstanbul" },
+  "url": `${CANONICAL_BASE}/hizmetler/ic-mimarlik-danismanligi`
+};
+---
+
+<ServiceLayout
+  title="İç Mimarlık Danışmanlığı İstanbul | Master İç Mimarlık"
+  description="İstanbul'da iç mimarlık danışmanlığı. Kendi yenileme sürecinizde profesyonel görüş, malzeme seçimi ve uygulama rehberliği. 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/hizmetler/ic-mimarlik-danismanligi`}
+  h1="İç Mimarlık Danışmanlığı"
+  eyebrow="Hizmet"
+  lead="Projeniz için profesyonel görüş, malzeme seçimi ve uygulama sürecinde uzman rehberlik sunuyoruz. Kendi yüklenicilerinizle çalışıyor olsanız dahi iç mimarlık danışmanlığı ile doğru kararları vermek çok daha kolay."
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
+    { label: "İç Mimarlık Danışmanlığı" }
+  ]}
+  structuredData={serviceSchema}
+>
+
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Danışmanlık Hizmetimiz</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        İç mimarlık danışmanlığı, kendi yüklenicilerinizle veya ekibinizle çalışırken profesyonel perspektif almak isteyen ev sahipleri için idealdir. Tüm proje yönetimini devralmak yerine belirli konularda uzman desteği alırsınız.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Malzeme seçiminde yanlış karar vermek, uzun vadede hem estetik hem mali kayıplara yol açar. Danışmanlık hizmetimizde bu riski minimize etmenize yardımcı oluyoruz.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Tek seferlik danışmanlık oturumundan süreç boyunca rehberliğe kadar ihtiyacınıza özel esnek paketler sunuyoruz.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4">Danışmanlık Kapsamı</h3>
+      <ul class="space-y-3">
+        {[
+          'Mekan analizi ve alan planlaması',
+          'Renk paleti ve stil danışmanlığı',
+          'Malzeme seçimi ve tedarikçi önerileri',
+          'Mobilya yerleşim planı',
+          'Uygulama sürecinde yerinde denetim',
+          'Sözleşme ve fiyat değerlendirmesi',
+          'Uygulamanın doğruluğunu kontrol',
+          'Son teslim öncesi punch-list incelemesi',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <div class="py-12">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-4">Ne Zaman Danışmanlık Seçilmeli?</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      {[
+        { title: 'Kısmi Proje', desc: 'Sadece tek bir oda veya belirli bir alanı yenileyecekseniz ve genel bir iç mimar tutmak istemiyorsanız.' },
+        { title: 'Kendi Yüklenicin Var', desc: 'Bir müteahhit veya ustanızla çalışıyorsunuz ancak tasarım ve malzeme kararlarında uzman görüşü istiyorsunuz.' },
+        { title: 'İkinci Görüş', desc: 'Başka bir yerden aldığınız tasarım veya teklif için bağımsız bir uzman değerlendirmesi istiyorsunuz.' },
+      ].map(card => (
+        <div class="border border-border p-6">
+          <h3 class="font-semibold text-charcoal mb-2">{card.title}</h3>
+          <p class="text-muted text-sm leading-relaxed">{card.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+</ServiceLayout>

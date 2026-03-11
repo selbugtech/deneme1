@@ -6,13 +6,55 @@ import Services from '../components/Services.astro';
 import About from '../components/About.astro';
 import BeforeAfter from '../components/BeforeAfter.astro';
 import Testimonials from '../components/Testimonials.astro';
+import FAQ from '../components/FAQ.astro';
 import Projects from '../components/Projects.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppFloat from '../components/WhatsAppFloat.astro';
+import { CANONICAL_BASE } from '../config';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "İç mimarlık hizmeti ne kadar sürer?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Projenin büyüklüğüne göre değişmekle birlikte, standart bir daire yenilemesi 4–8 hafta, villa yenilemesi 8–16 hafta sürmektedir. Anahtar teslim projelerimizde başlangıçta belirlenen süreye uyumu taahhüt ediyoruz." }
+    },
+    {
+      "@type": "Question",
+      "name": "Anahtar teslim ev yenileme maliyeti nedir?",
+      "acceptedAnswer": { "@type": "Answer", "text": "İstanbul'da anahtar teslim ev yenileme maliyeti metrekare başına 3.000 ₺ ile 8.000 ₺ arasında değişmektedir. Fiyat; mevcut yapı durumu, seçilen malzemeler ve dairenin büyüklüğüne göre şekillenir. Ücretsiz keşif için 0533 039 15 65'i arayabilirsiniz." }
+    },
+    {
+      "@type": "Question",
+      "name": "Hizmet bölgeniz neresi?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Ana hizmet bölgemiz İstanbul'dur. Beşiktaş, Kadıköy, Levent, Nişantaşı, Zekeriyaköy, Ataşehir, Acıbadem, Şişli ve diğer tüm ilçelere hizmet veriyoruz. Büyük projelerde İstanbul dışına da çıkıyoruz." }
+    },
+    {
+      "@type": "Question",
+      "name": "Sadece tasarım mı yapıyorsunuz, uygulama da var mı?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Tasarımdan uygulamaya tüm süreçleri kapsayan hizmet sunuyoruz. İç mimari proje, 3D görselleştirme, malzeme seçimi ve şantiye yönetimi dahil anahtar teslim çalışıyoruz." }
+    },
+    {
+      "@type": "Question",
+      "name": "3D tasarım hizmeti veriyor musunuz?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Evet. Uygulamaya başlamadan önce mekanınızı gerçekçi 3D görseller ile deneyimleyebilirsiniz. Bu sayede malzeme ve renk seçimlerini somut olarak görerek onaylarsınız." }
+    },
+    {
+      "@type": "Question",
+      "name": "Villa yenileme ile daire yenileme arasındaki fark nedir?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Villa yenileme projeleri genellikle daha büyük alanlı, bahçe ve dış cephe düzenlemesini de kapsayan, daha uzun süreli çalışmalardır. Anahtar teslim villa yenileme hizmetimizde iç ve dış tüm mekanlar için tasarım ve uygulama sunuyoruz." }
+    }
+  ]
+};
 ---
 
-<Layout>
+<Layout
+  canonicalUrl={`${CANONICAL_BASE}/`}
+  structuredData={faqSchema}
+>
   <Header />
   <main>
     <Hero />
@@ -20,6 +62,7 @@ import WhatsAppFloat from '../components/WhatsAppFloat.astro';
     <About />
     <BeforeAfter />
     <Testimonials />
+    <FAQ />
     <Projects />
     <Contact />
   </main>

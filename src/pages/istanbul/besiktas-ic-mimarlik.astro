@@ -1,0 +1,56 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import { CANONICAL_BASE } from '../../config';
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "InteriorDesigner",
+  "name": "Master İç Mimarlık",
+  "@id": `${CANONICAL_BASE}/#business`,
+  "areaServed": { "@type": "Place", "name": "Beşiktaş, İstanbul" },
+  "url": `${CANONICAL_BASE}/istanbul/besiktas-ic-mimarlik`
+};
+---
+
+<ServiceLayout
+  title="Beşiktaş İç Mimarlık ve Ev Yenileme | Master İç Mimarlık"
+  description="Beşiktaş'ta iç mimarlık, anahtar teslim ev yenileme hizmetleri. Master İç Mimarlık ile Beşiktaş dairelerinizi yenileyin. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/istanbul/besiktas-ic-mimarlik`}
+  h1="Beşiktaş İç Mimarlık ve Ev Yenileme"
+  eyebrow="İstanbul · Beşiktaş"
+  lead="Beşiktaş'ın prestijli semtine yakışır, modern ve sofistike mekan tasarımları sunuyoruz. Beşiktaş Dairesi projemiz portfolyomuzun en başarılı çalışmalarından biridir."
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İstanbul", href: `${CANONICAL_BASE}/hizmetler` },
+    { label: "Beşiktaş" }
+  ]}
+  structuredData={localSchema}
+>
+
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Beşiktaş'ta İç Mimarlık</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Beşiktaş; Boğaz manzaralı rezidanslar, tarihi apartmanlar ve modern yaşam kompleksleriyle İstanbul'un en dinamik ve değerli ilçelerinden biridir. Bu semtte yaşayan sakinlerin beklentileri yüksek, zevkleri rafine.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Beşiktaş Dairesi projemizde 120 m²'lik komple anahtar teslim yenileme gerçekleştirdik. Salon, mutfak, banyo ve yatak odalarını çağdaş bir anlayışla yenileyerek müşterimize teslim ettik.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Beşiktaş, Levent, Etiler, Bebek ve çevre semtlerde aktif olarak hizmet veriyoruz.
+      </p>
+    </div>
+    <div>
+      <h2 class="font-display text-2xl font-bold text-charcoal mb-4">Referans Proje</h2>
+      <div class="border border-border p-6">
+        <div class="w-full h-40 bg-charcoal/5 flex items-center justify-center mb-4" aria-label="Beşiktaş daire ev yenileme projesi fotoğrafı">
+          <span class="text-muted/30 text-xs tracking-widest uppercase">[ Beşiktaş Dairesi Fotoğrafı ]</span>
+        </div>
+        <h3 class="font-display font-semibold text-charcoal">Beşiktaş Dairesi</h3>
+        <p class="text-muted text-xs mt-1">120 m² · Anahtar teslim ev yenileme · 2024</p>
+        <p class="text-muted text-xs mt-2">Komple daire yenileme: salon, mutfak, 2 banyo, 3 yatak odası. 6 haftada teslim.</p>
+      </div>
+    </div>
+  </div>
+
+</ServiceLayout>

@@ -1,0 +1,43 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import { CANONICAL_BASE } from '../../config';
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "InteriorDesigner",
+  "name": "Master İç Mimarlık",
+  "@id": `${CANONICAL_BASE}/#business`,
+  "areaServed": { "@type": "Place", "name": "Şişli, İstanbul" },
+  "url": `${CANONICAL_BASE}/istanbul/sisli-ic-mimarlik`
+};
+---
+
+<ServiceLayout
+  title="Şişli İç Mimarlık ve Ev Yenileme | Master İç Mimarlık İstanbul"
+  description="Şişli'de iç mimarlık, anahtar teslim daire yenileme ve ticari mekan tasarımı hizmetleri. Master İç Mimarlık ile Şişli'de hayalinizdeki mekanı yaratın. 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/istanbul/sisli-ic-mimarlik`}
+  h1="Şişli İç Mimarlık ve Ev Yenileme"
+  eyebrow="İstanbul · Şişli"
+  lead="Şişli'nin merkezi konumundaki daire, rezidans ve ticari mekanlara modern ve işlevsel iç mekan çözümleri sunuyoruz. Hem konut hem ticari proje deneyimimizle her ihtiyaca cevap veriyoruz."
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İstanbul", href: `${CANONICAL_BASE}/hizmetler` },
+    { label: "Şişli" }
+  ]}
+  structuredData={localSchema}
+>
+
+  <div class="py-12">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Şişli'de İç Mimarlık</h2>
+    <p class="text-muted leading-relaxed mb-4">
+      Şişli; Nişantaşı, Fulya ve Mecidiyeköy gibi farklı karakterlere sahip mahallelerden oluşan heterojen bir ilçedir. Ticari hayatın yoğun olduğu merkezi konumu ve konut çeşitliliğiyle farklı proje taleplerine ev sahipliği yapar.
+    </p>
+    <p class="text-muted leading-relaxed mb-4">
+      Şişli'deki projelerimizde hem lüks rezidans yenilemesi hem de kurumsal ofis tasarımı deneyimimizi bir araya getiriyoruz. Bölgedeki yapı stoku çeşitli olduğundan müşteriye özel esneklik sunabiliyoruz.
+    </p>
+    <p class="text-muted leading-relaxed">
+      Şişli, Nişantaşı, Fulya, Mecidiyeköy ve çevre semtlerde aktif olarak hizmet veriyoruz.
+    </p>
+  </div>
+
+</ServiceLayout>

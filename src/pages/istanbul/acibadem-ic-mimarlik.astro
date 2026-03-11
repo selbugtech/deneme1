@@ -1,0 +1,50 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import { CANONICAL_BASE } from '../../config';
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "InteriorDesigner",
+  "name": "Master İç Mimarlık",
+  "@id": `${CANONICAL_BASE}/#business`,
+  "areaServed": { "@type": "Place", "name": "Acıbadem, İstanbul" },
+  "url": `${CANONICAL_BASE}/istanbul/acibadem-ic-mimarlik`
+};
+---
+
+<ServiceLayout
+  title="Acıbadem İç Mimarlık ve Villa Yenileme | Master İç Mimarlık"
+  description="Acıbadem'de iç mimarlık, villa yenileme ve anahtar teslim ev yenileme hizmetleri. Acıbadem Villa referansımızla güveninizi kazandık. 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/istanbul/acibadem-ic-mimarlik`}
+  h1="Acıbadem İç Mimarlık ve Villa Yenileme"
+  eyebrow="İstanbul · Acıbadem"
+  lead="Acıbadem'in sakin ve prestijli yapısına uygun, kaliteli malzeme ve özenli işçilikle yenileme projeleri tamamlıyoruz. Acıbadem Villa projemiz 2023 portföyümüzün öne çıkan çalışmalarından biridir."
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İstanbul", href: `${CANONICAL_BASE}/hizmetler` },
+    { label: "Acıbadem" }
+  ]}
+  structuredData={localSchema}
+>
+
+  <div class="py-12">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Acıbadem'de İç Mimarlık</h2>
+    <p class="text-muted leading-relaxed mb-4">
+      Acıbadem; Kadıköy'e komşu, yeşil dokusu ve sakin yaşam alanlarıyla tercih edilen, köklü aileler ve profesyonellerin yoğunlaştığı bir semttir. Bu semtte villa ve büyük daire projeleri ağırlıklı olarak talep görür.
+    </p>
+    <p class="text-muted leading-relaxed mb-4">
+      Acıbadem Villa projemizde geniş bir köşk villanın iç mekanlarını lüks malzemeler ve özel mobilyalarla donattık. Proje 2023 yılında tamamlanarak müşterimize teslim edildi.
+    </p>
+    <p class="text-muted leading-relaxed mb-8">
+      Acıbadem, Bağlarbaşı, Üsküdar ve çevre mahallelerde aktif olarak hizmet veriyoruz.
+    </p>
+    <div class="border border-border p-6 max-w-md">
+      <div class="w-full h-40 bg-charcoal/5 flex items-center justify-center mb-4" aria-label="Acıbadem villa yenileme projesi fotoğrafı">
+        <span class="text-muted/30 text-xs tracking-widest uppercase">[ Acıbadem Villa Fotoğrafı ]</span>
+      </div>
+      <h3 class="font-display font-semibold text-charcoal">Acıbadem Villa</h3>
+      <p class="text-muted text-xs mt-1">Villa yenileme · 2023</p>
+    </div>
+  </div>
+
+</ServiceLayout>

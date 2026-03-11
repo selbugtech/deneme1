@@ -1,0 +1,88 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import { CANONICAL_BASE } from '../../config';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Ofis Yenileme",
+  "name": "Ofis Yenileme İstanbul",
+  "description": "İstanbul'da modern ofis yenileme ve kurumsal mekan tasarımı hizmetleri. Levent, Şişli ve tüm İstanbul'da ofis iç mimarlık.",
+  "provider": {
+    "@type": "InteriorDesigner",
+    "@id": `${CANONICAL_BASE}/#business`,
+    "name": "Master İç Mimarlık"
+  },
+  "areaServed": { "@type": "City", "name": "İstanbul" },
+  "url": `${CANONICAL_BASE}/hizmetler/ofis-yenileme`
+};
+---
+
+<ServiceLayout
+  title="Ofis Yenileme İstanbul | Kurumsal Mekan Tasarımı | Master İç Mimarlık"
+  description="İstanbul'da ofis yenileme ve kurumsal mekan tasarımı. Çalışan verimliliğini ve motivasyonunu artıran modern ofis çözümleri. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/hizmetler/ofis-yenileme`}
+  h1="Ofis Yenileme İstanbul"
+  eyebrow="Hizmet"
+  lead="Ekibinizin verimliliğini ve motivasyonunu artıran modern, estetik çalışma ortamları tasarlıyoruz. Levent, Şişli ve tüm İstanbul iş merkezlerinde deneyimliyiz."
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
+    { label: "Ofis Yenileme" }
+  ]}
+  structuredData={serviceSchema}
+>
+
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Kurumsal Mekan Tasarımı</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Ofis ortamı, çalışan performansını ve firma imajını doğrudan etkiler. İyi tasarlanmış bir ofis hem çalışanların motivasyonunu artırır hem de müşteriler ve iş ortakları üzerinde güçlü bir izlenim bırakır.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Levent Ofis projemizde olduğu gibi kurumsal mekan projelerinde çalışma alanı planlaması, toplantı odaları, lobi tasarımı ve ortak alanların düzenlenmesinde bütünleşik yaklaşım sunuyoruz.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Ofis yenileme sürecinde iş sürekliliğini gözetiyoruz. Uygulamayı faz faz planlayarak operasyonunuzun mümkün olan minimum şekilde etkilenmesini sağlıyoruz.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4">Ofis Projelerinde Kapsamımız</h3>
+      <ul class="space-y-3">
+        {[
+          'Çalışma alanı (workspace) planlaması',
+          'Toplantı odaları ve konferans alanları',
+          'Lobi ve resepsiyon tasarımı',
+          'Mutfak, kafeterya ve dinlenme alanları',
+          'Akustik çözümler ve ses yalıtımı',
+          'Aydınlatma tasarımı (sağlıklı çalışma ışığı)',
+          'Marka renkleri ve kurumsal kimlik uyumu',
+          'Ofis mobilyası koordinasyonu',
+          'Faz faz uygulama (iş sürekliliği)',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <div class="py-12">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Referans Proje</h2>
+    <div class="border border-border p-6 max-w-md">
+      <div class="w-full h-40 bg-charcoal/5 flex items-center justify-center mb-4" aria-label="Levent ofis yenileme projesi fotoğrafı">
+        <span class="text-muted/30 text-xs tracking-widest uppercase">[ Levent Ofis Fotoğrafı ]</span>
+      </div>
+      <h3 class="font-display font-semibold text-charcoal">Levent Ofis</h3>
+      <p class="text-muted text-xs mt-1">320 m² · Ofis yenileme · 2023</p>
+      <p class="text-muted text-xs mt-2">Finans sektörü kurumsal ofisi için açık alan, toplantı odaları ve lobi yenileme projesi.</p>
+    </div>
+  </div>
+
+</ServiceLayout>
