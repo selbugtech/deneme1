@@ -1,0 +1,396 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import WhatsAppFloat from '../../components/WhatsAppFloat.astro';
+import { CANONICAL_BASE } from '../../config';
+
+const allProjects = [
+  {
+    slug: 'besiktas-dairesi',
+    title: 'Beşiktaş Dairesi',
+    category: 'Anahtar Teslim Ev Yenileme',
+    categorySlug: 'anahtar-teslim-ev-yenileme',
+    year: '2024',
+    location: 'Beşiktaş, İstanbul',
+    area: '120 m²',
+    duration: '8 Hafta',
+    heroImage: '/deneme1/images/266633856_4997237316954973_2289965135152272525_n.jpg',
+    gallery: [
+      '/deneme1/images/besiktas-sampi4.jpg',
+      '/deneme1/images/269841624_450221756551793_6345302129420975823_n.jpg',
+      '/deneme1/images/267243622_240183768199610_7262098467709713644_n.jpg',
+      '/deneme1/images/269918400_1013177626208480_5105489845896302754_n.jpg',
+    ],
+    services: ['İç Mimari Tasarım', '3D Görselleştirme', 'Komple Yenileme', 'Mutfak & Banyo', 'Zemin Kaplama', 'Boya & Dekor'],
+    description: [
+      'Beşiktaş\'ın kalbinde yer alan bu 120 m² daire, tamamen yeniden tasarlanarak modern ve işlevsel bir yaşam alanına dönüştürüldü. Müşterimizin sade ve ferah bir iç mekan talebi doğrultusunda nötr renk paleti ve doğal malzemeler ön plana çıkarıldı.',
+      'Açık mutfak düzeni ile genişletilen oturma alanı, gün içinde doğal ışığı maksimum düzeyde içeri alırken akşam saatlerinde sıcak ve davetkar bir atmosfer yaratıyor. Mutfak dolapları özel ölçüde tasarlanmış, tezgah üstünde bakım kolaylığı sağlayan kompakt yüzey tercih edildi.',
+      'Banyolarda su bazlı görünümlü seramikler ve mat altın renkli aksesuar seti ile butik otel hissi verildi. Tüm proje 8 hafta içinde, belirlenen bütçe dahilinde tamamlanarak müşterimize teslim edildi.',
+    ],
+    metaTitle: 'Beşiktaş Dairesi Yenileme Projesi | Anahtar Teslim | Master İç Mimarlık',
+    metaDesc: 'Beşiktaş\'ta 120 m² dairenin komple anahtar teslim yenileme projesi. Modern iç mimari tasarım, açık mutfak ve özel banyo çalışmaları. Master İç Mimarlık İstanbul.',
+  },
+  {
+    slug: 'zekeriyakoy-villa',
+    title: 'Zekeriyaköy Villa',
+    category: 'Villa Yenileme',
+    categorySlug: 'villa-yenileme',
+    year: '2024',
+    location: 'Zekeriyaköy, İstanbul',
+    area: '320 m²',
+    duration: '14 Hafta',
+    heroImage: '/deneme1/images/avi-werde-hHz4yrvxwlA-unsplash.jpg',
+    gallery: [
+      '/deneme1/images/hero-villa-forest.png',
+      '/deneme1/images/hero-loft.png',
+      '/deneme1/images/lance-anderson-QdAAasrZhdk-unsplash.jpg',
+      '/deneme1/images/francesca-tosolini-XcVm8mn7NUM-unsplash.jpg',
+    ],
+    services: ['Villa İç Mimari Tasarımı', '3D Görselleştirme', 'Peyzaj Entegrasyonu', 'Özel Mobilya Tasarımı', 'Akıllı Ev Sistemleri', 'Komple Yenileme'],
+    description: [
+      'Zekeriyaköy\'de doğayla iç içe konumlanan bu 320 m² villada, doğal malzemelerin ve yeşilin iç mekana taşındığı organik bir tasarım dili benimsendi. Geniş cam yüzeyler ile bahçe ve iç mekan arasındaki sınırlar olabildiğince bulanıklaştırıldı.',
+      'Ana yaşam alanında dökme beton zemin, ahşap kaplama tavan ve ham çelik detaylarla endüstriyel dokunuşlar bir arada kullanıldı. Mutfak adası hem hazırlık alanı hem de sosyal odak noktası olarak çift işlev görüyor.',
+      'Üst kattaki yatak odaları suite otel anlayışıyla tasarlandı; her odaya özel renk ve doku paleti oluşturuldu. Akıllı ev sistemi ile tüm aydınlatma, iklim ve güvenlik tek noktadan kontrol ediliyor.',
+    ],
+    metaTitle: 'Zekeriyaköy Villa Yenileme Projesi | Master İç Mimarlık İstanbul',
+    metaDesc: 'Zekeriyaköy\'de 320 m² villanın tamamen yenilenmesi. Doğal malzemeler, akıllı ev sistemleri ve özel mobilya tasarımı. Master İç Mimarlık villa yenileme projesi.',
+  },
+  {
+    slug: 'nisantasi-butik',
+    title: 'Nişantaşı Butik',
+    category: 'Mağaza Yenileme',
+    categorySlug: 'magaza-yenileme',
+    year: '2024',
+    location: 'Nişantaşı, İstanbul',
+    area: '85 m²',
+    duration: '5 Hafta',
+    heroImage: '/deneme1/images/266682070_600832197669481_5605395588855338438_n.jpg',
+    gallery: [
+      '/deneme1/images/digital-marketing-agency-ntwrk-g39p1kDjvSY-unsplash.jpg',
+      '/deneme1/images/point3d-commercial-imaging-ltd-X_JXnSBKOO4-unsplash.jpg',
+      '/deneme1/images/todd-kent-178j8tJrNlc-unsplash.jpg',
+      '/deneme1/images/269934334_444856893989276_8300817181046348982_n.jpg',
+    ],
+    services: ['Mağaza Konsept Tasarımı', 'Vitrin & Teşhir Planlaması', 'Özel Raf & Dekor Sistemleri', 'Aydınlatma Tasarımı', 'Kaplama & Boya', 'Tabela & Branding Entegrasyonu'],
+    description: [
+      'Nişantaşı\'nın seçkin alışveriş caddesinde faaliyet gösteren bu 85 m² butik mağaza; müşteri odaklı bir alışveriş deneyimi sunmak amacıyla baştan sona yenilendi. Marka kimliğinin mekana yansıtılması temel tasarım ilkesi olarak belirlendi.',
+      'Girişten itibaren müşteriyi yönlendiren görsel akış planlandı; teşhir adaları ve duvar raflara yerleşim, ürünlerin en iyi şekilde öne çıkmasını sağlayacak biçimde hesaplandı. Odak aydınlatmalar ile vitrin ve ürün sergileme alanları dramatik biçimde vurgulandı.',
+      'Kasiyero bölümü ve deneme kabinleri yeniden konumlandırılarak hem personel hem müşteri için verimli bir sirkülasyon alanı oluşturuldu. Proje, mağazanın kapalı kaldığı süreyi minimize etmek amacıyla 5 haftada teslim edildi.',
+    ],
+    metaTitle: 'Nişantaşı Butik Mağaza Yenileme | Master İç Mimarlık İstanbul',
+    metaDesc: 'Nişantaşı\'nda 85 m² butik mağaza yenileme projesi. Konsept tasarım, aydınlatma ve teşhir sistemleri ile marka kimliğini yansıtan iç mekan. Master İç Mimarlık.',
+  },
+  {
+    slug: 'levent-ofis',
+    title: 'Levent Ofis',
+    category: 'Ofis Yenileme',
+    categorySlug: 'ofis-yenileme',
+    year: '2023',
+    location: 'Levent, İstanbul',
+    area: '180 m²',
+    duration: '6 Hafta',
+    heroImage: '/deneme1/images/269796335_287998196622038_3115674097994505357_n.jpg',
+    gallery: [
+      '/deneme1/images/jimmy-chang-ACt8ycSzpdE-unsplash.jpg',
+      '/deneme1/images/erica-carr-43xpj1f3O2Y-unsplash.jpg',
+      '/deneme1/images/peter-ivey-hansen-5xOSA-UgsKQ-unsplash.jpg',
+      '/deneme1/images/269841624_450221756551793_6345302129420975823_n.jpg',
+    ],
+    services: ['Ofis İç Mimari Tasarımı', 'Açık Ofis & Kabinli Alan Planlaması', 'Akustik Çözümler', 'Toplantı Odası Tasarımı', 'Teknik Altyapı (Elektrik & Ağ)', 'Mobilya Seçimi'],
+    description: [
+      'Levent İş Merkezi\'nde yer alan bu 180 m² ofis alanı; çalışan motivasyonunu ve üretkenliği artırmak amacıyla biophilic tasarım ilkeleriyle yenilendi. Eskiyen bölmeli düzen kaldırılarak esnek, açık çalışma alanlarına dönüştürüldü.',
+      'Yeşil duvar uygulaması, gün ışığını içeri taşıyan cam bölmeler ve ergonomik mobilyalar ile ofis, çalışanlar tarafından "ikinci ev" olarak nitelendirilen bir mekana dönüştü. Toplantı odaları farklı kapasiteler için tasarlandı; her biri akustik panel ve ekran altyapısı ile donatıldı.',
+      'Mutfak ve dinlenme alanı güçlendirilerek informal toplantılar için de kullanılabilecek esnek bir sosyal bölge oluşturuldu. Elektrik ve veri altyapısı yenilenerek yeni çalışma düzenine göre optimize edildi.',
+    ],
+    metaTitle: 'Levent Ofis Yenileme Projesi | Kurumsal İç Mimarlık | Master İç Mimarlık',
+    metaDesc: 'Levent\'te 180 m² ofis yenileme projesi. Biophilic tasarım, akustik çözümler ve esnek çalışma alanları. Üretkenliği artıran kurumsal iç mekan tasarımı. Master İç Mimarlık.',
+  },
+  {
+    slug: 'atasehir-residence',
+    title: 'Ataşehir Residence',
+    category: 'Anahtar Teslim Ev Yenileme',
+    categorySlug: 'anahtar-teslim-ev-yenileme',
+    year: '2023',
+    location: 'Ataşehir, İstanbul',
+    area: '95 m²',
+    duration: '7 Hafta',
+    heroImage: '/deneme1/images/270210256_1299189580524073_8666915339070247329_n.jpg',
+    gallery: [
+      '/deneme1/images/pragyan-goswami-vzeQUIfyVlo-unsplash.jpg',
+      '/deneme1/images/frames-for-your-heart-mR1CIDduGLc-unsplash.jpg',
+      '/deneme1/images/kara-eads-L7EwHkq1B2s-unsplash.jpg',
+      '/deneme1/images/266633856_4997237316954973_2289965135152272525_n.jpg',
+    ],
+    services: ['İç Mimari Tasarım', '3D Görselleştirme', 'Komple Yenileme', 'Alçıpan & Asma Tavan', 'Mutfak Yenileme', 'Banyo Renovasyonu'],
+    description: [
+      'Ataşehir\'de yüksek katlı bir residence kompleksinde yer alan bu 95 m² daire; yeni sahibine teslim edilmeden önce tamamen yenilenerek kişiselleştirildi. Küçük metrekarenin en verimli şekilde kullanılması temel tasarım hedefi oldu.',
+      'Giriş koridoru kaldırılarak açık plan yaşam—yemek—mutfak bütünlüğü sağlandı. Beyaz lake mutfak dolapları ve antrasit tezgah kombinasyonu, mekana hem temiz hem de çarpıcı bir görünüm kattı. Ek depolama çözümleri tasarım içine gizlendi.',
+      'Her iki banyo da yeni seramik, duş sistemleri ve armatürlerle güncellendi. Asma tavan detayları ve dolaylı aydınlatma uygulamaları ile tavan yüksekliği görsel olarak artırıldı. Proje, belirlenen 7 haftalık takvimin içinde anahtar teslim olarak tamamlandı.',
+    ],
+    metaTitle: 'Ataşehir Residence Yenileme | Anahtar Teslim Ev | Master İç Mimarlık',
+    metaDesc: 'Ataşehir\'de 95 m² residence dairesinin anahtar teslim yenileme projesi. Açık plan düzeni, özel mutfak tasarımı ve banyo renovasyonu. Master İç Mimarlık İstanbul.',
+  },
+  {
+    slug: 'acıbadem-villa',
+    title: 'Acıbadem Villa',
+    category: 'Villa Yenileme',
+    categorySlug: 'villa-yenileme',
+    year: '2023',
+    location: 'Acıbadem, İstanbul',
+    area: '280 m²',
+    duration: '12 Hafta',
+    heroImage: '/deneme1/images/hero-villa-sea.jpg',
+    gallery: [
+      '/deneme1/images/sariyer-villa5.jpg',
+      '/deneme1/images/vu-anh-TiVPTYCG_3E-unsplash.jpg',
+      '/deneme1/images/hero-villa-forest.png',
+      '/deneme1/images/269918400_1013177626208480_5105489845896302754_n.jpg',
+    ],
+    services: ['Villa İç Mimari Tasarımı', '3D Görselleştirme', 'Yapısal Düzenlemeler', 'Özel Mobilya & Dekorasyon', 'Bahçe & Teras Tasarımı', 'Komple Yenileme'],
+    description: [
+      'Acıbadem\'in sessiz sokaklarında yer alan bu 280 m² villa, klasik bir Türk konutundan çağdaş bir yaşam alanına dönüştürüldü. Yapısal değişiklikler ile kat planı yeniden düzenlendi; kapalı koridorlar ve küçük odalar yerini geniş ve akıcı alanlara bıraktı.',
+      'Ana yaşam katında yüksek tavanlı oturma odası, tasarım odaklı bir mutfak ve birbiriyle görsel bağlantısı olan yemek alanı bir bütün halinde kurgulandı. Büyük ahşap çerçeveli pencereler ve kapılar mekana sıcak bir karakter kattı.',
+      'Bahçeye bakan teras; dış mekanda da iç mekan konforu sunan döşeme, oturma grubu ve bitki duvarı uygulamalarıyla tamamlandı. Üst katta iki yatak odası suite anlayışıyla yenilendi; her biri kendi giyinme odası ve banyosuna kavuştu.',
+    ],
+    metaTitle: 'Acıbadem Villa Yenileme Projesi | Lüks Villa İç Mimarlık | Master İç Mimarlık',
+    metaDesc: 'Acıbadem\'de 280 m² villanın lüks yenileme projesi. Yapısal düzenlemeler, özel mobilya tasarımı ve bahçe-teras entegrasyonu. Master İç Mimarlık İstanbul.',
+  },
+];
+
+export async function getStaticPaths() {
+  const projects = [
+    { slug: 'besiktas-dairesi' },
+    { slug: 'zekeriyakoy-villa' },
+    { slug: 'nisantasi-butik' },
+    { slug: 'levent-ofis' },
+    { slug: 'atasehir-residence' },
+    { slug: 'acıbadem-villa' },
+  ];
+  return projects.map(p => ({ params: { slug: p.slug } }));
+}
+
+const { slug } = Astro.params;
+const project = allProjects.find(p => p.slug === slug)!;
+const related = allProjects.filter(p => p.slug !== slug).slice(0, 3);
+
+const projectSchema = {
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": project.title,
+  "description": project.description[0],
+  "dateCreated": project.year,
+  "locationCreated": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": project.location,
+      "addressCountry": "TR"
+    }
+  },
+  "creator": {
+    "@type": "InteriorDesigner",
+    "@id": `${CANONICAL_BASE}/#business`,
+    "name": "Master İç Mimarlık"
+  },
+  "url": `${CANONICAL_BASE}/projeler/${project.slug}`
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": `${CANONICAL_BASE}/` },
+    { "@type": "ListItem", "position": 2, "name": "Projeler", "item": `${CANONICAL_BASE}/projeler` },
+    { "@type": "ListItem", "position": 3, "name": project.title }
+  ]
+};
+---
+
+<Layout
+  title={project.metaTitle}
+  description={project.metaDesc}
+  canonicalUrl={`${CANONICAL_BASE}/projeler/${project.slug}`}
+  structuredData={[breadcrumbSchema, projectSchema]}
+>
+  <Header />
+
+  <main class="bg-charcoal min-h-screen">
+
+    <!-- Hero image -->
+    <div class="relative w-full h-[55vh] md:h-[70vh] overflow-hidden">
+      <img
+        src={project.heroImage}
+        alt={`${project.title} — ${project.category} projesi`}
+        class="w-full h-full object-cover object-center"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/40 to-transparent"></div>
+
+      <!-- Breadcrumb overlay -->
+      <div class="absolute top-0 left-0 right-0 pt-28 px-6 max-w-6xl mx-auto w-full">
+        <nav class="flex items-center gap-2 text-sm" aria-label="Breadcrumb">
+          <a href="/deneme1/" class="text-white/50 hover:text-gold transition-colors">Ana Sayfa</a>
+          <span class="text-white/20">/</span>
+          <a href="/deneme1/projeler" class="text-white/50 hover:text-gold transition-colors">Projeler</a>
+          <span class="text-white/20">/</span>
+          <span class="text-white/80">{project.title}</span>
+        </nav>
+      </div>
+
+      <!-- Title overlay at bottom -->
+      <div class="absolute bottom-0 left-0 right-0 pb-10 px-6">
+        <div class="max-w-6xl mx-auto">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-6 h-px bg-gold"></span>
+            <span class="text-[10px] tracking-[0.3em] uppercase text-gold font-medium">{project.category}</span>
+          </div>
+          <h1 class="font-display text-4xl md:text-6xl font-bold text-white">{project.title}</h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project meta strip -->
+    <div class="border-b border-white/10">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/10">
+          {[
+            { label: 'Konum', value: project.location },
+            { label: 'Alan', value: project.area },
+            { label: 'Süre', value: project.duration },
+            { label: 'Yıl', value: project.year },
+          ].map(item => (
+            <div class="py-6 px-4 first:pl-0">
+              <p class="text-[10px] tracking-[0.25em] uppercase text-white/30 mb-1">{item.label}</p>
+              <p class="text-white font-medium text-sm">{item.value}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="max-w-6xl mx-auto px-6 py-16">
+      <div class="grid md:grid-cols-3 gap-12">
+
+        <!-- Description -->
+        <div class="md:col-span-2 space-y-5">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="w-8 h-px bg-gold"></span>
+            <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Proje Hakkında</span>
+          </div>
+          {project.description.map(para => (
+            <p class="text-white/60 leading-relaxed">{para}</p>
+          ))}
+        </div>
+
+        <!-- Services list -->
+        <div>
+          <h2 class="text-xs tracking-[0.3em] uppercase text-white/30 mb-4">Uygulanan Hizmetler</h2>
+          <ul class="space-y-2">
+            {project.services.map(s => (
+              <li class="flex items-start gap-3 text-sm text-white/60">
+                <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-gold shrink-0"></span>
+                {s}
+              </li>
+            ))}
+          </ul>
+
+          <div class="mt-10 pt-8 border-t border-white/10">
+            <p class="text-xs tracking-wide text-white/30 mb-4 uppercase">Bu proje gibi bir çalışma ister misiniz?</p>
+            <a
+              href={`https://wa.me/905330391565?text=Merhaba%2C%20${encodeURIComponent(project.title)}%20projesi%20gibi%20bir%20%C3%A7al%C4%B1%C5%9Fma%20yapmak%20istiyorum.`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 bg-gold text-charcoal px-6 py-3 text-xs font-semibold tracking-wide hover:bg-[#B8965A] transition-colors w-full justify-center"
+            >
+              Ücretsiz Keşif Al
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Photo gallery -->
+    <div class="max-w-6xl mx-auto px-6 pb-16">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="w-8 h-px bg-gold"></span>
+        <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Proje Fotoğrafları</span>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+        {project.gallery.map((img, i) => (
+          <div class={`overflow-hidden ${i === 0 ? 'col-span-2 row-span-2' : ''}`}>
+            <img
+              src={img}
+              alt={`${project.title} — fotoğraf ${i + 1}`}
+              class={`w-full object-cover object-center hover:scale-105 transition-transform duration-500 ${i === 0 ? 'h-[320px] md:h-[400px]' : 'h-[155px] md:h-[195px]'}`}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Related projects -->
+    <div class="border-t border-white/10 py-16">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="flex items-center justify-between mb-8">
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-px bg-gold"></span>
+            <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Diğer Projeler</span>
+          </div>
+          <a href="/deneme1/projeler" class="text-xs text-white/30 hover:text-gold transition-colors tracking-wide">Tümünü Gör →</a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {related.map(p => (
+            <a href={`/deneme1/projeler/${p.slug}`} class="group block relative overflow-hidden">
+              <img
+                src={p.heroImage}
+                alt={p.title}
+                class="w-full h-48 object-cover object-center group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-charcoal/60 group-hover:bg-charcoal/40 transition-colors duration-300 flex flex-col justify-end p-4">
+                <p class="text-[10px] tracking-[0.25em] uppercase text-gold mb-1">{p.category}</p>
+                <p class="font-display text-white font-semibold text-sm">{p.title}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="bg-charcoal border-t border-white/10 py-20">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <div class="flex items-center justify-center gap-3 mb-4">
+          <span class="w-8 h-px bg-gold"></span>
+          <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Projenizi Konuşalım</span>
+          <span class="w-8 h-px bg-gold"></span>
+        </div>
+        <h2 class="font-display text-3xl font-bold text-white mb-4">Hayalinizdeki Mekanı Tasarlayalım</h2>
+        <p class="text-white/40 mb-8 max-w-md mx-auto leading-relaxed">Ücretsiz keşif ve fiyat teklifi için WhatsApp'tan yazın ya da arayın. En kısa sürede size dönüyoruz.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="https://wa.me/905330391565?text=Merhaba%2C%20proje%20hakk%C4%B1nda%20g%C3%B6r%C3%BC%C5%9Fmek%20istiyorum."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-3 bg-[#25D366] text-white px-10 py-4 text-sm font-semibold hover:bg-[#1EBD5A] transition-colors"
+          >
+            WhatsApp'tan Yaz
+          </a>
+          <a
+            href="tel:+905330391565"
+            class="inline-flex items-center justify-center gap-3 bg-gold text-charcoal px-10 py-4 text-sm font-semibold hover:bg-[#B8965A] transition-colors"
+          >
+            0533 039 15 65
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <Footer />
+  <WhatsAppFloat />
+</Layout>

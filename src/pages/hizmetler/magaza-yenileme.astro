@@ -7,20 +7,33 @@ const serviceSchema = {
   "@type": "Service",
   "serviceType": "Mağaza Yenileme",
   "name": "Mağaza ve Ticari Mekan Yenileme İstanbul",
-  "description": "İstanbul'da mağaza, butik, showroom ve ticari mekan yenileme hizmetleri. Nişantaşı, Levent ve tüm İstanbul'da hizmet.",
-  "provider": {
-    "@type": "InteriorDesigner",
-    "@id": `${CANONICAL_BASE}/#business`,
-    "name": "Master İç Mimarlık"
-  },
-  "areaServed": { "@type": "City", "name": "İstanbul" },
-  "url": `${CANONICAL_BASE}/hizmetler/magaza-yenileme`
+  "description": "İstanbul'da mağaza, butik, showroom ve ticari mekan yenileme. Nişantaşı, Levent ve tüm İstanbul'da hizmet.",
+  "provider": { "@type": "Organization", "@id": `${CANONICAL_BASE}/#organization`, "name": "Master İç Mimarlık" },
+  "areaServed": [
+    { "@type": "City", "name": "İstanbul" },
+    { "@type": "AdministrativeArea", "name": "Nişantaşı" },
+    { "@type": "AdministrativeArea", "name": "Levent" },
+    { "@type": "AdministrativeArea", "name": "Bağcılar" }
+  ],
+  "url": `${CANONICAL_BASE}/hizmetler/magaza-yenileme`,
+  "offers": { "@type": "Offer", "priceCurrency": "TRY", "description": "Ticari mekan büyüklüğüne göre özel fiyatlandırma", "availability": "https://schema.org/InStock" }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Mağaza yenileme ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Mağaza büyüklüğüne göre genellikle 2–6 hafta arasında tamamlanmaktadır. İşletme kesintisini minimum tutmak için hızlı uygulama planlaması yapıyoruz." } },
+    { "@type": "Question", "name": "Mağaza açıkken uygulama yapılabilir mi?", "acceptedAnswer": { "@type": "Answer", "text": "Mümkün olan durumlarda mağaza kapalıyken veya mesai dışı saatlerde çalışarak işletme kesintisini sıfıra yaklaştırabiliyoruz. Proje planlaması aşamasında bu ihtiyacı değerlendiriyoruz." } },
+    { "@type": "Question", "name": "Hangi ticari mekan türlerine hizmet veriyorsunuz?", "acceptedAnswer": { "@type": "Answer", "text": "Mağaza, butik, showroom, restoran, kafe, güzellik salonu ve ofis gibi tüm ticari mekan türlerinde iç mimarlık ve yenileme hizmeti sunuyoruz." } },
+    { "@type": "Question", "name": "Nişantaşı ve Levent'e hizmet veriyor musunuz?", "acceptedAnswer": { "@type": "Answer", "text": "Evet. Nişantaşı, Levent, Bağdat Caddesi, Cevahir ve İstanbul'un tüm prestijli ticari bölgelerinde hizmet veriyoruz." } }
+  ]
 };
 ---
 
 <ServiceLayout
-  title="Mağaza Yenileme İstanbul | Ticari Mekan İç Mimarlık | Master"
-  description="İstanbul'da mağaza, butik, showroom ve ticari mekan yenileme. Markanızı güçlendiren, müşteri deneyimini artıran tasarımlar. 0533 039 15 65"
+  title="Mağaza Yenileme İstanbul — Ticari Mekan İç Mimarlık | Master İç Mimarlık"
+  description="İstanbul'da mağaza, butik, showroom ve ticari mekan yenileme. Markanızı güçlendiren, müşteri deneyimini artıran tasarımlar. Nişantaşı, Levent ve tüm İstanbul. 0533 039 15 65"
   canonicalUrl={`${CANONICAL_BASE}/hizmetler/magaza-yenileme`}
   h1="Mağaza ve Ticari Mekan Yenileme"
   eyebrow="Hizmet"
@@ -30,9 +43,12 @@ const serviceSchema = {
     { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
     { label: "Mağaza Yenileme" }
   ]}
-  structuredData={serviceSchema}
+  heroImage="/deneme1/images/point3d-commercial-imaging-ltd-X_JXnSBKOO4-unsplash.jpg"
+  ogImage={`${CANONICAL_BASE}/images/point3d-commercial-imaging-ltd-X_JXnSBKOO4-unsplash.jpg`}
+  structuredData={[serviceSchema, faqSchema]}
 >
 
+  <!-- Scope -->
   <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
     <div>
       <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Ticari Mekan Tasarımı</h2>
@@ -47,7 +63,7 @@ const serviceSchema = {
       </p>
     </div>
     <div>
-      <h3 class="font-semibold text-charcoal mb-4">Ticari Mekan Hizmetlerimiz</h3>
+      <h3 class="font-semibold text-charcoal mb-4 text-xs uppercase tracking-wider">Ticari Mekan Hizmetlerimiz</h3>
       <ul class="space-y-3">
         {[
           'Marka kimliğine uygun konsept tasarım',
@@ -56,7 +72,7 @@ const serviceSchema = {
           'Zemin, duvar ve tavan kaplamaları',
           'Özel raf, stand ve display sistemleri',
           'Kasa ve servis alanı tasarımı',
-          'Kasiyerlik ve müşteri deneyimi akışı',
+          'Müşteri deneyimi akışı optimizasyonu',
           'Hızlı uygulama ile işletme kesintisi minimum',
         ].map(item => (
           <li class="flex items-start gap-3 text-sm text-muted">
@@ -72,17 +88,66 @@ const serviceSchema = {
     </div>
   </div>
 
-  <div class="py-12">
-    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Referans Proje</h2>
-    <div class="grid md:grid-cols-2 gap-6">
-      <div class="border border-border p-6">
-        <div class="w-full h-40 bg-charcoal/5 flex items-center justify-center mb-4" aria-label="Nişantaşı Butik mağaza yenileme projesi">
-          <span class="text-muted/30 text-xs tracking-widest uppercase">[ Nişantaşı Butik Fotoğrafı ]</span>
+  <!-- Gallery -->
+  <div class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="w-8 h-px bg-gold"></span>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Referans Projeler</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-4">
+      {[
+        { src: '/deneme1/images/267243622_240183768199610_7262098467709713644_n.jpg', title: 'Nişantaşı Butik', detail: '180 m² · Lüks moda mağazası · 2024' },
+        { src: '/deneme1/images/269934334_444856893989276_8300817181046348982_n.jpg', title: 'Levent Showroom', detail: '220 m² · Mobilya showroom · 2023' },
+      ].map(p => (
+        <div class="group">
+          <div class="overflow-hidden mb-3">
+            <img src={p.src} alt={p.title} class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <h3 class="font-semibold text-charcoal text-sm">{p.title}</h3>
+          <p class="text-muted text-xs mt-0.5">{p.detail}</p>
         </div>
-        <h3 class="font-display font-semibold text-charcoal">Nişantaşı Butik</h3>
-        <p class="text-muted text-xs mt-1">180 m² · Mağaza yenileme · 2024</p>
-        <p class="text-muted text-xs mt-2">Butik moda mağazası için marka kimliğine uygun lüks iç mekan tasarımı ve uygulaması.</p>
-      </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Mekan türleri -->
+  <div class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="w-8 h-px bg-gold"></span>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Hizmet Verdiğimiz Mekan Türleri</h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      {['Mağaza & Butik', 'Showroom', 'Restoran & Kafe', 'Güzellik Salonu', 'Eczane', 'Medikal Klinik', 'Banka Şubesi', 'Diğer Ticari'].map(tip => (
+        <div class="border border-border p-4 text-center">
+          <p class="font-semibold text-charcoal text-xs">{tip}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="py-12">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="w-8 h-px bg-gold"></span>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Sık Sorulan Sorular</h2>
+    </div>
+    <div class="divide-y divide-border">
+      {[
+        { q: 'Mağaza yenileme ne kadar sürer?', a: 'Mağaza büyüklüğüne göre genellikle 2–6 hafta arasında tamamlanmaktadır. İşletme kesintisini minimum tutmak için hızlı uygulama planlaması yapıyoruz.' },
+        { q: 'Mağaza açıkken uygulama yapılabilir mi?', a: 'Mümkün olan durumlarda mağaza kapalıyken veya mesai dışı saatlerde çalışarak işletme kesintisini sıfıra yaklaştırabiliyoruz.' },
+        { q: 'Hangi ticari mekan türlerine hizmet veriyorsunuz?', a: 'Mağaza, butik, showroom, restoran, kafe, güzellik salonu ve ofis gibi tüm ticari mekan türlerinde hizmet sunuyoruz.' },
+        { q: 'Nişantaşı ve Levent\'e hizmet veriyor musunuz?', a: 'Evet. Nişantaşı, Levent, Bağdat Caddesi ve İstanbul\'un tüm prestijli ticari bölgelerinde hizmet veriyoruz.' },
+      ].map((faq, i) => (
+        <details class="group py-5" open={i === 0}>
+          <summary class="flex items-start justify-between cursor-pointer list-none gap-4">
+            <h3 class="font-semibold text-charcoal text-sm md:text-base group-open:text-gold transition-colors">{faq.q}</h3>
+            <svg class="shrink-0 w-5 h-5 text-gold mt-0.5 group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <p class="mt-3 text-muted text-sm leading-relaxed pr-8">{faq.a}</p>
+        </details>
+      ))}
     </div>
   </div>
 

@@ -6,12 +6,12 @@ import WhatsAppFloat from '../components/WhatsAppFloat.astro';
 import { CANONICAL_BASE } from '../config';
 
 const projects = [
-  { title: 'Beşiktaş Dairesi', category: 'Anahtar Teslim Ev Yenileme', size: 'large', year: '2024', image: '/deneme1/images/266633856_4997237316954973_2289965135152272525_n.jpg' },
-  { title: 'Zekeriyaköy Villa', category: 'Villa Yenileme', size: 'small', year: '2024', image: '/deneme1/images/avi-werde-hHz4yrvxwlA-unsplash.jpg' },
-  { title: 'Nişantaşı Butik', category: 'Mağaza Yenileme', size: 'small', year: '2024', image: '/deneme1/images/266682070_600832197669481_5605395588855338438_n.jpg' },
-  { title: 'Levent Ofis', category: 'Ofis Yenileme', size: 'small', year: '2023', image: '/deneme1/images/269796335_287998196622038_3115674097994505357_n.jpg' },
-  { title: 'Ataşehir Residence', category: 'Anahtar Teslim Ev Yenileme', size: 'small', year: '2023', image: '/deneme1/images/270210256_1299189580524073_8666915339070247329_n.jpg' },
-  { title: 'Acıbadem Villa', category: 'Villa Yenileme', size: 'large', year: '2023', image: '/deneme1/images/hero-villa-sea.jpg' },
+  { slug: 'besiktas-dairesi', title: 'Beşiktaş Dairesi', category: 'Anahtar Teslim Ev Yenileme', size: 'large', year: '2024', image: '/deneme1/images/266633856_4997237316954973_2289965135152272525_n.jpg' },
+  { slug: 'zekeriyakoy-villa', title: 'Zekeriyaköy Villa', category: 'Villa Yenileme', size: 'small', year: '2024', image: '/deneme1/images/avi-werde-hHz4yrvxwlA-unsplash.jpg' },
+  { slug: 'nisantasi-butik', title: 'Nişantaşı Butik', category: 'Mağaza Yenileme', size: 'small', year: '2024', image: '/deneme1/images/266682070_600832197669481_5605395588855338438_n.jpg' },
+  { slug: 'levent-ofis', title: 'Levent Ofis', category: 'Ofis Yenileme', size: 'small', year: '2023', image: '/deneme1/images/269796335_287998196622038_3115674097994505357_n.jpg' },
+  { slug: 'atasehir-residence', title: 'Ataşehir Residence', category: 'Anahtar Teslim Ev Yenileme', size: 'small', year: '2023', image: '/deneme1/images/270210256_1299189580524073_8666915339070247329_n.jpg' },
+  { slug: 'acıbadem-villa', title: 'Acıbadem Villa', category: 'Villa Yenileme', size: 'large', year: '2023', image: '/deneme1/images/hero-villa-sea.jpg' },
 ];
 ---
 
@@ -63,7 +63,8 @@ const projects = [
     <div class="max-w-6xl mx-auto px-6 pb-24">
       <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
         {projects.map((p, i) => (
-          <div
+          <a
+            href={`/deneme1/projeler/${p.slug}`}
             class={`relative group overflow-hidden reveal reveal-d${(i % 3) + 1} ${p.size === 'large' ? 'row-span-2' : ''}`}
           >
             <img
@@ -77,6 +78,12 @@ const projects = [
               <span class="text-[10px] tracking-[0.25em] uppercase text-gold/70 mb-1">{p.year}</span>
               <span class="text-[10px] tracking-[0.25em] uppercase text-gold mb-2">{p.category}</span>
               <h3 class="font-display text-white text-lg font-semibold">{p.title}</h3>
+              <span class="mt-2 text-[10px] tracking-widest uppercase text-white/40 flex items-center gap-1.5">
+                Projeyi İncele
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </span>
             </div>
 
             <!-- Always-visible label (mobile) -->
@@ -84,7 +91,7 @@ const projects = [
               <p class="text-[10px] tracking-widest uppercase text-gold">{p.category}</p>
               <p class="font-display text-white text-sm font-semibold">{p.title}</p>
             </div>
-          </div>
+          </a>
         ))}
       </div>
 

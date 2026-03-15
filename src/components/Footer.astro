@@ -2,6 +2,7 @@
 const year = new Date().getFullYear();
 const { pathname } = Astro.url;
 const isHome = pathname === '/deneme1/' || pathname === '/deneme1';
+const hizmetlerHref = isHome ? '#hizmetler' : '/deneme1/hizmetler';
 ---
 
 <footer class="bg-charcoal border-t border-white/10 py-12">
@@ -11,9 +12,7 @@ const isHome = pathname === '/deneme1/' || pathname === '/deneme1';
       <!-- Logo & tagline -->
       <div>
         <div class="flex items-center gap-3 mb-3">
-          <div class="w-8 h-8 bg-gold flex items-center justify-center">
-            <span class="text-white font-display font-bold text-sm leading-none">M</span>
-          </div>
+          <img src="/deneme1/favicon.png" alt="Master İç Mimarlık" class="w-8 h-8 shrink-0 object-contain" />
           <div class="leading-none">
             <span class="block font-display font-semibold text-base text-white tracking-wide">Master</span>
             <span class="block text-[10px] tracking-[0.25em] uppercase text-white/40 mt-0.5">İç Mimarlık</span>
@@ -26,9 +25,7 @@ const isHome = pathname === '/deneme1/' || pathname === '/deneme1';
 
       <!-- Nav links -->
       <nav class="flex flex-wrap gap-x-6 gap-y-3">
-        {isHome && (
-          <a href="#hizmetler" class="text-xs tracking-[0.15em] uppercase text-white/40 hover:text-gold transition-colors">Hizmetler</a>
-        )}
+        <a href={hizmetlerHref} class="text-xs tracking-[0.15em] uppercase text-white/40 hover:text-gold transition-colors">Hizmetler</a>
         <a href="/deneme1/projeler" class="text-xs tracking-[0.15em] uppercase text-white/40 hover:text-gold transition-colors">Projeler</a>
         <a href="/deneme1/blog" class="text-xs tracking-[0.15em] uppercase text-white/40 hover:text-gold transition-colors">Blog</a>
         <a href="/deneme1/sikca-sorulan-sorular" class="text-xs tracking-[0.15em] uppercase text-white/40 hover:text-gold transition-colors">SSS</a>

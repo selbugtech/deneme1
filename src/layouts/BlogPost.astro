@@ -12,25 +12,113 @@ interface Props {
   publishDate: string;
   readingTime?: string;
   ogImage?: string;
+  heroImage?: string;
+  tag?: string;
 }
 
-const { title, description, canonicalUrl, publishDate, readingTime = '5 dk okuma', ogImage } = Astro.props;
+const { title, description, canonicalUrl, publishDate, readingTime = '5 dk okuma', ogImage, heroImage, tag = 'Rehber' } = Astro.props;
+
+// All posts for related posts section
+const allPosts = [
+  {
+    title: 'Ev Tadilat Rehberi — Başlamadan Önce Bilmeniz Gerekenler',
+    slug: 'ev-tadilati-ipuclari',
+    date: '2025-03-25',
+    readingTime: '8 dk',
+    tag: 'Rehber',
+    image: '/deneme1/images/kara-eads-L7EwHkq1B2s-unsplash.jpg',
+    excerpt: 'Ev tadilat sürecine girmeden önce bilmeniz gereken her şey: planlama, bütçe, usta seçimi ve adım adım iş sırası.',
+  },
+  {
+    title: 'İstanbul Daire İç Mimarlık — Doğru İç Mimar Nasıl Seçilir?',
+    slug: 'istanbul-daire-ic-mimarlik',
+    date: '2025-03-15',
+    readingTime: '6 dk',
+    tag: 'Bilgi',
+    image: '/deneme1/images/pragyan-goswami-vzeQUIfyVlo-unsplash.jpg',
+    excerpt: 'İstanbul\'da daire iç mimarlık hizmeti almak isteyenler için kapsamlı rehber.',
+  },
+  {
+    title: 'Mutfak Yenileme İstanbul — Tadilat Fikirleri ve Maliyet Rehberi',
+    slug: 'mutfak-yenileme-istanbul',
+    date: '2025-03-05',
+    readingTime: '7 dk',
+    tag: 'Rehber',
+    image: '/deneme1/images/besiktas-sampi4.jpg',
+    excerpt: 'Mutfak yenileme neleri kapsar ve İstanbul\'da mutfak tadilat maliyetleri 2025\'te ne kadar?',
+  },
+  {
+    title: 'Villa Tadilat İstanbul — Lüks Villa Yenileme Rehberi 2025',
+    slug: 'villa-tadilati-istanbul',
+    date: '2025-02-20',
+    readingTime: '8 dk',
+    tag: 'Rehber',
+    image: '/deneme1/images/hero-villa-sea.jpg',
+    excerpt: 'İstanbul\'da villa tadilat süreçleri nasıl işler? Aşamalar, maliyetler ve dikkat edilmesi gerekenler.',
+  },
+  {
+    title: '2025 İç Mimarlık Trendleri — İstanbul Perspektifinden',
+    slug: 'ic-mimarlik-trendleri-2025',
+    date: '2025-02-10',
+    readingTime: '6 dk',
+    tag: 'Trendler',
+    image: '/deneme1/images/francesca-tosolini-XcVm8mn7NUM-unsplash.jpg',
+    excerpt: 'Wabi-sabi minimalizm, doğal malzemeler ve biyofilik tasarım. 2025\'in öne çıkan iç mimarlık trendleri.',
+  },
+  {
+    title: 'Anahtar Teslim Ev Yenileme Nedir? Avantajları ve Süreci',
+    slug: 'anahtar-teslim-ev-yenileme-nedir',
+    date: '2025-01-25',
+    readingTime: '5 dk',
+    tag: 'Bilgi',
+    image: '/deneme1/images/266633856_4997237316954973_2289965135152272525_n.jpg',
+    excerpt: '"Anahtar teslim" yenileme modeli nedir, kendin yönet modelinden farkları nelerdir?',
+  },
+  {
+    title: 'Ev Yenileme Maliyeti 2025 — İstanbul Güncel Rehber',
+    slug: 'ev-yenileme-maliyeti-2025',
+    date: '2025-01-10',
+    readingTime: '7 dk',
+    tag: 'Rehber',
+    image: '/deneme1/images/lance-anderson-QdAAasrZhdk-unsplash.jpg',
+    excerpt: 'İstanbul\'da ev yenileme maliyetleri 2025\'te ne kadar? Metrekare başına fiyatlar ve bütçe planlaması.',
+  },
+];
+
+// Derive current slug from canonicalUrl, then pick 3 other posts as related
+const currentSlug = canonicalUrl.split('/').pop() ?? '';
+const relatedPosts = allPosts.filter(p => p.slug !== currentSlug).slice(0, 3);
+
+const displayTitle = title.split('|')[0].trim();
+const formattedDate = new Date(publishDate).toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' });
 
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": title,
+  "headline": displayTitle,
   "description": description,
-  "author": { "@type": "Organization", "name": "Master İç Mimarlık" },
+  "author": {
+    "@type": "Organization",
+    "name": "Master İç Mimarlık",
+    "@id": `${CANONICAL_BASE}/#organization`
+  },
   "publisher": {
     "@type": "Organization",
     "name": "Master İç Mimarlık",
-    "logo": { "@type": "ImageObject", "url": `${CANONICAL_BASE}/favicon.svg` }
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${CANONICAL_BASE}/favicon.png`
+    }
   },
   "datePublished": publishDate,
   "dateModified": publishDate,
   "url": canonicalUrl,
-  "image": ogImage ?? `${CANONICAL_BASE}/og-image.jpg`
+  "image": ogImage ?? heroImage ?? `${CANONICAL_BASE}/og-image.png`,
+  "inLanguage": "tr-TR",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": canonicalUrl
+  }
 };
 
 const breadcrumbSchema = {
@@ -39,51 +127,244 @@ const breadcrumbSchema = {
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": `${CANONICAL_BASE}/` },
     { "@type": "ListItem", "position": 2, "name": "Blog", "item": `${CANONICAL_BASE}/blog` },
-    { "@type": "ListItem", "position": 3, "name": title, "item": canonicalUrl }
+    { "@type": "ListItem", "position": 3, "name": displayTitle, "item": canonicalUrl }
   ]
 };
 ---
 
-<Layout title={title} description={description} canonicalUrl={canonicalUrl} ogImage={ogImage} ogType="article" structuredData={[articleSchema, breadcrumbSchema]}>
+<Layout
+  title={title}
+  description={description}
+  canonicalUrl={canonicalUrl}
+  ogImage={ogImage ?? heroImage}
+  ogType="article"
+  structuredData={[articleSchema, breadcrumbSchema]}
+>
   <Header />
 
   <main class="pt-24 bg-warm-white min-h-screen">
 
-    <!-- Article header -->
-    <div class="max-w-3xl mx-auto px-6 py-16">
+    <!-- Hero image -->
+    {heroImage ? (
+      <div class="relative w-full h-[45vh] md:h-[55vh] overflow-hidden">
+        <img
+          src={heroImage}
+          alt={displayTitle}
+          class="w-full h-full object-cover object-center"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-transparent"></div>
 
-      <!-- Breadcrumb -->
-      <nav class="flex items-center gap-2 mb-8 text-sm flex-wrap" aria-label="Breadcrumb">
-        <a href={`${CANONICAL_BASE}/`} class="text-muted hover:text-gold transition-colors">Ana Sayfa</a>
-        <span class="text-border">/</span>
-        <a href={`${CANONICAL_BASE}/blog`} class="text-muted hover:text-gold transition-colors">Blog</a>
-        <span class="text-border">/</span>
-        <span class="text-charcoal">{title.split('|')[0].trim()}</span>
-      </nav>
+        <!-- Breadcrumb -->
+        <div class="absolute top-0 left-0 right-0 pt-28 px-6">
+          <div class="max-w-6xl mx-auto">
+            <nav class="flex items-center gap-2 text-sm flex-wrap" aria-label="Breadcrumb">
+              <a href="/deneme1/" class="text-white/50 hover:text-gold transition-colors">Ana Sayfa</a>
+              <span class="text-white/20">/</span>
+              <a href="/deneme1/blog" class="text-white/50 hover:text-gold transition-colors">Blog</a>
+              <span class="text-white/20">/</span>
+              <span class="text-white/70">{displayTitle.length > 50 ? displayTitle.substring(0, 50) + '…' : displayTitle}</span>
+            </nav>
+          </div>
+        </div>
 
-      <!-- Meta -->
-      <div class="flex items-center gap-4 text-xs text-muted mb-6">
-        <time datetime={publishDate}>{new Date(publishDate).toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
-        <span>·</span>
-        <span>{readingTime}</span>
-        <span>·</span>
-        <span>Master İç Mimarlık</span>
+        <!-- Title overlay -->
+        <div class="absolute bottom-0 left-0 right-0 pb-10 px-6">
+          <div class="max-w-6xl mx-auto">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="w-6 h-px bg-gold"></span>
+              <span class="text-[10px] tracking-[0.3em] uppercase text-gold font-medium">{tag}</span>
+            </div>
+            <h1 class="font-display text-3xl md:text-5xl font-bold text-white max-w-3xl leading-tight">{displayTitle}</h1>
+            <div class="flex items-center gap-4 mt-4 text-xs text-white/50">
+              <time datetime={publishDate}>{formattedDate}</time>
+              <span>·</span>
+              <span>{readingTime}</span>
+              <span>·</span>
+              <span>Master İç Mimarlık</span>
+            </div>
+          </div>
+        </div>
       </div>
+    ) : (
+      <!-- Fallback text header when no hero image -->
+      <div class="max-w-6xl mx-auto px-6 py-16">
+        <nav class="flex items-center gap-2 mb-8 text-sm flex-wrap" aria-label="Breadcrumb">
+          <a href={`${CANONICAL_BASE}/`} class="text-muted hover:text-gold transition-colors">Ana Sayfa</a>
+          <span class="text-border">/</span>
+          <a href={`${CANONICAL_BASE}/blog`} class="text-muted hover:text-gold transition-colors">Blog</a>
+          <span class="text-border">/</span>
+          <span class="text-charcoal">{displayTitle}</span>
+        </nav>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-8 h-px bg-gold"></span>
+          <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">{tag}</span>
+        </div>
+        <h1 class="font-display text-4xl md:text-5xl font-bold text-charcoal leading-tight mb-4 max-w-3xl">{displayTitle}</h1>
+        <div class="flex items-center gap-4 text-xs text-muted mb-4">
+          <time datetime={publishDate}>{formattedDate}</time>
+          <span>·</span>
+          <span>{readingTime}</span>
+          <span>·</span>
+          <span>Master İç Mimarlık</span>
+        </div>
+        <p class="text-muted text-lg leading-relaxed max-w-2xl">{description}</p>
+      </div>
+    )}
 
-      <h1 class="font-display text-4xl md:text-5xl font-bold text-charcoal leading-tight mb-6">{title.split('|')[0].trim()}</h1>
-      <p class="text-muted text-lg leading-relaxed">{description}</p>
+    <!-- Lead description (when hero is shown) -->
+    {heroImage && (
+      <div class="max-w-6xl mx-auto px-6 pt-10 pb-4">
+        <p class="text-muted text-lg leading-relaxed max-w-2xl">{description}</p>
+      </div>
+    )}
+
+    <!-- Main: article + sidebar -->
+    <div class="max-w-6xl mx-auto px-6 py-8 pb-16">
+      <div class="grid md:grid-cols-3 gap-12 items-start">
+
+        <!-- Article content -->
+        <article class="md:col-span-2 prose prose-charcoal max-w-none">
+          <slot />
+        </article>
+
+        <!-- Sidebar -->
+        <aside class="space-y-8 md:sticky md:top-28">
+
+          <!-- CTA card -->
+          <div class="bg-charcoal p-6 text-white">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="w-5 h-px bg-gold"></span>
+              <span class="text-[10px] tracking-[0.3em] uppercase text-gold font-medium">Ücretsiz Keşif</span>
+            </div>
+            <h3 class="font-display text-lg font-bold text-white mb-2 leading-snug">Projenizi Konuşalım</h3>
+            <p class="text-white/50 text-xs leading-relaxed mb-5">Ücretsiz keşif ve fiyat teklifi için WhatsApp'tan yazın.</p>
+            <a
+              href="https://wa.me/905330391565?text=Merhaba%2C%20proje%20hakk%C4%B1nda%20g%C3%B6r%C3%BC%C5%9Fmek%20istiyorum."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-center gap-2 bg-[#25D366] text-white px-4 py-3 text-xs font-semibold hover:bg-[#1EBD5A] transition-colors w-full mb-3"
+            >
+              <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              WhatsApp'tan Yaz
+            </a>
+            <a
+              href="tel:+905330391565"
+              class="flex items-center justify-center gap-2 bg-gold text-charcoal px-4 py-3 text-xs font-semibold hover:bg-[#B8965A] transition-colors w-full"
+            >
+              0533 039 15 65
+            </a>
+          </div>
+
+          <!-- Recent posts -->
+          <div>
+            <div class="flex items-center gap-2 mb-4">
+              <span class="w-5 h-px bg-gold"></span>
+              <span class="text-[10px] tracking-[0.3em] uppercase text-gold font-medium">İlgili Yazılar</span>
+            </div>
+            <ul class="space-y-4">
+              {relatedPosts.map(post => (
+                <li>
+                  <a href={`/deneme1/blog/${post.slug}`} class="group flex gap-3 items-start">
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      class="w-16 h-14 object-cover shrink-0 group-hover:opacity-80 transition-opacity"
+                    />
+                    <div>
+                      <p class="text-[10px] tracking-widest uppercase text-gold mb-1">{post.tag}</p>
+                      <p class="text-xs text-charcoal font-medium leading-snug group-hover:text-gold transition-colors line-clamp-2">{post.title.split('|')[0].trim()}</p>
+                      <p class="text-[10px] text-muted mt-1">{post.readingTime} okuma</p>
+                    </div>
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <a
+              href="/deneme1/blog"
+              class="mt-5 inline-flex items-center gap-1.5 text-xs text-gold hover:underline"
+            >
+              Tüm yazıları gör
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Stats -->
+          <div class="border border-border p-5">
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <p class="font-display text-2xl font-bold text-gold">150+</p>
+                <p class="text-muted text-[10px] tracking-wide mt-0.5">Tamamlanan Proje</p>
+              </div>
+              <div>
+                <p class="font-display text-2xl font-bold text-gold">8+</p>
+                <p class="text-muted text-[10px] tracking-wide mt-0.5">Yıllık Deneyim</p>
+              </div>
+              <div>
+                <p class="font-display text-2xl font-bold text-gold">5.0</p>
+                <p class="text-muted text-[10px] tracking-wide mt-0.5">Google Puan</p>
+              </div>
+              <div>
+                <p class="font-display text-2xl font-bold text-gold">200+</p>
+                <p class="text-muted text-[10px] tracking-wide mt-0.5">Mutlu Müşteri</p>
+              </div>
+            </div>
+          </div>
+
+        </aside>
+      </div>
     </div>
 
-    <!-- Article content -->
-    <article class="max-w-3xl mx-auto px-6 pb-16 prose prose-charcoal max-w-none">
-      <slot />
-    </article>
+    <!-- Related posts visual strip -->
+    <div class="border-t border-border py-16 bg-charcoal/3">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="flex items-center justify-between mb-8">
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-px bg-gold"></span>
+            <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Diğer Yazılar</span>
+          </div>
+          <a href="/deneme1/blog" class="text-xs text-muted hover:text-gold transition-colors tracking-wide">Tümünü Gör →</a>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          {relatedPosts.map(post => (
+            <a href={`/deneme1/blog/${post.slug}`} class="group block">
+              <div class="overflow-hidden mb-4">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div class="flex items-center gap-3 mb-2">
+                <span class="text-[10px] tracking-[0.25em] uppercase text-gold font-medium">{post.tag}</span>
+                <span class="text-border">·</span>
+                <time class="text-[10px] text-muted" datetime={post.date}>
+                  {new Date(post.date).toLocaleDateString('tr-TR', { month: 'short', year: 'numeric' })}
+                </time>
+              </div>
+              <h3 class="font-display text-base font-bold text-charcoal group-hover:text-gold transition-colors leading-snug mb-2">
+                {post.title.split('|')[0].trim()}
+              </h3>
+              <p class="text-muted text-xs leading-relaxed line-clamp-2">{post.excerpt}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
 
-    <!-- Article CTA -->
+    <!-- Bottom CTA -->
     <div class="bg-charcoal py-16">
       <div class="max-w-3xl mx-auto px-6 text-center">
-        <h2 class="font-display text-2xl font-bold text-white mb-3">Projenizi Konuşalım</h2>
-        <p class="text-white/50 mb-6 text-sm">Ücretsiz keşif randevusu için WhatsApp'tan yazın veya arayın.</p>
+        <div class="flex items-center justify-center gap-3 mb-4">
+          <span class="w-8 h-px bg-gold"></span>
+          <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Projenizi Konuşalım</span>
+          <span class="w-8 h-px bg-gold"></span>
+        </div>
+        <h2 class="font-display text-2xl font-bold text-white mb-3">Hayalinizdeki Mekânı Tasarlayalım</h2>
+        <p class="text-white/50 mb-6 text-sm max-w-md mx-auto">Ücretsiz keşif randevusu için WhatsApp'tan yazın veya arayın.</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="https://wa.me/905330391565?text=Merhaba%2C%20proje%20hakk%C4%B1nda%20g%C3%B6r%C3%BC%C5%9Fmek%20istiyorum."
@@ -154,5 +435,11 @@ const breadcrumbSchema = {
     font-style: italic;
     color: #787874;
     margin: 1.5rem 0;
+  }
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 </style>

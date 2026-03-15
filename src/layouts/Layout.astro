@@ -1,4 +1,5 @@
 ---
+import { SEO } from 'astro-seo';
 import { CANONICAL_BASE, OG_IMAGE, SITE_NAME, SITE_PHONE } from '../config';
 
 interface Props {
@@ -21,13 +22,43 @@ const {
 
 const canonical = canonicalUrl ?? `${CANONICAL_BASE}${Astro.url.pathname}`;
 
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${CANONICAL_BASE}/#website`,
+  "url": `${CANONICAL_BASE}/`,
+  "name": SITE_NAME,
+  "description": "İstanbul'da anahtar teslim ev yenileme, villa yenileme, mağaza ve ofis yenileme hizmetleri.",
+  "inLanguage": "tr-TR",
+  "publisher": { "@id": `${CANONICAL_BASE}/#organization` }
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${CANONICAL_BASE}/#organization`,
+  "name": SITE_NAME,
+  "url": `${CANONICAL_BASE}/`,
+  "logo": {
+    "@type": "ImageObject",
+    "url": `${CANONICAL_BASE}/favicon.png`,
+    "contentUrl": `${CANONICAL_BASE}/favicon.png`
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": SITE_PHONE,
+    "contactType": "customer service",
+    "availableLanguage": "Turkish"
+  }
+};
+
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "InteriorDesigner",
   "@id": `${CANONICAL_BASE}/#business`,
   "name": SITE_NAME,
   "url": `${CANONICAL_BASE}/`,
-  "logo": `${CANONICAL_BASE}/favicon.svg`,
+  "logo": `${CANONICAL_BASE}/favicon.png`,
   "image": OG_IMAGE,
   "description": "İstanbul'da anahtar teslim ev yenileme, villa yenileme, mağaza ve ofis yenileme hizmetleri.",
   "telephone": SITE_PHONE,
@@ -94,6 +125,8 @@ const localBusinessSchema = {
 };
 
 const allStructuredData = [
+  websiteSchema,
+  organizationSchema,
   localBusinessSchema,
   ...(structuredData ? (Array.isArray(structuredData) ? structuredData : [structuredData]) : [])
 ];
@@ -104,32 +137,46 @@ const allStructuredData = [
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <meta name="keywords" content="iç mimarlık istanbul, ev yenileme istanbul, villa yenileme, mağaza yenileme, ofis yenileme, anahtar teslim tadilat, dekorasyon istanbul, master iç mimarlık" />
-    <meta name="robots" content="index, follow" />
-    <meta name="author" content="Master İç Mimarlık" />
 
-    <!-- Canonical -->
-    <link rel="canonical" href={canonical} />
+    <SEO
+      title={title}
+      description={description}
+      canonical={canonical}
+      openGraph={{
+        basic: {
+          title: title,
+          type: ogType,
+          image: ogImage,
+          url: canonical,
+        },
+        optional: {
+          description: description,
+          locale: 'tr_TR',
+          siteName: SITE_NAME,
+        },
+        image: {
+          width: 1200,
+          height: 630,
+          alt: `${SITE_NAME} — İstanbul İç Mimarlık ve Ev Yenileme`,
+        },
+      }}
+      twitter={{
+        card: 'summary_large_image',
+        title: title,
+        description: description,
+        image: ogImage,
+      }}
+      extend={{
+        meta: [
+          { name: 'keywords', content: 'iç mimarlık istanbul, ev yenileme istanbul, villa yenileme, mağaza yenileme, ofis yenileme, anahtar teslim tadilat, dekorasyon istanbul, master iç mimarlık' },
+          { name: 'author', content: SITE_NAME },
+          { name: 'robots', content: 'index, follow' },
+        ],
+      }}
+    />
 
-    <!-- Open Graph -->
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:type" content={ogType} />
-    <meta property="og:locale" content="tr_TR" />
-    <meta property="og:url" content={canonical} />
-    <meta property="og:image" content={ogImage} />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Master İç Mimarlık — İstanbul İç Mimarlık ve Ev Yenileme" />
-    <meta property="og:site_name" content="Master İç Mimarlık" />
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={ogImage} />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/deneme1/favicon.png" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

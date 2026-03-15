@@ -8,19 +8,27 @@ const serviceSchema = {
   "serviceType": "İç Mimarlık Danışmanlığı",
   "name": "İç Mimarlık Danışmanlığı İstanbul",
   "description": "İstanbul'da iç mimarlık danışmanlığı hizmetleri. Malzeme seçimi, uygulama rehberliği ve bağımsız profesyonel görüş.",
-  "provider": {
-    "@type": "InteriorDesigner",
-    "@id": `${CANONICAL_BASE}/#business`,
-    "name": "Master İç Mimarlık"
-  },
+  "provider": { "@type": "Organization", "@id": `${CANONICAL_BASE}/#organization`, "name": "Master İç Mimarlık" },
   "areaServed": { "@type": "City", "name": "İstanbul" },
-  "url": `${CANONICAL_BASE}/hizmetler/ic-mimarlik-danismanligi`
+  "url": `${CANONICAL_BASE}/hizmetler/ic-mimarlik-danismanligi`,
+  "offers": { "@type": "Offer", "priceCurrency": "TRY", "description": "Proje kapsamı ve metrekareye göre esnek paketler", "availability": "https://schema.org/InStock" }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "İç mimarlık danışmanlığı ne içerir?", "acceptedAnswer": { "@type": "Answer", "text": "Mekan analizi, renk paleti ve stil danışmanlığı, malzeme seçimi, mobilya yerleşim planı, uygulama sürecinde yerinde denetim ve teslim öncesi punch-list incelemesi gibi hizmetleri kapsamaktadır." } },
+    { "@type": "Question", "name": "Kendi müteahhidimle çalışırken danışmanlık alabilir miyim?", "acceptedAnswer": { "@type": "Answer", "text": "Evet. Danışmanlık hizmeti özellikle kendi yüklenicilerinizle çalışıyor olup tasarım ve malzeme kararlarında uzman görüşü isteyenler için idealdir. Uygulama yönetimi olmaksızın yalnızca tasarım rehberliği sağlıyoruz." } },
+    { "@type": "Question", "name": "Tek seferlik danışmanlık oturumu alabilir miyim?", "acceptedAnswer": { "@type": "Answer", "text": "Evet. Tek seferlik danışmanlık oturumundan süreç boyunca rehberliğe kadar ihtiyacınıza özel esnek paketler sunuyoruz. Tek oturum danışmanlık için yaklaşık 1–2 saatlik bir görüşme yapılmaktadır." } },
+    { "@type": "Question", "name": "Danışmanlık hizmeti ne kadar ücretlidir?", "acceptedAnswer": { "@type": "Answer", "text": "Danışmanlık ücretleri proje kapsamına ve hizmet paketine göre belirlenir. Saatlik danışmanlık, paket danışmanlık veya süreç boyunca rehberlik seçenekleri mevcuttur. Kesin fiyat için iletişime geçebilirsiniz." } }
+  ]
 };
 ---
 
 <ServiceLayout
-  title="İç Mimarlık Danışmanlığı İstanbul | Master İç Mimarlık"
-  description="İstanbul'da iç mimarlık danışmanlığı. Kendi yenileme sürecinizde profesyonel görüş, malzeme seçimi ve uygulama rehberliği. 0533 039 15 65"
+  title="İç Mimarlık Danışmanlığı İstanbul — Uzman Rehberlik | Master İç Mimarlık"
+  description="İstanbul'da iç mimarlık danışmanlığı. Kendi yenileme sürecinizde profesyonel görüş, malzeme seçimi ve uygulama rehberliği. Esnek paketler. 0533 039 15 65"
   canonicalUrl={`${CANONICAL_BASE}/hizmetler/ic-mimarlik-danismanligi`}
   h1="İç Mimarlık Danışmanlığı"
   eyebrow="Hizmet"
@@ -30,9 +38,12 @@ const serviceSchema = {
     { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
     { label: "İç Mimarlık Danışmanlığı" }
   ]}
-  structuredData={serviceSchema}
+  heroImage="/deneme1/images/francesca-tosolini-XcVm8mn7NUM-unsplash.jpg"
+  ogImage={`${CANONICAL_BASE}/images/francesca-tosolini-XcVm8mn7NUM-unsplash.jpg`}
+  structuredData={[serviceSchema, faqSchema]}
 >
 
+  <!-- Scope -->
   <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
     <div>
       <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Danışmanlık Hizmetimiz</h2>
@@ -47,7 +58,7 @@ const serviceSchema = {
       </p>
     </div>
     <div>
-      <h3 class="font-semibold text-charcoal mb-4">Danışmanlık Kapsamı</h3>
+      <h3 class="font-semibold text-charcoal mb-4 text-xs uppercase tracking-wider">Danışmanlık Kapsamı</h3>
       <ul class="space-y-3">
         {[
           'Mekan analizi ve alan planlaması',
@@ -72,8 +83,12 @@ const serviceSchema = {
     </div>
   </div>
 
-  <div class="py-12">
-    <h2 class="font-display text-2xl font-bold text-charcoal mb-4">Ne Zaman Danışmanlık Seçilmeli?</h2>
+  <!-- When to choose -->
+  <div class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-8">
+      <span class="w-8 h-px bg-gold"></span>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Ne Zaman Danışmanlık Seçilmeli?</h2>
+    </div>
     <div class="grid md:grid-cols-3 gap-6">
       {[
         { title: 'Kısmi Proje', desc: 'Sadece tek bir oda veya belirli bir alanı yenileyecekseniz ve genel bir iç mimar tutmak istemiyorsanız.' },
@@ -81,9 +96,65 @@ const serviceSchema = {
         { title: 'İkinci Görüş', desc: 'Başka bir yerden aldığınız tasarım veya teklif için bağımsız bir uzman değerlendirmesi istiyorsunuz.' },
       ].map(card => (
         <div class="border border-border p-6">
-          <h3 class="font-semibold text-charcoal mb-2">{card.title}</h3>
-          <p class="text-muted text-sm leading-relaxed">{card.desc}</p>
+          <h3 class="font-semibold text-charcoal mb-2 text-sm">{card.title}</h3>
+          <p class="text-muted text-xs leading-relaxed">{card.desc}</p>
         </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Packages -->
+  <div class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-8">
+      <span class="w-8 h-px bg-gold"></span>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Danışmanlık Paketlerimiz</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      {[
+        { title: 'Tek Oturum', items: ['1–2 saatlik görüşme', 'Mekan değerlendirmesi', 'Malzeme ve renk önerileri', 'Yazılı özet rapor'], tag: 'Başlangıç' },
+        { title: 'Proje Paketi', items: ['Konsept tasarım', '3D taslak görseller', 'Malzeme seçim rehberi', 'Tedarikçi önerileri', 'E-posta desteği'], tag: 'Popüler' },
+        { title: 'Süreç Boyunca', items: ['Tüm proje danışmanlığı', 'Yerinde denetim ziyaretleri', 'Teslim öncesi kontrol', 'Sözleşme değerlendirmesi', 'WhatsApp desteği'], tag: 'Kapsamlı' },
+      ].map(pkg => (
+        <div class="border border-border p-6">
+          <p class="text-[10px] tracking-widest uppercase text-gold mb-2">{pkg.tag}</p>
+          <h3 class="font-display font-bold text-charcoal text-lg mb-4">{pkg.title}</h3>
+          <ul class="space-y-2">
+            {pkg.items.map(item => (
+              <li class="flex items-start gap-2 text-xs text-muted">
+                <svg class="w-3 h-3 text-gold mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="py-12">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="w-8 h-px bg-gold"></span>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Sık Sorulan Sorular</h2>
+    </div>
+    <div class="divide-y divide-border">
+      {[
+        { q: 'İç mimarlık danışmanlığı ne içerir?', a: 'Mekan analizi, renk paleti ve stil danışmanlığı, malzeme seçimi, mobilya yerleşim planı ve uygulama sürecinde yerinde denetim gibi hizmetleri kapsamaktadır.' },
+        { q: 'Kendi müteahhidimle çalışırken danışmanlık alabilir miyim?', a: 'Evet. Danışmanlık hizmeti özellikle kendi yüklenicilerinizle çalışıyor olup tasarım ve malzeme kararlarında uzman görüşü isteyenler için idealdir.' },
+        { q: 'Tek seferlik danışmanlık oturumu alabilir miyim?', a: 'Evet. Tek seferlik oturumdan süreç boyunca rehberliğe kadar ihtiyacınıza özel esnek paketler sunuyoruz.' },
+        { q: 'Danışmanlık hizmeti ne kadar ücretlidir?', a: 'Danışmanlık ücretleri proje kapsamına ve hizmet paketine göre belirlenir. Kesin fiyat için iletişime geçebilirsiniz.' },
+      ].map((faq, i) => (
+        <details class="group py-5" open={i === 0}>
+          <summary class="flex items-start justify-between cursor-pointer list-none gap-4">
+            <h3 class="font-semibold text-charcoal text-sm md:text-base group-open:text-gold transition-colors">{faq.q}</h3>
+            <svg class="shrink-0 w-5 h-5 text-gold mt-0.5 group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <p class="mt-3 text-muted text-sm leading-relaxed pr-8">{faq.a}</p>
+        </details>
       ))}
     </div>
   </div>

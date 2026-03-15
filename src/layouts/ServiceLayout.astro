@@ -14,9 +14,28 @@ interface Props {
   lead: string;
   breadcrumb: { label: string; href?: string }[];
   structuredData?: object | object[];
+  heroImage?: string;
+  ogImage?: string;
 }
 
-const { title, description, canonicalUrl, h1, eyebrow = 'Hizmetlerimiz', lead, breadcrumb, structuredData } = Astro.props;
+const {
+  title, description, canonicalUrl, h1,
+  eyebrow = 'Hizmetlerimiz', lead,
+  breadcrumb, structuredData,
+  heroImage, ogImage,
+} = Astro.props;
+
+const allServices = [
+  { title: 'Anahtar Teslim Ev Yenileme', slug: 'anahtar-teslim-ev-yenileme', desc: 'Tasarımdan uygulamaya tüm süreci biz yönetiyoruz.', image: '/deneme1/images/kara-eads-L7EwHkq1B2s-unsplash.jpg', keyword: 'En çok tercih edilen' },
+  { title: 'Villa Yenileme',              slug: 'villa-yenileme',              desc: 'Lüks villa projeleri için uçtan uca iç mimarlık.',  image: '/deneme1/images/hero-villa-sea.jpg', keyword: 'Zekeriyaköy · Acıbadem' },
+  { title: 'Mağaza Yenileme',             slug: 'magaza-yenileme',             desc: 'Markanızı yansıtan çarpıcı ticari mekanlar.',       image: '/deneme1/images/point3d-commercial-imaging-ltd-X_JXnSBKOO4-unsplash.jpg', keyword: 'Nişantaşı · Levent' },
+  { title: 'Ofis Yenileme',               slug: 'ofis-yenileme',               desc: 'Verimliliği artıran modern çalışma ortamları.',     image: '/deneme1/images/todd-kent-178j8tJrNlc-unsplash.jpg', keyword: 'Kurumsal mekan' },
+  { title: 'İç Mimarlık Danışmanlığı',    slug: 'ic-mimarlik-danismanligi',    desc: 'Uzman görüş, malzeme seçimi ve rehberlik.',         image: '/deneme1/images/francesca-tosolini-XcVm8mn7NUM-unsplash.jpg', keyword: 'Esnek paketler' },
+  { title: '3D Tasarım & Proje',          slug: '3d-tasarim',                  desc: 'Uygulamadan önce mekanınızı gerçekçi görselle görün.', image: '/deneme1/images/avi-werde-hHz4yrvxwlA-unsplash.jpg', keyword: 'Tüm projelerde standart' },
+];
+
+const currentSlug = canonicalUrl.split('/').pop() ?? '';
+const relatedServices = allServices.filter(s => s.slug !== currentSlug).slice(0, 3);
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -35,39 +54,79 @@ const allSchema = [
 ];
 ---
 
-<Layout title={title} description={description} canonicalUrl={canonicalUrl} structuredData={allSchema}>
+<Layout
+  title={title}
+  description={description}
+  canonicalUrl={canonicalUrl}
+  ogImage={ogImage ?? heroImage}
+  structuredData={allSchema}
+>
   <Header />
 
   <main class="pt-24 bg-warm-white min-h-screen">
 
-    <!-- Page hero -->
-    <div class="max-w-6xl mx-auto px-6 py-16">
+    <!-- Hero image (optional) -->
+    {heroImage && (
+      <div class="relative w-full h-[50vh] md:h-[60vh] overflow-hidden">
+        <img src={heroImage} alt={h1} class="w-full h-full object-cover object-center" />
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-transparent"></div>
 
-      <!-- Breadcrumb -->
-      <nav class="flex items-center gap-2 mb-8 text-sm flex-wrap" aria-label="Breadcrumb">
-        {breadcrumb.map((item, i) => (
-          <>
-            {i > 0 && <span class="text-border">/</span>}
-            {item.href
-              ? <a href={item.href} class="text-muted hover:text-gold transition-colors">{item.label}</a>
-              : <span class="text-charcoal">{item.label}</span>
-            }
-          </>
-        ))}
-      </nav>
+        <div class="absolute top-0 left-0 right-0 pt-28 px-6">
+          <div class="max-w-6xl mx-auto">
+            <nav class="flex items-center gap-2 text-sm flex-wrap" aria-label="Breadcrumb">
+              {breadcrumb.map((item, i) => (
+                <>
+                  {i > 0 && <span class="text-white/20">/</span>}
+                  {item.href
+                    ? <a href={item.href} class="text-white/50 hover:text-gold transition-colors">{item.label}</a>
+                    : <span class="text-white/70">{item.label}</span>
+                  }
+                </>
+              ))}
+            </nav>
+          </div>
+        </div>
+
+        <div class="absolute bottom-0 left-0 right-0 pb-12 px-6">
+          <div class="max-w-6xl mx-auto">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="w-6 h-px bg-gold"></span>
+              <span class="text-[10px] tracking-[0.3em] uppercase text-gold font-medium">{eyebrow}</span>
+            </div>
+            <h1 class="font-display text-3xl md:text-5xl font-bold text-white max-w-3xl leading-tight">{h1}</h1>
+          </div>
+        </div>
+      </div>
+    )}
+
+    <!-- Lead + CTA + Stats -->
+    <div class="max-w-6xl mx-auto px-6 py-12">
+      {!heroImage && (
+        <nav class="flex items-center gap-2 mb-8 text-sm flex-wrap" aria-label="Breadcrumb">
+          {breadcrumb.map((item, i) => (
+            <>
+              {i > 0 && <span class="text-border">/</span>}
+              {item.href
+                ? <a href={item.href} class="text-muted hover:text-gold transition-colors">{item.label}</a>
+                : <span class="text-charcoal">{item.label}</span>
+              }
+            </>
+          ))}
+        </nav>
+      )}
 
       <div class="grid md:grid-cols-2 gap-12 items-start">
         <div>
-          <div class="flex items-center gap-3 mb-4">
-            <span class="w-8 h-px bg-gold"></span>
-            <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">{eyebrow}</span>
-          </div>
-          <h1 class="font-display text-4xl md:text-5xl font-bold text-charcoal leading-tight mb-6">
-            {h1}
-          </h1>
+          {!heroImage && (
+            <>
+              <div class="flex items-center gap-3 mb-4">
+                <span class="w-8 h-px bg-gold"></span>
+                <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">{eyebrow}</span>
+              </div>
+              <h1 class="font-display text-4xl md:text-5xl font-bold text-charcoal leading-tight mb-6">{h1}</h1>
+            </>
+          )}
           <p class="text-muted leading-relaxed text-lg mb-8 max-w-lg">{lead}</p>
-
-          <!-- CTA buttons -->
           <div class="flex flex-col sm:flex-row gap-4">
             <a
               href="https://wa.me/905330391565?text=Merhaba%2C%20hizmet%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
@@ -89,7 +148,6 @@ const allSchema = [
           </div>
         </div>
 
-        <!-- Stats card -->
         <div class="bg-charcoal p-8 text-white">
           <div class="grid grid-cols-2 gap-6">
             <div>
@@ -116,15 +174,47 @@ const allSchema = [
       </div>
     </div>
 
-    <!-- Main content slot -->
+    <!-- Page-specific content slot -->
     <div class="max-w-6xl mx-auto px-6 pb-16">
       <slot />
+    </div>
+
+    <!-- Related services -->
+    <div class="border-t border-border py-16">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="flex items-center justify-between mb-8">
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-px bg-gold"></span>
+            <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Diğer Hizmetler</span>
+          </div>
+          <a href="/deneme1/hizmetler" class="text-xs text-muted hover:text-gold transition-colors">Tümünü Gör →</a>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          {relatedServices.map(s => (
+            <a href={`/deneme1/hizmetler/${s.slug}`} class="group block border border-border hover:border-gold transition-colors duration-200">
+              <div class="overflow-hidden">
+                <img src={s.image} alt={s.title} class="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div class="p-5">
+                <p class="text-[10px] tracking-[0.25em] uppercase text-gold mb-2">{s.keyword}</p>
+                <h3 class="font-display text-base font-bold text-charcoal group-hover:text-gold transition-colors mb-1">{s.title}</h3>
+                <p class="text-muted text-xs leading-relaxed">{s.desc}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
     </div>
 
     <!-- Final CTA -->
     <div class="bg-charcoal py-20">
       <div class="max-w-4xl mx-auto px-6 text-center">
-        <h2 class="font-display text-3xl font-bold text-white mb-4">Projenizi Konuşalım</h2>
+        <div class="flex items-center justify-center gap-3 mb-4">
+          <span class="w-8 h-px bg-gold"></span>
+          <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Projenizi Konuşalım</span>
+          <span class="w-8 h-px bg-gold"></span>
+        </div>
+        <h2 class="font-display text-3xl font-bold text-white mb-4">Hayalinizdeki Mekânı Birlikte Tasarlayalım</h2>
         <p class="text-white/50 mb-8 max-w-lg mx-auto">Ücretsiz keşif ve fiyat teklifi için WhatsApp'tan yazın ya da arayın. En kısa sürede size dönüyoruz.</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a

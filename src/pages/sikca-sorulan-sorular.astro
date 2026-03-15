@@ -5,45 +5,204 @@ import Footer from '../components/Footer.astro';
 import WhatsAppFloat from '../components/WhatsAppFloat.astro';
 import { CANONICAL_BASE } from '../config';
 
-const faqs = [
+const categories = [
   {
-    question: 'İç mimarlık hizmeti ne kadar sürer?',
-    answer: 'Projenin büyüklüğüne ve kapsamına göre değişmekle birlikte, standart bir daire yenilemesi 4–8 hafta, villa yenilemesi 8–16 hafta sürmektedir. Anahtar teslim projelerimizde başlangıçta belirlenen süreye uyumu taahhüt ediyoruz. Proje başlamadan önce kesin takvim belirlenir ve müşterimizle paylaşılır.',
+    id: 'surec',
+    label: 'Süreç & Tasarım',
+    icon: '◇',
+    faqs: [
+      {
+        question: 'Anahtar teslim iç mimarlık süreci nasıl işler?',
+        answer: 'Süreç beş adımda ilerler: (1) Ücretsiz keşif — mekanınızı yerinde görüyor, ihtiyaç ve bütçenizi dinliyoruz. (2) Teklif ve sözleşme — net kapsam, bütçe ve takvim içeren yazılı teklif sunuyoruz. (3) 3D tasarım onayı — gerçekçi görsellerle mekanınızı uygulamadan önce deneyimliyorsunuz. (4) Uygulama — tüm usta ekiplerini koordineli yönetiyoruz, sizi güncel tutuyoruz. (5) Teslim — final temizliği tamamlanmış, eksiksiz hazır mekanınızı teslim alırsınız.',
+      },
+      {
+        question: 'İç mimarlık hizmeti ne kadar sürer?',
+        answer: 'Projenin büyüklüğüne ve kapsamına göre değişmekle birlikte, standart bir daire yenilemesi 4–8 hafta, villa yenilemesi 8–16 hafta sürmektedir. Anahtar teslim projelerimizde başlangıçta belirlenen süreye uyumu taahhüt ediyoruz. Proje başlamadan önce kesin takvim belirlenir ve müşterimizle paylaşılır.',
+      },
+      {
+        question: '3D tasarım ve görselleştirme hizmeti veriyor musunuz?',
+        answer: 'Evet. Uygulamaya başlamadan önce mekanınızı gerçekçi 3D görseller ile deneyimleyebilirsiniz. Malzeme, renk ve mobilya seçimlerini dijital ortamda test ederek onaylarsınız; sürprizle karşılaşmazsınız. 3D tasarım hizmeti anahtar teslim paketlerimizde standarttır ve ek ücret alınmaz.',
+      },
+      {
+        question: 'Projemde yapısal değişiklik (duvar yıkımı) yapılabilir mi?',
+        answer: 'Evet. Gerekli izinlerin alınması dahil yapısal değişiklikleri yönetiyoruz. Duvar yıkımı, oda birleştirme veya bölme gibi işlemler öncesinde yapısal analiz yapılır, mimari proje hazırlanır ve gerekiyorsa belediye izni alınır. Tüm bürokratik süreçleri sizin adınıza takip ediyoruz.',
+      },
+      {
+        question: 'Projemde olmadan süreç ilerleyebilir mi? (Yurt dışı / şehir dışı)',
+        answer: 'Evet. Birçok müşterimiz proje süresince İstanbul dışındadır. Düzenli fotoğraf ve video ilerleme raporları, video görüşmeleri ve anlık WhatsApp güncellemeleriyle süreci uzaktan rahatlıkla takip edebilirsiniz. Yerinde olmanız gerektiğinde sizi zamanında bilgilendiriyoruz.',
+      },
+    ],
   },
   {
-    question: 'Anahtar teslim ev yenileme maliyeti nedir?',
-    answer: 'İstanbul\'da anahtar teslim ev yenileme maliyeti metrekare başına yaklaşık 3.000 ₺ ile 8.000 ₺ arasında değişmektedir. Fiyat; mevcut yapı durumu, seçilen malzemelerin kalitesi, dairenin büyüklüğü ve lokasyon gibi faktörlere göre şekillenir. Kesin fiyat için ücretsiz keşif randevusu alabilirsiniz — bizim için gizli maliyet yoktur.',
+    id: 'maliyet',
+    label: 'Maliyet & Ödeme',
+    icon: '◈',
+    faqs: [
+      {
+        question: 'Anahtar teslim ev yenileme maliyeti nedir?',
+        answer: 'İstanbul\'da anahtar teslim ev yenileme maliyeti metrekare başına yaklaşık 3.000 ₺ ile 8.000 ₺ arasında değişmektedir. Fiyat; mevcut yapı durumu, seçilen malzemelerin kalitesi, dairenin büyüklüğü ve lokasyon gibi faktörlere göre şekillenir. Kesin fiyat için ücretsiz keşif randevusu alabilirsiniz — bizim için gizli maliyet yoktur.',
+      },
+      {
+        question: 'Ödeme planı nasıl çalışıyor?',
+        answer: 'Güvenilir bir tadilat sürecinde tüm ödeme başlangıçta talep edilmez. Genel uygulamamız şu şekildedir: %30 sözleşme imzalanırken, %40 uygulama orta aşamasında, %30 teslim sonrasında. Bu yapı hem müşterimizi korur hem de proje süresince karşılıklı güveni sürdürür. Kesin ödeme planı sözleşmede yazılı olarak belirlenir.',
+      },
+      {
+        question: 'Gizli maliyet veya sürpriz ek faturalar çıkar mı?',
+        answer: 'Hayır. Sözleşmede belirlenen kapsam ve bütçe dışına çıkılmaz. Uygulama sürecinde beklenmedik bir yapısal sorun ortaya çıkarsa (örneğin gizli su hasarı) sizi derhal bilgilendiriyor, yazılı onayınız olmadan ek iş yapmıyoruz. Şeffaf çalışma prensibimiz, müşterilerimizin en çok değer verdiği özelliklerimizden biridir.',
+      },
+      {
+        question: 'Sadece tasarım (danışmanlık) hizmeti alabilir miyim?',
+        answer: 'Evet. Uygulamayı kendiniz yönetmek istiyorsanız yalnızca iç mimari proje ve 3D görselleştirme hizmeti alabilirsiniz. Bu kapsamda konsept tasarım, teknik çizimler, malzeme listesi ve tedarikçi tavsiyeleri sunulur. Fiyatlandırma proje kapsamına ve metrekareye göre belirlenir.',
+      },
+    ],
   },
   {
-    question: 'Hizmet bölgeniz neresi?',
-    answer: 'Ana hizmet bölgemiz İstanbul\'dur. Beşiktaş, Kadıköy, Levent, Nişantaşı, Zekeriyaköy, Ataşehir, Acıbadem, Şişli, Sarıyer, Üsküdar, Bakırköy ve diğer tüm İstanbul ilçelerine hizmet veriyoruz. Büyük ölçekli projelerde İstanbul dışına da çıkıyoruz.',
+    id: 'hizmetler',
+    label: 'Hizmetler',
+    icon: '◉',
+    faqs: [
+      {
+        question: 'Hangi hizmetleri sunuyorsunuz?',
+        answer: 'Daire iç mimarlığı ve yenileme, villa tadilat ve tasarım, ofis iç mimarlığı, mutfak ve banyo yenileme, anahtar teslim tadilat ve 3D görselleştirme hizmetleri sunuyoruz. Tasarımdan uygulamaya, malzeme seçiminden şantiye yönetimine kadar tüm süreçleri tek çatı altında yönetiyoruz.',
+      },
+      {
+        question: 'Villa yenileme ile daire yenileme arasındaki fark nedir?',
+        answer: 'Villa yenileme projeleri genellikle daha büyük alanlı (250–800 m²), bahçe ve dış cephe düzenlemesini de kapsayan, daha uzun süreli ve daha kapsamlı çalışmalardır. Yapısal müdahale, ruhsat süreçleri ve dış mekan koordinasyonu gibi ek uzmanlık gerektiren konular villa projelerinde öne çıkar. Daire yenilemesi ise genellikle iç mekanla sınırlı, daha hızlı tamamlanan projelerdir.',
+      },
+      {
+        question: 'Kullandığınız malzemelerin kalitesi nedir?',
+        answer: 'Müşterilerimizin bütçesine ve tercihine göre farklı kalite segmentlerinde malzeme seçenekleri sunuyoruz. Orta segment, üst segment ve lüks segment için anlaşmalı tedarikçilerle çalışıyoruz. Malzeme seçimi sürecine müşterimizi dahil ediyoruz — hangi markanın kullanıldığını her zaman bilirsiniz. Uygulamada kullanılan tüm malzemeler sözleşmede belirtilir.',
+      },
+      {
+        question: 'İşin garantisi var mı?',
+        answer: 'Evet. Tamamladığımız projelerde işçilik kalitesi için garanti sunuyoruz. Garanti kapsamı ve süresi sözleşmede yazılı olarak belirlenir. Teslimden sonra ortaya çıkabilecek işçilik kaynaklı sorunlarda ekibimiz müdahale eder. Kullanılan malzemelerin üretici garantileri de ayrıca geçerlidir.',
+      },
+    ],
   },
   {
-    question: 'Sadece tasarım mı yapıyorsunuz, uygulama da var mı?',
-    answer: 'Tasarımdan uygulamaya tüm süreçleri kapsayan hizmet sunuyoruz. İç mimari proje, 3D görselleştirme, malzeme seçimi, tedarik ve şantiye yönetimi dahil anahtar teslim çalışıyoruz. Tek bir muhatap, tam sorumluluk anlayışıyla — işin başından sonuna siz sadece anahtarı teslim alırsınız.',
-  },
-  {
-    question: '3D tasarım hizmeti veriyor musunuz?',
-    answer: 'Evet. Uygulamaya başlamadan önce mekanınızı gerçekçi 3D görseller ile deneyimleyebilirsiniz. Bu sayede malzeme ve renk seçimlerini somut olarak görerek onaylarsınız; beklenmedik sürprizlerle karşılaşmazsınız. 3D tasarım hizmeti anahtar teslim paketlerimizde standarttır.',
-  },
-  {
-    question: 'Villa yenileme ile daire yenileme arasındaki fark nedir?',
-    answer: 'Villa yenileme projeleri genellikle daha büyük alanlı, bahçe ve dış cephe düzenlemesini de kapsayan, daha uzun süreli ve daha kapsamlı çalışmalardır. Yapısal müdahale gerektiren projeler de dahil olmak üzere iç ve dış tüm mekanlar için tasarım ve uygulama sunuyoruz. Daire yenilemesi ise genellikle iç mekanla sınırlı, daha hızlı tamamlanan projelerdir.',
-  },
-  {
-    question: 'Ücretsiz keşif nasıl alırım?',
-    answer: '0533 039 15 65 numaralı telefonu arayarak veya WhatsApp\'tan yazarak ücretsiz keşif randevusu alabilirsiniz. Hafta içi 09:00–19:00, Cumartesi 10:00–17:00 saatleri arasında dönüş yapıyoruz. Keşif ziyaretinde projenizi yerinde değerlendirip tahmini bütçe ve süre bilgisi paylaşıyoruz.',
-  },
-  {
-    question: 'Kullandığınız malzemelerin kalitesi nedir?',
-    answer: 'Müşterilerimizin bütçesine ve tercihine göre farklı kalite segmentlerinde malzeme seçenekleri sunuyoruz. Orta segment, üst segment ve lüks segment malzemeler için anlaşmalı tedarikçilerle çalışıyoruz. Malzeme seçimi sürecine müşterimizi dahil ediyoruz — siz neyin kullanıldığını her zaman bilirsiniz.',
+    id: 'bolge',
+    label: 'Bölge & İletişim',
+    icon: '◎',
+    faqs: [
+      {
+        question: 'Hizmet bölgeniz neresi?',
+        answer: 'Ana hizmet bölgemiz İstanbul\'dur. Beşiktaş, Kadıköy, Levent, Nişantaşı, Zekeriyaköy, Ataşehir, Acıbadem, Şişli, Sarıyer, Üsküdar, Bakırköy, Maltepe ve diğer tüm İstanbul ilçelerine hizmet veriyoruz. Büyük ölçekli projelerde İstanbul dışına da çıkıyoruz.',
+      },
+      {
+        question: 'Ücretsiz keşif nasıl alırım?',
+        answer: '0533 039 15 65 numaralı telefonu arayarak veya WhatsApp\'tan yazarak ücretsiz keşif randevusu alabilirsiniz. Hafta içi 09:00–19:00, Cumartesi 10:00–17:00 saatleri arasında dönüş yapıyoruz. Keşif ziyaretinde projenizi yerinde değerlendirip tahmini bütçe ve süre bilgisi paylaşıyoruz.',
+      },
+      {
+        question: 'Keşif ziyareti ücretsiz mi, bir yükümlülük doğuruyor mu?',
+        answer: 'Keşif ziyareti tamamen ücretsizdir ve herhangi bir yükümlülük doğurmaz. Ziyaret sonrasında hazırlanan teklifi inceleyip karar verme süresi tamamen size aittir. Keşif amacımız projenizi yerinde görmek ve size doğru bir bütçe ve takvim bilgisi sunmaktır.',
+      },
+      {
+        question: 'Referans projelerinizi görebilir miyim?',
+        answer: 'Evet. Tamamladığımız projeleri web sitemizin Projeler bölümünde inceleyebilirsiniz. Ayrıca Instagram hesabımızda güncel proje fotoğrafları ve videolarını takip edebilirsiniz. Keşif görüşmesinde talep etmeniz halinde size özel proje dosyaları da paylaşılabilir.',
+      },
+    ],
   },
 ];
+
+// Flatten for schema
+const allFaqs = categories.flatMap(c => c.faqs);
+
+// ── LD+JSON Schemas ─────────────────────────────────────────────────────────
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${CANONICAL_BASE}/#organization`,
+  "name": "Master İç Mimarlık",
+  "url": CANONICAL_BASE,
+  "logo": {
+    "@type": "ImageObject",
+    "url": `${CANONICAL_BASE}/favicon.png`
+  },
+  "telephone": "+905330391565",
+  "email": "info@mastericmimarlik.com",
+  "sameAs": [
+    "https://wa.me/905330391565"
+  ]
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
+  "@id": `${CANONICAL_BASE}/#localbusiness`,
+  "name": "Master İç Mimarlık",
+  "description": "İstanbul'da anahtar teslim iç mimarlık, daire ve villa yenileme hizmetleri. 8+ yıl deneyim, 150+ tamamlanan proje.",
+  "url": CANONICAL_BASE,
+  "telephone": "+905330391565",
+  "priceRange": "₺₺₺",
+  "image": `${CANONICAL_BASE}/og-image.png`,
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "İstanbul",
+    "addressCountry": "TR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "41.0082",
+    "longitude": "28.9784"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "İstanbul" },
+    { "@type": "AdministrativeArea", "name": "Beşiktaş" },
+    { "@type": "AdministrativeArea", "name": "Kadıköy" },
+    { "@type": "AdministrativeArea", "name": "Levent" },
+    { "@type": "AdministrativeArea", "name": "Nişantaşı" },
+    { "@type": "AdministrativeArea", "name": "Zekeriyaköy" },
+    { "@type": "AdministrativeArea", "name": "Ataşehir" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "İç Mimarlık Hizmetleri",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Daire İç Mimarlığı ve Yenileme" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Villa Tadilat ve Tasarım" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Anahtar Teslim Tadilat" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mutfak ve Banyo Yenileme" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "3D İç Mimarlık Görselleştirme" } }
+    ]
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "47",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "19:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday"],
+      "opens": "10:00",
+      "closes": "17:00"
+    }
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+905330391565",
+    "contactType": "customer service",
+    "availableLanguage": "Turkish",
+    "contactOption": "TollFree"
+  }
+};
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": faqs.map(faq => ({
+  "url": `${CANONICAL_BASE}/sikca-sorulan-sorular`,
+  "name": "Master İç Mimarlık — Sıkça Sorulan Sorular",
+  "description": "İstanbul iç mimarlık, ev yenileme ve anahtar teslim tadilat hakkında sıkça sorulan sorular ve yanıtları.",
+  "mainEntity": allFaqs.map(faq => ({
     "@type": "Question",
     "name": faq.question,
     "acceptedAnswer": {
@@ -61,20 +220,34 @@ const breadcrumbSchema = {
     { "@type": "ListItem", "position": 2, "name": "Sıkça Sorulan Sorular", "item": `${CANONICAL_BASE}/sikca-sorulan-sorular` }
   ]
 };
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${CANONICAL_BASE}/sikca-sorulan-sorular#webpage`,
+  "url": `${CANONICAL_BASE}/sikca-sorulan-sorular`,
+  "name": "Sıkça Sorulan Sorular | Master İç Mimarlık İstanbul",
+  "description": "İstanbul iç mimarlık, ev yenileme maliyetleri, anahtar teslim tadilat süreci ve daha fazlası hakkında sık sorulan sorular.",
+  "isPartOf": { "@id": `${CANONICAL_BASE}/#website` },
+  "about": { "@id": `${CANONICAL_BASE}/#organization` },
+  "breadcrumb": { "@id": `${CANONICAL_BASE}/sikca-sorulan-sorular#breadcrumb` },
+  "inLanguage": "tr-TR"
+};
 ---
 
 <Layout
-  title="Sıkça Sorulan Sorular | Master İç Mimarlık İstanbul"
-  description="İstanbul'da iç mimarlık, ev yenileme ve anahtar teslim tadilat hakkında merak ettiğiniz her şey. Master İç Mimarlık sıkça sorulan sorular."
+  title="Sıkça Sorulan Sorular — İç Mimarlık & Ev Yenileme | Master İç Mimarlık İstanbul"
+  description="İstanbul'da iç mimarlık, anahtar teslim ev yenileme maliyetleri, tadilat süreci ve hizmet bölgesi hakkında en çok sorulan sorular. Master İç Mimarlık — 8+ yıl deneyim, 150+ proje."
   canonicalUrl={`${CANONICAL_BASE}/sikca-sorulan-sorular`}
-  structuredData={[faqSchema, breadcrumbSchema]}
+  ogImage={`${CANONICAL_BASE}/og-image.png`}
+  structuredData={[organizationSchema, localBusinessSchema, faqSchema, breadcrumbSchema, webPageSchema]}
 >
   <Header />
 
   <main class="pt-24 bg-warm-white min-h-screen">
 
     <!-- Page header -->
-    <div class="max-w-4xl mx-auto px-6 py-16">
+    <div class="max-w-5xl mx-auto px-6 py-16">
 
       <!-- Breadcrumb -->
       <nav class="flex items-center gap-2 mb-8 text-sm" aria-label="Breadcrumb">
@@ -91,50 +264,123 @@ const breadcrumbSchema = {
         Sıkça Sorulan<br />
         <em class="not-italic text-gold">Sorular</em>
       </h1>
-      <p class="text-muted leading-relaxed max-w-xl">
-        İç mimarlık hizmetlerimiz, ev yenileme süreci, maliyetler ve çalışma bölgemiz hakkında en çok sorulan soruların yanıtları.
+      <p class="text-muted leading-relaxed max-w-xl mb-10">
+        İç mimarlık, ev yenileme maliyetleri, anahtar teslim tadilat süreci ve daha fazlası. Cevabını bulamazsanız <a href="https://wa.me/905330391565" class="text-gold hover:underline">WhatsApp'tan yazın</a>.
       </p>
+
+      <!-- Category pills -->
+      <div class="flex flex-wrap gap-2">
+        {categories.map(cat => (
+          <a
+            href={`#${cat.id}`}
+            class="inline-flex items-center gap-2 border border-border px-4 py-2 text-xs tracking-wide text-muted hover:border-gold hover:text-gold transition-colors"
+          >
+            <span class="text-gold">{cat.icon}</span>
+            {cat.label}
+          </a>
+        ))}
+      </div>
     </div>
 
-    <!-- FAQ accordion -->
-    <div class="max-w-4xl mx-auto px-6 pb-24">
-      <div class="divide-y divide-border">
-        {faqs.map((faq, i) => (
-          <details class="group py-6" open={i === 0}>
-            <summary class="flex items-center justify-between cursor-pointer list-none gap-4">
-              <h2 class="font-semibold text-charcoal text-base md:text-lg group-open:text-gold transition-colors">{faq.question}</h2>
-              <svg class="shrink-0 w-5 h-5 text-gold group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-              </svg>
-            </summary>
-            <p class="mt-4 text-muted leading-relaxed pr-8">{faq.answer}</p>
-          </details>
+    <!-- FAQ categories -->
+    <div class="max-w-5xl mx-auto px-6 pb-24 space-y-16">
+
+      {categories.map((cat) => (
+        <section id={cat.id} aria-labelledby={`heading-${cat.id}`}>
+
+          <!-- Category header -->
+          <div class="flex items-center gap-4 mb-8 pb-4 border-b border-border">
+            <span class="text-2xl text-gold">{cat.icon}</span>
+            <h2 id={`heading-${cat.id}`} class="font-display text-xl font-bold text-charcoal">{cat.label}</h2>
+            <span class="ml-auto text-xs text-muted">{cat.faqs.length} soru</span>
+          </div>
+
+          <!-- Questions -->
+          <div class="divide-y divide-border">
+            {cat.faqs.map((faq, i) => (
+              <details class="group py-6" open={i === 0 && cat.id === 'surec'}>
+                <summary class="flex items-start justify-between cursor-pointer list-none gap-6">
+                  <h3 class="font-semibold text-charcoal text-base md:text-lg group-open:text-gold transition-colors leading-snug">{faq.question}</h3>
+                  <svg class="shrink-0 w-5 h-5 text-gold mt-0.5 group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </summary>
+                <p class="mt-4 text-muted leading-relaxed pr-8 text-sm md:text-base">{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+      ))}
+
+      <!-- Stats strip -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-border border border-border">
+        {[
+          { value: '150+', label: 'Tamamlanan Proje' },
+          { value: '8+',   label: 'Yıllık Deneyim' },
+          { value: '5.0',  label: 'Google Puanı' },
+          { value: '0 ₺',  label: 'Keşif Ücreti' },
+        ].map(stat => (
+          <div class="bg-warm-white p-6 text-center">
+            <p class="font-display text-3xl font-bold text-gold mb-1">{stat.value}</p>
+            <p class="text-muted text-xs tracking-wide">{stat.label}</p>
+          </div>
         ))}
       </div>
 
       <!-- CTA -->
-      <div class="mt-16 p-8 bg-charcoal text-center">
-        <h2 class="font-display text-2xl font-bold text-white mb-2">Sorunuz burada yok mu?</h2>
-        <p class="text-white/50 text-sm mb-6">WhatsApp veya telefonla doğrudan ulaşın — hızlıca yanıt verelim.</p>
+      <div class="p-8 md:p-12 bg-charcoal text-center">
+        <div class="flex items-center justify-center gap-3 mb-4">
+          <span class="w-8 h-px bg-gold"></span>
+          <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Hızlı İletişim</span>
+          <span class="w-8 h-px bg-gold"></span>
+        </div>
+        <h2 class="font-display text-2xl md:text-3xl font-bold text-white mb-3">Sorunuz burada yok mu?</h2>
+        <p class="text-white/50 text-sm mb-8 max-w-md mx-auto">WhatsApp veya telefon ile doğrudan ulaşın, uzmanlarımız hızlıca yanıt versin.</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="https://wa.me/905330391565?text=Merhaba%2C%20bir%20sorum%20var."
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center justify-center gap-3 bg-[#25D366] text-white px-8 py-3 text-sm font-semibold hover:bg-[#1EBD5A] transition-colors"
+            class="inline-flex items-center justify-center gap-3 bg-[#25D366] text-white px-10 py-4 text-sm font-semibold hover:bg-[#1EBD5A] transition-colors"
           >
+            <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
             WhatsApp'tan Yaz
           </a>
           <a
             href="tel:+905330391565"
-            class="inline-flex items-center justify-center gap-3 bg-gold text-charcoal px-8 py-3 text-sm font-semibold hover:bg-[#B8965A] transition-colors"
+            class="inline-flex items-center justify-center gap-3 bg-gold text-charcoal px-10 py-4 text-sm font-semibold hover:bg-[#B8965A] transition-colors"
           >
             0533 039 15 65
           </a>
         </div>
       </div>
-    </div>
 
+      <!-- Related links -->
+      <div>
+        <div class="flex items-center gap-3 mb-6">
+          <span class="w-8 h-px bg-gold"></span>
+          <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">İlgili Sayfalar</span>
+        </div>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {[
+            { label: 'Hizmetlerimiz',        href: '/deneme1/hizmetler',                   desc: 'Tüm iç mimarlık hizmetleri' },
+            { label: 'Projelerimiz',          href: '/deneme1/projeler',                    desc: 'Tamamlanan proje portföyü' },
+            { label: 'Blog',                  href: '/deneme1/blog',                        desc: 'Rehber içerikler ve trendler' },
+            { label: 'Anahtar Teslim Tadilat', href: '/deneme1/hizmetler/anahtar-teslim-tadilat', desc: 'Süreç ve kapsam detayı' },
+            { label: 'Daire Yenileme',        href: '/deneme1/hizmetler/daire-yenileme',   desc: 'Daire projeleri ve maliyetler' },
+            { label: 'Villa Yenileme',        href: '/deneme1/hizmetler/villa-yenileme',   desc: 'Villa tadilat rehberi' },
+          ].map(link => (
+            <a href={link.href} class="group block border border-border p-5 hover:border-gold transition-colors">
+              <p class="font-semibold text-charcoal text-sm group-hover:text-gold transition-colors mb-1">{link.label}</p>
+              <p class="text-muted text-xs">{link.desc}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+
+    </div>
   </main>
 
   <Footer />

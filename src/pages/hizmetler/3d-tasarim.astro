@@ -8,31 +8,42 @@ const serviceSchema = {
   "serviceType": "3D Tasarım ve İç Mimarlık Projesi",
   "name": "İç Mimarlık 3D Tasarım İstanbul",
   "description": "İstanbul'da iç mimarlık 3D görselleştirme ve mimari proje hizmetleri. Uygulamadan önce mekanınızı gerçekçi 3D görseller ile deneyimleyin.",
-  "provider": {
-    "@type": "InteriorDesigner",
-    "@id": `${CANONICAL_BASE}/#business`,
-    "name": "Master İç Mimarlık"
-  },
+  "provider": { "@type": "Organization", "@id": `${CANONICAL_BASE}/#organization`, "name": "Master İç Mimarlık" },
   "areaServed": { "@type": "City", "name": "İstanbul" },
-  "url": `${CANONICAL_BASE}/hizmetler/3d-tasarim`
+  "url": `${CANONICAL_BASE}/hizmetler/3d-tasarim`,
+  "offers": { "@type": "Offer", "priceCurrency": "TRY", "description": "3D tasarım ve görselleştirme paketi — anahtar teslim projelerinde standarttır", "availability": "https://schema.org/InStock" }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "3D tasarım anahtar teslim pakete dahil mi?", "acceptedAnswer": { "@type": "Answer", "text": "Evet. 3D tasarım ve görselleştirme hizmeti tüm anahtar teslim projelerimizde standarttır ve ek ücret alınmaz." } },
+    { "@type": "Question", "name": "Sadece 3D tasarım hizmeti alabilir miyim?", "acceptedAnswer": { "@type": "Answer", "text": "Evet. Uygulamayı kendiniz yönetmek istiyorsanız yalnızca 3D tasarım ve görselleştirme paketi alabilirsiniz. Bu kapsamda konsept tasarım, fotorealistik render görseller ve teknik çizimler sağlanır." } },
+    { "@type": "Question", "name": "Kaç revizyon hakkım var?", "acceptedAnswer": { "@type": "Answer", "text": "Standart paketlerimizde belirli sayıda revizyon hakkı tanınmaktadır. Revizyon sayısı ve kapsamı sözleşmede belirtilir." } },
+    { "@type": "Question", "name": "3D tasarım ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Projenin büyüklüğüne ve karmaşıklığına göre ilk konsept tasarımlar genellikle 1–2 hafta içinde teslim edilir. Revizyon süreleri ekstra değildir." } }
+  ]
 };
 ---
 
 <ServiceLayout
-  title="3D Tasarım ve İç Mimarlık Projesi İstanbul | Master"
-  description="İstanbul'da iç mimarlık 3D tasarım ve görselleştirme hizmetleri. Uygulamaya başlamadan önce mekanınızı gerçekçi 3D görseller ile görün. 0533 039 15 65"
+  title="3D Tasarım ve İç Mimarlık Projesi İstanbul | Master İç Mimarlık"
+  description="İstanbul'da iç mimarlık 3D tasarım ve fotorealistik görselleştirme. Uygulamaya başlamadan önce mekanınızı gerçekçi 3D görseller ile görün. Tüm projelerde standart. 0533 039 15 65"
   canonicalUrl={`${CANONICAL_BASE}/hizmetler/3d-tasarim`}
   h1="3D Tasarım ve İç Mimarlık Projesi"
   eyebrow="Hizmet"
-  lead="Uygulamaya başlamadan önce mekanınızı gerçekçi 3D görseller ile deneyimleyin. Malzeme, renk ve mobilya seçimlerini somut olarak görerek onaylayın — sürprizle karşılaşmayın."
+  lead="Uygulamaya başlamadan önce mekanınızı fotorealistik 3D görseller ile deneyimleyin. Malzeme, renk ve mobilya seçimlerini somut olarak görerek onaylayın — sürprizle karşılaşmayın."
   breadcrumb={[
     { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
     { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
     { label: "3D Tasarım" }
   ]}
-  structuredData={serviceSchema}
+  heroImage="/deneme1/images/avi-werde-hHz4yrvxwlA-unsplash.jpg"
+  ogImage={`${CANONICAL_BASE}/images/avi-werde-hHz4yrvxwlA-unsplash.jpg`}
+  structuredData={[serviceSchema, faqSchema]}
 >
 
+  <!-- Why 3D + Scope -->
   <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
     <div>
       <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Neden 3D Tasarım?</h2>
@@ -47,7 +58,7 @@ const serviceSchema = {
       </p>
     </div>
     <div>
-      <h3 class="font-semibold text-charcoal mb-4">3D Tasarım Sürecimiz</h3>
+      <h3 class="font-semibold text-charcoal mb-4 text-xs uppercase tracking-wider">3D Tasarım Sürecimiz</h3>
       <ul class="space-y-3">
         {[
           'Mekan ölçüm ve mevcut durum analizi',
@@ -72,18 +83,71 @@ const serviceSchema = {
     </div>
   </div>
 
-  <div class="py-12">
-    <h2 class="font-display text-2xl font-bold text-charcoal mb-4">3D Tasarımın Faydaları</h2>
+  <!-- Gallery -->
+  <div class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="w-8 h-px bg-gold"></span>
+      <h2 class="font-display text-2xl font-bold text-charcoal">3D Tasarım Örnekleri</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-4">
+      {[
+        { src: '/deneme1/images/266682070_600832197669481_5605395588855338438_n.jpg', title: 'Salon 3D Tasarımı', detail: 'Beşiktaş dairesi · 2024' },
+        { src: '/deneme1/images/erica-carr-43xpj1f3O2Y-unsplash.jpg',                title: 'Yatak Odası Render', detail: 'Nişantaşı projesi · 2024' },
+        { src: '/deneme1/images/peter-ivey-hansen-5xOSA-UgsKQ-unsplash.jpg',         title: 'Mutfak Görselleştirme', detail: 'Kadıköy projesi · 2023' },
+      ].map(p => (
+        <div class="group">
+          <div class="overflow-hidden mb-3">
+            <img src={p.src} alt={p.title} class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <h3 class="font-semibold text-charcoal text-sm">{p.title}</h3>
+          <p class="text-muted text-xs mt-0.5">{p.detail}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Benefits -->
+  <div class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-8">
+      <span class="w-8 h-px bg-gold"></span>
+      <h2 class="font-display text-2xl font-bold text-charcoal">3D Tasarımın Faydaları</h2>
+    </div>
     <div class="grid md:grid-cols-3 gap-6">
       {[
-        { title: 'Karar Güveni', desc: 'Mekanı gerçekçi biçimde görünce malzeme ve renk kararları çok daha kolay verilir.' },
+        { title: 'Karar Güveni', desc: 'Mekanı gerçekçi biçimde görünce malzeme ve renk kararları çok daha kolay verilir. Pişmanlık yaşanmaz.' },
         { title: 'Maliyet Tasarrufu', desc: 'Uygulama sırasındaki fikir değişiklikleri en büyük maliyet artış kaynağıdır. 3D onayı bu riski ortadan kaldırır.' },
-        { title: 'Zaman Tasarrufu', desc: 'Revizyon döngüleri azalır, uygulama daha hızlı ve verimli ilerler.' },
+        { title: 'Zaman Tasarrufu', desc: 'Revizyon döngüleri azalır, uygulama daha hızlı ve verimli ilerler. Takvim taahhüdü daha güvenli tutulur.' },
       ].map(card => (
         <div class="border border-border p-6">
-          <h3 class="font-semibold text-charcoal mb-2">{card.title}</h3>
-          <p class="text-muted text-sm leading-relaxed">{card.desc}</p>
+          <h3 class="font-semibold text-charcoal mb-2 text-sm">{card.title}</h3>
+          <p class="text-muted text-xs leading-relaxed">{card.desc}</p>
         </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="py-12">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="w-8 h-px bg-gold"></span>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Sık Sorulan Sorular</h2>
+    </div>
+    <div class="divide-y divide-border">
+      {[
+        { q: '3D tasarım anahtar teslim pakete dahil mi?', a: 'Evet. 3D tasarım ve görselleştirme hizmeti tüm anahtar teslim projelerimizde standarttır ve ek ücret alınmaz.' },
+        { q: 'Sadece 3D tasarım hizmeti alabilir miyim?', a: 'Evet. Uygulamayı kendiniz yönetmek istiyorsanız yalnızca 3D tasarım ve görselleştirme paketi alabilirsiniz. Konsept tasarım, render görseller ve teknik çizimler sağlanır.' },
+        { q: 'Kaç revizyon hakkım var?', a: 'Standart paketlerimizde belirli sayıda revizyon hakkı tanınmaktadır. Revizyon sayısı ve kapsamı sözleşmede belirtilir.' },
+        { q: '3D tasarım ne kadar sürer?', a: 'Projenin büyüklüğüne göre ilk konsept tasarımlar genellikle 1–2 hafta içinde teslim edilir.' },
+      ].map((faq, i) => (
+        <details class="group py-5" open={i === 0}>
+          <summary class="flex items-start justify-between cursor-pointer list-none gap-4">
+            <h3 class="font-semibold text-charcoal text-sm md:text-base group-open:text-gold transition-colors">{faq.q}</h3>
+            <svg class="shrink-0 w-5 h-5 text-gold mt-0.5 group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <p class="mt-3 text-muted text-sm leading-relaxed pr-8">{faq.a}</p>
+        </details>
       ))}
     </div>
   </div>

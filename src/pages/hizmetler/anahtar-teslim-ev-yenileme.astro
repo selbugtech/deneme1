@@ -7,33 +7,48 @@ const serviceSchema = {
   "@type": "Service",
   "serviceType": "Anahtar Teslim Ev Yenileme",
   "name": "Anahtar Teslim Ev Yenileme İstanbul",
-  "description": "İstanbul'da tasarımdan uygulamaya tüm süreci kapsayan anahtar teslim ev yenileme hizmeti. Müteahhit, iç mimar ve ustaları tek çatı altında.",
-  "provider": {
-    "@type": "InteriorDesigner",
-    "@id": `${CANONICAL_BASE}/#business`,
-    "name": "Master İç Mimarlık"
-  },
-  "areaServed": { "@type": "City", "name": "İstanbul" },
-  "url": `${CANONICAL_BASE}/hizmetler/anahtar-teslim-ev-yenileme`
+  "description": "İstanbul'da tasarımdan uygulamaya tüm süreci kapsayan anahtar teslim ev yenileme hizmeti. İç mimari tasarım, malzeme tedariki ve uygulama tek çatı altında.",
+  "provider": { "@type": "Organization", "@id": `${CANONICAL_BASE}/#organization`, "name": "Master İç Mimarlık" },
+  "areaServed": [
+    { "@type": "City", "name": "İstanbul" },
+    { "@type": "AdministrativeArea", "name": "Beşiktaş" },
+    { "@type": "AdministrativeArea", "name": "Kadıköy" },
+    { "@type": "AdministrativeArea", "name": "Levent" }
+  ],
+  "url": `${CANONICAL_BASE}/hizmetler/anahtar-teslim-ev-yenileme`,
+  "offers": { "@type": "Offer", "priceCurrency": "TRY", "description": "Metrekare başına 3.000–8.000 ₺ arasında değişen paketler", "availability": "https://schema.org/InStock" }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Anahtar teslim ev yenileme maliyeti ne kadar?", "acceptedAnswer": { "@type": "Answer", "text": "İstanbul'da anahtar teslim ev yenileme metrekare başına yaklaşık 3.000–8.000 ₺ arasında değişmektedir. Fiyat; dairenin büyüklüğü, mevcut yapı durumu ve seçilen malzeme kalitesine göre belirlenir. Ücretsiz keşif ziyaretimizde net bütçe sunuyoruz." } },
+    { "@type": "Question", "name": "Anahtar teslim ev yenileme ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Ortalama bir daire yenileme projesi (90–150 m²) 6–10 hafta içinde tamamlanmaktadır. Büyük projeler veya yapısal değişiklik içeren işler daha uzun sürebilir. Sözleşmede kesin takvim belirlenir." } },
+    { "@type": "Question", "name": "Yenileme süresince evde oturabilir miyim?", "acceptedAnswer": { "@type": "Answer", "text": "Komple yenileme projelerinde evde oturmanızı tavsiye etmiyoruz. Kısmi yenilemelerde (tek oda veya mutfak/banyo) mümkün olabilir. Her projenin planlamasında bu durumu müşterimizle önceden değerlendiriyoruz." } },
+    { "@type": "Question", "name": "Gizli maliyet var mı?", "acceptedAnswer": { "@type": "Answer", "text": "Hayır. Sözleşmede belirlenen kapsam ve bütçe dışına çıkmıyoruz. Ek iş talebi olması durumunda müşterimizi önceden bilgilendirip onay alıyoruz. Şeffaf fiyatlandırma temel prensibimizdir." } }
+  ]
 };
 ---
 
 <ServiceLayout
-  title="Anahtar Teslim Ev Yenileme İstanbul | Master İç Mimarlık"
+  title="Anahtar Teslim Ev Yenileme İstanbul — Tasarımdan Uygulamaya | Master İç Mimarlık"
   description="İstanbul'da anahtar teslim ev yenileme. Tasarımdan uygulamaya her şey dahil. Beşiktaş, Kadıköy, Levent ve tüm İstanbul ilçelerinde hizmet. Ücretsiz keşif: 0533 039 15 65"
   canonicalUrl={`${CANONICAL_BASE}/hizmetler/anahtar-teslim-ev-yenileme`}
   h1="İstanbul'da Anahtar Teslim Ev Yenileme"
   eyebrow="Hizmet"
-  lead="Tasarımdan uygulamaya tüm süreçleri biz yönetiyoruz. Siz anahtarı teslim alırken eviniz tamamen hazır."
+  lead="Tasarımdan uygulamaya tüm süreçleri biz yönetiyoruz. İç mimari, malzeme tedariki, usta koordinasyonu ve şantiye yönetimi tek çatı altında. Siz anahtarı teslim alırken eviniz tamamen hazır."
   breadcrumb={[
     { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
     { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
     { label: "Anahtar Teslim Ev Yenileme" }
   ]}
-  structuredData={serviceSchema}
+  heroImage="/deneme1/images/kara-eads-L7EwHkq1B2s-unsplash.jpg"
+  ogImage={`${CANONICAL_BASE}/images/kara-eads-L7EwHkq1B2s-unsplash.jpg`}
+  structuredData={[serviceSchema, faqSchema]}
 >
 
-  <!-- What is it -->
+  <!-- What is it + Scope -->
   <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
     <div>
       <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Anahtar Teslim Ev Yenileme Nedir?</h2>
@@ -48,11 +63,11 @@ const serviceSchema = {
       </p>
     </div>
     <div>
-      <h3 class="font-semibold text-charcoal mb-4">Hizmete Dahil Olanlar</h3>
+      <h3 class="font-semibold text-charcoal mb-4 text-xs uppercase tracking-wider">Hizmete Dahil Olanlar</h3>
       <ul class="space-y-3">
         {[
           'İç mimari konsept tasarım',
-          'Gerçekçi 3D görselleştirme',
+          'Fotorealistik 3D görselleştirme',
           'Malzeme seçimi ve tedariki',
           'Şantiye yönetimi ve koordinasyon',
           'Elektrik, tesisat, alçıpan uygulamaları',
@@ -74,17 +89,51 @@ const serviceSchema = {
     </div>
   </div>
 
+  <!-- Gallery -->
+  <div class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="w-8 h-px bg-gold"></span>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Tamamlanan Projeler</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-4">
+      {[
+        { src: '/deneme1/images/besiktas-sampi4.jpg',                                               title: 'Beşiktaş Dairesi',    detail: '120 m² · Komple yenileme · 2024' },
+        { src: '/deneme1/images/266633856_4997237316954973_2289965135152272525_n.jpg',               title: 'Kadıköy Residence',   detail: '110 m² · Anahtar teslim · 2024' },
+        { src: '/deneme1/images/269841624_466700278133027_1819415279374451521_n.jpg',                title: 'Levent Dairesi',      detail: '135 m² · Komple yenileme · 2023' },
+      ].map(p => (
+        <div class="group">
+          <div class="overflow-hidden mb-3">
+            <img src={p.src} alt={p.title} class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <h3 class="font-semibold text-charcoal text-sm">{p.title}</h3>
+          <p class="text-muted text-xs mt-0.5">{p.detail}</p>
+        </div>
+      ))}
+    </div>
+    <div class="mt-6">
+      <a href={`${CANONICAL_BASE}/projeler`} class="text-sm text-gold hover:underline inline-flex items-center gap-2">
+        Tüm projelerimizi görün
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+
   <!-- Process -->
   <div class="py-12 border-b border-border">
-    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Süreç Nasıl İşler?</h2>
+    <div class="flex items-center gap-3 mb-8">
+      <span class="w-8 h-px bg-gold"></span>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Süreç Nasıl İşler?</h2>
+    </div>
     <div class="grid md:grid-cols-5 gap-6">
       {[
         { step: '01', title: 'Ücretsiz Keşif', desc: 'Projenizi yerinde değerlendirip ilk fikirlerimizi paylaşıyoruz.' },
-        { step: '02', title: '3D Tasarım', desc: 'Mekanınızı gerçekçi görsellerle deneyimleyin, onaylayın.' },
+        { step: '02', title: '3D Tasarım', desc: 'Mekanınızı gerçekçi görsellerle deneyimleyin ve onaylayın.' },
         { step: '03', title: 'Sözleşme', desc: 'Kesin bütçe ve takvim belirlenerek sözleşme imzalanır.' },
         { step: '04', title: 'Uygulama', desc: 'Şantiye yönetimi tamamen bizde. Sizi düzenli bilgilendiriyoruz.' },
         { step: '05', title: 'Teslim', desc: 'Temizlenmiş, eksiksiz hazır evinizi teslim alırsınız.' },
-      ].map((item) => (
+      ].map(item => (
         <div class="text-center">
           <div class="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-3">
             <span class="text-gold font-display font-bold text-sm">{item.step}</span>
@@ -96,57 +145,74 @@ const serviceSchema = {
     </div>
   </div>
 
-  <!-- Pricing & Areas -->
-  <div class="grid md:grid-cols-2 gap-12 py-12">
-    <div>
-      <h2 class="font-display text-2xl font-bold text-charcoal mb-4">Maliyet Hakkında</h2>
-      <p class="text-muted leading-relaxed mb-4">
-        İstanbul'da anahtar teslim ev yenileme maliyeti metrekare başına yaklaşık <strong class="text-charcoal">3.000 ₺ – 8.000 ₺</strong> arasında değişmektedir.
-      </p>
-      <p class="text-muted leading-relaxed mb-4">
-        Fiyatı etkileyen başlıca faktörler: dairenin büyüklüğü, mevcut yapı durumu, seçilen malzeme kalitesi ve uygulanacak işlerin kapsamı.
-      </p>
-      <p class="text-muted leading-relaxed">
-        Ücretsiz keşif ziyaretimizde projenizi değerlendirip size tahmini bütçe ve süre sunuyoruz.
-      </p>
+  <!-- Pricing -->
+  <div class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-8">
+      <span class="w-8 h-px bg-gold"></span>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Fiyatlandırma</h2>
     </div>
-    <div>
-      <h2 class="font-display text-2xl font-bold text-charcoal mb-4">Hizmet Bölgelerimiz</h2>
-      <p class="text-muted leading-relaxed mb-4">
-        Anahtar teslim ev yenileme hizmetimizi İstanbul'un tüm ilçelerinde sunuyoruz:
-      </p>
-      <div class="flex flex-wrap gap-2">
-        {['Beşiktaş','Kadıköy','Levent','Nişantaşı','Zekeriyaköy','Ataşehir','Acıbadem','Şişli','Sarıyer','Üsküdar','Bakırköy','Maltepe'].map(ilce => (
-          <span class="px-3 py-1 bg-charcoal/5 text-charcoal text-xs rounded-full">{ilce}</span>
-        ))}
-      </div>
-    </div>
-  </div>
-
-  <!-- Reference projects -->
-  <div class="py-12 border-t border-border">
-    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Tamamlanan Projeler</h2>
-    <div class="grid md:grid-cols-2 gap-6">
+    <div class="grid md:grid-cols-3 gap-6">
       {[
-        { title: 'Beşiktaş Dairesi', detail: '120 m² · Komple yenileme · 2024' },
-        { title: 'Ataşehir Residence', detail: '95 m² · Anahtar teslim · 2023' },
-      ].map(p => (
+        { title: 'Standart', price: '3.000 – 4.500 ₺/m²', items: ['Temel malzemeler', 'Zemin ve duvar kaplamaları', 'Boya uygulaması', 'Mutfak ve banyo yenileme'], tag: 'Giriş' },
+        { title: 'Konfor', price: '4.500 – 6.500 ₺/m²', items: ['Orta-üst segment malzeme', '3D tasarım dahil', 'Aydınlatma tasarımı', 'Özel mobilya koordinasyonu'], tag: 'Popüler' },
+        { title: 'Lüks', price: '6.500 – 10.000 ₺/m²+', items: ['Premium malzeme seçimi', 'Fotorealistik render', 'Akıllı ev entegrasyonu', 'Özel mobilya ve built-in'], tag: 'Premium' },
+      ].map(pkg => (
         <div class="border border-border p-6">
-          <div class="w-full h-40 bg-charcoal/5 flex items-center justify-center mb-4" aria-label={`${p.title} proje fotoğrafı`}>
-            <span class="text-muted/30 text-xs tracking-widest uppercase">[ Proje Fotoğrafı ]</span>
-          </div>
-          <h3 class="font-display font-semibold text-charcoal">{p.title}</h3>
-          <p class="text-muted text-xs mt-1">{p.detail}</p>
+          <p class="text-[10px] tracking-widest uppercase text-gold mb-2">{pkg.tag}</p>
+          <h3 class="font-display font-bold text-charcoal text-lg mb-1">{pkg.title}</h3>
+          <p class="text-gold font-semibold text-sm mb-4">{pkg.price}</p>
+          <ul class="space-y-2">
+            {pkg.items.map(item => (
+              <li class="flex items-start gap-2 text-xs text-muted">
+                <svg class="w-3 h-3 text-gold mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
       ))}
     </div>
-    <div class="mt-6">
-      <a href={`${CANONICAL_BASE}/projeler`} class="text-sm text-gold hover:underline inline-flex items-center gap-2">
-        Tüm projelerimizi görün
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-        </svg>
-      </a>
+    <p class="text-muted text-xs mt-4">* Fiyatlar yalnızca yol gösterici niteliktedir. Kesin fiyat proje kapsamına göre ücretsiz keşif ziyaretinde belirlenir.</p>
+  </div>
+
+  <!-- Service Areas -->
+  <div class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="w-8 h-px bg-gold"></span>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Hizmet Verdiğimiz İlçeler</h2>
+    </div>
+    <div class="flex flex-wrap gap-2">
+      {['Beşiktaş', 'Kadıköy', 'Levent', 'Nişantaşı', 'Zekeriyaköy', 'Ataşehir', 'Acıbadem', 'Şişli', 'Sarıyer', 'Üsküdar', 'Bakırköy', 'Maltepe'].map(ilce => (
+        <span class="px-3 py-1.5 border border-border text-charcoal text-xs font-medium">{ilce}</span>
+      ))}
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="py-12">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="w-8 h-px bg-gold"></span>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Sık Sorulan Sorular</h2>
+    </div>
+    <div class="divide-y divide-border">
+      {[
+        { q: 'Anahtar teslim ev yenileme maliyeti ne kadar?', a: 'İstanbul\'da anahtar teslim ev yenileme metrekare başına yaklaşık 3.000–8.000 ₺ arasında değişmektedir. Fiyat; dairenin büyüklüğü, mevcut yapı durumu ve seçilen malzeme kalitesine göre belirlenir. Ücretsiz keşif ziyaretimizde size net bütçe sunuyoruz.' },
+        { q: 'Anahtar teslim ev yenileme ne kadar sürer?', a: 'Ortalama bir daire (90–150 m²) 6–10 hafta içinde tamamlanmaktadır. Yapısal değişiklik içeren veya daha büyük projelerde süre uzayabilir. Sözleşmede kesin takvim belirlenir.' },
+        { q: 'Yenileme süresince evde oturabilir miyim?', a: 'Komple yenileme projelerinde evde oturmanızı tavsiye etmiyoruz. Kısmi yenilemelerde (tek oda, mutfak veya banyo) mümkün olabilir. Her projenin planlamasında bu konuyu müşterimizle önceden değerlendiriyoruz.' },
+        { q: 'Gizli maliyet var mı?', a: 'Hayır. Sözleşmede belirlenen kapsam ve bütçe dışına çıkmıyoruz. Ek iş talebi olması durumunda müşterimizi önceden bilgilendirip onay alıyoruz. Şeffaf fiyatlandırma temel prensibimizdir.' },
+      ].map((faq, i) => (
+        <details class="group py-5" open={i === 0}>
+          <summary class="flex items-start justify-between cursor-pointer list-none gap-4">
+            <h3 class="font-semibold text-charcoal text-sm md:text-base group-open:text-gold transition-colors">{faq.q}</h3>
+            <svg class="shrink-0 w-5 h-5 text-gold mt-0.5 group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <p class="mt-3 text-muted text-sm leading-relaxed pr-8">{faq.a}</p>
+        </details>
+      ))}
     </div>
   </div>
 
