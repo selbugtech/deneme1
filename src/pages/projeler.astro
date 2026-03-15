@@ -6,12 +6,12 @@ import WhatsAppFloat from '../components/WhatsAppFloat.astro';
 import { CANONICAL_BASE } from '../config';
 
 const projects = [
-  { title: 'Beşiktaş Dairesi', category: 'Anahtar Teslim Ev Yenileme', size: 'large', year: '2024' },
-  { title: 'Zekeriyaköy Villa', category: 'Villa Yenileme', size: 'small', year: '2024' },
-  { title: 'Nişantaşı Butik', category: 'Mağaza Yenileme', size: 'small', year: '2024' },
-  { title: 'Levent Ofis', category: 'Ofis Yenileme', size: 'small', year: '2023' },
-  { title: 'Ataşehir Residence', category: 'Anahtar Teslim Ev Yenileme', size: 'small', year: '2023' },
-  { title: 'Acıbadem Villa', category: 'Villa Yenileme', size: 'large', year: '2023' },
+  { title: 'Beşiktaş Dairesi', category: 'Anahtar Teslim Ev Yenileme', size: 'large', year: '2024', image: '/deneme1/images/266633856_4997237316954973_2289965135152272525_n.jpg' },
+  { title: 'Zekeriyaköy Villa', category: 'Villa Yenileme', size: 'small', year: '2024', image: '/deneme1/images/avi-werde-hHz4yrvxwlA-unsplash.jpg' },
+  { title: 'Nişantaşı Butik', category: 'Mağaza Yenileme', size: 'small', year: '2024', image: '/deneme1/images/266682070_600832197669481_5605395588855338438_n.jpg' },
+  { title: 'Levent Ofis', category: 'Ofis Yenileme', size: 'small', year: '2023', image: '/deneme1/images/269796335_287998196622038_3115674097994505357_n.jpg' },
+  { title: 'Ataşehir Residence', category: 'Anahtar Teslim Ev Yenileme', size: 'small', year: '2023', image: '/deneme1/images/270210256_1299189580524073_8666915339070247329_n.jpg' },
+  { title: 'Acıbadem Villa', category: 'Villa Yenileme', size: 'large', year: '2023', image: '/deneme1/images/hero-villa-sea.jpg' },
 ];
 ---
 
@@ -66,12 +66,11 @@ const projects = [
           <div
             class={`relative group overflow-hidden reveal reveal-d${(i % 3) + 1} ${p.size === 'large' ? 'row-span-2' : ''}`}
           >
-            <!-- Placeholder -->
-            <div class={`w-full bg-[#2A2A28] flex flex-col items-center justify-center ${p.size === 'large' ? 'h-[400px] md:h-[480px]' : 'h-[190px] md:h-[230px]'}`}>
-              <div class="w-8 h-px bg-gold opacity-40 mb-3"></div>
-              <span class="text-[10px] tracking-widest uppercase text-[#555] text-center px-4">[ Proje Fotoğrafı ]</span>
-              <div class="w-8 h-px bg-gold opacity-40 mt-3"></div>
-            </div>
+            <img
+              src={p.image}
+              alt={p.title}
+              class={`w-full object-cover object-center ${p.size === 'large' ? 'h-[400px] md:h-[480px]' : 'h-[190px] md:h-[230px]'}`}
+            />
 
             <!-- Overlay on hover -->
             <div class="absolute inset-0 bg-charcoal/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-start justify-end p-5">

@@ -41,7 +41,7 @@ const services = [
 ];
 ---
 
-<section id="hizmetler" class="py-24 bg-white">
+<section id="hizmetler" class="py-24 bg-[#F5EFE6]">
   <div class="max-w-6xl mx-auto px-6">
 
     <!-- Section header -->
@@ -60,7 +60,7 @@ const services = [
       {services.map((s, i) => (
         <a
           href={`${CANONICAL_BASE}/hizmetler/${s.slug}`}
-          class={`bg-white p-8 group hover:bg-warm-white transition-colors duration-300 reveal reveal-d${(i % 3) + 1} block`}
+          class={`bg-[#FAF6F1] p-8 group hover:bg-[#EDE5D8] transition-colors duration-300 reveal reveal-d${(i % 3) + 1} block`}
         >
           <div class="text-gold mb-5 group-hover:scale-110 transition-transform duration-300 inline-block" set:html={s.icon} />
           <h3 class="font-display text-lg font-semibold text-charcoal mb-3 group-hover:text-gold transition-colors">{s.title}</h3>

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://selbugtech.github.io/deneme1/sitemap-index.xml
+Sitemap: https://www.mastericmimarlik.com/sitemap-index.xml

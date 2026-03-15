@@ -3,21 +3,20 @@ const comparisons = [
   {
     title: 'Beşiktaş Dairesi',
     category: 'Anahtar Teslim Ev Yenileme',
-    // Fotoğraf gelince: before: '/images/besiktas-before.jpg', after: '/images/besiktas-after.jpg'
-    beforeGradient: 'linear-gradient(145deg, #2A2318 0%, #3E3428 50%, #524639 100%)',
-    afterGradient:  'linear-gradient(145deg, #5E3E22 0%, #9A6A40 50%, #C4A472 100%)',
+    before: '/deneme1/images/besiktas-sampi4.jpg',
+    after:  '/deneme1/images/266633856_4997237316954973_2289965135152272525_n.jpg',
   },
   {
     title: 'Zekeriyaköy Villa',
     category: 'Villa Yenileme',
-    beforeGradient: 'linear-gradient(145deg, #1E2220 0%, #2E3530 50%, #3D4840 100%)',
-    afterGradient:  'linear-gradient(145deg, #253530 0%, #3D5A4E 50%, #5E8070 100%)',
+    before: '/deneme1/images/kara-eads-L7EwHkq1B2s-unsplash.jpg',
+    after:  '/deneme1/images/270210256_1299189580524073_8666915339070247329_n.jpg',
   },
   {
     title: 'Nişantaşı Butik',
     category: 'Mağaza Yenileme',
-    beforeGradient: 'linear-gradient(145deg, #201C18 0%, #352E26 50%, #4A4035 100%)',
-    afterGradient:  'linear-gradient(145deg, #3C2E1A 0%, #6B4E2A 50%, #9A7245 100%)',
+    before: '/deneme1/images/269796335_287998196622038_3115674097994505357_n.jpg',
+    after:  '/deneme1/images/269934334_444856893989276_8300817181046348982_n.jpg',
   },
 ];
 ---
@@ -72,24 +71,14 @@ const comparisons = [
             <!-- After image (behind) -->
             <div
               class="ba-after absolute inset-0 w-full h-full"
-              style={`background: ${c.afterGradient};`}
-            >
-              <!-- After placeholder label -->
-              <div class="absolute bottom-5 right-6 text-right">
-                <span class="text-white/20 text-[9px] tracking-[0.35em] uppercase block">[ {c.category} Sonrası ]</span>
-              </div>
-            </div>
+              style={`background-image: url('${c.after}'); background-size: cover; background-position: center;`}
+            />
 
             <!-- Before image (clipped on top) -->
             <div
               class="ba-before absolute inset-0 w-full h-full"
-              style={`background: ${c.beforeGradient}; clip-path: inset(0 50% 0 0);`}
-            >
-              <!-- Before placeholder label -->
-              <div class="absolute bottom-5 left-6">
-                <span class="text-white/20 text-[9px] tracking-[0.35em] uppercase block">[ {c.category} Öncesi ]</span>
-              </div>
-            </div>
+              style={`background-image: url('${c.before}'); background-size: cover; background-position: center; clip-path: inset(0 50% 0 0);`}
+            />
 
             <!-- Labels -->
             <div class="absolute top-5 left-5 z-10 pointer-events-none">

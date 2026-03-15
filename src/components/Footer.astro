@@ -1,5 +1,7 @@
 ---
 const year = new Date().getFullYear();
+const { pathname } = Astro.url;
+const isHome = pathname === '/deneme1/' || pathname === '/deneme1';
 ---
 
 <footer class="bg-charcoal border-t border-white/10 py-12">
@@ -24,11 +26,13 @@ const year = new Date().getFullYear();
 
       <!-- Nav links -->
       <nav class="flex flex-wrap gap-x-6 gap-y-3">
-        <a href="/deneme1/hizmetler" class="text-xs tracking-[0.15em] uppercase text-white/40 hover:text-gold transition-colors">Hizmetler</a>
+        {isHome && (
+          <a href="#hizmetler" class="text-xs tracking-[0.15em] uppercase text-white/40 hover:text-gold transition-colors">Hizmetler</a>
+        )}
         <a href="/deneme1/projeler" class="text-xs tracking-[0.15em] uppercase text-white/40 hover:text-gold transition-colors">Projeler</a>
         <a href="/deneme1/blog" class="text-xs tracking-[0.15em] uppercase text-white/40 hover:text-gold transition-colors">Blog</a>
         <a href="/deneme1/sikca-sorulan-sorular" class="text-xs tracking-[0.15em] uppercase text-white/40 hover:text-gold transition-colors">SSS</a>
-        <a href="/#hakkimizda" class="text-xs tracking-[0.15em] uppercase text-white/40 hover:text-gold transition-colors">Hakkımızda</a>
+        <a href="/deneme1/#hakkimizda" class="text-xs tracking-[0.15em] uppercase text-white/40 hover:text-gold transition-colors">Hakkımızda</a>
       </nav>
 
       <!-- Contact -->
