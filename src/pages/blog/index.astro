@@ -86,7 +86,7 @@ const breadcrumbSchema = {
     <div class="max-w-4xl mx-auto px-6 py-16">
 
       <nav class="flex items-center gap-2 mb-8 text-sm" aria-label="Breadcrumb">
-        <a href={`${CANONICAL_BASE}/`} class="text-muted hover:text-gold transition-colors">Ana Sayfa</a>
+        <a href="/deneme1/" class="text-muted hover:text-gold transition-colors">Ana Sayfa</a>
         <span class="text-border">/</span>
         <span class="text-charcoal">Blog</span>
       </nav>
@@ -105,7 +105,7 @@ const breadcrumbSchema = {
 
       <div class="space-y-8">
         {posts.map((post) => (
-          <a href={`${CANONICAL_BASE}/blog/${post.slug}`} class="group block border border-border p-8 hover:border-gold transition-colors duration-200">
+          <a href={`/deneme1/blog/${post.slug}`} class="group block border border-border p-8 hover:border-gold transition-colors duration-200">
             <div class="flex items-center gap-4 mb-4">
               <span class="text-[10px] tracking-[0.25em] uppercase text-gold font-medium">{post.tag}</span>
               <span class="text-border">·</span>

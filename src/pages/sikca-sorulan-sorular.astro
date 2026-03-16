@@ -246,39 +246,41 @@ const webPageSchema = {
 
   <main class="pt-24 bg-warm-white min-h-screen">
 
-    <!-- Page header -->
-    <div class="max-w-5xl mx-auto px-6 py-16">
+    <!-- Page header — charcoal hero band -->
+    <div class="bg-charcoal">
+      <div class="max-w-5xl mx-auto px-6 pt-10 pb-14">
 
-      <!-- Breadcrumb -->
-      <nav class="flex items-center gap-2 mb-8 text-sm" aria-label="Breadcrumb">
-        <a href="/deneme1/" class="text-muted hover:text-gold transition-colors">Ana Sayfa</a>
-        <span class="text-border">/</span>
-        <span class="text-charcoal">Sıkça Sorulan Sorular</span>
-      </nav>
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 mb-8 text-sm" aria-label="Breadcrumb">
+          <a href="/deneme1/" class="text-white/50 hover:text-gold transition-colors">Ana Sayfa</a>
+          <span class="text-white/20">/</span>
+          <span class="text-white/70">Sıkça Sorulan Sorular</span>
+        </nav>
 
-      <div class="flex items-center gap-3 mb-4">
-        <span class="w-8 h-px bg-gold"></span>
-        <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">SSS</span>
-      </div>
-      <h1 class="font-display text-4xl md:text-5xl font-bold text-charcoal leading-tight mb-4">
-        Sıkça Sorulan<br />
-        <em class="not-italic text-gold">Sorular</em>
-      </h1>
-      <p class="text-muted leading-relaxed max-w-xl mb-10">
-        İç mimarlık, ev yenileme maliyetleri, anahtar teslim tadilat süreci ve daha fazlası. Cevabını bulamazsanız <a href="https://wa.me/905330391565" class="text-gold hover:underline">WhatsApp'tan yazın</a>.
-      </p>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-8 h-px bg-gold"></span>
+          <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">SSS</span>
+        </div>
+        <h1 class="font-display text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
+          Sıkça Sorulan<br />
+          <em class="not-italic text-gold">Sorular</em>
+        </h1>
+        <p class="text-white/60 leading-relaxed max-w-xl mb-10">
+          İç mimarlık, ev yenileme maliyetleri, anahtar teslim tadilat süreci ve daha fazlası. Cevabını bulamazsanız <a href="https://wa.me/905330391565" class="text-gold hover:underline">WhatsApp'tan yazın</a>.
+        </p>
 
       <!-- Category pills -->
       <div class="flex flex-wrap gap-2">
         {categories.map(cat => (
           <a
             href={`#${cat.id}`}
-            class="inline-flex items-center gap-2 border border-border px-4 py-2 text-xs tracking-wide text-muted hover:border-gold hover:text-gold transition-colors"
+            class="inline-flex items-center gap-2 border border-white/20 px-4 py-2 text-xs tracking-wide text-white/60 hover:border-gold hover:text-gold transition-colors"
           >
             <span class="text-gold">{cat.icon}</span>
             {cat.label}
           </a>
         ))}
+      </div>
       </div>
     </div>
 
