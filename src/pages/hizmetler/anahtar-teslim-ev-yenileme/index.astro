@@ -1,0 +1,242 @@
+---
+import ServiceLayout from '../../../layouts/ServiceLayout.astro';
+import { CANONICAL_BASE } from '../../../config';
+
+const subServices = [
+  {
+    title: 'Cafe & Restaurant Yenileme',
+    slug: 'cafe-restaurant-yenileme',
+    desc: 'Müşteri deneyimini ve ciro potansiyelini artıran cafe, restoran ve bar iç mekan tasarımı.',
+    icon: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>`,
+  },
+  {
+    title: 'Ofis Yenileme',
+    slug: 'ofis-yenileme',
+    desc: 'Çalışan verimliliğini ve marka imajını güçlendiren kurumsal ofis iç mekan çözümleri.',
+    icon: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>`,
+  },
+  {
+    title: 'Mağaza & Dükkan Yenileme',
+    slug: 'magaza-dukkan-yenileme',
+    desc: 'Markanızı yansıtan, müşteri yolculuğunu optimize eden mağaza ve dükkan tasarımı.',
+    icon: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>`,
+  },
+  {
+    title: 'Villa & Ev Yenileme',
+    slug: 'villa-ev-yenileme',
+    desc: 'Yaşam kalitenizi artıran, kişisel tarzınızı yansıtan villa ve ev yenileme projeleri.',
+    icon: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>`,
+  },
+];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Anahtar Teslim Yenileme",
+  "name": "Anahtar Teslim Yenileme Hizmetleri İstanbul",
+  "description": "İstanbul'da tasarımdan uygulamaya tüm süreci kapsayan anahtar teslim yenileme. Cafe, restoran, ofis, mağaza, villa ve ev projeleri.",
+  "provider": { "@type": "Organization", "@id": `${CANONICAL_BASE}/#organization`, "name": "Master İç Mimarlık" },
+  "areaServed": [
+    { "@type": "City", "name": "İstanbul" },
+    { "@type": "AdministrativeArea", "name": "Beşiktaş" },
+    { "@type": "AdministrativeArea", "name": "Kadıköy" },
+    { "@type": "AdministrativeArea", "name": "Levent" }
+  ],
+  "url": `${CANONICAL_BASE}/hizmetler/anahtar-teslim-ev-yenileme`,
+  "offers": { "@type": "Offer", "priceCurrency": "TRY", "description": "Ücretsiz keşif ve özel teklif için iletişime geçin", "availability": "https://schema.org/InStock" }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Anahtar teslim yenileme bütçesi nasıl belirlenir?", "acceptedAnswer": { "@type": "Answer", "text": "Bütçe; mekanın büyüklüğü, mevcut yapı durumu ve seçilen malzeme kalitesine göre belirlenir. Ücretsiz keşif ziyaretimizde projenize özel bütçe sunuyoruz." } },
+    { "@type": "Question", "name": "Anahtar teslim yenileme ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Ortalama bir mekan yenileme projesi (90–150 m²) 6–10 hafta içinde tamamlanmaktadır. Büyük projeler veya yapısal değişiklik içeren işler daha uzun sürebilir. Sözleşmede kesin takvim belirlenir." } },
+    { "@type": "Question", "name": "Hangi mekan türleri için hizmet veriyorsunuz?", "acceptedAnswer": { "@type": "Answer", "text": "Cafe ve restoran yenileme, ofis yenileme, mağaza ve dükkan yenileme ile villa ve ev yenileme projelerinin tamamını yürütüyoruz. Her mekan türüne özel deneyimimiz bulunmaktadır." } },
+    { "@type": "Question", "name": "Sözleşme sonrası ek maliyet çıkar mı?", "acceptedAnswer": { "@type": "Answer", "text": "Hayır. Sözleşmede belirlenen kapsam dışına çıkmıyoruz. Ek iş talebi olması durumunda müşterimizi önceden bilgilendirip onay alıyoruz." } }
+  ]
+};
+---
+
+<ServiceLayout
+  title="Anahtar Teslim Yenileme Hizmetleri İstanbul | Master İç Mimarlık"
+  description="İstanbul'da anahtar teslim yenileme. Cafe, restoran, ofis, mağaza ve ev projelerinde tasarımdan uygulamaya her şey dahil. Beşiktaş, Kadıköy, Levent. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/hizmetler/anahtar-teslim-ev-yenileme`}
+  h1="İstanbul'da Anahtar Teslim Yenileme Hizmetleri"
+  eyebrow="Hizmet"
+  lead="Tasarımdan uygulamaya tüm süreçleri biz yönetiyoruz. Cafe, restoran, ofis, mağaza veya ev — hangi mekan olursa olsun iç mimari, malzeme tedariki, usta koordinasyonu ve şantiye yönetimi tek çatı altında."
+  breadcrumb={[
+    { label: "Ana Sayfa", href: "/deneme1/" },
+    { label: "Hizmetler", href: "/deneme1/#hizmetler" },
+    { label: "Anahtar Teslim Hizmetler" }
+  ]}
+  heroImage="/deneme1/images/kara-eads-L7EwHkq1B2s-unsplash.jpg"
+  ogImage={`${CANONICAL_BASE}/images/kara-eads-L7EwHkq1B2s-unsplash.jpg`}
+  structuredData={[serviceSchema, faqSchema]}
+>
+
+  <!-- Sub-services grid -->
+  <div class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="w-8 h-px bg-gold"></span>
+      <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Hizmet Alanları</span>
+    </div>
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Hangi Mekanı Yenilemek İstiyorsunuz?</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      {subServices.map((s) => (
+        <a
+          href={`/deneme1/hizmetler/anahtar-teslim-ev-yenileme/${s.slug}`}
+          class="group border border-border p-7 hover:border-gold transition-colors duration-200 flex gap-5 items-start"
+        >
+          <div class="text-gold shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300" set:html={s.icon} />
+          <div>
+            <h3 class="font-display text-lg font-bold text-charcoal mb-2 group-hover:text-gold transition-colors">{s.title}</h3>
+            <p class="text-muted text-sm leading-relaxed mb-3">{s.desc}</p>
+            <span class="text-xs text-gold inline-flex items-center gap-1.5">
+              Detaylı Bilgi
+              <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+
+  <!-- What is it + Scope -->
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Anahtar Teslim Yenileme Nedir?</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Anahtar teslim yenileme; iç mimari tasarım, malzeme tedariki, usta koordinasyonu ve uygulama dahil tüm sürecin tek bir firma tarafından yönetildiği kapsamlı yenileme modelidir.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Geleneksel tadilat modelinde müşteri her ustayı ayrı ayrı bulmak, malzeme tedarikini koordine etmek ve şantiyeyi yönetmek zorunda kalır. Anahtar teslimde ise tüm bu yük Master İç Mimarlık'a devredilir.
+      </p>
+      <p class="text-muted leading-relaxed">
+        İstanbul genelinde Beşiktaş'tan Kadıköy'e, Levent'ten Ataşehir'e tüm ilçelerde anahtar teslim yenileme hizmeti sunuyoruz.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4 text-xs uppercase tracking-wider">Hizmete Dahil Olanlar</h3>
+      <ul class="space-y-3">
+        {[
+          'İç mimari konsept tasarım',
+          'Fotorealistik 3D görselleştirme',
+          'Malzeme seçimi ve tedariki',
+          'Şantiye yönetimi ve koordinasyon',
+          'Elektrik, tesisat, alçıpan uygulamaları',
+          'Zemin, duvar ve tavan kaplamaları',
+          'Boya ve dekor uygulamaları',
+          'Son temizlik ve teslim',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <!-- Gallery -->
+  <div class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="w-8 h-px bg-gold"></span>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Tamamlanan Projeler</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-4">
+      {[
+        { src: '/deneme1/images/besiktas-sampi4.jpg',                                               title: 'Beşiktaş Dairesi',    detail: '120 m² · Komple yenileme · 2024' },
+        { src: '/deneme1/images/266633856_4997237316954973_2289965135152272525_n.jpg',               title: 'Kadıköy Residence',   detail: '110 m² · Anahtar teslim · 2024' },
+        { src: '/deneme1/images/269841624_466700278133027_1819415279374451521_n.jpg',                title: 'Levent Dairesi',      detail: '135 m² · Komple yenileme · 2023' },
+      ].map(p => (
+        <div class="group">
+          <div class="overflow-hidden mb-3">
+            <img src={p.src} alt={p.title} loading="lazy" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <h3 class="font-semibold text-charcoal text-sm">{p.title}</h3>
+          <p class="text-muted text-xs mt-0.5">{p.detail}</p>
+        </div>
+      ))}
+    </div>
+    <div class="mt-6">
+      <a href="/deneme1/projeler" class="text-sm text-gold hover:underline inline-flex items-center gap-2">
+        Tüm projelerimizi görün
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Process -->
+  <div class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-8">
+      <span class="w-8 h-px bg-gold"></span>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Anahtar Teslim Tadilat Sürecimiz</h2>
+    </div>
+    <div class="grid md:grid-cols-5 gap-6">
+      {[
+        { step: '01', title: 'Ücretsiz Keşif', desc: 'Projenizi yerinde değerlendirip ilk fikirlerimizi paylaşıyoruz.' },
+        { step: '02', title: '3D Tasarım', desc: 'Mekanınızı gerçekçi görsellerle deneyimleyin ve onaylayın.' },
+        { step: '03', title: 'Sözleşme', desc: 'Kesin bütçe ve takvim belirlenerek sözleşme imzalanır.' },
+        { step: '04', title: 'Uygulama', desc: 'Şantiye yönetimi tamamen bizde. Sizi düzenli bilgilendiriyoruz.' },
+        { step: '05', title: 'Teslim', desc: 'Temizlenmiş, eksiksiz hazır mekanınızı teslim alırsınız.' },
+      ].map(item => (
+        <div class="text-center">
+          <div class="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-3">
+            <span class="text-gold font-display font-bold text-sm">{item.step}</span>
+          </div>
+          <h3 class="font-semibold text-charcoal text-sm mb-2">{item.title}</h3>
+          <p class="text-muted text-xs leading-relaxed">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Service Areas -->
+  <div class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="w-8 h-px bg-gold"></span>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Hizmet Verdiğimiz İlçeler</h2>
+    </div>
+    <div class="flex flex-wrap gap-2">
+      {['Beşiktaş', 'Kadıköy', 'Levent', 'Nişantaşı', 'Zekeriyaköy', 'Ataşehir', 'Acıbadem', 'Şişli', 'Sarıyer', 'Üsküdar', 'Bakırköy', 'Maltepe'].map(ilce => (
+        <span class="px-3 py-1.5 border border-border text-charcoal text-xs font-medium">{ilce}</span>
+      ))}
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="py-12">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="w-8 h-px bg-gold"></span>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Sık Sorulan Sorular</h2>
+    </div>
+    <div class="divide-y divide-border">
+      {[
+        { q: 'Anahtar teslim yenileme bütçesi nasıl belirlenir?', a: 'Bütçe; mekanın büyüklüğü, mevcut yapı durumu ve seçilen malzeme kalitesine göre belirlenir. Ücretsiz keşif ziyaretimizde projenize özel bütçe sunuyoruz.' },
+        { q: 'Anahtar teslim yenileme ne kadar sürer?', a: 'Ortalama bir mekan (90–150 m²) 6–10 hafta içinde tamamlanmaktadır. Yapısal değişiklik içeren veya daha büyük projelerde süre uzayabilir. Sözleşmede kesin takvim belirlenir.' },
+        { q: 'Hangi mekan türleri için hizmet veriyorsunuz?', a: 'Cafe, restoran, ofis, mağaza, dükkan, villa ve ev projelerinin tamamını yürütüyoruz. Her mekan türüne özel deneyimimiz bulunmaktadır.' },
+        { q: 'Sözleşme sonrası ek maliyet çıkar mı?', a: 'Hayır. Sözleşmede belirlenen kapsam dışına çıkmıyoruz. Ek iş talebi olması durumunda müşterimizi önceden bilgilendirip onay alıyoruz.' },
+      ].map((faq, i) => (
+        <details class="group py-5" open={i === 0}>
+          <summary class="flex items-start justify-between cursor-pointer list-none gap-4">
+            <h3 class="font-semibold text-charcoal text-sm md:text-base group-open:text-gold transition-colors">{faq.q}</h3>
+            <svg class="shrink-0 w-5 h-5 text-gold mt-0.5 group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <p class="mt-3 text-muted text-sm leading-relaxed pr-8">{faq.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+
+</ServiceLayout>

@@ -2,7 +2,7 @@
 const year = new Date().getFullYear();
 const { pathname } = Astro.url;
 const isHome = pathname === '/deneme1/' || pathname === '/deneme1';
-const hizmetlerHref = isHome ? '#hizmetler' : '/deneme1/hizmetler';
+const hizmetlerHref = isHome ? '#hizmetler' : '/deneme1/#hizmetler';
 ---
 
 <footer class="bg-charcoal border-t border-white/10 py-12">

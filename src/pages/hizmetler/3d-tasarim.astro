@@ -11,14 +11,14 @@ const serviceSchema = {
   "provider": { "@type": "Organization", "@id": `${CANONICAL_BASE}/#organization`, "name": "Master İç Mimarlık" },
   "areaServed": { "@type": "City", "name": "İstanbul" },
   "url": `${CANONICAL_BASE}/hizmetler/3d-tasarim`,
-  "offers": { "@type": "Offer", "priceCurrency": "TRY", "description": "3D tasarım ve görselleştirme paketi — anahtar teslim projelerinde standarttır", "availability": "https://schema.org/InStock" }
+  "offers": { "@type": "Offer", "priceCurrency": "TRY", "description": "Ücretsiz keşif ve özel teklif için iletişime geçin", "availability": "https://schema.org/InStock" }
 };
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "3D tasarım anahtar teslim pakete dahil mi?", "acceptedAnswer": { "@type": "Answer", "text": "Evet. 3D tasarım ve görselleştirme hizmeti tüm anahtar teslim projelerimizde standarttır ve ek ücret alınmaz." } },
+    { "@type": "Question", "name": "3D tasarım anahtar teslim pakete dahil mi?", "acceptedAnswer": { "@type": "Answer", "text": "Evet. 3D tasarım ve görselleştirme hizmeti tüm anahtar teslim projelerimizde standarttır." } },
     { "@type": "Question", "name": "Sadece 3D tasarım hizmeti alabilir miyim?", "acceptedAnswer": { "@type": "Answer", "text": "Evet. Uygulamayı kendiniz yönetmek istiyorsanız yalnızca 3D tasarım ve görselleştirme paketi alabilirsiniz. Bu kapsamda konsept tasarım, fotorealistik render görseller ve teknik çizimler sağlanır." } },
     { "@type": "Question", "name": "Kaç revizyon hakkım var?", "acceptedAnswer": { "@type": "Answer", "text": "Standart paketlerimizde belirli sayıda revizyon hakkı tanınmaktadır. Revizyon sayısı ve kapsamı sözleşmede belirtilir." } },
     { "@type": "Question", "name": "3D tasarım ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Projenin büyüklüğüne ve karmaşıklığına göre ilk konsept tasarımlar genellikle 1–2 hafta içinde teslim edilir. Revizyon süreleri ekstra değildir." } }
@@ -34,8 +34,8 @@ const faqSchema = {
   eyebrow="Hizmet"
   lead="Uygulamaya başlamadan önce mekanınızı fotorealistik 3D görseller ile deneyimleyin. Malzeme, renk ve mobilya seçimlerini somut olarak görerek onaylayın — sürprizle karşılaşmayın."
   breadcrumb={[
-    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
-    { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
+    { label: "Ana Sayfa", href: "/deneme1/" },
+    { label: "Hizmetler", href: "/deneme1/#hizmetler" },
     { label: "3D Tasarım" }
   ]}
   heroImage="/deneme1/images/avi-werde-hHz4yrvxwlA-unsplash.jpg"
@@ -97,7 +97,7 @@ const faqSchema = {
       ].map(p => (
         <div class="group">
           <div class="overflow-hidden mb-3">
-            <img src={p.src} alt={p.title} class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500" />
+            <img src={p.src} alt={p.title} loading="lazy" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500" />
           </div>
           <h3 class="font-semibold text-charcoal text-sm">{p.title}</h3>
           <p class="text-muted text-xs mt-0.5">{p.detail}</p>
@@ -134,7 +134,7 @@ const faqSchema = {
     </div>
     <div class="divide-y divide-border">
       {[
-        { q: '3D tasarım anahtar teslim pakete dahil mi?', a: 'Evet. 3D tasarım ve görselleştirme hizmeti tüm anahtar teslim projelerimizde standarttır ve ek ücret alınmaz.' },
+        { q: '3D tasarım anahtar teslim pakete dahil mi?', a: 'Evet. 3D tasarım ve görselleştirme hizmeti tüm anahtar teslim projelerimizde standarttır.' },
         { q: 'Sadece 3D tasarım hizmeti alabilir miyim?', a: 'Evet. Uygulamayı kendiniz yönetmek istiyorsanız yalnızca 3D tasarım ve görselleştirme paketi alabilirsiniz. Konsept tasarım, render görseller ve teknik çizimler sağlanır.' },
         { q: 'Kaç revizyon hakkım var?', a: 'Standart paketlerimizde belirli sayıda revizyon hakkı tanınmaktadır. Revizyon sayısı ve kapsamı sözleşmede belirtilir.' },
         { q: '3D tasarım ne kadar sürer?', a: 'Projenin büyüklüğüne göre ilk konsept tasarımlar genellikle 1–2 hafta içinde teslim edilir.' },

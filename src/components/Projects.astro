@@ -1,11 +1,11 @@
 ---
 const allProjects = [
-  { title: 'Beşiktaş Dairesi', category: 'Anahtar Teslim Ev Yenileme', size: 'large', image: '/deneme1/images/266633856_4997237316954973_2289965135152272525_n.jpg' },
-  { title: 'Zekeriyaköy Villa', category: 'Villa Yenileme', size: 'small', image: '/deneme1/images/avi-werde-hHz4yrvxwlA-unsplash.jpg' },
-  { title: 'Nişantaşı Butik', category: 'Mağaza Yenileme', size: 'small', image: '/deneme1/images/266682070_600832197669481_5605395588855338438_n.jpg' },
-  { title: 'Levent Ofis', category: 'Ofis Yenileme', size: 'small', image: '/deneme1/images/269796335_287998196622038_3115674097994505357_n.jpg' },
-  { title: 'Ataşehir Residence', category: 'Anahtar Teslim Ev Yenileme', size: 'small', image: '/deneme1/images/270210256_1299189580524073_8666915339070247329_n.jpg' },
-  { title: 'Acıbadem Villa', category: 'Villa Yenileme', size: 'large', image: '/deneme1/images/hero-villa-sea.jpg' },
+  { slug: 'besiktas-dairesi', title: 'Beşiktaş Dairesi', category: 'Anahtar Teslim Ev Yenileme', size: 'large', image: '/deneme1/images/266633856_4997237316954973_2289965135152272525_n.jpg' },
+  { slug: 'zekeriyakoy-villa', title: 'Zekeriyaköy Villa', category: 'Villa Yenileme', size: 'small', image: '/deneme1/images/avi-werde-hHz4yrvxwlA-unsplash.jpg' },
+  { slug: 'nisantasi-butik', title: 'Nişantaşı Butik', category: 'Mağaza Yenileme', size: 'small', image: '/deneme1/images/266682070_600832197669481_5605395588855338438_n.jpg' },
+  { slug: 'levent-ofis', title: 'Levent Ofis', category: 'Ofis Yenileme', size: 'small', image: '/deneme1/images/269796335_287998196622038_3115674097994505357_n.jpg' },
+  { slug: 'atasehir-residence', title: 'Ataşehir Residence', category: 'Anahtar Teslim Ev Yenileme', size: 'small', image: '/deneme1/images/270210256_1299189580524073_8666915339070247329_n.jpg' },
+  { slug: 'acıbadem-villa', title: 'Acıbadem Villa', category: 'Villa Yenileme', size: 'large', image: '/deneme1/images/hero-villa-sea.jpg' },
 ];
 
 // Ana sayfada yalnızca ilk 4 proje gösterilir
@@ -29,17 +29,14 @@ const projects = allProjects.slice(0, 4);
     <!-- Projects grid -->
     <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
       {projects.map((p, i) => (
-        <button
-          type="button"
-          data-lightbox-image={p.image}
-          data-lightbox-title={p.title}
-          data-lightbox-category={p.category}
-          class={`relative group overflow-hidden reveal reveal-d${(i % 3) + 1} ${p.size === 'large' ? 'row-span-2' : ''} cursor-zoom-in text-left w-full`}
-          aria-label={`${p.title} fotoğrafını büyüt`}
+        <a
+          href={`/deneme1/projeler/${p.slug}`}
+          class={`relative group overflow-hidden reveal reveal-d${(i % 3) + 1} ${p.size === 'large' ? 'row-span-2' : ''}`}
         >
           <img
             src={p.image}
             alt={p.title}
+            loading="lazy"
             class={`w-full object-cover object-center transition-transform duration-500 group-hover:scale-105 ${p.size === 'large' ? 'h-[400px] md:h-[480px]' : 'h-[190px] md:h-[230px]'}`}
           />
 
@@ -48,10 +45,10 @@ const projects = allProjects.slice(0, 4);
             <span class="text-[10px] tracking-[0.25em] uppercase text-gold mb-2">{p.category}</span>
             <h3 class="font-display text-white text-lg font-semibold">{p.title}</h3>
             <span class="mt-2 inline-flex items-center gap-1.5 text-white/60 text-xs">
+              İncele
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
               </svg>
-              Büyüt
             </span>
           </div>
 
@@ -60,7 +57,7 @@ const projects = allProjects.slice(0, 4);
             <p class="text-[10px] tracking-widest uppercase text-gold">{p.category}</p>
             <p class="font-display text-white text-sm font-semibold">{p.title}</p>
           </div>
-        </button>
+        </a>
       ))}
     </div>
 
@@ -91,96 +88,3 @@ const projects = allProjects.slice(0, 4);
 
   </div>
 </section>
-
-<!-- Lightbox Modal -->
-<div
-  id="project-lightbox"
-  class="fixed inset-0 z-[200] flex items-center justify-center"
-  style="display: none;"
-  role="dialog"
-  aria-modal="true"
-  aria-label="Proje fotoğrafı"
->
-  <!-- Backdrop -->
-  <div id="lightbox-backdrop" class="absolute inset-0 bg-charcoal/92 backdrop-blur-sm"></div>
-
-  <!-- Content -->
-  <div class="relative z-10 max-w-5xl w-full mx-4 flex flex-col items-center">
-
-    <!-- Close button -->
-    <button
-      id="lightbox-close"
-      type="button"
-      class="absolute -top-12 right-0 text-white/60 hover:text-white transition-colors p-2"
-      aria-label="Kapat"
-    >
-      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
-      </svg>
-    </button>
-
-    <!-- Image -->
-    <img
-      id="lightbox-img"
-      src=""
-      alt=""
-      class="max-h-[80vh] max-w-full object-contain shadow-2xl"
-    />
-
-    <!-- Caption -->
-    <div class="mt-4 text-center">
-      <p id="lightbox-category" class="text-[10px] tracking-[0.3em] uppercase text-gold mb-1"></p>
-      <p id="lightbox-title" class="font-display text-white text-lg font-semibold"></p>
-    </div>
-  </div>
-</div>
-
-<script>
-  const lightbox = document.getElementById('project-lightbox') as HTMLElement;
-  const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
-  const lightboxTitle = document.getElementById('lightbox-title') as HTMLElement;
-  const lightboxCategory = document.getElementById('lightbox-category') as HTMLElement;
-  const closeBtn = document.getElementById('lightbox-close');
-  const backdrop = document.getElementById('lightbox-backdrop');
-
-  function openLightbox(image: string, title: string, category: string) {
-    lightboxImg.src = image;
-    lightboxImg.alt = title;
-    lightboxTitle.textContent = title;
-    lightboxCategory.textContent = category;
-    lightbox.style.display = 'flex';
-    lightbox.style.opacity = '0';
-    requestAnimationFrame(() => {
-      lightbox.style.transition = 'opacity 0.25s ease';
-      lightbox.style.opacity = '1';
-    });
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeLightbox() {
-    lightbox.style.opacity = '0';
-    setTimeout(() => {
-      lightbox.style.display = 'none';
-      document.body.style.overflow = '';
-    }, 250);
-  }
-
-  // Open on project card click
-  document.querySelectorAll('[data-lightbox-image]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const image = (btn as HTMLElement).dataset.lightboxImage ?? '';
-      const title = (btn as HTMLElement).dataset.lightboxTitle ?? '';
-      const category = (btn as HTMLElement).dataset.lightboxCategory ?? '';
-      openLightbox(image, title, category);
-    });
-  });
-
-  closeBtn?.addEventListener('click', closeLightbox);
-  backdrop?.addEventListener('click', closeLightbox);
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && lightbox.style.display !== 'none') {
-      closeLightbox();
-    }
-  });
-</script>

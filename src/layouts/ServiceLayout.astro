@@ -26,10 +26,7 @@ const {
 } = Astro.props;
 
 const allServices = [
-  { title: 'Anahtar Teslim Ev Yenileme', slug: 'anahtar-teslim-ev-yenileme', desc: 'Tasarımdan uygulamaya tüm süreci biz yönetiyoruz.', image: '/deneme1/images/kara-eads-L7EwHkq1B2s-unsplash.jpg', keyword: 'En çok tercih edilen' },
-  { title: 'Villa Yenileme',              slug: 'villa-yenileme',              desc: 'Lüks villa projeleri için uçtan uca iç mimarlık.',  image: '/deneme1/images/hero-villa-sea.jpg', keyword: 'Zekeriyaköy · Acıbadem' },
-  { title: 'Mağaza Yenileme',             slug: 'magaza-yenileme',             desc: 'Markanızı yansıtan çarpıcı ticari mekanlar.',       image: '/deneme1/images/point3d-commercial-imaging-ltd-X_JXnSBKOO4-unsplash.jpg', keyword: 'Nişantaşı · Levent' },
-  { title: 'Ofis Yenileme',               slug: 'ofis-yenileme',               desc: 'Verimliliği artıran modern çalışma ortamları.',     image: '/deneme1/images/todd-kent-178j8tJrNlc-unsplash.jpg', keyword: 'Kurumsal mekan' },
+  { title: 'Anahtar Teslim Hizmetler',    slug: 'anahtar-teslim-ev-yenileme', desc: 'Tasarımdan uygulamaya tüm süreci biz yönetiyoruz.', image: '/deneme1/images/kara-eads-L7EwHkq1B2s-unsplash.jpg', keyword: 'En çok tercih edilen' },
   { title: 'İç Mimarlık Danışmanlığı',    slug: 'ic-mimarlik-danismanligi',    desc: 'Uzman görüş, malzeme seçimi ve rehberlik.',         image: '/deneme1/images/francesca-tosolini-XcVm8mn7NUM-unsplash.jpg', keyword: 'Esnek paketler' },
   { title: '3D Tasarım & Proje',          slug: '3d-tasarim',                  desc: 'Uygulamadan önce mekanınızı gerçekçi görselle görün.', image: '/deneme1/images/avi-werde-hHz4yrvxwlA-unsplash.jpg', keyword: 'Tüm projelerde standart' },
 ];
@@ -63,7 +60,7 @@ const allSchema = [
 >
   <Header />
 
-  <main class="pt-24 bg-warm-white min-h-screen">
+  <main class="pt-24 bg-[#F5EFE6] min-h-screen">
 
     <!-- Hero image (optional) -->
     {heroImage && (
@@ -127,7 +124,7 @@ const allSchema = [
             </>
           )}
           <p class="text-muted leading-relaxed text-lg mb-8 max-w-lg">{lead}</p>
-          <div class="flex flex-col sm:flex-row gap-4">
+          <div class="flex flex-col sm:flex-row gap-4 flex-wrap">
             <a
               href="https://wa.me/905330391565?text=Merhaba%2C%20hizmet%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
               target="_blank"
@@ -143,7 +140,19 @@ const allSchema = [
               href="tel:+905330391565"
               class="inline-flex items-center justify-center gap-3 border border-charcoal/20 text-charcoal px-8 py-4 text-sm font-semibold tracking-wide hover:bg-charcoal hover:text-white transition-colors"
             >
+              <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+              </svg>
               0533 039 15 65
+            </a>
+            <a
+              href="mailto:info@mastericmimarlik.com"
+              class="inline-flex items-center justify-center gap-3 border border-charcoal/20 text-charcoal px-8 py-4 text-sm font-semibold tracking-wide hover:bg-charcoal hover:text-white transition-colors"
+            >
+              <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+              E-posta Gönder
             </a>
           </div>
         </div>
@@ -187,13 +196,13 @@ const allSchema = [
             <span class="w-8 h-px bg-gold"></span>
             <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Diğer Hizmetler</span>
           </div>
-          <a href="/deneme1/hizmetler" class="text-xs text-muted hover:text-gold transition-colors">Tümünü Gör →</a>
+          <a href="/deneme1/#hizmetler" class="text-xs text-muted hover:text-gold transition-colors">Tümünü Gör →</a>
         </div>
         <div class="grid md:grid-cols-3 gap-6">
           {relatedServices.map(s => (
             <a href={`/deneme1/hizmetler/${s.slug}`} class="group block border border-border hover:border-gold transition-colors duration-200">
               <div class="overflow-hidden">
-                <img src={s.image} alt={s.title} class="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={s.image} alt={s.title} loading="lazy" class="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
               <div class="p-5">
                 <p class="text-[10px] tracking-[0.25em] uppercase text-gold mb-2">{s.keyword}</p>

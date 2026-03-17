@@ -321,16 +321,98 @@ const breadcrumbSchema = {
       </div>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
         {project.gallery.map((img, i) => (
-          <div class={`overflow-hidden ${i === 0 ? 'col-span-2 row-span-2' : ''}`}>
+          <button
+            type="button"
+            data-lightbox-image={img}
+            data-lightbox-title={`${project.title} — Fotoğraf ${i + 1}`}
+            class={`overflow-hidden cursor-zoom-in group relative ${i === 0 ? 'col-span-2 row-span-2' : ''}`}
+            aria-label={`Fotoğraf ${i + 1} büyüt`}
+          >
             <img
               src={img}
               alt={`${project.title} — fotoğraf ${i + 1}`}
-              class={`w-full object-cover object-center hover:scale-105 transition-transform duration-500 ${i === 0 ? 'h-[320px] md:h-[400px]' : 'h-[155px] md:h-[195px]'}`}
+              loading={i === 0 ? 'eager' : 'lazy'}
+              class={`w-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ${i === 0 ? 'h-[320px] md:h-[400px]' : 'h-[155px] md:h-[195px]'}`}
             />
-          </div>
+            <!-- Zoom hint overlay -->
+            <div class="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/30 transition-colors duration-300 flex items-center justify-center">
+              <svg class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/>
+              </svg>
+            </div>
+          </button>
         ))}
       </div>
     </div>
+
+    <!-- Lightbox Modal -->
+    <div
+      id="project-lightbox"
+      class="fixed inset-0 z-[200] flex items-center justify-center"
+      style="display: none;"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Proje fotoğrafı"
+    >
+      <div id="lightbox-backdrop" class="absolute inset-0 bg-charcoal/95 backdrop-blur-sm"></div>
+      <div class="relative z-10 max-w-5xl w-full mx-4 flex flex-col items-center">
+        <button
+          id="lightbox-close"
+          type="button"
+          class="absolute -top-12 right-0 text-white/60 hover:text-white transition-colors p-2"
+          aria-label="Kapat"
+        >
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+        <img id="lightbox-img" src="" alt="" class="max-h-[82vh] max-w-full object-contain shadow-2xl" />
+        <p id="lightbox-caption" class="mt-4 text-white/50 text-sm text-center"></p>
+      </div>
+    </div>
+
+    <script>
+      const lightbox = document.getElementById('project-lightbox') as HTMLElement;
+      const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+      const lightboxCaption = document.getElementById('lightbox-caption') as HTMLElement;
+      const closeBtn = document.getElementById('lightbox-close');
+      const backdrop = document.getElementById('lightbox-backdrop');
+
+      function openLightbox(image: string, title: string) {
+        lightboxImg.src = image;
+        lightboxImg.alt = title;
+        lightboxCaption.textContent = title;
+        lightbox.style.display = 'flex';
+        lightbox.style.opacity = '0';
+        requestAnimationFrame(() => {
+          lightbox.style.transition = 'opacity 0.22s ease';
+          lightbox.style.opacity = '1';
+        });
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightbox.style.opacity = '0';
+        setTimeout(() => {
+          lightbox.style.display = 'none';
+          document.body.style.overflow = '';
+        }, 220);
+      }
+
+      document.querySelectorAll('[data-lightbox-image]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const image = (btn as HTMLElement).dataset.lightboxImage ?? '';
+          const title = (btn as HTMLElement).dataset.lightboxTitle ?? '';
+          openLightbox(image, title);
+        });
+      });
+
+      closeBtn?.addEventListener('click', closeLightbox);
+      backdrop?.addEventListener('click', closeLightbox);
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.style.display !== 'none') closeLightbox();
+      });
+    </script>
 
     <!-- Related projects -->
     <div class="border-t border-white/10 py-16">
@@ -348,6 +430,7 @@ const breadcrumbSchema = {
               <img
                 src={p.heroImage}
                 alt={p.title}
+                loading="lazy"
                 class="w-full h-48 object-cover object-center group-hover:scale-105 transition-transform duration-500"
               />
               <div class="absolute inset-0 bg-charcoal/60 group-hover:bg-charcoal/40 transition-colors duration-300 flex flex-col justify-end p-4">
