@@ -41,7 +41,7 @@ const services = [
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       {services.map((s, i) => (
         <a
-          href={`/deneme1/hizmetler/${s.slug}`}
+          href={`/hizmetler/${s.slug}`}
           class={`bg-[#FAF6F1] px-10 py-8 group hover:bg-[#EDE5D8] transition-colors duration-300 reveal reveal-d${(i % 3) + 1} flex flex-col`}
         >
           <div class="text-gold mb-5 group-hover:scale-110 transition-transform duration-300 inline-block [&_svg]:w-10 [&_svg]:h-10" set:html={s.icon} />

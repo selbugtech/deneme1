@@ -66,11 +66,11 @@ const faqSchema = {
   eyebrow="Hizmet"
   lead="Tasarımdan uygulamaya tüm süreçleri biz yönetiyoruz. Cafe, restoran, ofis, mağaza veya ev — hangi mekan olursa olsun iç mimari, malzeme tedariki, usta koordinasyonu ve şantiye yönetimi tek çatı altında."
   breadcrumb={[
-    { label: "Ana Sayfa", href: "/deneme1/" },
-    { label: "Hizmetler", href: "/deneme1/#hizmetler" },
+    { label: "Ana Sayfa", href: "/" },
+    { label: "Hizmetler", href: "/#hizmetler" },
     { label: "Anahtar Teslim Hizmetler" }
   ]}
-  heroImage="/deneme1/images/kara-eads-L7EwHkq1B2s-unsplash.jpg"
+  heroImage="/images/kara-eads-L7EwHkq1B2s-unsplash.jpg"
   ogImage={`${CANONICAL_BASE}/images/kara-eads-L7EwHkq1B2s-unsplash.jpg`}
   structuredData={[serviceSchema, faqSchema]}
 >
@@ -85,7 +85,7 @@ const faqSchema = {
     <div class="grid md:grid-cols-2 gap-6">
       {subServices.map((s) => (
         <a
-          href={`/deneme1/hizmetler/anahtar-teslim-ev-yenileme/${s.slug}`}
+          href={`/hizmetler/anahtar-teslim-ev-yenileme/${s.slug}`}
           class="group border border-border p-7 hover:border-gold transition-colors duration-200 flex gap-5 items-start"
         >
           <div class="text-gold shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300" set:html={s.icon} />
@@ -152,9 +152,9 @@ const faqSchema = {
     </div>
     <div class="grid md:grid-cols-3 gap-4">
       {[
-        { src: '/deneme1/images/besiktas-sampi4.jpg',                                               title: 'Beşiktaş Dairesi',    detail: '120 m² · Komple yenileme · 2024' },
-        { src: '/deneme1/images/266633856_4997237316954973_2289965135152272525_n.jpg',               title: 'Kadıköy Residence',   detail: '110 m² · Anahtar teslim · 2024' },
-        { src: '/deneme1/images/269841624_466700278133027_1819415279374451521_n.jpg',                title: 'Levent Dairesi',      detail: '135 m² · Komple yenileme · 2023' },
+        { src: '/images/besiktas-sampi4.jpg',                                               title: 'Beşiktaş Dairesi',    detail: '120 m² · Komple yenileme · 2024' },
+        { src: '/images/266633856_4997237316954973_2289965135152272525_n.jpg',               title: 'Kadıköy Residence',   detail: '110 m² · Anahtar teslim · 2024' },
+        { src: '/images/269841624_466700278133027_1819415279374451521_n.jpg',                title: 'Levent Dairesi',      detail: '135 m² · Komple yenileme · 2023' },
       ].map(p => (
         <div class="group">
           <div class="overflow-hidden mb-3">
@@ -166,7 +166,7 @@ const faqSchema = {
       ))}
     </div>
     <div class="mt-6">
-      <a href="/deneme1/projeler" class="text-sm text-gold hover:underline inline-flex items-center gap-2">
+      <a href="/projeler" class="text-sm text-gold hover:underline inline-flex items-center gap-2">
         Tüm projelerimizi görün
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>

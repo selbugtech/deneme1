@@ -26,9 +26,9 @@ const {
 } = Astro.props;
 
 const allServices = [
-  { title: 'Anahtar Teslim Hizmetler',    slug: 'anahtar-teslim-ev-yenileme', desc: 'Tasarımdan uygulamaya tüm süreci biz yönetiyoruz.', image: '/deneme1/images/kara-eads-L7EwHkq1B2s-unsplash.jpg', keyword: 'En çok tercih edilen' },
-  { title: 'İç Mimarlık Danışmanlığı',    slug: 'ic-mimarlik-danismanligi',    desc: 'Uzman görüş, malzeme seçimi ve rehberlik.',         image: '/deneme1/images/francesca-tosolini-XcVm8mn7NUM-unsplash.jpg', keyword: 'Esnek paketler' },
-  { title: '3D Tasarım & Proje',          slug: '3d-tasarim',                  desc: 'Uygulamadan önce mekanınızı gerçekçi görselle görün.', image: '/deneme1/images/avi-werde-hHz4yrvxwlA-unsplash.jpg', keyword: 'Tüm projelerde standart' },
+  { title: 'Anahtar Teslim Hizmetler',    slug: 'anahtar-teslim-ev-yenileme', desc: 'Tasarımdan uygulamaya tüm süreci biz yönetiyoruz.', image: '/images/kara-eads-L7EwHkq1B2s-unsplash.jpg', keyword: 'En çok tercih edilen' },
+  { title: 'İç Mimarlık Danışmanlığı',    slug: 'ic-mimarlik-danismanligi',    desc: 'Uzman görüş, malzeme seçimi ve rehberlik.',         image: '/images/francesca-tosolini-XcVm8mn7NUM-unsplash.jpg', keyword: 'Esnek paketler' },
+  { title: '3D Tasarım & Proje',          slug: '3d-tasarim',                  desc: 'Uygulamadan önce mekanınızı gerçekçi görselle görün.', image: '/images/avi-werde-hHz4yrvxwlA-unsplash.jpg', keyword: 'Tüm projelerde standart' },
 ];
 
 const currentSlug = canonicalUrl.split('/').pop() ?? '';
@@ -196,11 +196,11 @@ const allSchema = [
             <span class="w-8 h-px bg-gold"></span>
             <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Diğer Hizmetler</span>
           </div>
-          <a href="/deneme1/#hizmetler" class="text-xs text-muted hover:text-gold transition-colors">Tümünü Gör →</a>
+          <a href="/#hizmetler" class="text-xs text-muted hover:text-gold transition-colors">Tümünü Gör →</a>
         </div>
         <div class="grid md:grid-cols-3 gap-6">
           {relatedServices.map(s => (
-            <a href={`/deneme1/hizmetler/${s.slug}`} class="group block border border-border hover:border-gold transition-colors duration-200">
+            <a href={`/hizmetler/${s.slug}`} class="group block border border-border hover:border-gold transition-colors duration-200">
               <div class="overflow-hidden">
                 <img src={s.image} alt={s.title} loading="lazy" class="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>

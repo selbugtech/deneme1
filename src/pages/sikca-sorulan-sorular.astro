@@ -252,7 +252,7 @@ const webPageSchema = {
 
         <!-- Breadcrumb -->
         <nav class="flex items-center gap-2 mb-8 text-sm" aria-label="Breadcrumb">
-          <a href="/deneme1/" class="text-white/50 hover:text-gold transition-colors">Ana Sayfa</a>
+          <a href="/" class="text-white/50 hover:text-gold transition-colors">Ana Sayfa</a>
           <span class="text-white/20">/</span>
           <span class="text-white/70">Sıkça Sorulan Sorular</span>
         </nav>
@@ -367,12 +367,12 @@ const webPageSchema = {
         </div>
         <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
           {[
-            { label: 'Hizmetlerimiz',        href: '/deneme1/#hizmetler',                  desc: 'Tüm iç mimarlık hizmetleri' },
-            { label: 'Projelerimiz',          href: '/deneme1/projeler',                    desc: 'Tamamlanan proje portföyü' },
-            { label: 'Blog',                  href: '/deneme1/blog',                        desc: 'Rehber içerikler ve trendler' },
-            { label: 'Anahtar Teslim Tadilat', href: '/deneme1/hizmetler/anahtar-teslim-tadilat', desc: 'Süreç ve kapsam detayı' },
-            { label: 'Daire Yenileme',        href: '/deneme1/hizmetler/daire-yenileme',   desc: 'Daire projeleri ve maliyetler' },
-            { label: 'Villa Yenileme',        href: '/deneme1/hizmetler/villa-yenileme',   desc: 'Villa tadilat rehberi' },
+            { label: 'Hizmetlerimiz',        href: '/#hizmetler',                  desc: 'Tüm iç mimarlık hizmetleri' },
+            { label: 'Projelerimiz',          href: '/projeler',                    desc: 'Tamamlanan proje portföyü' },
+            { label: 'Blog',                  href: '/blog',                        desc: 'Rehber içerikler ve trendler' },
+            { label: 'Anahtar Teslim Tadilat', href: '/hizmetler/anahtar-teslim-tadilat', desc: 'Süreç ve kapsam detayı' },
+            { label: 'Daire Yenileme',        href: '/hizmetler/daire-yenileme',   desc: 'Daire projeleri ve maliyetler' },
+            { label: 'Villa Yenileme',        href: '/hizmetler/villa-yenileme',   desc: 'Villa tadilat rehberi' },
           ].map(link => (
             <a href={link.href} class="group block border border-border p-5 hover:border-gold transition-colors">
               <p class="font-semibold text-charcoal text-sm group-hover:text-gold transition-colors mb-1">{link.label}</p>

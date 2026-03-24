@@ -1,11 +1,11 @@
 ---
 const allProjects = [
-  { slug: 'besiktas-dairesi', title: 'Beşiktaş Dairesi', category: 'Anahtar Teslim Ev Yenileme', size: 'large', image: '/deneme1/images/266633856_4997237316954973_2289965135152272525_n.jpg' },
-  { slug: 'zekeriyakoy-villa', title: 'Zekeriyaköy Villa', category: 'Villa Yenileme', size: 'small', image: '/deneme1/images/avi-werde-hHz4yrvxwlA-unsplash.jpg' },
-  { slug: 'nisantasi-butik', title: 'Nişantaşı Butik', category: 'Mağaza Yenileme', size: 'small', image: '/deneme1/images/266682070_600832197669481_5605395588855338438_n.jpg' },
-  { slug: 'levent-ofis', title: 'Levent Ofis', category: 'Ofis Yenileme', size: 'small', image: '/deneme1/images/269796335_287998196622038_3115674097994505357_n.jpg' },
-  { slug: 'atasehir-residence', title: 'Ataşehir Residence', category: 'Anahtar Teslim Ev Yenileme', size: 'small', image: '/deneme1/images/270210256_1299189580524073_8666915339070247329_n.jpg' },
-  { slug: 'acıbadem-villa', title: 'Acıbadem Villa', category: 'Villa Yenileme', size: 'large', image: '/deneme1/images/hero-villa-sea.jpg' },
+  { slug: 'besiktas-dairesi', title: 'Beşiktaş Dairesi', category: 'Anahtar Teslim Ev Yenileme', size: 'large', image: '/images/266633856_4997237316954973_2289965135152272525_n.jpg' },
+  { slug: 'zekeriyakoy-villa', title: 'Zekeriyaköy Villa', category: 'Villa Yenileme', size: 'small', image: '/images/avi-werde-hHz4yrvxwlA-unsplash.jpg' },
+  { slug: 'nisantasi-butik', title: 'Nişantaşı Butik', category: 'Mağaza Yenileme', size: 'small', image: '/images/266682070_600832197669481_5605395588855338438_n.jpg' },
+  { slug: 'levent-ofis', title: 'Levent Ofis', category: 'Ofis Yenileme', size: 'small', image: '/images/269796335_287998196622038_3115674097994505357_n.jpg' },
+  { slug: 'atasehir-residence', title: 'Ataşehir Residence', category: 'Anahtar Teslim Ev Yenileme', size: 'small', image: '/images/270210256_1299189580524073_8666915339070247329_n.jpg' },
+  { slug: 'acıbadem-villa', title: 'Acıbadem Villa', category: 'Villa Yenileme', size: 'large', image: '/images/hero-villa-sea.jpg' },
 ];
 
 // Ana sayfada yalnızca ilk 4 proje gösterilir
@@ -30,7 +30,7 @@ const projects = allProjects.slice(0, 4);
     <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
       {projects.map((p, i) => (
         <a
-          href={`/deneme1/projeler/${p.slug}`}
+          href={`/projeler/${p.slug}`}
           class={`relative group overflow-hidden reveal reveal-d${(i % 3) + 1} ${p.size === 'large' ? 'row-span-2' : ''}`}
         >
           <img
@@ -76,7 +76,7 @@ const projects = allProjects.slice(0, 4);
       </a>
 
       <a
-        href="/deneme1/projeler"
+        href="/projeler"
         class="inline-flex items-center gap-2 text-white/55 hover:text-gold text-sm tracking-wide transition-colors duration-200"
       >
         Tüm Projeleri Gör

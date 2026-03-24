@@ -34,11 +34,11 @@ const faqSchema = {
   eyebrow="Hizmet"
   lead="Uygulamaya başlamadan önce mekanınızı fotorealistik 3D görseller ile deneyimleyin. Malzeme, renk ve mobilya seçimlerini somut olarak görerek onaylayın — sürprizle karşılaşmayın."
   breadcrumb={[
-    { label: "Ana Sayfa", href: "/deneme1/" },
-    { label: "Hizmetler", href: "/deneme1/#hizmetler" },
+    { label: "Ana Sayfa", href: "/" },
+    { label: "Hizmetler", href: "/#hizmetler" },
     { label: "3D Tasarım" }
   ]}
-  heroImage="/deneme1/images/avi-werde-hHz4yrvxwlA-unsplash.jpg"
+  heroImage="/images/avi-werde-hHz4yrvxwlA-unsplash.jpg"
   ogImage={`${CANONICAL_BASE}/images/avi-werde-hHz4yrvxwlA-unsplash.jpg`}
   structuredData={[serviceSchema, faqSchema]}
 >
@@ -91,9 +91,9 @@ const faqSchema = {
     </div>
     <div class="grid md:grid-cols-3 gap-4">
       {[
-        { src: '/deneme1/images/266682070_600832197669481_5605395588855338438_n.jpg', title: 'Salon 3D Tasarımı', detail: 'Beşiktaş dairesi · 2024' },
-        { src: '/deneme1/images/erica-carr-43xpj1f3O2Y-unsplash.jpg',                title: 'Yatak Odası Render', detail: 'Nişantaşı projesi · 2024' },
-        { src: '/deneme1/images/peter-ivey-hansen-5xOSA-UgsKQ-unsplash.jpg',         title: 'Mutfak Görselleştirme', detail: 'Kadıköy projesi · 2023' },
+        { src: '/images/266682070_600832197669481_5605395588855338438_n.jpg', title: 'Salon 3D Tasarımı', detail: 'Beşiktaş dairesi · 2024' },
+        { src: '/images/erica-carr-43xpj1f3O2Y-unsplash.jpg',                title: 'Yatak Odası Render', detail: 'Nişantaşı projesi · 2024' },
+        { src: '/images/peter-ivey-hansen-5xOSA-UgsKQ-unsplash.jpg',         title: 'Mutfak Görselleştirme', detail: 'Kadıköy projesi · 2023' },
       ].map(p => (
         <div class="group">
           <div class="overflow-hidden mb-3">
