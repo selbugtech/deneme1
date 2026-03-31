@@ -278,20 +278,20 @@ const breadcrumbSchema = {
 >
   <Header />
 
-  <main class="pt-24 bg-warm-white min-h-screen">
+  <main class="bg-warm-white min-h-screen">
 
     <!-- Hero image -->
     {heroImage ? (
-      <div class="relative w-full h-[45vh] md:h-[55vh] overflow-hidden">
+      <div class="relative w-full overflow-hidden" style="min-height: 55vh;">
         <img
           src={heroImage}
           alt={displayTitle}
-          class="w-full h-full object-cover object-center"
+          class="absolute inset-0 w-full h-full object-cover object-center"
         />
-        <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-charcoal/40"></div>
 
         <!-- Breadcrumb -->
-        <div class="absolute top-0 left-0 right-0 pt-28 px-6">
+        <div class="relative pt-28 px-6">
           <div class="max-w-6xl mx-auto">
             <nav class="flex items-center gap-2 text-sm flex-wrap" aria-label="Breadcrumb">
               <a href="/" class="text-white/50 hover:text-gold transition-colors">Ana Sayfa</a>
@@ -304,7 +304,7 @@ const breadcrumbSchema = {
         </div>
 
         <!-- Title overlay -->
-        <div class="absolute bottom-0 left-0 right-0 pb-10 px-6">
+        <div class="relative pb-10 pt-6 px-6">
           <div class="max-w-6xl mx-auto">
             <div class="flex items-center gap-3 mb-3">
               <span class="w-6 h-px bg-gold"></span>
@@ -323,7 +323,7 @@ const breadcrumbSchema = {
       </div>
     ) : (
       <!-- Fallback text header when no hero image -->
-      <div class="bg-charcoal">
+      <div class="bg-charcoal pt-24">
         <div class="max-w-6xl mx-auto px-6 pt-10 pb-14">
           <nav class="flex items-center gap-2 mb-8 text-sm flex-wrap" aria-label="Breadcrumb">
             <a href="/" class="text-white/50 hover:text-gold transition-colors">Ana Sayfa</a>
