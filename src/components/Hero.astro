@@ -6,9 +6,9 @@ const tel = 'tel:+905330391565';
 
 const slides = [
   {
-    // İlk slide: LCP görseli — preload URL ile birebir eşleşmeli (w_1920)
-    image: optimizedImageW('/images/salon1.png', 1920),
-    srcset: srcsetImage('/images/salon1.png', [600, 1200, 1920]),
+    // İlk slide: LCP görseli — preload href (w_800) ile birebir eşleşmeli
+    image: optimizedImageW('/images/salon1.png', 800),
+    srcset: srcsetImage('/images/salon1.png', [400, 800, 1200, 1920]),
     label: 'Salon & Oturma Odası',
   },
   {

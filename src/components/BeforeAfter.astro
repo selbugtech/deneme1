@@ -70,16 +70,18 @@ const comparisons = [
             class="ba-container relative overflow-hidden select-none cursor-ew-resize"
             style="height: clamp(260px, 50vw, 520px);"
           >
-            <!-- After image (behind) -->
+            <!-- After image (behind) — lazy loaded via IntersectionObserver -->
             <div
               class="ba-after absolute inset-0 w-full h-full"
-              style={`background-image: url('${c.after}'); background-size: cover; background-position: center;`}
+              data-bg={c.after}
+              style="background-size: cover; background-position: center;"
             />
 
-            <!-- Before image (clipped on top) -->
+            <!-- Before image (clipped on top) — lazy loaded via IntersectionObserver -->
             <div
               class="ba-before absolute inset-0 w-full h-full"
-              style={`background-image: url('${c.before}'); background-size: cover; background-position: center; clip-path: inset(0 50% 0 0);`}
+              data-bg={c.before}
+              style="background-size: cover; background-position: center; clip-path: inset(0 50% 0 0);"
             />
 
             <!-- Labels -->
@@ -204,4 +206,17 @@ const comparisons = [
 
   // Initialize all visible containers
   document.querySelectorAll<HTMLElement>('.ba-container').forEach(initSlider);
+
+  // Lazy load background images via IntersectionObserver
+  const bgObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target as HTMLElement;
+        if (el.dataset.bg) el.style.backgroundImage = `url('${el.dataset.bg}')`;
+        bgObserver.unobserve(el);
+      }
+    });
+  }, { rootMargin: '200px' });
+
+  document.querySelectorAll<HTMLElement>('[data-bg]').forEach(el => bgObserver.observe(el));
 </script>
