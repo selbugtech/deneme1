@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppFloat from '../components/WhatsAppFloat.astro';
 import { CANONICAL_BASE } from '../config';
+import { optimizedImage } from '../lib/cloudinary';
 
 interface Props {
   title: string;
@@ -26,9 +27,9 @@ const {
 } = Astro.props;
 
 const allServices = [
-  { title: 'Anahtar Teslim Hizmetler',    slug: 'anahtar-teslim-ev-yenileme', desc: 'Tasarımdan uygulamaya tüm süreci biz yönetiyoruz.', image: '/images/kara-eads-L7EwHkq1B2s-unsplash.jpg', keyword: 'En çok tercih edilen' },
-  { title: 'İç Mimarlık Danışmanlığı',    slug: 'ic-mimarlik-danismanligi',    desc: 'Uzman görüş, malzeme seçimi ve rehberlik.',         image: '/images/francesca-tosolini-XcVm8mn7NUM-unsplash.jpg', keyword: 'Esnek paketler' },
-  { title: '3D Tasarım & Proje',          slug: '3d-tasarim',                  desc: 'Uygulamadan önce mekanınızı gerçekçi görselle görün.', image: '/images/avi-werde-hHz4yrvxwlA-unsplash.jpg', keyword: 'Tüm projelerde standart' },
+  { title: 'Anahtar Teslim Hizmetler',    slug: 'anahtar-teslim-ev-yenileme', desc: 'Tasarımdan uygulamaya tüm süreci biz yönetiyoruz.', image: optimizedImage('/images/salon2.jpeg'), keyword: 'En çok tercih edilen' },
+  { title: 'İç Mimarlık Danışmanlığı',    slug: 'ic-mimarlik-danismanligi',    desc: 'Uzman görüş, malzeme seçimi ve rehberlik.',         image: optimizedImage('/images/salon4.jpeg'), keyword: 'Esnek paketler' },
+  { title: '3D Tasarım & Proje',          slug: '3d-tasarim',                  desc: 'Uygulamadan önce mekanınızı gerçekçi görselle görün.', image: optimizedImage('/images/mutfak3.jpeg'), keyword: 'Tüm projelerde standart' },
 ];
 
 const currentSlug = canonicalUrl.split('/').pop() ?? '';
@@ -146,7 +147,7 @@ const allSchema = [
               0533 039 15 65
             </a>
             <a
-              href="mailto:info@mastericmimarlik.com"
+              href="mailto:mastericmimarlik@gmail.com"
               class="inline-flex items-center justify-center gap-3 border border-charcoal/20 text-charcoal px-8 py-4 text-sm font-semibold tracking-wide hover:bg-charcoal hover:text-white transition-colors"
             >
               <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -172,7 +173,7 @@ const allSchema = [
               <p class="text-white/50 text-xs tracking-wide mt-1">Mutlu Müşteri</p>
             </div>
             <div>
-              <p class="font-display text-3xl font-bold text-gold">5.0</p>
+              <p class="font-display text-3xl font-bold text-gold">4.9</p>
               <p class="text-white/50 text-xs tracking-wide mt-1">Google Puan</p>
             </div>
           </div>
@@ -202,7 +203,7 @@ const allSchema = [
           {relatedServices.map(s => (
             <a href={`/hizmetler/${s.slug}`} class="group block border border-border hover:border-gold transition-colors duration-200">
               <div class="overflow-hidden">
-                <img src={s.image} alt={s.title} loading="lazy" class="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={s.image} alt={s.title} loading="lazy" decoding="async" class="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
               <div class="p-5">
                 <p class="text-[10px] tracking-[0.25em] uppercase text-gold mb-2">{s.keyword}</p>

@@ -1,6 +1,7 @@
 ---
 import BlogPost from '../../layouts/BlogPost.astro';
 import { CANONICAL_BASE } from '../../config';
+import { optimizedImage } from '../../lib/cloudinary';
 ---
 
 <BlogPost
@@ -10,8 +11,8 @@ import { CANONICAL_BASE } from '../../config';
   publishDate="2025-01-25"
   readingTime="5 dk okuma"
   tag="Bilgi"
-  heroImage="/images/266633856_4997237316954973_2289965135152272525_n.jpg"
-  ogImage={`${CANONICAL_BASE}/images/266633856_4997237316954973_2289965135152272525_n.jpg`}
+  heroImage={optimizedImage('/images/salon3.jpeg')}
+  ogImage={optimizedImage('/images/salon3.jpeg')}
 >
 
 <h2>Anahtar Teslim Ev Yenileme Nedir?</h2>

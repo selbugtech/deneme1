@@ -1,6 +1,7 @@
 ---
 import BlogPost from '../../layouts/BlogPost.astro';
 import { CANONICAL_BASE } from '../../config';
+import { optimizedImage } from '../../lib/cloudinary';
 ---
 
 <BlogPost
@@ -10,8 +11,8 @@ import { CANONICAL_BASE } from '../../config';
   publishDate="2025-03-15"
   readingTime="6 dk okuma"
   tag="Bilgi"
-  heroImage="/images/pragyan-goswami-vzeQUIfyVlo-unsplash.jpg"
-  ogImage={`${CANONICAL_BASE}/images/pragyan-goswami-vzeQUIfyVlo-unsplash.jpg`}
+  heroImage={optimizedImage('/images/salon5.jpeg')}
+  ogImage={optimizedImage('/images/salon5.jpeg')}
 >
 
 <h2>İç Mimar Ne İş Yapar? Temel Rol ve Sorumluluklar</h2>

@@ -19,22 +19,22 @@ export async function fetchGoogleReviews(
   apiKey: string
 ): Promise<{ reviews: GoogleReview[]; rating: number; totalRatings: number }> {
   if (!apiKey || !placeId) {
-    return { reviews: [], rating: 5.0, totalRatings: 0 };
+    return { reviews: [], rating: 4.9, totalRatings: 0 };
   }
 
   const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews,rating,user_ratings_total&key=${apiKey}&language=tr&reviews_sort=most_relevant`;
 
   try {
     const res = await fetch(url);
-    if (!res.ok) return { reviews: [], rating: 5.0, totalRatings: 0 };
+    if (!res.ok) return { reviews: [], rating: 4.9, totalRatings: 0 };
     const data = await res.json();
-    if (data.status !== 'OK') return { reviews: [], rating: 5.0, totalRatings: 0 };
+    if (data.status !== 'OK') return { reviews: [], rating: 4.9, totalRatings: 0 };
     return {
       reviews: data.result?.reviews ?? [],
       rating: data.result?.rating ?? 5.0,
       totalRatings: data.result?.user_ratings_total ?? 0,
     };
   } catch {
-    return { reviews: [], rating: 5.0, totalRatings: 0 };
+    return { reviews: [], rating: 4.9, totalRatings: 0 };
   }
 }

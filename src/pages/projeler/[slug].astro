@@ -4,6 +4,7 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import WhatsAppFloat from '../../components/WhatsAppFloat.astro';
 import { CANONICAL_BASE } from '../../config';
+import { optimizedImage } from '../../lib/cloudinary';
 
 const allProjects = [
   {
@@ -15,12 +16,12 @@ const allProjects = [
     location: 'Beşiktaş, İstanbul',
     area: '120 m²',
     duration: '8 Hafta',
-    heroImage: '/images/266633856_4997237316954973_2289965135152272525_n.jpg',
+    heroImage: optimizedImage('/images/salon3.jpeg'),
     gallery: [
-      '/images/besiktas-sampi4.jpg',
-      '/images/269841624_450221756551793_6345302129420975823_n.jpg',
-      '/images/267243622_240183768199610_7262098467709713644_n.jpg',
-      '/images/269918400_1013177626208480_5105489845896302754_n.jpg',
+      optimizedImage('/images/salon4.jpeg'),
+      optimizedImage('/images/mutfak1.jpeg'),
+      optimizedImage('/images/banyo1.webp'),
+      optimizedImage('/images/merdiven1.jpeg'),
     ],
     services: ['İç Mimari Tasarım', '3D Görselleştirme', 'Komple Yenileme', 'Mutfak & Banyo', 'Zemin Kaplama', 'Boya & Dekor'],
     description: [
@@ -40,12 +41,12 @@ const allProjects = [
     location: 'Zekeriyaköy, İstanbul',
     area: '320 m²',
     duration: '14 Hafta',
-    heroImage: '/images/avi-werde-hHz4yrvxwlA-unsplash.jpg',
+    heroImage: optimizedImage('/images/oturmaodasi.jpeg'),
     gallery: [
-      '/images/hero-villa-forest.png',
-      '/images/hero-loft.png',
-      '/images/lance-anderson-QdAAasrZhdk-unsplash.jpg',
-      '/images/francesca-tosolini-XcVm8mn7NUM-unsplash.jpg',
+      optimizedImage('/images/salon2.jpeg'),
+      optimizedImage('/images/mutfak3.jpeg'),
+      optimizedImage('/images/salonvemutfak.jpeg'),
+      optimizedImage('/images/merdiven2.jpeg'),
     ],
     services: ['Villa İç Mimari Tasarımı', '3D Görselleştirme', 'Peyzaj Entegrasyonu', 'Özel Mobilya Tasarımı', 'Akıllı Ev Sistemleri', 'Komple Yenileme'],
     description: [
@@ -65,12 +66,12 @@ const allProjects = [
     location: 'Nişantaşı, İstanbul',
     area: '85 m²',
     duration: '5 Hafta',
-    heroImage: '/images/266682070_600832197669481_5605395588855338438_n.jpg',
+    heroImage: optimizedImage('/images/restoran1.jpeg'),
     gallery: [
-      '/images/digital-marketing-agency-ntwrk-g39p1kDjvSY-unsplash.jpg',
-      '/images/point3d-commercial-imaging-ltd-X_JXnSBKOO4-unsplash.jpg',
-      '/images/todd-kent-178j8tJrNlc-unsplash.jpg',
-      '/images/269934334_444856893989276_8300817181046348982_n.jpg',
+      optimizedImage('/images/salon9.jpeg'),
+      optimizedImage('/images/salon5.jpeg'),
+      optimizedImage('/images/salon6.jpeg'),
+      optimizedImage('/images/mutfak4.jpeg'),
     ],
     services: ['Mağaza Konsept Tasarımı', 'Vitrin & Teşhir Planlaması', 'Özel Raf & Dekor Sistemleri', 'Aydınlatma Tasarımı', 'Kaplama & Boya', 'Tabela & Branding Entegrasyonu'],
     description: [
@@ -90,12 +91,12 @@ const allProjects = [
     location: 'Levent, İstanbul',
     area: '180 m²',
     duration: '6 Hafta',
-    heroImage: '/images/269796335_287998196622038_3115674097994505357_n.jpg',
+    heroImage: optimizedImage('/images/ofis2.jpeg'),
     gallery: [
-      '/images/jimmy-chang-ACt8ycSzpdE-unsplash.jpg',
-      '/images/erica-carr-43xpj1f3O2Y-unsplash.jpg',
-      '/images/peter-ivey-hansen-5xOSA-UgsKQ-unsplash.jpg',
-      '/images/269841624_450221756551793_6345302129420975823_n.jpg',
+      optimizedImage('/images/toplantiodasi1.jpeg'),
+      optimizedImage('/images/salon8.jpeg'),
+      optimizedImage('/images/mutfak5.jpeg'),
+      optimizedImage('/images/merdiven3.jpeg'),
     ],
     services: ['Ofis İç Mimari Tasarımı', 'Açık Ofis & Kabinli Alan Planlaması', 'Akustik Çözümler', 'Toplantı Odası Tasarımı', 'Teknik Altyapı (Elektrik & Ağ)', 'Mobilya Seçimi'],
     description: [
@@ -115,12 +116,12 @@ const allProjects = [
     location: 'Ataşehir, İstanbul',
     area: '95 m²',
     duration: '7 Hafta',
-    heroImage: '/images/270210256_1299189580524073_8666915339070247329_n.jpg',
+    heroImage: optimizedImage('/images/yatakodasi1.jpeg'),
     gallery: [
-      '/images/pragyan-goswami-vzeQUIfyVlo-unsplash.jpg',
-      '/images/frames-for-your-heart-mR1CIDduGLc-unsplash.jpg',
-      '/images/kara-eads-L7EwHkq1B2s-unsplash.jpg',
-      '/images/266633856_4997237316954973_2289965135152272525_n.jpg',
+      optimizedImage('/images/yatakodasi2.jpeg'),
+      optimizedImage('/images/banyo1.webp'),
+      optimizedImage('/images/giyinmeodasi.jpeg'),
+      optimizedImage('/images/salon1.png'),
     ],
     services: ['İç Mimari Tasarım', '3D Görselleştirme', 'Komple Yenileme', 'Alçıpan & Asma Tavan', 'Mutfak Yenileme', 'Banyo Renovasyonu'],
     description: [
@@ -140,12 +141,12 @@ const allProjects = [
     location: 'Acıbadem, İstanbul',
     area: '280 m²',
     duration: '12 Hafta',
-    heroImage: '/images/hero-villa-sea.jpg',
+    heroImage: optimizedImage('/images/salon7.jpeg'),
     gallery: [
-      '/images/sariyer-villa5.jpg',
-      '/images/vu-anh-TiVPTYCG_3E-unsplash.jpg',
-      '/images/hero-villa-forest.png',
-      '/images/269918400_1013177626208480_5105489845896302754_n.jpg',
+      optimizedImage('/images/merdiven1.jpeg'),
+      optimizedImage('/images/yatakodasi.jpeg'),
+      optimizedImage('/images/mutfak3.jpeg'),
+      optimizedImage('/images/salon2.png'),
     ],
     services: ['Villa İç Mimari Tasarımı', '3D Görselleştirme', 'Yapısal Düzenlemeler', 'Özel Mobilya & Dekorasyon', 'Bahçe & Teras Tasarımı', 'Komple Yenileme'],
     description: [
@@ -227,7 +228,7 @@ const breadcrumbSchema = {
       <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/40 to-transparent"></div>
 
       <!-- Breadcrumb overlay -->
-      <div class="absolute top-0 left-0 right-0 pt-28 px-6 max-w-6xl mx-auto w-full">
+      <div class="absolute top-0 left-0 right-0 pt-28 px-6">
         <nav class="flex items-center gap-2 text-sm" aria-label="Breadcrumb">
           <a href="/" class="text-white/50 hover:text-gold transition-colors">Ana Sayfa</a>
           <span class="text-white/20">/</span>
@@ -332,6 +333,7 @@ const breadcrumbSchema = {
               src={img}
               alt={`${project.title} — fotoğraf ${i + 1}`}
               loading={i === 0 ? 'eager' : 'lazy'}
+              decoding={i === 0 ? 'sync' : 'async'}
               class={`w-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ${i === 0 ? 'h-[320px] md:h-[400px]' : 'h-[155px] md:h-[195px]'}`}
             />
             <!-- Zoom hint overlay -->
@@ -431,6 +433,7 @@ const breadcrumbSchema = {
                 src={p.heroImage}
                 alt={p.title}
                 loading="lazy"
+                decoding="async"
                 class="w-full h-48 object-cover object-center group-hover:scale-105 transition-transform duration-500"
               />
               <div class="absolute inset-0 bg-charcoal/60 group-hover:bg-charcoal/40 transition-colors duration-300 flex flex-col justify-end p-4">

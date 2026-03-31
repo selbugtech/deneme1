@@ -1,6 +1,7 @@
 ---
 import BlogPost from '../../layouts/BlogPost.astro';
 import { CANONICAL_BASE } from '../../config';
+import { optimizedImage } from '../../lib/cloudinary';
 ---
 
 <BlogPost
@@ -10,8 +11,8 @@ import { CANONICAL_BASE } from '../../config';
   publishDate="2025-02-10"
   readingTime="6 dk okuma"
   tag="Trendler"
-  heroImage="/images/francesca-tosolini-XcVm8mn7NUM-unsplash.jpg"
-  ogImage={`${CANONICAL_BASE}/images/francesca-tosolini-XcVm8mn7NUM-unsplash.jpg`}
+  heroImage={optimizedImage('/images/salon4.jpeg')}
+  ogImage={optimizedImage('/images/salon4.jpeg')}
 >
 
 <h2>2025'in Öne Çıkan İç Mimarlık Trendleri</h2>

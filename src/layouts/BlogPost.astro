@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppFloat from '../components/WhatsAppFloat.astro';
 import { CANONICAL_BASE } from '../config';
+import { optimizedImage } from '../lib/cloudinary';
 
 interface Props {
   title: string;
@@ -26,7 +27,7 @@ const allPosts = [
     date: '2025-03-25',
     readingTime: '8 dk',
     tag: 'Rehber',
-    image: '/images/kara-eads-L7EwHkq1B2s-unsplash.jpg',
+    image: optimizedImage('/images/salon2.jpeg'),
     excerpt: 'Ev tadilat sürecine girmeden önce bilmeniz gereken her şey: planlama, bütçe, usta seçimi ve adım adım iş sırası.',
   },
   {
@@ -35,7 +36,7 @@ const allPosts = [
     date: '2025-03-15',
     readingTime: '6 dk',
     tag: 'Bilgi',
-    image: '/images/pragyan-goswami-vzeQUIfyVlo-unsplash.jpg',
+    image: optimizedImage('/images/salon5.jpeg'),
     excerpt: 'İstanbul\'da daire iç mimarlık hizmeti almak isteyenler için kapsamlı rehber.',
   },
   {
@@ -44,7 +45,7 @@ const allPosts = [
     date: '2025-03-05',
     readingTime: '7 dk',
     tag: 'Rehber',
-    image: '/images/besiktas-sampi4.jpg',
+    image: optimizedImage('/images/mutfak1.jpeg'),
     excerpt: 'Mutfak yenileme neleri kapsar ve İstanbul\'da mutfak tadilat maliyetleri 2025\'te ne kadar?',
   },
   {
@@ -53,7 +54,7 @@ const allPosts = [
     date: '2025-02-20',
     readingTime: '8 dk',
     tag: 'Rehber',
-    image: '/images/hero-villa-sea.jpg',
+    image: optimizedImage('/images/salon7.jpeg'),
     excerpt: 'İstanbul\'da villa tadilat süreçleri nasıl işler? Aşamalar, maliyetler ve dikkat edilmesi gerekenler.',
   },
   {
@@ -62,7 +63,7 @@ const allPosts = [
     date: '2025-02-10',
     readingTime: '6 dk',
     tag: 'Trendler',
-    image: '/images/francesca-tosolini-XcVm8mn7NUM-unsplash.jpg',
+    image: optimizedImage('/images/salon4.jpeg'),
     excerpt: 'Wabi-sabi minimalizm, doğal malzemeler ve biyofilik tasarım. 2025\'in öne çıkan iç mimarlık trendleri.',
   },
   {
@@ -71,7 +72,7 @@ const allPosts = [
     date: '2025-01-25',
     readingTime: '5 dk',
     tag: 'Bilgi',
-    image: '/images/266633856_4997237316954973_2289965135152272525_n.jpg',
+    image: optimizedImage('/images/salon3.jpeg'),
     excerpt: '"Anahtar teslim" yenileme modeli nedir, kendin yönet modelinden farkları nelerdir?',
   },
   {
@@ -80,7 +81,7 @@ const allPosts = [
     date: '2025-01-10',
     readingTime: '7 dk',
     tag: 'Rehber',
-    image: '/images/lance-anderson-QdAAasrZhdk-unsplash.jpg',
+    image: optimizedImage('/images/oturmaodasi.jpeg'),
     excerpt: 'İstanbul\'da ev yenileme maliyetleri 2025\'te ne kadar? Metrekare başına fiyatlar ve bütçe planlaması.',
   },
   {
@@ -89,7 +90,7 @@ const allPosts = [
     date: '2025-04-01',
     readingTime: '7 dk',
     tag: 'Semt Rehberi',
-    image: '/images/besiktas-sampi4.jpg',
+    image: optimizedImage('/images/mutfak1.jpeg'),
     excerpt: 'Beşiktaş\'ta Abbasağa, Dikilitaş, Sinanpaşa ve Bebek\'i kapsayan prestijli iç mimarlık ve tadilat projeleri.',
   },
   {
@@ -98,7 +99,7 @@ const allPosts = [
     date: '2025-04-04',
     readingTime: '6 dk',
     tag: 'Semt Rehberi',
-    image: '/images/pragyan-goswami-vzeQUIfyVlo-unsplash.jpg',
+    image: optimizedImage('/images/salon5.jpeg'),
     excerpt: 'Kadıköy\'ün Moda, Caferağa ve Fenerbahçe mahallelerinde yaratıcı iç mimarlık ve tadilat hizmetleri.',
   },
   {
@@ -107,7 +108,7 @@ const allPosts = [
     date: '2025-04-07',
     readingTime: '7 dk',
     tag: 'Semt Rehberi',
-    image: '/images/francesca-tosolini-XcVm8mn7NUM-unsplash.jpg',
+    image: optimizedImage('/images/salon4.jpeg'),
     excerpt: 'Nişantaşı\'nın Teşvikiye ve Harbiye\'sinde ultra-premium konut ve butik ticari mekan iç mimarlık.',
   },
   {
@@ -116,7 +117,7 @@ const allPosts = [
     date: '2025-04-10',
     readingTime: '6 dk',
     tag: 'Semt Rehberi',
-    image: '/images/kara-eads-L7EwHkq1B2s-unsplash.jpg',
+    image: optimizedImage('/images/salon2.jpeg'),
     excerpt: 'Levent\'te 1.-4. Levent ve Büyükdere Caddesi\'nde kurumsal ofis ve modern rezidans iç mimarlık.',
   },
   {
@@ -125,7 +126,7 @@ const allPosts = [
     date: '2025-04-13',
     readingTime: '6 dk',
     tag: 'Semt Rehberi',
-    image: '/images/266633856_4997237316954973_2289965135152272525_n.jpg',
+    image: optimizedImage('/images/salon3.jpeg'),
     excerpt: 'Şişli\'nin Mecidiyeköy, Bomonti ve Fulya mahallelerinde kentsel dönüşüm ve ticari mekan tasarımı.',
   },
   {
@@ -134,7 +135,7 @@ const allPosts = [
     date: '2025-04-16',
     readingTime: '7 dk',
     tag: 'Semt Rehberi',
-    image: '/images/lance-anderson-QdAAasrZhdk-unsplash.jpg',
+    image: optimizedImage('/images/oturmaodasi.jpeg'),
     excerpt: 'Üsküdar\'da Kuzguncuk, Çamlıca ve Beylerbeyi\'nde Osmanlı mirasını çağdaş konforla buluşturan projeler.',
   },
   {
@@ -143,7 +144,7 @@ const allPosts = [
     date: '2025-04-19',
     readingTime: '6 dk',
     tag: 'Semt Rehberi',
-    image: '/images/hero-villa-sea.jpg',
+    image: optimizedImage('/images/salon7.jpeg'),
     excerpt: 'Bakırköy\'ün Florya, Yeşilköy ve Ataköy mahallelerinde aile evi yenileme ve sahil yaşam tasarımı.',
   },
   {
@@ -152,7 +153,7 @@ const allPosts = [
     date: '2025-04-22',
     readingTime: '8 dk',
     tag: 'Semt Rehberi',
-    image: '/images/besiktas-sampi4.jpg',
+    image: optimizedImage('/images/mutfak1.jpeg'),
     excerpt: 'Sarıyer\'de Tarabya, Yeniköy ve İstinye\'de Boğaz cepheli lüks yalı ve villa iç mimarlık projeleri.',
   },
   {
@@ -161,7 +162,7 @@ const allPosts = [
     date: '2025-04-25',
     readingTime: '6 dk',
     tag: 'Semt Rehberi',
-    image: '/images/pragyan-goswami-vzeQUIfyVlo-unsplash.jpg',
+    image: optimizedImage('/images/salon5.jpeg'),
     excerpt: 'Ataşehir\'in Barbaros ve Yenişehir mahallelerinde yeni inşaat iç mekan ve genç profesyonel daire tasarımı.',
   },
   {
@@ -170,7 +171,7 @@ const allPosts = [
     date: '2025-04-28',
     readingTime: '7 dk',
     tag: 'Semt Rehberi',
-    image: '/images/francesca-tosolini-XcVm8mn7NUM-unsplash.jpg',
+    image: optimizedImage('/images/salon4.jpeg'),
     excerpt: 'Zekeriyaköy ve Bahçeköy\'de doğa içi müstakil villa ve konut iç mimarlık, biyofilik tasarım.',
   },
   {
@@ -179,7 +180,7 @@ const allPosts = [
     date: '2025-05-01',
     readingTime: '6 dk',
     tag: 'Semt Rehberi',
-    image: '/images/kara-eads-L7EwHkq1B2s-unsplash.jpg',
+    image: optimizedImage('/images/salon2.jpeg'),
     excerpt: 'Acıbadem ve Koşuyolu\'nda premium daire yenileme; mutfak, banyo ve aydınlatma tasarımı projeleri.',
   },
   {
@@ -188,7 +189,7 @@ const allPosts = [
     date: '2025-05-04',
     readingTime: '6 dk',
     tag: 'Semt Rehberi',
-    image: '/images/266633856_4997237316954973_2289965135152272525_n.jpg',
+    image: optimizedImage('/images/salon3.jpeg'),
     excerpt: 'Maltepe\'nin Cevizli, Bağlarbaşı ve Küçükyalı mahallelerinde aile odaklı kaliteli konut yenileme.',
   },
   {
@@ -197,7 +198,7 @@ const allPosts = [
     date: '2025-05-07',
     readingTime: '7 dk',
     tag: 'Semt Rehberi',
-    image: '/images/lance-anderson-QdAAasrZhdk-unsplash.jpg',
+    image: optimizedImage('/images/oturmaodasi.jpeg'),
     excerpt: 'Maslak\'ta Ayazağa ve Büyükdere Caddesi\'nde teknoloji odaklı kurumsal ofis ve lüks rezidans tasarımı.',
   },
   {
@@ -206,7 +207,7 @@ const allPosts = [
     date: '2025-05-10',
     readingTime: '7 dk',
     tag: 'Semt Rehberi',
-    image: '/images/hero-villa-sea.jpg',
+    image: optimizedImage('/images/salon7.jpeg'),
     excerpt: 'Beyoğlu\'nda Galata, Çukurcuma ve Cihangir\'de tarihi bina restorasyonu ve eklektik mekan tasarımı.',
   },
   {
@@ -215,7 +216,7 @@ const allPosts = [
     date: '2025-05-13',
     readingTime: '8 dk',
     tag: 'Semt Rehberi',
-    image: '/images/besiktas-sampi4.jpg',
+    image: optimizedImage('/images/mutfak1.jpeg'),
     excerpt: 'Fatih\'te Balat, Fener ve Zeyrek\'te tarihi yarımada miras restorasyonu ve özgün doku koruma projeleri.',
   },
 ];
@@ -393,7 +394,7 @@ const breadcrumbSchema = {
               0533 039 15 65
             </a>
             <a
-              href="mailto:info@mastericmimarlik.com"
+              href="mailto:mastericmimarlik@gmail.com"
               class="flex items-center justify-center gap-2 border border-white/20 text-white px-4 py-3 text-xs font-semibold hover:bg-white/10 transition-colors w-full mt-3"
             >
               E-posta Gönder
@@ -413,6 +414,8 @@ const breadcrumbSchema = {
                     <img
                       src={post.image}
                       alt={post.title}
+                      loading="lazy"
+                      decoding="async"
                       class="w-16 h-14 object-cover shrink-0 group-hover:opacity-80 transition-opacity"
                     />
                     <div>
@@ -447,7 +450,7 @@ const breadcrumbSchema = {
                 <p class="text-muted text-[10px] tracking-wide mt-0.5">Yıllık Deneyim</p>
               </div>
               <div>
-                <p class="font-display text-2xl font-bold text-gold">5.0</p>
+                <p class="font-display text-2xl font-bold text-gold">4.9</p>
                 <p class="text-muted text-[10px] tracking-wide mt-0.5">Google Puan</p>
               </div>
               <div>
@@ -478,6 +481,8 @@ const breadcrumbSchema = {
                 <img
                   src={post.image}
                   alt={post.title}
+                  loading="lazy"
+                  decoding="async"
                   class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
@@ -524,7 +529,7 @@ const breadcrumbSchema = {
             0533 039 15 65
           </a>
           <a
-            href="mailto:info@mastericmimarlik.com"
+            href="mailto:mastericmimarlik@gmail.com"
             class="inline-flex items-center justify-center gap-3 border border-gold text-gold px-10 py-4 text-sm font-semibold hover:bg-gold hover:text-charcoal transition-colors"
           >
             E-posta Gönder
@@ -575,15 +580,33 @@ const breadcrumbSchema = {
     font-weight: 600;
   }
   article.prose a {
-    color: #C4A472;
+    color: #A8894A;
     text-decoration: underline;
   }
   article.prose blockquote {
-    border-left: 3px solid #C4A472;
+    border-left: 3px solid #A8894A;
     padding-left: 1.25rem;
     font-style: italic;
     color: #787874;
     margin: 1.5rem 0;
+  }
+  article.prose table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+  }
+  article.prose pre {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+  }
+  article.prose code {
+    word-break: break-word;
+  }
+  article.prose img {
+    max-width: 100%;
+    height: auto;
   }
   .line-clamp-2 {
     display: -webkit-box;

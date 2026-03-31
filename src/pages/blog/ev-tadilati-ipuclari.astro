@@ -1,6 +1,7 @@
 ---
 import BlogPost from '../../layouts/BlogPost.astro';
 import { CANONICAL_BASE } from '../../config';
+import { optimizedImage } from '../../lib/cloudinary';
 ---
 
 <BlogPost
@@ -10,8 +11,8 @@ import { CANONICAL_BASE } from '../../config';
   publishDate="2025-03-25"
   readingTime="8 dk okuma"
   tag="Rehber"
-  heroImage="/images/kara-eads-L7EwHkq1B2s-unsplash.jpg"
-  ogImage={`${CANONICAL_BASE}/images/kara-eads-L7EwHkq1B2s-unsplash.jpg`}
+  heroImage={optimizedImage('/images/salon2.jpeg')}
+  ogImage={optimizedImage('/images/salon2.jpeg')}
 >
 
 <h2>Ev Tadilata Başlamadan Önce: Neden Planlama Her Şeyden Önce Gelir?</h2>

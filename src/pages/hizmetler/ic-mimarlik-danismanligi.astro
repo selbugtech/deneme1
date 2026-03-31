@@ -1,6 +1,7 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import { CANONICAL_BASE } from '../../config';
+import { optimizedImage } from '../../lib/cloudinary';
 
 const serviceSchema = {
   "@context": "https://schema.org",
@@ -38,8 +39,8 @@ const faqSchema = {
     { label: "Hizmetler", href: "/#hizmetler" },
     { label: "İç Mimarlık Danışmanlığı" }
   ]}
-  heroImage="/images/francesca-tosolini-XcVm8mn7NUM-unsplash.jpg"
-  ogImage={`${CANONICAL_BASE}/images/francesca-tosolini-XcVm8mn7NUM-unsplash.jpg`}
+  heroImage={optimizedImage('/images/salon4.jpeg')}
+  ogImage={optimizedImage('/images/salon4.jpeg')}
   structuredData={[serviceSchema, faqSchema]}
 >
 

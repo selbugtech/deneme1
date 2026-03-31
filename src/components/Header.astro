@@ -1,4 +1,6 @@
 ---
+import { optimizedImage } from '../lib/cloudinary';
+
 const { pathname } = Astro.url;
 const isHome = pathname === '/' || pathname === '/';
 const hizmetlerHref = isHome ? '#hizmetler' : '/#hizmetler';
@@ -10,22 +12,23 @@ const iletisimHref = isHome ? '#iletisim' : '/#iletisim';
 
     <!-- Logo -->
     <a href="/" class="flex items-center gap-3 group">
-      <img src="/favicon.png" alt="Master İç Mimarlık" class="w-10 h-10 shrink-0 object-contain" />
+      <img src={optimizedImage('/favicon.png')} alt="Master İç Mimarlık" class="w-14 h-14 shrink-0 object-contain" />
       <div class="leading-none">
-        <span class="block font-display font-semibold text-[19px] tracking-wide text-white">Master</span>
-        <span class="block text-[10px] tracking-[0.25em] uppercase mt-0.5 text-white/55">İç Mimarlık</span>
+        <span class="block font-display font-semibold text-[24px] tracking-wide text-white">Master</span>
+        <span class="block text-[11px] tracking-[0.25em] uppercase mt-0.5 text-white/55">İç Mimarlık</span>
       </div>
     </a>
 
     <!-- Desktop Nav -->
-    <nav class="hidden md:flex items-center gap-8">
-      <a href={hizmetlerHref} class="nav-link text-[15px] tracking-wide text-white/80 hover:text-gold transition-colors duration-200">Hizmetler</a>
-      <a href="/#hakkimizda" class="nav-link text-[15px] tracking-wide text-white/80 hover:text-gold transition-colors duration-200">Hakkımızda</a>
-      <a href="/projeler" class="nav-link text-[15px] tracking-wide text-white/80 hover:text-gold transition-colors duration-200">Projeler</a>
-      <a href="/blog" class="nav-link text-[15px] tracking-wide text-white/80 hover:text-gold transition-colors duration-200">Blog</a>
+    <nav class="hidden md:flex items-center flex-1 justify-end gap-1">
+      <a href={hizmetlerHref} class="nav-link px-6 py-2 text-[15px] tracking-wide text-white/80 hover:text-gold transition-colors duration-200">Hizmetler</a>
+      <a href="/#hakkimizda" class="nav-link px-6 py-2 text-[15px] tracking-wide text-white/80 hover:text-gold transition-colors duration-200">Hakkımızda</a>
+      <a href="/projeler" class="nav-link px-6 py-2 text-[15px] tracking-wide text-white/80 hover:text-gold transition-colors duration-200">Projeler</a>
+      <a href="/blog" class="nav-link px-6 py-2 text-[15px] tracking-wide text-white/80 hover:text-gold transition-colors duration-200">Blog</a>
+      <a href="/sikca-sorulan-sorular" class="nav-link px-6 py-2 text-[15px] tracking-wide text-white/80 hover:text-gold transition-colors duration-200">SSS</a>
       <a
         href={iletisimHref}
-        class="text-[15px] tracking-wide border border-white/30 text-white px-6 py-2.5 hover:bg-gold hover:border-gold transition-colors duration-200"
+        class="text-[15px] tracking-wide border border-white/30 text-white px-8 py-2.5 ml-3 hover:bg-gold hover:border-gold transition-colors duration-200"
       >
         İletişim
       </a>
@@ -68,7 +71,7 @@ const iletisimHref = isHome ? '#iletisim' : '/#iletisim';
   ];
 
   window.addEventListener('scroll', () => {
-    header.classList.toggle('is-scrolled', window.scrollY > 60);
+    header.classList.toggle('is-scrolled', window.scrollY > 150);
   }, { passive: true });
 
   btn?.addEventListener('click', () => {
@@ -95,15 +98,17 @@ const iletisimHref = isHome ? '#iletisim' : '/#iletisim';
 
 <style>
   #site-header {
-    background: rgba(20, 20, 18, 0.60);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
     transform: translateY(0);
-    transition: transform 0.35s ease, background 0.3s ease, padding 0.2s ease;
+    transition: transform 0.35s ease, background 0.3s ease, backdrop-filter 0.3s ease, padding 0.2s ease;
   }
 
   #site-header.is-scrolled {
     background: rgba(20, 20, 18, 0.92);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     box-shadow: 0 1px 24px rgba(0, 0, 0, 0.35);
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;

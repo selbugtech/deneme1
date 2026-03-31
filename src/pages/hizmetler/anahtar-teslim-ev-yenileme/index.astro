@@ -1,6 +1,7 @@
 ---
 import ServiceLayout from '../../../layouts/ServiceLayout.astro';
 import { CANONICAL_BASE } from '../../../config';
+import { optimizedImage } from '../../../lib/cloudinary';
 
 const subServices = [
   {
@@ -70,8 +71,8 @@ const faqSchema = {
     { label: "Hizmetler", href: "/#hizmetler" },
     { label: "Anahtar Teslim Hizmetler" }
   ]}
-  heroImage="/images/kara-eads-L7EwHkq1B2s-unsplash.jpg"
-  ogImage={`${CANONICAL_BASE}/images/kara-eads-L7EwHkq1B2s-unsplash.jpg`}
+  heroImage={optimizedImage('/images/salon2.jpeg')}
+  ogImage={optimizedImage('/images/salon2.jpeg')}
   structuredData={[serviceSchema, faqSchema]}
 >
 
@@ -152,9 +153,9 @@ const faqSchema = {
     </div>
     <div class="grid md:grid-cols-3 gap-4">
       {[
-        { src: '/images/besiktas-sampi4.jpg',                                               title: 'Beşiktaş Dairesi',    detail: '120 m² · Komple yenileme · 2024' },
-        { src: '/images/266633856_4997237316954973_2289965135152272525_n.jpg',               title: 'Kadıköy Residence',   detail: '110 m² · Anahtar teslim · 2024' },
-        { src: '/images/269841624_466700278133027_1819415279374451521_n.jpg',                title: 'Levent Dairesi',      detail: '135 m² · Komple yenileme · 2023' },
+        { src: optimizedImage('/images/salon3.jpeg'),       title: 'Beşiktaş Dairesi',    detail: '120 m² · Komple yenileme · 2024' },
+        { src: optimizedImage('/images/yatakodasi1.jpeg'), title: 'Kadıköy Residence',   detail: '110 m² · Anahtar teslim · 2024' },
+        { src: optimizedImage('/images/mutfak5.jpeg'),     title: 'Levent Dairesi',      detail: '135 m² · Komple yenileme · 2023' },
       ].map(p => (
         <div class="group">
           <div class="overflow-hidden mb-3">

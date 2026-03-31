@@ -1,16 +1,31 @@
 ---
 const wa = 'https://wa.me/905330391565?text=Merhaba%2C%20i%C3%A7%20mimarl%C4%B1k%20hizmeti%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.';
 const tel = 'tel:+905330391565';
+const mail = 'mailto:mastericmimarlik@gmail.com';
 ---
 
-<!-- Floating action buttons (mobile only) -->
-<div class="fixed bottom-6 right-5 z-50 flex flex-col items-end gap-3 md:hidden">
+<!-- Floating action buttons (mobile & desktop) -->
+<div class="fixed bottom-6 right-5 z-50 flex flex-col items-end gap-3">
 
-  <!-- Phone button -->
+  <!-- Mail button -->
+  <a
+    href={mail}
+    aria-label="E-posta gönderin"
+    class="flex items-center gap-2.5 bg-charcoal text-white pl-3 pr-4 h-12 rounded-full shadow-xl shadow-black/25 hover:bg-gold active:scale-95 transition-all duration-200"
+  >
+    <span class="flex items-center justify-center w-7 h-7 bg-white/10 rounded-full shrink-0">
+      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>
+      </svg>
+    </span>
+    <span class="text-[13px] font-semibold tracking-wide">E-posta</span>
+  </a>
+
+  <!-- Phone button (mobile only) -->
   <a
     href={tel}
     aria-label="Bizi arayın"
-    class="flex items-center gap-2.5 bg-charcoal text-white pl-3 pr-4 h-12 rounded-full shadow-xl shadow-black/25 hover:bg-gold active:scale-95 transition-all duration-200"
+    class="md:hidden flex items-center gap-2.5 bg-charcoal text-white pl-3 pr-4 h-12 rounded-full shadow-xl shadow-black/25 hover:bg-gold active:scale-95 transition-all duration-200"
   >
     <span class="flex items-center justify-center w-7 h-7 bg-white/10 rounded-full shrink-0">
       <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">

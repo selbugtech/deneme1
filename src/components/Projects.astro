@@ -1,11 +1,13 @@
 ---
+import { optimizedImage } from '../lib/cloudinary';
+
 const allProjects = [
-  { slug: 'besiktas-dairesi', title: 'Beşiktaş Dairesi', category: 'Anahtar Teslim Ev Yenileme', size: 'large', image: '/images/266633856_4997237316954973_2289965135152272525_n.jpg' },
-  { slug: 'zekeriyakoy-villa', title: 'Zekeriyaköy Villa', category: 'Villa Yenileme', size: 'small', image: '/images/avi-werde-hHz4yrvxwlA-unsplash.jpg' },
-  { slug: 'nisantasi-butik', title: 'Nişantaşı Butik', category: 'Mağaza Yenileme', size: 'small', image: '/images/266682070_600832197669481_5605395588855338438_n.jpg' },
-  { slug: 'levent-ofis', title: 'Levent Ofis', category: 'Ofis Yenileme', size: 'small', image: '/images/269796335_287998196622038_3115674097994505357_n.jpg' },
-  { slug: 'atasehir-residence', title: 'Ataşehir Residence', category: 'Anahtar Teslim Ev Yenileme', size: 'small', image: '/images/270210256_1299189580524073_8666915339070247329_n.jpg' },
-  { slug: 'acıbadem-villa', title: 'Acıbadem Villa', category: 'Villa Yenileme', size: 'large', image: '/images/hero-villa-sea.jpg' },
+  { slug: 'besiktas-dairesi', title: 'Beşiktaş Dairesi', category: 'Anahtar Teslim Ev Yenileme', size: 'large', image: optimizedImage('/images/salon3.jpeg') },
+  { slug: 'zekeriyakoy-villa', title: 'Zekeriyaköy Villa', category: 'Villa Yenileme', size: 'small', image: optimizedImage('/images/oturmaodasi.jpeg') },
+  { slug: 'nisantasi-butik', title: 'Nişantaşı Butik', category: 'Mağaza Yenileme', size: 'small', image: optimizedImage('/images/restoran1.jpeg') },
+  { slug: 'levent-ofis', title: 'Levent Ofis', category: 'Ofis Yenileme', size: 'small', image: optimizedImage('/images/ofis2.jpeg') },
+  { slug: 'atasehir-residence', title: 'Ataşehir Residence', category: 'Anahtar Teslim Ev Yenileme', size: 'small', image: optimizedImage('/images/yatakodasi1.jpeg') },
+  { slug: 'acıbadem-villa', title: 'Acıbadem Villa', category: 'Villa Yenileme', size: 'large', image: optimizedImage('/images/salon7.jpeg') },
 ];
 
 // Ana sayfada yalnızca ilk 4 proje gösterilir
@@ -37,6 +39,7 @@ const projects = allProjects.slice(0, 4);
             src={p.image}
             alt={p.title}
             loading="lazy"
+            decoding="async"
             class={`w-full object-cover object-center transition-transform duration-500 group-hover:scale-105 ${p.size === 'large' ? 'h-[400px] md:h-[480px]' : 'h-[190px] md:h-[230px]'}`}
           />
 

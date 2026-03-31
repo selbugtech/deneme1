@@ -1,6 +1,7 @@
 ---
 import BlogPost from '../../layouts/BlogPost.astro';
 import { CANONICAL_BASE } from '../../config';
+import { optimizedImage } from '../../lib/cloudinary';
 ---
 
 <BlogPost
@@ -10,8 +11,8 @@ import { CANONICAL_BASE } from '../../config';
   publishDate="2025-01-10"
   readingTime="7 dk okuma"
   tag="Rehber"
-  heroImage="/images/lance-anderson-QdAAasrZhdk-unsplash.jpg"
-  ogImage={`${CANONICAL_BASE}/images/lance-anderson-QdAAasrZhdk-unsplash.jpg`}
+  heroImage={optimizedImage('/images/oturmaodasi.jpeg')}
+  ogImage={optimizedImage('/images/oturmaodasi.jpeg')}
 >
 
 <h2>İstanbul'da Ev Yenileme Maliyeti 2025 — Genel Bakış</h2>

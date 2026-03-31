@@ -1,22 +1,24 @@
 ---
+import { optimizedImage } from '../lib/cloudinary';
+
 const comparisons = [
   {
     title: 'Beşiktaş Dairesi',
     category: 'Anahtar Teslim Ev Yenileme',
-    before: '/images/besiktas-sampi4.jpg',
-    after:  '/images/266633856_4997237316954973_2289965135152272525_n.jpg',
+    before: optimizedImage('/images/salon4.jpeg'),
+    after:  optimizedImage('/images/salon3.jpeg'),
   },
   {
     title: 'Zekeriyaköy Villa',
     category: 'Villa Yenileme',
-    before: '/images/kara-eads-L7EwHkq1B2s-unsplash.jpg',
-    after:  '/images/270210256_1299189580524073_8666915339070247329_n.jpg',
+    before: optimizedImage('/images/salon6.jpeg'),
+    after:  optimizedImage('/images/salon7.jpeg'),
   },
   {
     title: 'Nişantaşı Butik',
     category: 'Mağaza Yenileme',
-    before: '/images/269796335_287998196622038_3115674097994505357_n.jpg',
-    after:  '/images/269934334_444856893989276_8300817181046348982_n.jpg',
+    before: optimizedImage('/images/salon8.jpeg'),
+    after:  optimizedImage('/images/restoran1.jpeg'),
   },
 ];
 ---
@@ -41,13 +43,13 @@ const comparisons = [
     </div>
 
     <!-- Project tabs -->
-    <div class="flex gap-2 mb-6 reveal" id="ba-tabs">
+    <div class="flex flex-wrap gap-2 mb-6 reveal" id="ba-tabs">
       {comparisons.map((c, i) => (
         <button
           class="ba-tab px-4 py-2 text-xs tracking-wide border transition-colors duration-200"
           data-index={i}
           style={i === 0
-            ? 'border-color: #C4A472; color: #C4A472; background: rgba(196,164,114,0.08);'
+            ? 'border-color: #A8894A; color: #A8894A; background: rgba(168,137,74,0.08);'
             : 'border-color: rgba(255,255,255,0.15); color: rgba(255,255,255,0.4);'}
         >
           {c.title}
@@ -152,9 +154,9 @@ const comparisons = [
         t.style.color = 'rgba(255,255,255,0.4)';
         t.style.background = '';
       });
-      tab.style.borderColor = '#C4A472';
-      tab.style.color = '#C4A472';
-      tab.style.background = 'rgba(196,164,114,0.08)';
+      tab.style.borderColor = '#A8894A';
+      tab.style.color = '#A8894A';
+      tab.style.background = 'rgba(168,137,74,0.08)';
 
       panels.forEach(p => { p.style.display = 'none'; });
       panels[i].style.display = 'block';

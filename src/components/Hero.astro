@@ -1,18 +1,26 @@
 ---
+import { optimizedImage, srcsetImage } from '../lib/cloudinary';
+
 const wa = 'https://wa.me/905330391565?text=Merhaba%2C%20i%C3%A7%20mimarl%C4%B1k%20hizmeti%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.';
 const tel = 'tel:+905330391565';
 
 const slides = [
   {
-    image: '/images/hero-loft.png',
+    rawPath: '/images/salon1.png',
+    image: optimizedImage('/images/salon1.png'),
+    srcset: srcsetImage('/images/salon1.png', [600, 1200, 1920]),
     label: 'Salon & Oturma Odası',
   },
   {
-    image: '/images/kara-eads-L7EwHkq1B2s-unsplash.jpg',
+    rawPath: '/images/mutfak1.jpeg',
+    image: optimizedImage('/images/mutfak1.jpeg'),
+    srcset: srcsetImage('/images/mutfak1.jpeg', [600, 1200, 1920]),
     label: 'Mutfak & Ofis',
   },
   {
-    image: '/images/hero-villa-sea.jpg',
+    rawPath: '/images/salonvemutfak.jpeg',
+    image: optimizedImage('/images/salonvemutfak.jpeg'),
+    srcset: srcsetImage('/images/salonvemutfak.jpeg', [600, 1200, 1920]),
     label: 'Villa & Mağaza',
   },
 ];
@@ -30,14 +38,18 @@ const slides = [
       >
         <img
           src={slide.image}
+          srcset={slide.srcset}
+          sizes="100vw"
           alt={slide.label}
           class="absolute inset-0 w-full h-full object-cover"
           loading={i === 0 ? 'eager' : 'lazy'}
+          fetchpriority={i === 0 ? 'high' : 'auto'}
+          decoding={i === 0 ? 'sync' : 'async'}
         />
       </div>
     ))}
     <!-- Readability overlay -->
-    <div class="absolute inset-0 bg-charcoal/68"></div>
+    <div class="absolute inset-0 bg-charcoal/75"></div>
     <!-- Bottom gradient fade -->
     <div class="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-charcoal/35 to-transparent"></div>
   </div>
@@ -46,32 +58,27 @@ const slides = [
   <div class="relative z-10 w-full max-w-6xl mx-auto px-6 pt-32 pb-24">
     <div class="max-w-xl">
 
-      <!-- Text backdrop box -->
-      <div class="bg-black/45 px-6 py-5 mb-8 w-full">
-
-        <!-- Eyebrow label -->
-        <div class="flex items-center gap-3 mb-7 reveal">
-          <span class="w-8 h-px bg-gold"></span>
-          <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">İstanbul İç Mimarlık &amp; Ev Yenileme</span>
-        </div>
-
-        <!-- Heading -->
-        <h1 class="font-display text-[2.4rem] sm:text-5xl md:text-6xl lg:text-[4rem] xl:text-[4.5rem] font-bold leading-[1.08] text-white mb-6 reveal reveal-d1">
-          Mekanınızı<br />
-          <em class="not-italic text-gold">Hayalinize</em><br />
-          Dönüştürüyoruz
-        </h1>
-        <p class="text-gold/70 text-[11px] tracking-[0.22em] uppercase mb-6 -mt-3 reveal reveal-d1">
-          Anahtar Teslim Ev Yenileme · Villa · Mağaza · Ofis
-        </p>
-
-        <!-- Description -->
-        <p class="text-white/85 text-lg leading-relaxed max-w-sm reveal reveal-d2">
-          Anahtar teslim ev yenileme, villa tasarımı ve ticari mekan dönüşümlerinde
-          İstanbul'un güvenilir iç mimarlık firması.
-        </p>
-
+      <!-- Eyebrow label -->
+      <div class="flex items-center gap-3 mb-7 reveal">
+        <span class="w-8 h-px bg-gold"></span>
+        <span class="text-[10px] sm:text-xs tracking-[0.2em] sm:tracking-[0.3em] uppercase text-gold font-medium">İstanbul İç Mimarlık &amp; Ev Yenileme</span>
       </div>
+
+      <!-- Heading -->
+      <h1 class="font-display text-[2.2rem] sm:text-5xl md:text-7xl lg:text-[5rem] xl:text-[5.5rem] font-bold leading-[1.08] text-white mb-6 reveal reveal-d1">
+        Mekanınızı<br />
+        <em class="not-italic text-gold">Hayalinize</em><br />
+        Dönüştürüyoruz
+      </h1>
+      <p class="text-gold/70 text-[10px] sm:text-[12px] tracking-[0.15em] sm:tracking-[0.22em] uppercase mb-6 -mt-3 reveal reveal-d1">
+        Anahtar Teslim Ev Yenileme · Villa · Mağaza · Ofis
+      </p>
+
+      <!-- Description -->
+      <p class="text-white/85 text-base sm:text-xl leading-relaxed max-w-md reveal reveal-d2 mb-8">
+        Anahtar teslim ev yenileme, villa tasarımı ve ticari mekan dönüşümlerinde
+        İstanbul'un güvenilir iç mimarlık firması.
+      </p>
 
       <!-- CTA Buttons -->
       <div class="flex flex-col sm:flex-row gap-4 mb-12 reveal reveal-d3">
@@ -124,7 +131,7 @@ const slides = [
       <button
         class="hero-dot rounded-full transition-all duration-500"
         data-index={i}
-        style={i === 0 ? 'width:28px; height:3px; background:#C4A472;' : 'width:10px; height:3px; background:rgba(255,255,255,0.35);'}
+        style={i === 0 ? 'width:28px; height:3px; background:#A8894A;' : 'width:10px; height:3px; background:rgba(255,255,255,0.35);'}
         aria-label={`Slayt ${i + 1}`}
       />
     ))}
@@ -156,7 +163,7 @@ const slides = [
 
     slides[current].style.opacity = '1';
     dots[current].style.width = '28px';
-    dots[current].style.background = '#C4A472';
+    dots[current].style.background = '#A8894A';
   }
 
   function resetTimer() {

@@ -1,6 +1,7 @@
 ---
 import BlogPost from '../../layouts/BlogPost.astro';
 import { CANONICAL_BASE } from '../../config';
+import { optimizedImage } from '../../lib/cloudinary';
 ---
 
 <BlogPost
@@ -10,8 +11,8 @@ import { CANONICAL_BASE } from '../../config';
   publishDate="2025-03-05"
   readingTime="7 dk okuma"
   tag="Rehber"
-  heroImage="/images/besiktas-sampi4.jpg"
-  ogImage={`${CANONICAL_BASE}/images/besiktas-sampi4.jpg`}
+  heroImage={optimizedImage('/images/mutfak1.jpeg')}
+  ogImage={optimizedImage('/images/mutfak1.jpeg')}
 >
 
 <h2>Mutfak Yenileme Neden Bu Kadar Önemli?</h2>
