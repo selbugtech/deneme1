@@ -5,12 +5,12 @@ import { CANONICAL_BASE } from '../../../config';
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "serviceType": "Mağaza ve Dükkan Yenileme",
-  "name": "İstanbul Mağaza ve Dükkan Yenileme",
-  "description": "İstanbul'da anahtar teslim mağaza ve dükkan iç mekan yenileme. Markanızı yansıtan, müşteri yolculuğunu optimize eden perakende mekan tasarımı.",
+  "serviceType": "Ofis Yenileme",
+  "name": "İstanbul Ofis Yenileme ve Tadilat",
+  "description": "İstanbul'da anahtar teslim ofis yenileme ve tadilat. Çalışan verimliliğini artıran, kurumsal kimliği yansıtan modern ofis iç mekan tasarımı.",
   "provider": { "@type": "Organization", "@id": `${CANONICAL_BASE}/#organization`, "name": "Master İç Mimarlık" },
   "areaServed": { "@type": "City", "name": "İstanbul" },
-  "url": `${CANONICAL_BASE}/hizmetler/anahtar-teslim-ev-yenileme/magaza-dukkan-yenileme`,
+  "url": `${CANONICAL_BASE}/hizmetler/anahtar-teslim/ofis-yenileme`,
   "offers": { "@type": "Offer", "priceCurrency": "TRY", "description": "Ücretsiz keşif ve özel teklif için iletişime geçin", "availability": "https://schema.org/InStock" }
 };
 
@@ -18,25 +18,25 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Mağaza yenileme ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Ortalama bir mağaza yenileme projesi (60–150 m²) 4–7 hafta içinde tamamlanmaktadır. Kapalı kalma süresini minimize etmek için hızlı uygulama planı oluşturuyoruz." } },
-    { "@type": "Question", "name": "Mağaza yenileme bütçesi nasıl belirlenir?", "acceptedAnswer": { "@type": "Answer", "text": "Bütçe; mekanın büyüklüğü, mevcut yapı durumu ve seçilen malzeme kalitesine göre belirlenir. Ücretsiz keşif ziyaretimizde projenize özel bütçe sunuyoruz." } },
-    { "@type": "Question", "name": "Hangi mağaza türleri için hizmet veriyorsunuz?", "acceptedAnswer": { "@type": "Answer", "text": "Giyim mağazaları, butikler, eczaneler, güzellik salonları, elektronik mağazaları ve her türlü perakende mekan için hizmet veriyoruz." } }
+    { "@type": "Question", "name": "Ofis yenileme ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Ortalama bir ofis yenileme projesi (100–200 m²) 5–9 hafta içinde tamamlanmaktadır. Hafta sonu ve mesai dışı çalışma ile iş sürekliliği korunabilir." } },
+    { "@type": "Question", "name": "Çalışanlar ofiste çalışırken yenileme yapılabilir mi?", "acceptedAnswer": { "@type": "Answer", "text": "Kısmi projelerde ve faz faz uygulama planı ile ofis açıkken çalışmak mümkündür. Planlamayı ihtiyacınıza göre birlikte düzenliyoruz." } },
+    { "@type": "Question", "name": "Ofis yenileme bütçesi nasıl belirlenir?", "acceptedAnswer": { "@type": "Answer", "text": "Bütçe; mekanın büyüklüğü, mevcut yapı durumu ve seçilen malzeme kalitesine göre belirlenir. Ücretsiz keşif ziyaretimizde projenize özel bütçe sunuyoruz." } }
   ]
 };
 ---
 
 <ServiceLayout
-  title="İstanbul Mağaza ve Dükkan Yenileme | Master İç Mimarlık"
-  description="İstanbul'da mağaza ve dükkan yenileme. Markanızı yansıtan, müşteri deneyimini artıran anahtar teslim perakende iç mekan tasarımı. Nişantaşı, Levent, Kadıköy. Ücretsiz keşif: 0533 039 15 65"
-  canonicalUrl={`${CANONICAL_BASE}/hizmetler/anahtar-teslim-ev-yenileme/magaza-dukkan-yenileme`}
-  h1="İstanbul Mağaza ve Dükkan Yenileme"
+  title="İstanbul Ofis Yenileme ve Tadilat | Master İç Mimarlık"
+  description="İstanbul'da ofis yenileme ve tadilat. Çalışan verimliliğini artıran, kurumsal kimliği yansıtan anahtar teslim ofis tasarımı. Levent, Maslak, Beşiktaş. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/hizmetler/anahtar-teslim/ofis-yenileme`}
+  h1="İstanbul Ofis Yenileme ve Tadilat"
   eyebrow="Anahtar Teslim"
-  lead="Markanızı yansıtan, müşteri yolculuğunu optimize eden mağaza ve dükkan tasarımı. Vitrin düzenlemesinden iç mekana, ürün sergileme alanlarından kasaya kadar her detayı satış hedeflerinize göre tasarlıyoruz."
+  lead="Çalışan verimliliğini ve marka imajını güçlendiren kurumsal ofis iç mekan çözümleri. Açık ofis düzeninden özel kabinlere, toplantı odalarından resepsiyon alanlarına kadar tüm kurumsal proje türleri."
   breadcrumb={[
     { label: "Ana Sayfa", href: "/" },
     { label: "Hizmetler", href: "/#hizmetler" },
-    { label: "Anahtar Teslim Hizmetler", href: "/hizmetler/anahtar-teslim-ev-yenileme" },
-    { label: "Mağaza & Dükkan Yenileme" }
+    { label: "Anahtar Teslim Hizmetler", href: "/hizmetler/anahtar-teslim" },
+    { label: "Ofis Yenileme" }
   ]}
   structuredData={[serviceSchema, faqSchema]}
 >
@@ -54,29 +54,29 @@ const faqSchema = {
   <!-- Scope -->
   <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
     <div>
-      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Mağaza & Dükkan Yenileme Hizmetimiz</h2>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Ofis Yenileme Hizmetimiz</h2>
       <p class="text-muted leading-relaxed mb-4">
-        Perakende mekanın tasarımı, müşterinin satın alma kararını doğrudan etkiler. Doğru aydınlatma, ürün sergileme düzeni ve müşteri yolculuğu planlaması satışlarınızı artırır.
+        Çalışma ortamı, ekip performansı ve şirket kültürü üzerinde doğrudan etkiye sahiptir. Modern, fonksiyonel ve estetik bir ofis; çalışan memnuniyetini artırır ve kurumsal imajı güçlendirir.
       </p>
       <p class="text-muted leading-relaxed mb-4">
-        Vitrin tasarımından iç mekana, ürün raflarından kasa alanına kadar tüm detayları marka kimliğiniz ve satış hedeflerinize göre optimize ediyoruz.
+        Açık ofis planlamasından kapalı kabin düzenlemelerine, toplantı odalarından lobi ve resepsiyon alanlarına kadar tüm kurumsal mekan ihtiyaçlarını karşılıyoruz.
       </p>
       <p class="text-muted leading-relaxed">
-        İstanbul genelinde Nişantaşı, Levent, Kadıköy, Bağcılar ve tüm ilçelerde hizmet veriyoruz.
+        İstanbul genelinde Levent, Maslak, Beşiktaş, Şişli ve tüm iş merkezlerinde hizmet veriyoruz.
       </p>
     </div>
     <div>
       <h3 class="font-semibold text-charcoal mb-4 text-xs uppercase tracking-wider">Hizmete Dahil Olanlar</h3>
       <ul class="space-y-3">
         {[
-          'Marka kimliğine uygun konsept tasarım',
+          'Kurumsal konsept ve alan planlaması',
           'Fotorealistik 3D görselleştirme',
-          'Vitrin ve ön cephe tasarımı',
-          'Ürün sergileme ve raf planlaması',
-          'Müşteri yolculuğu optimizasyonu',
-          'Ticari aydınlatma tasarımı',
+          'Açık ofis ve kabinleme tasarımı',
+          'Toplantı odası çözümleri',
+          'Aydınlatma ve akustik iyileştirme',
+          'Bölme duvar ve cam sistemleri',
           'Zemin, duvar ve tavan kaplamaları',
-          'Kasa ve ödeme alanı çözümleri',
+          'Kablo yönetimi ve teknik altyapı',
         ].map(item => (
           <li class="flex items-start gap-3 text-sm text-muted">
             <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
@@ -95,15 +95,15 @@ const faqSchema = {
   <div class="py-12 border-b border-border">
     <div class="flex items-center gap-3 mb-8">
       <span class="w-8 h-px bg-gold"></span>
-      <h2 class="font-display text-2xl font-bold text-charcoal">Mağaza Yenileme Sürecimiz</h2>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Ofis Yenileme Sürecimiz</h2>
     </div>
     <div class="grid md:grid-cols-5 gap-6">
       {[
-        { step: '01', title: 'Ücretsiz Keşif', desc: 'Mağazanızı ve marka hedeflerinizi yerinde değerlendiriyoruz.' },
-        { step: '02', title: 'Konsept & 3D', desc: 'Marka kimliğinize uygun tasarımı 3D ile görselleştiriyoruz.' },
+        { step: '01', title: 'Ücretsiz Keşif', desc: 'Ofisinizi ve çalışma kültürünüzü yerinde değerlendiriyoruz.' },
+        { step: '02', title: 'Tasarım & 3D', desc: 'Kurumsal kimliğinize uygun tasarımı 3D ile görselleştiriyoruz.' },
         { step: '03', title: 'Sözleşme', desc: 'Kesin bütçe ve takvim belirlenerek sözleşme imzalanır.' },
-        { step: '04', title: 'Uygulama', desc: 'Hızlı ve verimli uygulama, kapalı süre minimumda.' },
-        { step: '05', title: 'Teslim', desc: 'Hazır mağazanızı teslim alıp açılışa geçiyorsunuz.' },
+        { step: '04', title: 'Uygulama', desc: 'İş sürekliliğini koruyarak faz faz uygulama yapılabilir.' },
+        { step: '05', title: 'Teslim', desc: 'Hazır ofisinizi teslim alıp operasyona devam ediyorsunuz.' },
       ].map(item => (
         <div class="text-center">
           <div class="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-3">
@@ -123,7 +123,7 @@ const faqSchema = {
       <h2 class="font-display text-2xl font-bold text-charcoal">Hizmet Verdiğimiz İlçeler</h2>
     </div>
     <div class="flex flex-wrap gap-2">
-      {['Nişantaşı', 'Levent', 'Kadıköy', 'Beşiktaş', 'Şişli', 'Bağcılar', 'Bakırköy', 'Ataşehir', 'Maltepe', 'Ümraniye', 'Sarıyer', 'Üsküdar'].map(ilce => (
+      {['Levent', 'Maslak', 'Beşiktaş', 'Şişli', 'Kadıköy', 'Ataşehir', 'Nişantaşı', 'Sarıyer', 'Üsküdar', 'Bakırköy', 'Maltepe', 'Ümraniye'].map(ilce => (
         <span class="px-3 py-1.5 border border-border text-charcoal text-xs font-medium">{ilce}</span>
       ))}
     </div>
@@ -137,9 +137,9 @@ const faqSchema = {
     </div>
     <div class="divide-y divide-border">
       {[
-        { q: 'Mağaza yenileme ne kadar sürer?', a: 'Ortalama bir mağaza yenileme projesi (60–150 m²) 4–7 hafta içinde tamamlanmaktadır. Kapalı kalma süresini minimize etmek için hızlı uygulama planı oluşturuyoruz.' },
-        { q: 'Mağaza yenileme bütçesi nasıl belirlenir?', a: 'Bütçe; mekanın büyüklüğü, mevcut yapı durumu ve seçilen malzeme kalitesine göre belirlenir. Ücretsiz keşif ziyaretimizde projenize özel bütçe sunuyoruz.' },
-        { q: 'Hangi mağaza türleri için hizmet veriyorsunuz?', a: 'Giyim mağazaları, butikler, eczaneler, güzellik salonları, elektronik mağazaları ve her türlü perakende mekan için hizmet veriyoruz.' },
+        { q: 'Ofis yenileme ne kadar sürer?', a: 'Ortalama bir ofis yenileme projesi (100–200 m²) 5–9 hafta içinde tamamlanmaktadır. Hafta sonu ve mesai dışı çalışma ile iş sürekliliği korunabilir.' },
+        { q: 'Çalışanlar ofiste çalışırken yenileme yapılabilir mi?', a: 'Kısmi projelerde ve faz faz uygulama planı ile ofis açıkken çalışmak mümkündür. Planlamayı ihtiyacınıza göre birlikte düzenliyoruz.' },
+        { q: 'Ofis yenileme bütçesi nasıl belirlenir?', a: 'Bütçe; mekanın büyüklüğü, mevcut yapı durumu ve seçilen malzeme kalitesine göre belirlenir. Ücretsiz keşif ziyaretimizde projenize özel bütçe sunuyoruz.' },
       ].map((faq, i) => (
         <details class="group py-5" open={i === 0}>
           <summary class="flex items-start justify-between cursor-pointer list-none gap-4">

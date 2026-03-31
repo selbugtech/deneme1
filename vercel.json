@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/hizmetler/anahtar-teslim-ev-yenileme",
+      "destination": "/hizmetler/anahtar-teslim",
+      "permanent": true
+    },
+    {
+      "source": "/hizmetler/anahtar-teslim-ev-yenileme/:path*",
+      "destination": "/hizmetler/anahtar-teslim/:path*",
+      "permanent": true
+    }
+  ]
+}
