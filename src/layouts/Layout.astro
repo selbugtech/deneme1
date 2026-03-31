@@ -200,15 +200,6 @@ const allStructuredData = [
 
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify(allStructuredData)} />
-
-    <!-- Google Ads tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18023437304"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-18023437304');
-    </script>
   </head>
   <body class="bg-warm-white text-charcoal font-sans antialiased">
     <slot />
@@ -217,7 +208,9 @@ const allStructuredData = [
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KKHH7KWV"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script>
-      function _loadGTM() {
+      // GTM + Google Ads — tarayıcı boşta kaldığında yükle (FCP/LCP engelleme yok)
+      function _loadTracking() {
+        // Google Tag Manager
         (function(w,d,s,l,i){
           w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
           var f=d.getElementsByTagName(s)[0],j=d.createElement(s),
@@ -225,11 +218,24 @@ const allStructuredData = [
           j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
           f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-KKHH7KWV');
+
+        // Google Ads (gtag.js)
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18023437304';
+        s.onload = function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          window.gtag = gtag;
+          gtag('js', new Date());
+          gtag('config', 'AW-18023437304');
+        };
+        document.head.appendChild(s);
       }
       if ('requestIdleCallback' in window) {
-        requestIdleCallback(_loadGTM, { timeout: 3000 });
+        requestIdleCallback(_loadTracking, { timeout: 3000 });
       } else {
-        setTimeout(_loadGTM, 3000);
+        setTimeout(_loadTracking, 3000);
       }
     </script>
 
