@@ -242,6 +242,19 @@ const allStructuredData = [
           gtag('config', 'AW-18023437304');
         };
         document.head.appendChild(s);
+
+        // Google Analytics GA4 (G-G7QH86RT87)
+        var ga = document.createElement('script');
+        ga.async = true;
+        ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-G7QH86RT87';
+        ga.onload = function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          window.gtag = window.gtag || gtag;
+          gtag('js', new Date());
+          gtag('config', 'G-G7QH86RT87');
+        };
+        document.head.appendChild(ga);
       }
       if ('requestIdleCallback' in window) {
         requestIdleCallback(_loadTracking, { timeout: 3000 });

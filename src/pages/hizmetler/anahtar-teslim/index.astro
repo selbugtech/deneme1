@@ -23,10 +23,22 @@ const subServices = [
     icon: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>`,
   },
   {
-    title: 'Villa & Ev Yenileme',
-    slug: 'villa-ev-yenileme',
-    desc: 'Yaşam kalitenizi artıran, kişisel tarzınızı yansıtan villa ve ev yenileme projeleri.',
+    title: 'Villa Yenileme',
+    slug: 'villa-yenileme',
+    desc: 'Lüks villalar için kapsamlı iç mimari tasarım, yapısal dönüşüm ve anahtar teslim uygulama.',
     icon: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>`,
+  },
+  {
+    title: 'Ev Yenileme',
+    slug: 'ev-yenileme',
+    desc: 'Küçük daireden geniş konuta, kısmi yenilemeden komple dönüşüme konut yenileme projeleri.',
+    icon: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/></svg>`,
+  },
+  {
+    title: 'Otel Yenileme',
+    slug: 'otel-yenileme',
+    desc: 'Misafir deneyimini ve doluluk oranını artıran kapsamlı otel renovasyonu ve iç mimarlık.',
+    icon: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"/></svg>`,
   },
 ];
 
@@ -53,7 +65,7 @@ const faqSchema = {
   "mainEntity": [
     { "@type": "Question", "name": "Anahtar teslim yenileme bütçesi nasıl belirlenir?", "acceptedAnswer": { "@type": "Answer", "text": "Bütçe; mekanın büyüklüğü, mevcut yapı durumu ve seçilen malzeme kalitesine göre belirlenir. Ücretsiz keşif ziyaretimizde projenize özel bütçe sunuyoruz." } },
     { "@type": "Question", "name": "Anahtar teslim yenileme ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Ortalama bir mekan yenileme projesi (90–150 m²) 6–10 hafta içinde tamamlanmaktadır. Büyük projeler veya yapısal değişiklik içeren işler daha uzun sürebilir. Sözleşmede kesin takvim belirlenir." } },
-    { "@type": "Question", "name": "Hangi mekan türleri için hizmet veriyorsunuz?", "acceptedAnswer": { "@type": "Answer", "text": "Cafe ve restoran yenileme, ofis yenileme, mağaza ve dükkan yenileme ile villa ve ev yenileme projelerinin tamamını yürütüyoruz. Her mekan türüne özel deneyimimiz bulunmaktadır." } },
+    { "@type": "Question", "name": "Hangi mekan türleri için hizmet veriyorsunuz?", "acceptedAnswer": { "@type": "Answer", "text": "Cafe ve restoran yenileme, ofis yenileme, mağaza ve dükkan yenileme, villa yenileme, ev ve daire yenileme ile otel renovasyonu projelerinin tamamını yürütüyoruz. Her mekan türüne özel deneyimimiz bulunmaktadır." } },
     { "@type": "Question", "name": "Sözleşme sonrası ek maliyet çıkar mı?", "acceptedAnswer": { "@type": "Answer", "text": "Hayır. Sözleşmede belirlenen kapsam dışına çıkmıyoruz. Ek iş talebi olması durumunda müşterimizi önceden bilgilendirip onay alıyoruz." } }
   ]
 };
@@ -224,7 +236,7 @@ const faqSchema = {
       {[
         { q: 'Anahtar teslim yenileme bütçesi nasıl belirlenir?', a: 'Bütçe; mekanın büyüklüğü, mevcut yapı durumu ve seçilen malzeme kalitesine göre belirlenir. Ücretsiz keşif ziyaretimizde projenize özel bütçe sunuyoruz.' },
         { q: 'Anahtar teslim yenileme ne kadar sürer?', a: 'Ortalama bir mekan (90–150 m²) 6–10 hafta içinde tamamlanmaktadır. Yapısal değişiklik içeren veya daha büyük projelerde süre uzayabilir. Sözleşmede kesin takvim belirlenir.' },
-        { q: 'Hangi mekan türleri için hizmet veriyorsunuz?', a: 'Cafe, restoran, ofis, mağaza, dükkan, villa ve ev projelerinin tamamını yürütüyoruz. Her mekan türüne özel deneyimimiz bulunmaktadır.' },
+        { q: 'Hangi mekan türleri için hizmet veriyorsunuz?', a: 'Cafe, restoran, ofis, mağaza, dükkan, villa, ev, daire ve otel projelerinin tamamını yürütüyoruz. Her mekan türüne özel deneyimimiz bulunmaktadır.' },
         { q: 'Sözleşme sonrası ek maliyet çıkar mı?', a: 'Hayır. Sözleşmede belirlenen kapsam dışına çıkmıyoruz. Ek iş talebi olması durumunda müşterimizi önceden bilgilendirip onay alıyoruz.' },
       ].map((faq, i) => (
         <details class="group py-5" open={i === 0}>

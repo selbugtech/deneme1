@@ -59,9 +59,19 @@ const allSchema = [
   ogImage={ogImage ?? heroImage}
   structuredData={allSchema}
 >
+  {!heroImage && (
+    <style>
+      #site-header {
+        background: rgba(20, 20, 18, 0.92) !important;
+        backdrop-filter: blur(14px) !important;
+        box-shadow: 0 1px 24px rgba(0,0,0,0.35) !important;
+      }
+    </style>
+  )}
+
   <Header />
 
-  <main class="pt-24 bg-[#F5EFE6] min-h-screen">
+  <main class="bg-[#F5EFE6] min-h-screen">
 
     <!-- Hero image (optional) -->
     {heroImage && (
@@ -98,7 +108,7 @@ const allSchema = [
     )}
 
     <!-- Lead + CTA + Stats -->
-    <div class="max-w-6xl mx-auto px-6 py-12">
+    <div class={`max-w-6xl mx-auto px-6 ${heroImage ? 'py-12' : 'pt-28 pb-12'}`}>
       {!heroImage && (
         <nav class="flex items-center gap-2 mb-8 text-sm flex-wrap" aria-label="Breadcrumb">
           {breadcrumb.map((item, i) => (

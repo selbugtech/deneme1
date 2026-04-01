@@ -1,21 +1,22 @@
 ---
 import ServiceLayout from '../../../layouts/ServiceLayout.astro';
 import { CANONICAL_BASE } from '../../../config';
+import { optimizedImage } from '../../../lib/cloudinary';
 
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "serviceType": "Villa ve Ev Yenileme",
-  "name": "İstanbul Villa ve Ev Yenileme",
-  "description": "İstanbul'da anahtar teslim villa ve ev yenileme. Yaşam kalitenizi artıran, kişisel tarzınızı yansıtan kapsamlı konut yenileme projeleri.",
+  "serviceType": "Ev Yenileme",
+  "name": "İstanbul Ev Yenileme",
+  "description": "İstanbul'da anahtar teslim ev ve daire yenileme. Küçük daireden geniş konuta kısmi yenilemeden komple dönüşüme kapsamlı konut yenileme projeleri.",
   "provider": { "@type": "Organization", "@id": `${CANONICAL_BASE}/#organization`, "name": "Master İç Mimarlık" },
   "areaServed": [
     { "@type": "City", "name": "İstanbul" },
-    { "@type": "AdministrativeArea", "name": "Zekeriyaköy" },
-    { "@type": "AdministrativeArea", "name": "Acıbadem" },
-    { "@type": "AdministrativeArea", "name": "Beşiktaş" }
+    { "@type": "AdministrativeArea", "name": "Kadıköy" },
+    { "@type": "AdministrativeArea", "name": "Beşiktaş" },
+    { "@type": "AdministrativeArea", "name": "Şişli" }
   ],
-  "url": `${CANONICAL_BASE}/hizmetler/anahtar-teslim/villa-ev-yenileme`,
+  "url": `${CANONICAL_BASE}/hizmetler/anahtar-teslim/ev-yenileme`,
   "offers": { "@type": "Offer", "priceCurrency": "TRY", "description": "Ücretsiz keşif ve özel teklif için iletişime geçin", "availability": "https://schema.org/InStock" }
 };
 
@@ -23,51 +24,49 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Villa yenileme bütçesi nasıl belirlenir?", "acceptedAnswer": { "@type": "Answer", "text": "Bütçe; villanın büyüklüğü, mevcut yapı durumu ve seçilen malzeme kalitesine göre belirlenir. Ücretsiz keşif ziyaretimizde projenize özel bütçe sunuyoruz." } },
-    { "@type": "Question", "name": "Villa yenileme ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Ortalama bir villa yenileme projesi (250–400 m²) 10–20 hafta içinde tamamlanmaktadır. Kapsamlı yapısal değişiklikler içeren projeler daha uzun sürebilir. Sözleşmede kesin takvim belirlenir." } },
-    { "@type": "Question", "name": "Yenileme süresince evde oturabilir miyim?", "acceptedAnswer": { "@type": "Answer", "text": "Komple yenileme projelerinde evde oturmanızı tavsiye etmiyoruz. Kısmi yenilemelerde (tek kat veya belirli odalar) mümkün olabilir. Her projenin planlamasında bu konuyu müşterimizle önceden değerlendiriyoruz." } }
+    { "@type": "Question", "name": "Ev yenileme ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Standart bir daire yenilemesi (80–120 m²) genellikle 4–8 hafta içinde tamamlanmaktadır. Kapsam ve malzeme seçimine göre bu süre değişebilir. Sözleşmede kesin takvim belirlenir." } },
+    { "@type": "Question", "name": "Yenileme süresince evde oturabilir miyim?", "acceptedAnswer": { "@type": "Answer", "text": "Komple daire yenilemelerinde evde oturmanızı tavsiye etmiyoruz. Tek oda veya mutfak-banyo gibi kısmi yenilemelerde belirli dönemlerde mümkün olabilir. Her projenin planlamasında bu konuyu müşterimizle önceden değerlendiriyoruz." } },
+    { "@type": "Question", "name": "Sadece mutfak veya banyo yenileyebilir miyim?", "acceptedAnswer": { "@type": "Answer", "text": "Evet. Yalnızca mutfak yenileme, banyo yenileme veya tek oda yenileme gibi kısmi projeler de yürütüyoruz. İhtiyacınıza özel kapsam belirlenir, gereksiz iş yapılmaz." } },
+    { "@type": "Question", "name": "Ev yenileme bütçesi nasıl belirlenir?", "acceptedAnswer": { "@type": "Answer", "text": "Bütçe; dairenin büyüklüğü, mevcut yapı durumu, seçilen malzeme kalitesi ve yenileme kapsamına göre şekillenir. Ücretsiz keşif ziyaretimizde projenize özel bütçe sunuyoruz." } }
   ]
 };
 ---
 
 <ServiceLayout
-  title="İstanbul Villa ve Ev Yenileme | Master İç Mimarlık"
-  description="İstanbul'da villa ve ev yenileme. Yaşam kalitenizi artıran, kişisel tarzınızı yansıtan anahtar teslim konut yenileme. Zekeriyaköy, Acıbadem, Beşiktaş. Ücretsiz keşif: 0533 039 15 65"
-  canonicalUrl={`${CANONICAL_BASE}/hizmetler/anahtar-teslim/villa-ev-yenileme`}
-  h1="İstanbul Villa ve Ev Yenileme"
+  title="İstanbul Ev Yenileme | Daire ve Konut Tadilat | Master İç Mimarlık"
+  description="İstanbul'da anahtar teslim ev ve daire yenileme. Beşiktaş, Kadıköy, Şişli ve tüm İstanbul'da kısmi veya komple konut tadilat. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/hizmetler/anahtar-teslim/ev-yenileme`}
+  h1="İstanbul Ev ve Daire Yenileme"
   eyebrow="Anahtar Teslim"
-  lead="Yaşam kalitenizi artıran, kişisel tarzınızı yansıtan villa ve ev yenileme projeleri. Küçük daireden büyük villaya, kısmi yenilemeden komple dönüşüme kadar tüm konut projeleri."
+  lead="Küçük bir daireden geniş bir konuta, kısmi yenilemeden komple dönüşüme kadar her ölçekte konut yenileme projesi yürütüyoruz. Yaşam kalitenizi artıran, kişisel tarzınızı yansıtan mekanlar tasarlıyoruz."
   breadcrumb={[
     { label: "Ana Sayfa", href: "/" },
     { label: "Hizmetler", href: "/#hizmetler" },
     { label: "Anahtar Teslim Hizmetler", href: "/hizmetler/anahtar-teslim" },
-    { label: "Villa & Ev Yenileme" }
+    { label: "Ev Yenileme" }
   ]}
   structuredData={[serviceSchema, faqSchema]}
 >
 
-  <!-- Hero Placeholder -->
-  <div class="w-full bg-charcoal flex items-center justify-center mb-12" style="height: 420px;">
-    <div class="text-center">
-      <svg class="w-16 h-16 text-gold/40 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-      </svg>
-      <p class="text-white/30 text-sm tracking-widest uppercase">Proje Görselleri Yakında</p>
-    </div>
+  <!-- Proje Görselleri -->
+  <div class="w-full mb-12 grid grid-cols-1 md:grid-cols-3 gap-3">
+    <img src={optimizedImage('/images/salon1.png')} alt="Ev yenileme — salon tasarımı" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
+    <img src={optimizedImage('/images/banyo1.webp')} alt="Ev yenileme — banyo yenileme" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
+    <img src={optimizedImage('/images/yatakodasi2.jpeg')} alt="Ev yenileme — yatak odası tasarımı" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
   </div>
 
   <!-- Scope -->
   <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
     <div>
-      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Villa & Ev Yenileme Hizmetimiz</h2>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Ev Yenileme Hizmetimiz</h2>
       <p class="text-muted leading-relaxed mb-4">
-        Eviniz kişisel tarzınızın ve yaşam anlayışınızın yansımasıdır. Küçük bir dairenin yenilenmesinden büyük bir villanın baştan tasarlanmasına kadar her ölçekte konut projesi yürütüyoruz.
+        Eviniz kişisel tarzınızın ve yaşam anlayışınızın yansımasıdır. Mutfak ve banyo yenilemesinden salon tasarımına, yatak odası düzenlemesinden komple konut dönüşümüne kadar ihtiyacınıza özel projeler yürütüyoruz.
       </p>
       <p class="text-muted leading-relaxed mb-4">
-        Mutfak ve banyo yenilemeden salon tasarımına, yatak odası düzenlemesinden dış cepheye kadar evinizin her köşesini sizin için planlıyoruz.
+        Kısmi yenileme mi istiyorsunuz, yoksa evi baştan sona mı dönüştürüyorsunuz? Her iki durumda da tasarım, malzeme tedariki, usta koordinasyonu ve şantiye yönetiminin tamamını üstleniyoruz.
       </p>
       <p class="text-muted leading-relaxed">
-        İstanbul genelinde Zekeriyaköy, Acıbadem, Beşiktaş, Kadıköy ve tüm ilçelerde hizmet veriyoruz.
+        İstanbul genelinde Beşiktaş, Kadıköy, Şişli, Ataşehir ve tüm ilçelerde ev yenileme hizmeti sunuyoruz.
       </p>
     </div>
     <div>
@@ -100,7 +99,7 @@ const faqSchema = {
   <div class="py-12 border-b border-border">
     <div class="flex items-center gap-3 mb-8">
       <span class="w-8 h-px bg-gold"></span>
-      <h2 class="font-display text-2xl font-bold text-charcoal">Villa ve Ev Yenileme Sürecimiz</h2>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Ev Yenileme Sürecimiz</h2>
     </div>
     <div class="grid md:grid-cols-5 gap-6">
       {[
@@ -128,7 +127,7 @@ const faqSchema = {
       <h2 class="font-display text-2xl font-bold text-charcoal">Hizmet Verdiğimiz İlçeler</h2>
     </div>
     <div class="flex flex-wrap gap-2">
-      {['Zekeriyaköy', 'Acıbadem', 'Beşiktaş', 'Kadıköy', 'Levent', 'Nişantaşı', 'Ataşehir', 'Şişli', 'Sarıyer', 'Üsküdar', 'Bakırköy', 'Maltepe'].map(ilce => (
+      {['Beşiktaş', 'Kadıköy', 'Şişli', 'Ataşehir', 'Acıbadem', 'Levent', 'Nişantaşı', 'Zekeriyaköy', 'Sarıyer', 'Üsküdar', 'Bakırköy', 'Maltepe'].map(ilce => (
         <span class="px-3 py-1.5 border border-border text-charcoal text-xs font-medium">{ilce}</span>
       ))}
     </div>
@@ -142,9 +141,10 @@ const faqSchema = {
     </div>
     <div class="divide-y divide-border">
       {[
-        { q: 'Villa yenileme bütçesi nasıl belirlenir?', a: 'Bütçe; villanın büyüklüğü, mevcut yapı durumu ve seçilen malzeme kalitesine göre belirlenir. Ücretsiz keşif ziyaretimizde projenize özel bütçe sunuyoruz.' },
-        { q: 'Villa yenileme ne kadar sürer?', a: 'Ortalama bir villa yenileme projesi (250–400 m²) 10–20 hafta içinde tamamlanmaktadır. Sözleşmede kesin takvim belirlenir.' },
-        { q: 'Yenileme süresince evde oturabilir miyim?', a: 'Komple yenileme projelerinde evde oturmanızı tavsiye etmiyoruz. Kısmi yenilemelerde mümkün olabilir. Her projenin planlamasında bu konuyu müşterimizle önceden değerlendiriyoruz.' },
+        { q: 'Ev yenileme ne kadar sürer?', a: 'Standart bir daire yenilemesi (80–120 m²) genellikle 4–8 hafta içinde tamamlanmaktadır. Kapsam ve malzeme seçimine göre bu süre değişebilir. Sözleşmede kesin takvim belirlenir.' },
+        { q: 'Yenileme süresince evde oturabilir miyim?', a: 'Komple daire yenilemelerinde evde oturmanızı tavsiye etmiyoruz. Tek oda veya mutfak-banyo gibi kısmi yenilemelerde belirli dönemlerde mümkün olabilir.' },
+        { q: 'Sadece mutfak veya banyo yenileyebilir miyim?', a: 'Evet. Yalnızca mutfak yenileme, banyo yenileme veya tek oda yenileme gibi kısmi projeler de yürütüyoruz. İhtiyacınıza özel kapsam belirlenir.' },
+        { q: 'Ev yenileme bütçesi nasıl belirlenir?', a: 'Bütçe; dairenin büyüklüğü, mevcut yapı durumu, seçilen malzeme kalitesi ve yenileme kapsamına göre şekillenir. Ücretsiz keşif ziyaretimizde projenize özel bütçe sunuyoruz.' },
       ].map((faq, i) => (
         <details class="group py-5" open={i === 0}>
           <summary class="flex items-start justify-between cursor-pointer list-none gap-4">
