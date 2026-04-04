@@ -1,0 +1,154 @@
+---
+import ServiceLayout from '../../../layouts/ServiceLayout.astro';
+import { CANONICAL_BASE } from '../../../config';
+import { optimizedImage } from '../../../lib/cloudinary';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Ofis Tadilat",
+  "name": "İstanbul Ofis Tadilat",
+  "description": "İstanbul'da anahtar teslim ofis tadilat. Çalışan verimliliğini artıran, kurumsal kimliği yansıtan modern ofis iç mekan tasarımı.",
+  "provider": { "@type": "Organization", "@id": `${CANONICAL_BASE}/#organization`, "name": "Master İç Mimarlık" },
+  "areaServed": { "@type": "City", "name": "İstanbul" },
+  "url": `${CANONICAL_BASE}/hizmetler/anahtar-teslim/ofis-tadilat`,
+  "offers": { "@type": "Offer", "priceCurrency": "TRY", "description": "Ücretsiz keşif ve özel teklif için iletişime geçin", "availability": "https://schema.org/InStock" }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Ofis tadilat ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Ortalama bir ofis tadilatı (100–200 m²) 5–9 hafta içinde tamamlanmaktadır. Hafta sonu ve mesai dışı çalışma ile iş sürekliliği korunabilir." } },
+    { "@type": "Question", "name": "Çalışanlar ofiste çalışırken tadilat yapılabilir mi?", "acceptedAnswer": { "@type": "Answer", "text": "Kısmi projelerde ve faz faz uygulama planı ile ofis açıkken çalışmak mümkündür. Planlamayı ihtiyacınıza göre birlikte düzenliyoruz." } },
+    { "@type": "Question", "name": "Ofis tadilat bütçesi nasıl belirlenir?", "acceptedAnswer": { "@type": "Answer", "text": "Bütçe; mekanın büyüklüğü, mevcut yapı durumu ve seçilen malzeme kalitesine göre belirlenir. Ücretsiz keşif ziyaretimizde projenize özel bütçe sunuyoruz." } }
+  ]
+};
+---
+
+<ServiceLayout
+  title="İstanbul Ofis Tadilat | Anahtar Teslim Ofis Tadilat | Master İç Mimarlık"
+  description="İstanbul'da ofis tadilat. Çalışan verimliliğini artıran, kurumsal kimliği yansıtan anahtar teslim ofis tasarımı. Levent, Maslak, Beşiktaş. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/hizmetler/anahtar-teslim/ofis-tadilat`}
+  h1="İstanbul Ofis Tadilat"
+  eyebrow="Anahtar Teslim"
+  lead="Çalışan verimliliğini ve marka imajını güçlendiren kurumsal ofis iç mekan çözümleri. Açık ofis düzeninden özel kabinlere, toplantı odalarından resepsiyon alanlarına kadar tüm kurumsal proje türleri."
+  breadcrumb={[
+    { label: "Ana Sayfa", href: "/" },
+    { label: "Hizmetler", href: "/#hizmetler" },
+    { label: "Anahtar Teslim Hizmetler", href: "/hizmetler/anahtar-teslim" },
+    { label: "Ofis Tadilat" }
+  ]}
+  structuredData={[serviceSchema, faqSchema]}
+>
+
+  <!-- Proje Görselleri -->
+  <div class="w-full mb-12 grid grid-cols-1 md:grid-cols-2 gap-3">
+    <img src={optimizedImage('/images/ofis2.jpeg')} alt="Ofis tadilat — kurumsal ofis tasarımı" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
+    <img src={optimizedImage('/images/toplantiodasi1.jpeg')} alt="Ofis tadilat — toplantı odası tasarımı" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
+  </div>
+
+  <!-- Scope -->
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Ofis Tadilat Hizmetimiz</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Çalışma ortamı, ekip performansı ve şirket kültürü üzerinde doğrudan etkiye sahiptir. Modern, fonksiyonel ve estetik bir ofis; çalışan memnuniyetini artırır ve kurumsal imajı güçlendirir.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Açık ofis planlamasından kapalı kabin düzenlemelerine, toplantı odalarından lobi ve resepsiyon alanlarına kadar tüm kurumsal mekan ihtiyaçlarını karşılıyoruz.
+      </p>
+      <p class="text-muted leading-relaxed">
+        İstanbul genelinde Levent, Maslak, Beşiktaş, Şişli ve tüm iş merkezlerinde hizmet veriyoruz.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4 text-xs uppercase tracking-wider">Hizmete Dahil Olanlar</h3>
+      <ul class="space-y-3">
+        {[
+          'Kurumsal konsept ve alan planlaması',
+          'Fotorealistik 3D görselleştirme',
+          'Açık ofis ve kabinleme tasarımı',
+          'Toplantı odası çözümleri',
+          'Aydınlatma ve akustik iyileştirme',
+          'Bölme duvar ve cam sistemleri',
+          'Zemin, duvar ve tavan kaplamaları',
+          'Kablo yönetimi ve teknik altyapı',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <!-- Process -->
+  <div class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-8">
+      <span class="w-8 h-px bg-gold"></span>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Ofis Tadilat Sürecimiz</h2>
+    </div>
+    <div class="grid md:grid-cols-5 gap-6">
+      {[
+        { step: '01', title: 'Ücretsiz Keşif', desc: 'Ofisinizi ve çalışma kültürünüzü yerinde değerlendiriyoruz.' },
+        { step: '02', title: 'Tasarım & 3D', desc: 'Kurumsal kimliğinize uygun tasarımı 3D ile görselleştiriyoruz.' },
+        { step: '03', title: 'Sözleşme', desc: 'Kesin bütçe ve takvim belirlenerek sözleşme imzalanır.' },
+        { step: '04', title: 'Uygulama', desc: 'İş sürekliliğini koruyarak faz faz uygulama yapılabilir.' },
+        { step: '05', title: 'Teslim', desc: 'Hazır ofisinizi teslim alıp operasyona devam ediyorsunuz.' },
+      ].map(item => (
+        <div class="text-center">
+          <div class="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-3">
+            <span class="text-gold font-display font-bold text-sm">{item.step}</span>
+          </div>
+          <h3 class="font-semibold text-charcoal text-sm mb-2">{item.title}</h3>
+          <p class="text-muted text-xs leading-relaxed">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Service Areas -->
+  <div class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="w-8 h-px bg-gold"></span>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Hizmet Verdiğimiz İlçeler</h2>
+    </div>
+    <div class="flex flex-wrap gap-2">
+      {['Levent', 'Maslak', 'Beşiktaş', 'Şişli', 'Kadıköy', 'Ataşehir', 'Nişantaşı', 'Sarıyer', 'Üsküdar', 'Bakırköy', 'Maltepe', 'Ümraniye'].map(ilce => (
+        <span class="px-3 py-1.5 border border-border text-charcoal text-xs font-medium">{ilce}</span>
+      ))}
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="py-12">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="w-8 h-px bg-gold"></span>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Sık Sorulan Sorular</h2>
+    </div>
+    <div class="divide-y divide-border">
+      {[
+        { q: 'Ofis tadilat ne kadar sürer?', a: 'Ortalama bir ofis tadilatı (100–200 m²) 5–9 hafta içinde tamamlanmaktadır. Hafta sonu ve mesai dışı çalışma ile iş sürekliliği korunabilir.' },
+        { q: 'Çalışanlar ofiste çalışırken tadilat yapılabilir mi?', a: 'Kısmi projelerde ve faz faz uygulama planı ile ofis açıkken çalışmak mümkündür. Planlamayı ihtiyacınıza göre birlikte düzenliyoruz.' },
+        { q: 'Ofis tadilat bütçesi nasıl belirlenir?', a: 'Bütçe; mekanın büyüklüğü, mevcut yapı durumu ve seçilen malzeme kalitesine göre belirlenir. Ücretsiz keşif ziyaretimizde projenize özel bütçe sunuyoruz.' },
+      ].map((faq, i) => (
+        <details class="group py-5" open={i === 0}>
+          <summary class="flex items-start justify-between cursor-pointer list-none gap-4">
+            <h3 class="font-semibold text-charcoal text-sm md:text-base group-open:text-gold transition-colors">{faq.q}</h3>
+            <svg class="shrink-0 w-5 h-5 text-gold mt-0.5 group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <p class="mt-3 text-muted text-sm leading-relaxed pr-8">{faq.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+
+</ServiceLayout>

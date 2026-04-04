@@ -1,0 +1,162 @@
+---
+import ServiceLayout from '../../../layouts/ServiceLayout.astro';
+import { CANONICAL_BASE } from '../../../config';
+import { optimizedImage } from '../../../lib/cloudinary';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Otel Tadilat",
+  "name": "İstanbul Otel Tadilat",
+  "description": "İstanbul'da anahtar teslim otel tadilat. Misafir deneyimini ve doluluk oranını artıran kapsamlı otel iç mimarlık ve tadilat hizmetleri.",
+  "provider": { "@type": "Organization", "@id": `${CANONICAL_BASE}/#organization`, "name": "Master İç Mimarlık" },
+  "areaServed": [
+    { "@type": "City", "name": "İstanbul" },
+    { "@type": "AdministrativeArea", "name": "Beyoğlu" },
+    { "@type": "AdministrativeArea", "name": "Fatih" },
+    { "@type": "AdministrativeArea", "name": "Beşiktaş" }
+  ],
+  "url": `${CANONICAL_BASE}/hizmetler/anahtar-teslim/otel-tadilat`,
+  "offers": { "@type": "Offer", "priceCurrency": "TRY", "description": "Ücretsiz keşif ve özel teklif için iletişime geçin", "availability": "https://schema.org/InStock" }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Otel tadilat sırasında faaliyet sürdürülebilir mi?", "acceptedAnswer": { "@type": "Answer", "text": "Evet. Otel operasyonunu kesintisiz sürdürmeniz için bölüm bölüm (fazlı) tadilat planı hazırlıyoruz. Hangi bölümlerin hangi sırayla tadilat yapılacağı sözleşme aşamasında müşterimizle birlikte planlanır." } },
+    { "@type": "Question", "name": "Otel tadilat ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Süre; otel büyüklüğü, kapsam ve fazlı çalışma planına göre değişir. Küçük butik oteller 8–12 hafta, büyük kapsamlı projeler birkaç aşamada tamamlanabilir. Sözleşmede aşama takvimleri net olarak belirlenir." } },
+    { "@type": "Question", "name": "Otel iç mimarlık tadilat ROI'si nasıl ölçülür?", "acceptedAnswer": { "@type": "Answer", "text": "Otel tadilat ROI'si; doluluk oranı artışı, oda başına gelir (RevPAR) yükselmesi ve misafir memnuniyet puanlarındaki iyileşmeyle ölçülür. Tasarım kararlarını bu metrikler gözetilerek alıyoruz." } },
+    { "@type": "Question", "name": "Hangi otel alanları için hizmet veriyorsunuz?", "acceptedAnswer": { "@type": "Answer", "text": "Odalar ve banyolar, lobi ve resepsiyon, restoran ve bar alanları, toplantı ve konferans salonları, ortak kullanım alanları ile dış cephe ve çevre düzenlemesi dahil otel genelinde kapsamlı tadilat yapıyoruz." } }
+  ]
+};
+---
+
+<ServiceLayout
+  title="İstanbul Otel Tadilat | Butik Otel Tadilat | Master İç Mimarlık"
+  description="İstanbul'da anahtar teslim otel tadilat. Misafir deneyimini artıran, doluluk oranını yükselten kapsamlı otel iç mimarlık tadilat hizmetleri. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/hizmetler/anahtar-teslim/otel-tadilat`}
+  h1="İstanbul Otel Tadilat"
+  eyebrow="Anahtar Teslim"
+  lead="Misafir deneyimini dönüştüren, doluluk oranını ve geliri artıran kapsamlı otel tadilat. Lobiden odalara, restorandan toplantı salonlarına tüm otel alanlarını tasarlıyor ve tadilat yapıyoruz."
+  breadcrumb={[
+    { label: "Ana Sayfa", href: "/" },
+    { label: "Hizmetler", href: "/#hizmetler" },
+    { label: "Anahtar Teslim Hizmetler", href: "/hizmetler/anahtar-teslim" },
+    { label: "Otel Tadilat" }
+  ]}
+  structuredData={[serviceSchema, faqSchema]}
+>
+
+  <!-- Proje Görselleri -->
+  <div class="w-full mb-12 grid grid-cols-1 md:grid-cols-3 gap-3">
+    <img src={optimizedImage('/images/restoran1.jpeg')} alt="Otel tadilat — restoran ve yemek alanı" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
+    <img src={optimizedImage('/images/toplantiodasi1.jpeg')} alt="Otel tadilat — toplantı salonu" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
+    <img src={optimizedImage('/images/salon9.jpeg')} alt="Otel tadilat — lobi ve ortak alan" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
+  </div>
+
+  <!-- Scope -->
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Otel Tadilat Hizmetimiz</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Otel tadilat, misafir deneyimini doğrudan etkileyen yatırımların başında gelir. Tadilat yapılan bir otelde doluluk oranı, oda başına gelir ve misafir memnuniyeti ölçülebilir biçimde yükselir.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Operasyonunuzu mümkün olduğunca az kesintiye uğratmak için fazlı çalışma planı hazırlıyoruz. Her aşama tamamlandıkça ilgili bölümler hizmete geri döner; gelir kaybını minimize ediyoruz.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Butik otellerden orta ölçekli tesislere, hostel tadilattan apart otel dönüşümlerine kadar tüm konaklama projelerinde deneyimliyiz.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4 text-xs uppercase tracking-wider">Hizmete Dahil Olanlar</h3>
+      <ul class="space-y-3">
+        {[
+          'Lobi ve resepsiyon tasarımı',
+          'Oda ve banyo tadilat',
+          'Restoran ve bar alanı tasarımı',
+          'Toplantı ve konferans salonları',
+          'Ortak kullanım alanları',
+          'Elektrik, tesisat ve iklimlendirme',
+          'FF&E (Mobilya, Tefriş, Ekipman)',
+          'Fazlı uygulama ve anahtar teslim',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <!-- Process -->
+  <div class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-8">
+      <span class="w-8 h-px bg-gold"></span>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Otel Tadilat Sürecimiz</h2>
+    </div>
+    <div class="grid md:grid-cols-5 gap-6">
+      {[
+        { step: '01', title: 'Keşif & Analiz', desc: 'Mevcut durumu, operasyonel kısıtları ve tadilat hedeflerini değerlendiriyoruz.' },
+        { step: '02', title: 'Fazlı Plan', desc: 'Operasyonu en az etkileyen tadilat aşamalarını ve takvimleri belirliyoruz.' },
+        { step: '03', title: '3D Tasarım', desc: 'Tüm alanları fotorealistik görsellerle deneyimleyin ve onaylayın.' },
+        { step: '04', title: 'Uygulama', desc: 'Her aşama tamamlandıkça ilgili bölüm hizmete geri döner.' },
+        { step: '05', title: 'Teslim', desc: 'Eksiksiz tadilat edilmiş otelinizi teslim alırsınız.' },
+      ].map(item => (
+        <div class="text-center">
+          <div class="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-3">
+            <span class="text-gold font-display font-bold text-sm">{item.step}</span>
+          </div>
+          <h3 class="font-semibold text-charcoal text-sm mb-2">{item.title}</h3>
+          <p class="text-muted text-xs leading-relaxed">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Service Areas -->
+  <div class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="w-8 h-px bg-gold"></span>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Hizmet Verdiğimiz İlçeler</h2>
+    </div>
+    <div class="flex flex-wrap gap-2">
+      {['Beyoğlu', 'Fatih', 'Beşiktaş', 'Kadıköy', 'Şişli', 'Sarıyer', 'Üsküdar', 'Bakırköy', 'Ataşehir', 'Levent', 'Zekeriyaköy', 'Maltepe'].map(ilce => (
+        <span class="px-3 py-1.5 border border-border text-charcoal text-xs font-medium">{ilce}</span>
+      ))}
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="py-12">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="w-8 h-px bg-gold"></span>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Sık Sorulan Sorular</h2>
+    </div>
+    <div class="divide-y divide-border">
+      {[
+        { q: 'Otel tadilat sırasında faaliyet sürdürülebilir mi?', a: 'Evet. Otel operasyonunu kesintisiz sürdürmeniz için bölüm bölüm (fazlı) tadilat planı hazırlıyoruz. Her aşama tamamlandıkça ilgili bölümler hizmete geri döner.' },
+        { q: 'Otel tadilat ne kadar sürer?', a: 'Süre; otel büyüklüğü, kapsam ve fazlı çalışma planına göre değişir. Küçük butik oteller 8–12 hafta, büyük kapsamlı projeler birkaç aşamada tamamlanabilir. Aşama takvimleri sözleşmede net belirlenir.' },
+        { q: 'Otel iç mimarlık tadilat ROI\'si nasıl ölçülür?', a: 'Doluluk oranı artışı, oda başına gelir (RevPAR) yükselmesi ve misafir memnuniyet puanlarındaki iyileşmeyle ölçülür. Tasarım kararlarını bu metrikler gözetilerek alıyoruz.' },
+        { q: 'Hangi otel alanları için hizmet veriyorsunuz?', a: 'Odalar ve banyolar, lobi ve resepsiyon, restoran ve bar alanları, toplantı salonları, ortak kullanım alanları ile dış cephe dahil tüm otel genelinde kapsamlı tadilat yapıyoruz.' },
+      ].map((faq, i) => (
+        <details class="group py-5" open={i === 0}>
+          <summary class="flex items-start justify-between cursor-pointer list-none gap-4">
+            <h3 class="font-semibold text-charcoal text-sm md:text-base group-open:text-gold transition-colors">{faq.q}</h3>
+            <svg class="shrink-0 w-5 h-5 text-gold mt-0.5 group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <p class="mt-3 text-muted text-sm leading-relaxed pr-8">{faq.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+
+</ServiceLayout>

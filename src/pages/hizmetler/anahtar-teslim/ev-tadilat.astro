@@ -1,0 +1,162 @@
+---
+import ServiceLayout from '../../../layouts/ServiceLayout.astro';
+import { CANONICAL_BASE } from '../../../config';
+import { optimizedImage } from '../../../lib/cloudinary';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Ev Tadilat",
+  "name": "İstanbul Ev Tadilat",
+  "description": "İstanbul'da anahtar teslim ev ve daire tadilat. Küçük daireden geniş konuta kısmi tadilattan komple dönüşüme kapsamlı konut tadilat projeleri.",
+  "provider": { "@type": "Organization", "@id": `${CANONICAL_BASE}/#organization`, "name": "Master İç Mimarlık" },
+  "areaServed": [
+    { "@type": "City", "name": "İstanbul" },
+    { "@type": "AdministrativeArea", "name": "Kadıköy" },
+    { "@type": "AdministrativeArea", "name": "Beşiktaş" },
+    { "@type": "AdministrativeArea", "name": "Şişli" }
+  ],
+  "url": `${CANONICAL_BASE}/hizmetler/anahtar-teslim/ev-tadilat`,
+  "offers": { "@type": "Offer", "priceCurrency": "TRY", "description": "Ücretsiz keşif ve özel teklif için iletişime geçin", "availability": "https://schema.org/InStock" }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Ev tadilat ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Standart bir daire tadilatı (80–120 m²) genellikle 4–8 hafta içinde tamamlanmaktadır. Kapsam ve malzeme seçimine göre bu süre değişebilir. Sözleşmede kesin takvim belirlenir." } },
+    { "@type": "Question", "name": "Tadilat süresince evde oturabilir miyim?", "acceptedAnswer": { "@type": "Answer", "text": "Komple daire tadilat çalışmalarında evde oturmanızı tavsiye etmiyoruz. Tek oda veya mutfak-banyo gibi kısmi tadilatlarda belirli dönemlerde mümkün olabilir. Her projenin planlamasında bu konuyu müşterimizle önceden değerlendiriyoruz." } },
+    { "@type": "Question", "name": "Sadece mutfak veya banyo tadilatı yaptırabilir miyim?", "acceptedAnswer": { "@type": "Answer", "text": "Evet. Yalnızca mutfak tadilat, banyo tadilat veya tek oda tadilat gibi kısmi projeler de yürütüyoruz. İhtiyacınıza özel kapsam belirlenir, gereksiz iş yapılmaz." } },
+    { "@type": "Question", "name": "Ev tadilat bütçesi nasıl belirlenir?", "acceptedAnswer": { "@type": "Answer", "text": "Bütçe; dairenin büyüklüğü, mevcut yapı durumu, seçilen malzeme kalitesi ve tadilat kapsamına göre şekillenir. Ücretsiz keşif ziyaretimizde projenize özel bütçe sunuyoruz." } }
+  ]
+};
+---
+
+<ServiceLayout
+  title="İstanbul Ev Tadilat | Daire ve Konut Tadilat | Master İç Mimarlık"
+  description="İstanbul'da anahtar teslim ev ve daire tadilat. Beşiktaş, Kadıköy, Şişli ve tüm İstanbul'da kısmi veya komple konut tadilat. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/hizmetler/anahtar-teslim/ev-tadilat`}
+  h1="İstanbul Ev ve Daire Tadilat"
+  eyebrow="Anahtar Teslim"
+  lead="Küçük bir daireden geniş bir konuta, kısmi tadilattan komple dönüşüme kadar her ölçekte konut tadilat projesi yürütüyoruz. Yaşam kalitenizi artıran, kişisel tarzınızı yansıtan mekanlar tasarlıyoruz."
+  breadcrumb={[
+    { label: "Ana Sayfa", href: "/" },
+    { label: "Hizmetler", href: "/#hizmetler" },
+    { label: "Anahtar Teslim Hizmetler", href: "/hizmetler/anahtar-teslim" },
+    { label: "Ev Tadilat" }
+  ]}
+  structuredData={[serviceSchema, faqSchema]}
+>
+
+  <!-- Proje Görselleri -->
+  <div class="w-full mb-12 grid grid-cols-1 md:grid-cols-3 gap-3">
+    <img src={optimizedImage('/images/salon1.png')} alt="Ev tadilat — salon tasarımı" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
+    <img src={optimizedImage('/images/banyo1.webp')} alt="Ev tadilat — banyo tadilat" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
+    <img src={optimizedImage('/images/yatakodasi2.jpeg')} alt="Ev tadilat — yatak odası tasarımı" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
+  </div>
+
+  <!-- Scope -->
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Ev Tadilat Hizmetimiz</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Eviniz kişisel tarzınızın ve yaşam anlayışınızın yansımasıdır. Mutfak ve banyo tadilat çalışmalarından salon tasarımına, yatak odası düzenlemesinden komple konut dönüşümüne kadar ihtiyacınıza özel projeler yürütüyoruz.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Kısmi tadilat mı istiyorsunuz, yoksa evi baştan sona mı dönüştürüyorsunuz? Her iki durumda da tasarım, malzeme tedariki, usta koordinasyonu ve şantiye yönetiminin tamamını üstleniyoruz.
+      </p>
+      <p class="text-muted leading-relaxed">
+        İstanbul genelinde Beşiktaş, Kadıköy, Şişli, Ataşehir ve tüm ilçelerde ev tadilat hizmeti sunuyoruz.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4 text-xs uppercase tracking-wider">Hizmete Dahil Olanlar</h3>
+      <ul class="space-y-3">
+        {[
+          'İç mimari konsept tasarım',
+          'Fotorealistik 3D görselleştirme',
+          'Mutfak ve banyo tadilat',
+          'Salon ve yatak odası tasarımı',
+          'Elektrik, tesisat iyileştirme',
+          'Zemin, duvar ve tavan kaplamaları',
+          'Aydınlatma ve dekor uygulamaları',
+          'Son temizlik ve anahtar teslim',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <!-- Process -->
+  <div class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-8">
+      <span class="w-8 h-px bg-gold"></span>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Ev Tadilat Sürecimiz</h2>
+    </div>
+    <div class="grid md:grid-cols-5 gap-6">
+      {[
+        { step: '01', title: 'Ücretsiz Keşif', desc: 'Evinizi ve yaşam tarzınızı yerinde değerlendiriyoruz.' },
+        { step: '02', title: '3D Tasarım', desc: 'Mekanınızı gerçekçi görsellerle deneyimleyin ve onaylayın.' },
+        { step: '03', title: 'Sözleşme', desc: 'Kesin bütçe ve takvim belirlenerek sözleşme imzalanır.' },
+        { step: '04', title: 'Uygulama', desc: 'Şantiye yönetimi tamamen bizde. Sizi düzenli bilgilendiriyoruz.' },
+        { step: '05', title: 'Teslim', desc: 'Temizlenmiş, eksiksiz hazır evinizi teslim alırsınız.' },
+      ].map(item => (
+        <div class="text-center">
+          <div class="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-3">
+            <span class="text-gold font-display font-bold text-sm">{item.step}</span>
+          </div>
+          <h3 class="font-semibold text-charcoal text-sm mb-2">{item.title}</h3>
+          <p class="text-muted text-xs leading-relaxed">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Service Areas -->
+  <div class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="w-8 h-px bg-gold"></span>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Hizmet Verdiğimiz İlçeler</h2>
+    </div>
+    <div class="flex flex-wrap gap-2">
+      {['Beşiktaş', 'Kadıköy', 'Şişli', 'Ataşehir', 'Acıbadem', 'Levent', 'Nişantaşı', 'Zekeriyaköy', 'Sarıyer', 'Üsküdar', 'Bakırköy', 'Maltepe'].map(ilce => (
+        <span class="px-3 py-1.5 border border-border text-charcoal text-xs font-medium">{ilce}</span>
+      ))}
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="py-12">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="w-8 h-px bg-gold"></span>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Sık Sorulan Sorular</h2>
+    </div>
+    <div class="divide-y divide-border">
+      {[
+        { q: 'Ev tadilat ne kadar sürer?', a: 'Standart bir daire tadilatı (80–120 m²) genellikle 4–8 hafta içinde tamamlanmaktadır. Kapsam ve malzeme seçimine göre bu süre değişebilir. Sözleşmede kesin takvim belirlenir.' },
+        { q: 'Tadilat süresince evde oturabilir miyim?', a: 'Komple daire tadilat çalışmalarında evde oturmanızı tavsiye etmiyoruz. Tek oda veya mutfak-banyo gibi kısmi tadilatlarda belirli dönemlerde mümkün olabilir.' },
+        { q: 'Sadece mutfak veya banyo tadilatı yaptırabilir miyim?', a: 'Evet. Yalnızca mutfak tadilat, banyo tadilat veya tek oda tadilat gibi kısmi projeler de yürütüyoruz. İhtiyacınıza özel kapsam belirlenir.' },
+        { q: 'Ev tadilat bütçesi nasıl belirlenir?', a: 'Bütçe; dairenin büyüklüğü, mevcut yapı durumu, seçilen malzeme kalitesi ve tadilat kapsamına göre şekillenir. Ücretsiz keşif ziyaretimizde projenize özel bütçe sunuyoruz.' },
+      ].map((faq, i) => (
+        <details class="group py-5" open={i === 0}>
+          <summary class="flex items-start justify-between cursor-pointer list-none gap-4">
+            <h3 class="font-semibold text-charcoal text-sm md:text-base group-open:text-gold transition-colors">{faq.q}</h3>
+            <svg class="shrink-0 w-5 h-5 text-gold mt-0.5 group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <p class="mt-3 text-muted text-sm leading-relaxed pr-8">{faq.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+
+</ServiceLayout>
