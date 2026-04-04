@@ -78,14 +78,24 @@ async function fetchGoogleReviews(
   }
 }
 
-// ── Filtreleme ──
-function filterReviews(reviews: GoogleReview[]): GoogleReview[] {
+// ── Filtreleme — 125 karakter ile başlar, yeterli yorum bulamazsa 1'er 1'er düşürür ──
+function filterReviews(reviews: GoogleReview[], minLength = 125): GoogleReview[] {
   return reviews.filter((r) => {
     if (r.rating < 4) return false;
-    if (r.text.length < 30) return false;
+    if (r.text.length < minLength) return false;
     if (containsProfanity(r.text)) return false;
     return true;
   });
+}
+
+function filterReviewsAdaptive(reviews: GoogleReview[], targetCount = 3): GoogleReview[] {
+  const MIN_FLOOR = 30; // asla bu değerin altına düşme
+  for (let minLen = 125; minLen >= MIN_FLOOR; minLen--) {
+    const result = filterReviews(reviews, minLen);
+    if (result.length >= targetCount) return result;
+  }
+  // hâlâ yetmezse kalan ne varsa dön
+  return filterReviews(reviews, MIN_FLOOR);
 }
 
 // ── Rastgele seçim ──
@@ -104,14 +114,8 @@ export async function getReviewsForDisplay(): Promise<{
   const apiKey = import.meta.env.GOOGLE_PLACES_API_KEY ?? '';
   const raw = await fetchGoogleReviews(apiKey);
 
-  let filtered = filterReviews(raw.reviews);
-
-  // Gevşetilmiş fallback: text uzunluğu filtresi kaldırılarak tekrar dene
-  if (filtered.length === 0) {
-    filtered = raw.reviews.filter(
-      (r) => r.rating >= 4 && !containsProfanity(r.text)
-    );
-  }
+  // 125 karakter ile başlar, 3 yorum bulamazsa 124, 123... diye iner
+  const filtered = filterReviewsAdaptive(raw.reviews, 3);
 
   return {
     reviews: selectRandom(filtered, 3),
