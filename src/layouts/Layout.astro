@@ -119,7 +119,6 @@ const localBusinessSchema = {
   ...(reviewData && reviewData.reviews.length > 0 ? {
     "review": reviewData.reviews.map(r => ({
       "@type": "Review",
-      "itemReviewed": { "@id": `${CANONICAL_BASE}/#business` },
       "author": { "@type": "Person", "name": r.author_name },
       "reviewRating": {
         "@type": "Rating",
