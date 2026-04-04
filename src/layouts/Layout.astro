@@ -1,6 +1,8 @@
 ---
 import { SEO } from 'astro-seo';
 import { CANONICAL_BASE, OG_IMAGE, SITE_NAME, SITE_PHONE } from '../config';
+import { getAggregateRating } from '../lib/google-places';
+import type { GoogleReview } from '../lib/google-places';
 
 interface Props {
   title?: string;
@@ -9,6 +11,7 @@ interface Props {
   ogImage?: string;
   ogType?: string;
   structuredData?: object | object[];
+  reviewData?: { reviews: GoogleReview[]; rating: number; totalRatings: number };
   lcpImage?: string;
   lcpImageSrcset?: string;
   lcpImageSizes?: string;
@@ -21,10 +24,16 @@ const {
   ogImage = OG_IMAGE,
   ogType = 'website',
   structuredData,
+  reviewData,
   lcpImage,
   lcpImageSrcset,
   lcpImageSizes,
 } = Astro.props;
+
+// aggregateRating: reviewData varsa ondan al, yoksa API'den çek
+const aggRating = reviewData
+  ? { rating: reviewData.rating, totalRatings: reviewData.totalRatings }
+  : await getAggregateRating();
 
 const canonical = canonicalUrl ?? `${CANONICAL_BASE}${Astro.url.pathname}`;
 
@@ -98,39 +107,30 @@ const localBusinessSchema = {
     { "@type": "City", "name": "İstanbul" },
     { "@type": "AdministrativeArea", "name": "İstanbul ili" }
   ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "153",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "itemReviewed": { "@id": `${CANONICAL_BASE}/#business` },
-      "author": { "@type": "Person", "name": "Ayşe K." },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" },
-      "reviewBody": "Dairemizin tüm yenileme sürecini Master İç Mimarlık yönetti. Hem tasarım hem de uygulama aşamasında son derece profesyoneldiler. Hayal ettiğimizden daha güzel bir ev çıktı ortaya.",
-      "datePublished": "2025-09-10"
-    },
-    {
-      "@type": "Review",
-      "itemReviewed": { "@id": `${CANONICAL_BASE}/#business` },
-      "author": { "@type": "Person", "name": "Murat B." },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" },
-      "reviewBody": "Villayı yeniletirken 3D görselleştirme sayesinde her şeyi önceden gördük. Süreç tam vaat edildiği gibi ilerledi, teslimatta sürprizle karşılaşmadık.",
-      "datePublished": "2025-11-20"
-    },
-    {
-      "@type": "Review",
-      "itemReviewed": { "@id": `${CANONICAL_BASE}/#business` },
-      "author": { "@type": "Person", "name": "Serra D." },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" },
-      "reviewBody": "Ofisimizi kısa sürede ve bütçemize uygun teslim aldık. Hem çalışanlar hem müşteriler ofisimizin değişiminden çok etkilendi.",
-      "datePublished": "2026-01-15"
+  ...(aggRating.rating > 0 ? {
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": String(aggRating.rating),
+      "reviewCount": String(aggRating.totalRatings),
+      "bestRating": "5",
+      "worstRating": "1"
     }
-  ]
+  } : {}),
+  ...(reviewData && reviewData.reviews.length > 0 ? {
+    "review": reviewData.reviews.map(r => ({
+      "@type": "Review",
+      "itemReviewed": { "@id": `${CANONICAL_BASE}/#business` },
+      "author": { "@type": "Person", "name": r.author_name },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": String(r.rating),
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": r.text,
+      "datePublished": new Date(r.time * 1000).toISOString().split('T')[0]
+    }))
+  } : {})
 };
 
 const allStructuredData = [

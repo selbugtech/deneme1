@@ -12,6 +12,9 @@ import Footer from '../components/Footer.astro';
 import WhatsAppFloat from '../components/WhatsAppFloat.astro';
 import { CANONICAL_BASE } from '../config';
 import { optimizedImageW, srcsetImage } from '../lib/cloudinary';
+import { getReviewsForDisplay } from '../lib/google-places';
+
+const reviewData = await getReviewsForDisplay();
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -54,6 +57,7 @@ const faqSchema = {
 <Layout
   canonicalUrl={`${CANONICAL_BASE}/`}
   structuredData={faqSchema}
+  reviewData={reviewData}
   lcpImage={optimizedImageW('/images/salon1.png', 800)}
   lcpImageSrcset={srcsetImage('/images/salon1.png', [400, 800, 1200, 1920])}
   lcpImageSizes="100vw"
@@ -64,7 +68,7 @@ const faqSchema = {
     <Services />
     <About />
     <BeforeAfter />
-    <Testimonials />
+    <Testimonials reviews={reviewData.reviews} rating={reviewData.rating} totalRatings={reviewData.totalRatings} />
     <Projects />
     <Contact />
   </main>
