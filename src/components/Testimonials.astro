@@ -19,7 +19,7 @@ const reviews = rawReviews.map(r => ({
   relative_time_description: r.relative_time_description ?? '',
 }));
 
-const displayRating = rating > 0 ? rating.toFixed(1) : '';
+const displayRating = rating > 0 ? String(rating) : '';
 const hasReviews = reviews.length > 0;
 
 const gridCols = reviews.length === 1

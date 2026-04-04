@@ -5,6 +5,10 @@ import Footer from '../components/Footer.astro';
 import WhatsAppFloat from '../components/WhatsAppFloat.astro';
 import { CANONICAL_BASE } from '../config';
 import { optimizedImage } from '../lib/cloudinary';
+import { getAggregateRating } from '../lib/google-places';
+
+const aggRating = await getAggregateRating();
+const displayRating = aggRating.rating > 0 ? String(aggRating.rating) : '4.9';
 
 interface Props {
   title: string;
@@ -450,7 +454,7 @@ const breadcrumbSchema = {
                 <p class="text-muted text-[10px] tracking-wide mt-0.5">Yıllık Deneyim</p>
               </div>
               <div>
-                <p class="font-display text-2xl font-bold text-gold">4.9</p>
+                <p class="font-display text-2xl font-bold text-gold">{displayRating}</p>
                 <p class="text-muted text-[10px] tracking-wide mt-0.5">Google Puan</p>
               </div>
               <div>

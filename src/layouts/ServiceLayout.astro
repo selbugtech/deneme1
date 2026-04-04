@@ -5,6 +5,10 @@ import Footer from '../components/Footer.astro';
 import WhatsAppFloat from '../components/WhatsAppFloat.astro';
 import { CANONICAL_BASE } from '../config';
 import { optimizedImage } from '../lib/cloudinary';
+import { getAggregateRating } from '../lib/google-places';
+
+const aggRating = await getAggregateRating();
+const displayRating = aggRating.rating > 0 ? String(aggRating.rating) : '4.9';
 
 interface Props {
   title: string;
@@ -183,7 +187,7 @@ const allSchema = [
               <p class="text-white/50 text-xs tracking-wide mt-1">Mutlu Müşteri</p>
             </div>
             <div>
-              <p class="font-display text-3xl font-bold text-gold">4.9</p>
+              <p class="font-display text-3xl font-bold text-gold">{displayRating}</p>
               <p class="text-white/50 text-xs tracking-wide mt-1">Google Puan</p>
             </div>
           </div>
