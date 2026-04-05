@@ -98,14 +98,10 @@ function filterReviews(reviews: GoogleReview[], minLength = 125): GoogleReview[]
 function filterReviewsAdaptive(reviews: GoogleReview[], targetCount = 3): GoogleReview[] {
   // Geçerli yorumları uzunluğa göre sırala (en uzun önce),
   // yeterli sayıya ulaşmak için minimum eşiği kademeli düşür
-  const MIN_FLOOR = 30;
-  const valid = reviews
+  const MIN_FLOOR = 55;
+  return reviews
     .filter(r => r.rating >= 4 && r.text.length >= MIN_FLOOR && !containsProfanity(r.text))
     .sort((a, b) => b.text.length - a.text.length);
-  if (valid.length === 0) return valid;
-  // 55 karakter eşiğini karşılayanları tercih et; yeterli değilse tamamını döndür
-  const preferred = valid.filter(r => r.text.length >= 55);
-  return preferred.length >= targetCount ? preferred : valid;
 }
 
 // ── Rastgele seçim ──
