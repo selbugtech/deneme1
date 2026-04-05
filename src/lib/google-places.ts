@@ -103,8 +103,8 @@ function filterReviewsAdaptive(reviews: GoogleReview[], targetCount = 3): Google
     .filter(r => r.rating >= 4 && r.text.length >= MIN_FLOOR && !containsProfanity(r.text))
     .sort((a, b) => b.text.length - a.text.length);
   if (valid.length === 0) return valid;
-  // 125 karakter eşiğini karşılayanları tercih et; yeterli değilse tamamını döndür
-  const preferred = valid.filter(r => r.text.length >= 125);
+  // 55 karakter eşiğini karşılayanları tercih et; yeterli değilse tamamını döndür
+  const preferred = valid.filter(r => r.text.length >= 55);
   return preferred.length >= targetCount ? preferred : valid;
 }
 
