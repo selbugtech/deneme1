@@ -212,7 +212,7 @@ const allStructuredData = [
     </noscript>
 
     <!-- Schema.org Structured Data -->
-    <script type="application/ld+json" set:html={JSON.stringify(allStructuredData)} />
+    <script type="application/ld+json" set:html={JSON.stringify(allStructuredData).replace(/<\//g, '<\\/')} />
   </head>
   <body class="bg-warm-white text-charcoal font-sans antialiased">
     <slot />

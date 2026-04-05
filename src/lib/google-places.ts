@@ -60,9 +60,15 @@ async function fetchGoogleReviews(
 
   try {
     const res = await fetch(url);
-    if (!res.ok) return { reviews: [], rating: 0, totalRatings: 0 };
+    if (!res.ok) {
+      console.error(`[google-places] HTTP ${res.status}: ${res.statusText}`);
+      return { reviews: [], rating: 0, totalRatings: 0 };
+    }
     const data = await res.json();
-    if (data.status !== 'OK') return { reviews: [], rating: 0, totalRatings: 0 };
+    if (data.status !== 'OK') {
+      console.error(`[google-places] API status: ${data.status}`, data.error_message ?? '');
+      return { reviews: [], rating: 0, totalRatings: 0 };
+    }
 
     const result = {
       reviews: data.result?.reviews ?? [],
@@ -73,7 +79,8 @@ async function fetchGoogleReviews(
     // Cache'e kaydet
     cache = { data: result, timestamp: Date.now() };
     return result;
-  } catch {
+  } catch (err) {
+    console.error('[google-places] fetch failed:', err);
     return { reviews: [], rating: 0, totalRatings: 0 };
   }
 }
@@ -89,20 +96,27 @@ function filterReviews(reviews: GoogleReview[], minLength = 125): GoogleReview[]
 }
 
 function filterReviewsAdaptive(reviews: GoogleReview[], targetCount = 3): GoogleReview[] {
-  const MIN_FLOOR = 30; // asla bu değerin altına düşme
-  for (let minLen = 125; minLen >= MIN_FLOOR; minLen--) {
-    const result = filterReviews(reviews, minLen);
-    if (result.length >= targetCount) return result;
-  }
-  // hâlâ yetmezse kalan ne varsa dön
-  return filterReviews(reviews, MIN_FLOOR);
+  // Geçerli yorumları uzunluğa göre sırala (en uzun önce),
+  // yeterli sayıya ulaşmak için minimum eşiği kademeli düşür
+  const MIN_FLOOR = 30;
+  const valid = reviews
+    .filter(r => r.rating >= 4 && r.text.length >= MIN_FLOOR && !containsProfanity(r.text))
+    .sort((a, b) => b.text.length - a.text.length);
+  if (valid.length === 0) return valid;
+  // 125 karakter eşiğini karşılayanları tercih et; yeterli değilse tamamını döndür
+  const preferred = valid.filter(r => r.text.length >= 125);
+  return preferred.length >= targetCount ? preferred : valid;
 }
 
 // ── Rastgele seçim ──
 function selectRandom(reviews: GoogleReview[], count: number): GoogleReview[] {
   if (reviews.length <= count) return [...reviews];
-  const shuffled = [...reviews].sort(() => Math.random() - 0.5);
-  return shuffled.slice(0, count);
+  const arr = [...reviews];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr.slice(0, count);
 }
 
 // ── Public: Görüntüleme için 3 rastgele filtreli yorum ──

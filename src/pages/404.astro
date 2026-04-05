@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppFloat from '../components/WhatsAppFloat.astro';
+---
+
+<Layout
+  title="Sayfa Bulunamadı — Master İç Mimarlık"
+  description="Aradığınız sayfa bulunamadı. Ana sayfaya dönerek projelerimizi ve hizmetlerimizi keşfedebilirsiniz."
+>
+  <Header />
+
+  <main class="min-h-screen bg-charcoal flex flex-col items-center justify-center px-6 py-32 text-center">
+
+    <!-- Dekoratif çizgi motifi -->
+    <div class="flex items-center gap-4 mb-10">
+      <span class="block w-16 h-px bg-gold/40"></span>
+      <span class="text-gold/60 text-xs tracking-[0.3em] uppercase">404</span>
+      <span class="block w-16 h-px bg-gold/40"></span>
+    </div>
+
+    <h1 class="font-display text-4xl md:text-5xl font-semibold text-white mb-5 leading-tight">
+      Sayfa Bulunamadı
+    </h1>
+
+    <p class="text-white/50 text-base md:text-lg max-w-md mb-12 leading-relaxed">
+      Aradığınız sayfa taşınmış veya kaldırılmış olabilir.<br />
+      Ana sayfamızdan devam edebilirsiniz.
+    </p>
+
+    <!-- CTA butonları -->
+    <div class="flex flex-col sm:flex-row items-center gap-4">
+      <a
+        href="/"
+        class="inline-block border border-gold text-gold px-10 py-3.5 text-sm tracking-[0.15em] uppercase hover:bg-gold hover:text-charcoal transition-colors duration-200"
+      >
+        Ana Sayfaya Dön
+      </a>
+      <a
+        href="/#iletisim"
+        class="inline-block border border-white/20 text-white/60 px-10 py-3.5 text-sm tracking-[0.15em] uppercase hover:border-white/50 hover:text-white transition-colors duration-200"
+      >
+        İletişime Geç
+      </a>
+    </div>
+
+    <!-- Hızlı linkler -->
+    <nav class="mt-16 flex flex-wrap justify-center gap-x-8 gap-y-3">
+      <a href="/projeler"               class="text-xs tracking-[0.2em] uppercase text-white/30 hover:text-gold transition-colors">Projeler</a>
+      <a href="/#hizmetler"             class="text-xs tracking-[0.2em] uppercase text-white/30 hover:text-gold transition-colors">Hizmetler</a>
+      <a href="/blog"                   class="text-xs tracking-[0.2em] uppercase text-white/30 hover:text-gold transition-colors">Blog</a>
+      <a href="/sikca-sorulan-sorular"  class="text-xs tracking-[0.2em] uppercase text-white/30 hover:text-gold transition-colors">SSS</a>
+    </nav>
+
+  </main>
+
+  <Footer />
+  <WhatsAppFloat />
+</Layout>
