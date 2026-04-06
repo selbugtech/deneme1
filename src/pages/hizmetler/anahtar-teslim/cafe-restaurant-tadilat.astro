@@ -8,7 +8,7 @@ const serviceSchema = {
   "@type": "Service",
   "serviceType": "Cafe ve Restaurant Tadilat",
   "name": "İstanbul Cafe ve Restaurant Tadilat",
-  "description": "İstanbul'da anahtar teslim cafe, restoran ve bar iç mekan tadilat. Müşteri deneyimini artıran, ciro potansiyelini güçlendiren profesyonel tasarım ve uygulama.",
+  "description": "İstanbul'da anahtar teslim cafe, restoran ve bar tadilat. Elektrik, tesisat, mutfak altyapısı ve yapısal müdahale dahil kapsamlı F&B mekan dönüşümü.",
   "provider": { "@type": "Organization", "@id": `${CANONICAL_BASE}/#organization`, "name": "Master İç Mimarlık" },
   "areaServed": { "@type": "City", "name": "İstanbul" },
   "url": `${CANONICAL_BASE}/hizmetler/anahtar-teslim/cafe-restaurant-tadilat`,
@@ -19,20 +19,21 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Cafe tadilat ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Ortalama bir cafe tadilatı (80–150 m²) 4–8 hafta içinde tamamlanmaktadır. İşletmenizin kapalı kalma süresini minimize etmek için detaylı planlama yapıyoruz." } },
-    { "@type": "Question", "name": "Restoran tadilat bütçesi nasıl belirlenir?", "acceptedAnswer": { "@type": "Answer", "text": "Bütçe; mekanın büyüklüğü, mevcut yapı durumu ve seçilen malzeme kalitesine göre belirlenir. Ücretsiz keşif ziyaretimizde projenize özel bütçe sunuyoruz." } },
-    { "@type": "Question", "name": "İşletme açıkken tadilat yapılabilir mi?", "acceptedAnswer": { "@type": "Answer", "text": "Kısmi tadilatlarda mümkün olabilir. Ancak kapsamlı projelerde işletmenin geçici olarak kapatılması daha verimli sonuç verir. Bu konuyu planlamada birlikte değerlendiriyoruz." } }
+    { "@type": "Question", "name": "Cafe tadilat ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Ortalama bir cafe veya restoran tadilatı (80–150 m²) 4–8 hafta içinde tamamlanmaktadır. Mutfak altyapısı, havalandırma veya elektrik güçlendirmesi gereken projelerde bu süre uzayabilir. İşletmenizin kapalı kalma süresini minimize etmek için detaylı uygulama planı oluşturuyoruz." } },
+    { "@type": "Question", "name": "Restoran tadilat bütçesi nasıl belirlenir?", "acceptedAnswer": { "@type": "Answer", "text": "Bütçe; mekanın büyüklüğü, mevcut yapı durumu, mutfak altyapısı gereksinimleri ve seçilen malzeme kalitesine göre belirlenir. Profesyonel mutfak ekipmanı, endüstriyel havalandırma veya elektrik güçlendirmesi gibi F&B'ye özgü teknik işler maliyeti artırır. Ücretsiz keşif ziyaretimizde projenize özel şeffaf bütçe sunuyoruz." } },
+    { "@type": "Question", "name": "İşletme açıkken tadilat yapılabilir mi?", "acceptedAnswer": { "@type": "Answer", "text": "Elektrik veya mutfak altyapısı değişimi gibi kapsamlı teknik işlerde işletmenin geçici kapatılması zorunlu olabilir. Kısmi tadilatlarda ise bölgeli uygulama ile daha az aksaklıkla ilerlenmesi mümkündür. İşletmenizin kapanma süresini minimize edecek en verimli planlamayı keşif ziyaretimizde birlikte oluşturuyoruz." } },
+    { "@type": "Question", "name": "Tadilat sonrası işletme ruhsatı etkileniyor mu?", "acceptedAnswer": { "@type": "Answer", "text": "Yapısal değişiklik veya mutfak alanı büyütme gibi işlemler belediye izni gerektirebilir ve işletme ruhsatını etkileyebilir. Standart kaplama, aydınlatma veya mobilya değişikliği için herhangi bir resmi işlem gerekmez. Projeniz izin gerektiriyorsa bu süreci sizin adınıza takip ediyoruz." } }
   ]
 };
 ---
 
 <ServiceLayout
   title="İstanbul Cafe ve Restaurant Tadilat | Master İç Mimarlık"
-  description="İstanbul'da cafe, restoran ve bar iç mekan tadilat. Müşteri deneyimini artıran tasarım, anahtar teslim uygulama. Beşiktaş, Kadıköy, Nişantaşı. Ücretsiz keşif: 0533 039 15 65"
+  description="İstanbul'da cafe, restoran ve bar tadilat. Mutfak altyapısı, elektrik ve yapısal müdahale dahil kapsamlı F&B mekan dönüşümü. Beşiktaş, Kadıköy, Nişantaşı. Ücretsiz keşif: 0533 039 15 65"
   canonicalUrl={`${CANONICAL_BASE}/hizmetler/anahtar-teslim/cafe-restaurant-tadilat`}
   h1="İstanbul Cafe ve Restaurant Tadilat"
   eyebrow="Anahtar Teslim"
-  lead="Müşteri deneyimini ve ciro potansiyelini artıran cafe, restoran ve bar iç mekan tadilat. Konsept geliştirmeden anahtar teslime kadar tüm süreci yönetiyoruz."
+  lead="Mutfak altyapısından havalandırmaya, elektrik güçlendirmesinden yapısal düzenlemeye kadar teknik müdahale gerektiren kapsamlı cafe ve restoran dönüşümleri. Müşteri deneyimini ve ciro potansiyelini artıran mekanlar."
   breadcrumb={[
     { label: "Ana Sayfa", href: "/" },
     { label: "Hizmetler", href: "/#hizmetler" },
@@ -45,7 +46,7 @@ const faqSchema = {
   <!-- Proje Görselleri -->
   <div class="w-full mb-12 grid grid-cols-1 md:grid-cols-2 gap-3">
     <img src={optimizedImage('/images/restoran1.jpeg')} alt="Cafe ve restaurant tadilat — iç mekan tasarımı" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
-    <img src={optimizedImage('/images/salon9.jpeg')} alt="Cafe ve restaurant tadilat — modern mekan" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
+    <img src={optimizedImage('/images/salon9.jpeg')} alt="Cafe ve restaurant tadilat — modern mekan dönüşümü" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
   </div>
 
   <!-- Scope -->
@@ -53,13 +54,13 @@ const faqSchema = {
     <div>
       <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Cafe & Restaurant Tadilat Hizmetimiz</h2>
       <p class="text-muted leading-relaxed mb-4">
-        Bir cafe veya restoranın iç mekanı, müşteri sadakati ve ortalama harcama tutarı üzerinde doğrudan etkiye sahiptir. Doğru aydınlatma, akustik tasarım ve alan planlaması işletmenizin potansiyelini artırır.
+        Cafe ve restoran tadilat; yalnızca estetik değil, mutfak havalandırması, elektrik kapasitesi, baca sistemi ve sıhhi tesisat gibi F&B'ye özgü teknik altyapı gereksinimlerini de kapsar. Eski veya yetersiz altyapıyla açılan işletmeler ilerleyen dönemde ciddi operasyonel sorunlarla karşılaşabilir.
       </p>
       <p class="text-muted leading-relaxed mb-4">
-        Konsept geliştirmeden malzeme seçimine, mutfak yerleşiminden oturma düzenine kadar tüm detayları işletme hedeflerinize göre tasarlıyoruz.
+        Konsept geliştirmeden malzeme seçimine, mutfak yerleşiminden oturma düzenine, elektrik altyapısından havalandırma sistemine kadar tüm detayları işletme hedeflerinize göre tasarlıyoruz. <a href="/hizmetler/3d-tasarim" class="text-gold hover:underline">3D görselleştirme</a> ile mekanın yeni görünümünü uygulamadan önce onaylayabilirsiniz.
       </p>
       <p class="text-muted leading-relaxed">
-        İstanbul genelinde Beşiktaş, Kadıköy, Nişantaşı, Levent ve tüm ilçelerde hizmet veriyoruz.
+        Altyapınız sorunsuzsa ve yalnızca estetik güncelleme istiyorsanız <a href="/hizmetler/anahtar-teslim/cafe-restaurant-yenileme" class="text-gold hover:underline">cafe yenileme</a> hizmetimiz daha hızlı bir seçenek olabilir. Beşiktaş, Kadıköy, Nişantaşı, Levent ve tüm İstanbul'da hizmet veriyoruz.
       </p>
     </div>
     <div>
@@ -68,12 +69,12 @@ const faqSchema = {
         {[
           'Konsept ve tema tasarımı',
           'Fotorealistik 3D görselleştirme',
+          'Mutfak havalandırma ve altyapı yenileme',
+          'Elektrik güçlendirme ve pano yenileme',
           'Oturma düzeni ve trafik akışı planı',
           'Aydınlatma ve akustik tasarım',
-          'Malzeme seçimi ve tedariki',
           'Bar, tezgah ve counter uygulamaları',
           'Duvar, zemin ve tavan kaplamaları',
-          'Son temizlik ve anahtar teslim',
         ].map(item => (
           <li class="flex items-start gap-3 text-sm text-muted">
             <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
@@ -88,6 +89,35 @@ const faqSchema = {
     </div>
   </div>
 
+  <!-- Ne Zaman Gerekir -->
+  <div class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-8">
+      <span class="w-8 h-px bg-gold"></span>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Cafe & Restaurant Tadilat Ne Zaman Gerekir?</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      {[
+        {
+          title: 'Mutfak Altyapısı Yetersiz',
+          desc: 'Artan menü kapasitesi veya yeni ekipman eklenmesi elektrik ve havalandırma altyapısının güçlendirilmesini gerektirebilir. Yetersiz baca sistemi veya havalandırma hem yasal uyumluluk hem de çalışan güvenliği açısından ciddi risk oluşturur.',
+        },
+        {
+          title: 'Konsept veya Marka Yenilendi',
+          desc: 'İşletme konseptinin değişmesi veya markanın yeniden konumlanması mekanın fiziksel kimliğini de değiştirmeyi gerektirir. Yalnızca logo değişikliği yetmez; mekanın her unsuru yeni konseptle uyumlu olmalıdır. Bu tür köklü dönüşümler yapısal müdahale içerir.',
+        },
+        {
+          title: 'Yeni Kiralanan Mekan Dönüştürülüyor',
+          desc: 'Ham mekan veya farklı sektörden devreden bir yer, F&B işletmesi gereksinimlerini karşılamak için kapsamlı tadilat gerektirir. Mutfak konumu, servis alanı ve müşteri trafiği planlaması baştan kurgulanmalıdır.',
+        },
+      ].map(item => (
+        <div class="bg-white p-6 border border-border">
+          <h3 class="font-semibold text-charcoal mb-3 text-sm">{item.title}</h3>
+          <p class="text-muted text-sm leading-relaxed">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
   <!-- Process -->
   <div class="py-12 border-b border-border">
     <div class="flex items-center gap-3 mb-8">
@@ -96,11 +126,11 @@ const faqSchema = {
     </div>
     <div class="grid md:grid-cols-5 gap-6">
       {[
-        { step: '01', title: 'Ücretsiz Keşif', desc: 'İşletmenizi ve hedeflerinizi yerinde değerlendiriyoruz.' },
-        { step: '02', title: 'Konsept & 3D', desc: 'Mekanınızı gerçekçi görsellerle tasarlayıp onaylıyoruz.' },
-        { step: '03', title: 'Sözleşme', desc: 'Kesin bütçe ve takvim belirlenerek sözleşme imzalanır.' },
-        { step: '04', title: 'Uygulama', desc: 'Şantiye yönetimi bizde, kapalı süre minimumda tutulur.' },
-        { step: '05', title: 'Teslim', desc: 'Hazır mekanınızı teslim alıp açılışa geçiyorsunuz.' },
+        { step: '01', title: 'Ücretsiz Keşif', desc: 'İşletmenizi, hedeflerinizi ve teknik altyapı durumunu yerinde değerlendiriyoruz. Gerekli izin ve belgeler bu aşamada tespit edilir.' },
+        { step: '02', title: 'Konsept & 3D', desc: 'Mekanınızı gerçekçi görsellerle tasarlayıp onaylıyoruz. Mutfak düzeni ve müşteri trafik planı da bu aşamada netleşir.' },
+        { step: '03', title: 'Sözleşme', desc: 'Kesin bütçe ve takvim belirlenerek sözleşme imzalanır. İşletmenin kapalı kalma süresi sözleşmede taahhüt edilir.' },
+        { step: '04', title: 'Uygulama', desc: 'Şantiye yönetimi bizde; kapalı süre minimumda tutulur. Teknik altyapı ve estetik işler paralel yürütülür.' },
+        { step: '05', title: 'Teslim', desc: 'Hazır mekanınızı teslim alıp açılışa geçiyorsunuz. Teslim sonrası işçilik garantisi sözleşmede belirtilir.' },
       ].map(item => (
         <div class="text-center">
           <div class="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-3">
@@ -134,9 +164,10 @@ const faqSchema = {
     </div>
     <div class="divide-y divide-border">
       {[
-        { q: 'Cafe tadilat ne kadar sürer?', a: 'Ortalama bir cafe tadilatı (80–150 m²) 4–8 hafta içinde tamamlanmaktadır. İşletmenizin kapalı kalma süresini minimize etmek için detaylı planlama yapıyoruz.' },
-        { q: 'Restoran tadilat bütçesi nasıl belirlenir?', a: 'Bütçe; mekanın büyüklüğü, mevcut yapı durumu ve seçilen malzeme kalitesine göre belirlenir. Ücretsiz keşif ziyaretimizde projenize özel bütçe sunuyoruz.' },
-        { q: 'İşletme açıkken tadilat yapılabilir mi?', a: 'Kısmi tadilatlarda mümkün olabilir. Ancak kapsamlı projelerde işletmenin geçici olarak kapatılması daha verimli sonuç verir. Bu konuyu planlamada birlikte değerlendiriyoruz.' },
+        { q: 'Cafe tadilat ne kadar sürer?', a: 'Ortalama bir cafe veya restoran tadilatı (80–150 m²) 4–8 hafta içinde tamamlanmaktadır. Mutfak altyapısı, havalandırma veya elektrik güçlendirmesi gereken projelerde bu süre uzayabilir. İşletmenizin kapalı kalma süresini minimize etmek için detaylı uygulama planı oluşturuyoruz.' },
+        { q: 'Restoran tadilat bütçesi nasıl belirlenir?', a: "Bütçe; mekanın büyüklüğü, mevcut yapı durumu, mutfak altyapısı gereksinimleri ve seçilen malzeme kalitesine göre belirlenir. Profesyonel mutfak ekipmanı, endüstriyel havalandırma veya elektrik güçlendirmesi gibi F&B'ye özgü teknik işler maliyeti artırır. Ücretsiz keşif ziyaretimizde projenize özel şeffaf bütçe sunuyoruz." },
+        { q: 'İşletme açıkken tadilat yapılabilir mi?', a: 'Elektrik veya mutfak altyapısı değişimi gibi kapsamlı teknik işlerde işletmenin geçici kapatılması zorunlu olabilir. Kısmi tadilatlarda ise bölgeli uygulama ile daha az aksaklıkla ilerlenmesi mümkündür. İşletmenizin kapanma süresini minimize edecek en verimli planlamayı keşif ziyaretimizde birlikte oluşturuyoruz.' },
+        { q: 'Tadilat sonrası işletme ruhsatı etkileniyor mu?', a: 'Yapısal değişiklik veya mutfak alanı büyütme gibi işlemler belediye izni gerektirebilir ve işletme ruhsatını etkileyebilir. Standart kaplama, aydınlatma veya mobilya değişikliği için herhangi bir resmi işlem gerekmez. Projeniz izin gerektiriyorsa bu süreci sizin adınıza takip ediyoruz.' },
       ].map((faq, i) => (
         <details class="group py-5" open={i === 0}>
           <summary class="flex items-start justify-between cursor-pointer list-none gap-4">

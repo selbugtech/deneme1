@@ -8,7 +8,7 @@ const serviceSchema = {
   "@type": "Service",
   "serviceType": "Ev Tadilat",
   "name": "İstanbul Ev Tadilat",
-  "description": "İstanbul'da anahtar teslim ev ve daire tadilat. Küçük daireden geniş konuta kısmi tadilattan komple dönüşüme kapsamlı konut tadilat projeleri.",
+  "description": "İstanbul'da anahtar teslim ev ve daire tadilat. Elektrik, tesisat, duvar ve yapısal müdahaleler dahil kapsamlı konut tadilat projeleri.",
   "provider": { "@type": "Organization", "@id": `${CANONICAL_BASE}/#organization`, "name": "Master İç Mimarlık" },
   "areaServed": [
     { "@type": "City", "name": "İstanbul" },
@@ -24,21 +24,22 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Ev tadilat ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Standart bir daire tadilatı (80–120 m²) genellikle 4–8 hafta içinde tamamlanmaktadır. Kapsam ve malzeme seçimine göre bu süre değişebilir. Sözleşmede kesin takvim belirlenir." } },
-    { "@type": "Question", "name": "Tadilat süresince evde oturabilir miyim?", "acceptedAnswer": { "@type": "Answer", "text": "Komple daire tadilat çalışmalarında evde oturmanızı tavsiye etmiyoruz. Tek oda veya mutfak-banyo gibi kısmi tadilatlarda belirli dönemlerde mümkün olabilir. Her projenin planlamasında bu konuyu müşterimizle önceden değerlendiriyoruz." } },
-    { "@type": "Question", "name": "Sadece mutfak veya banyo tadilatı yaptırabilir miyim?", "acceptedAnswer": { "@type": "Answer", "text": "Evet. Yalnızca mutfak tadilat, banyo tadilat veya tek oda tadilat gibi kısmi projeler de yürütüyoruz. İhtiyacınıza özel kapsam belirlenir, gereksiz iş yapılmaz." } },
-    { "@type": "Question", "name": "Ev tadilat bütçesi nasıl belirlenir?", "acceptedAnswer": { "@type": "Answer", "text": "Bütçe; dairenin büyüklüğü, mevcut yapı durumu, seçilen malzeme kalitesi ve tadilat kapsamına göre şekillenir. Ücretsiz keşif ziyaretimizde projenize özel bütçe sunuyoruz." } }
+    { "@type": "Question", "name": "Ev tadilat ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Standart bir daire tadilatı (80–120 m²) genellikle 4–8 hafta içinde tamamlanmaktadır. Kapsam genişledikçe — özellikle elektrik ve tesisat müdahalesi gerekiyorsa — bu süre 10–12 haftaya uzayabilir. Malzeme temin süreleri ve yapının mevcut durumu da takvimi etkiler. Keşif ziyaretimizde projenize özel bir takvim sunuyoruz; bu takvim sözleşmede taahhüt edilir." } },
+    { "@type": "Question", "name": "Tadilat süresince evde oturabilir miyim?", "acceptedAnswer": { "@type": "Answer", "text": "Komple daire tadilat çalışmalarında — özellikle elektrik, tesisat veya zemin değişimi gibi yapısal müdahaleler varsa — evde oturmanızı tavsiye etmiyoruz. Toz, gürültü ve güvenlik açısından geçici taşınma hem sizin hem de ekibimizin verimliliğini artırır. Tek oda veya mutfak-banyo gibi kısmi tadilatlarda belirli dönemlerde mümkün olabilir; her projenin planlamasında bu konuyu önceden değerlendiriyoruz." } },
+    { "@type": "Question", "name": "Sadece mutfak veya banyo tadilatı yaptırabilir miyim?", "acceptedAnswer": { "@type": "Answer", "text": "Evet. Yalnızca mutfak tadilat, banyo tadilat veya tek oda tadilat gibi kısmi projeler de yürütüyoruz. İhtiyacınıza özel kapsam belirlenir, gereksiz iş yapılmaz. Kısmi tadilat projeleri genellikle 2–4 haftada tamamlanır ve komple tadilatın yarattığı aksaklığı minimize eder." } },
+    { "@type": "Question", "name": "Ev tadilat bütçesi nasıl belirlenir?", "acceptedAnswer": { "@type": "Answer", "text": "Bütçe; dairenin büyüklüğü, mevcut yapı durumu, seçilen malzeme kalitesi ve tadilat kapsamına göre şekillenir. Elektrik ve tesisat yenileme gibi teknik işler, yalnızca kaplama değişimine kıyasla maliyeti artırır. Ücretsiz keşif ziyaretimizde projenize özel bütçe sunuyoruz; sürpriz maliyet yaşanmaması için tüm kalemler sözleşmede yer alır." } },
+    { "@type": "Question", "name": "Ev tadilat için ruhsat gerekir mi?", "acceptedAnswer": { "@type": "Answer", "text": "Taşıyıcı duvar yıkımı veya kat değişikliği içeren yapısal müdahaleler için belediyeden izin alınması gerekebilir. Standart kaplama, elektrik ve tesisat yenilemesi için ruhsat gerekmez. Projeniz ruhsat gerektiriyorsa bu süreci de sizin adınıza takip ediyoruz." } }
   ]
 };
 ---
 
 <ServiceLayout
   title="İstanbul Ev Tadilat | Daire ve Konut Tadilat | Master İç Mimarlık"
-  description="İstanbul'da anahtar teslim ev ve daire tadilat. Beşiktaş, Kadıköy, Şişli ve tüm İstanbul'da kısmi veya komple konut tadilat. Ücretsiz keşif: 0533 039 15 65"
+  description="İstanbul'da anahtar teslim ev ve daire tadilat. Elektrik, tesisat, yapısal müdahale dahil kapsamlı konut tadilat. Beşiktaş, Kadıköy, Şişli. Ücretsiz keşif: 0533 039 15 65"
   canonicalUrl={`${CANONICAL_BASE}/hizmetler/anahtar-teslim/ev-tadilat`}
   h1="İstanbul Ev ve Daire Tadilat"
   eyebrow="Anahtar Teslim"
-  lead="Küçük bir daireden geniş bir konuta, kısmi tadilattan komple dönüşüme kadar her ölçekte konut tadilat projesi yürütüyoruz. Yaşam kalitenizi artıran, kişisel tarzınızı yansıtan mekanlar tasarlıyoruz."
+  lead="Elektrik ve tesisat yenilemesinden yapısal dönüşüme, mutfak ve banyo tadilattan komple konut renovasyonuna kadar kapsamlı ev tadilat projeleri yürütüyoruz. Tasarım, uygulama ve şantiye yönetimi tek çatı altında."
   breadcrumb={[
     { label: "Ana Sayfa", href: "/" },
     { label: "Hizmetler", href: "/#hizmetler" },
@@ -60,24 +61,24 @@ const faqSchema = {
     <div>
       <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Ev Tadilat Hizmetimiz</h2>
       <p class="text-muted leading-relaxed mb-4">
-        Eviniz kişisel tarzınızın ve yaşam anlayışınızın yansımasıdır. Mutfak ve banyo tadilat çalışmalarından salon tasarımına, yatak odası düzenlemesinden komple konut dönüşümüne kadar ihtiyacınıza özel projeler yürütüyoruz.
+        Ev tadilat; yalnızca boyama veya zemin değişiminden ibaret değildir. Eskimiş elektrik tesisatını yenilemek, su kaçağına neden olan boruları değiştirmek, ısı ve ses yalıtımını iyileştirmek ya da mekanı tamamen yeniden kurgulayacak duvar müdahalelerini de kapsar.
       </p>
       <p class="text-muted leading-relaxed mb-4">
-        Kısmi tadilat mı istiyorsunuz, yoksa evi baştan sona mı dönüştürüyorsunuz? Her iki durumda da tasarım, malzeme tedariki, usta koordinasyonu ve şantiye yönetiminin tamamını üstleniyoruz.
+        Kısmi tadilat mı istiyorsunuz, yoksa evi baştan sona mı dönüştürüyorsunuz? Her iki durumda da tasarım, malzeme tedariki, usta koordinasyonu ve şantiye yönetiminin tamamını üstleniyoruz. <a href="/hizmetler/3d-tasarim" class="text-gold hover:underline">3D görselleştirme</a> ile uygulamadan önce mekanınızı deneyimlemenizi sağlıyoruz.
       </p>
       <p class="text-muted leading-relaxed">
-        İstanbul genelinde Beşiktaş, Kadıköy, Şişli, Ataşehir ve tüm ilçelerde ev tadilat hizmeti sunuyoruz.
+        İstanbul genelinde Beşiktaş, Kadıköy, Şişli, Ataşehir ve tüm ilçelerde ev tadilat hizmeti sunuyoruz. Yalnızca estetik bir güncelleme istiyorsanız <a href="/hizmetler/anahtar-teslim/ev-yenileme" class="text-gold hover:underline">ev yenileme</a> hizmetimize göz atabilirsiniz.
       </p>
     </div>
     <div>
       <h3 class="font-semibold text-charcoal mb-4 text-xs uppercase tracking-wider">Hizmete Dahil Olanlar</h3>
       <ul class="space-y-3">
         {[
-          'İç mimari konsept tasarım',
-          'Fotorealistik 3D görselleştirme',
+          'İç mimari konsept tasarım ve 3D görselleştirme',
+          'Elektrik ve tesisat yenileme',
+          'Yapısal duvar müdahalesi ve yalıtım',
           'Mutfak ve banyo tadilat',
           'Salon ve yatak odası tasarımı',
-          'Elektrik, tesisat iyileştirme',
           'Zemin, duvar ve tavan kaplamaları',
           'Aydınlatma ve dekor uygulamaları',
           'Son temizlik ve anahtar teslim',
@@ -95,6 +96,35 @@ const faqSchema = {
     </div>
   </div>
 
+  <!-- Ne Zaman Gerekir -->
+  <div class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-8">
+      <span class="w-8 h-px bg-gold"></span>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Ev Tadilat Ne Zaman Gerekir?</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      {[
+        {
+          title: 'Teknik Altyapı Eskimiş',
+          desc: 'Elektrik tesisatı 20 yıldan eskiyse veya banyoda kronik su kaçağı, nem ve küf sorunu varsa tadilat zorunlu hale gelir. Yalnızca yüzeysel kaplama değiştirmek altta yatan sorunu çözmez; uzun vadede daha yüksek maliyete yol açar.',
+        },
+        {
+          title: 'Satış veya Kiralama Öncesi',
+          desc: 'Konut değerini artırmak için yapılan tadilat yatırımları genellikle kısa sürede geri döner. Özellikle mutfak ve banyo tadilatı, alıcı veya kiracıların karar sürecinde en belirleyici etkenler arasındadır.',
+        },
+        {
+          title: 'Mekan Kurgusu Değişiyor',
+          desc: 'Büyüyen aile, evden çalışma düzeni veya yaşam tarzındaki değişimler mekanın yeniden kurgulanmasını gerektirebilir. Duvar kaldırma, oda bölme veya açık plan oluşturma gibi yapısal müdahaleler bu kapsamda değerlendirilir.',
+        },
+      ].map(item => (
+        <div class="bg-white p-6 border border-border">
+          <h3 class="font-semibold text-charcoal mb-3 text-sm">{item.title}</h3>
+          <p class="text-muted text-sm leading-relaxed">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
   <!-- Process -->
   <div class="py-12 border-b border-border">
     <div class="flex items-center gap-3 mb-8">
@@ -103,11 +133,11 @@ const faqSchema = {
     </div>
     <div class="grid md:grid-cols-5 gap-6">
       {[
-        { step: '01', title: 'Ücretsiz Keşif', desc: 'Evinizi ve yaşam tarzınızı yerinde değerlendiriyoruz.' },
-        { step: '02', title: '3D Tasarım', desc: 'Mekanınızı gerçekçi görsellerle deneyimleyin ve onaylayın.' },
-        { step: '03', title: 'Sözleşme', desc: 'Kesin bütçe ve takvim belirlenerek sözleşme imzalanır.' },
-        { step: '04', title: 'Uygulama', desc: 'Şantiye yönetimi tamamen bizde. Sizi düzenli bilgilendiriyoruz.' },
-        { step: '05', title: 'Teslim', desc: 'Temizlenmiş, eksiksiz hazır evinizi teslim alırsınız.' },
+        { step: '01', title: 'Ücretsiz Keşif', desc: 'Evinizi ve yaşam tarzınızı yerinde değerlendiriyoruz. Mevcut yapı durumu, tadilat kapsamı ve bütçe çerçevesi bu ziyarette netleşir.' },
+        { step: '02', title: '3D Tasarım', desc: 'Mekanınızı gerçekçi görsellerle deneyimleyin ve onaylayın. Uygulama başlamadan tüm kararlar görsel üzerinde verilir.' },
+        { step: '03', title: 'Sözleşme', desc: 'Kesin bütçe ve takvim belirlenerek sözleşme imzalanır. Sürpriz maliyet veya gecikme yaşanmaması için tüm kalemler yazılı taahhüt edilir.' },
+        { step: '04', title: 'Uygulama', desc: 'Şantiye yönetimi ve usta koordinasyonu tamamen bizde. Sizi her hafta yazılı ilerleme raporuyla bilgilendiriyoruz.' },
+        { step: '05', title: 'Teslim', desc: 'Final temizliği tamamlanmış, eksiksiz hazır evinizi teslim alırsınız. Teslim sonrası garanti kapsamı sözleşmede belirtilir.' },
       ].map(item => (
         <div class="text-center">
           <div class="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-3">
@@ -141,10 +171,11 @@ const faqSchema = {
     </div>
     <div class="divide-y divide-border">
       {[
-        { q: 'Ev tadilat ne kadar sürer?', a: 'Standart bir daire tadilatı (80–120 m²) genellikle 4–8 hafta içinde tamamlanmaktadır. Kapsam ve malzeme seçimine göre bu süre değişebilir. Sözleşmede kesin takvim belirlenir.' },
-        { q: 'Tadilat süresince evde oturabilir miyim?', a: 'Komple daire tadilat çalışmalarında evde oturmanızı tavsiye etmiyoruz. Tek oda veya mutfak-banyo gibi kısmi tadilatlarda belirli dönemlerde mümkün olabilir.' },
-        { q: 'Sadece mutfak veya banyo tadilatı yaptırabilir miyim?', a: 'Evet. Yalnızca mutfak tadilat, banyo tadilat veya tek oda tadilat gibi kısmi projeler de yürütüyoruz. İhtiyacınıza özel kapsam belirlenir.' },
-        { q: 'Ev tadilat bütçesi nasıl belirlenir?', a: 'Bütçe; dairenin büyüklüğü, mevcut yapı durumu, seçilen malzeme kalitesi ve tadilat kapsamına göre şekillenir. Ücretsiz keşif ziyaretimizde projenize özel bütçe sunuyoruz.' },
+        { q: 'Ev tadilat ne kadar sürer?', a: 'Standart bir daire tadilatı (80–120 m²) genellikle 4–8 hafta içinde tamamlanmaktadır. Kapsam genişledikçe — özellikle elektrik ve tesisat müdahalesi gerekiyorsa — bu süre 10–12 haftaya uzayabilir. Malzeme temin süreleri ve yapının mevcut durumu da takvimi etkiler. Keşif ziyaretimizde projenize özel bir takvim sunuyoruz; bu takvim sözleşmede taahhüt edilir.' },
+        { q: 'Tadilat süresince evde oturabilir miyim?', a: 'Komple daire tadilat çalışmalarında — özellikle elektrik, tesisat veya zemin değişimi gibi yapısal müdahaleler varsa — evde oturmanızı tavsiye etmiyoruz. Toz, gürültü ve güvenlik açısından geçici taşınma hem sizin hem de ekibimizin verimliliğini artırır. Tek oda veya mutfak-banyo gibi kısmi tadilatlarda belirli dönemlerde mümkün olabilir.' },
+        { q: 'Sadece mutfak veya banyo tadilatı yaptırabilir miyim?', a: 'Evet. Yalnızca mutfak tadilat, banyo tadilat veya tek oda tadilat gibi kısmi projeler de yürütüyoruz. İhtiyacınıza özel kapsam belirlenir, gereksiz iş yapılmaz. Kısmi tadilat projeleri genellikle 2–4 haftada tamamlanır ve komple tadilatın yarattığı aksaklığı minimize eder.' },
+        { q: 'Ev tadilat bütçesi nasıl belirlenir?', a: 'Bütçe; dairenin büyüklüğü, mevcut yapı durumu, seçilen malzeme kalitesi ve tadilat kapsamına göre şekillenir. Elektrik ve tesisat yenileme gibi teknik işler, yalnızca kaplama değişimine kıyasla maliyeti artırır. Ücretsiz keşif ziyaretimizde projenize özel bütçe sunuyoruz; sürpriz maliyet yaşanmaması için tüm kalemler sözleşmede yer alır.' },
+        { q: 'Ev tadilat için ruhsat gerekir mi?', a: 'Taşıyıcı duvar yıkımı veya kat değişikliği içeren yapısal müdahaleler için belediyeden izin alınması gerekebilir. Standart kaplama, elektrik ve tesisat yenilemesi için ruhsat gerekmez. Projeniz ruhsat gerektiriyorsa bu süreci de sizin adınıza takip ediyoruz.' },
       ].map((faq, i) => (
         <details class="group py-5" open={i === 0}>
           <summary class="flex items-start justify-between cursor-pointer list-none gap-4">

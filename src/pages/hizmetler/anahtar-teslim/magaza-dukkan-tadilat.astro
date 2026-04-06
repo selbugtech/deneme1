@@ -8,7 +8,7 @@ const serviceSchema = {
   "@type": "Service",
   "serviceType": "Mağaza ve Dükkan Tadilat",
   "name": "İstanbul Mağaza ve Dükkan Tadilat",
-  "description": "İstanbul'da anahtar teslim mağaza ve dükkan iç mekan tadilat. Markanızı yansıtan, müşteri yolculuğunu optimize eden perakende mekan tasarımı.",
+  "description": "İstanbul'da anahtar teslim mağaza ve dükkan tadilat. Elektrik, tesisat, vitrin sistemi ve yapısal müdahale dahil kapsamlı perakende mekan dönüşümü.",
   "provider": { "@type": "Organization", "@id": `${CANONICAL_BASE}/#organization`, "name": "Master İç Mimarlık" },
   "areaServed": { "@type": "City", "name": "İstanbul" },
   "url": `${CANONICAL_BASE}/hizmetler/anahtar-teslim/magaza-dukkan-tadilat`,
@@ -19,20 +19,21 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Mağaza tadilat ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Ortalama bir mağaza tadilatı (60–150 m²) 4–7 hafta içinde tamamlanmaktadır. Kapalı kalma süresini minimize etmek için hızlı uygulama planı oluşturuyoruz." } },
-    { "@type": "Question", "name": "Mağaza tadilat bütçesi nasıl belirlenir?", "acceptedAnswer": { "@type": "Answer", "text": "Bütçe; mekanın büyüklüğü, mevcut yapı durumu ve seçilen malzeme kalitesine göre belirlenir. Ücretsiz keşif ziyaretimizde projenize özel bütçe sunuyoruz." } },
-    { "@type": "Question", "name": "Hangi mağaza türleri için hizmet veriyorsunuz?", "acceptedAnswer": { "@type": "Answer", "text": "Giyim mağazaları, butikler, eczaneler, güzellik salonları, elektronik mağazaları ve her türlü perakende mekan için hizmet veriyoruz." } }
+    { "@type": "Question", "name": "Mağaza tadilat ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Ortalama bir mağaza tadilatı (60–150 m²) 4–7 hafta içinde tamamlanmaktadır. Elektrik altyapısı güçlendirme veya yapısal müdahale gerektiren projeler daha uzun sürebilir. Kapalı kalma süresini minimize etmek için detaylı uygulama planı oluşturuyoruz." } },
+    { "@type": "Question", "name": "Mağaza tadilat bütçesi nasıl belirlenir?", "acceptedAnswer": { "@type": "Answer", "text": "Bütçe; mekanın büyüklüğü, mevcut yapı ve altyapı durumu ile seçilen malzeme kalitesine göre belirlenir. Vitrin sistemi değişimi, elektrik güçlendirme ve zemin yenileme gibi kapsamlı işler maliyeti artırır. Ücretsiz keşif ziyaretimizde projenize özel şeffaf bütçe sunuyoruz." } },
+    { "@type": "Question", "name": "Hangi mağaza türleri için hizmet veriyorsunuz?", "acceptedAnswer": { "@type": "Answer", "text": "Giyim mağazaları, butikler, eczaneler, güzellik salonları, elektronik mağazaları, spor malzemeleri ve her türlü perakende mekan için hizmet veriyoruz. Her sektörün kendine özgü ürün sergileme ve müşteri deneyimi ihtiyaçlarını dikkate alıyoruz." } },
+    { "@type": "Question", "name": "Tadilat süresince mağaza açık kalabilir mi?", "acceptedAnswer": { "@type": "Answer", "text": "Elektrik altyapısı veya vitrin değişimi gibi kapsamlı işlerde kısa süreli kapanma gerekebilir. Kısmi tadilatlarda bölgeli uygulama ile mağazayı açık tutmak mümkündür. Kapalı kalma süresini minimize edecek en verimli takvimi keşif ziyaretimizde birlikte planlıyoruz." } }
   ]
 };
 ---
 
 <ServiceLayout
   title="İstanbul Mağaza ve Dükkan Tadilat | Master İç Mimarlık"
-  description="İstanbul'da mağaza ve dükkan tadilat. Markanızı yansıtan, müşteri deneyimini artıran anahtar teslim perakende iç mekan tasarımı. Nişantaşı, Levent, Kadıköy. Ücretsiz keşif: 0533 039 15 65"
+  description="İstanbul'da mağaza ve dükkan tadilat. Elektrik, vitrin sistemi ve yapısal müdahale dahil kapsamlı perakende mekan dönüşümü. Nişantaşı, Levent, Kadıköy. Ücretsiz keşif: 0533 039 15 65"
   canonicalUrl={`${CANONICAL_BASE}/hizmetler/anahtar-teslim/magaza-dukkan-tadilat`}
   h1="İstanbul Mağaza ve Dükkan Tadilat"
   eyebrow="Anahtar Teslim"
-  lead="Markanızı yansıtan, müşteri yolculuğunu optimize eden mağaza ve dükkan tadilat. Vitrin düzenlemesinden iç mekana, ürün sergileme alanlarından kasaya kadar her detayı satış hedeflerinize göre tasarlıyoruz."
+  lead="Elektrik altyapısından vitrin sistemine, zemin değişiminden yapısal düzenlemeye kadar teknik müdahale gerektiren kapsamlı mağaza dönüşümleri. Marka kimliğini yansıtan, müşteri yolculuğunu optimize eden perakende mekanlar."
   breadcrumb={[
     { label: "Ana Sayfa", href: "/" },
     { label: "Hizmetler", href: "/#hizmetler" },
@@ -44,9 +45,9 @@ const faqSchema = {
 
   <!-- Proje Görselleri -->
   <div class="w-full mb-12 grid grid-cols-1 md:grid-cols-3 gap-3">
-    <img src={optimizedImage('/images/salon3.jpeg')} alt="Mağaza ve dükkan tadilat — ticari mekan tasarımı" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
-    <img src={optimizedImage('/images/salonvemutfak.jpeg')} alt="Mağaza ve dükkan tadilat — iç mekan" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
-    <img src={optimizedImage('/images/merdiven1.jpeg')} alt="Mağaza ve dükkan tadilat — detay tasarımı" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
+    <img src={optimizedImage('/images/salon3.jpeg')} alt="Mağaza ve dükkan tadilat — ticari mekan dönüşümü" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
+    <img src={optimizedImage('/images/salonvemutfak.jpeg')} alt="Mağaza ve dükkan tadilat — iç mekan tasarımı" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
+    <img src={optimizedImage('/images/merdiven1.jpeg')} alt="Mağaza ve dükkan tadilat — yapısal detay" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
   </div>
 
   <!-- Scope -->
@@ -54,13 +55,13 @@ const faqSchema = {
     <div>
       <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Mağaza & Dükkan Tadilat Hizmetimiz</h2>
       <p class="text-muted leading-relaxed mb-4">
-        Perakende mekanın tasarımı, müşterinin satın alma kararını doğrudan etkiler. Doğru aydınlatma, ürün sergileme düzeni ve müşteri yolculuğu planlaması satışlarınızı artırır.
+        Mağaza tadilat; yalnızca yeni bir boya veya raf değişimini değil, elektrik altyapısının güçlendirilmesini, vitrin sisteminin yenilenmesini, zemin ve duvar kaplama değişimini ya da mekânın baştan kurgulanmasını kapsayabilir. Özellikle farklı bir sektörden devralınan veya eski bir mekânda açılan mağazalar bu tür kapsamlı müdahale gerektirir.
       </p>
       <p class="text-muted leading-relaxed mb-4">
-        Vitrin tasarımından iç mekana, ürün raflarından kasa alanına kadar tüm detayları marka kimliğiniz ve satış hedeflerinize göre optimize ediyoruz.
+        Vitrin tasarımından iç mekana, ürün raflarından kasa alanına kadar tüm detayları marka kimliğiniz ve satış hedeflerinize göre optimize ediyoruz. <a href="/hizmetler/3d-tasarim" class="text-gold hover:underline">3D görselleştirme</a> ile mağazanın yeni görünümünü uygulamadan önce onaylayabilirsiniz.
       </p>
       <p class="text-muted leading-relaxed">
-        İstanbul genelinde Nişantaşı, Levent, Kadıköy, Bağcılar ve tüm ilçelerde hizmet veriyoruz.
+        Yalnızca estetik güncelleme istiyorsanız <a href="/hizmetler/anahtar-teslim/magaza-dukkan-yenileme" class="text-gold hover:underline">mağaza yenileme</a> hizmetimiz daha hızlı ve ekonomik bir seçenek olabilir. Nişantaşı, Levent, Kadıköy, Beşiktaş ve tüm İstanbul'da hizmet veriyoruz.
       </p>
     </div>
     <div>
@@ -69,12 +70,12 @@ const faqSchema = {
         {[
           'Marka kimliğine uygun konsept tasarım',
           'Fotorealistik 3D görselleştirme',
-          'Vitrin ve ön cephe tasarımı',
+          'Elektrik altyapısı güçlendirme',
+          'Vitrin ve ön cephe sistemi yenileme',
           'Ürün sergileme ve raf planlaması',
           'Müşteri yolculuğu optimizasyonu',
           'Ticari aydınlatma tasarımı',
           'Zemin, duvar ve tavan kaplamaları',
-          'Kasa ve ödeme alanı çözümleri',
         ].map(item => (
           <li class="flex items-start gap-3 text-sm text-muted">
             <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
@@ -89,6 +90,35 @@ const faqSchema = {
     </div>
   </div>
 
+  <!-- Ne Zaman Gerekir -->
+  <div class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-8">
+      <span class="w-8 h-px bg-gold"></span>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Mağaza Tadilat Ne Zaman Gerekir?</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      {[
+        {
+          title: 'Yeni veya Devralınan Mekan',
+          desc: 'Farklı bir sektörden devralınan ya da ham haldeki bir mekan, perakende standartlarını karşılamak için kapsamlı tadilat gerektirir. Elektrik kapasitesi, vitrin sistemi ve müşteri trafik düzeni baştan kurgulanmalıdır.',
+        },
+        {
+          title: 'Marka Yeniden Konumlandı',
+          desc: 'Yenilenen marka kimliği mekanın fiziksel görünümüne de yansıtılmalıdır. Yalnızca tabela değişikliği yetmez; malzeme, renk ve alan kurgusu yeni konumlamayı desteklemezse marka yatırımının getirisi düşer.',
+        },
+        {
+          title: 'Altyapı ve Güvenlik Sorunları',
+          desc: 'Eski elektrik tesisatı, yetersiz aydınlatma altyapısı veya standart dışı vitrin sistemleri hem güvenlik riski oluşturur hem de mağaza deneyimini olumsuz etkiler. Bu tür sorunlar görünümü güncellemekle çözülemez.',
+        },
+      ].map(item => (
+        <div class="bg-white p-6 border border-border">
+          <h3 class="font-semibold text-charcoal mb-3 text-sm">{item.title}</h3>
+          <p class="text-muted text-sm leading-relaxed">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
   <!-- Process -->
   <div class="py-12 border-b border-border">
     <div class="flex items-center gap-3 mb-8">
@@ -97,11 +127,11 @@ const faqSchema = {
     </div>
     <div class="grid md:grid-cols-5 gap-6">
       {[
-        { step: '01', title: 'Ücretsiz Keşif', desc: 'Mağazanızı ve marka hedeflerinizi yerinde değerlendiriyoruz.' },
-        { step: '02', title: 'Konsept & 3D', desc: 'Marka kimliğinize uygun tasarımı 3D ile görselleştiriyoruz.' },
-        { step: '03', title: 'Sözleşme', desc: 'Kesin bütçe ve takvim belirlenerek sözleşme imzalanır.' },
-        { step: '04', title: 'Uygulama', desc: 'Hızlı ve verimli uygulama, kapalı süre minimumda.' },
-        { step: '05', title: 'Teslim', desc: 'Hazır mağazanızı teslim alıp açılışa geçiyorsunuz.' },
+        { step: '01', title: 'Ücretsiz Keşif', desc: 'Mağazanızı, marka hedeflerinizi ve teknik altyapı durumunu yerinde değerlendiriyoruz. Gerekli izin ve müdahale kapsamı bu aşamada netleşir.' },
+        { step: '02', title: 'Konsept & 3D', desc: 'Marka kimliğinize uygun tasarımı 3D ile görselleştiriyoruz. Ürün sergileme planı ve müşteri yolculuğu bu aşamada optimize edilir.' },
+        { step: '03', title: 'Sözleşme', desc: 'Kesin bütçe ve takvim belirlenerek sözleşme imzalanır. Kapalı kalma süresi taahhüt edilir.' },
+        { step: '04', title: 'Uygulama', desc: 'Hızlı ve verimli uygulama; kapalı süre minimumda tutulur. Teknik altyapı ve estetik işler paralel yürütülür.' },
+        { step: '05', title: 'Teslim', desc: 'Hazır mağazanızı teslim alıp açılışa geçiyorsunuz. Teslim sonrası işçilik garantisi sözleşmede belirtilir.' },
       ].map(item => (
         <div class="text-center">
           <div class="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-3">
@@ -135,9 +165,10 @@ const faqSchema = {
     </div>
     <div class="divide-y divide-border">
       {[
-        { q: 'Mağaza tadilat ne kadar sürer?', a: 'Ortalama bir mağaza tadilatı (60–150 m²) 4–7 hafta içinde tamamlanmaktadır. Kapalı kalma süresini minimize etmek için hızlı uygulama planı oluşturuyoruz.' },
-        { q: 'Mağaza tadilat bütçesi nasıl belirlenir?', a: 'Bütçe; mekanın büyüklüğü, mevcut yapı durumu ve seçilen malzeme kalitesine göre belirlenir. Ücretsiz keşif ziyaretimizde projenize özel bütçe sunuyoruz.' },
-        { q: 'Hangi mağaza türleri için hizmet veriyorsunuz?', a: 'Giyim mağazaları, butikler, eczaneler, güzellik salonları, elektronik mağazaları ve her türlü perakende mekan için hizmet veriyoruz.' },
+        { q: 'Mağaza tadilat ne kadar sürer?', a: 'Ortalama bir mağaza tadilatı (60–150 m²) 4–7 hafta içinde tamamlanmaktadır. Elektrik altyapısı güçlendirme veya yapısal müdahale gerektiren projeler daha uzun sürebilir. Kapalı kalma süresini minimize etmek için detaylı uygulama planı oluşturuyoruz.' },
+        { q: 'Mağaza tadilat bütçesi nasıl belirlenir?', a: 'Bütçe; mekanın büyüklüğü, mevcut yapı ve altyapı durumu ile seçilen malzeme kalitesine göre belirlenir. Vitrin sistemi değişimi, elektrik güçlendirme ve zemin yenileme gibi kapsamlı işler maliyeti artırır. Ücretsiz keşif ziyaretimizde projenize özel şeffaf bütçe sunuyoruz.' },
+        { q: 'Hangi mağaza türleri için hizmet veriyorsunuz?', a: 'Giyim mağazaları, butikler, eczaneler, güzellik salonları, elektronik mağazaları, spor malzemeleri ve her türlü perakende mekan için hizmet veriyoruz. Her sektörün kendine özgü ürün sergileme ve müşteri deneyimi ihtiyaçlarını dikkate alıyoruz.' },
+        { q: 'Tadilat süresince mağaza açık kalabilir mi?', a: 'Elektrik altyapısı veya vitrin değişimi gibi kapsamlı işlerde kısa süreli kapanma gerekebilir. Kısmi tadilatlarda bölgeli uygulama ile mağazayı açık tutmak mümkündür. Kapalı kalma süresini minimize edecek en verimli takvimi keşif ziyaretimizde birlikte planlıyoruz.' },
       ].map((faq, i) => (
         <details class="group py-5" open={i === 0}>
           <summary class="flex items-start justify-between cursor-pointer list-none gap-4">

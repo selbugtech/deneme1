@@ -8,7 +8,7 @@ const serviceSchema = {
   "@type": "Service",
   "serviceType": "Otel Tadilat",
   "name": "İstanbul Otel Tadilat",
-  "description": "İstanbul'da anahtar teslim otel tadilat. Misafir deneyimini ve doluluk oranını artıran kapsamlı otel iç mimarlık ve tadilat hizmetleri.",
+  "description": "İstanbul'da anahtar teslim otel tadilat. Elektrik, tesisat, yapısal müdahale ve iklimlendirme dahil kapsamlı otel renovasyonu. Operasyon sürerken fazlı uygulama.",
   "provider": { "@type": "Organization", "@id": `${CANONICAL_BASE}/#organization`, "name": "Master İç Mimarlık" },
   "areaServed": [
     { "@type": "City", "name": "İstanbul" },
@@ -24,21 +24,22 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Otel tadilat sırasında faaliyet sürdürülebilir mi?", "acceptedAnswer": { "@type": "Answer", "text": "Evet. Otel operasyonunu kesintisiz sürdürmeniz için bölüm bölüm (fazlı) tadilat planı hazırlıyoruz. Hangi bölümlerin hangi sırayla tadilat yapılacağı sözleşme aşamasında müşterimizle birlikte planlanır." } },
-    { "@type": "Question", "name": "Otel tadilat ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Süre; otel büyüklüğü, kapsam ve fazlı çalışma planına göre değişir. Küçük butik oteller 8–12 hafta, büyük kapsamlı projeler birkaç aşamada tamamlanabilir. Sözleşmede aşama takvimleri net olarak belirlenir." } },
-    { "@type": "Question", "name": "Otel iç mimarlık tadilat ROI'si nasıl ölçülür?", "acceptedAnswer": { "@type": "Answer", "text": "Otel tadilat ROI'si; doluluk oranı artışı, oda başına gelir (RevPAR) yükselmesi ve misafir memnuniyet puanlarındaki iyileşmeyle ölçülür. Tasarım kararlarını bu metrikler gözetilerek alıyoruz." } },
-    { "@type": "Question", "name": "Hangi otel alanları için hizmet veriyorsunuz?", "acceptedAnswer": { "@type": "Answer", "text": "Odalar ve banyolar, lobi ve resepsiyon, restoran ve bar alanları, toplantı ve konferans salonları, ortak kullanım alanları ile dış cephe ve çevre düzenlemesi dahil otel genelinde kapsamlı tadilat yapıyoruz." } }
+    { "@type": "Question", "name": "Otel tadilat sırasında faaliyet sürdürülebilir mi?", "acceptedAnswer": { "@type": "Answer", "text": "Evet. Otel operasyonunu kesintisiz sürdürmeniz için bölüm bölüm (fazlı) tadilat planı hazırlıyoruz. Her aşama tamamlandıkça ilgili bölümler hizmete geri döner; gelir kaybını minimize ederken tadilat sürer. Hangi bölümlerin hangi sırayla tadilat yapılacağı sözleşme aşamasında müşterimizle birlikte planlanır." } },
+    { "@type": "Question", "name": "Otel tadilat ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Süre; otel büyüklüğü, kapsam ve fazlı çalışma planına göre değişir. Küçük butik oteller için tekil aşamalar 6–10 hafta, büyük kapsamlı projeler birkaç aşamada ve uzun bir takvimde tamamlanabilir. Tüm aşama takvimleri sözleşmede net olarak belirlenir ve taahhüt edilir." } },
+    { "@type": "Question", "name": "Otel tadilat ROI'si nasıl ölçülür?", "acceptedAnswer": { "@type": "Answer", "text": "Otel tadilat yatırımının getirisi; doluluk oranı artışı, oda başına gelir (RevPAR) yükselmesi, ortalama oda fiyatı (ADR) artışı ve online platform misafir puanlarındaki iyileşmeyle ölçülür. Tasarım kararlarımızı yalnızca estetik değil, bu operasyonel metrikler gözetilerek alıyoruz." } },
+    { "@type": "Question", "name": "Hangi otel alanları için hizmet veriyorsunuz?", "acceptedAnswer": { "@type": "Answer", "text": "Odalar ve banyolar, lobi ve resepsiyon, restoran ve bar alanları, toplantı ve konferans salonları, ortak kullanım alanları, dış cephe ve çevre düzenlemesi dahil otel genelinde kapsamlı tadilat yapıyoruz. Her alan bütünsel bir misafir deneyimi perspektifiyle tasarlanır." } },
+    { "@type": "Question", "name": "Otel tadilat için ruhsat gerekir mi?", "acceptedAnswer": { "@type": "Answer", "text": "Yapısal değişiklik, kat ekleme veya mekanik sistem revizyonu içeren kapsamlı projeler için belediye ve TÜRSAB gibi ilgili kurumlardan onay alınması gerekebilir. Standart oda tadilatı ve kaplama değişiminde ruhsat gerekmez. Projeniz izin gerektiriyorsa bu süreci sizin adınıza takip ediyoruz." } }
   ]
 };
 ---
 
 <ServiceLayout
   title="İstanbul Otel Tadilat | Butik Otel Tadilat | Master İç Mimarlık"
-  description="İstanbul'da anahtar teslim otel tadilat. Misafir deneyimini artıran, doluluk oranını yükselten kapsamlı otel iç mimarlık tadilat hizmetleri. Ücretsiz keşif: 0533 039 15 65"
+  description="İstanbul'da anahtar teslim otel tadilat. Elektrik, tesisat ve yapısal müdahale dahil kapsamlı otel renovasyonu. Operasyon sürerken fazlı uygulama. Ücretsiz keşif: 0533 039 15 65"
   canonicalUrl={`${CANONICAL_BASE}/hizmetler/anahtar-teslim/otel-tadilat`}
   h1="İstanbul Otel Tadilat"
   eyebrow="Anahtar Teslim"
-  lead="Misafir deneyimini dönüştüren, doluluk oranını ve geliri artıran kapsamlı otel tadilat. Lobiden odalara, restorandan toplantı salonlarına tüm otel alanlarını tasarlıyor ve tadilat yapıyoruz."
+  lead="Elektrik ve tesisat yenilemesinden yapısal müdahaleye, oda tadilatından lobi dönüşümüne kadar kapsamlı otel renovasyonu. Fazlı uygulama planıyla operasyonunuz sürerken tadilat tamamlanır."
   breadcrumb={[
     { label: "Ana Sayfa", href: "/" },
     { label: "Hizmetler", href: "/#hizmetler" },
@@ -50,9 +51,9 @@ const faqSchema = {
 
   <!-- Proje Görselleri -->
   <div class="w-full mb-12 grid grid-cols-1 md:grid-cols-3 gap-3">
-    <img src={optimizedImage('/images/restoran1.jpeg')} alt="Otel tadilat — restoran ve yemek alanı" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
-    <img src={optimizedImage('/images/toplantiodasi1.jpeg')} alt="Otel tadilat — toplantı salonu" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
-    <img src={optimizedImage('/images/salon9.jpeg')} alt="Otel tadilat — lobi ve ortak alan" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
+    <img src={optimizedImage('/images/restoran1.jpeg')} alt="Otel tadilat — restoran ve yemek alanı dönüşümü" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
+    <img src={optimizedImage('/images/toplantiodasi1.jpeg')} alt="Otel tadilat — toplantı salonu tadilat" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
+    <img src={optimizedImage('/images/salon9.jpeg')} alt="Otel tadilat — lobi ve ortak alan dönüşümü" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
   </div>
 
   <!-- Scope -->
@@ -60,25 +61,25 @@ const faqSchema = {
     <div>
       <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Otel Tadilat Hizmetimiz</h2>
       <p class="text-muted leading-relaxed mb-4">
-        Otel tadilat, misafir deneyimini doğrudan etkileyen yatırımların başında gelir. Tadilat yapılan bir otelde doluluk oranı, oda başına gelir ve misafir memnuniyeti ölçülebilir biçimde yükselir.
+        Otel tadilat; yalnızca görsel yenileme değil, elektrik ve tesisat altyapısının modernizasyonunu, HVAC sisteminin güncellenmesini, oda sayısı veya büyüklüğünü etkileyen yapısal müdahaleleri de kapsar. Bu tür kapsamlı işler uzmanlık, doğru koordinasyon ve fazlı planlama gerektirir.
       </p>
       <p class="text-muted leading-relaxed mb-4">
-        Operasyonunuzu mümkün olduğunca az kesintiye uğratmak için fazlı çalışma planı hazırlıyoruz. Her aşama tamamlandıkça ilgili bölümler hizmete geri döner; gelir kaybını minimize ediyoruz.
+        Tadilat yapılan bir otelde doluluk oranı, oda başına gelir ve misafir memnuniyeti ölçülebilir biçimde yükselir. Operasyonunuzu mümkün olduğunca az kesintiye uğratmak için fazlı çalışma planı hazırlıyoruz. <a href="/hizmetler/3d-tasarim" class="text-gold hover:underline">3D görselleştirme</a> ile tüm alanların yeni görünümünü uygulama öncesinde onaylayabilirsiniz.
       </p>
       <p class="text-muted leading-relaxed">
-        Butik otellerden orta ölçekli tesislere, hostel tadilattan apart otel dönüşümlerine kadar tüm konaklama projelerinde deneyimliyiz.
+        Yalnızca estetik güncelleme ihtiyacınız varsa <a href="/hizmetler/anahtar-teslim/otel-yenileme" class="text-gold hover:underline">otel yenileme</a> hizmetimiz daha hızlı bir seçenek olabilir. Butik otellerden orta ölçekli tesislere, hostel tadilattan apart otel dönüşümlerine kadar tüm konaklama projelerinde deneyimliyiz.
       </p>
     </div>
     <div>
       <h3 class="font-semibold text-charcoal mb-4 text-xs uppercase tracking-wider">Hizmete Dahil Olanlar</h3>
       <ul class="space-y-3">
         {[
-          'Lobi ve resepsiyon tasarımı',
-          'Oda ve banyo tadilat',
-          'Restoran ve bar alanı tasarımı',
+          'Lobi ve resepsiyon tasarımı ve dönüşümü',
+          'Oda ve banyo kapsamlı tadilat',
+          'Elektrik, tesisat ve iklimlendirme yenileme',
+          'Restoran ve bar alanı tadilat',
           'Toplantı ve konferans salonları',
-          'Ortak kullanım alanları',
-          'Elektrik, tesisat ve iklimlendirme',
+          'Yapısal müdahale ve kat planı revizyonu',
           'FF&E (Mobilya, Tefriş, Ekipman)',
           'Fazlı uygulama ve anahtar teslim',
         ].map(item => (
@@ -95,6 +96,35 @@ const faqSchema = {
     </div>
   </div>
 
+  <!-- Ne Zaman Gerekir -->
+  <div class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-8">
+      <span class="w-8 h-px bg-gold"></span>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Otel Tadilat Ne Zaman Gerekir?</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      {[
+        {
+          title: 'Teknik Altyapı Misafir Deneyimini Etkiliyor',
+          desc: 'Eski iklimlendirme, yetersiz su basıncı veya elektrik arızaları misafir şikayetlerinin başında gelen nedenlerdir. Bu sorunlar görünümü güncelleyerek değil, altyapıyı tadilat ederek çözülebilir.',
+        },
+        {
+          title: 'OTA Puanları ve Rekabetçilik',
+          desc: 'Booking.com, Airbnb veya Google üzerindeki misafir puanları doğrudan doluluk oranını etkiler. Eski oda tasarımı ve eskimiş donanım puanları düşürür. Kapsamlı oda tadilatı bu puanları kalıcı olarak iyileştirir.',
+        },
+        {
+          title: 'Mülk Satın Alma veya Kira Yenileme',
+          desc: 'Yeni satın alınan ya da kira yenilenen bir otelde eski düzenin korunması marka potansiyelini sınırlar. Kapsamlı tadilat ile tesisin konumlama ve fiyat segmenti yeniden belirlenebilir.',
+        },
+      ].map(item => (
+        <div class="bg-white p-6 border border-border">
+          <h3 class="font-semibold text-charcoal mb-3 text-sm">{item.title}</h3>
+          <p class="text-muted text-sm leading-relaxed">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
   <!-- Process -->
   <div class="py-12 border-b border-border">
     <div class="flex items-center gap-3 mb-8">
@@ -103,11 +133,11 @@ const faqSchema = {
     </div>
     <div class="grid md:grid-cols-5 gap-6">
       {[
-        { step: '01', title: 'Keşif & Analiz', desc: 'Mevcut durumu, operasyonel kısıtları ve tadilat hedeflerini değerlendiriyoruz.' },
-        { step: '02', title: 'Fazlı Plan', desc: 'Operasyonu en az etkileyen tadilat aşamalarını ve takvimleri belirliyoruz.' },
-        { step: '03', title: '3D Tasarım', desc: 'Tüm alanları fotorealistik görsellerle deneyimleyin ve onaylayın.' },
-        { step: '04', title: 'Uygulama', desc: 'Her aşama tamamlandıkça ilgili bölüm hizmete geri döner.' },
-        { step: '05', title: 'Teslim', desc: 'Eksiksiz tadilat edilmiş otelinizi teslim alırsınız.' },
+        { step: '01', title: 'Keşif & Analiz', desc: 'Mevcut teknik altyapıyı, operasyonel kısıtları ve tadilat hedeflerini değerlendiriyoruz. Gerekli izin ve ruhsat süreci bu aşamada belirlenir.' },
+        { step: '02', title: 'Fazlı Plan', desc: 'Operasyonu en az etkileyen tadilat aşamalarını ve takvimleri belirliyoruz. Her aşamada hangi bölümlerin kapatılacağı önceden netleşir.' },
+        { step: '03', title: '3D Tasarım', desc: 'Tüm alanları fotorealistik görsellerle deneyimleyin ve onaylayın. FF&E seçimleri ve malzeme paletleri bu aşamada kesinleşir.' },
+        { step: '04', title: 'Uygulama', desc: 'Her aşama tamamlandıkça ilgili bölüm hizmete geri döner. Şantiye yönetimi ve koordinasyon tamamen bizde.' },
+        { step: '05', title: 'Teslim', desc: 'Eksiksiz tadilat edilmiş otelinizi teslim alırsınız. Aşama garantileri ve teslim sonrası destek sözleşmede belirtilir.' },
       ].map(item => (
         <div class="text-center">
           <div class="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-3">
@@ -141,10 +171,11 @@ const faqSchema = {
     </div>
     <div class="divide-y divide-border">
       {[
-        { q: 'Otel tadilat sırasında faaliyet sürdürülebilir mi?', a: 'Evet. Otel operasyonunu kesintisiz sürdürmeniz için bölüm bölüm (fazlı) tadilat planı hazırlıyoruz. Her aşama tamamlandıkça ilgili bölümler hizmete geri döner.' },
-        { q: 'Otel tadilat ne kadar sürer?', a: 'Süre; otel büyüklüğü, kapsam ve fazlı çalışma planına göre değişir. Küçük butik oteller 8–12 hafta, büyük kapsamlı projeler birkaç aşamada tamamlanabilir. Aşama takvimleri sözleşmede net belirlenir.' },
-        { q: 'Otel iç mimarlık tadilat ROI\'si nasıl ölçülür?', a: 'Doluluk oranı artışı, oda başına gelir (RevPAR) yükselmesi ve misafir memnuniyet puanlarındaki iyileşmeyle ölçülür. Tasarım kararlarını bu metrikler gözetilerek alıyoruz.' },
-        { q: 'Hangi otel alanları için hizmet veriyorsunuz?', a: 'Odalar ve banyolar, lobi ve resepsiyon, restoran ve bar alanları, toplantı salonları, ortak kullanım alanları ile dış cephe dahil tüm otel genelinde kapsamlı tadilat yapıyoruz.' },
+        { q: 'Otel tadilat sırasında faaliyet sürdürülebilir mi?', a: 'Evet. Otel operasyonunu kesintisiz sürdürmeniz için bölüm bölüm (fazlı) tadilat planı hazırlıyoruz. Her aşama tamamlandıkça ilgili bölümler hizmete geri döner; gelir kaybını minimize ederken tadilat sürer. Aşama planı sözleşmede taahhüt edilir.' },
+        { q: 'Otel tadilat ne kadar sürer?', a: 'Süre; otel büyüklüğü, kapsam ve fazlı çalışma planına göre değişir. Küçük butik oteller için tekil aşamalar 6–10 hafta, büyük kapsamlı projeler birkaç aşamada ve uzun bir takvimde tamamlanabilir. Tüm aşama takvimleri sözleşmede net olarak belirlenir.' },
+        { q: 'Otel tadilat ROI\'si nasıl ölçülür?', a: 'Otel tadilat yatırımının getirisi; doluluk oranı artışı, oda başına gelir (RevPAR) yükselmesi, ortalama oda fiyatı (ADR) artışı ve online platform misafir puanlarındaki iyileşmeyle ölçülür. Tasarım kararlarımızı bu operasyonel metrikler gözetilerek alıyoruz.' },
+        { q: 'Hangi otel alanları için hizmet veriyorsunuz?', a: 'Odalar ve banyolar, lobi ve resepsiyon, restoran ve bar alanları, toplantı ve konferans salonları, ortak kullanım alanları, dış cephe ve çevre düzenlemesi dahil otel genelinde kapsamlı tadilat yapıyoruz. Her alan bütünsel bir misafir deneyimi perspektifiyle tasarlanır.' },
+        { q: 'Otel tadilat için ruhsat gerekir mi?', a: 'Yapısal değişiklik, kat ekleme veya mekanik sistem revizyonu içeren kapsamlı projeler için belediye ve ilgili kurumlardan onay alınması gerekebilir. Standart oda tadilatı ve kaplama değişiminde ruhsat gerekmez. Projeniz izin gerektiriyorsa bu süreci sizin adınıza takip ediyoruz.' },
       ].map((faq, i) => (
         <details class="group py-5" open={i === 0}>
           <summary class="flex items-start justify-between cursor-pointer list-none gap-4">

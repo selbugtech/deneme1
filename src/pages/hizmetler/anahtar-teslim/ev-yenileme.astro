@@ -8,7 +8,7 @@ const serviceSchema = {
   "@type": "Service",
   "serviceType": "Ev Yenileme",
   "name": "İstanbul Ev Yenileme",
-  "description": "İstanbul'da anahtar teslim ev ve daire yenileme. Küçük daireden geniş konuta kısmi yenilemeden komple dönüşüme kapsamlı konut yenileme projeleri.",
+  "description": "İstanbul'da anahtar teslim ev ve daire yenileme. Yapısal müdahale gerektirmeyen estetik tazeleme, kaplama yenileme ve modern iç mekan güncellemesi.",
   "provider": { "@type": "Organization", "@id": `${CANONICAL_BASE}/#organization`, "name": "Master İç Mimarlık" },
   "areaServed": [
     { "@type": "City", "name": "İstanbul" },
@@ -24,21 +24,21 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Ev yenileme ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Standart bir daire yenilemesi (80–120 m²) genellikle 4–8 hafta içinde tamamlanmaktadır. Kapsam ve malzeme seçimine göre bu süre değişebilir. Sözleşmede kesin takvim belirlenir." } },
-    { "@type": "Question", "name": "Yenileme süresince evde oturabilir miyim?", "acceptedAnswer": { "@type": "Answer", "text": "Komple daire yenilemelerinde evde oturmanızı tavsiye etmiyoruz. Tek oda veya mutfak-banyo gibi kısmi yenilemelerde belirli dönemlerde mümkün olabilir. Her projenin planlamasında bu konuyu müşterimizle önceden değerlendiriyoruz." } },
-    { "@type": "Question", "name": "Sadece mutfak veya banyo yenileyebilir miyim?", "acceptedAnswer": { "@type": "Answer", "text": "Evet. Yalnızca mutfak yenileme, banyo yenileme veya tek oda yenileme gibi kısmi projeler de yürütüyoruz. İhtiyacınıza özel kapsam belirlenir, gereksiz iş yapılmaz." } },
-    { "@type": "Question", "name": "Ev yenileme bütçesi nasıl belirlenir?", "acceptedAnswer": { "@type": "Answer", "text": "Bütçe; dairenin büyüklüğü, mevcut yapı durumu, seçilen malzeme kalitesi ve yenileme kapsamına göre şekillenir. Ücretsiz keşif ziyaretimizde projenize özel bütçe sunuyoruz." } }
+    { "@type": "Question", "name": "Ev yenileme ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Yapısal müdahale içermeyen bir daire yenilemesi (80–120 m²) genellikle 2–5 hafta içinde tamamlanabilir. Yalnızca boyama ve zemin değişimi gibi minimal projeler 1–2 haftada bitebilir. Kapsam büyüdükçe süre uzar; keşif ziyaretimizde projenize özel takvim sunuyoruz." } },
+    { "@type": "Question", "name": "Yenileme ile tadilat arasındaki fark nedir?", "acceptedAnswer": { "@type": "Answer", "text": "Yenileme; mevcut yapıyı bozmadan estetik ve işlevsel güncellemeler yapmak demektir — zemin değişimi, boyama, donanım yenileme, aydınlatma güncelleme gibi işleri kapsar. Tadilat ise elektrik, tesisat, duvar ve yapısal müdahaleleri içerir. Evinizin altyapısı sorunsuzsa yenileme daha hızlı ve daha ekonomik bir seçenektir. Altyapı sorunu varsa ev tadilat hizmetimize başvurmanızı öneririz." } },
+    { "@type": "Question", "name": "Yenileme süresince evde oturabilir miyim?", "acceptedAnswer": { "@type": "Answer", "text": "Kısmi yenileme projelerinde (ör. tek oda veya banyo) çoğunlukla evde oturabilirsiniz. Komple daire yenilemesinde ise zemin ve boyama işlemleri sırasında kısa süreli taşınma önerilir. Her projenin planlamasında bu konuyu müşterimizle önceden değerlendiriyor, mümkün olan en az kesinti için çalışma takvimini buna göre düzenliyoruz." } },
+    { "@type": "Question", "name": "Ev yenileme bütçesi nasıl belirlenir?", "acceptedAnswer": { "@type": "Answer", "text": "Bütçe; dairenin büyüklüğü, seçilen malzeme kalitesi ve yenileme kapsamına göre şekillenir. Yenileme, altyapı müdahalesi içermediğinden tadilata göre genellikle daha ekonomiktir. Ücretsiz keşif ziyaretimizde tüm kalemleri içeren şeffaf bir teklif sunuyoruz; sözleşme imzalandıktan sonra ek ücret talep edilmez." } }
   ]
 };
 ---
 
 <ServiceLayout
-  title="İstanbul Ev Yenileme | Daire ve Konut Tadilat | Master İç Mimarlık"
-  description="İstanbul'da anahtar teslim ev ve daire yenileme. Beşiktaş, Kadıköy, Şişli ve tüm İstanbul'da kısmi veya komple konut tadilat. Ücretsiz keşif: 0533 039 15 65"
+  title="İstanbul Ev Yenileme | Daire ve Konut Yenileme | Master İç Mimarlık"
+  description="İstanbul'da anahtar teslim ev ve daire yenileme. Beşiktaş, Kadıköy, Şişli ve tüm İstanbul'da kısmi veya komple konut yenileme. Ücretsiz keşif: 0533 039 15 65"
   canonicalUrl={`${CANONICAL_BASE}/hizmetler/anahtar-teslim/ev-yenileme`}
   h1="İstanbul Ev ve Daire Yenileme"
   eyebrow="Anahtar Teslim"
-  lead="Küçük bir daireden geniş bir konuta, kısmi yenilemeden komple dönüşüme kadar her ölçekte konut yenileme projesi yürütüyoruz. Yaşam kalitenizi artıran, kişisel tarzınızı yansıtan mekanlar tasarlıyoruz."
+  lead="Altyapısı sağlam ama modası geçmiş bir eve modern bir kimlik kazandırmak için yapısal müdahaleye gerek yok. Zemin, kaplama, donanım ve aydınlatma güncellemeleriyle evinizi daha kısa sürede ve daha ekonomik biçimde yeniliyoruz."
   breadcrumb={[
     { label: "Ana Sayfa", href: "/" },
     { label: "Hizmetler", href: "/#hizmetler" },
@@ -50,9 +50,9 @@ const faqSchema = {
 
   <!-- Proje Görselleri -->
   <div class="w-full mb-12 grid grid-cols-1 md:grid-cols-3 gap-3">
-    <img src={optimizedImage('/images/salon1.png')} alt="Ev yenileme — salon tasarımı" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
+    <img src={optimizedImage('/images/salon1.png')} alt="Ev yenileme — salon yenileme tasarımı" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
     <img src={optimizedImage('/images/banyo1.webp')} alt="Ev yenileme — banyo yenileme" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
-    <img src={optimizedImage('/images/yatakodasi2.jpeg')} alt="Ev yenileme — yatak odası tasarımı" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
+    <img src={optimizedImage('/images/yatakodasi2.jpeg')} alt="Ev yenileme — yatak odası yenileme" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
   </div>
 
   <!-- Scope -->
@@ -60,26 +60,26 @@ const faqSchema = {
     <div>
       <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Ev Yenileme Hizmetimiz</h2>
       <p class="text-muted leading-relaxed mb-4">
-        Eviniz kişisel tarzınızın ve yaşam anlayışınızın yansımasıdır. Mutfak ve banyo yenilemesinden salon tasarımına, yatak odası düzenlemesinden komple konut dönüşümüne kadar ihtiyacınıza özel projeler yürütüyoruz.
+        Ev yenileme; altyapı sorunu olmayan ama görsel olarak eskimiş konutları, yapısal müdahaleye gerek kalmadan çağdaş bir görünüme kavuşturmaktır. Zemin kaplaması, duvar rengi, mutfak donanımı, banyo aksesuarları ve aydınlatma gibi unsurları güncelleyerek mekanı kısa sürede dönüştürüyoruz.
       </p>
       <p class="text-muted leading-relaxed mb-4">
-        Kısmi yenileme mi istiyorsunuz, yoksa evi baştan sona mı dönüştürüyorsunuz? Her iki durumda da tasarım, malzeme tedariki, usta koordinasyonu ve şantiye yönetiminin tamamını üstleniyoruz.
+        Kısmi yenileme mi istiyorsunuz? Yalnızca mutfak tezgahını ve dolaplarını mı yenilemek istiyorsunuz? Her ölçekte projeyi ele alıyor, kapsamı ihtiyacınıza göre belirliyoruz. <a href="/hizmetler/3d-tasarim" class="text-gold hover:underline">3D görselleştirme</a> ile yeni görünümünüzü uygulama başlamadan onaylayabilirsiniz.
       </p>
       <p class="text-muted leading-relaxed">
-        İstanbul genelinde Beşiktaş, Kadıköy, Şişli, Ataşehir ve tüm ilçelerde ev yenileme hizmeti sunuyoruz.
+        Altyapınızda sorun varsa veya yapısal değişiklik gerekiyorsa <a href="/hizmetler/anahtar-teslim/ev-tadilat" class="text-gold hover:underline">ev tadilat</a> hizmetimiz daha uygun bir seçenek olabilir. İstanbul genelinde Beşiktaş, Kadıköy, Şişli, Ataşehir ve tüm ilçelerde hizmet veriyoruz.
       </p>
     </div>
     <div>
       <h3 class="font-semibold text-charcoal mb-4 text-xs uppercase tracking-wider">Hizmete Dahil Olanlar</h3>
       <ul class="space-y-3">
         {[
-          'İç mimari konsept tasarım',
+          'İç mimari konsept tasarım ve renk danışmanlığı',
           'Fotorealistik 3D görselleştirme',
-          'Mutfak ve banyo yenileme',
-          'Salon ve yatak odası tasarımı',
-          'Elektrik, tesisat iyileştirme',
-          'Zemin, duvar ve tavan kaplamaları',
-          'Aydınlatma ve dekor uygulamaları',
+          'Zemin kaplama yenileme (parke, seramik, laminat)',
+          'Duvar boyama ve kaplama güncelleme',
+          'Mutfak tezgah ve dolap kapağı yenileme',
+          'Banyo armatür ve aksesuar değişimi',
+          'Aydınlatma armatürü güncelleme',
           'Son temizlik ve anahtar teslim',
         ].map(item => (
           <li class="flex items-start gap-3 text-sm text-muted">
@@ -95,6 +95,35 @@ const faqSchema = {
     </div>
   </div>
 
+  <!-- Ne Değişir -->
+  <div class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-8">
+      <span class="w-8 h-px bg-gold"></span>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Ev Yenileme ile Ne Değişir?</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      {[
+        {
+          title: 'Mekan Daha Geniş Hissettiriyor',
+          desc: 'Doğru renk paleti, açık tonlu zemin kaplaması ve stratejik aydınlatma değişimi mekânı görsel olarak büyütür. Yapısal değişiklik olmadan dairenizi çok daha ferah ve modern hissettirmek mümkündür.',
+        },
+        {
+          title: 'Mutfak ve Banyo Çağdaş Görünüm Kazanıyor',
+          desc: 'Tezgah, dolap kapağı ve armatür değişimi gibi müdahaleler kısa sürede büyük etki yaratır. Komple söküp yeniden kurmak yerine mevcut altyapıyı koruyarak yalnızca görünen yüzeyleri güncelleyebilirsiniz.',
+        },
+        {
+          title: 'Aydınlatma Atmosferi Dönüştürüyor',
+          desc: 'Eski spot ampullerin yerini LED armatürler, duvar lambası veya sarkıt aydınlatmalar aldığında mekanın ambiyansı köklü biçimde değişir. Aydınlatma tasarımı ev yenilemenin en hızlı geri dönüş sağlayan adımlarından biridir.',
+        },
+      ].map(item => (
+        <div class="bg-white p-6 border border-border">
+          <h3 class="font-semibold text-charcoal mb-3 text-sm">{item.title}</h3>
+          <p class="text-muted text-sm leading-relaxed">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
   <!-- Process -->
   <div class="py-12 border-b border-border">
     <div class="flex items-center gap-3 mb-8">
@@ -103,11 +132,11 @@ const faqSchema = {
     </div>
     <div class="grid md:grid-cols-5 gap-6">
       {[
-        { step: '01', title: 'Ücretsiz Keşif', desc: 'Evinizi ve yaşam tarzınızı yerinde değerlendiriyoruz.' },
-        { step: '02', title: '3D Tasarım', desc: 'Mekanınızı gerçekçi görsellerle deneyimleyin ve onaylayın.' },
-        { step: '03', title: 'Sözleşme', desc: 'Kesin bütçe ve takvim belirlenerek sözleşme imzalanır.' },
-        { step: '04', title: 'Uygulama', desc: 'Şantiye yönetimi tamamen bizde. Sizi düzenli bilgilendiriyoruz.' },
-        { step: '05', title: 'Teslim', desc: 'Temizlenmiş, eksiksiz hazır evinizi teslim alırsınız.' },
+        { step: '01', title: 'Ücretsiz Keşif', desc: 'Evinizin mevcut durumunu ve yenileme hedeflerinizi yerinde değerlendiriyoruz. Tadilat mı yenileme mi gerektiğini de bu aşamada birlikte belirliyoruz.' },
+        { step: '02', title: '3D Tasarım', desc: 'Yeni görünümü fotorealistik görsellerle deneyimleyin ve onaylayın. Malzeme ve renk seçimleri bu aşamada kesinleşir.' },
+        { step: '03', title: 'Sözleşme', desc: 'Kesin bütçe ve takvim belirlenerek sözleşme imzalanır. Yenileme projeleri genellikle daha hızlı ve öngörülebilir bir takvimle ilerler.' },
+        { step: '04', title: 'Uygulama', desc: 'Şantiye yönetimi ve usta koordinasyonu tamamen bizde. Mümkün olan minimum aksaklıkla, hızlı ve temiz çalışıyoruz.' },
+        { step: '05', title: 'Teslim', desc: 'Temizlenmiş, eksiksiz yenilenmiş evinizi teslim alırsınız. Teslim sonrası işçilik garantisi sözleşmede belirtilir.' },
       ].map(item => (
         <div class="text-center">
           <div class="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-3">
@@ -141,10 +170,10 @@ const faqSchema = {
     </div>
     <div class="divide-y divide-border">
       {[
-        { q: 'Ev yenileme ne kadar sürer?', a: 'Standart bir daire yenilemesi (80–120 m²) genellikle 4–8 hafta içinde tamamlanmaktadır. Kapsam ve malzeme seçimine göre bu süre değişebilir. Sözleşmede kesin takvim belirlenir.' },
-        { q: 'Yenileme süresince evde oturabilir miyim?', a: 'Komple daire yenilemelerinde evde oturmanızı tavsiye etmiyoruz. Tek oda veya mutfak-banyo gibi kısmi yenilemelerde belirli dönemlerde mümkün olabilir.' },
-        { q: 'Sadece mutfak veya banyo yenileyebilir miyim?', a: 'Evet. Yalnızca mutfak yenileme, banyo yenileme veya tek oda yenileme gibi kısmi projeler de yürütüyoruz. İhtiyacınıza özel kapsam belirlenir.' },
-        { q: 'Ev yenileme bütçesi nasıl belirlenir?', a: 'Bütçe; dairenin büyüklüğü, mevcut yapı durumu, seçilen malzeme kalitesi ve yenileme kapsamına göre şekillenir. Ücretsiz keşif ziyaretimizde projenize özel bütçe sunuyoruz.' },
+        { q: 'Ev yenileme ne kadar sürer?', a: 'Yapısal müdahale içermeyen bir daire yenilemesi (80–120 m²) genellikle 2–5 hafta içinde tamamlanabilir. Yalnızca boyama ve zemin değişimi gibi minimal projeler 1–2 haftada bitebilir. Kapsam büyüdükçe süre uzar; keşif ziyaretimizde projenize özel takvim sunuyoruz.' },
+        { q: 'Yenileme ile tadilat arasındaki fark nedir?', a: 'Yenileme; mevcut yapıyı bozmadan estetik ve işlevsel güncellemeler yapmak demektir — zemin değişimi, boyama, donanım yenileme, aydınlatma güncelleme gibi işleri kapsar. Tadilat ise elektrik, tesisat, duvar ve yapısal müdahaleleri içerir. Evinizin altyapısı sorunsuzsa yenileme daha hızlı ve daha ekonomik bir seçenektir.' },
+        { q: 'Yenileme süresince evde oturabilir miyim?', a: 'Kısmi yenileme projelerinde (ör. tek oda veya banyo) çoğunlukla evde oturabilirsiniz. Komple daire yenilemesinde ise zemin ve boyama işlemleri sırasında kısa süreli taşınma önerilir. Her projenin planlamasında bu konuyu müşterimizle önceden değerlendiriyor, mümkün olan en az kesinti için takvimi buna göre düzenliyoruz.' },
+        { q: 'Ev yenileme bütçesi nasıl belirlenir?', a: 'Bütçe; dairenin büyüklüğü, seçilen malzeme kalitesi ve yenileme kapsamına göre şekillenir. Yenileme, altyapı müdahalesi içermediğinden tadilata göre genellikle daha ekonomiktir. Ücretsiz keşif ziyaretimizde tüm kalemleri içeren şeffaf bir teklif sunuyoruz; sözleşme imzalandıktan sonra ek ücret talep edilmez.' },
       ].map((faq, i) => (
         <details class="group py-5" open={i === 0}>
           <summary class="flex items-start justify-between cursor-pointer list-none gap-4">

@@ -8,7 +8,7 @@ const serviceSchema = {
   "@type": "Service",
   "serviceType": "Mağaza ve Dükkan Yenileme",
   "name": "İstanbul Mağaza ve Dükkan Yenileme",
-  "description": "İstanbul'da anahtar teslim mağaza ve dükkan iç mekan yenileme. Markanızı yansıtan, müşteri yolculuğunu optimize eden perakende mekan tasarımı.",
+  "description": "İstanbul'da anahtar teslim mağaza ve dükkan yenileme. Altyapıya dokunmadan hızlı estetik güncelleme, raf düzeni yenileme ve görsel kimlik tazelemesi.",
   "provider": { "@type": "Organization", "@id": `${CANONICAL_BASE}/#organization`, "name": "Master İç Mimarlık" },
   "areaServed": { "@type": "City", "name": "İstanbul" },
   "url": `${CANONICAL_BASE}/hizmetler/anahtar-teslim/magaza-dukkan-yenileme`,
@@ -19,20 +19,21 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Mağaza yenileme ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Ortalama bir mağaza yenileme projesi (60–150 m²) 4–7 hafta içinde tamamlanmaktadır. Kapalı kalma süresini minimize etmek için hızlı uygulama planı oluşturuyoruz." } },
-    { "@type": "Question", "name": "Mağaza yenileme bütçesi nasıl belirlenir?", "acceptedAnswer": { "@type": "Answer", "text": "Bütçe; mekanın büyüklüğü, mevcut yapı durumu ve seçilen malzeme kalitesine göre belirlenir. Ücretsiz keşif ziyaretimizde projenize özel bütçe sunuyoruz." } },
-    { "@type": "Question", "name": "Hangi mağaza türleri için hizmet veriyorsunuz?", "acceptedAnswer": { "@type": "Answer", "text": "Giyim mağazaları, butikler, eczaneler, güzellik salonları, elektronik mağazaları ve her türlü perakende mekan için hizmet veriyoruz." } }
+    { "@type": "Question", "name": "Mağaza yenileme ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Altyapıya dokunmayan bir mağaza yenilemesi genellikle 1–3 haftada tamamlanabilir. Zemin, boya ve raf değişimi gibi minimal projeler bu sürenin altında bitebilir. Bu süre, mağazanızın kapalı kalma süresini ve gelir kaybını minimumda tutar." } },
+    { "@type": "Question", "name": "Mağaza yenileme ile tadilat arasındaki fark nedir?", "acceptedAnswer": { "@type": "Answer", "text": "Mağaza yenilemesi; mevcut elektrik, vitrin sistemi ve yapısal altyapıya dokunmadan görünümü güncellemek demektir — raf, boya, zemin, aydınlatma armatürü ve dekor değişimleri bu kapsamdadır. Tadilat ise altyapı değişikliği veya yapısal müdahale içerir. Altyapınız sorunsuzsa yenileme çok daha hızlı ve ekonomiktir." } },
+    { "@type": "Question", "name": "Mağaza yenileme bütçesi nasıl belirlenir?", "acceptedAnswer": { "@type": "Answer", "text": "Bütçe; mağazanın büyüklüğü, seçilen malzeme kalitesi ve yenileme kapsamına göre belirlenir. Altyapı müdahalesi olmadığından yenileme, tadilata kıyasla çok daha ekonomiktir. Ücretsiz keşif ziyaretimizde tüm kalemleri içeren şeffaf bütçe sunuyoruz." } },
+    { "@type": "Question", "name": "Yenileme süresince mağaza açık kalabilir mi?", "acceptedAnswer": { "@type": "Answer", "text": "Mağaza yenilemesinde altyapı müdahalesi olmadığından çoğu zaman mağaza açık tutulabilir. Zemin veya boyama gibi işler için kapalı saatlerde veya hafta sonu çalışmayı tercih edebiliriz. Müşteri trafiğini en az etkileyen takvimi birlikte planlıyoruz." } }
   ]
 };
 ---
 
 <ServiceLayout
-  title="İstanbul Mağaza ve Dükkan Yenileme | Master İç Mimarlık"
-  description="İstanbul'da mağaza ve dükkan yenileme. Markanızı yansıtan, müşteri deneyimini artıran anahtar teslim perakende iç mekan tasarımı. Nişantaşı, Levent, Kadıköy. Ücretsiz keşif: 0533 039 15 65"
+  title="İstanbul Mağaza ve Dükkan Yenileme | Hızlı Görsel Güncelleme | Master İç Mimarlık"
+  description="İstanbul'da mağaza ve dükkan yenileme. Altyapıya dokunmadan hızlı estetik güncelleme ve görsel kimlik tazelemesi. Nişantaşı, Levent, Kadıköy. Ücretsiz keşif: 0533 039 15 65"
   canonicalUrl={`${CANONICAL_BASE}/hizmetler/anahtar-teslim/magaza-dukkan-yenileme`}
   h1="İstanbul Mağaza ve Dükkan Yenileme"
   eyebrow="Anahtar Teslim"
-  lead="Markanızı yansıtan, müşteri yolculuğunu optimize eden mağaza ve dükkan tasarımı. Vitrin düzenlemesinden iç mekana, ürün sergileme alanlarından kasaya kadar her detayı satış hedeflerinize göre tasarlıyoruz."
+  lead="Altyapısı sağlam ama görünümü eskimiş mağazalar için hızlı ve ekonomik çözüm. Raf, zemin, aydınlatma ve dekor güncellemeleriyle mağazanızı kısa kapanma süresinde yeniliyoruz."
   breadcrumb={[
     { label: "Ana Sayfa", href: "/" },
     { label: "Hizmetler", href: "/#hizmetler" },
@@ -44,9 +45,9 @@ const faqSchema = {
 
   <!-- Proje Görselleri -->
   <div class="w-full mb-12 grid grid-cols-1 md:grid-cols-3 gap-3">
-    <img src={optimizedImage('/images/salon3.jpeg')} alt="Mağaza ve dükkan yenileme — ticari mekan tasarımı" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
-    <img src={optimizedImage('/images/salonvemutfak.jpeg')} alt="Mağaza ve dükkan yenileme — iç mekan" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
-    <img src={optimizedImage('/images/merdiven1.jpeg')} alt="Mağaza ve dükkan yenileme — detay tasarımı" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
+    <img src={optimizedImage('/images/salon3.jpeg')} alt="Mağaza ve dükkan yenileme — görsel güncelleme" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
+    <img src={optimizedImage('/images/salonvemutfak.jpeg')} alt="Mağaza ve dükkan yenileme — estetik tazeleme" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
+    <img src={optimizedImage('/images/merdiven1.jpeg')} alt="Mağaza ve dükkan yenileme — dekor detayı" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
   </div>
 
   <!-- Scope -->
@@ -54,27 +55,27 @@ const faqSchema = {
     <div>
       <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Mağaza & Dükkan Yenileme Hizmetimiz</h2>
       <p class="text-muted leading-relaxed mb-4">
-        Perakende mekanın tasarımı, müşterinin satın alma kararını doğrudan etkiler. Doğru aydınlatma, ürün sergileme düzeni ve müşteri yolculuğu planlaması satışlarınızı artırır.
+        Mağaza yenilemesi; mevcut elektrik, vitrin sistemi ve yapısal altyapıya dokunmadan görsel kimliği güncellemek demektir. Raf ve sergileme düzeni yenileme, boya ve kaplama değişimi, aydınlatma armatürü güncelleme gibi işlemlerle mağazanın yeni ürün sezonlarına veya marka güncellemelerine ayak uydurması sağlanır.
       </p>
       <p class="text-muted leading-relaxed mb-4">
-        Vitrin tasarımından iç mekana, ürün raflarından kasa alanına kadar tüm detayları marka kimliğiniz ve satış hedeflerinize göre optimize ediyoruz.
+        Perakende sektöründe görünüm güncellemesi hem müşteri ilgisini tazeler hem de çevrimiçi paylaşımlarda mağazanızın fotoğraflanabilirliğini artırır. <a href="/hizmetler/3d-tasarim" class="text-gold hover:underline">3D görselleştirme</a> ile yeni düzeni uygulamadan önce onaylayabilirsiniz.
       </p>
       <p class="text-muted leading-relaxed">
-        İstanbul genelinde Nişantaşı, Levent, Kadıköy, Bağcılar ve tüm ilçelerde hizmet veriyoruz.
+        Elektrik altyapısı veya yapısal müdahale gerekiyorsa <a href="/hizmetler/anahtar-teslim/magaza-dukkan-tadilat" class="text-gold hover:underline">mağaza tadilat</a> hizmetimiz daha uygun seçenektir. Nişantaşı, Levent, Kadıköy, Beşiktaş ve tüm İstanbul'da hizmet veriyoruz.
       </p>
     </div>
     <div>
       <h3 class="font-semibold text-charcoal mb-4 text-xs uppercase tracking-wider">Hizmete Dahil Olanlar</h3>
       <ul class="space-y-3">
         {[
-          'Marka kimliğine uygun konsept tasarım',
+          'Marka kimliğine uygun konsept güncelleme',
           'Fotorealistik 3D görselleştirme',
-          'Vitrin ve ön cephe tasarımı',
-          'Ürün sergileme ve raf planlaması',
-          'Müşteri yolculuğu optimizasyonu',
-          'Ticari aydınlatma tasarımı',
-          'Zemin, duvar ve tavan kaplamaları',
-          'Kasa ve ödeme alanı çözümleri',
+          'Raf ve sergileme düzeni yenileme',
+          'Zemin kaplama güncellemesi',
+          'Duvar boyama ve grafik uygulama',
+          'Aydınlatma armatürü değişimi',
+          'Vitrin dekor ve görsel düzenleme',
+          'Son temizlik ve anahtar teslim',
         ].map(item => (
           <li class="flex items-start gap-3 text-sm text-muted">
             <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
@@ -89,6 +90,35 @@ const faqSchema = {
     </div>
   </div>
 
+  <!-- Ne Değişir -->
+  <div class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-8">
+      <span class="w-8 h-px bg-gold"></span>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Mağaza Yenileme ile Ne Değişir?</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      {[
+        {
+          title: 'Müşteri Dikkatini Yeniden Çekiyor',
+          desc: 'Aynı konumdaki uzun süreli mağazalar zamanla görünür olmayı bırakır. Taze bir görsel kimlik müşterilerin dikkatini yeniden çeker ve sosyal medyada mağazanın organik olarak paylaşılmasını artırır.',
+        },
+        {
+          title: 'Ürün Keşfi Kolaylaşıyor',
+          desc: 'Yeniden planlanan raf ve sergileme düzeni müşterinin ürünlere ulaşımını kolaylaştırır. Doğru aydınlatma ve renk tercihi ürünleri daha cazip gösterir, ortalama sepet değerini artırabilir.',
+        },
+        {
+          title: 'Hızlı Geri Dönüş, Kısa Kapanma',
+          desc: 'Altyapı değişikliği olmadığından yenileme çok daha hızlı tamamlanır ve mağazanızın kapalı kalma süresi minimumda tutulur. Kısmi yenilemeler için kapanmaya bile gerek kalmayabilir.',
+        },
+      ].map(item => (
+        <div class="bg-white p-6 border border-border">
+          <h3 class="font-semibold text-charcoal mb-3 text-sm">{item.title}</h3>
+          <p class="text-muted text-sm leading-relaxed">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
   <!-- Process -->
   <div class="py-12 border-b border-border">
     <div class="flex items-center gap-3 mb-8">
@@ -97,11 +127,11 @@ const faqSchema = {
     </div>
     <div class="grid md:grid-cols-5 gap-6">
       {[
-        { step: '01', title: 'Ücretsiz Keşif', desc: 'Mağazanızı ve marka hedeflerinizi yerinde değerlendiriyoruz.' },
-        { step: '02', title: 'Konsept & 3D', desc: 'Marka kimliğinize uygun tasarımı 3D ile görselleştiriyoruz.' },
-        { step: '03', title: 'Sözleşme', desc: 'Kesin bütçe ve takvim belirlenerek sözleşme imzalanır.' },
-        { step: '04', title: 'Uygulama', desc: 'Hızlı ve verimli uygulama, kapalı süre minimumda.' },
-        { step: '05', title: 'Teslim', desc: 'Hazır mağazanızı teslim alıp açılışa geçiyorsunuz.' },
+        { step: '01', title: 'Ücretsiz Keşif', desc: 'Mağazanızı ve marka hedeflerinizi yerinde değerlendiriyoruz. Yenileme mi tadilat mı gerektiğini de bu aşamada netleştiriyoruz.' },
+        { step: '02', title: 'Konsept & 3D', desc: 'Marka kimliğinize uygun yeni görünümü 3D ile görselleştiriyoruz. Raf ve sergileme planı da bu aşamada onaylanır.' },
+        { step: '03', title: 'Sözleşme', desc: 'Kesin bütçe ve takvim belirlenerek sözleşme imzalanır. Kısa kapalı kalma süresi taahhüt edilir.' },
+        { step: '04', title: 'Uygulama', desc: 'Hızlı ve temiz çalışma; mümkün olduğunda mağaza açıkken ilerlenebilir. Yoğun işler kapalı saatlerde tamamlanır.' },
+        { step: '05', title: 'Teslim', desc: 'Yenilenmiş mağazanızı teslim alıp açılışa geçiyorsunuz. İşçilik garantisi sözleşmede belirtilir.' },
       ].map(item => (
         <div class="text-center">
           <div class="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-3">
@@ -135,9 +165,10 @@ const faqSchema = {
     </div>
     <div class="divide-y divide-border">
       {[
-        { q: 'Mağaza yenileme ne kadar sürer?', a: 'Ortalama bir mağaza yenileme projesi (60–150 m²) 4–7 hafta içinde tamamlanmaktadır. Kapalı kalma süresini minimize etmek için hızlı uygulama planı oluşturuyoruz.' },
-        { q: 'Mağaza yenileme bütçesi nasıl belirlenir?', a: 'Bütçe; mekanın büyüklüğü, mevcut yapı durumu ve seçilen malzeme kalitesine göre belirlenir. Ücretsiz keşif ziyaretimizde projenize özel bütçe sunuyoruz.' },
-        { q: 'Hangi mağaza türleri için hizmet veriyorsunuz?', a: 'Giyim mağazaları, butikler, eczaneler, güzellik salonları, elektronik mağazaları ve her türlü perakende mekan için hizmet veriyoruz.' },
+        { q: 'Mağaza yenileme ne kadar sürer?', a: 'Altyapıya dokunmayan bir mağaza yenilemesi genellikle 1–3 haftada tamamlanabilir. Zemin, boya ve raf değişimi gibi minimal projeler bu sürenin altında bitebilir. Bu süre, mağazanızın kapalı kalma süresini ve gelir kaybını minimumda tutar.' },
+        { q: 'Mağaza yenileme ile tadilat arasındaki fark nedir?', a: 'Mağaza yenilemesi; mevcut elektrik, vitrin sistemi ve yapısal altyapıya dokunmadan görünümü güncellemek demektir — raf, boya, zemin, aydınlatma armatürü ve dekor değişimleri bu kapsamdadır. Tadilat ise altyapı değişikliği veya yapısal müdahale içerir. Altyapınız sorunsuzsa yenileme çok daha hızlı ve ekonomiktir.' },
+        { q: 'Mağaza yenileme bütçesi nasıl belirlenir?', a: 'Bütçe; mağazanın büyüklüğü, seçilen malzeme kalitesi ve yenileme kapsamına göre belirlenir. Altyapı müdahalesi olmadığından yenileme, tadilata kıyasla çok daha ekonomiktir. Ücretsiz keşif ziyaretimizde tüm kalemleri içeren şeffaf bütçe sunuyoruz.' },
+        { q: 'Yenileme süresince mağaza açık kalabilir mi?', a: 'Mağaza yenilemesinde altyapı müdahalesi olmadığından çoğu zaman mağaza açık tutulabilir. Zemin veya boyama gibi işler için kapalı saatlerde veya hafta sonu çalışmayı tercih edebiliriz. Müşteri trafiğini en az etkileyen takvimi birlikte planlıyoruz.' },
       ].map((faq, i) => (
         <details class="group py-5" open={i === 0}>
           <summary class="flex items-start justify-between cursor-pointer list-none gap-4">

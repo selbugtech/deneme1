@@ -8,7 +8,7 @@ const serviceSchema = {
   "@type": "Service",
   "serviceType": "Ofis Tadilat",
   "name": "İstanbul Ofis Tadilat",
-  "description": "İstanbul'da anahtar teslim ofis tadilat. Çalışan verimliliğini artıran, kurumsal kimliği yansıtan modern ofis iç mekan tasarımı.",
+  "description": "İstanbul'da anahtar teslim ofis tadilat. Elektrik, tesisat, bölme sistemleri ve yapısal müdahale dahil kapsamlı kurumsal mekan dönüşümü.",
   "provider": { "@type": "Organization", "@id": `${CANONICAL_BASE}/#organization`, "name": "Master İç Mimarlık" },
   "areaServed": { "@type": "City", "name": "İstanbul" },
   "url": `${CANONICAL_BASE}/hizmetler/anahtar-teslim/ofis-tadilat`,
@@ -19,20 +19,22 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Ofis tadilat ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Ortalama bir ofis tadilatı (100–200 m²) 5–9 hafta içinde tamamlanmaktadır. Hafta sonu ve mesai dışı çalışma ile iş sürekliliği korunabilir." } },
-    { "@type": "Question", "name": "Çalışanlar ofiste çalışırken tadilat yapılabilir mi?", "acceptedAnswer": { "@type": "Answer", "text": "Kısmi projelerde ve faz faz uygulama planı ile ofis açıkken çalışmak mümkündür. Planlamayı ihtiyacınıza göre birlikte düzenliyoruz." } },
-    { "@type": "Question", "name": "Ofis tadilat bütçesi nasıl belirlenir?", "acceptedAnswer": { "@type": "Answer", "text": "Bütçe; mekanın büyüklüğü, mevcut yapı durumu ve seçilen malzeme kalitesine göre belirlenir. Ücretsiz keşif ziyaretimizde projenize özel bütçe sunuyoruz." } }
+    { "@type": "Question", "name": "Ofis tadilat ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Ortalama bir ofis tadilatı (100–200 m²) 5–9 hafta içinde tamamlanmaktadır. Elektrik altyapısı yenileme, bölme duvar kurulumu veya HVAC değişikliği gibi teknik işler süreci uzatabilir. Hafta sonu ve mesai dışı çalışma ile iş sürekliliği korunabilir; bu tercih keşif aşamasında planlanır." } },
+    { "@type": "Question", "name": "Çalışanlar ofiste çalışırken tadilat yapılabilir mi?", "acceptedAnswer": { "@type": "Answer", "text": "Kısmi projelerde ve faz faz uygulama planı ile ofis açıkken çalışmak mümkündür. Ancak elektrik veya tesisat altyapısı yenilenecekse belirli alanların geçici olarak kapatılması gerekir. İş sürekliliğini koruyacak en verimli planlamayı keşif ziyaretimizde birlikte oluşturuyoruz." } },
+    { "@type": "Question", "name": "Ofis tadilat bütçesi nasıl belirlenir?", "acceptedAnswer": { "@type": "Answer", "text": "Bütçe; mekanın büyüklüğü, mevcut yapı durumu, teknik altyapı gereksinimleri ve seçilen malzeme kalitesine göre belirlenir. Açık ofis planı oluşturmak için duvar yıkımı veya elektrik güçlendirmesi gibi yapısal işler maliyeti artırır. Ücretsiz keşif ziyaretimizde projenize özel şeffaf bütçe sunuyoruz." } },
+    { "@type": "Question", "name": "Kurumsal kimliğimizi tasarıma nasıl yansıtıyorsunuz?", "acceptedAnswer": { "@type": "Answer", "text": "Kurumsal renk paleti, logo ve marka yönergelerinizi tasarıma entegre ediyoruz. Resepsiyon, toplantı odaları ve çalışma alanlarını kurumsal kimliğinizle uyumlu şekilde tasarlıyoruz. 3D görselleştirme aşamasında onayınızı alarak uygulamaya geçiyoruz." } },
+    { "@type": "Question", "name": "Ofis tadilat için ruhsat gerekir mi?", "acceptedAnswer": { "@type": "Answer", "text": "Taşıyıcı duvar müdahalesi veya mekanik sistem değişikliği içeren kapsamlı projelerde bina yönetimi ve belediye onayı gerekebilir. Standart bölme duvar, kaplama ve elektrik yenileme için genellikle ruhsat gerekmez. Projeniz izin gerektiriyorsa bu süreci sizin adınıza takip ediyoruz." } }
   ]
 };
 ---
 
 <ServiceLayout
   title="İstanbul Ofis Tadilat | Anahtar Teslim Ofis Tadilat | Master İç Mimarlık"
-  description="İstanbul'da ofis tadilat. Çalışan verimliliğini artıran, kurumsal kimliği yansıtan anahtar teslim ofis tasarımı. Levent, Maslak, Beşiktaş. Ücretsiz keşif: 0533 039 15 65"
+  description="İstanbul'da ofis tadilat. Elektrik, tesisat ve yapısal müdahale dahil kurumsal mekan dönüşümü. Levent, Maslak, Beşiktaş. Ücretsiz keşif: 0533 039 15 65"
   canonicalUrl={`${CANONICAL_BASE}/hizmetler/anahtar-teslim/ofis-tadilat`}
   h1="İstanbul Ofis Tadilat"
   eyebrow="Anahtar Teslim"
-  lead="Çalışan verimliliğini ve marka imajını güçlendiren kurumsal ofis iç mekan çözümleri. Açık ofis düzeninden özel kabinlere, toplantı odalarından resepsiyon alanlarına kadar tüm kurumsal proje türleri."
+  lead="Elektrik altyapısından bölme duvar sistemlerine, HVAC'tan akustik iyileştirmeye kadar teknik müdahale gerektiren kapsamlı ofis dönüşümleri. Çalışan verimliliğini ve kurumsal imajı güçlendiren işlevsel mekanlar."
   breadcrumb={[
     { label: "Ana Sayfa", href: "/" },
     { label: "Hizmetler", href: "/#hizmetler" },
@@ -53,13 +55,13 @@ const faqSchema = {
     <div>
       <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Ofis Tadilat Hizmetimiz</h2>
       <p class="text-muted leading-relaxed mb-4">
-        Çalışma ortamı, ekip performansı ve şirket kültürü üzerinde doğrudan etkiye sahiptir. Modern, fonksiyonel ve estetik bir ofis; çalışan memnuniyetini artırır ve kurumsal imajı güçlendirir.
+        Ofis tadilat; yalnızca mobilya değiştirmek değil, elektrik altyapısını güçlendirmek, bölme duvar sistemlerini yeniden kurmak, ısıtma-soğutma ve akustik sistemleri iyileştirmek gibi teknik müdahaleleri de kapsar. Özellikle eski binalarda veya büyüyen şirketlerde bu tür kapsamlı dönüşüm kaçınılmaz hale gelir.
       </p>
       <p class="text-muted leading-relaxed mb-4">
-        Açık ofis planlamasından kapalı kabin düzenlemelerine, toplantı odalarından lobi ve resepsiyon alanlarına kadar tüm kurumsal mekan ihtiyaçlarını karşılıyoruz.
+        Açık ofis planlamasından kapalı kabin düzenlemelerine, toplantı odalarından lobi ve resepsiyon alanlarına kadar tüm kurumsal mekan ihtiyaçlarını karşılıyoruz. <a href="/hizmetler/3d-tasarim" class="text-gold hover:underline">3D görselleştirme</a> ile ofis planınızı uygulamadan önce onaylayabilirsiniz.
       </p>
       <p class="text-muted leading-relaxed">
-        İstanbul genelinde Levent, Maslak, Beşiktaş, Şişli ve tüm iş merkezlerinde hizmet veriyoruz.
+        Yalnızca estetik bir güncelleme ihtiyacınız varsa <a href="/hizmetler/anahtar-teslim/ofis-yenileme" class="text-gold hover:underline">ofis yenileme</a> hizmetimiz daha hızlı ve ekonomik bir seçenek olabilir. İstanbul genelinde Levent, Maslak, Beşiktaş, Şişli ve tüm iş merkezlerinde hizmet veriyoruz.
       </p>
     </div>
     <div>
@@ -68,12 +70,12 @@ const faqSchema = {
         {[
           'Kurumsal konsept ve alan planlaması',
           'Fotorealistik 3D görselleştirme',
+          'Elektrik altyapısı güçlendirme',
+          'Bölme duvar ve cam sistemleri kurulumu',
+          'HVAC ve akustik iyileştirme',
           'Açık ofis ve kabinleme tasarımı',
           'Toplantı odası çözümleri',
-          'Aydınlatma ve akustik iyileştirme',
-          'Bölme duvar ve cam sistemleri',
           'Zemin, duvar ve tavan kaplamaları',
-          'Kablo yönetimi ve teknik altyapı',
         ].map(item => (
           <li class="flex items-start gap-3 text-sm text-muted">
             <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
@@ -88,6 +90,35 @@ const faqSchema = {
     </div>
   </div>
 
+  <!-- Ne Zaman Gerekir -->
+  <div class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-8">
+      <span class="w-8 h-px bg-gold"></span>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Ofis Tadilat Ne Zaman Gerekir?</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      {[
+        {
+          title: 'Teknik Altyapı Yetersiz Kalıyor',
+          desc: 'Ekip büyüdükçe elektrik hatları ve veri altyapısı yetersiz kalabilir. Uzaktan çalışma düzeninin yaygınlaşmasıyla toplantı odası ve ses yalıtımı ihtiyacı da artıyor. Altyapı sorunlarını yalnızca kaplama değiştirerek çözmek mümkün değildir.',
+        },
+        {
+          title: 'Şirket Taşındı veya Genişledi',
+          desc: 'Yeni kiralanan ofis alanının mevcut düzeni şirket kültürünüze uymuyorsa kapsamlı bir tadilat gerekir. Açık ofis planına geçiş, toplantı odası ekleme veya resepsiyon alanı oluşturma gibi ihtiyaçlar bölme sistemlerinin yeniden kurulmasını zorunlu kılar.',
+        },
+        {
+          title: 'Kurumsal Kimlik Yenilendi',
+          desc: 'Yenilenen marka kimliği ofis ortamına yansıtılmak isteniyorsa yalnızca logoyu değiştirmek yeterli olmaz. Renk, malzeme ve alan kurgusu aracılığıyla kurumsal kimliği mekan deneyimine dönüştürmek kapsamlı bir tadilat süreci gerektirir.',
+        },
+      ].map(item => (
+        <div class="bg-white p-6 border border-border">
+          <h3 class="font-semibold text-charcoal mb-3 text-sm">{item.title}</h3>
+          <p class="text-muted text-sm leading-relaxed">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
   <!-- Process -->
   <div class="py-12 border-b border-border">
     <div class="flex items-center gap-3 mb-8">
@@ -96,11 +127,11 @@ const faqSchema = {
     </div>
     <div class="grid md:grid-cols-5 gap-6">
       {[
-        { step: '01', title: 'Ücretsiz Keşif', desc: 'Ofisinizi ve çalışma kültürünüzü yerinde değerlendiriyoruz.' },
-        { step: '02', title: 'Tasarım & 3D', desc: 'Kurumsal kimliğinize uygun tasarımı 3D ile görselleştiriyoruz.' },
-        { step: '03', title: 'Sözleşme', desc: 'Kesin bütçe ve takvim belirlenerek sözleşme imzalanır.' },
-        { step: '04', title: 'Uygulama', desc: 'İş sürekliliğini koruyarak faz faz uygulama yapılabilir.' },
-        { step: '05', title: 'Teslim', desc: 'Hazır ofisinizi teslim alıp operasyona devam ediyorsunuz.' },
+        { step: '01', title: 'Ücretsiz Keşif', desc: 'Ofisinizi ve çalışma kültürünüzü yerinde değerlendiriyoruz. Teknik altyapı durumu ve bina yönetimi gereksinimleri de bu aşamada tespit edilir.' },
+        { step: '02', title: 'Tasarım & 3D', desc: 'Kurumsal kimliğinize uygun tasarımı 3D ile görselleştiriyoruz. Alan planı, mobilya yerleşimi ve malzeme seçimleri onaylanır.' },
+        { step: '03', title: 'Sözleşme', desc: 'Kesin bütçe ve takvim belirlenerek sözleşme imzalanır. Faz faz uygulama planı iş sürekliliğini korumanızı sağlar.' },
+        { step: '04', title: 'Uygulama', desc: 'İş sürekliliğini koruyarak faz faz uygulama yapılabilir. Şantiye yönetimi ve tüm usta koordinasyonu bizde.' },
+        { step: '05', title: 'Teslim', desc: 'Hazır ofisinizi teslim alıp operasyona devam ediyorsunuz. Teslim sonrası garanti kapsamı sözleşmede belirtilir.' },
       ].map(item => (
         <div class="text-center">
           <div class="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-3">
@@ -134,9 +165,11 @@ const faqSchema = {
     </div>
     <div class="divide-y divide-border">
       {[
-        { q: 'Ofis tadilat ne kadar sürer?', a: 'Ortalama bir ofis tadilatı (100–200 m²) 5–9 hafta içinde tamamlanmaktadır. Hafta sonu ve mesai dışı çalışma ile iş sürekliliği korunabilir.' },
-        { q: 'Çalışanlar ofiste çalışırken tadilat yapılabilir mi?', a: 'Kısmi projelerde ve faz faz uygulama planı ile ofis açıkken çalışmak mümkündür. Planlamayı ihtiyacınıza göre birlikte düzenliyoruz.' },
-        { q: 'Ofis tadilat bütçesi nasıl belirlenir?', a: 'Bütçe; mekanın büyüklüğü, mevcut yapı durumu ve seçilen malzeme kalitesine göre belirlenir. Ücretsiz keşif ziyaretimizde projenize özel bütçe sunuyoruz.' },
+        { q: 'Ofis tadilat ne kadar sürer?', a: 'Ortalama bir ofis tadilatı (100–200 m²) 5–9 hafta içinde tamamlanmaktadır. Elektrik altyapısı yenileme, bölme duvar kurulumu veya HVAC değişikliği gibi teknik işler süreci uzatabilir. Hafta sonu ve mesai dışı çalışma ile iş sürekliliği korunabilir; bu tercih keşif aşamasında planlanır.' },
+        { q: 'Çalışanlar ofiste çalışırken tadilat yapılabilir mi?', a: 'Kısmi projelerde ve faz faz uygulama planı ile ofis açıkken çalışmak mümkündür. Ancak elektrik veya tesisat altyapısı yenilenecekse belirli alanların geçici olarak kapatılması gerekir. İş sürekliliğini koruyacak en verimli planlamayı keşif ziyaretimizde birlikte oluşturuyoruz.' },
+        { q: 'Ofis tadilat bütçesi nasıl belirlenir?', a: 'Bütçe; mekanın büyüklüğü, mevcut yapı durumu, teknik altyapı gereksinimleri ve seçilen malzeme kalitesine göre belirlenir. Açık ofis planı oluşturmak için duvar yıkımı veya elektrik güçlendirmesi gibi yapısal işler maliyeti artırır. Ücretsiz keşif ziyaretimizde projenize özel şeffaf bütçe sunuyoruz.' },
+        { q: 'Kurumsal kimliğimizi tasarıma nasıl yansıtıyorsunuz?', a: 'Kurumsal renk paleti, logo ve marka yönergelerinizi tasarıma entegre ediyoruz. Resepsiyon, toplantı odaları ve çalışma alanlarını kurumsal kimliğinizle uyumlu şekilde tasarlıyoruz. 3D görselleştirme aşamasında onayınızı alarak uygulamaya geçiyoruz.' },
+        { q: 'Ofis tadilat için ruhsat gerekir mi?', a: 'Taşıyıcı duvar müdahalesi veya mekanik sistem değişikliği içeren kapsamlı projelerde bina yönetimi ve belediye onayı gerekebilir. Standart bölme duvar, kaplama ve elektrik yenileme için genellikle ruhsat gerekmez. Projeniz izin gerektiriyorsa bu süreci sizin adınıza takip ediyoruz.' },
       ].map((faq, i) => (
         <details class="group py-5" open={i === 0}>
           <summary class="flex items-start justify-between cursor-pointer list-none gap-4">

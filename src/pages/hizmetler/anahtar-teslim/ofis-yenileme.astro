@@ -7,8 +7,8 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   "serviceType": "Ofis Yenileme",
-  "name": "İstanbul Ofis Yenileme ve Tadilat",
-  "description": "İstanbul'da anahtar teslim ofis yenileme ve tadilat. Çalışan verimliliğini artıran, kurumsal kimliği yansıtan modern ofis iç mekan tasarımı.",
+  "name": "İstanbul Ofis Yenileme",
+  "description": "İstanbul'da anahtar teslim ofis yenileme. Yapısal müdahale gerektirmeyen estetik güncelleme, kaplama yenileme ve kurumsal görünüm tazelemesi.",
   "provider": { "@type": "Organization", "@id": `${CANONICAL_BASE}/#organization`, "name": "Master İç Mimarlık" },
   "areaServed": { "@type": "City", "name": "İstanbul" },
   "url": `${CANONICAL_BASE}/hizmetler/anahtar-teslim/ofis-yenileme`,
@@ -19,20 +19,21 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Ofis yenileme ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Ortalama bir ofis yenileme projesi (100–200 m²) 5–9 hafta içinde tamamlanmaktadır. Hafta sonu ve mesai dışı çalışma ile iş sürekliliği korunabilir." } },
-    { "@type": "Question", "name": "Çalışanlar ofiste çalışırken yenileme yapılabilir mi?", "acceptedAnswer": { "@type": "Answer", "text": "Kısmi projelerde ve faz faz uygulama planı ile ofis açıkken çalışmak mümkündür. Planlamayı ihtiyacınıza göre birlikte düzenliyoruz." } },
-    { "@type": "Question", "name": "Ofis yenileme bütçesi nasıl belirlenir?", "acceptedAnswer": { "@type": "Answer", "text": "Bütçe; mekanın büyüklüğü, mevcut yapı durumu ve seçilen malzeme kalitesine göre belirlenir. Ücretsiz keşif ziyaretimizde projenize özel bütçe sunuyoruz." } }
+    { "@type": "Question", "name": "Ofis yenileme ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Yapısal müdahale içermeyen bir ofis yenileme projesi (100–200 m²) genellikle 2–4 hafta içinde tamamlanabilir. Yalnızca boyama ve zemin değişimi gibi minimal projeler 1 haftada bitebilir. Hafta sonu ve mesai dışı çalışma ile iş sürekliliği korunur." } },
+    { "@type": "Question", "name": "Ofis yenileme ile tadilat arasındaki fark nedir?", "acceptedAnswer": { "@type": "Answer", "text": "Yenileme; mevcut elektrik, tesisat ve bölme sistemlerine dokunmadan estetik güncelleme yapmak demektir — zemin, boya, aydınlatma armatürleri ve mobilya gibi görünür unsurları kapsar. Tadilat ise altyapı değişikliği, duvar müdahalesi ve teknik sistem yenilemesi gerektirir. Ofisinizin altyapısı sorunsuzsa yenileme çok daha hızlı ve ekonomik bir seçenektir." } },
+    { "@type": "Question", "name": "Çalışanlar ofiste çalışırken yenileme yapılabilir mi?", "acceptedAnswer": { "@type": "Answer", "text": "Ofis yenilemesi yapısal müdahale içermediğinden çoğunlukla ofis açıkken yapılabilir. Alan alan ilerleyen bir takvimle çalışanları minimumda etkileyerek ilerliyoruz. Zemin veya boyama gibi kapsamlı işler için hafta sonu çalışmayı tercih eden müşterilerimize de bu seçeneği sunuyoruz." } },
+    { "@type": "Question", "name": "Ofis yenileme bütçesi nasıl belirlenir?", "acceptedAnswer": { "@type": "Answer", "text": "Bütçe; ofisin büyüklüğü, seçilen malzeme kalitesi ve yenileme kapsamına göre belirlenir. Altyapı müdahalesi olmadığından yenileme, tadilata kıyasla çok daha ekonomiktir. Ücretsiz keşif ziyaretimizde tüm kalemleri içeren şeffaf bir teklif sunuyoruz." } }
   ]
 };
 ---
 
 <ServiceLayout
-  title="İstanbul Ofis Yenileme ve Tadilat | Master İç Mimarlık"
-  description="İstanbul'da ofis yenileme ve tadilat. Çalışan verimliliğini artıran, kurumsal kimliği yansıtan anahtar teslim ofis tasarımı. Levent, Maslak, Beşiktaş. Ücretsiz keşif: 0533 039 15 65"
+  title="İstanbul Ofis Yenileme | Hızlı Kurumsal Görünüm Güncelleme | Master İç Mimarlık"
+  description="İstanbul'da ofis yenileme. Altyapıya dokunmadan hızlı ve ekonomik kurumsal görünüm tazelemesi. Levent, Maslak, Beşiktaş. Ücretsiz keşif: 0533 039 15 65"
   canonicalUrl={`${CANONICAL_BASE}/hizmetler/anahtar-teslim/ofis-yenileme`}
-  h1="İstanbul Ofis Yenileme ve Tadilat"
+  h1="İstanbul Ofis Yenileme"
   eyebrow="Anahtar Teslim"
-  lead="Çalışan verimliliğini ve marka imajını güçlendiren kurumsal ofis iç mekan çözümleri. Açık ofis düzeninden özel kabinlere, toplantı odalarından resepsiyon alanlarına kadar tüm kurumsal proje türleri."
+  lead="Altyapısı sağlam ama görünümü eskimiş ofisler için hızlı ve ekonomik çözüm. Zemin, boya, aydınlatma ve mobilya güncellemeleriyle ofisinizin kurumsal kimliğini altyapıya dokunmadan tazeliyoruz."
   breadcrumb={[
     { label: "Ana Sayfa", href: "/" },
     { label: "Hizmetler", href: "/#hizmetler" },
@@ -44,8 +45,8 @@ const faqSchema = {
 
   <!-- Proje Görselleri -->
   <div class="w-full mb-12 grid grid-cols-1 md:grid-cols-2 gap-3">
-    <img src={optimizedImage('/images/ofis2.jpeg')} alt="Ofis yenileme — kurumsal ofis tasarımı" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
-    <img src={optimizedImage('/images/toplantiodasi1.jpeg')} alt="Ofis yenileme — toplantı odası tasarımı" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
+    <img src={optimizedImage('/images/ofis2.jpeg')} alt="Ofis yenileme — kurumsal ofis görünüm güncellemesi" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
+    <img src={optimizedImage('/images/toplantiodasi1.jpeg')} alt="Ofis yenileme — toplantı odası tazeleme" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
   </div>
 
   <!-- Scope -->
@@ -53,27 +54,27 @@ const faqSchema = {
     <div>
       <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Ofis Yenileme Hizmetimiz</h2>
       <p class="text-muted leading-relaxed mb-4">
-        Çalışma ortamı, ekip performansı ve şirket kültürü üzerinde doğrudan etkiye sahiptir. Modern, fonksiyonel ve estetik bir ofis; çalışan memnuniyetini artırır ve kurumsal imajı güçlendirir.
+        Ofisinizin elektrik, tesisat ve bölme sistemleri işlevselliğini koruyorsa kapsamlı tadilat yerine daha hızlı ve ekonomik bir yenileme tercih edebilirsiniz. Zemin kaplaması, duvar rengi, aydınlatma armatürleri ve mobilya seçimleri gibi görünür unsurları güncelleyerek mekanı kısa sürede dönüştürüyoruz.
       </p>
       <p class="text-muted leading-relaxed mb-4">
-        Açık ofis planlamasından kapalı kabin düzenlemelerine, toplantı odalarından lobi ve resepsiyon alanlarına kadar tüm kurumsal mekan ihtiyaçlarını karşılıyoruz.
+        Kısmi yenileme de yapıyoruz: yalnızca toplantı odalarını mı tazelemek istiyorsunuz, yoksa resepsiyon alanını mı? Her ölçekte projeyi yönetiyoruz. <a href="/hizmetler/3d-tasarim" class="text-gold hover:underline">3D görselleştirme</a> ile yeni görünümü uygulama başlamadan onaylayabilirsiniz.
       </p>
       <p class="text-muted leading-relaxed">
-        İstanbul genelinde Levent, Maslak, Beşiktaş, Şişli ve tüm iş merkezlerinde hizmet veriyoruz.
+        Altyapı sorunu varsa veya yapısal değişiklik gerekiyorsa <a href="/hizmetler/anahtar-teslim/ofis-tadilat" class="text-gold hover:underline">ofis tadilat</a> hizmetimiz daha uygun seçenek olabilir. Levent, Maslak, Beşiktaş, Şişli ve tüm İstanbul'da hizmet veriyoruz.
       </p>
     </div>
     <div>
       <h3 class="font-semibold text-charcoal mb-4 text-xs uppercase tracking-wider">Hizmete Dahil Olanlar</h3>
       <ul class="space-y-3">
         {[
-          'Kurumsal konsept ve alan planlaması',
+          'Kurumsal konsept ve renk danışmanlığı',
           'Fotorealistik 3D görselleştirme',
-          'Açık ofis ve kabinleme tasarımı',
-          'Toplantı odası çözümleri',
-          'Aydınlatma ve akustik iyileştirme',
-          'Bölme duvar ve cam sistemleri',
-          'Zemin, duvar ve tavan kaplamaları',
-          'Kablo yönetimi ve teknik altyapı',
+          'Zemin kaplama yenileme',
+          'Duvar boyama ve grafik uygulamaları',
+          'Aydınlatma armatürü güncelleme',
+          'Mobilya seçimi ve yerleşim optimizasyonu',
+          'Akustik panel ve dekor güncellemesi',
+          'Son temizlik ve anahtar teslim',
         ].map(item => (
           <li class="flex items-start gap-3 text-sm text-muted">
             <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
@@ -88,6 +89,35 @@ const faqSchema = {
     </div>
   </div>
 
+  <!-- Ne Değişir -->
+  <div class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-8">
+      <span class="w-8 h-px bg-gold"></span>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Ofis Yenileme ile Ne Değişir?</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      {[
+        {
+          title: 'Kurumsal İmaj Güçleniyor',
+          desc: 'Müşteri ziyaretlerinde ilk izlenimi belirleyen resepsiyon ve toplantı odaları, güncel malzeme ve renk paleti ile çok daha profesyonel bir görünüm kazanır. Büyük bir tadilat olmadan kurumsal kimliği mekan deneyimine yansıtmak mümkündür.',
+        },
+        {
+          title: 'Çalışan Memnuniyeti Artıyor',
+          desc: 'Eskimiş zemin, soluk duvar rengi ve yetersiz aydınlatma ekip motivasyonunu olumsuz etkiler. Doğru renk ve ışık tercihleriyle ofisin genel ambiyansı yükseltildiğinde çalışan memnuniyeti ve verimliliği de olumlu etkilenir.',
+        },
+        {
+          title: 'Hızlı Sonuç, Minimum Kesinti',
+          desc: 'Ofis yenilemesi yapısal müdahale içermediğinden proje süreci çok daha kısadır. Alan alan ilerleyen takvim sayesinde çalışmalar büyük ölçüde ofis saatleri dışında tamamlanabilir, iş sürekliliği korunur.',
+        },
+      ].map(item => (
+        <div class="bg-white p-6 border border-border">
+          <h3 class="font-semibold text-charcoal mb-3 text-sm">{item.title}</h3>
+          <p class="text-muted text-sm leading-relaxed">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
   <!-- Process -->
   <div class="py-12 border-b border-border">
     <div class="flex items-center gap-3 mb-8">
@@ -96,11 +126,11 @@ const faqSchema = {
     </div>
     <div class="grid md:grid-cols-5 gap-6">
       {[
-        { step: '01', title: 'Ücretsiz Keşif', desc: 'Ofisinizi ve çalışma kültürünüzü yerinde değerlendiriyoruz.' },
-        { step: '02', title: 'Tasarım & 3D', desc: 'Kurumsal kimliğinize uygun tasarımı 3D ile görselleştiriyoruz.' },
-        { step: '03', title: 'Sözleşme', desc: 'Kesin bütçe ve takvim belirlenerek sözleşme imzalanır.' },
-        { step: '04', title: 'Uygulama', desc: 'İş sürekliliğini koruyarak faz faz uygulama yapılabilir.' },
-        { step: '05', title: 'Teslim', desc: 'Hazır ofisinizi teslim alıp operasyona devam ediyorsunuz.' },
+        { step: '01', title: 'Ücretsiz Keşif', desc: 'Ofisinizin mevcut durumunu ve yenileme hedeflerini yerinde değerlendiriyoruz. Tadilat mı yenileme mi gerektiğini de bu aşamada birlikte belirliyoruz.' },
+        { step: '02', title: 'Tasarım & 3D', desc: 'Kurumsal kimliğinize uygun renk ve malzeme seçimlerini 3D ile görselleştiriyoruz. Onay alındıktan sonra uygulamaya geçilir.' },
+        { step: '03', title: 'Sözleşme', desc: 'Kesin bütçe ve takvim belirlenerek sözleşme imzalanır. Yenileme projeleri daha kısa ve öngörülebilir takvimle ilerler.' },
+        { step: '04', title: 'Uygulama', desc: 'Alan alan ilerleyen takvimle minimum kesinti sağlanır. Çalışmalar mümkün olduğunda mesai dışı saatlerde yürütülür.' },
+        { step: '05', title: 'Teslim', desc: 'Hazır ofisinizi teslim alıp operasyona devam ediyorsunuz. İşçilik garantisi sözleşmede belirtilir.' },
       ].map(item => (
         <div class="text-center">
           <div class="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-3">
@@ -134,9 +164,10 @@ const faqSchema = {
     </div>
     <div class="divide-y divide-border">
       {[
-        { q: 'Ofis yenileme ne kadar sürer?', a: 'Ortalama bir ofis yenileme projesi (100–200 m²) 5–9 hafta içinde tamamlanmaktadır. Hafta sonu ve mesai dışı çalışma ile iş sürekliliği korunabilir.' },
-        { q: 'Çalışanlar ofiste çalışırken yenileme yapılabilir mi?', a: 'Kısmi projelerde ve faz faz uygulama planı ile ofis açıkken çalışmak mümkündür. Planlamayı ihtiyacınıza göre birlikte düzenliyoruz.' },
-        { q: 'Ofis yenileme bütçesi nasıl belirlenir?', a: 'Bütçe; mekanın büyüklüğü, mevcut yapı durumu ve seçilen malzeme kalitesine göre belirlenir. Ücretsiz keşif ziyaretimizde projenize özel bütçe sunuyoruz.' },
+        { q: 'Ofis yenileme ne kadar sürer?', a: 'Yapısal müdahale içermeyen bir ofis yenileme projesi (100–200 m²) genellikle 2–4 hafta içinde tamamlanabilir. Yalnızca boyama ve zemin değişimi gibi minimal projeler 1 haftada bitebilir. Hafta sonu ve mesai dışı çalışma ile iş sürekliliği korunur.' },
+        { q: 'Ofis yenileme ile tadilat arasındaki fark nedir?', a: 'Yenileme; mevcut elektrik, tesisat ve bölme sistemlerine dokunmadan estetik güncelleme yapmak demektir — zemin, boya, aydınlatma armatürleri ve mobilya gibi görünür unsurları kapsar. Tadilat ise altyapı değişikliği, duvar müdahalesi ve teknik sistem yenilemesi gerektirir. Ofisinizin altyapısı sorunsuzsa yenileme çok daha hızlı ve ekonomik bir seçenektir.' },
+        { q: 'Çalışanlar ofiste çalışırken yenileme yapılabilir mi?', a: 'Ofis yenilemesi yapısal müdahale içermediğinden çoğunlukla ofis açıkken yapılabilir. Alan alan ilerleyen bir takvimle çalışanları minimumda etkileyerek ilerliyoruz. Zemin veya boyama gibi kapsamlı işler için hafta sonu çalışmayı tercih eden müşterilerimize de bu seçeneği sunuyoruz.' },
+        { q: 'Ofis yenileme bütçesi nasıl belirlenir?', a: 'Bütçe; ofisin büyüklüğü, seçilen malzeme kalitesi ve yenileme kapsamına göre belirlenir. Altyapı müdahalesi olmadığından yenileme, tadilata kıyasla çok daha ekonomiktir. Ücretsiz keşif ziyaretimizde tüm kalemleri içeren şeffaf bir teklif sunuyoruz.' },
       ].map((faq, i) => (
         <details class="group py-5" open={i === 0}>
           <summary class="flex items-start justify-between cursor-pointer list-none gap-4">

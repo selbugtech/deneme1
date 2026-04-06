@@ -8,7 +8,7 @@ const serviceSchema = {
   "@type": "Service",
   "serviceType": "Otel Yenileme",
   "name": "İstanbul Otel Yenileme",
-  "description": "İstanbul'da anahtar teslim otel yenileme ve renovasyonu. Misafir deneyimini ve doluluk oranını artıran kapsamlı otel iç mimarlık ve tadilat hizmetleri.",
+  "description": "İstanbul'da anahtar teslim otel yenileme. Altyapıya dokunmadan oda, lobi ve ortak alan estetik güncellemesi. Operasyon sürerken hızlı renovasyon.",
   "provider": { "@type": "Organization", "@id": `${CANONICAL_BASE}/#organization`, "name": "Master İç Mimarlık" },
   "areaServed": [
     { "@type": "City", "name": "İstanbul" },
@@ -24,21 +24,21 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Otel yenileme sırasında faaliyet sürdürülebilir mi?", "acceptedAnswer": { "@type": "Answer", "text": "Evet. Otel operasyonunu kesintisiz sürdürmeniz için bölüm bölüm (fazlı) yenileme planı hazırlıyoruz. Hangi bölümlerin hangi sırayla yenileneceği sözleşme aşamasında müşterimizle birlikte planlanır." } },
-    { "@type": "Question", "name": "Otel yenileme ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Süre; otel büyüklüğü, kapsam ve fazlı çalışma planına göre değişir. Küçük butik oteller 8–12 hafta, büyük kapsamlı projeler birkaç aşamada tamamlanabilir. Sözleşmede aşama takvimleri net olarak belirlenir." } },
-    { "@type": "Question", "name": "Otel iç mimarlık yenileme ROI'si nasıl ölçülür?", "acceptedAnswer": { "@type": "Answer", "text": "Otel renovasyonunun ROI'si; doluluk oranı artışı, oda başına gelir (RevPAR) yükselmesi ve misafir memnuniyet puanlarındaki iyileşmeyle ölçülür. Tasarım kararlarını bu metrikler gözetilerek alıyoruz." } },
-    { "@type": "Question", "name": "Hangi otel alanları için hizmet veriyorsunuz?", "acceptedAnswer": { "@type": "Answer", "text": "Odalar ve banyolar, lobi ve resepsiyon, restoran ve bar alanları, toplantı ve konferans salonları, ortak kullanım alanları ile dış cephe ve çevre düzenlemesi dahil otel genelinde kapsamlı yenileme yapıyoruz." } }
+    { "@type": "Question", "name": "Otel yenileme sırasında faaliyet sürdürülebilir mi?", "acceptedAnswer": { "@type": "Answer", "text": "Evet. Otel yenilemesi altyapıya dokunmadığından operasyon açıkken bölüm bölüm ilerlemek çok daha kolaydır. Her tamamlanan bölüm hemen hizmete girer; tadilata kıyasla çok daha az gelir kaybıyla yenileme tamamlanır. Aşama planı müşterimizle birlikte belirlenir." } },
+    { "@type": "Question", "name": "Otel yenileme ile tadilat arasındaki fark nedir?", "acceptedAnswer": { "@type": "Answer", "text": "Otel yenilemesi; mevcut elektrik, tesisat ve yapısal sisteme dokunmadan oda, lobi ve ortak alanlarda estetik güncelleme yapmayı kapsar. Mobilya, kaplama, boya, aydınlatma ve tekstil değişimi bu kapsamdadır. Tadilat ise elektrik ve HVAC yenileme, duvar müdahalesi gibi teknik altyapı işlerini içerir. Altyapınız sorunsuzsa yenileme çok daha hızlı ve ekonomiktir." } },
+    { "@type": "Question", "name": "Otel yenileme ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Yapısal müdahale içermeyen bir otel yenilemesinde her bölüm için 2–6 hafta yeterli olabilir. Otel büyüklüğüne ve aynı anda kapatılabilecek oda/bölüm sayısına göre toplam süre belirlenir. Tadilata kıyasla çok daha kısa olan bu takvim, gelir kaybını minimize eder." } },
+    { "@type": "Question", "name": "Otel yenileme ROI'si nasıl ölçülür?", "acceptedAnswer": { "@type": "Answer", "text": "Otel yenileme yatırımının getirisi; online platform misafir puanlarındaki artış, ortalama oda fiyatı (ADR) yükselmesi ve doluluk oranı iyileşmesiyle ölçülür. Kısa süreli kapanma ve ekonomik maliyet sayesinde yenileme, tadilata kıyasla genellikle daha hızlı geri döner." } }
   ]
 };
 ---
 
 <ServiceLayout
-  title="İstanbul Otel Yenileme | Butik Otel Renovasyonu | Master İç Mimarlık"
-  description="İstanbul'da anahtar teslim otel yenileme ve renovasyonu. Misafir deneyimini artıran, doluluk oranını yükselten kapsamlı otel iç mimarlık hizmetleri. Ücretsiz keşif: 0533 039 15 65"
+  title="İstanbul Otel Yenileme | Hızlı Otel Renovasyonu | Master İç Mimarlık"
+  description="İstanbul'da anahtar teslim otel yenileme. Altyapıya dokunmadan oda, lobi ve ortak alan estetik güncellemesi. Operasyon sürerken hızlı renovasyon. Ücretsiz keşif: 0533 039 15 65"
   canonicalUrl={`${CANONICAL_BASE}/hizmetler/anahtar-teslim/otel-yenileme`}
-  h1="İstanbul Otel Yenileme ve Renovasyonu"
+  h1="İstanbul Otel Yenileme"
   eyebrow="Anahtar Teslim"
-  lead="Misafir deneyimini dönüştüren, doluluk oranını ve geliri artıran kapsamlı otel renovasyonu. Lobiden odalara, restorandan toplantı salonlarına tüm otel alanlarını tasarlıyor ve yeniliyoruz."
+  lead="Altyapısı sağlam ama görünümü eskimiş otellar için hızlı ve ekonomik çözüm. Oda, lobi ve ortak alanları altyapıya dokunmadan yeniliyor, misafir memnuniyetini ve online puanları artırıyoruz."
   breadcrumb={[
     { label: "Ana Sayfa", href: "/" },
     { label: "Hizmetler", href: "/#hizmetler" },
@@ -50,9 +50,9 @@ const faqSchema = {
 
   <!-- Proje Görselleri -->
   <div class="w-full mb-12 grid grid-cols-1 md:grid-cols-3 gap-3">
-    <img src={optimizedImage('/images/restoran1.jpeg')} alt="Otel yenileme — restoran ve yemek alanı" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
-    <img src={optimizedImage('/images/toplantiodasi1.jpeg')} alt="Otel yenileme — toplantı salonu" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
-    <img src={optimizedImage('/images/salon9.jpeg')} alt="Otel yenileme — lobi ve ortak alan" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
+    <img src={optimizedImage('/images/restoran1.jpeg')} alt="Otel yenileme — restoran ve yemek alanı güncellemesi" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
+    <img src={optimizedImage('/images/toplantiodasi1.jpeg')} alt="Otel yenileme — toplantı salonu yenileme" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
+    <img src={optimizedImage('/images/salon9.jpeg')} alt="Otel yenileme — lobi ve ortak alan yenileme" class="w-full h-64 object-cover" loading="lazy" decoding="async" />
   </div>
 
   <!-- Scope -->
@@ -60,26 +60,26 @@ const faqSchema = {
     <div>
       <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Otel Yenileme Hizmetimiz</h2>
       <p class="text-muted leading-relaxed mb-4">
-        Otel renovasyonu, misafir deneyimini doğrudan etkileyen yatırımların başında gelir. Yenilenen bir otelde doluluk oranı, oda başına gelir ve misafir memnuniyeti ölçülebilir biçimde yükselir.
+        Otel yenilemesi; elektrik, tesisat ve yapısal sisteme dokunmadan oda, lobi, restoran ve ortak alanların görsel kimliğini güncellemek demektir. Mobilya değişimi, zemin ve duvar kaplama yenileme, aydınlatma güncelleme, tekstil ve dekor tazeleme gibi işlemler kısa sürede büyük etki yaratır.
       </p>
       <p class="text-muted leading-relaxed mb-4">
-        Operasyonunuzu mümkün olduğunca az kesintiye uğratmak için fazlı çalışma planı hazırlıyoruz. Her aşama tamamlandıkça ilgili bölümler hizmete geri döner; gelir kaybını minimize ediyoruz.
+        Otel yenilemesi operasyon açıkken bölüm bölüm yapılabildiğinden misafir kabulünü kesintisiz sürdürebilirsiniz. Her tamamlanan oda veya bölüm hemen hizmete girer. <a href="/hizmetler/3d-tasarim" class="text-gold hover:underline">3D görselleştirme</a> ile yeni görünümü uygulama öncesinde onaylayabilirsiniz.
       </p>
       <p class="text-muted leading-relaxed">
-        Butik otellerden orta ölçekli tesislere, hostel yenilemelerinden apart otel dönüşümlerine kadar tüm konaklama projelerinde deneyimliyiz.
+        Teknik altyapı sorunu varsa veya yapısal müdahale gerekiyorsa <a href="/hizmetler/anahtar-teslim/otel-tadilat" class="text-gold hover:underline">otel tadilat</a> hizmetimiz daha uygun seçenektir. Beyoğlu, Fatih, Beşiktaş ve tüm İstanbul'da hizmet veriyoruz.
       </p>
     </div>
     <div>
       <h3 class="font-semibold text-charcoal mb-4 text-xs uppercase tracking-wider">Hizmete Dahil Olanlar</h3>
       <ul class="space-y-3">
         {[
-          'Lobi ve resepsiyon tasarımı',
-          'Oda ve banyo yenileme',
-          'Restoran ve bar alanı tasarımı',
-          'Toplantı ve konferans salonları',
-          'Ortak kullanım alanları',
-          'Elektrik, tesisat ve iklimlendirme',
-          'FF&E (Mobilya, Tefriş, Ekipman)',
+          'Oda konsept yenileme ve tasarım',
+          'Fotorealistik 3D görselleştirme',
+          'Lobi ve resepsiyon görünüm güncellemesi',
+          'Zemin ve duvar kaplama yenileme',
+          'Aydınlatma armatürü değişimi',
+          'Mobilya ve FF&E seçimi',
+          'Tekstil ve dekor güncelleme',
           'Fazlı uygulama ve anahtar teslim',
         ].map(item => (
           <li class="flex items-start gap-3 text-sm text-muted">
@@ -95,6 +95,35 @@ const faqSchema = {
     </div>
   </div>
 
+  <!-- Ne Değişir -->
+  <div class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-8">
+      <span class="w-8 h-px bg-gold"></span>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Otel Yenileme ile Ne Değişir?</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      {[
+        {
+          title: 'Online Puanlar Yükseliyor',
+          desc: 'Booking.com ve Google gibi platformlarda oda fotoğrafları ve misafir puanları doğrudan doluluk oranını belirler. Güncel mobilya, taze kaplama ve modern aydınlatmayla misafir fotoğrafları ve yorumları olumlu yönde değişir.',
+        },
+        {
+          title: 'Ortalama Oda Fiyatı Artıyor',
+          desc: 'Yenilenmiş odaların görselleri daha yüksek fiyat segmentinde listelenmesini mümkün kılar. Sınırlı yatırımla görsel kaliteyi artırmak, oda başına geliri (RevPAR) iyileştirmenin en hızlı yollarından biridir.',
+        },
+        {
+          title: 'Minimum Kapanma ile Hızlı Tamamlanma',
+          desc: 'Altyapı değişikliği olmadığından yenileme çok daha kısa takvimde tamamlanır. Otel açıkken bölüm bölüm ilerleyebildiğimizden gelir kaybı minimize edilir ve yatırımın geri dönüş süresi kısalır.',
+        },
+      ].map(item => (
+        <div class="bg-white p-6 border border-border">
+          <h3 class="font-semibold text-charcoal mb-3 text-sm">{item.title}</h3>
+          <p class="text-muted text-sm leading-relaxed">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
   <!-- Process -->
   <div class="py-12 border-b border-border">
     <div class="flex items-center gap-3 mb-8">
@@ -103,11 +132,11 @@ const faqSchema = {
     </div>
     <div class="grid md:grid-cols-5 gap-6">
       {[
-        { step: '01', title: 'Keşif & Analiz', desc: 'Mevcut durumu, operasyonel kısıtları ve yenileme hedeflerini değerlendiriyoruz.' },
-        { step: '02', title: 'Fazlı Plan', desc: 'Operasyonu en az etkileyen yenileme aşamalarını ve takvimleri belirliyoruz.' },
-        { step: '03', title: '3D Tasarım', desc: 'Tüm alanları fotorealistik görsellerle deneyimleyin ve onaylayın.' },
-        { step: '04', title: 'Uygulama', desc: 'Her aşama tamamlandıkça ilgili bölüm hizmete geri döner.' },
-        { step: '05', title: 'Teslim', desc: 'Eksiksiz yenilenmiş otelinizi teslim alırsınız.' },
+        { step: '01', title: 'Keşif & Analiz', desc: 'Mevcut durumu, operasyonel kısıtları ve yenileme hedeflerini değerlendiriyoruz. Tadilat mı yenileme mi gerektiğini de bu aşamada netleştiriyoruz.' },
+        { step: '02', title: 'Fazlı Plan', desc: 'Operasyonu en az etkileyen yenileme aşamalarını ve takvimleri belirliyoruz. Her bölümün kapalı kalma süresi minimize edilir.' },
+        { step: '03', title: '3D Tasarım', desc: 'Tüm alanları fotorealistik görsellerle deneyimleyin ve onaylayın. Mobilya ve malzeme seçimleri bu aşamada kesinleşir.' },
+        { step: '04', title: 'Uygulama', desc: 'Her aşama tamamlandıkça ilgili bölüm hizmete geri döner. Şantiye yönetimi ve koordinasyon tamamen bizde.' },
+        { step: '05', title: 'Teslim', desc: 'Yenilenmiş otelinizi teslim alırsınız. İşçilik garantisi ve teslim sonrası destek sözleşmede belirtilir.' },
       ].map(item => (
         <div class="text-center">
           <div class="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-3">
@@ -141,10 +170,10 @@ const faqSchema = {
     </div>
     <div class="divide-y divide-border">
       {[
-        { q: 'Otel yenileme sırasında faaliyet sürdürülebilir mi?', a: 'Evet. Otel operasyonunu kesintisiz sürdürmeniz için bölüm bölüm (fazlı) yenileme planı hazırlıyoruz. Her aşama tamamlandıkça ilgili bölümler hizmete geri döner.' },
-        { q: 'Otel yenileme ne kadar sürer?', a: 'Süre; otel büyüklüğü, kapsam ve fazlı çalışma planına göre değişir. Küçük butik oteller 8–12 hafta, büyük kapsamlı projeler birkaç aşamada tamamlanabilir. Aşama takvimleri sözleşmede net belirlenir.' },
-        { q: 'Otel iç mimarlık yenileme ROI\'si nasıl ölçülür?', a: 'Doluluk oranı artışı, oda başına gelir (RevPAR) yükselmesi ve misafir memnuniyet puanlarındaki iyileşmeyle ölçülür. Tasarım kararlarını bu metrikler gözetilerek alıyoruz.' },
-        { q: 'Hangi otel alanları için hizmet veriyorsunuz?', a: 'Odalar ve banyolar, lobi ve resepsiyon, restoran ve bar alanları, toplantı salonları, ortak kullanım alanları ile dış cephe dahil tüm otel genelinde kapsamlı yenileme yapıyoruz.' },
+        { q: 'Otel yenileme sırasında faaliyet sürdürülebilir mi?', a: 'Evet. Otel yenilemesi altyapıya dokunmadığından operasyon açıkken bölüm bölüm ilerlemek çok daha kolaydır. Her tamamlanan bölüm hemen hizmete girer; tadilata kıyasla çok daha az gelir kaybıyla yenileme tamamlanır. Aşama planı müşterimizle birlikte belirlenir.' },
+        { q: 'Otel yenileme ile tadilat arasındaki fark nedir?', a: 'Otel yenilemesi; mevcut elektrik, tesisat ve yapısal sisteme dokunmadan oda, lobi ve ortak alanlarda estetik güncelleme yapmayı kapsar. Mobilya, kaplama, boya, aydınlatma ve tekstil değişimi bu kapsamdadır. Tadilat ise elektrik ve HVAC yenileme, duvar müdahalesi gibi teknik altyapı işlerini içerir. Altyapınız sorunsuzsa yenileme çok daha hızlı ve ekonomiktir.' },
+        { q: 'Otel yenileme ne kadar sürer?', a: 'Yapısal müdahale içermeyen bir otel yenilemesinde her bölüm için 2–6 hafta yeterli olabilir. Otel büyüklüğüne ve aynı anda kapatılabilecek oda/bölüm sayısına göre toplam süre belirlenir. Tadilata kıyasla çok daha kısa olan bu takvim, gelir kaybını minimize eder.' },
+        { q: 'Otel yenileme ROI\'si nasıl ölçülür?', a: 'Otel yenileme yatırımının getirisi; online platform misafir puanlarındaki artış, ortalama oda fiyatı (ADR) yükselmesi ve doluluk oranı iyileşmesiyle ölçülür. Kısa süreli kapanma ve ekonomik maliyet sayesinde yenileme, tadilata kıyasla genellikle daha hızlı geri döner.' },
       ].map((faq, i) => (
         <details class="group py-5" open={i === 0}>
           <summary class="flex items-start justify-between cursor-pointer list-none gap-4">
