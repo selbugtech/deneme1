@@ -74,14 +74,14 @@ const comparisons = [
             <div
               class="ba-after absolute inset-0 w-full h-full"
               data-bg={c.after}
-              style="background-size: cover; background-position: center;"
+              style="background-size: contain; background-position: center; background-repeat: no-repeat;"
             />
 
             <!-- Before image (clipped on top) — lazy loaded via IntersectionObserver -->
             <div
               class="ba-before absolute inset-0 w-full h-full"
               data-bg={c.before}
-              style="background-size: cover; background-position: center; clip-path: inset(0 50% 0 0);"
+              style="background-size: contain; background-position: center; background-repeat: no-repeat; clip-path: inset(0 50% 0 0);"
             />
 
             <!-- Labels -->
