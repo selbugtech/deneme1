@@ -7,7 +7,9 @@ import { CLOUDINARY_CLOUD, SITE_ORIGIN } from '../config';
  */
 export function optimizedImage(path: string, transforms = 'f_auto,q_auto'): string {
   if (!CLOUDINARY_CLOUD) return path;
-  const fullUrl = path.startsWith('http') ? path : `${SITE_ORIGIN}${path}`;
+  const fullUrl = path.startsWith('http')
+    ? path
+    : `${SITE_ORIGIN}${path.split('/').map(s => encodeURIComponent(s)).join('/')}`;
   return `https://res.cloudinary.com/${CLOUDINARY_CLOUD}/image/fetch/${transforms}/${fullUrl}`;
 }
 
