@@ -1,24 +1,24 @@
 ---
-import { optimizedImage } from '../lib/cloudinary';
+import { optimizedImageW } from '../lib/cloudinary';
 
 const comparisons = [
   {
-    title: 'Beşiktaş Dairesi',
+    title: 'Ataköy Daire',
     category: 'Anahtar Teslim Ev Yenileme',
-    before: optimizedImage('/images/salon4.jpeg'),
-    after:  optimizedImage('/images/salon3.jpeg'),
+    before: optimizedImageW('/images/beforeafter/atakoyoncesi.jpg', 1200),
+    after:  optimizedImageW('/images/beforeafter/atakoysonrasi.jpg', 1200),
   },
   {
-    title: 'Zekeriyaköy Villa',
+    title: 'Beyoğlu Galata',
+    category: 'Anahtar Teslim Ev Yenileme',
+    before: optimizedImageW('/images/beforeafter/beyoglugalataoncesi.jpg', 1200),
+    after:  optimizedImageW('/images/beforeafter/beyoglugalatasonrasi.jpg', 1200),
+  },
+  {
+    title: 'Beykoz Paşabahçe',
     category: 'Villa Yenileme',
-    before: optimizedImage('/images/salon6.jpeg'),
-    after:  optimizedImage('/images/salon7.jpeg'),
-  },
-  {
-    title: 'Nişantaşı Butik',
-    category: 'Mağaza Yenileme',
-    before: optimizedImage('/images/salon8.jpeg'),
-    after:  optimizedImage('/images/restoran1.jpeg'),
+    before: optimizedImageW('/images/beforeafter/villaoncesi.HEIC', 1200),
+    after:  optimizedImageW('/images/beforeafter/villasonrasi.jpg', 1200),
   },
 ];
 ---
