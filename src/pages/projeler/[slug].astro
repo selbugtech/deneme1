@@ -4,7 +4,7 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import WhatsAppFloat from '../../components/WhatsAppFloat.astro';
 import { CANONICAL_BASE } from '../../config';
-import { optimizedImage } from '../../lib/cloudinary';
+import { optimizedImageW, srcsetImage } from '../../lib/cloudinary';
 
 const allProjects = [
   {
@@ -16,12 +16,12 @@ const allProjects = [
     location: 'Beyoğlu, İstanbul',
     area: '95 m²',
     duration: '7 Hafta',
-    heroImage: optimizedImage('/images/beyoglu galata/aakapak.jpg'),
+    heroImage: optimizedImageW('/images/beyoglu galata/aakapak.jpg', 1200),
     gallery: [
-      optimizedImage('/images/beyoglu galata/IMG_20220927_145457.jpg'),
-      optimizedImage('/images/beyoglu galata/IMG_20221012_121428.jpg'),
-      optimizedImage('/images/beyoglu galata/IMG_20221201_173953.jpg'),
-      optimizedImage('/images/beyoglu galata/IMG_20221221_131713.jpg'),
+      '/images/beyoglu galata/IMG_20220927_145457.jpg',
+      '/images/beyoglu galata/IMG_20221012_121428.jpg',
+      '/images/beyoglu galata/IMG_20221201_173953.jpg',
+      '/images/beyoglu galata/IMG_20221221_131713.jpg',
     ],
     services: ['İç Mimari Tasarım', '3D Görselleştirme', 'Komple Yenileme', 'Mutfak & Banyo', 'Zemin Kaplama', 'Boya & Dekor'],
     description: [
@@ -41,12 +41,12 @@ const allProjects = [
     location: 'Beykoz, İstanbul',
     area: '280 m²',
     duration: '12 Hafta',
-    heroImage: optimizedImage('/images/beykoz pasabahce/aakapak.HEIC'),
+    heroImage: optimizedImageW('/images/beykoz pasabahce/aakapak.HEIC', 1200),
     gallery: [
-      optimizedImage('/images/beykoz pasabahce/288b728e-caaa-46dc-91d8-2a7194168d51.jpg'),
-      optimizedImage('/images/beykoz pasabahce/38f3416a-c223-4bf8-9acd-2986b52ae52e.jpg'),
-      optimizedImage('/images/beykoz pasabahce/IMG_7499.HEIC'),
-      optimizedImage('/images/beykoz pasabahce/IMG_7523.HEIC'),
+      '/images/beykoz pasabahce/288b728e-caaa-46dc-91d8-2a7194168d51.jpg',
+      '/images/beykoz pasabahce/38f3416a-c223-4bf8-9acd-2986b52ae52e.jpg',
+      '/images/beykoz pasabahce/IMG_7499.HEIC',
+      '/images/beykoz pasabahce/IMG_7523.HEIC',
     ],
     services: ['Villa İç Mimari Tasarımı', '3D Görselleştirme', 'Yapısal Düzenlemeler', 'Özel Mobilya Tasarımı', 'Bahçe & Teras Entegrasyonu', 'Komple Yenileme'],
     description: [
@@ -66,12 +66,12 @@ const allProjects = [
     location: 'Caddebostan, İstanbul',
     area: '110 m²',
     duration: '8 Hafta',
-    heroImage: optimizedImage('/images/caddebostan/aakapak.jpg'),
+    heroImage: optimizedImageW('/images/caddebostan/aakapak.jpg', 1200),
     gallery: [
-      optimizedImage('/images/caddebostan/IMG_20220104_202602.jpg'),
-      optimizedImage('/images/caddebostan/IMG_20220104_202723.jpg'),
-      optimizedImage('/images/caddebostan/IMG_20220104_202809.jpg'),
-      optimizedImage('/images/caddebostan/IMG_20220105_150345.jpg'),
+      '/images/caddebostan/IMG_20220104_202602.jpg',
+      '/images/caddebostan/IMG_20220104_202723.jpg',
+      '/images/caddebostan/IMG_20220104_202809.jpg',
+      '/images/caddebostan/IMG_20220105_150345.jpg',
     ],
     services: ['İç Mimari Tasarım', '3D Görselleştirme', 'Komple Yenileme', 'Alçıpan & Asma Tavan', 'Mutfak Yenileme', 'Zemin Kaplama'],
     description: [
@@ -91,12 +91,12 @@ const allProjects = [
     location: 'Mecidiyeköy, İstanbul',
     area: '130 m²',
     duration: '9 Hafta',
-    heroImage: optimizedImage('/images/mecidiyeköy/aakapak.HEIC'),
+    heroImage: optimizedImageW('/images/mecidiyeköy/aakapak.HEIC', 1200),
     gallery: [
-      optimizedImage('/images/mecidiyeköy/IMG_8070 Copy.JPG'),
-      optimizedImage('/images/mecidiyeköy/IMG_8076.HEIC'),
-      optimizedImage('/images/mecidiyeköy/IMG_8083.HEIC'),
-      optimizedImage('/images/mecidiyeköy/IMG_8087.HEIC'),
+      '/images/mecidiyeköy/IMG_8070 Copy.JPG',
+      '/images/mecidiyeköy/IMG_8076.HEIC',
+      '/images/mecidiyeköy/IMG_8083.HEIC',
+      '/images/mecidiyeköy/IMG_8087.HEIC',
     ],
     services: ['İç Mimari Tasarım', '3D Görselleştirme', 'Komple Yenileme', 'Mutfak & Banyo', 'Zemin Kaplama', 'Boya & Dekor'],
     description: [
@@ -116,12 +116,12 @@ const allProjects = [
     location: 'Artas, İstanbul',
     area: '200 m²',
     duration: '8 Hafta',
-    heroImage: optimizedImage('/images/artasOfis/aakapak.HEIC'),
+    heroImage: optimizedImageW('/images/artasOfis/aakapak.HEIC', 1200),
     gallery: [
-      optimizedImage('/images/artasOfis/3E5E9EC0-266C-43F3-B032-72CC42C9280C.jpg'),
-      optimizedImage('/images/artasOfis/FB5ACB08-EA84-4572-BD49-0353901D724E.jpg'),
-      optimizedImage('/images/artasOfis/IMG_2313.HEIC'),
-      optimizedImage('/images/artasOfis/IMG_2315.HEIC'),
+      '/images/artasOfis/3E5E9EC0-266C-43F3-B032-72CC42C9280C.jpg',
+      '/images/artasOfis/FB5ACB08-EA84-4572-BD49-0353901D724E.jpg',
+      '/images/artasOfis/IMG_2313.HEIC',
+      '/images/artasOfis/IMG_2315.HEIC',
     ],
     services: ['Ofis İç Mimari Tasarımı', 'Açık Ofis Planlaması', 'Toplantı Odası Tasarımı', 'Akustik Çözümler', 'Teknik Altyapı', 'Mobilya Seçimi'],
     description: [
@@ -141,12 +141,12 @@ const allProjects = [
     location: 'Artas, İstanbul',
     area: '150 m²',
     duration: '6 Hafta',
-    heroImage: optimizedImage('/images/artasbaskaofis/aakapak.HEIC'),
+    heroImage: optimizedImageW('/images/artasbaskaofis/aakapak.HEIC', 1200),
     gallery: [
-      optimizedImage('/images/artasbaskaofis/artas.HEIC'),
-      optimizedImage('/images/artasbaskaofis/artas2.HEIC'),
-      optimizedImage('/images/artasbaskaofis/artas3.HEIC'),
-      optimizedImage('/images/artasbaskaofis/artas4.HEIC'),
+      '/images/artasbaskaofis/artas.HEIC',
+      '/images/artasbaskaofis/artas2.HEIC',
+      '/images/artasbaskaofis/artas3.HEIC',
+      '/images/artasbaskaofis/artas4.HEIC',
     ],
     services: ['Ofis İç Mimari Tasarımı', 'Açık Ofis Planlaması', 'Toplantı Odası Tasarımı', 'Aydınlatma Tasarımı', 'Kaplama & Boya', 'Mobilya Seçimi'],
     description: [
@@ -166,12 +166,12 @@ const allProjects = [
     location: 'Tepekent, İstanbul',
     area: '140 m²',
     duration: '10 Hafta',
-    heroImage: optimizedImage('/images/tepekent/aakapak.HEIC'),
+    heroImage: optimizedImageW('/images/tepekent/aakapak.HEIC', 1200),
     gallery: [
-      optimizedImage('/images/tepekent/IMG_2614.HEIC'),
-      optimizedImage('/images/tepekent/IMG_2615.HEIC'),
-      optimizedImage('/images/tepekent/IMG_2616.HEIC'),
-      optimizedImage('/images/tepekent/IMG_2617.HEIC'),
+      '/images/tepekent/IMG_2614.HEIC',
+      '/images/tepekent/IMG_2615.HEIC',
+      '/images/tepekent/IMG_2616.HEIC',
+      '/images/tepekent/IMG_2617.HEIC',
     ],
     services: ['İç Mimari Tasarım', '3D Görselleştirme', 'Komple Yenileme', 'Özel Mobilya & Dekor', 'Zemin Kaplama', 'Mutfak & Banyo'],
     description: [
@@ -191,12 +191,12 @@ const allProjects = [
     location: 'Kozyatağı, İstanbul',
     area: '12 m²',
     duration: '2 Hafta',
-    heroImage: optimizedImage('/images/kozyatağı banyo/aakapak.JPG'),
+    heroImage: optimizedImageW('/images/kozyatağı banyo/aakapak.JPG', 1200),
     gallery: [
-      optimizedImage('/images/kozyatağı banyo/1000001408 Copy.JPG'),
-      optimizedImage('/images/kozyatağı banyo/IMG-20221122-WA0047.jpg'),
-      optimizedImage('/images/kozyatağı banyo/IMG-20221122-WA0049.jpg'),
-      optimizedImage('/images/kozyatağı banyo/IMG-20221122-WA0050.jpg'),
+      '/images/kozyatağı banyo/1000001408 Copy.JPG',
+      '/images/kozyatağı banyo/IMG-20221122-WA0047.jpg',
+      '/images/kozyatağı banyo/IMG-20221122-WA0049.jpg',
+      '/images/kozyatağı banyo/IMG-20221122-WA0050.jpg',
     ],
     services: ['Banyo Tasarımı', 'Seramik & Kaplama', 'Sıhhi Tesisat Yenileme', 'Armatür & Aksesuar', 'Aydınlatma', 'Alçıpan Çalışması'],
     description: [
@@ -216,12 +216,12 @@ const allProjects = [
     location: 'Zeytinburnu, İstanbul',
     area: '100 m²',
     duration: '8 Hafta',
-    heroImage: optimizedImage('/images/zeytinburnu/aakapak.jpg'),
+    heroImage: optimizedImageW('/images/zeytinburnu/aakapak.jpg', 1200),
     gallery: [
-      optimizedImage('/images/zeytinburnu/IMG_20230225_153544.jpg'),
-      optimizedImage('/images/zeytinburnu/IMG_20230225_153619.jpg'),
-      optimizedImage('/images/zeytinburnu/IMG_20230225_153639.jpg'),
-      optimizedImage('/images/zeytinburnu/IMG_20230225_153727.jpg'),
+      '/images/zeytinburnu/IMG_20230225_153544.jpg',
+      '/images/zeytinburnu/IMG_20230225_153619.jpg',
+      '/images/zeytinburnu/IMG_20230225_153639.jpg',
+      '/images/zeytinburnu/IMG_20230225_153727.jpg',
     ],
     services: ['İç Mimari Tasarım', '3D Görselleştirme', 'Komple Yenileme', 'Mutfak & Banyo', 'Zemin Kaplama', 'Boya & Dekor'],
     description: [
@@ -363,7 +363,11 @@ const breadcrumbSchema = {
             aria-label={`Fotoğraf ${i + 1} büyüt`}
           >
             <img
-              src={img}
+              src={i === 0 ? optimizedImageW(img, 800) : optimizedImageW(img, 400)}
+              srcset={i === 0
+                ? srcsetImage(img, [400, 800, 1200])
+                : srcsetImage(img, [200, 400, 600])}
+              sizes={i === 0 ? '(min-width:768px) 50vw, 100vw' : '(min-width:768px) 25vw, 50vw'}
               alt={`${project.title} — fotoğraf ${i + 1}`}
               loading={i === 0 ? 'eager' : 'lazy'}
               decoding={i === 0 ? 'sync' : 'async'}
