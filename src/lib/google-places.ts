@@ -56,7 +56,7 @@ async function fetchGoogleReviews(
     return { reviews: [], rating: 0, totalRatings: 0 };
   }
 
-  const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${PLACE_ID}&fields=reviews,rating,user_ratings_total&key=${apiKey}&language=tr&reviews_sort=newest`;
+  const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${PLACE_ID}&fields=reviews,rating,user_ratings_total&key=${apiKey}&language=tr&reviews_sort=most_relevant`;
 
   try {
     const res = await fetch(url);
