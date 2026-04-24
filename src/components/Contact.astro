@@ -1,5 +1,6 @@
 ---
 import GoogleRatingCard from './GoogleRatingCard.astro';
+import { WHATSAPP_URL_WITH_MESSAGE, TEL_URL } from '../config';
 
 interface Props {
   rating?: number;
@@ -8,8 +9,8 @@ interface Props {
 
 const { rating = 0, totalRatings = 0 } = Astro.props;
 
-const wa = 'https://wa.me/905330391565?text=Merhaba%2C%20i%C3%A7%20mimarl%C4%B1k%20hizmeti%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.';
-const tel = 'tel:+905330391565';
+const wa = WHATSAPP_URL_WITH_MESSAGE;
+const tel = TEL_URL;
 ---
 
 <section id="iletisim" class="py-24 bg-[#F5EFE6]">

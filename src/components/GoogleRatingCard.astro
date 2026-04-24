@@ -5,9 +5,9 @@ interface Props {
   variant?: 'light' | 'dark';
 }
 
-const { rating, totalRatings, variant = 'light' } = Astro.props;
+import { GOOGLE_MAPS_URL } from '../config';
 
-const GOOGLE_MAPS_URL = 'https://www.google.com/maps/place/Master+%C4%B0%C3%A7+Mimarl%C4%B1k/(@41.001743,29.0517807,17z/data=!3m1!4b1!4m6!3m5!1s0x14cac7c6fa2bf56f:0xc70948d46d95fa04!8m2!3d41.001739!4d29.0543556!16s%2Fg%2F11fsx7788y?entry=ttu&g_ep=EgoyMDI2MDMxMS4wIKXMDSoASAFQAw%3D%3D';
+const { rating, totalRatings, variant = 'light' } = Astro.props;
 
 const displayRating = rating > 0 ? String(rating) : '';
 const bg = variant === 'dark' ? 'bg-charcoal/5' : 'bg-[#FAF6F1]';
