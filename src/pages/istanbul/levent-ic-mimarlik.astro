@@ -1,5 +1,6 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import RelatedDistricts from '../../components/RelatedDistricts.astro';
 import { CANONICAL_BASE } from '../../config';
 
 const localSchema = {
@@ -63,5 +64,7 @@ const localSchema = {
       </ul>
     </div>
   </div>
+
+  <RelatedDistricts currentSlug="levent-ic-mimarlik" />
 
 </ServiceLayout>

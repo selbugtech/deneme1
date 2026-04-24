@@ -1,5 +1,6 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import RelatedDistricts from '../../components/RelatedDistricts.astro';
 import { CANONICAL_BASE } from '../../config';
 
 const localSchema = {
@@ -39,5 +40,7 @@ const localSchema = {
       Şişli, Nişantaşı, Fulya, Mecidiyeköy ve çevre semtlerde aktif olarak hizmet veriyoruz.
     </p>
   </div>
+
+  <RelatedDistricts currentSlug="sisli-ic-mimarlik" />
 
 </ServiceLayout>

@@ -1,5 +1,6 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import RelatedDistricts from '../../components/RelatedDistricts.astro';
 import { CANONICAL_BASE } from '../../config';
 
 const localSchema = {
@@ -46,5 +47,7 @@ const localSchema = {
       <p class="text-muted text-xs mt-1">Villa yenileme · 2023</p>
     </div>
   </div>
+
+  <RelatedDistricts currentSlug="acibadem-ic-mimarlik" />
 
 </ServiceLayout>

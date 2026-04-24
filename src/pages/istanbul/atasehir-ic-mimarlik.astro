@@ -1,5 +1,6 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import RelatedDistricts from '../../components/RelatedDistricts.astro';
 import { CANONICAL_BASE } from '../../config';
 
 const localSchema = {
@@ -52,5 +53,7 @@ const localSchema = {
       </div>
     </div>
   </div>
+
+  <RelatedDistricts currentSlug="atasehir-ic-mimarlik" />
 
 </ServiceLayout>

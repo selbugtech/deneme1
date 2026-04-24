@@ -1,0 +1,39 @@
+---
+interface Props {
+  currentSlug: string;
+}
+
+const { currentSlug } = Astro.props;
+
+const allDistricts = [
+  { slug: 'besiktas-ic-mimarlik', name: 'Beşiktaş' },
+  { slug: 'kadikoy-ic-mimarlik', name: 'Kadıköy' },
+  { slug: 'sisli-ic-mimarlik', name: 'Şişli' },
+  { slug: 'nisantasi-ic-mimarlik', name: 'Nişantaşı' },
+  { slug: 'levent-ic-mimarlik', name: 'Levent' },
+  { slug: 'atasehir-ic-mimarlik', name: 'Ataşehir' },
+  { slug: 'zekeriyakoy-ic-mimarlik', name: 'Zekeriyaköy' },
+  { slug: 'acibadem-ic-mimarlik', name: 'Acıbadem' },
+];
+
+const others = allDistricts.filter(d => d.slug !== currentSlug).slice(0, 4);
+---
+
+<section class="py-12 border-t border-border">
+  <div class="flex items-center gap-3 mb-6">
+    <span class="w-8 h-px bg-gold"></span>
+    <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Diğer Bölgeler</span>
+  </div>
+  <h2 class="font-display text-2xl md:text-3xl font-bold text-charcoal mb-6">Hizmet verdiğimiz diğer ilçeler</h2>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+    {others.map(d => (
+      <a
+        href={`/istanbul/${d.slug}`}
+        class="block px-4 py-3 border border-border hover:border-gold hover:bg-gold/5 transition-colors text-charcoal text-sm tracking-wide"
+      >
+        <span class="block font-medium">{d.name}</span>
+        <span class="block text-xs text-muted mt-0.5">İç mimarlık hizmeti</span>
+      </a>
+    ))}
+  </div>
+</section>
