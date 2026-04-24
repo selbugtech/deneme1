@@ -290,6 +290,8 @@ const breadcrumbSchema = {
         <img
           src={heroImage}
           alt={displayTitle}
+          fetchpriority="high"
+          decoding="async"
           class="absolute inset-0 w-full h-full object-cover object-center"
         />
         <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-charcoal/40"></div>

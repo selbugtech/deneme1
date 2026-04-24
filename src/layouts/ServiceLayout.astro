@@ -80,7 +80,7 @@ const allSchema = [
     <!-- Hero image (optional) -->
     {heroImage && (
       <div class="relative w-full h-[50vh] md:h-[60vh] overflow-hidden">
-        <img src={heroImage} alt={h1} class="w-full h-full object-cover object-center" />
+        <img src={heroImage} alt={h1} fetchpriority="high" decoding="async" class="w-full h-full object-cover object-center" />
         <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-transparent"></div>
 
         <div class="absolute top-0 left-0 right-0 pt-28 px-6">

@@ -1,5 +1,5 @@
 ---
-import { optimizedImage } from '../lib/cloudinary';
+import { optimizedImage, optimizedImageW, srcsetImage } from '../lib/cloudinary';
 import GoogleRatingCard from './GoogleRatingCard.astro';
 
 interface Props {
@@ -17,7 +17,9 @@ const { rating, totalRatings } = Astro.props;
       <!-- Left: Image placeholder -->
       <div class="relative reveal overflow-hidden">
         <img
-          src={optimizedImage('/images/salon5.jpeg')}
+          src={optimizedImageW('/images/salon5.jpeg', 800)}
+          srcset={srcsetImage('/images/salon5.jpeg', [400, 600, 800, 1200])}
+          sizes="(min-width: 1024px) 40vw, 100vw"
           alt="Master İç Mimarlık showroom"
           loading="lazy"
           decoding="async"

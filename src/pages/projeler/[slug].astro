@@ -479,6 +479,8 @@ const breadcrumbSchema = {
       <img
         src={project.heroImage}
         alt={`${project.title} — ${project.category} projesi`}
+        fetchpriority="high"
+        decoding="async"
         class="w-full h-full object-cover object-center"
       />
       <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/40 to-transparent"></div>
