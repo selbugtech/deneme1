@@ -5,7 +5,6 @@ import Hero from '../components/Hero.astro';
 import Services from '../components/Services.astro';
 import About from '../components/About.astro';
 import BeforeAfter from '../components/BeforeAfter.astro';
-import Testimonials from '../components/Testimonials.astro';
 import Projects from '../components/Projects.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
@@ -66,11 +65,10 @@ const faqSchema = {
   <main>
     <Hero />
     <Services />
-    <About />
+    <About rating={reviewData.rating} totalRatings={reviewData.totalRatings} />
     <BeforeAfter />
-    <Testimonials reviews={reviewData.reviews} rating={reviewData.rating} totalRatings={reviewData.totalRatings} />
     <Projects />
-    <Contact />
+    <Contact rating={reviewData.rating} totalRatings={reviewData.totalRatings} />
   </main>
   <Footer />
   <WhatsAppFloat />

@@ -1,12 +1,13 @@
 ---
 import { optimizedImage } from '../lib/cloudinary';
+import GoogleRatingCard from './GoogleRatingCard.astro';
 
-const stats = [
-  { value: '150+', label: 'Tamamlanan Proje' },
-  { value: '8+',   label: 'Yıllık Deneyim' },
-  { value: '200+', label: 'Mutlu Müşteri' },
-  { value: '3',    label: 'Şehir' },
-];
+interface Props {
+  rating: number;
+  totalRatings: number;
+}
+
+const { rating, totalRatings } = Astro.props;
 ---
 
 <section id="hakkimizda" class="py-24 bg-[#EDE5D8]">
@@ -43,19 +44,13 @@ const stats = [
           müşteri memnuniyetini ön planda tutan bir anlayışla yaklaşıyoruz.
         </p>
 
-        <p class="text-muted leading-relaxed mb-10 reveal reveal-d2">
+        <p class="text-muted leading-relaxed mb-8 reveal reveal-d2">
           Tasarım sürecinden anahtar teslime kadar tüm aşamaları sizin adınıza yönetiyoruz.
           İstanbul'da ana hizmet bölgemiz olmakla birlikte, büyük projelerde çevre illere de gidiyoruz.
         </p>
 
-        <!-- Stats grid -->
-        <div class="grid grid-cols-2 gap-6 reveal reveal-d3">
-          {stats.map((s) => (
-            <div class="border-l-2 border-gold pl-5">
-              <p class="font-display text-3xl font-bold text-charcoal">{s.value}</p>
-              <p class="text-xs tracking-wide text-muted mt-1">{s.label}</p>
-            </div>
-          ))}
+        <div class="reveal reveal-d3">
+          <GoogleRatingCard rating={rating} totalRatings={totalRatings} />
         </div>
       </div>
 
