@@ -5,10 +5,6 @@ import Footer from '../components/Footer.astro';
 import WhatsAppFloat from '../components/WhatsAppFloat.astro';
 import { CANONICAL_BASE, TEL_URL, EMAIL_URL, WHATSAPP_URL_PROJECT, WHATSAPP_URL_SERVICE } from '../config';
 import { optimizedImage } from '../lib/cloudinary';
-import { getAggregateRating } from '../lib/google-places';
-
-const aggRating = await getAggregateRating();
-const displayRating = aggRating.rating > 0 ? String(aggRating.rating) : '4.9';
 
 interface Props {
   title: string;
@@ -172,29 +168,6 @@ const allSchema = [
           </div>
         </div>
 
-        <div class="bg-charcoal p-8 text-white">
-          <div class="grid grid-cols-2 gap-6">
-            <div>
-              <p class="font-display text-3xl font-bold text-gold">150+</p>
-              <p class="text-white/50 text-xs tracking-wide mt-1">Tamamlanan Proje</p>
-            </div>
-            <div>
-              <p class="font-display text-3xl font-bold text-gold">8+</p>
-              <p class="text-white/50 text-xs tracking-wide mt-1">Yıllık Deneyim</p>
-            </div>
-            <div>
-              <p class="font-display text-3xl font-bold text-gold">200+</p>
-              <p class="text-white/50 text-xs tracking-wide mt-1">Mutlu Müşteri</p>
-            </div>
-            <div>
-              <p class="font-display text-3xl font-bold text-gold">{displayRating}</p>
-              <p class="text-white/50 text-xs tracking-wide mt-1">Google Puan</p>
-            </div>
-          </div>
-          <div class="mt-6 pt-6 border-t border-white/10">
-            <p class="text-white/40 text-xs tracking-wide">Ücretsiz keşif · Hızlı geri dönüş · Anahtar teslim</p>
-          </div>
-        </div>
       </div>
     </div>
 

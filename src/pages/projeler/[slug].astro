@@ -630,8 +630,29 @@ const breadcrumbSchema = {
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
           </svg>
         </button>
-        <img id="lightbox-img" src="" alt="" class="max-h-[82vh] max-w-full object-contain shadow-2xl" />
+        <button
+          id="lightbox-prev"
+          type="button"
+          class="absolute left-0 md:-left-14 top-1/2 -translate-y-1/2 z-20 text-white/70 hover:text-white bg-charcoal/40 hover:bg-charcoal/70 transition-colors p-2 md:p-3"
+          aria-label="Önceki fotoğraf"
+        >
+          <svg class="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7"/>
+          </svg>
+        </button>
+        <button
+          id="lightbox-next"
+          type="button"
+          class="absolute right-0 md:-right-14 top-1/2 -translate-y-1/2 z-20 text-white/70 hover:text-white bg-charcoal/40 hover:bg-charcoal/70 transition-colors p-2 md:p-3"
+          aria-label="Sonraki fotoğraf"
+        >
+          <svg class="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"/>
+          </svg>
+        </button>
+        <img id="lightbox-img" src="" alt="" class="max-h-[82vh] max-w-full object-contain shadow-2xl select-none touch-pan-y" draggable="false" />
         <p id="lightbox-caption" class="mt-4 text-white/50 text-sm text-center"></p>
+        <p id="lightbox-counter" class="mt-1 text-white/30 text-xs tracking-wide"></p>
       </div>
     </div>
 
@@ -639,13 +660,29 @@ const breadcrumbSchema = {
       const lightbox = document.getElementById('project-lightbox') as HTMLElement;
       const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
       const lightboxCaption = document.getElementById('lightbox-caption') as HTMLElement;
+      const lightboxCounter = document.getElementById('lightbox-counter') as HTMLElement;
       const closeBtn = document.getElementById('lightbox-close');
+      const prevBtn = document.getElementById('lightbox-prev');
+      const nextBtn = document.getElementById('lightbox-next');
       const backdrop = document.getElementById('lightbox-backdrop');
 
-      function openLightbox(image: string, title: string) {
-        lightboxImg.src = image;
-        lightboxImg.alt = title;
-        lightboxCaption.textContent = title;
+      const triggers = Array.from(document.querySelectorAll<HTMLElement>('[data-lightbox-image]'));
+      const images = triggers.map((b) => b.dataset.lightboxImage ?? '');
+      const titles = triggers.map((b) => b.dataset.lightboxTitle ?? '');
+      const total = images.length;
+      let currentIndex = 0;
+
+      function render() {
+        if (!total) return;
+        lightboxImg.src = images[currentIndex];
+        lightboxImg.alt = titles[currentIndex];
+        lightboxCaption.textContent = titles[currentIndex];
+        lightboxCounter.textContent = `${currentIndex + 1} / ${total}`;
+      }
+
+      function openLightbox(index: number) {
+        currentIndex = index;
+        render();
         lightbox.style.display = 'flex';
         lightbox.style.opacity = '0';
         requestAnimationFrame(() => {
@@ -663,18 +700,54 @@ const breadcrumbSchema = {
         }, 220);
       }
 
-      document.querySelectorAll('[data-lightbox-image]').forEach((btn) => {
-        btn.addEventListener('click', () => {
-          const image = (btn as HTMLElement).dataset.lightboxImage ?? '';
-          const title = (btn as HTMLElement).dataset.lightboxTitle ?? '';
-          openLightbox(image, title);
-        });
+      function next() {
+        if (!total) return;
+        currentIndex = (currentIndex + 1) % total;
+        render();
+      }
+
+      function prev() {
+        if (!total) return;
+        currentIndex = (currentIndex - 1 + total) % total;
+        render();
+      }
+
+      triggers.forEach((btn, i) => {
+        btn.addEventListener('click', () => openLightbox(i));
       });
 
       closeBtn?.addEventListener('click', closeLightbox);
       backdrop?.addEventListener('click', closeLightbox);
+      nextBtn?.addEventListener('click', (e) => { e.stopPropagation(); next(); });
+      prevBtn?.addEventListener('click', (e) => { e.stopPropagation(); prev(); });
+
       document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && lightbox.style.display !== 'none') closeLightbox();
+        if (lightbox.style.display === 'none') return;
+        if (e.key === 'Escape') closeLightbox();
+        else if (e.key === 'ArrowRight') next();
+        else if (e.key === 'ArrowLeft') prev();
+      });
+
+      // Touch swipe support
+      let touchStartX = 0;
+      let touchStartY = 0;
+      let touchActive = false;
+      lightboxImg.addEventListener('touchstart', (e) => {
+        if (e.touches.length !== 1) return;
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        touchActive = true;
+      }, { passive: true });
+      lightboxImg.addEventListener('touchend', (e) => {
+        if (!touchActive) return;
+        touchActive = false;
+        const t = e.changedTouches[0];
+        const dx = t.clientX - touchStartX;
+        const dy = t.clientY - touchStartY;
+        if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+          if (dx < 0) next();
+          else prev();
+        }
       });
     </script>
 

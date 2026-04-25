@@ -4,11 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppFloat from '../components/WhatsAppFloat.astro';
 import { CANONICAL_BASE, TEL_URL, EMAIL_URL, WHATSAPP_URL_PROJECT } from '../config';
-import { getAggregateRating } from '../lib/google-places';
 import { allPosts } from '../data/blog-posts';
-
-const aggRating = await getAggregateRating();
-const displayRating = aggRating.rating > 0 ? String(aggRating.rating) : '4.9';
 
 interface Props {
   title: string;
@@ -242,28 +238,6 @@ const breadcrumbSchema = {
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
               </svg>
             </a>
-          </div>
-
-          <!-- Stats -->
-          <div class="border border-border p-5">
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <p class="font-display text-2xl font-bold text-gold">150+</p>
-                <p class="text-muted text-[10px] tracking-wide mt-0.5">Tamamlanan Proje</p>
-              </div>
-              <div>
-                <p class="font-display text-2xl font-bold text-gold">8+</p>
-                <p class="text-muted text-[10px] tracking-wide mt-0.5">Yıllık Deneyim</p>
-              </div>
-              <div>
-                <p class="font-display text-2xl font-bold text-gold">{displayRating}</p>
-                <p class="text-muted text-[10px] tracking-wide mt-0.5">Google Puan</p>
-              </div>
-              <div>
-                <p class="font-display text-2xl font-bold text-gold">200+</p>
-                <p class="text-muted text-[10px] tracking-wide mt-0.5">Mutlu Müşteri</p>
-              </div>
-            </div>
           </div>
 
         </aside>

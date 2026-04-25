@@ -3,10 +3,6 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppFloat from '../components/WhatsAppFloat.astro';
-import { getAggregateRating } from '../lib/google-places';
-
-const aggRating = await getAggregateRating();
-const googleRating = aggRating.rating > 0 ? String(aggRating.rating) : '4.9';
 import { CANONICAL_BASE } from '../config';
 
 const categories = [
@@ -310,21 +306,6 @@ const webPageSchema = {
           </div>
         </section>
       ))}
-
-      <!-- Stats strip -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-border border border-border">
-        {[
-          { value: '150+', label: 'Tamamlanan Proje' },
-          { value: '8+',   label: 'Yıllık Deneyim' },
-          { value: googleRating, label: 'Google Puanı' },
-          { value: '0 ₺',  label: 'Keşif Ücreti' },
-        ].map(stat => (
-          <div class="bg-warm-white p-6 text-center">
-            <p class="font-display text-3xl font-bold text-gold mb-1">{stat.value}</p>
-            <p class="text-muted text-xs tracking-wide">{stat.label}</p>
-          </div>
-        ))}
-      </div>
 
       <!-- CTA -->
       <div class="p-8 md:p-12 bg-charcoal text-center">
