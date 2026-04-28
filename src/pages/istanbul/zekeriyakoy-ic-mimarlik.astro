@@ -1,7 +1,13 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictFAQ from '../../components/DistrictFAQ.astro';
+import ProcessStrip from '../../components/ProcessStrip.astro';
 import { CANONICAL_BASE } from '../../config';
+import { optimizedImageW } from '../../lib/cloudinary';
+
+const heroPath = '/images/salon9.jpeg';
+const heroAbs = optimizedImageW(heroPath, 1600);
 
 const localSchema = {
   "@context": "https://schema.org",
@@ -9,17 +15,39 @@ const localSchema = {
   "name": "Master İç Mimarlık",
   "@id": `${CANONICAL_BASE}/#business`,
   "areaServed": { "@type": "Place", "name": "Zekeriyaköy, İstanbul" },
-  "url": `${CANONICAL_BASE}/istanbul/zekeriyakoy-ic-mimarlik`
+  "url": `${CANONICAL_BASE}/istanbul/zekeriyakoy-ic-mimarlik`,
+  "description": "Zekeriyaköy ve çevresinde villa yenileme, lüks müstakil ev iç mimarlığı ve anahtar teslim tadilat hizmetleri.",
+  "image": heroAbs,
 };
+
+const faqItems = [
+  {
+    q: "Zekeriyaköy'de villa yenileme ne kadar sürer?",
+    a: "Zekeriyaköy'deki orta ölçek villalarda anahtar teslim yenileme 8–12 hafta, geniş çift katlı villalarda ise 10–16 hafta sürmektedir. Bahçe ve dış mekan entegrasyonu yapılacaksa süre genişleyebilir; ilk keşifte villaya özel net takvim çıkarıyoruz.",
+  },
+  {
+    q: "Zekeriyaköy'de hangi sitelerde hizmet veriyorsunuz?",
+    a: "Zekeriyaköy'deki villa siteleri başta olmak üzere Göktürk, Kemerburgaz, Demirciköy ve Uskumruköy gibi kuzey İstanbul'un villa bölgelerinde aktif çalışıyoruz. Her villa farklı projedir; ilk keşifte yapı raporu ve uygulama planını birlikte oluşturuyoruz.",
+  },
+  {
+    q: "Zekeriyaköy için keşif ve teklif süreci nasıl işliyor?",
+    a: "WhatsApp veya telefon üzerinden randevu alıyor, Zekeriyaköy'deki villanıza gelerek ücretsiz keşif yapıyoruz. Ölçü, fotoğraf ve ihtiyaç görüşmesinin ardından 3–5 iş günü içinde detaylı teklif ve villaya özel mood-board paylaşıyoruz.",
+  },
+  {
+    q: "Zekeriyaköy'de örnek projeleriniz var mı?",
+    a: "Zekeriyaköy Villa projemiz 450 m²'lik bir villanın tüm iç mekanlarının yenilenmesini içerir (2024). Müşteri yorumumuz: 'Villayı yeniletirken 3D görselleştirme sayesinde her şeyi önceden gördük. Süreç tam vaat edildiği gibi ilerledi' — Murat B. Keşif sırasında ek villa referanslarını paylaşıyoruz.",
+  },
+];
 ---
 
 <ServiceLayout
   title="Zekeriyaköy Villa Yenileme ve İç Mimarlık"
-  description="Zekeriyaköy'de villa yenileme ve lüks iç mimarlık hizmetleri. Zekeriyaköy Villa projemizle referansımızı kanıtladık. Ücretsiz keşif: 0533 039 15 65"
+  description="Zekeriyaköy'de villa yenileme ve lüks iç mimarlık hizmetleri. Göktürk, Kemerburgaz ve kuzey İstanbul villa bölgelerinde aktif. Ücretsiz keşif: 0533 039 15 65"
   canonicalUrl={`${CANONICAL_BASE}/istanbul/zekeriyakoy-ic-mimarlik`}
   h1="Zekeriyaköy Villa Yenileme ve İç Mimarlık"
   eyebrow="İstanbul · Zekeriyaköy"
-  lead="Zekeriyaköy'ün lüks villa dokusuna yakışır, doğayla bütünleşik ve sofistike yaşam alanları tasarlıyoruz. Zekeriyaköy Villa projemiz portföyümüzün önemli bir referans eseridir."
+  lead="Zekeriyaköy'ün lüks villa dokusuna yakışır, doğayla bütünleşik ve sofistike yaşam alanları tasarlıyoruz. Müstakil villa projelerinde 8+ yıllık uygulama deneyimimizle yanınızdayız."
+  heroImage={heroPath}
   breadcrumb={[
     { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
     { label: "İstanbul", href: "/#hizmetler" },
@@ -32,25 +60,59 @@ const localSchema = {
     <div>
       <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Zekeriyaköy'de Villa Yenileme</h2>
       <p class="text-muted leading-relaxed mb-4">
-        Zekeriyaköy; İstanbul'un kuzeyinde, doğayla iç içe, lüks villa ve müstakil ev projelerinin yoğunlaştığı prestijli bir semttir. Bu bölgedeki projeler büyük alan yönetimi, kaliteli malzeme seçimi ve detay odaklı işçilik gerektirmektedir.
+        Zekeriyaköy; İstanbul'un kuzeyinde, doğayla iç içe, lüks villa ve müstakil ev projelerinin yoğunlaştığı prestijli bir semttir. Bu bölgedeki projeler büyük alan yönetimi, kaliteli malzeme seçimi ve detay odaklı işçilik gerektirmektedir; ekibimiz uzun yıllardır villa projelerinde uzmanlaşmıştır.
       </p>
       <p class="text-muted leading-relaxed mb-4">
-        Zekeriyaköy Villa projemizde 450 m²'lik bir villanın tüm iç mekanlarını yeniledik. Referans müşterimiz Murat B., 3D görselleştirme sayesinde süreci sürprizsiz tamamladıklarını belirtti.
+        Zekeriyaköy Villa projemizde 450 m²'lik bir villanın tüm iç mekanlarını yeniledik. Salon, mutfak, yatak odaları, giyinme odaları, çalışma odası ve banyolar entegre bir tasarım anlayışıyla ele alındı. Referans müşterimiz Murat B., 3D görselleştirme sayesinde süreci sürprizsiz tamamladıklarını belirtti.
       </p>
       <p class="text-muted leading-relaxed">
-        Zekeriyaköy, Göktürk, Kemerburgaz ve kuzey İstanbul'un tüm villa bölgelerinde hizmet veriyoruz.
+        Zekeriyaköy, Göktürk, Kemerburgaz, Demirciköy ve Uskumruköy başta olmak üzere kuzey İstanbul'un villa bölgelerinde hizmet veriyoruz.
       </p>
     </div>
     <div>
-      <h2 class="font-display text-2xl font-bold text-charcoal mb-4">Referans Proje</h2>
-      <div class="border border-border p-6">
-        <div class="w-full h-40 bg-charcoal/5 flex items-center justify-center mb-4" aria-label="Zekeriyaköy villa yenileme projesi fotoğrafı">
-          <span class="text-muted/30 text-xs tracking-widest uppercase">[ Zekeriyaköy Villa Fotoğrafı ]</span>
-        </div>
-        <h3 class="font-display font-semibold text-charcoal">Zekeriyaköy Villa</h3>
-        <p class="text-muted text-xs mt-1">450 m² · Villa yenileme · 2024</p>
-        <p class="text-muted text-xs mt-2">"Villayı yeniletirken 3D görselleştirme sayesinde her şeyi önceden gördük. Süreç tam vaat edildiği gibi ilerledi." — Murat B., 5 yıldız</p>
+      <h3 class="font-semibold text-charcoal mb-4">Zekeriyaköy'de Sunduğumuz Hizmetler</h3>
+      <ul class="space-y-3">
+        {[
+          'Villa yenileme ve iç mimarlık',
+          'Müstakil ev tadilatı',
+          'Salon, kütüphane ve ev ofis tasarımı',
+          'Mutfak, banyo ve giyinme odası tasarımı',
+          '3D görselleştirme ile tasarım onayı',
+          'Lüks malzeme seçimi ve özel mobilya',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+        <p class="text-sm text-charcoal font-medium">Referans Proje · Zekeriyaköy Villa</p>
+        <p class="text-muted text-sm mt-2 italic">"Villayı yeniletirken 3D görselleştirme sayesinde her şeyi önceden gördük. Süreç tam vaat edildiği gibi ilerledi."</p>
+        <p class="text-xs text-gold mt-2">— Murat B., Zekeriyaköy · 5 yıldız · 450 m² · 2024</p>
       </div>
+    </div>
+  </div>
+
+  <ProcessStrip districtName="Zekeriyaköy" />
+
+  <DistrictFAQ districtName="Zekeriyaköy" items={faqItems} />
+
+  <div class="py-12 border-t border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Hizmetlerimiz</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Anahtar Teslim Hizmetler', href: `${CANONICAL_BASE}/hizmetler/anahtar-teslim` },
+        { label: 'Villa Yenileme', href: `${CANONICAL_BASE}/hizmetler/villa-yenileme` },
+        { label: 'Ofis Yenileme', href: `${CANONICAL_BASE}/hizmetler/ofis-yenileme` },
+        { label: '3D Tasarım', href: `${CANONICAL_BASE}/hizmetler/3d-tasarim` },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
     </div>
   </div>
 

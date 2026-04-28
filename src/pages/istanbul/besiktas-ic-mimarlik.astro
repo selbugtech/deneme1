@@ -1,7 +1,13 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictFAQ from '../../components/DistrictFAQ.astro';
+import ProcessStrip from '../../components/ProcessStrip.astro';
 import { CANONICAL_BASE } from '../../config';
+import { optimizedImageW } from '../../lib/cloudinary';
+
+const heroPath = '/images/salon4.jpeg';
+const heroAbs = optimizedImageW(heroPath, 1600);
 
 const localSchema = {
   "@context": "https://schema.org",
@@ -9,17 +15,39 @@ const localSchema = {
   "name": "Master İç Mimarlık",
   "@id": `${CANONICAL_BASE}/#business`,
   "areaServed": { "@type": "Place", "name": "Beşiktaş, İstanbul" },
-  "url": `${CANONICAL_BASE}/istanbul/besiktas-ic-mimarlik`
+  "url": `${CANONICAL_BASE}/istanbul/besiktas-ic-mimarlik`,
+  "description": "Beşiktaş ve çevresinde anahtar teslim daire yenileme, lüks rezidans ve apartman iç mimarlık hizmetleri.",
+  "image": heroAbs,
 };
+
+const faqItems = [
+  {
+    q: "Beşiktaş'ta iç mimarlık ve daire yenileme ne kadar sürer?",
+    a: "Beşiktaş'taki tipik 2+1 ve 3+1 dairelerde anahtar teslim yenileme 5–8 hafta, Boğaz manzaralı rezidanslarda ve büyük apartman dairelerinde 6–10 hafta sürmektedir. Apartmanın yönetim onay süreçlerini de biz yönetiyoruz.",
+  },
+  {
+    q: "Beşiktaş'ta hangi mahallelerde hizmet veriyorsunuz?",
+    a: "Levent, Etiler, Bebek, Ortaköy, Arnavutköy, Akatlar, Ulus, Gayrettepe, Balmumcu ve Beşiktaş Merkez başta olmak üzere ilçenin tüm mahallelerinde aktif çalışıyoruz. Tarihi apartmanlar, lüks rezidanslar ve modern site dairelerinde uygulama deneyimimiz var.",
+  },
+  {
+    q: "Beşiktaş için keşif ve teklif süreci nasıl işliyor?",
+    a: "WhatsApp veya telefon üzerinden randevu alıyor, Beşiktaş'taki adresinize gelerek ücretsiz keşif yapıyoruz. Yerinde ölçü ve fotoğraf çalışmasının ardından 2–3 iş günü içinde detaylı teklif ve mood-board paylaşıyoruz.",
+  },
+  {
+    q: "Beşiktaş'ta örnek projeleriniz var mı?",
+    a: "Beşiktaş Dairesi referansımız 120 m²'lik komple anahtar teslim bir yenileme projesidir; salon, mutfak, 2 banyo ve 3 yatak odası 6 haftada teslim edilmiştir. Levent ve Etiler'de tamamladığımız ek projeleri de keşif sırasında paylaşıyoruz.",
+  },
+];
 ---
 
 <ServiceLayout
   title="Beşiktaş İç Mimarlık ve Ev Yenileme"
-  description="Beşiktaş'ta iç mimarlık, anahtar teslim ev yenileme hizmetleri. Master İç Mimarlık ile Beşiktaş dairelerinizi yenileyin. Ücretsiz keşif: 0533 039 15 65"
+  description="Beşiktaş'ta iç mimarlık, anahtar teslim daire yenileme ve mutfak-banyo tadilatı. Levent, Etiler, Bebek ve Beşiktaş Merkez'de aktif. Ücretsiz keşif: 0533 039 15 65"
   canonicalUrl={`${CANONICAL_BASE}/istanbul/besiktas-ic-mimarlik`}
   h1="Beşiktaş İç Mimarlık ve Ev Yenileme"
   eyebrow="İstanbul · Beşiktaş"
-  lead="Beşiktaş'ın prestijli semtine yakışır, modern ve sofistike mekan tasarımları sunuyoruz. Beşiktaş Dairesi projemiz portfolyomuzun en başarılı çalışmalarından biridir."
+  lead="Beşiktaş'ın prestijli semtine yakışır, modern ve sofistike mekan tasarımları sunuyoruz. Boğaz manzaralı rezidanslardan tarihi apartmanlara kadar geniş bir yelpazede 8+ yıllık uygulama deneyimimizle yanınızdayız."
+  heroImage={heroPath}
   breadcrumb={[
     { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
     { label: "İstanbul", href: "/#hizmetler" },
@@ -32,25 +60,58 @@ const localSchema = {
     <div>
       <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Beşiktaş'ta İç Mimarlık</h2>
       <p class="text-muted leading-relaxed mb-4">
-        Beşiktaş; Boğaz manzaralı rezidanslar, tarihi apartmanlar ve modern yaşam kompleksleriyle İstanbul'un en dinamik ve değerli ilçelerinden biridir. Bu semtte yaşayan sakinlerin beklentileri yüksek, zevkleri rafine.
+        Beşiktaş; Boğaz manzaralı rezidanslar, tarihi apartmanlar ve modern yaşam kompleksleriyle İstanbul'un en dinamik ve değerli ilçelerinden biridir. Bu semtte yaşayan sakinlerin beklentileri yüksek, zevkleri rafine; tasarım ve uygulama da bu çıtaya göre kurulmalı.
       </p>
       <p class="text-muted leading-relaxed mb-4">
-        Beşiktaş Dairesi projemizde 120 m²'lik komple anahtar teslim yenileme gerçekleştirdik. Salon, mutfak, banyo ve yatak odalarını çağdaş bir anlayışla yenileyerek müşterimize teslim ettik.
+        Beşiktaş Dairesi projemizde 120 m²'lik komple anahtar teslim yenileme gerçekleştirdik. Salon, mutfak, banyo ve yatak odalarını çağdaş bir anlayışla yenileyerek 6 hafta içinde müşterimize teslim ettik. Tarihi yapılarda zemin, tesisat ve elektrik altyapısını yenilemek; modern rezidanslarda ise planlama ve depolama optimizasyonu öne çıkıyor.
       </p>
       <p class="text-muted leading-relaxed">
-        Beşiktaş, Levent, Etiler, Bebek ve çevre semtlerde aktif olarak hizmet veriyoruz.
+        Beşiktaş Merkez, Levent, Etiler, Bebek, Ortaköy, Arnavutköy, Akatlar, Ulus, Gayrettepe ve Balmumcu başta olmak üzere ilçe genelinde hizmet veriyoruz.
       </p>
     </div>
     <div>
-      <h2 class="font-display text-2xl font-bold text-charcoal mb-4">Referans Proje</h2>
-      <div class="border border-border p-6">
-        <div class="w-full h-40 bg-charcoal/5 flex items-center justify-center mb-4" aria-label="Beşiktaş daire ev yenileme projesi fotoğrafı">
-          <span class="text-muted/30 text-xs tracking-widest uppercase">[ Beşiktaş Dairesi Fotoğrafı ]</span>
-        </div>
-        <h3 class="font-display font-semibold text-charcoal">Beşiktaş Dairesi</h3>
-        <p class="text-muted text-xs mt-1">120 m² · Anahtar teslim ev yenileme · 2024</p>
-        <p class="text-muted text-xs mt-2">Komple daire yenileme: salon, mutfak, 2 banyo, 3 yatak odası. 6 haftada teslim.</p>
+      <h3 class="font-semibold text-charcoal mb-4">Beşiktaş'ta Sunduğumuz Hizmetler</h3>
+      <ul class="space-y-3">
+        {[
+          'Anahtar teslim daire yenileme',
+          'Lüks rezidans iç mimarlığı',
+          'Mutfak ve banyo yenileme',
+          'Tarihi apartman restorasyonu',
+          '3D görselleştirme ile tasarım onayı',
+          'Malzeme seçimi ve tedarik',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+        <p class="text-sm text-charcoal font-medium">Referans Proje · Beşiktaş Dairesi</p>
+        <p class="text-muted text-sm mt-2">120 m² · Anahtar teslim ev yenileme · 2024. Komple daire yenileme: salon, mutfak, 2 banyo, 3 yatak odası — 6 haftada teslim.</p>
       </div>
+    </div>
+  </div>
+
+  <ProcessStrip districtName="Beşiktaş" />
+
+  <DistrictFAQ districtName="Beşiktaş" items={faqItems} />
+
+  <div class="py-12 border-t border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Hizmetlerimiz</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Anahtar Teslim Hizmetler', href: `${CANONICAL_BASE}/hizmetler/anahtar-teslim` },
+        { label: 'Villa Yenileme', href: `${CANONICAL_BASE}/hizmetler/villa-yenileme` },
+        { label: 'Ofis Yenileme', href: `${CANONICAL_BASE}/hizmetler/ofis-yenileme` },
+        { label: '3D Tasarım', href: `${CANONICAL_BASE}/hizmetler/3d-tasarim` },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
     </div>
   </div>
 

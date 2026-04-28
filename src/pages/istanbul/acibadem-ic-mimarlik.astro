@@ -1,7 +1,13 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictFAQ from '../../components/DistrictFAQ.astro';
+import ProcessStrip from '../../components/ProcessStrip.astro';
 import { CANONICAL_BASE } from '../../config';
+import { optimizedImageW } from '../../lib/cloudinary';
+
+const heroPath = '/images/salon3.jpeg';
+const heroAbs = optimizedImageW(heroPath, 1600);
 
 const localSchema = {
   "@context": "https://schema.org",
@@ -9,17 +15,39 @@ const localSchema = {
   "name": "Master İç Mimarlık",
   "@id": `${CANONICAL_BASE}/#business`,
   "areaServed": { "@type": "Place", "name": "Acıbadem, İstanbul" },
-  "url": `${CANONICAL_BASE}/istanbul/acibadem-ic-mimarlik`
+  "url": `${CANONICAL_BASE}/istanbul/acibadem-ic-mimarlik`,
+  "description": "Acıbadem ve çevresinde villa yenileme, anahtar teslim daire iç mimarlığı ve mutfak-banyo tadilatı.",
+  "image": heroAbs,
 };
+
+const faqItems = [
+  {
+    q: "Acıbadem'de iç mimarlık ve daire/villa yenileme ne kadar sürer?",
+    a: "Acıbadem'deki tipik dairelerde anahtar teslim yenileme 5–8 hafta, villa ve büyük apartman dairelerinde 8–12 hafta sürmektedir. Villa projelerinde dış cephe ve bahçe entegrasyonu süreyi etkileyebilir; ilk keşiften sonra net takvim çıkarıyoruz.",
+  },
+  {
+    q: "Acıbadem'de hangi mahalle ve sitelerde hizmet veriyorsunuz?",
+    a: "Acıbadem Merkez, Bağlarbaşı, Üsküdar sınırı, Koşuyolu, Hasanpaşa ve Fikirtepe yönü dahil ilçenin tamamında çalışıyoruz. Acıbadem'deki villa projeleri ve yeşil alana yakın site daireleri için özel uygulama yaklaşımımız bulunuyor.",
+  },
+  {
+    q: "Acıbadem için keşif ve teklif süreci nasıl işliyor?",
+    a: "WhatsApp veya telefon üzerinden randevu alıyor, Acıbadem'deki adresinize gelerek ücretsiz keşif yapıyoruz. Yerinde ölçü ve fotoğraf çalışmasının ardından 2–3 iş günü içinde detaylı teklifimizi ve örnek görselleri paylaşıyoruz.",
+  },
+  {
+    q: "Acıbadem'de örnek projeleriniz var mı?",
+    a: "Acıbadem Villa projemiz geniş bir köşk villanın iç mekanlarının lüks malzemeler ve özel mobilyalarla yenilenmesini içeriyor (2023). Bunun yanında Acıbadem Merkez'deki büyük daire yenilemelerimizi de keşif sırasında referans olarak paylaşıyoruz.",
+  },
+];
 ---
 
 <ServiceLayout
   title="Acıbadem İç Mimarlık ve Villa Yenileme"
-  description="Acıbadem'de iç mimarlık, villa yenileme ve anahtar teslim ev yenileme hizmetleri. Acıbadem Villa referansımızla güveninizi kazandık. 0533 039 15 65"
+  description="Acıbadem'de iç mimarlık, villa yenileme ve anahtar teslim daire tadilatı. Bağlarbaşı, Koşuyolu ve Acıbadem Merkez'de aktif. Ücretsiz keşif: 0533 039 15 65"
   canonicalUrl={`${CANONICAL_BASE}/istanbul/acibadem-ic-mimarlik`}
   h1="Acıbadem İç Mimarlık ve Villa Yenileme"
   eyebrow="İstanbul · Acıbadem"
-  lead="Acıbadem'in sakin ve prestijli yapısına uygun, kaliteli malzeme ve özenli işçilikle yenileme projeleri tamamlıyoruz. Acıbadem Villa projemiz 2023 portföyümüzün öne çıkan çalışmalarından biridir."
+  lead="Acıbadem'in sakin ve prestijli yapısına uygun, kaliteli malzeme ve özenli işçilikle yenileme projeleri tamamlıyoruz. Villa ve büyük daire projelerinde 8+ yıllık deneyimimizle yanınızdayız."
+  heroImage={heroPath}
   breadcrumb={[
     { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
     { label: "İstanbul", href: "/#hizmetler" },
@@ -28,23 +56,62 @@ const localSchema = {
   structuredData={localSchema}
 >
 
-  <div class="py-12">
-    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Acıbadem'de İç Mimarlık</h2>
-    <p class="text-muted leading-relaxed mb-4">
-      Acıbadem; Kadıköy'e komşu, yeşil dokusu ve sakin yaşam alanlarıyla tercih edilen, köklü aileler ve profesyonellerin yoğunlaştığı bir semttir. Bu semtte villa ve büyük daire projeleri ağırlıklı olarak talep görür.
-    </p>
-    <p class="text-muted leading-relaxed mb-4">
-      Acıbadem Villa projemizde geniş bir köşk villanın iç mekanlarını lüks malzemeler ve özel mobilyalarla donattık. Proje 2023 yılında tamamlanarak müşterimize teslim edildi.
-    </p>
-    <p class="text-muted leading-relaxed mb-8">
-      Acıbadem, Bağlarbaşı, Üsküdar ve çevre mahallelerde aktif olarak hizmet veriyoruz.
-    </p>
-    <div class="border border-border p-6 max-w-md">
-      <div class="w-full h-40 bg-charcoal/5 flex items-center justify-center mb-4" aria-label="Acıbadem villa yenileme projesi fotoğrafı">
-        <span class="text-muted/30 text-xs tracking-widest uppercase">[ Acıbadem Villa Fotoğrafı ]</span>
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Acıbadem'de İç Mimarlık ve Villa Yenileme</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Acıbadem; Kadıköy'e komşu, yeşil dokusu ve sakin yaşam alanlarıyla tercih edilen, köklü aileler ve profesyonellerin yoğunlaştığı bir semttir. Bu semtte villa ve büyük daire projeleri ağırlıklı olarak talep görür; tasarım her zaman kaliteli malzeme ve detay odağıyla kurulur.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Acıbadem Villa projemizde geniş bir köşk villanın iç mekanlarını lüks malzemeler ve özel mobilyalarla donattık (2023). Villa projelerinde salon, mutfak, yatak odaları ve giyinme odalarının yanı sıra dış mekan-iç mekan geçişlerini, kütüphane ve ev ofis gibi özel alanları da birlikte ele alıyoruz.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Acıbadem Merkez, Bağlarbaşı, Koşuyolu, Hasanpaşa ve Üsküdar sınırı başta olmak üzere ilçe genelinde hizmet veriyoruz.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4">Acıbadem'de Sunduğumuz Hizmetler</h3>
+      <ul class="space-y-3">
+        {[
+          'Villa yenileme ve iç mimarlık',
+          'Anahtar teslim daire yenileme',
+          'Mutfak ve banyo tadilatı',
+          'Salon, kütüphane ve ev ofis tasarımı',
+          '3D görselleştirme ile tasarım onayı',
+          'Lüks malzeme seçimi ve tedarik',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+        <p class="text-sm text-charcoal font-medium">Referans Proje · Acıbadem Villa</p>
+        <p class="text-muted text-sm mt-2">Geniş bir köşk villa için tüm iç mekanların lüks malzeme ve özel mobilyalarla yenilenmesi (2023). Salon, mutfak, banyo, yatak odaları ve özel alanlar projeye dahil edilmiştir.</p>
       </div>
-      <h3 class="font-display font-semibold text-charcoal">Acıbadem Villa</h3>
-      <p class="text-muted text-xs mt-1">Villa yenileme · 2023</p>
+    </div>
+  </div>
+
+  <ProcessStrip districtName="Acıbadem" />
+
+  <DistrictFAQ districtName="Acıbadem" items={faqItems} />
+
+  <div class="py-12 border-t border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Hizmetlerimiz</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Anahtar Teslim Hizmetler', href: `${CANONICAL_BASE}/hizmetler/anahtar-teslim` },
+        { label: 'Villa Yenileme', href: `${CANONICAL_BASE}/hizmetler/villa-yenileme` },
+        { label: 'Ofis Yenileme', href: `${CANONICAL_BASE}/hizmetler/ofis-yenileme` },
+        { label: '3D Tasarım', href: `${CANONICAL_BASE}/hizmetler/3d-tasarim` },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
     </div>
   </div>
 

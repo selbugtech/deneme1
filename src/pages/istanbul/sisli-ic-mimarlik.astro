@@ -1,7 +1,13 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictFAQ from '../../components/DistrictFAQ.astro';
+import ProcessStrip from '../../components/ProcessStrip.astro';
 import { CANONICAL_BASE } from '../../config';
+import { optimizedImageW } from '../../lib/cloudinary';
+
+const heroPath = '/images/salon5.jpeg';
+const heroAbs = optimizedImageW(heroPath, 1600);
 
 const localSchema = {
   "@context": "https://schema.org",
@@ -9,17 +15,39 @@ const localSchema = {
   "name": "Master İç Mimarlık",
   "@id": `${CANONICAL_BASE}/#business`,
   "areaServed": { "@type": "Place", "name": "Şişli, İstanbul" },
-  "url": `${CANONICAL_BASE}/istanbul/sisli-ic-mimarlik`
+  "url": `${CANONICAL_BASE}/istanbul/sisli-ic-mimarlik`,
+  "description": "Şişli ve çevresinde anahtar teslim daire yenileme, rezidans iç mimarlığı ve ticari mekan tasarımı.",
+  "image": heroAbs,
 };
+
+const faqItems = [
+  {
+    q: "Şişli'de iç mimarlık ve daire yenileme ne kadar sürer?",
+    a: "Şişli'deki tipik 1+1 ve 2+1 dairelerde anahtar teslim yenileme 4–7 hafta, daha büyük rezidans dairelerinde ve ticari mekan projelerinde 6–10 hafta sürmektedir. Eski Şişli apartmanlarında tesisat-elektrik yenilemesi varsa süre üst sınıra yaklaşıyor.",
+  },
+  {
+    q: "Şişli'de hangi mahalle ve sitelerde hizmet veriyorsunuz?",
+    a: "Mecidiyeköy, Fulya, Esentepe, Bomonti, Feriköy, Cumhuriyet, Halaskargazi, Gayrettepe, 19 Mayıs ve Şişli Merkez başta olmak üzere ilçe genelinde aktif çalışıyoruz. Ticari mekanlar için Şişli'nin merkezi konumu nedeniyle ofis ve butik tasarım deneyimimiz özellikle güçlüdür.",
+  },
+  {
+    q: "Şişli için keşif ve teklif süreci nasıl işliyor?",
+    a: "WhatsApp veya telefon üzerinden randevu alıyor, Şişli'deki adresinize gelerek ücretsiz keşif yapıyoruz. Yerinde ölçü ve fotoğraf çalışmasının ardından 2–3 iş günü içinde detaylı teklif ve mood-board paylaşıyoruz.",
+  },
+  {
+    q: "Şişli'de örnek projeleriniz var mı?",
+    a: "Mecidiyeköy'deki rezidans daire yenilemeleri, Bomonti ve Fulya'daki klasik apartman dairelerinin restorasyonu ve Şişli merkezde tamamladığımız ticari iç mekan projeleri referanslarımız arasındadır. Keşif sırasında benzer örnekleri sizinle paylaşıyoruz.",
+  },
+];
 ---
 
 <ServiceLayout
   title="Şişli İç Mimarlık ve Ev Yenileme"
-  description="Şişli'de iç mimarlık, anahtar teslim daire yenileme ve ticari mekan tasarımı hizmetleri. Master İç Mimarlık ile Şişli'de hayalinizdeki mekanı yaratın. 0533 039 15 65"
+  description="Şişli'de iç mimarlık, anahtar teslim daire yenileme ve ticari mekan tasarımı. Mecidiyeköy, Fulya, Bomonti ve Şişli Merkez'de aktif. Ücretsiz keşif: 0533 039 15 65"
   canonicalUrl={`${CANONICAL_BASE}/istanbul/sisli-ic-mimarlik`}
   h1="Şişli İç Mimarlık ve Ev Yenileme"
   eyebrow="İstanbul · Şişli"
   lead="Şişli'nin merkezi konumundaki daire, rezidans ve ticari mekanlara modern ve işlevsel iç mekan çözümleri sunuyoruz. Hem konut hem ticari proje deneyimimizle her ihtiyaca cevap veriyoruz."
+  heroImage={heroPath}
   breadcrumb={[
     { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
     { label: "İstanbul", href: "/#hizmetler" },
@@ -28,17 +56,64 @@ const localSchema = {
   structuredData={localSchema}
 >
 
-  <div class="py-12">
-    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Şişli'de İç Mimarlık</h2>
-    <p class="text-muted leading-relaxed mb-4">
-      Şişli; Nişantaşı, Fulya ve Mecidiyeköy gibi farklı karakterlere sahip mahallelerden oluşan heterojen bir ilçedir. Ticari hayatın yoğun olduğu merkezi konumu ve konut çeşitliliğiyle farklı proje taleplerine ev sahipliği yapar.
-    </p>
-    <p class="text-muted leading-relaxed mb-4">
-      Şişli'deki projelerimizde hem lüks rezidans yenilemesi hem de kurumsal ofis tasarımı deneyimimizi bir araya getiriyoruz. Bölgedeki yapı stoku çeşitli olduğundan müşteriye özel esneklik sunabiliyoruz.
-    </p>
-    <p class="text-muted leading-relaxed">
-      Şişli, Nişantaşı, Fulya, Mecidiyeköy ve çevre semtlerde aktif olarak hizmet veriyoruz.
-    </p>
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Şişli'de İç Mimarlık</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Şişli; Nişantaşı, Fulya, Bomonti ve Mecidiyeköy gibi farklı karakterlere sahip mahallelerden oluşan heterojen bir ilçedir. Ticari hayatın yoğun olduğu merkezi konumu ve konut çeşitliliğiyle birbirinden çok farklı proje taleplerine ev sahipliği yapar.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Mecidiyeköy ve Fulya'daki yeni rezidans dairelerinde planlama ve depolama optimizasyonu, Bomonti ve Feriköy'deki tarihi apartman dairelerinde ise restorasyon odaklı yenilemeler ön plana çıkıyor. Şişli Merkez ve Cumhuriyet civarında ofis-butik tasarımları için marka kimliği odaklı çalışıyoruz.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Şişli Merkez, Mecidiyeköy, Fulya, Esentepe, Bomonti, Feriköy, Cumhuriyet, Halaskargazi, Gayrettepe ve 19 Mayıs başta olmak üzere ilçe genelinde hizmet veriyoruz.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4">Şişli'de Sunduğumuz Hizmetler</h3>
+      <ul class="space-y-3">
+        {[
+          'Anahtar teslim daire yenileme',
+          'Rezidans iç mimarlığı',
+          'Mutfak ve banyo tadilatı',
+          'Ofis ve ticari mekan tasarımı',
+          '3D görselleştirme ile tasarım onayı',
+          'Malzeme seçimi ve tedarik',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+        <p class="text-sm text-charcoal font-medium">Müşteri Yorumu</p>
+        <p class="text-muted text-sm mt-2 italic">"Mecidiyeköy'deki rezidans dairemizi anahtar teslim yenilettik. Ekibin malzeme seçimindeki rehberliği ve site yönetimi ile koordinasyonu süreci çok kolaylaştırdı."</p>
+        <p class="text-xs text-gold mt-2">— Burcu E., Şişli · 5 yıldız</p>
+      </div>
+    </div>
+  </div>
+
+  <ProcessStrip districtName="Şişli" />
+
+  <DistrictFAQ districtName="Şişli" items={faqItems} />
+
+  <div class="py-12 border-t border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Hizmetlerimiz</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Anahtar Teslim Hizmetler', href: `${CANONICAL_BASE}/hizmetler/anahtar-teslim` },
+        { label: 'Villa Yenileme', href: `${CANONICAL_BASE}/hizmetler/villa-yenileme` },
+        { label: 'Ofis Yenileme', href: `${CANONICAL_BASE}/hizmetler/ofis-yenileme` },
+        { label: '3D Tasarım', href: `${CANONICAL_BASE}/hizmetler/3d-tasarim` },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
   </div>
 
   <RelatedDistricts currentSlug="sisli-ic-mimarlik" />

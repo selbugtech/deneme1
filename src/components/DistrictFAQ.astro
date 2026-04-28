@@ -1,0 +1,50 @@
+---
+interface FAQItem {
+  q: string;
+  a: string;
+}
+
+interface Props {
+  districtName: string;
+  items: FAQItem[];
+}
+
+const { districtName, items } = Astro.props;
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": items.map(item => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.a,
+    },
+  })),
+};
+---
+
+<section class="py-12 border-t border-border">
+  <div class="flex items-center gap-3 mb-6">
+    <span class="w-8 h-px bg-gold"></span>
+    <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Sıkça Sorulan Sorular</span>
+  </div>
+  <h2 class="font-display text-2xl md:text-3xl font-bold text-charcoal mb-8">{districtName} iç mimarlık hakkında</h2>
+
+  <div class="space-y-3">
+    {items.map((item, i) => (
+      <details class="group border border-border bg-white/40 open:bg-white open:border-gold/40 transition-colors" open={i === 0}>
+        <summary class="cursor-pointer list-none px-5 py-4 flex items-center justify-between gap-4">
+          <span class="font-display text-base md:text-lg font-semibold text-charcoal">{item.q}</span>
+          <svg class="w-5 h-5 shrink-0 text-gold transition-transform group-open:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+          </svg>
+        </summary>
+        <div class="px-5 pb-5 -mt-1 text-muted leading-relaxed text-sm">{item.a}</div>
+      </details>
+    ))}
+  </div>
+</section>
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />

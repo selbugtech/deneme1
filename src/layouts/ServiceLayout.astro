@@ -4,7 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppFloat from '../components/WhatsAppFloat.astro';
 import { CANONICAL_BASE, TEL_URL, EMAIL_URL, WHATSAPP_URL_PROJECT, WHATSAPP_URL_SERVICE } from '../config';
-import { optimizedImage } from '../lib/cloudinary';
+import { optimizedImage, optimizedImageW, srcsetImage } from '../lib/cloudinary';
 
 interface Props {
   title: string;
@@ -76,7 +76,17 @@ const allSchema = [
     <!-- Hero image (optional) -->
     {heroImage && (
       <div class="relative w-full h-[50vh] md:h-[60vh] overflow-hidden">
-        <img src={heroImage} alt={h1} fetchpriority="high" decoding="async" class="w-full h-full object-cover object-center" />
+        <img
+          src={heroImage.startsWith('http') ? heroImage : optimizedImageW(heroImage, 1600)}
+          srcset={heroImage.startsWith('http') ? undefined : srcsetImage(heroImage, [800, 1200, 1600, 2000])}
+          sizes="100vw"
+          width="1600"
+          height="900"
+          alt={h1}
+          fetchpriority="high"
+          decoding="async"
+          class="w-full h-full object-cover object-center"
+        />
         <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-transparent"></div>
 
         <div class="absolute top-0 left-0 right-0 pt-28 px-6">

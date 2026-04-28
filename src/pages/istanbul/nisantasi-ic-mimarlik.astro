@@ -1,7 +1,13 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictFAQ from '../../components/DistrictFAQ.astro';
+import ProcessStrip from '../../components/ProcessStrip.astro';
 import { CANONICAL_BASE } from '../../config';
+import { optimizedImageW } from '../../lib/cloudinary';
+
+const heroPath = '/images/salon6.jpeg';
+const heroAbs = optimizedImageW(heroPath, 1600);
 
 const localSchema = {
   "@context": "https://schema.org",
@@ -9,17 +15,39 @@ const localSchema = {
   "name": "Master İç Mimarlık",
   "@id": `${CANONICAL_BASE}/#business`,
   "areaServed": { "@type": "Place", "name": "Nişantaşı, İstanbul" },
-  "url": `${CANONICAL_BASE}/istanbul/nisantasi-ic-mimarlik`
+  "url": `${CANONICAL_BASE}/istanbul/nisantasi-ic-mimarlik`,
+  "description": "Nişantaşı ve çevresinde lüks daire iç mimarlığı, butik mağaza tasarımı ve anahtar teslim yenileme hizmetleri.",
+  "image": heroAbs,
 };
+
+const faqItems = [
+  {
+    q: "Nişantaşı'nda iç mimarlık ve yenileme ne kadar sürer?",
+    a: "Nişantaşı'ndaki tipik dairelerde anahtar teslim yenileme 5–9 hafta, lüks konutlarda ve butik mağaza projelerinde 6–12 hafta sürmektedir. Tarihi apartman dairelerinde restorasyon detayları süreyi etkileyebilir; ilk keşiften sonra net bir takvim çıkarıyoruz.",
+  },
+  {
+    q: "Nişantaşı'nda hangi mahalle ve sokaklarda hizmet veriyorsunuz?",
+    a: "Teşvikiye, Maçka, Harbiye, Bostan Sokak, Abdi İpekçi Caddesi ve çevresi başta olmak üzere Nişantaşı genelinde aktif çalışıyoruz. Hem konut hem de Abdi İpekçi ve civarındaki butik mağaza ve showroom projelerinde uygulama deneyimimiz var.",
+  },
+  {
+    q: "Nişantaşı için keşif ve teklif süreci nasıl işliyor?",
+    a: "WhatsApp veya telefon üzerinden randevu alıyor, Nişantaşı'ndaki adresinize ya da mağazanıza gelerek ücretsiz keşif yapıyoruz. 2–3 iş günü içinde detaylı teklif ve marka kimliğinize uygun mood-board paylaşıyoruz.",
+  },
+  {
+    q: "Nişantaşı'nda örnek projeleriniz var mı?",
+    a: "Nişantaşı Butik projemiz 180 m²'lik bir moda mağazasının marka kimliğini yansıtan iç mekan tasarımıyla yenilenmesini içerir (2024). Müşteri akışı, aydınlatma ve vitrin tasarımı entegre biçimde ele alınmıştır. Konut tarafında da Teşvikiye ve Maçka referanslarımızı paylaşıyoruz.",
+  },
+];
 ---
 
 <ServiceLayout
   title="Nişantaşı İç Mimarlık ve Butik Tasarım"
-  description="Nişantaşı'nda iç mimarlık, lüks daire yenileme ve butik mağaza tasarımı. Master İç Mimarlık ile Nişantaşı'nın ruhuna uygun projeler. 0533 039 15 65"
+  description="Nişantaşı'nda iç mimarlık, lüks daire yenileme ve butik mağaza tasarımı. Teşvikiye, Maçka ve Harbiye'de aktif. Ücretsiz keşif: 0533 039 15 65"
   canonicalUrl={`${CANONICAL_BASE}/istanbul/nisantasi-ic-mimarlik`}
   h1="Nişantaşı İç Mimarlık ve Lüks Mekan Tasarımı"
   eyebrow="İstanbul · Nişantaşı"
-  lead="Nişantaşı'nın sofistike ve avangard ruhuna uygun, lüks konut ve ticari mekan projeleri geliştiriyoruz. Nişantaşı Butik projemiz hem estetik hem de marka kimliği yansıtma açısından başarılı bir referans örneğidir."
+  lead="Nişantaşı'nın sofistike ve avangard ruhuna uygun, lüks konut ve ticari mekan projeleri geliştiriyoruz. Hem klasik apartman dairelerinde hem de marka odaklı butik mağaza projelerinde 8+ yıllık deneyimimizle yanınızdayız."
+  heroImage={heroPath}
   breadcrumb={[
     { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
     { label: "İstanbul", href: "/#hizmetler" },
@@ -32,25 +60,58 @@ const localSchema = {
     <div>
       <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Nişantaşı'nda İç Mimarlık</h2>
       <p class="text-muted leading-relaxed mb-4">
-        Nişantaşı; İstanbul'un en seçkin alışveriş ve yaşam bölgesi olarak lüks marka butikleri, galeriler ve kozmopolit bir yaşam tarzını barındırır. Bu semtte tasarım, sadece estetik değil — bir kimlik ifadesidir.
+        Nişantaşı; İstanbul'un en seçkin alışveriş ve yaşam bölgesi olarak lüks marka butikleri, galeriler ve kozmopolit bir yaşam tarzını barındırır. Bu semtte tasarım, sadece estetik değil — bir kimlik ifadesidir; daire ve mağaza projelerini bu bilinçle ele alıyoruz.
       </p>
       <p class="text-muted leading-relaxed mb-4">
-        Nişantaşı Butik projemizde 180 m²'lik bir moda mağazasını marka kimliğini yansıtan bir iç mekan tasarımıyla donattık. Müşteri akışı, aydınlatma ve vitrin tasarımı entegre biçimde ele alındı.
+        Nişantaşı Butik projemizde 180 m²'lik bir moda mağazasını marka kimliğini yansıtan bir iç mekan tasarımıyla donattık. Müşteri akışı, aydınlatma ve vitrin tasarımı entegre biçimde ele alındı. Konut tarafında ise Teşvikiye ve Maçka'daki tarihi apartman dairelerinde özgün mimari dokuyu koruyan restorasyon ağırlıklı projeler tamamladık.
       </p>
       <p class="text-muted leading-relaxed">
-        Nişantaşı ve çevresinde (Şişli, Teşvikiye, Harbiye) hem konut hem de ticari mekan projelerinde aktif olarak hizmet veriyoruz.
+        Teşvikiye, Maçka, Harbiye, Bostan Sokak ve Abdi İpekçi Caddesi başta olmak üzere Nişantaşı ve çevresinde hem konut hem de ticari mekan projelerinde aktif olarak hizmet veriyoruz.
       </p>
     </div>
     <div>
-      <h2 class="font-display text-2xl font-bold text-charcoal mb-4">Referans Proje</h2>
-      <div class="border border-border p-6">
-        <div class="w-full h-40 bg-charcoal/5 flex items-center justify-center mb-4" aria-label="Nişantaşı butik mağaza yenileme projesi">
-          <span class="text-muted/30 text-xs tracking-widest uppercase">[ Nişantaşı Butik Fotoğrafı ]</span>
-        </div>
-        <h3 class="font-display font-semibold text-charcoal">Nişantaşı Butik</h3>
-        <p class="text-muted text-xs mt-1">180 m² · Mağaza yenileme · 2024</p>
-        <p class="text-muted text-xs mt-2">Lüks moda markası için marka kimliği odaklı butik mağaza iç mekan tasarımı.</p>
+      <h3 class="font-semibold text-charcoal mb-4">Nişantaşı'nda Sunduğumuz Hizmetler</h3>
+      <ul class="space-y-3">
+        {[
+          'Lüks daire iç mimarlığı',
+          'Tarihi apartman restorasyonu',
+          'Butik mağaza ve showroom tasarımı',
+          'Mutfak ve banyo yenileme',
+          '3D görselleştirme ile tasarım onayı',
+          'Marka kimliğine uygun malzeme seçimi',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+        <p class="text-sm text-charcoal font-medium">Referans Proje · Nişantaşı Butik</p>
+        <p class="text-muted text-sm mt-2">180 m² · Mağaza yenileme · 2024. Lüks moda markası için marka kimliği odaklı butik mağaza iç mekan tasarımı.</p>
       </div>
+    </div>
+  </div>
+
+  <ProcessStrip districtName="Nişantaşı" />
+
+  <DistrictFAQ districtName="Nişantaşı" items={faqItems} />
+
+  <div class="py-12 border-t border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Hizmetlerimiz</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Anahtar Teslim Hizmetler', href: `${CANONICAL_BASE}/hizmetler/anahtar-teslim` },
+        { label: 'Villa Yenileme', href: `${CANONICAL_BASE}/hizmetler/villa-yenileme` },
+        { label: 'Ofis Yenileme', href: `${CANONICAL_BASE}/hizmetler/ofis-yenileme` },
+        { label: '3D Tasarım', href: `${CANONICAL_BASE}/hizmetler/3d-tasarim` },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
     </div>
   </div>
 

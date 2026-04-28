@@ -1,7 +1,13 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictFAQ from '../../components/DistrictFAQ.astro';
+import ProcessStrip from '../../components/ProcessStrip.astro';
 import { CANONICAL_BASE } from '../../config';
+import { optimizedImageW } from '../../lib/cloudinary';
+
+const heroPath = '/images/salon8.jpeg';
+const heroAbs = optimizedImageW(heroPath, 1600);
 
 const localSchema = {
   "@context": "https://schema.org",
@@ -9,17 +15,39 @@ const localSchema = {
   "name": "Master İç Mimarlık",
   "@id": `${CANONICAL_BASE}/#business`,
   "areaServed": { "@type": "Place", "name": "Ataşehir, İstanbul" },
-  "url": `${CANONICAL_BASE}/istanbul/atasehir-ic-mimarlik`
+  "url": `${CANONICAL_BASE}/istanbul/atasehir-ic-mimarlik`,
+  "description": "Ataşehir ve çevresinde rezidans, site dairesi ve villa yenileme; anahtar teslim iç mimarlık hizmetleri.",
+  "image": heroAbs,
 };
+
+const faqItems = [
+  {
+    q: "Ataşehir'de iç mimarlık ve daire yenileme ne kadar sürer?",
+    a: "Ataşehir'deki tipik 2+1 ve 3+1 dairelerde anahtar teslim yenileme 4–8 hafta, lüks rezidans ve büyük dairelerde 6–10 hafta sürmektedir. Site yönetimi onay süreçlerini de biz takip ediyoruz.",
+  },
+  {
+    q: "Ataşehir'de hangi mahalle ve sitelerde hizmet veriyorsunuz?",
+    a: "Barbaros, Atatürk, Yenisahra, İçerenköy, Küçükbakkalköy, Kayışdağı, Mustafa Kemal ve Fetih Mahallesi başta olmak üzere Ataşehir genelinde aktif çalışıyoruz. Bölgedeki yeni nesil rezidans projelerinde site içi koordinasyon ve hızlı uygulama deneyimimiz güçlü.",
+  },
+  {
+    q: "Ataşehir için keşif ve teklif süreci nasıl işliyor?",
+    a: "WhatsApp veya telefon üzerinden randevu alıyor, Ataşehir'deki adresinize gelerek ücretsiz keşif yapıyoruz. Yerinde ölçü ve fotoğraf çalışmasının ardından 2–3 iş günü içinde detaylı teklifimizi paylaşıyoruz.",
+  },
+  {
+    q: "Ataşehir'de örnek projeleriniz var mı?",
+    a: "Ataşehir Residence projemiz 95 m²'lik modern bir dairenin anahtar teslim yenilenmesini içerir; açık mutfak-salon düzeni, özel depolama çözümleri ve konforlu yatak odaları (2023). Keşif sırasında bölgeden ek referansları paylaşıyoruz.",
+  },
+];
 ---
 
 <ServiceLayout
   title="Ataşehir İç Mimarlık ve Ev Yenileme"
-  description="Ataşehir'de iç mimarlık ve anahtar teslim ev yenileme hizmetleri. Ataşehir Residence projemizle referansımızı kanıtladık. 0533 039 15 65"
+  description="Ataşehir'de iç mimarlık, anahtar teslim daire yenileme ve mutfak-banyo tadilatı. Barbaros, Yenisahra, İçerenköy ve Atatürk Mahallesi'nde aktif. Ücretsiz keşif: 0533 039 15 65"
   canonicalUrl={`${CANONICAL_BASE}/istanbul/atasehir-ic-mimarlik`}
   h1="Ataşehir İç Mimarlık ve Ev Yenileme"
   eyebrow="İstanbul · Ataşehir"
-  lead="Ataşehir'in modern rezidans ve konut projelerine uygun, çağdaş ve yaşanabilir iç mekan tasarımları sunuyoruz. Ataşehir Residence projemiz bu ilçedeki başarılı çalışmalarımızdan biridir."
+  lead="Ataşehir'in modern rezidans ve konut projelerine uygun, çağdaş ve yaşanabilir iç mekan tasarımları sunuyoruz. Anadolu yakasının hızla gelişen bu ilçesinde 8+ yıllık uygulama deneyimimizle yanınızdayız."
+  heroImage={heroPath}
   breadcrumb={[
     { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
     { label: "İstanbul", href: "/#hizmetler" },
@@ -32,25 +60,58 @@ const localSchema = {
     <div>
       <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Ataşehir'de İç Mimarlık</h2>
       <p class="text-muted leading-relaxed mb-4">
-        Ataşehir; İstanbul'un Anadolu yakasında hızla gelişen, modern rezidans kompleksleri ve yeni nesil konut projelerine ev sahipliği yapan dinamik bir ilçedir. Bölgedeki yeni yapı stoku, yüksek standartlarda iç mekan beklentisi getiriyor.
+        Ataşehir; İstanbul'un Anadolu yakasında hızla gelişen, modern rezidans kompleksleri ve yeni nesil konut projelerine ev sahipliği yapan dinamik bir ilçedir. Bölgedeki yeni yapı stoku, yüksek standartlarda iç mekan beklentisi getiriyor ve tasarımı bu çıtaya göre kuruyoruz.
       </p>
       <p class="text-muted leading-relaxed mb-4">
-        Ataşehir Residence projemizde 95 m²'lik modern bir daireyi anahtar teslim olarak yeniledik. Açık mutfak-salon düzeni, özel depolama çözümleri ve konforlu yatak odaları müşterimizin hayalindeki evi yarattı.
+        Ataşehir Residence projemizde 95 m²'lik modern bir daireyi anahtar teslim olarak yeniledik. Açık mutfak-salon düzeni, özel depolama çözümleri ve konforlu yatak odalarıyla müşterimizin hayalindeki evi yarattık. Site dairelerinde yönetim koordinasyonunu, hafta sonu çalışma kısıtlarını ve asansör-zemin koruma kurallarını biz yönetiyoruz.
       </p>
       <p class="text-muted leading-relaxed">
-        Ataşehir, Acıbadem, Maltepe ve Anadolu yakasının tüm ilçelerinde hizmet veriyoruz.
+        Barbaros, Atatürk, Yenisahra, İçerenköy, Küçükbakkalköy, Kayışdağı, Mustafa Kemal ve Fetih başta olmak üzere Ataşehir genelinde hizmet veriyoruz.
       </p>
     </div>
     <div>
-      <h2 class="font-display text-2xl font-bold text-charcoal mb-4">Referans Proje</h2>
-      <div class="border border-border p-6">
-        <div class="w-full h-40 bg-charcoal/5 flex items-center justify-center mb-4" aria-label="Ataşehir Residence ev yenileme projesi">
-          <span class="text-muted/30 text-xs tracking-widest uppercase">[ Ataşehir Residence Fotoğrafı ]</span>
-        </div>
-        <h3 class="font-display font-semibold text-charcoal">Ataşehir Residence</h3>
-        <p class="text-muted text-xs mt-1">95 m² · Anahtar teslim ev yenileme · 2023</p>
-        <p class="text-muted text-xs mt-2">Modern rezidans dairesi için açık plan düzenleme, mutfak yenileme ve yatak odaları projesi.</p>
+      <h3 class="font-semibold text-charcoal mb-4">Ataşehir'de Sunduğumuz Hizmetler</h3>
+      <ul class="space-y-3">
+        {[
+          'Anahtar teslim daire yenileme',
+          'Rezidans iç mimarlığı',
+          'Mutfak ve banyo tadilatı',
+          'Salon, yatak odası ve giyinme odası tasarımı',
+          '3D görselleştirme ile tasarım onayı',
+          'Site dairelerinde hızlı uygulama yönetimi',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+        <p class="text-sm text-charcoal font-medium">Referans Proje · Ataşehir Residence</p>
+        <p class="text-muted text-sm mt-2">95 m² · Anahtar teslim ev yenileme · 2023. Modern rezidans dairesi için açık plan düzenleme, mutfak yenileme ve yatak odaları projesi.</p>
       </div>
+    </div>
+  </div>
+
+  <ProcessStrip districtName="Ataşehir" />
+
+  <DistrictFAQ districtName="Ataşehir" items={faqItems} />
+
+  <div class="py-12 border-t border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Hizmetlerimiz</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Anahtar Teslim Hizmetler', href: `${CANONICAL_BASE}/hizmetler/anahtar-teslim` },
+        { label: 'Villa Yenileme', href: `${CANONICAL_BASE}/hizmetler/villa-yenileme` },
+        { label: 'Ofis Yenileme', href: `${CANONICAL_BASE}/hizmetler/ofis-yenileme` },
+        { label: '3D Tasarım', href: `${CANONICAL_BASE}/hizmetler/3d-tasarim` },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
     </div>
   </div>
 

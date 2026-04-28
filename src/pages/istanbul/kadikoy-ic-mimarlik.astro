@@ -1,7 +1,13 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictFAQ from '../../components/DistrictFAQ.astro';
+import ProcessStrip from '../../components/ProcessStrip.astro';
 import { CANONICAL_BASE } from '../../config';
+import { optimizedImageW } from '../../lib/cloudinary';
+
+const heroPath = '/images/salon1.png';
+const heroAbs = optimizedImageW(heroPath, 1600);
 
 const localSchema = {
   "@context": "https://schema.org",
@@ -9,17 +15,39 @@ const localSchema = {
   "name": "Master İç Mimarlık",
   "@id": `${CANONICAL_BASE}/#business`,
   "areaServed": { "@type": "Place", "name": "Kadıköy, İstanbul" },
-  "url": `${CANONICAL_BASE}/istanbul/kadikoy-ic-mimarlik`
+  "url": `${CANONICAL_BASE}/istanbul/kadikoy-ic-mimarlik`,
+  "description": "Kadıköy ve çevresinde anahtar teslim daire yenileme, mutfak-banyo tadilatı ve iç mimarlık danışmanlığı.",
+  "image": heroAbs,
 };
+
+const faqItems = [
+  {
+    q: "Kadıköy'de iç mimarlık ve daire yenileme ne kadar sürer?",
+    a: "Kadıköy'deki tipik 1+1 ve 2+1 dairelerde anahtar teslim yenileme 4–8 hafta, tam yenileme yapılan 3+1 ve daha büyük dairelerde 6–10 hafta sürmektedir. Eski apartmanlarda tesisat yenilemesi varsa süre üst sınıra yaklaşıyor.",
+  },
+  {
+    q: "Kadıköy'de hangi mahallelerde hizmet veriyorsunuz?",
+    a: "Moda, Caddebostan, Fenerbahçe, Göztepe, Suadiye, Bostancı, Kalamış, Erenköy, Sahrayıcedit ve Kadıköy Merkez başta olmak üzere ilçenin tamamında aktif çalışıyoruz. Her mahallenin yapı stoku farklı olduğu için uygulama planını daireye özel kuruyoruz.",
+  },
+  {
+    q: "Kadıköy için keşif ve teklif süreci nasıl işliyor?",
+    a: "WhatsApp veya telefon üzerinden randevu alıyor, Kadıköy'deki adresinize gelerek ücretsiz keşif yapıyoruz. Ölçü, fotoğraf ve ihtiyaç görüşmesinin ardından 2–3 iş günü içinde detaylı tekliflerimizi ve mood-board sunumumuzu paylaşıyoruz.",
+  },
+  {
+    q: "Kadıköy'de örnek projeleriniz var mı?",
+    a: "Caddebostan ve Moda'daki klasik apartman dairelerinden Bostancı ve Suadiye'deki yeni site dairelerine kadar çeşitli referanslarımız var. Keşif sırasında size benzer tipte tamamladığımız projelerin görsellerini ve müşteri yorumlarını paylaşıyoruz.",
+  },
+];
 ---
 
 <ServiceLayout
   title="Kadıköy İç Mimarlık ve Ev Yenileme"
-  description="Kadıköy'de iç mimarlık, anahtar teslim ev yenileme ve tadilat hizmetleri. Master İç Mimarlık ile Kadıköy dairelerinizi yenileyin. Ücretsiz keşif: 0533 039 15 65"
+  description="Kadıköy'de iç mimarlık, anahtar teslim daire yenileme ve mutfak-banyo tadilatı. Moda, Caddebostan, Fenerbahçe ve Göztepe'de aktif. Ücretsiz keşif: 0533 039 15 65"
   canonicalUrl={`${CANONICAL_BASE}/istanbul/kadikoy-ic-mimarlik`}
   h1="Kadıköy İç Mimarlık ve Ev Yenileme"
   eyebrow="İstanbul · Kadıköy"
-  lead="Kadıköy'ün kendine özgü karakterine uygun, modern ve yaşanabilir mekanlar tasarlıyoruz. Anadolu yakasının en dinamik ilçesinde 8+ yıllık deneyimimizle hizmet veriyoruz."
+  lead="Kadıköy'ün kendine özgü karakterine uygun, modern ve yaşanabilir mekanlar tasarlıyoruz. Anadolu yakasının en dinamik ilçesinde 8+ yıllık uygulama deneyimimizle hizmet veriyoruz."
+  heroImage={heroPath}
   breadcrumb={[
     { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
     { label: "İstanbul", href: "/#hizmetler" },
@@ -32,13 +60,13 @@ const localSchema = {
     <div>
       <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Kadıköy'de İç Mimarlık Hizmeti</h2>
       <p class="text-muted leading-relaxed mb-4">
-        Kadıköy; birbirinden farklı mimari dönemlerden kalma binaları, yaratıcı sakinleri ve canlı yaşamıyla İstanbul'un en ilgi çekici ilçelerinden biridir. Buradaki konutlar genellikle büyük balkonlar, yüksek tavanlar ve karakterli detaylar içerir.
+        Kadıköy; birbirinden farklı mimari dönemlerden kalma binaları, yaratıcı sakinleri ve canlı yaşamıyla İstanbul'un en ilgi çekici ilçelerinden biridir. Buradaki konutlar genellikle büyük balkonlar, yüksek tavanlar ve karakterli detaylar içerir; bu özellikleri korumak çoğu zaman tasarımın çıkış noktası oluyor.
       </p>
       <p class="text-muted leading-relaxed mb-4">
-        Kadıköy'deki ev yenileme projelerimizde bu özgün yapı karakterini korurken modern konfor ve estetik anlayışımızı harmanlıyoruz. Referans müşterimiz Ayşe K., Kadıköy'deki dairesinin yenilenmesinden son derece memnun kaldı.
+        Moda ve Caddebostan'daki klasik apartman dairelerinde özgün dokuyu koruyan restorasyon ağırlıklı uygulamalar yaparken, Bostancı ve Suadiye'deki yeni nesil site dairelerinde planlama ve depolama optimizasyonu öne çıkıyor. Referans müşterimiz Ayşe K., Kadıköy'deki dairesinin yenilenmesinden son derece memnun kaldı.
       </p>
       <p class="text-muted leading-relaxed">
-        Kadıköy, Moda, Fenerbahçe, Göztepe ve çevre mahallelerde aktif olarak hizmet veriyoruz.
+        Moda, Caddebostan, Fenerbahçe, Göztepe, Suadiye, Bostancı, Kalamış, Erenköy ve Sahrayıcedit başta olmak üzere Kadıköy genelinde hizmet veriyoruz.
       </p>
     </div>
     <div>
@@ -70,7 +98,11 @@ const localSchema = {
     </div>
   </div>
 
-  <div class="py-12">
+  <ProcessStrip districtName="Kadıköy" />
+
+  <DistrictFAQ districtName="Kadıköy" items={faqItems} />
+
+  <div class="py-12 border-t border-border">
     <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Hizmetlerimiz</h2>
     <div class="flex flex-wrap gap-3">
       {[

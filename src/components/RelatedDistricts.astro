@@ -6,14 +6,16 @@ interface Props {
 const { currentSlug } = Astro.props;
 
 const allDistricts = [
-  { slug: 'besiktas-ic-mimarlik', name: 'Beşiktaş' },
   { slug: 'kadikoy-ic-mimarlik', name: 'Kadıköy' },
-  { slug: 'sisli-ic-mimarlik', name: 'Şişli' },
+  { slug: 'besiktas-ic-mimarlik', name: 'Beşiktaş' },
+  { slug: 'bakirkoy-ic-mimarlik', name: 'Bakırköy' },
+  { slug: 'maltepe-ic-mimarlik', name: 'Maltepe' },
+  { slug: 'atasehir-ic-mimarlik', name: 'Ataşehir' },
   { slug: 'nisantasi-ic-mimarlik', name: 'Nişantaşı' },
   { slug: 'levent-ic-mimarlik', name: 'Levent' },
-  { slug: 'atasehir-ic-mimarlik', name: 'Ataşehir' },
-  { slug: 'zekeriyakoy-ic-mimarlik', name: 'Zekeriyaköy' },
+  { slug: 'sisli-ic-mimarlik', name: 'Şişli' },
   { slug: 'acibadem-ic-mimarlik', name: 'Acıbadem' },
+  { slug: 'zekeriyakoy-ic-mimarlik', name: 'Zekeriyaköy' },
 ];
 
 const others = allDistricts.filter(d => d.slug !== currentSlug).slice(0, 4);

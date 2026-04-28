@@ -1,7 +1,13 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictFAQ from '../../components/DistrictFAQ.astro';
+import ProcessStrip from '../../components/ProcessStrip.astro';
 import { CANONICAL_BASE } from '../../config';
+import { optimizedImageW } from '../../lib/cloudinary';
+
+const heroPath = '/images/ofis2.jpeg';
+const heroAbs = optimizedImageW(heroPath, 1600);
 
 const localSchema = {
   "@context": "https://schema.org",
@@ -9,8 +15,29 @@ const localSchema = {
   "name": "Master İç Mimarlık",
   "@id": `${CANONICAL_BASE}/#business`,
   "areaServed": { "@type": "Place", "name": "Levent, İstanbul" },
-  "url": `${CANONICAL_BASE}/istanbul/levent-ic-mimarlik`
+  "url": `${CANONICAL_BASE}/istanbul/levent-ic-mimarlik`,
+  "description": "Levent ve çevresinde lüks rezidans iç mimarlığı, kurumsal ofis yenileme ve anahtar teslim daire tadilatı.",
+  "image": heroAbs,
 };
+
+const faqItems = [
+  {
+    q: "Levent'te ofis yenileme ve daire tadilatı ne kadar sürer?",
+    a: "Levent'teki orta ölçek daire yenilemeleri 5–8 hafta, lüks rezidans projeleri 6–10 hafta ve 200–400 m² kurumsal ofis yenilemeleri 6–12 hafta sürmektedir. Ofis projelerinde mesai sonrası ve hafta sonu çalışma planı yaparak iş kesintisini en aza indiriyoruz.",
+  },
+  {
+    q: "Levent'te hangi mahalle ve plazalarda hizmet veriyorsunuz?",
+    a: "1. Levent, 4. Levent, Sanayi Mahallesi, Çırağan, Etiler sınırı ve Maslak sınırındaki plazalar dahil bölgenin tamamında çalışıyoruz. Levent ofis kuleleri ve lüks rezidanslar için hem kurumsal hem konut deneyimimiz güçlüdür.",
+  },
+  {
+    q: "Levent için keşif ve teklif süreci nasıl işliyor?",
+    a: "WhatsApp veya telefon üzerinden randevu alıyor, Levent'teki adresinize ya da plazanıza gelerek ücretsiz keşif yapıyoruz. Yerinde ölçü ve ihtiyaç görüşmesinin ardından 2–3 iş günü içinde detaylı teklif ve mood-board paylaşıyoruz.",
+  },
+  {
+    q: "Levent'te örnek projeleriniz var mı?",
+    a: "Levent Ofis projemiz 320 m²'lik kurumsal bir alanın açık ofis, toplantı odaları ve lobi tasarımıyla yenilenmesini içerir. Müşteri yorumumuz: 'Çalışanlar ve müşteriler değişimden çok etkilendi' (Serra D.). Konut tarafında da Levent'teki lüks daire referanslarımızı keşif sırasında paylaşıyoruz.",
+  },
+];
 ---
 
 <ServiceLayout
@@ -19,7 +46,8 @@ const localSchema = {
   canonicalUrl={`${CANONICAL_BASE}/istanbul/levent-ic-mimarlik`}
   h1="Levent İç Mimarlık ve Ofis Yenileme"
   eyebrow="İstanbul · Levent"
-  lead="Levent'in kurumsal ve lüks konut dokusuna uygun, hem ev hem ofis yenileme projelerinde deneyimli ekibimizle hizmetinizdeyiz. Levent Ofis projemiz referanslarımız arasında yer almaktadır."
+  lead="Levent'in kurumsal ve lüks konut dokusuna uygun, hem ev hem ofis yenileme projelerinde deneyimli ekibimizle hizmetinizdeyiz. Plaza ofisleri, lüks rezidanslar ve klasik daireler için 8+ yıllık uygulama deneyimimiz var."
+  heroImage={heroPath}
   breadcrumb={[
     { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
     { label: "İstanbul", href: "/#hizmetler" },
@@ -35,10 +63,10 @@ const localSchema = {
         Levent; İstanbul'un finans ve iş merkezi olmasının yanı sıra, üst gelir grubuna hitap eden lüks rezidans ve konutlarıyla da öne çıkan bir semttir. Bu yapı, hem kurumsal ofis projelerinde hem de lüks ev yenilemelerinde uzmanlaşmamızı gerektirdi.
       </p>
       <p class="text-muted leading-relaxed mb-4">
-        Levent Ofis projemizde 320 m²'lik kurumsal bir alanı yeniledik. Açık ofis alanları, toplantı odaları ve lobi tasarımıyla çalışan motivasyonunu artıran bir ortam yarattık.
+        Levent Ofis projemizde 320 m²'lik kurumsal bir alanı yeniledik. Açık ofis alanları, toplantı odaları ve lobi tasarımıyla çalışan motivasyonunu artıran bir ortam yarattık. Konut tarafında ise Boğaz manzaralı rezidans daireleri ve klasik Levent apartmanlarında uyguladığımız malzeme seçimi ve detay işçiliği farkımızı oluşturuyor.
       </p>
       <p class="text-muted leading-relaxed">
-        Serra D., Levent'teki ofis yenileme projemizden sonraki değerlendirmesinde "çalışanlar ve müşteriler değişimden çok etkilendi" dedi.
+        1. Levent, 4. Levent, Sanayi Mahallesi, Çırağan, Etiler sınırı ve Maslak sınırı başta olmak üzere Levent ve çevresinde aktif olarak hizmet veriyoruz.
       </p>
     </div>
     <div>
@@ -62,6 +90,29 @@ const localSchema = {
           </li>
         ))}
       </ul>
+      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+        <p class="text-sm text-charcoal font-medium">Müşteri Yorumu · Levent Ofis</p>
+        <p class="text-muted text-sm mt-2 italic">"320 m²'lik ofis alanımızı yenilettik. Çalışanlar ve müşteriler değişimden çok etkilendi; süreç boyunca iş akışımız hiç kesilmedi."</p>
+        <p class="text-xs text-gold mt-2">— Serra D., Levent · 5 yıldız</p>
+      </div>
+    </div>
+  </div>
+
+  <ProcessStrip districtName="Levent" />
+
+  <DistrictFAQ districtName="Levent" items={faqItems} />
+
+  <div class="py-12 border-t border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Hizmetlerimiz</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Anahtar Teslim Hizmetler', href: `${CANONICAL_BASE}/hizmetler/anahtar-teslim` },
+        { label: 'Villa Yenileme', href: `${CANONICAL_BASE}/hizmetler/villa-yenileme` },
+        { label: 'Ofis Yenileme', href: `${CANONICAL_BASE}/hizmetler/ofis-yenileme` },
+        { label: '3D Tasarım', href: `${CANONICAL_BASE}/hizmetler/3d-tasarim` },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
     </div>
   </div>
 
