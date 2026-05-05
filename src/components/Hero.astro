@@ -67,13 +67,19 @@ const slides = [
       </div>
 
       <!-- Heading -->
-      <h1 class="font-display text-[2.2rem] sm:text-5xl md:text-7xl lg:text-[5rem] xl:text-[5.5rem] font-bold leading-[1.08] text-white mb-6 reveal reveal-d1">
-        Mekanınızı<br />
-        <em class="not-italic text-gold">Hayalinize</em><br />
-        Dönüştürüyoruz
+      <h1 class="font-display text-[2.2rem] sm:text-5xl md:text-6xl lg:text-[4.4rem] xl:text-[4.8rem] font-bold leading-[1.05] text-white mb-5 reveal reveal-d1">
+        Anahtar Teslim<br />
+        <em class="not-italic text-gold">Yenileme &amp; Tadilat</em>
       </h1>
-      <p class="text-gold text-sm sm:text-base tracking-[0.12em] sm:tracking-[0.18em] uppercase font-medium mb-6 -mt-2 reveal reveal-d1">
-        Anahtar Teslim Ev · Villa · Mağaza · Ofis yenileme ve tadilat.
+      <div class="flex flex-wrap items-center gap-x-2 gap-y-2 mb-5 reveal reveal-d1">
+        {['Ev', 'Villa', 'Mağaza', 'Ofis'].map((item) => (
+          <span class="inline-block bg-white/10 border border-white/25 text-white text-xs sm:text-sm tracking-[0.15em] uppercase font-semibold px-3 py-1.5 backdrop-blur-sm">
+            {item}
+          </span>
+        ))}
+      </div>
+      <p class="text-gold text-sm sm:text-base tracking-[0.12em] sm:tracking-[0.18em] uppercase font-medium mb-6 reveal reveal-d1">
+        Mekanınızı Hayalinize Dönüştürüyoruz
       </p>
 
       <!-- Description -->
