@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "images": "node scripts/build-images.mjs",
+    "build": "node scripts/build-images.mjs && astro build",
     "preview": "astro preview"
   },
   "engines": {
@@ -17,6 +18,8 @@
     "astro": "^4.15.0",
     "astro-robots-txt": "^1.0.0",
     "astro-seo": "^1.1.0",
+    "heic-convert": "^2.1.0",
+    "sharp": "^0.33.5",
     "tailwindcss": "^3.4.10"
   }
 }

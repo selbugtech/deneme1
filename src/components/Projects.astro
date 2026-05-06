@@ -1,26 +1,15 @@
 ---
-import { optimizedImage } from '../lib/cloudinary';
+import { projects as allProjects } from '../data/projects';
 
-const allProjects = [
-  { slug: 'beyoglu-galata', title: 'Beyoğlu Galata Daire', category: 'Anahtar Teslim Ev Yenileme', size: 'large', image: optimizedImage('/images/beyoglu galata daire/aakapak.jpg') },
-  { slug: 'beykoz-pasabahce', title: 'Beykoz Paşabahçe Villa', category: 'Villa Yenileme', size: 'small', image: optimizedImage('/images/beykoz pasabahce villa/aakapak.HEIC') },
-  { slug: 'caddebostan', title: 'Caddebostan Daire', category: 'Anahtar Teslim Ev Yenileme', size: 'small', image: optimizedImage('/images/caddebostan daire/aakapak.jpg') },
-  { slug: 'mecidiyekoy', title: 'Mecidiyeköy Daire', category: 'Anahtar Teslim Ev Yenileme', size: 'small', image: optimizedImage('/images/mecidiyeköy daire/aakapak.HEIC') },
-  { slug: 'artas-ofis', title: 'Artaş Ofis', category: 'Ofis Yenileme', size: 'small', image: optimizedImage('/images/Artaş Ofis/aakapak.HEIC') },
-  { slug: 'artas-ofis-2', title: 'Artaş Ofis 2', category: 'Ofis Yenileme', size: 'small', image: optimizedImage('/images/artasOfis 2/aakapak.HEIC') },
-  { slug: 'tepekent', title: 'Tepekent Villa', category: 'Anahtar Teslim Ev Yenileme', size: 'large', image: optimizedImage('/images/tepekent villa/aakapak.HEIC') },
-  { slug: 'kozyatagi-banyo', title: 'Kozyatağı Banyo', category: 'Kısmi Yenileme', size: 'small', image: optimizedImage('/images/kozyatağı banyo/aakapak.JPG') },
-  { slug: 'zeytinburnu', title: 'Zeytinburnu Daire', category: 'Anahtar Teslim Ev Yenileme', size: 'small', image: optimizedImage('/images/zeytinburnu daire/aakapak.jpg') },
-];
-
-// Ana sayfada yalnızca ilk 4 proje gösterilir
-const projects = allProjects.slice(0, 4);
+const homeOrder = ['beyoglu-galata', 'beykoz-pasabahce', 'caddebostan', 'mecidiyekoy-dublex'];
+const projects = homeOrder
+  .map((slug) => allProjects.find((p) => p.slug === slug))
+  .filter((p): p is NonNullable<typeof p> => Boolean(p));
 ---
 
 <section id="projeler" class="py-24 bg-charcoal">
   <div class="max-w-6xl mx-auto px-6">
 
-    <!-- Section header -->
     <div class="mb-14 reveal">
       <div class="flex items-center gap-3 mb-4">
         <span class="w-8 h-px bg-gold"></span>
@@ -31,7 +20,6 @@ const projects = allProjects.slice(0, 4);
       </h2>
     </div>
 
-    <!-- Projects grid -->
     <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
       {projects.map((p, i) => (
         <a
@@ -39,14 +27,15 @@ const projects = allProjects.slice(0, 4);
           class={`relative group overflow-hidden reveal reveal-d${(i % 3) + 1} ${p.size === 'large' ? 'row-span-2' : ''}`}
         >
           <img
-            src={p.image}
+            src={p.heroImage}
+            srcset={p.heroSrcset}
+            sizes={p.size === 'large' ? '(min-width:768px) 33vw, 50vw' : '(min-width:768px) 33vw, 50vw'}
             alt={p.title}
             loading="lazy"
             decoding="async"
             class={`w-full object-cover object-center transition-transform duration-500 group-hover:scale-105 ${p.size === 'large' ? 'h-[400px] md:h-[480px]' : 'h-[190px] md:h-[230px]'}`}
           />
 
-          <!-- Overlay on hover -->
           <div class="absolute inset-0 bg-charcoal/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-start justify-end p-5">
             <span class="text-[10px] tracking-[0.25em] uppercase text-gold mb-2">{p.category}</span>
             <h3 class="font-display text-white text-lg font-semibold">{p.title}</h3>
@@ -58,7 +47,6 @@ const projects = allProjects.slice(0, 4);
             </span>
           </div>
 
-          <!-- Always-visible label (mobile) -->
           <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-charcoal/90 to-transparent p-4 md:hidden">
             <p class="text-[10px] tracking-widest uppercase text-gold">{p.category}</p>
             <p class="font-display text-white text-sm font-semibold">{p.title}</p>
@@ -67,7 +55,6 @@ const projects = allProjects.slice(0, 4);
       ))}
     </div>
 
-    <!-- CTAs -->
     <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 reveal">
       <a
         href="https://wa.me/905330391565?text=Merhaba%2C%20projeleriniz%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."

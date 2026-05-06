@@ -1,0 +1,1412 @@
+{
+  "artas-ofis-2": {
+    "folder": "artasOfis 2",
+    "files": [
+      {
+        "src": "/img/artas-ofis-2/01-0.webp",
+        "srcset": "/img/artas-ofis-2/01-0-800w.webp 800w, /img/artas-ofis-2/01-0-1600w.webp 1600w, /img/artas-ofis-2/01-0.webp 2000w",
+        "original": "0.HEIC"
+      },
+      {
+        "src": "/img/artas-ofis-2/02-1.webp",
+        "srcset": "/img/artas-ofis-2/02-1-800w.webp 800w, /img/artas-ofis-2/02-1-1600w.webp 1600w, /img/artas-ofis-2/02-1.webp 2000w",
+        "original": "1.HEIC"
+      },
+      {
+        "src": "/img/artas-ofis-2/03-3.webp",
+        "srcset": "/img/artas-ofis-2/03-3-800w.webp 800w, /img/artas-ofis-2/03-3-1600w.webp 1600w, /img/artas-ofis-2/03-3.webp 2000w",
+        "original": "3.HEIC"
+      },
+      {
+        "src": "/img/artas-ofis-2/04-4.webp",
+        "srcset": "/img/artas-ofis-2/04-4-800w.webp 800w, /img/artas-ofis-2/04-4-1600w.webp 1600w, /img/artas-ofis-2/04-4.webp 2000w",
+        "original": "4.HEIC"
+      },
+      {
+        "src": "/img/artas-ofis-2/05-aa.webp",
+        "srcset": "/img/artas-ofis-2/05-aa-800w.webp 800w, /img/artas-ofis-2/05-aa-1600w.webp 1600w, /img/artas-ofis-2/05-aa.webp 2000w",
+        "original": "aa.HEIC"
+      },
+      {
+        "src": "/img/artas-ofis-2/06-aakapak.webp",
+        "srcset": "/img/artas-ofis-2/06-aakapak-800w.webp 800w, /img/artas-ofis-2/06-aakapak-1600w.webp 1600w, /img/artas-ofis-2/06-aakapak.webp 2000w",
+        "original": "aakapak.HEIC"
+      },
+      {
+        "src": "/img/artas-ofis-2/07-img-2315.webp",
+        "srcset": "/img/artas-ofis-2/07-img-2315-800w.webp 800w, /img/artas-ofis-2/07-img-2315-1600w.webp 1600w, /img/artas-ofis-2/07-img-2315.webp 2000w",
+        "original": "IMG_2315.HEIC"
+      },
+      {
+        "src": "/img/artas-ofis-2/08-img-2324.webp",
+        "srcset": "/img/artas-ofis-2/08-img-2324-800w.webp 800w, /img/artas-ofis-2/08-img-2324-1600w.webp 1600w, /img/artas-ofis-2/08-img-2324.webp 2000w",
+        "original": "IMG_2324.HEIC"
+      },
+      {
+        "src": "/img/artas-ofis-2/09-img-2325.webp",
+        "srcset": "/img/artas-ofis-2/09-img-2325-800w.webp 800w, /img/artas-ofis-2/09-img-2325-1600w.webp 1600w, /img/artas-ofis-2/09-img-2325.webp 2000w",
+        "original": "IMG_2325.HEIC"
+      },
+      {
+        "src": "/img/artas-ofis-2/10-img-2331.webp",
+        "srcset": "/img/artas-ofis-2/10-img-2331-800w.webp 800w, /img/artas-ofis-2/10-img-2331-1600w.webp 1600w, /img/artas-ofis-2/10-img-2331.webp 2000w",
+        "original": "IMG_2331.HEIC"
+      },
+      {
+        "src": "/img/artas-ofis-2/11-img-2332.webp",
+        "srcset": "/img/artas-ofis-2/11-img-2332-800w.webp 800w, /img/artas-ofis-2/11-img-2332-1600w.webp 1600w, /img/artas-ofis-2/11-img-2332.webp 2000w",
+        "original": "IMG_2332.HEIC"
+      },
+      {
+        "src": "/img/artas-ofis-2/12-img-2388.webp",
+        "srcset": "/img/artas-ofis-2/12-img-2388-800w.webp 800w, /img/artas-ofis-2/12-img-2388-1600w.webp 1600w, /img/artas-ofis-2/12-img-2388.webp 2000w",
+        "original": "IMG_2388.HEIC"
+      },
+      {
+        "src": "/img/artas-ofis-2/13-img-2389.webp",
+        "srcset": "/img/artas-ofis-2/13-img-2389-800w.webp 800w, /img/artas-ofis-2/13-img-2389-1600w.webp 1600w, /img/artas-ofis-2/13-img-2389.webp 2000w",
+        "original": "IMG_2389.HEIC"
+      },
+      {
+        "src": "/img/artas-ofis-2/14-img-2395.webp",
+        "srcset": "/img/artas-ofis-2/14-img-2395-800w.webp 800w, /img/artas-ofis-2/14-img-2395-1600w.webp 1600w, /img/artas-ofis-2/14-img-2395.webp 2000w",
+        "original": "IMG_2395.HEIC"
+      },
+      {
+        "src": "/img/artas-ofis-2/15-img-2402.webp",
+        "srcset": "/img/artas-ofis-2/15-img-2402-800w.webp 800w, /img/artas-ofis-2/15-img-2402-1600w.webp 1600w, /img/artas-ofis-2/15-img-2402.webp 2000w",
+        "original": "IMG_2402.HEIC"
+      },
+      {
+        "src": "/img/artas-ofis-2/16-x.webp",
+        "srcset": "/img/artas-ofis-2/16-x-800w.webp 800w, /img/artas-ofis-2/16-x-1600w.webp 1600w, /img/artas-ofis-2/16-x.webp 2000w",
+        "original": "x.HEIC"
+      }
+    ]
+  },
+  "artas-ofis": {
+    "folder": "Artaş Ofis",
+    "files": [
+      {
+        "src": "/img/artas-ofis/01-1.webp",
+        "srcset": "/img/artas-ofis/01-1-800w.webp 800w, /img/artas-ofis/01-1-1600w.webp 1600w, /img/artas-ofis/01-1.webp 2000w",
+        "original": "1.HEIC"
+      },
+      {
+        "src": "/img/artas-ofis/02-aakapak.webp",
+        "srcset": "/img/artas-ofis/02-aakapak-800w.webp 800w, /img/artas-ofis/02-aakapak-1600w.webp 1600w, /img/artas-ofis/02-aakapak.webp 2000w",
+        "original": "aakapak.HEIC"
+      },
+      {
+        "src": "/img/artas-ofis/03-artas2.webp",
+        "srcset": "/img/artas-ofis/03-artas2-800w.webp 800w, /img/artas-ofis/03-artas2-1600w.webp 1600w, /img/artas-ofis/03-artas2.webp 2000w",
+        "original": "artas2.HEIC"
+      },
+      {
+        "src": "/img/artas-ofis/04-artas3.webp",
+        "srcset": "/img/artas-ofis/04-artas3-800w.webp 800w, /img/artas-ofis/04-artas3-1600w.webp 1600w, /img/artas-ofis/04-artas3.webp 2000w",
+        "original": "artas3.HEIC"
+      },
+      {
+        "src": "/img/artas-ofis/05-artas4.webp",
+        "srcset": "/img/artas-ofis/05-artas4-800w.webp 800w, /img/artas-ofis/05-artas4-1600w.webp 1600w, /img/artas-ofis/05-artas4.webp 2000w",
+        "original": "artas4.HEIC"
+      },
+      {
+        "src": "/img/artas-ofis/06-artas5.webp",
+        "srcset": "/img/artas-ofis/06-artas5-800w.webp 800w, /img/artas-ofis/06-artas5-1600w.webp 1600w, /img/artas-ofis/06-artas5.webp 2000w",
+        "original": "artas5.HEIC"
+      },
+      {
+        "src": "/img/artas-ofis/07-artas6.webp",
+        "srcset": "/img/artas-ofis/07-artas6-800w.webp 800w, /img/artas-ofis/07-artas6-1600w.webp 1600w, /img/artas-ofis/07-artas6.webp 2000w",
+        "original": "artas6.HEIC"
+      },
+      {
+        "src": "/img/artas-ofis/08-artas8.webp",
+        "srcset": "/img/artas-ofis/08-artas8-800w.webp 800w, /img/artas-ofis/08-artas8-1600w.webp 1600w, /img/artas-ofis/08-artas8.webp 2000w",
+        "original": "artas8.HEIC"
+      },
+      {
+        "src": "/img/artas-ofis/09-artas9.webp",
+        "srcset": "/img/artas-ofis/09-artas9-800w.webp 800w, /img/artas-ofis/09-artas9-1600w.webp 1600w, /img/artas-ofis/09-artas9.webp 2000w",
+        "original": "artas9.HEIC"
+      },
+      {
+        "src": "/img/artas-ofis/10-artas.webp",
+        "srcset": "/img/artas-ofis/10-artas-800w.webp 800w, /img/artas-ofis/10-artas-1600w.webp 1600w, /img/artas-ofis/10-artas.webp 2000w",
+        "original": "artas.HEIC"
+      },
+      {
+        "src": "/img/artas-ofis/11-img-2603.webp",
+        "srcset": "/img/artas-ofis/11-img-2603-800w.webp 800w, /img/artas-ofis/11-img-2603-1600w.webp 1600w, /img/artas-ofis/11-img-2603.webp 2000w",
+        "original": "IMG_2603.HEIC"
+      }
+    ]
+  },
+  "atakoy": {
+    "folder": "ataköy daire",
+    "files": [
+      {
+        "src": "/img/atakoy/01-1.webp",
+        "srcset": "/img/atakoy/01-1-800w.webp 800w, /img/atakoy/01-1-1600w.webp 1600w, /img/atakoy/01-1.webp 2000w",
+        "original": "1.jpg"
+      },
+      {
+        "src": "/img/atakoy/02-1a.webp",
+        "srcset": "/img/atakoy/02-1a-800w.webp 800w, /img/atakoy/02-1a-1600w.webp 1600w, /img/atakoy/02-1a.webp 2000w",
+        "original": "1a.jpg"
+      },
+      {
+        "src": "/img/atakoy/03-2.webp",
+        "srcset": "/img/atakoy/03-2-800w.webp 800w, /img/atakoy/03-2-1600w.webp 1600w, /img/atakoy/03-2.webp 2000w",
+        "original": "2.jpg"
+      },
+      {
+        "src": "/img/atakoy/04-3.webp",
+        "srcset": "/img/atakoy/04-3-800w.webp 800w, /img/atakoy/04-3-1600w.webp 1600w, /img/atakoy/04-3.webp 2000w",
+        "original": "3.jpg"
+      },
+      {
+        "src": "/img/atakoy/05-4.webp",
+        "srcset": "/img/atakoy/05-4-800w.webp 800w, /img/atakoy/05-4-1600w.webp 1600w, /img/atakoy/05-4.webp 2000w",
+        "original": "4.jpg"
+      },
+      {
+        "src": "/img/atakoy/06-6.webp",
+        "srcset": "/img/atakoy/06-6-800w.webp 800w, /img/atakoy/06-6-1600w.webp 1600w, /img/atakoy/06-6.webp 2000w",
+        "original": "6.jpg"
+      },
+      {
+        "src": "/img/atakoy/07-img-20220720-214304.webp",
+        "srcset": "/img/atakoy/07-img-20220720-214304-800w.webp 800w, /img/atakoy/07-img-20220720-214304-1600w.webp 1600w, /img/atakoy/07-img-20220720-214304.webp 2000w",
+        "original": "IMG_20220720_214304.jpg"
+      },
+      {
+        "src": "/img/atakoy/08-img-20220720-214307.webp",
+        "srcset": "/img/atakoy/08-img-20220720-214307-800w.webp 800w, /img/atakoy/08-img-20220720-214307-1600w.webp 1600w, /img/atakoy/08-img-20220720-214307.webp 2000w",
+        "original": "IMG_20220720_214307.jpg"
+      },
+      {
+        "src": "/img/atakoy/09-img-20220720-214314.webp",
+        "srcset": "/img/atakoy/09-img-20220720-214314-800w.webp 800w, /img/atakoy/09-img-20220720-214314-1600w.webp 1600w, /img/atakoy/09-img-20220720-214314.webp 2000w",
+        "original": "IMG_20220720_214314.jpg"
+      },
+      {
+        "src": "/img/atakoy/10-img-20220721-222342.webp",
+        "srcset": "/img/atakoy/10-img-20220721-222342-800w.webp 800w, /img/atakoy/10-img-20220721-222342-1600w.webp 1600w, /img/atakoy/10-img-20220721-222342.webp 2000w",
+        "original": "IMG_20220721_222342.jpg"
+      },
+      {
+        "src": "/img/atakoy/11-img-20220721-222352.webp",
+        "srcset": "/img/atakoy/11-img-20220721-222352-800w.webp 800w, /img/atakoy/11-img-20220721-222352-1600w.webp 1600w, /img/atakoy/11-img-20220721-222352.webp 2000w",
+        "original": "IMG_20220721_222352.jpg"
+      },
+      {
+        "src": "/img/atakoy/12-img-20220721-222440.webp",
+        "srcset": "/img/atakoy/12-img-20220721-222440-800w.webp 800w, /img/atakoy/12-img-20220721-222440-1600w.webp 1600w, /img/atakoy/12-img-20220721-222440.webp 2000w",
+        "original": "IMG_20220721_222440.jpg"
+      },
+      {
+        "src": "/img/atakoy/13-img-20220721-222741.webp",
+        "srcset": "/img/atakoy/13-img-20220721-222741-800w.webp 800w, /img/atakoy/13-img-20220721-222741-1600w.webp 1600w, /img/atakoy/13-img-20220721-222741.webp 2000w",
+        "original": "IMG_20220721_222741.jpg"
+      },
+      {
+        "src": "/img/atakoy/14-img-20220721-222752.webp",
+        "srcset": "/img/atakoy/14-img-20220721-222752-800w.webp 800w, /img/atakoy/14-img-20220721-222752-1600w.webp 1600w, /img/atakoy/14-img-20220721-222752.webp 2000w",
+        "original": "IMG_20220721_222752.jpg"
+      },
+      {
+        "src": "/img/atakoy/15-img-20220721-222931.webp",
+        "srcset": "/img/atakoy/15-img-20220721-222931-800w.webp 800w, /img/atakoy/15-img-20220721-222931-1600w.webp 1600w, /img/atakoy/15-img-20220721-222931.webp 2000w",
+        "original": "IMG_20220721_222931.jpg"
+      },
+      {
+        "src": "/img/atakoy/16-img-20220721-222940.webp",
+        "srcset": "/img/atakoy/16-img-20220721-222940-800w.webp 800w, /img/atakoy/16-img-20220721-222940-1600w.webp 1600w, /img/atakoy/16-img-20220721-222940.webp 2000w",
+        "original": "IMG_20220721_222940.jpg"
+      },
+      {
+        "src": "/img/atakoy/17-img-20220721-222957.webp",
+        "srcset": "/img/atakoy/17-img-20220721-222957-800w.webp 800w, /img/atakoy/17-img-20220721-222957-1600w.webp 1600w, /img/atakoy/17-img-20220721-222957.webp 2000w",
+        "original": "IMG_20220721_222957.jpg"
+      },
+      {
+        "src": "/img/atakoy/18-img-20220721-223840.webp",
+        "srcset": "/img/atakoy/18-img-20220721-223840-800w.webp 800w, /img/atakoy/18-img-20220721-223840-1600w.webp 1600w, /img/atakoy/18-img-20220721-223840.webp 2000w",
+        "original": "IMG_20220721_223840.jpg"
+      },
+      {
+        "src": "/img/atakoy/19-img-20220721-224046.webp",
+        "srcset": "/img/atakoy/19-img-20220721-224046-800w.webp 800w, /img/atakoy/19-img-20220721-224046-1600w.webp 1600w, /img/atakoy/19-img-20220721-224046.webp 2000w",
+        "original": "IMG_20220721_224046.jpg"
+      },
+      {
+        "src": "/img/atakoy/20-img-20220721-224109.webp",
+        "srcset": "/img/atakoy/20-img-20220721-224109-800w.webp 800w, /img/atakoy/20-img-20220721-224109-1600w.webp 1600w, /img/atakoy/20-img-20220721-224109.webp 2000w",
+        "original": "IMG_20220721_224109.jpg"
+      },
+      {
+        "src": "/img/atakoy/21-img-20220721-224131.webp",
+        "srcset": "/img/atakoy/21-img-20220721-224131-800w.webp 800w, /img/atakoy/21-img-20220721-224131-1600w.webp 1600w, /img/atakoy/21-img-20220721-224131.webp 2000w",
+        "original": "IMG_20220721_224131.jpg"
+      }
+    ]
+  },
+  "beykoz-pasabahce": {
+    "folder": "beykoz pasabahce villa",
+    "files": [
+      {
+        "src": "/img/beykoz-pasabahce/01-1.webp",
+        "srcset": "/img/beykoz-pasabahce/01-1-800w.webp 800w, /img/beykoz-pasabahce/01-1-1600w.webp 1600w, /img/beykoz-pasabahce/01-1.webp 2000w",
+        "original": "1.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/02-2.webp",
+        "srcset": "/img/beykoz-pasabahce/02-2-800w.webp 800w, /img/beykoz-pasabahce/02-2-1600w.webp 1600w, /img/beykoz-pasabahce/02-2.webp 2000w",
+        "original": "2.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/03-3.webp",
+        "srcset": "/img/beykoz-pasabahce/03-3-800w.webp 800w, /img/beykoz-pasabahce/03-3-1600w.webp 1600w, /img/beykoz-pasabahce/03-3.webp 2000w",
+        "original": "3.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/04-4.webp",
+        "srcset": "/img/beykoz-pasabahce/04-4-800w.webp 800w, /img/beykoz-pasabahce/04-4-1600w.webp 1600w, /img/beykoz-pasabahce/04-4.webp 2000w",
+        "original": "4.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/05-5.webp",
+        "srcset": "/img/beykoz-pasabahce/05-5-800w.webp 800w, /img/beykoz-pasabahce/05-5-1600w.webp 1600w, /img/beykoz-pasabahce/05-5.webp 2000w",
+        "original": "5.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/06-6.webp",
+        "srcset": "/img/beykoz-pasabahce/06-6-800w.webp 800w, /img/beykoz-pasabahce/06-6-1600w.webp 1600w, /img/beykoz-pasabahce/06-6.webp 2000w",
+        "original": "6.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/07-7.webp",
+        "srcset": "/img/beykoz-pasabahce/07-7-800w.webp 800w, /img/beykoz-pasabahce/07-7-1600w.webp 1600w, /img/beykoz-pasabahce/07-7.webp 2000w",
+        "original": "7.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/08-8.webp",
+        "srcset": "/img/beykoz-pasabahce/08-8-800w.webp 800w, /img/beykoz-pasabahce/08-8-1600w.webp 1600w, /img/beykoz-pasabahce/08-8.webp 2000w",
+        "original": "8.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/09-9.webp",
+        "srcset": "/img/beykoz-pasabahce/09-9-800w.webp 800w, /img/beykoz-pasabahce/09-9-1600w.webp 1600w, /img/beykoz-pasabahce/09-9.webp 2000w",
+        "original": "9.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/10-10.webp",
+        "srcset": "/img/beykoz-pasabahce/10-10-800w.webp 800w, /img/beykoz-pasabahce/10-10-1600w.webp 1600w, /img/beykoz-pasabahce/10-10.webp 2000w",
+        "original": "10.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/11-11.webp",
+        "srcset": "/img/beykoz-pasabahce/11-11-800w.webp 800w, /img/beykoz-pasabahce/11-11-1600w.webp 1600w, /img/beykoz-pasabahce/11-11.webp 2000w",
+        "original": "11.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/12-12.webp",
+        "srcset": "/img/beykoz-pasabahce/12-12-800w.webp 800w, /img/beykoz-pasabahce/12-12-1600w.webp 1600w, /img/beykoz-pasabahce/12-12.webp 2000w",
+        "original": "12.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/13-13.webp",
+        "srcset": "/img/beykoz-pasabahce/13-13-800w.webp 800w, /img/beykoz-pasabahce/13-13-1600w.webp 1600w, /img/beykoz-pasabahce/13-13.webp 2000w",
+        "original": "13.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/14-14.webp",
+        "srcset": "/img/beykoz-pasabahce/14-14-800w.webp 800w, /img/beykoz-pasabahce/14-14-1600w.webp 1600w, /img/beykoz-pasabahce/14-14.webp 2000w",
+        "original": "14.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/15-15.webp",
+        "srcset": "/img/beykoz-pasabahce/15-15-800w.webp 800w, /img/beykoz-pasabahce/15-15-1600w.webp 1600w, /img/beykoz-pasabahce/15-15.webp 2000w",
+        "original": "15.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/16-17.webp",
+        "srcset": "/img/beykoz-pasabahce/16-17-800w.webp 800w, /img/beykoz-pasabahce/16-17-1600w.webp 1600w, /img/beykoz-pasabahce/16-17.webp 2000w",
+        "original": "17.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/17-18.webp",
+        "srcset": "/img/beykoz-pasabahce/17-18-800w.webp 800w, /img/beykoz-pasabahce/17-18-1600w.webp 1600w, /img/beykoz-pasabahce/17-18.webp 2000w",
+        "original": "18.jpg"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/18-19.webp",
+        "srcset": "/img/beykoz-pasabahce/18-19-800w.webp 800w, /img/beykoz-pasabahce/18-19-1600w.webp 1600w, /img/beykoz-pasabahce/18-19.webp 2000w",
+        "original": "19.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/19-20.webp",
+        "srcset": "/img/beykoz-pasabahce/19-20-800w.webp 800w, /img/beykoz-pasabahce/19-20-1600w.webp 1600w, /img/beykoz-pasabahce/19-20.webp 2000w",
+        "original": "20.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/20-21.webp",
+        "srcset": "/img/beykoz-pasabahce/20-21-800w.webp 800w, /img/beykoz-pasabahce/20-21-1600w.webp 1600w, /img/beykoz-pasabahce/20-21.webp 2000w",
+        "original": "21.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/21-22.webp",
+        "srcset": "/img/beykoz-pasabahce/21-22-800w.webp 800w, /img/beykoz-pasabahce/21-22-1600w.webp 1600w, /img/beykoz-pasabahce/21-22.webp 2000w",
+        "original": "22.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/22-23.webp",
+        "srcset": "/img/beykoz-pasabahce/22-23-800w.webp 800w, /img/beykoz-pasabahce/22-23-1600w.webp 1600w, /img/beykoz-pasabahce/22-23.webp 2000w",
+        "original": "23.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/23-24.webp",
+        "srcset": "/img/beykoz-pasabahce/23-24-800w.webp 800w, /img/beykoz-pasabahce/23-24-1600w.webp 1600w, /img/beykoz-pasabahce/23-24.webp 2000w",
+        "original": "24.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/24-25.webp",
+        "srcset": "/img/beykoz-pasabahce/24-25-800w.webp 800w, /img/beykoz-pasabahce/24-25-1600w.webp 1600w, /img/beykoz-pasabahce/24-25.webp 2000w",
+        "original": "25.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/25-26.webp",
+        "srcset": "/img/beykoz-pasabahce/25-26-800w.webp 800w, /img/beykoz-pasabahce/25-26-1600w.webp 1600w, /img/beykoz-pasabahce/25-26.webp 2000w",
+        "original": "26.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/26-27.webp",
+        "srcset": "/img/beykoz-pasabahce/26-27-800w.webp 800w, /img/beykoz-pasabahce/26-27-1600w.webp 1600w, /img/beykoz-pasabahce/26-27.webp 2000w",
+        "original": "27.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/27-28.webp",
+        "srcset": "/img/beykoz-pasabahce/27-28-800w.webp 800w, /img/beykoz-pasabahce/27-28-1600w.webp 1600w, /img/beykoz-pasabahce/27-28.webp 2000w",
+        "original": "28.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/28-28a.webp",
+        "srcset": "/img/beykoz-pasabahce/28-28a-800w.webp 800w, /img/beykoz-pasabahce/28-28a-1600w.webp 1600w, /img/beykoz-pasabahce/28-28a.webp 2000w",
+        "original": "28a.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/29-28n.webp",
+        "srcset": "/img/beykoz-pasabahce/29-28n-800w.webp 800w, /img/beykoz-pasabahce/29-28n-1600w.webp 1600w, /img/beykoz-pasabahce/29-28n.webp 2000w",
+        "original": "28n.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/30-30.webp",
+        "srcset": "/img/beykoz-pasabahce/30-30-800w.webp 800w, /img/beykoz-pasabahce/30-30-1600w.webp 1600w, /img/beykoz-pasabahce/30-30.webp 2000w",
+        "original": "30.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/31-31.webp",
+        "srcset": "/img/beykoz-pasabahce/31-31-800w.webp 800w, /img/beykoz-pasabahce/31-31-1600w.webp 1600w, /img/beykoz-pasabahce/31-31.webp 2000w",
+        "original": "31.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/32-35.webp",
+        "srcset": "/img/beykoz-pasabahce/32-35-800w.webp 800w, /img/beykoz-pasabahce/32-35-1600w.webp 1600w, /img/beykoz-pasabahce/32-35.webp 2000w",
+        "original": "35.jpg"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/33-38.webp",
+        "srcset": "/img/beykoz-pasabahce/33-38-800w.webp 800w, /img/beykoz-pasabahce/33-38-1600w.webp 1600w, /img/beykoz-pasabahce/33-38.webp 2000w",
+        "original": "38.jpg"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/34-60.webp",
+        "srcset": "/img/beykoz-pasabahce/34-60-800w.webp 800w, /img/beykoz-pasabahce/34-60-1600w.webp 1600w, /img/beykoz-pasabahce/34-60.webp 2000w",
+        "original": "60.jpg"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/35-70.webp",
+        "srcset": "/img/beykoz-pasabahce/35-70-800w.webp 800w, /img/beykoz-pasabahce/35-70-1600w.webp 1600w, /img/beykoz-pasabahce/35-70.webp 2000w",
+        "original": "70.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/36-71.webp",
+        "srcset": "/img/beykoz-pasabahce/36-71-800w.webp 800w, /img/beykoz-pasabahce/36-71-1600w.webp 1600w, /img/beykoz-pasabahce/36-71.webp 2000w",
+        "original": "71.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/37-73.webp",
+        "srcset": "/img/beykoz-pasabahce/37-73-800w.webp 800w, /img/beykoz-pasabahce/37-73-1600w.webp 1600w, /img/beykoz-pasabahce/37-73.webp 2000w",
+        "original": "73.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/38-77.webp",
+        "srcset": "/img/beykoz-pasabahce/38-77-800w.webp 800w, /img/beykoz-pasabahce/38-77-1600w.webp 1600w, /img/beykoz-pasabahce/38-77.webp 2000w",
+        "original": "77.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/39-78.webp",
+        "srcset": "/img/beykoz-pasabahce/39-78-800w.webp 800w, /img/beykoz-pasabahce/39-78-1600w.webp 1600w, /img/beykoz-pasabahce/39-78.webp 2000w",
+        "original": "78.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/40-80.webp",
+        "srcset": "/img/beykoz-pasabahce/40-80-800w.webp 800w, /img/beykoz-pasabahce/40-80-1600w.webp 1600w, /img/beykoz-pasabahce/40-80.webp 2000w",
+        "original": "80.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/41-81.webp",
+        "srcset": "/img/beykoz-pasabahce/41-81-800w.webp 800w, /img/beykoz-pasabahce/41-81-1600w.webp 1600w, /img/beykoz-pasabahce/41-81.webp 2000w",
+        "original": "81.JPG"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/42-82.webp",
+        "srcset": "/img/beykoz-pasabahce/42-82-800w.webp 800w, /img/beykoz-pasabahce/42-82-1600w.webp 1600w, /img/beykoz-pasabahce/42-82.webp 2000w",
+        "original": "82.jpg"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/43-83.webp",
+        "srcset": "/img/beykoz-pasabahce/43-83-800w.webp 800w, /img/beykoz-pasabahce/43-83-1600w.webp 1600w, /img/beykoz-pasabahce/43-83.webp 2000w",
+        "original": "83.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/44-83a.webp",
+        "srcset": "/img/beykoz-pasabahce/44-83a-800w.webp 800w, /img/beykoz-pasabahce/44-83a-1600w.webp 1600w, /img/beykoz-pasabahce/44-83a.webp 2000w",
+        "original": "83a.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/45-84.webp",
+        "srcset": "/img/beykoz-pasabahce/45-84-800w.webp 800w, /img/beykoz-pasabahce/45-84-1600w.webp 1600w, /img/beykoz-pasabahce/45-84.webp 2000w",
+        "original": "84.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/46-85.webp",
+        "srcset": "/img/beykoz-pasabahce/46-85-800w.webp 800w, /img/beykoz-pasabahce/46-85-1600w.webp 1600w, /img/beykoz-pasabahce/46-85.webp 2000w",
+        "original": "85.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/47-86.webp",
+        "srcset": "/img/beykoz-pasabahce/47-86-800w.webp 800w, /img/beykoz-pasabahce/47-86-1600w.webp 1600w, /img/beykoz-pasabahce/47-86.webp 2000w",
+        "original": "86.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/48-87.webp",
+        "srcset": "/img/beykoz-pasabahce/48-87-800w.webp 800w, /img/beykoz-pasabahce/48-87-1600w.webp 1600w, /img/beykoz-pasabahce/48-87.webp 2000w",
+        "original": "87.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/49-88.webp",
+        "srcset": "/img/beykoz-pasabahce/49-88-800w.webp 800w, /img/beykoz-pasabahce/49-88-1600w.webp 1600w, /img/beykoz-pasabahce/49-88.webp 2000w",
+        "original": "88.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/50-89.webp",
+        "srcset": "/img/beykoz-pasabahce/50-89-800w.webp 800w, /img/beykoz-pasabahce/50-89-1600w.webp 1600w, /img/beykoz-pasabahce/50-89.webp 2000w",
+        "original": "89.jpg"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/51-90.webp",
+        "srcset": "/img/beykoz-pasabahce/51-90-800w.webp 800w, /img/beykoz-pasabahce/51-90-1600w.webp 1600w, /img/beykoz-pasabahce/51-90.webp 2000w",
+        "original": "90.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/52-91.webp",
+        "srcset": "/img/beykoz-pasabahce/52-91-800w.webp 800w, /img/beykoz-pasabahce/52-91-1600w.webp 1600w, /img/beykoz-pasabahce/52-91.webp 2000w",
+        "original": "91.jpg"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/53-92.webp",
+        "srcset": "/img/beykoz-pasabahce/53-92-800w.webp 800w, /img/beykoz-pasabahce/53-92-1600w.webp 1600w, /img/beykoz-pasabahce/53-92.webp 2000w",
+        "original": "92.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/54-img-7563.webp",
+        "srcset": "/img/beykoz-pasabahce/54-img-7563-800w.webp 800w, /img/beykoz-pasabahce/54-img-7563-1600w.webp 1600w, /img/beykoz-pasabahce/54-img-7563.webp 2000w",
+        "original": "IMG_7563.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/55-img-7564.webp",
+        "srcset": "/img/beykoz-pasabahce/55-img-7564-800w.webp 800w, /img/beykoz-pasabahce/55-img-7564-1600w.webp 1600w, /img/beykoz-pasabahce/55-img-7564.webp 2000w",
+        "original": "IMG_7564.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/56-img-7824.webp",
+        "srcset": "/img/beykoz-pasabahce/56-img-7824-800w.webp 800w, /img/beykoz-pasabahce/56-img-7824-1600w.webp 1600w, /img/beykoz-pasabahce/56-img-7824.webp 2000w",
+        "original": "IMG_7824.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/57-img-7826.webp",
+        "srcset": "/img/beykoz-pasabahce/57-img-7826-800w.webp 800w, /img/beykoz-pasabahce/57-img-7826-1600w.webp 1600w, /img/beykoz-pasabahce/57-img-7826.webp 2000w",
+        "original": "IMG_7826.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/58-img-7827.webp",
+        "srcset": "/img/beykoz-pasabahce/58-img-7827-800w.webp 800w, /img/beykoz-pasabahce/58-img-7827-1600w.webp 1600w, /img/beykoz-pasabahce/58-img-7827.webp 2000w",
+        "original": "IMG_7827.HEIC"
+      },
+      {
+        "src": "/img/beykoz-pasabahce/59-z.webp",
+        "srcset": "/img/beykoz-pasabahce/59-z-800w.webp 800w, /img/beykoz-pasabahce/59-z-1600w.webp 1600w, /img/beykoz-pasabahce/59-z.webp 2000w",
+        "original": "z.jpg"
+      }
+    ]
+  },
+  "beyoglu-galata": {
+    "folder": "beyoglu galata daire",
+    "files": [
+      {
+        "src": "/img/beyoglu-galata/01-1.webp",
+        "srcset": "/img/beyoglu-galata/01-1-800w.webp 800w, /img/beyoglu-galata/01-1-1600w.webp 1600w, /img/beyoglu-galata/01-1.webp 2000w",
+        "original": "1.jpg"
+      },
+      {
+        "src": "/img/beyoglu-galata/02-2.webp",
+        "srcset": "/img/beyoglu-galata/02-2-800w.webp 800w, /img/beyoglu-galata/02-2-1600w.webp 1600w, /img/beyoglu-galata/02-2.webp 2000w",
+        "original": "2.jpg"
+      },
+      {
+        "src": "/img/beyoglu-galata/03-2a.webp",
+        "srcset": "/img/beyoglu-galata/03-2a-800w.webp 800w, /img/beyoglu-galata/03-2a-1600w.webp 1600w, /img/beyoglu-galata/03-2a.webp 2000w",
+        "original": "2a.jpg"
+      },
+      {
+        "src": "/img/beyoglu-galata/04-2n.webp",
+        "srcset": "/img/beyoglu-galata/04-2n-800w.webp 800w, /img/beyoglu-galata/04-2n-1600w.webp 1600w, /img/beyoglu-galata/04-2n.webp 2000w",
+        "original": "2n.jpg"
+      },
+      {
+        "src": "/img/beyoglu-galata/05-3a.webp",
+        "srcset": "/img/beyoglu-galata/05-3a-800w.webp 800w, /img/beyoglu-galata/05-3a-1600w.webp 1600w, /img/beyoglu-galata/05-3a.webp 2000w",
+        "original": "3a.jpg"
+      },
+      {
+        "src": "/img/beyoglu-galata/06-4.webp",
+        "srcset": "/img/beyoglu-galata/06-4-800w.webp 800w, /img/beyoglu-galata/06-4-1600w.webp 1600w, /img/beyoglu-galata/06-4.webp 2000w",
+        "original": "4.jpg"
+      },
+      {
+        "src": "/img/beyoglu-galata/07-4a.webp",
+        "srcset": "/img/beyoglu-galata/07-4a-800w.webp 800w, /img/beyoglu-galata/07-4a-1600w.webp 1600w, /img/beyoglu-galata/07-4a.webp 2000w",
+        "original": "4a.jpg"
+      },
+      {
+        "src": "/img/beyoglu-galata/08-5.webp",
+        "srcset": "/img/beyoglu-galata/08-5-800w.webp 800w, /img/beyoglu-galata/08-5-1600w.webp 1600w, /img/beyoglu-galata/08-5.webp 2000w",
+        "original": "5.jpg"
+      },
+      {
+        "src": "/img/beyoglu-galata/09-7.webp",
+        "srcset": "/img/beyoglu-galata/09-7-800w.webp 800w, /img/beyoglu-galata/09-7-1600w.webp 1600w, /img/beyoglu-galata/09-7.webp 2000w",
+        "original": "7.jpg"
+      },
+      {
+        "src": "/img/beyoglu-galata/10-7a.webp",
+        "srcset": "/img/beyoglu-galata/10-7a-800w.webp 800w, /img/beyoglu-galata/10-7a-1600w.webp 1600w, /img/beyoglu-galata/10-7a.webp 2000w",
+        "original": "7a.jpg"
+      },
+      {
+        "src": "/img/beyoglu-galata/11-8.webp",
+        "srcset": "/img/beyoglu-galata/11-8-800w.webp 800w, /img/beyoglu-galata/11-8-1600w.webp 1600w, /img/beyoglu-galata/11-8.webp 2000w",
+        "original": "8.jpg"
+      },
+      {
+        "src": "/img/beyoglu-galata/12-9.webp",
+        "srcset": "/img/beyoglu-galata/12-9-800w.webp 800w, /img/beyoglu-galata/12-9-1600w.webp 1600w, /img/beyoglu-galata/12-9.webp 2000w",
+        "original": "9.jpg"
+      },
+      {
+        "src": "/img/beyoglu-galata/13-10.webp",
+        "srcset": "/img/beyoglu-galata/13-10-800w.webp 800w, /img/beyoglu-galata/13-10-1600w.webp 1600w, /img/beyoglu-galata/13-10.webp 2000w",
+        "original": "10.jpg"
+      },
+      {
+        "src": "/img/beyoglu-galata/14-11aakapak.webp",
+        "srcset": "/img/beyoglu-galata/14-11aakapak-800w.webp 800w, /img/beyoglu-galata/14-11aakapak-1600w.webp 1600w, /img/beyoglu-galata/14-11aakapak.webp 2000w",
+        "original": "11aakapak.jpg"
+      },
+      {
+        "src": "/img/beyoglu-galata/15-12.webp",
+        "srcset": "/img/beyoglu-galata/15-12-800w.webp 800w, /img/beyoglu-galata/15-12-1600w.webp 1600w, /img/beyoglu-galata/15-12.webp 2000w",
+        "original": "12.jpg"
+      },
+      {
+        "src": "/img/beyoglu-galata/16-13.webp",
+        "srcset": "/img/beyoglu-galata/16-13-800w.webp 800w, /img/beyoglu-galata/16-13-1600w.webp 1600w, /img/beyoglu-galata/16-13.webp 2000w",
+        "original": "13.jpg"
+      },
+      {
+        "src": "/img/beyoglu-galata/17-14.webp",
+        "srcset": "/img/beyoglu-galata/17-14-800w.webp 800w, /img/beyoglu-galata/17-14-1600w.webp 1600w, /img/beyoglu-galata/17-14.webp 2000w",
+        "original": "14.jpg"
+      },
+      {
+        "src": "/img/beyoglu-galata/18-15.webp",
+        "srcset": "/img/beyoglu-galata/18-15-800w.webp 800w, /img/beyoglu-galata/18-15-1600w.webp 1600w, /img/beyoglu-galata/18-15.webp 2000w",
+        "original": "15.jpg"
+      },
+      {
+        "src": "/img/beyoglu-galata/19-15a.webp",
+        "srcset": "/img/beyoglu-galata/19-15a-800w.webp 800w, /img/beyoglu-galata/19-15a-1600w.webp 1600w, /img/beyoglu-galata/19-15a.webp 2000w",
+        "original": "15a.jpg"
+      },
+      {
+        "src": "/img/beyoglu-galata/20-16.webp",
+        "srcset": "/img/beyoglu-galata/20-16-800w.webp 800w, /img/beyoglu-galata/20-16-1600w.webp 1600w, /img/beyoglu-galata/20-16.webp 2000w",
+        "original": "16.jpg"
+      },
+      {
+        "src": "/img/beyoglu-galata/21-17.webp",
+        "srcset": "/img/beyoglu-galata/21-17-800w.webp 800w, /img/beyoglu-galata/21-17-1600w.webp 1600w, /img/beyoglu-galata/21-17.webp 2000w",
+        "original": "17.jpg"
+      },
+      {
+        "src": "/img/beyoglu-galata/22-img-20221201-173953.webp",
+        "srcset": "/img/beyoglu-galata/22-img-20221201-173953-800w.webp 800w, /img/beyoglu-galata/22-img-20221201-173953-1600w.webp 1600w, /img/beyoglu-galata/22-img-20221201-173953.webp 2000w",
+        "original": "IMG_20221201_173953.jpg"
+      },
+      {
+        "src": "/img/beyoglu-galata/23-img-20221201-174010-1.webp",
+        "srcset": "/img/beyoglu-galata/23-img-20221201-174010-1-800w.webp 800w, /img/beyoglu-galata/23-img-20221201-174010-1-1600w.webp 1600w, /img/beyoglu-galata/23-img-20221201-174010-1.webp 2000w",
+        "original": "IMG_20221201_174010 (1).jpg"
+      },
+      {
+        "src": "/img/beyoglu-galata/24-img-20221201-174010.webp",
+        "srcset": "/img/beyoglu-galata/24-img-20221201-174010-800w.webp 800w, /img/beyoglu-galata/24-img-20221201-174010-1600w.webp 1600w, /img/beyoglu-galata/24-img-20221201-174010.webp 2000w",
+        "original": "IMG_20221201_174010.jpg"
+      },
+      {
+        "src": "/img/beyoglu-galata/25-img-20221201-174024.webp",
+        "srcset": "/img/beyoglu-galata/25-img-20221201-174024-800w.webp 800w, /img/beyoglu-galata/25-img-20221201-174024-1600w.webp 1600w, /img/beyoglu-galata/25-img-20221201-174024.webp 2000w",
+        "original": "IMG_20221201_174024.jpg"
+      },
+      {
+        "src": "/img/beyoglu-galata/26-img-20221201-174041.webp",
+        "srcset": "/img/beyoglu-galata/26-img-20221201-174041-800w.webp 800w, /img/beyoglu-galata/26-img-20221201-174041-1600w.webp 1600w, /img/beyoglu-galata/26-img-20221201-174041.webp 2000w",
+        "original": "IMG_20221201_174041.jpg"
+      },
+      {
+        "src": "/img/beyoglu-galata/27-zesk-i7.webp",
+        "srcset": "/img/beyoglu-galata/27-zesk-i7-800w.webp 800w, /img/beyoglu-galata/27-zesk-i7-1600w.webp 1600w, /img/beyoglu-galata/27-zesk-i7.webp 2000w",
+        "original": "zesk,i7.jpg"
+      },
+      {
+        "src": "/img/beyoglu-galata/28-zeski2.webp",
+        "srcset": "/img/beyoglu-galata/28-zeski2-800w.webp 800w, /img/beyoglu-galata/28-zeski2-1600w.webp 1600w, /img/beyoglu-galata/28-zeski2.webp 2000w",
+        "original": "zeski2.jpg"
+      },
+      {
+        "src": "/img/beyoglu-galata/29-zeski3.webp",
+        "srcset": "/img/beyoglu-galata/29-zeski3-800w.webp 800w, /img/beyoglu-galata/29-zeski3-1600w.webp 1600w, /img/beyoglu-galata/29-zeski3.webp 2000w",
+        "original": "zeski3.jpg"
+      },
+      {
+        "src": "/img/beyoglu-galata/30-zeski4.webp",
+        "srcset": "/img/beyoglu-galata/30-zeski4-800w.webp 800w, /img/beyoglu-galata/30-zeski4-1600w.webp 1600w, /img/beyoglu-galata/30-zeski4.webp 2000w",
+        "original": "zeski4.jpg"
+      },
+      {
+        "src": "/img/beyoglu-galata/31-zeski5.webp",
+        "srcset": "/img/beyoglu-galata/31-zeski5-800w.webp 800w, /img/beyoglu-galata/31-zeski5-1600w.webp 1600w, /img/beyoglu-galata/31-zeski5.webp 2000w",
+        "original": "zeski5.jpg"
+      },
+      {
+        "src": "/img/beyoglu-galata/32-zeski6.webp",
+        "srcset": "/img/beyoglu-galata/32-zeski6-800w.webp 800w, /img/beyoglu-galata/32-zeski6-1600w.webp 1600w, /img/beyoglu-galata/32-zeski6.webp 2000w",
+        "original": "zeski6.jpg"
+      },
+      {
+        "src": "/img/beyoglu-galata/33-zeski.webp",
+        "srcset": "/img/beyoglu-galata/33-zeski-800w.webp 800w, /img/beyoglu-galata/33-zeski-1600w.webp 1600w, /img/beyoglu-galata/33-zeski.webp 2000w",
+        "original": "zeski.jpg"
+      }
+    ]
+  },
+  "caddebostan": {
+    "folder": "caddebostan daire",
+    "files": [
+      {
+        "src": "/img/caddebostan/01-1.webp",
+        "srcset": "/img/caddebostan/01-1-800w.webp 800w, /img/caddebostan/01-1-1600w.webp 1600w, /img/caddebostan/01-1.webp 2000w",
+        "original": "1.jpg"
+      },
+      {
+        "src": "/img/caddebostan/02-2.webp",
+        "srcset": "/img/caddebostan/02-2-800w.webp 800w, /img/caddebostan/02-2-1600w.webp 1600w, /img/caddebostan/02-2.webp 2000w",
+        "original": "2.jpg"
+      },
+      {
+        "src": "/img/caddebostan/03-4.webp",
+        "srcset": "/img/caddebostan/03-4-800w.webp 800w, /img/caddebostan/03-4-1600w.webp 1600w, /img/caddebostan/03-4.webp 2000w",
+        "original": "4.jpg"
+      },
+      {
+        "src": "/img/caddebostan/04-5.webp",
+        "srcset": "/img/caddebostan/04-5-800w.webp 800w, /img/caddebostan/04-5-1600w.webp 1600w, /img/caddebostan/04-5.webp 2000w",
+        "original": "5.jpg"
+      },
+      {
+        "src": "/img/caddebostan/05-5a.webp",
+        "srcset": "/img/caddebostan/05-5a-800w.webp 800w, /img/caddebostan/05-5a-1600w.webp 1600w, /img/caddebostan/05-5a.webp 2000w",
+        "original": "5a.jpg"
+      },
+      {
+        "src": "/img/caddebostan/06-5b.webp",
+        "srcset": "/img/caddebostan/06-5b-800w.webp 800w, /img/caddebostan/06-5b-1600w.webp 1600w, /img/caddebostan/06-5b.webp 2000w",
+        "original": "5b.jpg"
+      },
+      {
+        "src": "/img/caddebostan/07-5c.webp",
+        "srcset": "/img/caddebostan/07-5c-800w.webp 800w, /img/caddebostan/07-5c-1600w.webp 1600w, /img/caddebostan/07-5c.webp 2000w",
+        "original": "5c.jpg"
+      },
+      {
+        "src": "/img/caddebostan/08-5d.webp",
+        "srcset": "/img/caddebostan/08-5d-800w.webp 800w, /img/caddebostan/08-5d-1600w.webp 1600w, /img/caddebostan/08-5d.webp 2000w",
+        "original": "5d.jpg"
+      },
+      {
+        "src": "/img/caddebostan/09-8.webp",
+        "srcset": "/img/caddebostan/09-8-800w.webp 800w, /img/caddebostan/09-8-1600w.webp 1600w, /img/caddebostan/09-8.webp 2000w",
+        "original": "8.jpg"
+      },
+      {
+        "src": "/img/caddebostan/10-9.webp",
+        "srcset": "/img/caddebostan/10-9-800w.webp 800w, /img/caddebostan/10-9-1600w.webp 1600w, /img/caddebostan/10-9.webp 2000w",
+        "original": "9.jpg"
+      },
+      {
+        "src": "/img/caddebostan/11-9a.webp",
+        "srcset": "/img/caddebostan/11-9a-800w.webp 800w, /img/caddebostan/11-9a-1600w.webp 1600w, /img/caddebostan/11-9a.webp 2000w",
+        "original": "9a.jpg"
+      },
+      {
+        "src": "/img/caddebostan/12-10.webp",
+        "srcset": "/img/caddebostan/12-10-800w.webp 800w, /img/caddebostan/12-10-1600w.webp 1600w, /img/caddebostan/12-10.webp 2000w",
+        "original": "10.jpg"
+      },
+      {
+        "src": "/img/caddebostan/13-11.webp",
+        "srcset": "/img/caddebostan/13-11-800w.webp 800w, /img/caddebostan/13-11-1600w.webp 1600w, /img/caddebostan/13-11.webp 2000w",
+        "original": "11.jpg"
+      },
+      {
+        "src": "/img/caddebostan/14-12.webp",
+        "srcset": "/img/caddebostan/14-12-800w.webp 800w, /img/caddebostan/14-12-1600w.webp 1600w, /img/caddebostan/14-12.webp 2000w",
+        "original": "12.jpg"
+      },
+      {
+        "src": "/img/caddebostan/15-13.webp",
+        "srcset": "/img/caddebostan/15-13-800w.webp 800w, /img/caddebostan/15-13-1600w.webp 1600w, /img/caddebostan/15-13.webp 2000w",
+        "original": "13.jpg"
+      },
+      {
+        "src": "/img/caddebostan/16-img-20220104-202903.webp",
+        "srcset": "/img/caddebostan/16-img-20220104-202903-800w.webp 800w, /img/caddebostan/16-img-20220104-202903-1600w.webp 1600w, /img/caddebostan/16-img-20220104-202903.webp 2000w",
+        "original": "IMG_20220104_202903.jpg"
+      },
+      {
+        "src": "/img/caddebostan/17-img-20220104-224725.webp",
+        "srcset": "/img/caddebostan/17-img-20220104-224725-800w.webp 800w, /img/caddebostan/17-img-20220104-224725-1600w.webp 1600w, /img/caddebostan/17-img-20220104-224725.webp 2000w",
+        "original": "IMG_20220104_224725.jpg"
+      },
+      {
+        "src": "/img/caddebostan/18-img-20220105-152505.webp",
+        "srcset": "/img/caddebostan/18-img-20220105-152505-800w.webp 800w, /img/caddebostan/18-img-20220105-152505-1600w.webp 1600w, /img/caddebostan/18-img-20220105-152505.webp 2000w",
+        "original": "IMG_20220105_152505.jpg"
+      },
+      {
+        "src": "/img/caddebostan/19-img-20220105-152741.webp",
+        "srcset": "/img/caddebostan/19-img-20220105-152741-800w.webp 800w, /img/caddebostan/19-img-20220105-152741-1600w.webp 1600w, /img/caddebostan/19-img-20220105-152741.webp 2000w",
+        "original": "IMG_20220105_152741.jpg"
+      },
+      {
+        "src": "/img/caddebostan/20-img-20220105-152750.webp",
+        "srcset": "/img/caddebostan/20-img-20220105-152750-800w.webp 800w, /img/caddebostan/20-img-20220105-152750-1600w.webp 1600w, /img/caddebostan/20-img-20220105-152750.webp 2000w",
+        "original": "IMG_20220105_152750.jpg"
+      }
+    ]
+  },
+  "kozyatagi-banyo": {
+    "folder": "kozyatağı banyo",
+    "files": [
+      {
+        "src": "/img/kozyatagi-banyo/01-1.webp",
+        "srcset": "/img/kozyatagi-banyo/01-1-800w.webp 800w, /img/kozyatagi-banyo/01-1-1600w.webp 1600w, /img/kozyatagi-banyo/01-1.webp 2000w",
+        "original": "1.jpg"
+      },
+      {
+        "src": "/img/kozyatagi-banyo/02-aakapak.webp",
+        "srcset": "/img/kozyatagi-banyo/02-aakapak-800w.webp 800w, /img/kozyatagi-banyo/02-aakapak-1600w.webp 1600w, /img/kozyatagi-banyo/02-aakapak.webp 2000w",
+        "original": "aakapak.JPG"
+      },
+      {
+        "src": "/img/kozyatagi-banyo/03-img-20221122-wa0047.webp",
+        "srcset": "/img/kozyatagi-banyo/03-img-20221122-wa0047-800w.webp 800w, /img/kozyatagi-banyo/03-img-20221122-wa0047-1600w.webp 1600w, /img/kozyatagi-banyo/03-img-20221122-wa0047.webp 2000w",
+        "original": "IMG-20221122-WA0047.jpg"
+      },
+      {
+        "src": "/img/kozyatagi-banyo/04-img-20221122-wa0049.webp",
+        "srcset": "/img/kozyatagi-banyo/04-img-20221122-wa0049-800w.webp 800w, /img/kozyatagi-banyo/04-img-20221122-wa0049-1600w.webp 1600w, /img/kozyatagi-banyo/04-img-20221122-wa0049.webp 2000w",
+        "original": "IMG-20221122-WA0049.jpg"
+      },
+      {
+        "src": "/img/kozyatagi-banyo/05-img-20221122-wa0050.webp",
+        "srcset": "/img/kozyatagi-banyo/05-img-20221122-wa0050-800w.webp 800w, /img/kozyatagi-banyo/05-img-20221122-wa0050-1600w.webp 1600w, /img/kozyatagi-banyo/05-img-20221122-wa0050.webp 2000w",
+        "original": "IMG-20221122-WA0050.jpg"
+      },
+      {
+        "src": "/img/kozyatagi-banyo/06-img-20221122-wa0051.webp",
+        "srcset": "/img/kozyatagi-banyo/06-img-20221122-wa0051-800w.webp 800w, /img/kozyatagi-banyo/06-img-20221122-wa0051-1600w.webp 1600w, /img/kozyatagi-banyo/06-img-20221122-wa0051.webp 2000w",
+        "original": "IMG-20221122-WA0051.jpg"
+      },
+      {
+        "src": "/img/kozyatagi-banyo/07-img-20221122-wa0052.webp",
+        "srcset": "/img/kozyatagi-banyo/07-img-20221122-wa0052-800w.webp 800w, /img/kozyatagi-banyo/07-img-20221122-wa0052-1600w.webp 1600w, /img/kozyatagi-banyo/07-img-20221122-wa0052.webp 2000w",
+        "original": "IMG-20221122-WA0052.jpg"
+      },
+      {
+        "src": "/img/kozyatagi-banyo/08-img-20221122-wa0053.webp",
+        "srcset": "/img/kozyatagi-banyo/08-img-20221122-wa0053-800w.webp 800w, /img/kozyatagi-banyo/08-img-20221122-wa0053-1600w.webp 1600w, /img/kozyatagi-banyo/08-img-20221122-wa0053.webp 2000w",
+        "original": "IMG-20221122-WA0053.jpg"
+      },
+      {
+        "src": "/img/kozyatagi-banyo/09-img-20221122-163451.webp",
+        "srcset": "/img/kozyatagi-banyo/09-img-20221122-163451-800w.webp 800w, /img/kozyatagi-banyo/09-img-20221122-163451-1600w.webp 1600w, /img/kozyatagi-banyo/09-img-20221122-163451.webp 2000w",
+        "original": "IMG_20221122_163451.jpg"
+      }
+    ]
+  },
+  "mecidiyekoy-dublex": {
+    "folder": "mecidiyeköy dublex",
+    "files": [
+      {
+        "src": "/img/mecidiyekoy-dublex/01-1.webp",
+        "srcset": "/img/mecidiyekoy-dublex/01-1-800w.webp 800w, /img/mecidiyekoy-dublex/01-1-1600w.webp 1600w, /img/mecidiyekoy-dublex/01-1.webp 2000w",
+        "original": "1.HEIC"
+      },
+      {
+        "src": "/img/mecidiyekoy-dublex/02-2a.webp",
+        "srcset": "/img/mecidiyekoy-dublex/02-2a-800w.webp 800w, /img/mecidiyekoy-dublex/02-2a-1600w.webp 1600w, /img/mecidiyekoy-dublex/02-2a.webp 2000w",
+        "original": "2a.HEIC"
+      },
+      {
+        "src": "/img/mecidiyekoy-dublex/03-3.webp",
+        "srcset": "/img/mecidiyekoy-dublex/03-3-800w.webp 800w, /img/mecidiyekoy-dublex/03-3-1600w.webp 1600w, /img/mecidiyekoy-dublex/03-3.webp 2000w",
+        "original": "3.HEIC"
+      },
+      {
+        "src": "/img/mecidiyekoy-dublex/04-4.webp",
+        "srcset": "/img/mecidiyekoy-dublex/04-4-800w.webp 800w, /img/mecidiyekoy-dublex/04-4-1600w.webp 1600w, /img/mecidiyekoy-dublex/04-4.webp 2000w",
+        "original": "4.HEIC"
+      },
+      {
+        "src": "/img/mecidiyekoy-dublex/05-5.webp",
+        "srcset": "/img/mecidiyekoy-dublex/05-5-800w.webp 800w, /img/mecidiyekoy-dublex/05-5-1600w.webp 1600w, /img/mecidiyekoy-dublex/05-5.webp 2000w",
+        "original": "5.HEIC"
+      },
+      {
+        "src": "/img/mecidiyekoy-dublex/06-6.webp",
+        "srcset": "/img/mecidiyekoy-dublex/06-6-800w.webp 800w, /img/mecidiyekoy-dublex/06-6-1600w.webp 1600w, /img/mecidiyekoy-dublex/06-6.webp 2000w",
+        "original": "6.HEIC"
+      },
+      {
+        "src": "/img/mecidiyekoy-dublex/07-7.webp",
+        "srcset": "/img/mecidiyekoy-dublex/07-7-800w.webp 800w, /img/mecidiyekoy-dublex/07-7-1600w.webp 1600w, /img/mecidiyekoy-dublex/07-7.webp 2000w",
+        "original": "7.HEIC"
+      },
+      {
+        "src": "/img/mecidiyekoy-dublex/08-8.webp",
+        "srcset": "/img/mecidiyekoy-dublex/08-8-800w.webp 800w, /img/mecidiyekoy-dublex/08-8-1600w.webp 1600w, /img/mecidiyekoy-dublex/08-8.webp 2000w",
+        "original": "8.HEIC"
+      },
+      {
+        "src": "/img/mecidiyekoy-dublex/09-9.webp",
+        "srcset": "/img/mecidiyekoy-dublex/09-9-800w.webp 800w, /img/mecidiyekoy-dublex/09-9-1600w.webp 1600w, /img/mecidiyekoy-dublex/09-9.webp 2000w",
+        "original": "9.HEIC"
+      },
+      {
+        "src": "/img/mecidiyekoy-dublex/10-11.webp",
+        "srcset": "/img/mecidiyekoy-dublex/10-11-800w.webp 800w, /img/mecidiyekoy-dublex/10-11-1600w.webp 1600w, /img/mecidiyekoy-dublex/10-11.webp 2000w",
+        "original": "11.HEIC"
+      },
+      {
+        "src": "/img/mecidiyekoy-dublex/11-12.webp",
+        "srcset": "/img/mecidiyekoy-dublex/11-12-800w.webp 800w, /img/mecidiyekoy-dublex/11-12-1600w.webp 1600w, /img/mecidiyekoy-dublex/11-12.webp 2000w",
+        "original": "12.JPG"
+      },
+      {
+        "src": "/img/mecidiyekoy-dublex/12-13.webp",
+        "srcset": "/img/mecidiyekoy-dublex/12-13-800w.webp 800w, /img/mecidiyekoy-dublex/12-13-1600w.webp 1600w, /img/mecidiyekoy-dublex/12-13.webp 2000w",
+        "original": "13.JPG"
+      },
+      {
+        "src": "/img/mecidiyekoy-dublex/13-14.webp",
+        "srcset": "/img/mecidiyekoy-dublex/13-14-800w.webp 800w, /img/mecidiyekoy-dublex/13-14-1600w.webp 1600w, /img/mecidiyekoy-dublex/13-14.webp 2000w",
+        "original": "14.HEIC"
+      },
+      {
+        "src": "/img/mecidiyekoy-dublex/14-15.webp",
+        "srcset": "/img/mecidiyekoy-dublex/14-15-800w.webp 800w, /img/mecidiyekoy-dublex/14-15-1600w.webp 1600w, /img/mecidiyekoy-dublex/14-15.webp 2000w",
+        "original": "15.HEIC"
+      },
+      {
+        "src": "/img/mecidiyekoy-dublex/15-16.webp",
+        "srcset": "/img/mecidiyekoy-dublex/15-16-800w.webp 800w, /img/mecidiyekoy-dublex/15-16-1600w.webp 1600w, /img/mecidiyekoy-dublex/15-16.webp 2000w",
+        "original": "16.HEIC"
+      },
+      {
+        "src": "/img/mecidiyekoy-dublex/16-17.webp",
+        "srcset": "/img/mecidiyekoy-dublex/16-17-800w.webp 800w, /img/mecidiyekoy-dublex/16-17-1600w.webp 1600w, /img/mecidiyekoy-dublex/16-17.webp 2000w",
+        "original": "17.HEIC"
+      },
+      {
+        "src": "/img/mecidiyekoy-dublex/17-21.webp",
+        "srcset": "/img/mecidiyekoy-dublex/17-21-800w.webp 800w, /img/mecidiyekoy-dublex/17-21-1600w.webp 1600w, /img/mecidiyekoy-dublex/17-21.webp 2000w",
+        "original": "21.HEIC"
+      },
+      {
+        "src": "/img/mecidiyekoy-dublex/18-22.webp",
+        "srcset": "/img/mecidiyekoy-dublex/18-22-800w.webp 800w, /img/mecidiyekoy-dublex/18-22-1600w.webp 1600w, /img/mecidiyekoy-dublex/18-22.webp 2000w",
+        "original": "22.HEIC"
+      },
+      {
+        "src": "/img/mecidiyekoy-dublex/19-23.webp",
+        "srcset": "/img/mecidiyekoy-dublex/19-23-800w.webp 800w, /img/mecidiyekoy-dublex/19-23-1600w.webp 1600w, /img/mecidiyekoy-dublex/19-23.webp 2000w",
+        "original": "23.HEIC"
+      },
+      {
+        "src": "/img/mecidiyekoy-dublex/20-24.webp",
+        "srcset": "/img/mecidiyekoy-dublex/20-24-800w.webp 800w, /img/mecidiyekoy-dublex/20-24-1600w.webp 1600w, /img/mecidiyekoy-dublex/20-24.webp 2000w",
+        "original": "24.HEIC"
+      },
+      {
+        "src": "/img/mecidiyekoy-dublex/21-25.webp",
+        "srcset": "/img/mecidiyekoy-dublex/21-25-800w.webp 800w, /img/mecidiyekoy-dublex/21-25-1600w.webp 1600w, /img/mecidiyekoy-dublex/21-25.webp 2000w",
+        "original": "25.HEIC"
+      },
+      {
+        "src": "/img/mecidiyekoy-dublex/22-26.webp",
+        "srcset": "/img/mecidiyekoy-dublex/22-26-800w.webp 800w, /img/mecidiyekoy-dublex/22-26-1600w.webp 1600w, /img/mecidiyekoy-dublex/22-26.webp 2000w",
+        "original": "26.HEIC"
+      },
+      {
+        "src": "/img/mecidiyekoy-dublex/23-27.webp",
+        "srcset": "/img/mecidiyekoy-dublex/23-27-800w.webp 800w, /img/mecidiyekoy-dublex/23-27-1600w.webp 1600w, /img/mecidiyekoy-dublex/23-27.webp 2000w",
+        "original": "27.HEIC"
+      },
+      {
+        "src": "/img/mecidiyekoy-dublex/24-28.webp",
+        "srcset": "/img/mecidiyekoy-dublex/24-28-800w.webp 800w, /img/mecidiyekoy-dublex/24-28-1600w.webp 1600w, /img/mecidiyekoy-dublex/24-28.webp 2000w",
+        "original": "28.HEIC"
+      },
+      {
+        "src": "/img/mecidiyekoy-dublex/25-31.webp",
+        "srcset": "/img/mecidiyekoy-dublex/25-31-800w.webp 800w, /img/mecidiyekoy-dublex/25-31-1600w.webp 1600w, /img/mecidiyekoy-dublex/25-31.webp 2000w",
+        "original": "31.HEIC"
+      },
+      {
+        "src": "/img/mecidiyekoy-dublex/26-32.webp",
+        "srcset": "/img/mecidiyekoy-dublex/26-32-800w.webp 800w, /img/mecidiyekoy-dublex/26-32-1600w.webp 1600w, /img/mecidiyekoy-dublex/26-32.webp 2000w",
+        "original": "32.HEIC"
+      },
+      {
+        "src": "/img/mecidiyekoy-dublex/27-img-8070-copy.webp",
+        "srcset": "/img/mecidiyekoy-dublex/27-img-8070-copy-800w.webp 800w, /img/mecidiyekoy-dublex/27-img-8070-copy-1600w.webp 1600w, /img/mecidiyekoy-dublex/27-img-8070-copy.webp 2000w",
+        "original": "IMG_8070 Copy.JPG"
+      },
+      {
+        "src": "/img/mecidiyekoy-dublex/28-img-8076.webp",
+        "srcset": "/img/mecidiyekoy-dublex/28-img-8076-800w.webp 800w, /img/mecidiyekoy-dublex/28-img-8076-1600w.webp 1600w, /img/mecidiyekoy-dublex/28-img-8076.webp 2000w",
+        "original": "IMG_8076.HEIC"
+      }
+    ]
+  },
+  "tepekent": {
+    "folder": "tepekent villa",
+    "files": [
+      {
+        "src": "/img/tepekent/01-1.webp",
+        "srcset": "/img/tepekent/01-1-800w.webp 800w, /img/tepekent/01-1-1600w.webp 1600w, /img/tepekent/01-1.webp 2000w",
+        "original": "1.HEIC"
+      },
+      {
+        "src": "/img/tepekent/02-2.webp",
+        "srcset": "/img/tepekent/02-2-800w.webp 800w, /img/tepekent/02-2-1600w.webp 1600w, /img/tepekent/02-2.webp 2000w",
+        "original": "2.HEIC"
+      },
+      {
+        "src": "/img/tepekent/03-2a.webp",
+        "srcset": "/img/tepekent/03-2a-800w.webp 800w, /img/tepekent/03-2a-1600w.webp 1600w, /img/tepekent/03-2a.webp 2000w",
+        "original": "2a.HEIC"
+      },
+      {
+        "src": "/img/tepekent/04-2b1.webp",
+        "srcset": "/img/tepekent/04-2b1-800w.webp 800w, /img/tepekent/04-2b1-1600w.webp 1600w, /img/tepekent/04-2b1.webp 2000w",
+        "original": "2b1.HEIC"
+      },
+      {
+        "src": "/img/tepekent/05-2b.webp",
+        "srcset": "/img/tepekent/05-2b-800w.webp 800w, /img/tepekent/05-2b-1600w.webp 1600w, /img/tepekent/05-2b.webp 2000w",
+        "original": "2b.HEIC"
+      },
+      {
+        "src": "/img/tepekent/06-2c.webp",
+        "srcset": "/img/tepekent/06-2c-800w.webp 800w, /img/tepekent/06-2c-1600w.webp 1600w, /img/tepekent/06-2c.webp 2000w",
+        "original": "2c.HEIC"
+      },
+      {
+        "src": "/img/tepekent/07-2d.webp",
+        "srcset": "/img/tepekent/07-2d-800w.webp 800w, /img/tepekent/07-2d-1600w.webp 1600w, /img/tepekent/07-2d.webp 2000w",
+        "original": "2d.HEIC"
+      },
+      {
+        "src": "/img/tepekent/08-2k.webp",
+        "srcset": "/img/tepekent/08-2k-800w.webp 800w, /img/tepekent/08-2k-1600w.webp 1600w, /img/tepekent/08-2k.webp 2000w",
+        "original": "2k.HEIC"
+      },
+      {
+        "src": "/img/tepekent/09-3.webp",
+        "srcset": "/img/tepekent/09-3-800w.webp 800w, /img/tepekent/09-3-1600w.webp 1600w, /img/tepekent/09-3.webp 2000w",
+        "original": "3.HEIC"
+      },
+      {
+        "src": "/img/tepekent/10-7.webp",
+        "srcset": "/img/tepekent/10-7-800w.webp 800w, /img/tepekent/10-7-1600w.webp 1600w, /img/tepekent/10-7.webp 2000w",
+        "original": "7.HEIC"
+      },
+      {
+        "src": "/img/tepekent/11-8.webp",
+        "srcset": "/img/tepekent/11-8-800w.webp 800w, /img/tepekent/11-8-1600w.webp 1600w, /img/tepekent/11-8.webp 2000w",
+        "original": "8.HEIC"
+      },
+      {
+        "src": "/img/tepekent/12-9.webp",
+        "srcset": "/img/tepekent/12-9-800w.webp 800w, /img/tepekent/12-9-1600w.webp 1600w, /img/tepekent/12-9.webp 2000w",
+        "original": "9.HEIC"
+      },
+      {
+        "src": "/img/tepekent/13-10.webp",
+        "srcset": "/img/tepekent/13-10-800w.webp 800w, /img/tepekent/13-10-1600w.webp 1600w, /img/tepekent/13-10.webp 2000w",
+        "original": "10.HEIC"
+      },
+      {
+        "src": "/img/tepekent/14-11.webp",
+        "srcset": "/img/tepekent/14-11-800w.webp 800w, /img/tepekent/14-11-1600w.webp 1600w, /img/tepekent/14-11.webp 2000w",
+        "original": "11.HEIC"
+      },
+      {
+        "src": "/img/tepekent/15-15.webp",
+        "srcset": "/img/tepekent/15-15-800w.webp 800w, /img/tepekent/15-15-1600w.webp 1600w, /img/tepekent/15-15.webp 2000w",
+        "original": "15.HEIC"
+      },
+      {
+        "src": "/img/tepekent/16-16.webp",
+        "srcset": "/img/tepekent/16-16-800w.webp 800w, /img/tepekent/16-16-1600w.webp 1600w, /img/tepekent/16-16.webp 2000w",
+        "original": "16.HEIC"
+      },
+      {
+        "src": "/img/tepekent/17-17.webp",
+        "srcset": "/img/tepekent/17-17-800w.webp 800w, /img/tepekent/17-17-1600w.webp 1600w, /img/tepekent/17-17.webp 2000w",
+        "original": "17.HEIC"
+      },
+      {
+        "src": "/img/tepekent/18-18.webp",
+        "srcset": "/img/tepekent/18-18-800w.webp 800w, /img/tepekent/18-18-1600w.webp 1600w, /img/tepekent/18-18.webp 2000w",
+        "original": "18.HEIC"
+      },
+      {
+        "src": "/img/tepekent/19-20.webp",
+        "srcset": "/img/tepekent/19-20-800w.webp 800w, /img/tepekent/19-20-1600w.webp 1600w, /img/tepekent/19-20.webp 2000w",
+        "original": "20.HEIC"
+      },
+      {
+        "src": "/img/tepekent/20-21.webp",
+        "srcset": "/img/tepekent/20-21-800w.webp 800w, /img/tepekent/20-21-1600w.webp 1600w, /img/tepekent/20-21.webp 2000w",
+        "original": "21.HEIC"
+      },
+      {
+        "src": "/img/tepekent/21-22.webp",
+        "srcset": "/img/tepekent/21-22-800w.webp 800w, /img/tepekent/21-22-1600w.webp 1600w, /img/tepekent/21-22.webp 2000w",
+        "original": "22.HEIC"
+      },
+      {
+        "src": "/img/tepekent/22-23.webp",
+        "srcset": "/img/tepekent/22-23-800w.webp 800w, /img/tepekent/22-23-1600w.webp 1600w, /img/tepekent/22-23.webp 2000w",
+        "original": "23.HEIC"
+      },
+      {
+        "src": "/img/tepekent/23-24.webp",
+        "srcset": "/img/tepekent/23-24-800w.webp 800w, /img/tepekent/23-24-1600w.webp 1600w, /img/tepekent/23-24.webp 2000w",
+        "original": "24.HEIC"
+      },
+      {
+        "src": "/img/tepekent/24-25.webp",
+        "srcset": "/img/tepekent/24-25-800w.webp 800w, /img/tepekent/24-25-1600w.webp 1600w, /img/tepekent/24-25.webp 2000w",
+        "original": "25.HEIC"
+      },
+      {
+        "src": "/img/tepekent/25-26.webp",
+        "srcset": "/img/tepekent/25-26-800w.webp 800w, /img/tepekent/25-26-1600w.webp 1600w, /img/tepekent/25-26.webp 2000w",
+        "original": "26.HEIC"
+      },
+      {
+        "src": "/img/tepekent/26-27.webp",
+        "srcset": "/img/tepekent/26-27-800w.webp 800w, /img/tepekent/26-27-1600w.webp 1600w, /img/tepekent/26-27.webp 2000w",
+        "original": "27.HEIC"
+      },
+      {
+        "src": "/img/tepekent/27-img-2614.webp",
+        "srcset": "/img/tepekent/27-img-2614-800w.webp 800w, /img/tepekent/27-img-2614-1600w.webp 1600w, /img/tepekent/27-img-2614.webp 2000w",
+        "original": "IMG_2614.HEIC"
+      },
+      {
+        "src": "/img/tepekent/28-img-2615.webp",
+        "srcset": "/img/tepekent/28-img-2615-800w.webp 800w, /img/tepekent/28-img-2615-1600w.webp 1600w, /img/tepekent/28-img-2615.webp 2000w",
+        "original": "IMG_2615.HEIC"
+      },
+      {
+        "src": "/img/tepekent/29-img-2616.webp",
+        "srcset": "/img/tepekent/29-img-2616-800w.webp 800w, /img/tepekent/29-img-2616-1600w.webp 1600w, /img/tepekent/29-img-2616.webp 2000w",
+        "original": "IMG_2616.HEIC"
+      },
+      {
+        "src": "/img/tepekent/30-img-2617.webp",
+        "srcset": "/img/tepekent/30-img-2617-800w.webp 800w, /img/tepekent/30-img-2617-1600w.webp 1600w, /img/tepekent/30-img-2617.webp 2000w",
+        "original": "IMG_2617.HEIC"
+      },
+      {
+        "src": "/img/tepekent/31-img-2622.webp",
+        "srcset": "/img/tepekent/31-img-2622-800w.webp 800w, /img/tepekent/31-img-2622-1600w.webp 1600w, /img/tepekent/31-img-2622.webp 2000w",
+        "original": "IMG_2622.HEIC"
+      },
+      {
+        "src": "/img/tepekent/32-img-2624.webp",
+        "srcset": "/img/tepekent/32-img-2624-800w.webp 800w, /img/tepekent/32-img-2624-1600w.webp 1600w, /img/tepekent/32-img-2624.webp 2000w",
+        "original": "IMG_2624.HEIC"
+      },
+      {
+        "src": "/img/tepekent/33-img-3564.webp",
+        "srcset": "/img/tepekent/33-img-3564-800w.webp 800w, /img/tepekent/33-img-3564-1600w.webp 1600w, /img/tepekent/33-img-3564.webp 2000w",
+        "original": "IMG_3564.HEIC"
+      },
+      {
+        "src": "/img/tepekent/34-img-3565.webp",
+        "srcset": "/img/tepekent/34-img-3565-800w.webp 800w, /img/tepekent/34-img-3565-1600w.webp 1600w, /img/tepekent/34-img-3565.webp 2000w",
+        "original": "IMG_3565.HEIC"
+      },
+      {
+        "src": "/img/tepekent/35-img-3566.webp",
+        "srcset": "/img/tepekent/35-img-3566-800w.webp 800w, /img/tepekent/35-img-3566-1600w.webp 1600w, /img/tepekent/35-img-3566.webp 2000w",
+        "original": "IMG_3566.HEIC"
+      },
+      {
+        "src": "/img/tepekent/36-img-3567.webp",
+        "srcset": "/img/tepekent/36-img-3567-800w.webp 800w, /img/tepekent/36-img-3567-1600w.webp 1600w, /img/tepekent/36-img-3567.webp 2000w",
+        "original": "IMG_3567.HEIC"
+      },
+      {
+        "src": "/img/tepekent/37-img-3570.webp",
+        "srcset": "/img/tepekent/37-img-3570-800w.webp 800w, /img/tepekent/37-img-3570-1600w.webp 1600w, /img/tepekent/37-img-3570.webp 2000w",
+        "original": "IMG_3570.HEIC"
+      },
+      {
+        "src": "/img/tepekent/38-img-3572.webp",
+        "srcset": "/img/tepekent/38-img-3572-800w.webp 800w, /img/tepekent/38-img-3572-1600w.webp 1600w, /img/tepekent/38-img-3572.webp 2000w",
+        "original": "IMG_3572.HEIC"
+      },
+      {
+        "src": "/img/tepekent/39-img-3577.webp",
+        "srcset": "/img/tepekent/39-img-3577-800w.webp 800w, /img/tepekent/39-img-3577-1600w.webp 1600w, /img/tepekent/39-img-3577.webp 2000w",
+        "original": "IMG_3577.HEIC"
+      },
+      {
+        "src": "/img/tepekent/40-img-3578.webp",
+        "srcset": "/img/tepekent/40-img-3578-800w.webp 800w, /img/tepekent/40-img-3578-1600w.webp 1600w, /img/tepekent/40-img-3578.webp 2000w",
+        "original": "IMG_3578.HEIC"
+      },
+      {
+        "src": "/img/tepekent/41-img-3579.webp",
+        "srcset": "/img/tepekent/41-img-3579-800w.webp 800w, /img/tepekent/41-img-3579-1600w.webp 1600w, /img/tepekent/41-img-3579.webp 2000w",
+        "original": "IMG_3579.HEIC"
+      },
+      {
+        "src": "/img/tepekent/42-img-3580.webp",
+        "srcset": "/img/tepekent/42-img-3580-800w.webp 800w, /img/tepekent/42-img-3580-1600w.webp 1600w, /img/tepekent/42-img-3580.webp 2000w",
+        "original": "IMG_3580.HEIC"
+      },
+      {
+        "src": "/img/tepekent/43-img-3581.webp",
+        "srcset": "/img/tepekent/43-img-3581-800w.webp 800w, /img/tepekent/43-img-3581-1600w.webp 1600w, /img/tepekent/43-img-3581.webp 2000w",
+        "original": "IMG_3581.HEIC"
+      },
+      {
+        "src": "/img/tepekent/44-img-3582.webp",
+        "srcset": "/img/tepekent/44-img-3582-800w.webp 800w, /img/tepekent/44-img-3582-1600w.webp 1600w, /img/tepekent/44-img-3582.webp 2000w",
+        "original": "IMG_3582.HEIC"
+      },
+      {
+        "src": "/img/tepekent/45-img-3588.webp",
+        "srcset": "/img/tepekent/45-img-3588-800w.webp 800w, /img/tepekent/45-img-3588-1600w.webp 1600w, /img/tepekent/45-img-3588.webp 2000w",
+        "original": "IMG_3588.HEIC"
+      },
+      {
+        "src": "/img/tepekent/46-img-3600.webp",
+        "srcset": "/img/tepekent/46-img-3600-800w.webp 800w, /img/tepekent/46-img-3600-1600w.webp 1600w, /img/tepekent/46-img-3600.webp 2000w",
+        "original": "IMG_3600.HEIC"
+      },
+      {
+        "src": "/img/tepekent/47-img-3623.webp",
+        "srcset": "/img/tepekent/47-img-3623-800w.webp 800w, /img/tepekent/47-img-3623-1600w.webp 1600w, /img/tepekent/47-img-3623.webp 2000w",
+        "original": "IMG_3623.HEIC"
+      },
+      {
+        "src": "/img/tepekent/48-img-3630.webp",
+        "srcset": "/img/tepekent/48-img-3630-800w.webp 800w, /img/tepekent/48-img-3630-1600w.webp 1600w, /img/tepekent/48-img-3630.webp 2000w",
+        "original": "IMG_3630.HEIC"
+      },
+      {
+        "src": "/img/tepekent/49-img-3631.webp",
+        "srcset": "/img/tepekent/49-img-3631-800w.webp 800w, /img/tepekent/49-img-3631-1600w.webp 1600w, /img/tepekent/49-img-3631.webp 2000w",
+        "original": "IMG_3631.HEIC"
+      },
+      {
+        "src": "/img/tepekent/50-z.webp",
+        "srcset": "/img/tepekent/50-z-800w.webp 800w, /img/tepekent/50-z-1600w.webp 1600w, /img/tepekent/50-z.webp 2000w",
+        "original": "z.HEIC"
+      }
+    ]
+  },
+  "zeytinburnu": {
+    "folder": "zeytinburnu daire",
+    "files": [
+      {
+        "src": "/img/zeytinburnu/01-1kapak.webp",
+        "srcset": "/img/zeytinburnu/01-1kapak-800w.webp 800w, /img/zeytinburnu/01-1kapak-1600w.webp 1600w, /img/zeytinburnu/01-1kapak.webp 2000w",
+        "original": "1kapak.jpg"
+      },
+      {
+        "src": "/img/zeytinburnu/02-1kas.webp",
+        "srcset": "/img/zeytinburnu/02-1kas-800w.webp 800w, /img/zeytinburnu/02-1kas-1600w.webp 1600w, /img/zeytinburnu/02-1kas.webp 2000w",
+        "original": "1kas.jpg"
+      },
+      {
+        "src": "/img/zeytinburnu/03-2.webp",
+        "srcset": "/img/zeytinburnu/03-2-800w.webp 800w, /img/zeytinburnu/03-2-1600w.webp 1600w, /img/zeytinburnu/03-2.webp 2000w",
+        "original": "2.jpg"
+      },
+      {
+        "src": "/img/zeytinburnu/04-3.webp",
+        "srcset": "/img/zeytinburnu/04-3-800w.webp 800w, /img/zeytinburnu/04-3-1600w.webp 1600w, /img/zeytinburnu/04-3.webp 2000w",
+        "original": "3.jpg"
+      },
+      {
+        "src": "/img/zeytinburnu/05-3z.webp",
+        "srcset": "/img/zeytinburnu/05-3z-800w.webp 800w, /img/zeytinburnu/05-3z-1600w.webp 1600w, /img/zeytinburnu/05-3z.webp 2000w",
+        "original": "3z.jpg"
+      },
+      {
+        "src": "/img/zeytinburnu/06-4.webp",
+        "srcset": "/img/zeytinburnu/06-4-800w.webp 800w, /img/zeytinburnu/06-4-1600w.webp 1600w, /img/zeytinburnu/06-4.webp 2000w",
+        "original": "4.jpg"
+      },
+      {
+        "src": "/img/zeytinburnu/07-5.webp",
+        "srcset": "/img/zeytinburnu/07-5-800w.webp 800w, /img/zeytinburnu/07-5-1600w.webp 1600w, /img/zeytinburnu/07-5.webp 2000w",
+        "original": "5.jpg"
+      },
+      {
+        "src": "/img/zeytinburnu/08-6.webp",
+        "srcset": "/img/zeytinburnu/08-6-800w.webp 800w, /img/zeytinburnu/08-6-1600w.webp 1600w, /img/zeytinburnu/08-6.webp 2000w",
+        "original": "6.jpg"
+      },
+      {
+        "src": "/img/zeytinburnu/09-7.webp",
+        "srcset": "/img/zeytinburnu/09-7-800w.webp 800w, /img/zeytinburnu/09-7-1600w.webp 1600w, /img/zeytinburnu/09-7.webp 2000w",
+        "original": "7.jpg"
+      },
+      {
+        "src": "/img/zeytinburnu/10-8.webp",
+        "srcset": "/img/zeytinburnu/10-8-800w.webp 800w, /img/zeytinburnu/10-8-1600w.webp 1600w, /img/zeytinburnu/10-8.webp 2000w",
+        "original": "8.jpg"
+      },
+      {
+        "src": "/img/zeytinburnu/11-9.webp",
+        "srcset": "/img/zeytinburnu/11-9-800w.webp 800w, /img/zeytinburnu/11-9-1600w.webp 1600w, /img/zeytinburnu/11-9.webp 2000w",
+        "original": "9.jpg"
+      },
+      {
+        "src": "/img/zeytinburnu/12-10.webp",
+        "srcset": "/img/zeytinburnu/12-10-800w.webp 800w, /img/zeytinburnu/12-10-1600w.webp 1600w, /img/zeytinburnu/12-10.webp 2000w",
+        "original": "10.jpg"
+      },
+      {
+        "src": "/img/zeytinburnu/13-11.webp",
+        "srcset": "/img/zeytinburnu/13-11-800w.webp 800w, /img/zeytinburnu/13-11-1600w.webp 1600w, /img/zeytinburnu/13-11.webp 2000w",
+        "original": "11.jpg"
+      },
+      {
+        "src": "/img/zeytinburnu/14-12.webp",
+        "srcset": "/img/zeytinburnu/14-12-800w.webp 800w, /img/zeytinburnu/14-12-1600w.webp 1600w, /img/zeytinburnu/14-12.webp 2000w",
+        "original": "12.jpg"
+      },
+      {
+        "src": "/img/zeytinburnu/15-13.webp",
+        "srcset": "/img/zeytinburnu/15-13-800w.webp 800w, /img/zeytinburnu/15-13-1600w.webp 1600w, /img/zeytinburnu/15-13.webp 2000w",
+        "original": "13.jpg"
+      },
+      {
+        "src": "/img/zeytinburnu/16-14.webp",
+        "srcset": "/img/zeytinburnu/16-14-800w.webp 800w, /img/zeytinburnu/16-14-1600w.webp 1600w, /img/zeytinburnu/16-14.webp 2000w",
+        "original": "14.jpg"
+      },
+      {
+        "src": "/img/zeytinburnu/17-15.webp",
+        "srcset": "/img/zeytinburnu/17-15-800w.webp 800w, /img/zeytinburnu/17-15-1600w.webp 1600w, /img/zeytinburnu/17-15.webp 2000w",
+        "original": "15.jpg"
+      },
+      {
+        "src": "/img/zeytinburnu/18-16.webp",
+        "srcset": "/img/zeytinburnu/18-16-800w.webp 800w, /img/zeytinburnu/18-16-1600w.webp 1600w, /img/zeytinburnu/18-16.webp 2000w",
+        "original": "16.jpg"
+      },
+      {
+        "src": "/img/zeytinburnu/19-aakapak.webp",
+        "srcset": "/img/zeytinburnu/19-aakapak-800w.webp 800w, /img/zeytinburnu/19-aakapak-1600w.webp 1600w, /img/zeytinburnu/19-aakapak.webp 2000w",
+        "original": "aakapak.jpg"
+      },
+      {
+        "src": "/img/zeytinburnu/20-img-20230225-153619.webp",
+        "srcset": "/img/zeytinburnu/20-img-20230225-153619-800w.webp 800w, /img/zeytinburnu/20-img-20230225-153619-1600w.webp 1600w, /img/zeytinburnu/20-img-20230225-153619.webp 2000w",
+        "original": "IMG_20230225_153619.jpg"
+      },
+      {
+        "src": "/img/zeytinburnu/21-img-20230225-153639.webp",
+        "srcset": "/img/zeytinburnu/21-img-20230225-153639-800w.webp 800w, /img/zeytinburnu/21-img-20230225-153639-1600w.webp 1600w, /img/zeytinburnu/21-img-20230225-153639.webp 2000w",
+        "original": "IMG_20230225_153639.jpg"
+      },
+      {
+        "src": "/img/zeytinburnu/22-img-20230225-153727.webp",
+        "srcset": "/img/zeytinburnu/22-img-20230225-153727-800w.webp 800w, /img/zeytinburnu/22-img-20230225-153727-1600w.webp 1600w, /img/zeytinburnu/22-img-20230225-153727.webp 2000w",
+        "original": "IMG_20230225_153727.jpg"
+      },
+      {
+        "src": "/img/zeytinburnu/23-img-20230225-153744.webp",
+        "srcset": "/img/zeytinburnu/23-img-20230225-153744-800w.webp 800w, /img/zeytinburnu/23-img-20230225-153744-1600w.webp 1600w, /img/zeytinburnu/23-img-20230225-153744.webp 2000w",
+        "original": "IMG_20230225_153744.jpg"
+      },
+      {
+        "src": "/img/zeytinburnu/24-img-20230225-153749.webp",
+        "srcset": "/img/zeytinburnu/24-img-20230225-153749-800w.webp 800w, /img/zeytinburnu/24-img-20230225-153749-1600w.webp 1600w, /img/zeytinburnu/24-img-20230225-153749.webp 2000w",
+        "original": "IMG_20230225_153749.jpg"
+      },
+      {
+        "src": "/img/zeytinburnu/25-img-20230225-180139.webp",
+        "srcset": "/img/zeytinburnu/25-img-20230225-180139-800w.webp 800w, /img/zeytinburnu/25-img-20230225-180139-1600w.webp 1600w, /img/zeytinburnu/25-img-20230225-180139.webp 2000w",
+        "original": "IMG_20230225_180139.jpg"
+      }
+    ]
+  }
+}

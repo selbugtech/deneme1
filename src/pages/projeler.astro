@@ -4,19 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppFloat from '../components/WhatsAppFloat.astro';
 import { CANONICAL_BASE } from '../config';
-import { optimizedImage } from '../lib/cloudinary';
-
-const projects = [
-  { slug: 'beyoglu-galata', title: 'Beyoğlu Galata Daire', category: 'Anahtar Teslim Ev Yenileme', size: 'large', year: '2023', image: optimizedImage('/images/beyoglu galata daire/aakapak.jpg') },
-  { slug: 'beykoz-pasabahce', title: 'Beykoz Paşabahçe Villa', category: 'Villa Yenileme', size: 'small', year: '2022', image: optimizedImage('/images/beykoz pasabahce villa/aakapak.HEIC') },
-  { slug: 'caddebostan', title: 'Caddebostan Daire', category: 'Anahtar Teslim Ev Yenileme', size: 'small', year: '2022', image: optimizedImage('/images/caddebostan daire/aakapak.jpg') },
-  { slug: 'mecidiyekoy', title: 'Mecidiyeköy Daire', category: 'Anahtar Teslim Ev Yenileme', size: 'small', year: '2024', image: optimizedImage('/images/mecidiyeköy daire/aakapak.HEIC') },
-  { slug: 'artas-ofis', title: 'Artaş Ofis', category: 'Ofis Yenileme', size: 'small', year: '2024', image: optimizedImage('/images/Artaş Ofis/aakapak.HEIC') },
-  { slug: 'artas-ofis-2', title: 'Artaş Ofis 2', category: 'Ofis Yenileme', size: 'small', year: '2023', image: optimizedImage('/images/artasOfis 2/aakapak.HEIC') },
-  { slug: 'tepekent', title: 'Tepekent Villa', category: 'Anahtar Teslim Ev Yenileme', size: 'large', year: '2024', image: optimizedImage('/images/tepekent villa/aakapak.HEIC') },
-  { slug: 'kozyatagi-banyo', title: 'Kozyatağı Banyo', category: 'Kısmi Yenileme', size: 'small', year: '2022', image: optimizedImage('/images/kozyatağı banyo/aakapak.JPG') },
-  { slug: 'zeytinburnu', title: 'Zeytinburnu Daire', category: 'Anahtar Teslim Ev Yenileme', size: 'small', year: '2023', image: optimizedImage('/images/zeytinburnu daire/aakapak.jpg') },
-];
+import { projects } from '../data/projects';
 ---
 
 <Layout
@@ -36,7 +24,6 @@ const projects = [
 
   <main class="pt-24 bg-charcoal min-h-screen">
 
-    <!-- Page header -->
     <div class="max-w-6xl mx-auto px-6 py-16">
       <div class="flex items-center gap-3 mb-2 reveal">
         <a href="/" class="text-white/40 hover:text-gold text-sm tracking-wide transition-colors flex items-center gap-1.5">
@@ -63,7 +50,6 @@ const projects = [
       </div>
     </div>
 
-    <!-- Projects grid -->
     <div class="max-w-6xl mx-auto px-6 pb-24">
       <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
         {projects.map((p, i) => (
@@ -72,14 +58,15 @@ const projects = [
             class={`relative group overflow-hidden reveal reveal-d${(i % 3) + 1} ${p.size === 'large' ? 'row-span-2' : ''}`}
           >
             <img
-              src={p.image}
+              src={p.heroImage}
+              srcset={p.heroSrcset}
+              sizes="(min-width:768px) 33vw, 50vw"
               alt={p.title}
               loading="lazy"
               decoding="async"
               class={`w-full object-cover object-center transition-transform duration-500 group-hover:scale-105 ${p.size === 'large' ? 'h-[400px] md:h-[480px]' : 'h-[190px] md:h-[230px]'}`}
             />
 
-            <!-- Overlay on hover -->
             <div class="absolute inset-0 bg-charcoal/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-start justify-end p-5">
               <span class="text-[10px] tracking-[0.25em] uppercase text-gold/70 mb-1">{p.year}</span>
               <span class="text-[10px] tracking-[0.25em] uppercase text-gold mb-2">{p.category}</span>
@@ -92,7 +79,6 @@ const projects = [
               </span>
             </div>
 
-            <!-- Always-visible label (mobile) -->
             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-charcoal/90 to-transparent p-4 md:hidden">
               <p class="text-[10px] tracking-widest uppercase text-gold">{p.category}</p>
               <p class="font-display text-white text-sm font-semibold">{p.title}</p>
@@ -101,7 +87,6 @@ const projects = [
         ))}
       </div>
 
-      <!-- CTA -->
       <div class="mt-16 text-center reveal">
         <p class="text-white/40 text-sm mb-6 tracking-wide">Projenizi hayata geçirmek için iletişime geçin</p>
         <a
