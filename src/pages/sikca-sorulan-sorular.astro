@@ -348,9 +348,9 @@ const webPageSchema = {
             { label: 'Hizmetlerimiz',        href: '/#hizmetler',                  desc: 'Tüm iç mimarlık hizmetleri' },
             { label: 'Projelerimiz',          href: '/projeler',                    desc: 'Tamamlanan proje portföyü' },
             { label: 'Blog',                  href: '/blog',                        desc: 'Rehber içerikler ve trendler' },
-            { label: 'Anahtar Teslim Tadilat', href: '/hizmetler/anahtar-teslim-tadilat', desc: 'Süreç ve kapsam detayı' },
-            { label: 'Daire Yenileme',        href: '/hizmetler/daire-yenileme',   desc: 'Daire projeleri ve maliyetler' },
-            { label: 'Villa Yenileme',        href: '/hizmetler/villa-yenileme',   desc: 'Villa tadilat rehberi' },
+            { label: 'Anahtar Teslim Tadilat', href: '/hizmetler/anahtar-teslim', desc: 'Süreç ve kapsam detayı' },
+            { label: 'Daire Yenileme',        href: '/hizmetler/anahtar-teslim/ev-yenileme',   desc: 'Daire projeleri ve maliyetler' },
+            { label: 'Villa Yenileme',        href: '/hizmetler/anahtar-teslim/villa-yenileme',   desc: 'Villa tadilat rehberi' },
           ].map(link => (
             <a href={link.href} class="group block border border-border p-5 hover:border-gold transition-colors">
               <p class="font-semibold text-charcoal text-sm group-hover:text-gold transition-colors mb-1">{link.label}</p>

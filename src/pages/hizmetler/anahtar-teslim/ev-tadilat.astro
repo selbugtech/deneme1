@@ -24,7 +24,7 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Ev tadilat ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Standart bir daire tadilatı (80–120 m²) genellikle 4–8 hafta içinde tamamlanmaktadır. Kapsam genişledikçe — özellikle elektrik ve tesisat müdahalesi gerekiyorsa — bu süre 10–12 haftaya uzayabilir. Malzeme temin süreleri ve yapının mevcut durumu da takvimi etkiler. Keşif ziyaretimizde projenize özel bir takvim sunuyoruz; bu takvim sözleşmede taahhüt edilir." } },
+    { "@type": "Question", "name": "Ev tadilat ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Standart bir daire tadilatı (80–120 m²) genellikle 4–8 hafta içinde tamamlanmaktadır. Kapsam genişledikçe — özellikle elektrik ve tesisat müdahalesi gerekiyorsa — bu süre 10–12 haftaya uzayabilir. Malzeme temin süreleri ve yapının mevcut durumu da takvimi etkiler. Keşif ziyaretimizde projenize özel bir takvim sunuyoruz; bu takvim sözleşmede yer alır." } },
     { "@type": "Question", "name": "Tadilat süresince evde oturabilir miyim?", "acceptedAnswer": { "@type": "Answer", "text": "Komple daire tadilat çalışmalarında — özellikle elektrik, tesisat veya zemin değişimi gibi yapısal müdahaleler varsa — evde oturmanızı tavsiye etmiyoruz. Toz, gürültü ve güvenlik açısından geçici taşınma hem sizin hem de ekibimizin verimliliğini artırır. Tek oda veya mutfak-banyo gibi kısmi tadilatlarda belirli dönemlerde mümkün olabilir; her projenin planlamasında bu konuyu önceden değerlendiriyoruz." } },
     { "@type": "Question", "name": "Sadece mutfak veya banyo tadilatı yaptırabilir miyim?", "acceptedAnswer": { "@type": "Answer", "text": "Evet. Yalnızca mutfak tadilat, banyo tadilat veya tek oda tadilat gibi kısmi projeler de yürütüyoruz. İhtiyacınıza özel kapsam belirlenir, gereksiz iş yapılmaz. Kısmi tadilat projeleri genellikle 2–4 haftada tamamlanır ve komple tadilatın yarattığı aksaklığı minimize eder." } },
     { "@type": "Question", "name": "Ev tadilat bütçesi nasıl belirlenir?", "acceptedAnswer": { "@type": "Answer", "text": "Bütçe; dairenin büyüklüğü, mevcut yapı durumu, seçilen malzeme kalitesi ve tadilat kapsamına göre şekillenir. Elektrik ve tesisat yenileme gibi teknik işler, yalnızca kaplama değişimine kıyasla maliyeti artırır. Ücretsiz keşif ziyaretimizde projenize özel bütçe sunuyoruz; sürpriz maliyet yaşanmaması için tüm kalemler sözleşmede yer alır." } },
@@ -109,8 +109,8 @@ const faqSchema = {
           desc: 'Elektrik tesisatı 20 yıldan eskiyse veya banyoda kronik su kaçağı, nem ve küf sorunu varsa tadilat zorunlu hale gelir. Yalnızca yüzeysel kaplama değiştirmek altta yatan sorunu çözmez; uzun vadede daha yüksek maliyete yol açar.',
         },
         {
-          title: 'Satış veya Kiralama Öncesi',
-          desc: 'Konut değerini artırmak için yapılan tadilat yatırımları genellikle kısa sürede geri döner. Özellikle mutfak ve banyo tadilatı, alıcı veya kiracıların karar sürecinde en belirleyici etkenler arasındadır.',
+          title: 'Estetik Yıpranma',
+          desc: 'Yıllar içinde kaplamalar, dolaplar ve renkler eskir; mekan günlük kullanıma yetersiz hale gelir. Özellikle mutfak ve banyo gibi yoğun kullanılan alanlarda yenileme, günlük yaşam konforunu doğrudan iyileştirir.',
         },
         {
           title: 'Mekan Kurgusu Değişiyor',
@@ -135,7 +135,7 @@ const faqSchema = {
       {[
         { step: '01', title: 'Ücretsiz Keşif', desc: 'Evinizi ve yaşam tarzınızı yerinde değerlendiriyoruz. Mevcut yapı durumu, tadilat kapsamı ve bütçe çerçevesi bu ziyarette netleşir.' },
         { step: '02', title: '3D Tasarım', desc: 'Mekanınızı gerçekçi görsellerle deneyimleyin ve onaylayın. Uygulama başlamadan tüm kararlar görsel üzerinde verilir.' },
-        { step: '03', title: 'Sözleşme', desc: 'Kesin bütçe ve takvim belirlenerek sözleşme imzalanır. Sürpriz maliyet veya gecikme yaşanmaması için tüm kalemler yazılı taahhüt edilir.' },
+        { step: '03', title: 'Sözleşme', desc: 'Kesin bütçe ve takvim belirlenerek sözleşme imzalanır. Tüm iş kalemleri ve süreler şeffaf bir şekilde sözleşmede yer alır.' },
         { step: '04', title: 'Uygulama', desc: 'Şantiye yönetimi ve usta koordinasyonu tamamen bizde. Sizi her hafta yazılı ilerleme raporuyla bilgilendiriyoruz.' },
         { step: '05', title: 'Teslim', desc: 'Final temizliği tamamlanmış, eksiksiz hazır evinizi teslim alırsınız. Teslim sonrası garanti kapsamı sözleşmede belirtilir.' },
       ].map(item => (
@@ -171,7 +171,7 @@ const faqSchema = {
     </div>
     <div class="divide-y divide-border">
       {[
-        { q: 'Ev tadilat ne kadar sürer?', a: 'Standart bir daire tadilatı (80–120 m²) genellikle 4–8 hafta içinde tamamlanmaktadır. Kapsam genişledikçe — özellikle elektrik ve tesisat müdahalesi gerekiyorsa — bu süre 10–12 haftaya uzayabilir. Malzeme temin süreleri ve yapının mevcut durumu da takvimi etkiler. Keşif ziyaretimizde projenize özel bir takvim sunuyoruz; bu takvim sözleşmede taahhüt edilir.' },
+        { q: 'Ev tadilat ne kadar sürer?', a: 'Standart bir daire tadilatı (80–120 m²) genellikle 4–8 hafta içinde tamamlanmaktadır. Kapsam genişledikçe — özellikle elektrik ve tesisat müdahalesi gerekiyorsa — bu süre 10–12 haftaya uzayabilir. Malzeme temin süreleri ve yapının mevcut durumu da takvimi etkiler. Keşif ziyaretimizde projenize özel bir takvim sunuyoruz; bu takvim sözleşmede yer alır.' },
         { q: 'Tadilat süresince evde oturabilir miyim?', a: 'Komple daire tadilat çalışmalarında — özellikle elektrik, tesisat veya zemin değişimi gibi yapısal müdahaleler varsa — evde oturmanızı tavsiye etmiyoruz. Toz, gürültü ve güvenlik açısından geçici taşınma hem sizin hem de ekibimizin verimliliğini artırır. Tek oda veya mutfak-banyo gibi kısmi tadilatlarda belirli dönemlerde mümkün olabilir.' },
         { q: 'Sadece mutfak veya banyo tadilatı yaptırabilir miyim?', a: 'Evet. Yalnızca mutfak tadilat, banyo tadilat veya tek oda tadilat gibi kısmi projeler de yürütüyoruz. İhtiyacınıza özel kapsam belirlenir, gereksiz iş yapılmaz. Kısmi tadilat projeleri genellikle 2–4 haftada tamamlanır ve komple tadilatın yarattığı aksaklığı minimize eder.' },
         { q: 'Ev tadilat bütçesi nasıl belirlenir?', a: 'Bütçe; dairenin büyüklüğü, mevcut yapı durumu, seçilen malzeme kalitesi ve tadilat kapsamına göre şekillenir. Elektrik ve tesisat yenileme gibi teknik işler, yalnızca kaplama değişimine kıyasla maliyeti artırır. Ücretsiz keşif ziyaretimizde projenize özel bütçe sunuyoruz; sürpriz maliyet yaşanmaması için tüm kalemler sözleşmede yer alır.' },
