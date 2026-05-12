@@ -20,6 +20,7 @@ interface Props {
   structuredData?: object | object[];
   heroImage?: string;
   ogImage?: string;
+  expandedByDefault?: boolean;
 }
 
 const {
@@ -27,6 +28,7 @@ const {
   eyebrow = 'Hizmetlerimiz', lead,
   breadcrumb, structuredData,
   heroImage, ogImage,
+  expandedByDefault = false,
 } = Astro.props;
 
 const reviewData = await getReviewsForDisplay();
@@ -173,13 +175,13 @@ const allSchema = [
 
     <!-- Page-specific content with auto-collapse -->
     <div class="max-w-6xl mx-auto px-6 py-16">
-      <div class="article-collapse" data-collapsed="true">
+      <div class="article-collapse" data-collapsed={expandedByDefault ? 'false' : 'true'}>
         <div class="prose prose-charcoal max-w-none service-content">
           <slot />
         </div>
         <div class="article-fade" aria-hidden="true"></div>
       </div>
-      <button type="button" class="article-toggle" aria-expanded="false">
+      <button type="button" class="article-toggle" aria-expanded={expandedByDefault ? 'true' : 'false'}>
         <span class="article-toggle-open">Detaylı Bilgiyi Gör</span>
         <span class="article-toggle-close">Daralt</span>
         <svg class="w-4 h-4 article-toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
