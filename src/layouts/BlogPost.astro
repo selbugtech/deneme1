@@ -99,22 +99,18 @@ const breadcrumbSchema = {
       <div class="absolute inset-0 bg-charcoal/75"></div>
       <div class="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-charcoal/35 to-transparent"></div>
 
-      <!-- Top breadcrumb -->
-      <div class="absolute top-0 left-0 right-0 pt-28 px-6">
-        <div class="max-w-6xl mx-auto">
-          <nav class="flex items-center gap-2 text-sm flex-wrap" aria-label="Breadcrumb">
+      <!-- Content -->
+      <div class="relative z-10 w-full max-w-6xl mx-auto px-6 pt-40 pb-16">
+        <div class="max-w-2xl">
+
+          <!-- Breadcrumb -->
+          <nav class="flex items-center gap-2 text-xs flex-wrap mb-8" aria-label="Breadcrumb">
             <a href="/" class="text-white/50 hover:text-gold transition-colors">Ana Sayfa</a>
             <span class="text-white/20">/</span>
             <a href="/blog" class="text-white/50 hover:text-gold transition-colors">Blog</a>
             <span class="text-white/20">/</span>
             <span class="text-white/70">{displayTitle.length > 50 ? displayTitle.substring(0, 50) + '…' : displayTitle}</span>
           </nav>
-        </div>
-      </div>
-
-      <!-- Content -->
-      <div class="relative z-10 w-full max-w-6xl mx-auto px-6 pt-32 pb-16">
-        <div class="max-w-2xl">
 
           <!-- Eyebrow -->
           <div class="flex items-center gap-3 mb-7">

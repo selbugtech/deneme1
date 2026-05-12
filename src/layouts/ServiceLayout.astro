@@ -88,10 +88,12 @@ const allSchema = [
       <div class="absolute inset-0 bg-charcoal/75"></div>
       <div class="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-charcoal/35 to-transparent"></div>
 
-      <!-- Breadcrumb top -->
-      <div class="absolute top-0 left-0 right-0 pt-28 px-6">
-        <div class="max-w-6xl mx-auto">
-          <nav class="flex items-center gap-2 text-sm flex-wrap" aria-label="Breadcrumb">
+      <!-- Content -->
+      <div class="relative z-10 w-full max-w-6xl mx-auto px-6 pt-40 pb-16">
+        <div class="max-w-2xl">
+
+          <!-- Breadcrumb -->
+          <nav class="flex items-center gap-2 text-xs flex-wrap mb-8" aria-label="Breadcrumb">
             {breadcrumb.map((item, i) => (
               <>
                 {i > 0 && <span class="text-white/20">/</span>}
@@ -102,12 +104,6 @@ const allSchema = [
               </>
             ))}
           </nav>
-        </div>
-      </div>
-
-      <!-- Content -->
-      <div class="relative z-10 w-full max-w-6xl mx-auto px-6 pt-32 pb-16">
-        <div class="max-w-2xl">
 
           <div class="flex items-center gap-3 mb-7">
             <span class="w-8 h-px bg-gold"></span>
