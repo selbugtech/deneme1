@@ -21,6 +21,11 @@ const slides = [
     srcset: srcsetImage('/images/salonvemutfak.jpeg', [600, 1200, 1920]),
     label: 'Villa & Mağaza',
   },
+  {
+    image: optimizedImage('/images/oturmaodasi.jpeg'),
+    srcset: srcsetImage('/images/oturmaodasi.jpeg', [600, 1200, 1920]),
+    label: 'Oturma Odası',
+  },
 ];
 ---
 
@@ -69,7 +74,7 @@ const slides = [
       <!-- Heading -->
       <h1 class="font-display text-[2.2rem] sm:text-5xl md:text-6xl lg:text-[4.4rem] xl:text-[4.8rem] font-bold leading-[1.05] text-white mb-5 reveal reveal-d1">
         Anahtar Teslim<br />
-        <em class="not-italic text-gold">Yenileme &amp; Tadilat</em>
+        <em class="not-italic text-gold">Tadilat <span class="font-display italic font-normal">&amp;</span> Yenileme</em>
       </h1>
       <div class="flex flex-wrap items-center gap-x-2 gap-y-2 mb-5 reveal reveal-d1">
         {['Ev', 'Villa', 'Mağaza', 'Ofis'].map((item) => (
@@ -80,12 +85,6 @@ const slides = [
       </div>
       <p class="text-gold text-sm sm:text-base tracking-[0.12em] sm:tracking-[0.18em] uppercase font-medium mb-6 reveal reveal-d1">
         Mekanınızı Hayalinize Dönüştürüyoruz
-      </p>
-
-      <!-- Description -->
-      <p class="text-white/85 text-base sm:text-xl leading-relaxed max-w-md reveal reveal-d2 mb-8">
-        Anahtar teslim ev yenileme, villa tasarımı ve ticari mekan dönüşümlerinde
-        İstanbul'un güvenilir iç mimarlık firması.
       </p>
 
       <!-- Free site visit badge -->
