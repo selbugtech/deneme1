@@ -209,6 +209,220 @@ const META: ProjectMeta[] = [
     metaTitle: 'Ataköy Ev Yenileme Projesi | Anahtar Teslim | Master İç Mimarlık',
     metaDesc: 'Ataköy\'de 120 m² dairenin komple anahtar teslim yenileme projesi. Açık plan mutfak, modern banyo ve özel iç mimari tasarım. Master İç Mimarlık İstanbul.',
   },
+  {
+    slug: 'beylikduzu-villa',
+    title: 'Beylikdüzü Villa',
+    category: 'Villa Yenileme',
+    categorySlug: 'villa-yenileme',
+    size: 'large',
+    year: '2023',
+    location: 'Beylikdüzü, İstanbul',
+    area: '320 m²',
+    duration: '14 Hafta',
+    services: ['Villa İç Mimari Tasarımı', '3D Görselleştirme', 'Komple Yenileme', 'Özel Mobilya Tasarımı', 'Bahçe & Teras', 'Mutfak & Banyo'],
+    description: [
+      'Beylikdüzü\'nde geniş bahçeli bu villa, modern bir aile yaşamını destekleyecek şekilde baştan tasarlandı. Açık plan yaşam alanları ve doğayla bütünleşen geçişler tasarımın çıkış noktasını oluşturdu.',
+      'Sıcak ve nötr renk paleti seçilerek mekana zamansız bir karakter kazandırıldı. Mutfak ve yemek alanı bütünleştirildi; ada tipi tezgah hem hazırlık hem sosyal alan olarak çift işlev görüyor.',
+      'Üst kattaki yatak odaları suite konforuyla planlandı; her birine özel banyo ve giyinme alanları tasarlandı. 14 haftalık titiz bir süreçle proje anahtar teslim tamamlandı.',
+    ],
+    metaTitle: 'Beylikdüzü Villa Yenileme Projesi | Master İç Mimarlık İstanbul',
+    metaDesc: 'Beylikdüzü\'nde 320 m² villanın komple yenileme projesi. Modern iç mimari, özel mobilya ve bahçe-teras düzenlemesi. Master İç Mimarlık.',
+  },
+  {
+    slug: 'selimpasa-villa',
+    title: 'Selimpaşa Villa',
+    category: 'Villa Yenileme',
+    categorySlug: 'villa-yenileme',
+    size: 'large',
+    year: '2022',
+    location: 'Selimpaşa, İstanbul',
+    area: '260 m²',
+    duration: '12 Hafta',
+    services: ['Villa İç Mimari Tasarımı', '3D Görselleştirme', 'Komple Yenileme', 'Mutfak & Banyo', 'Özel Mobilya', 'Aydınlatma Tasarımı'],
+    description: [
+      'Selimpaşa\'da deniz manzaralı konumda yer alan bu 260 m² villa, sahibi için yıllarca konfor sağlayacak şekilde komple yenilendi. Manzarayı içeri taşıyan geniş açıklıklar tasarımın temelini oluşturdu.',
+      'Doğal taş, ahşap ve nötr tonlar bir araya getirilerek mekan boyunca tutarlı bir estetik dil korundu. Salon-mutfak ilişkisi açık planla kurgulandı; özel tasarım mobilyalarla kişiselleştirildi.',
+      'Yatak odaları ve banyolar otel konforunda planlandı. Aydınlatma tasarımı katmanlı yapıldı; gizli, dekoratif ve görevsel ışıklar bir arada kullanıldı. Proje 12 haftada anahtar teslim tamamlandı.',
+    ],
+    metaTitle: 'Selimpaşa Villa Yenileme Projesi | Master İç Mimarlık İstanbul',
+    metaDesc: 'Selimpaşa\'da 260 m² villanın komple yenileme projesi. Manzara odaklı tasarım, özel mobilya ve aydınlatma. Master İç Mimarlık.',
+  },
+  {
+    slug: 'beykoz-villa',
+    title: 'Beykoz Villa',
+    category: 'Villa Yenileme',
+    categorySlug: 'villa-yenileme',
+    size: 'small',
+    year: '2022',
+    location: 'Beykoz, İstanbul',
+    area: '240 m²',
+    duration: '11 Hafta',
+    services: ['Villa İç Mimari Tasarımı', 'Komple Yenileme', 'Mutfak & Banyo', 'Özel Mobilya', 'Bahçe & Teras', 'Aydınlatma Tasarımı'],
+    description: [
+      'Beykoz\'un yeşil dokusu içinde konumlanan bu villa, doğayla bütünleşik bir yaşam için yeniden tasarlandı. Mevcut yapısal düzen korunarak iç mekan tamamen yenilendi.',
+      'Açık plan oturma-yemek-mutfak ilişkisi kuruldu; bahçeye açılan geniş cam yüzeyler iç ve dış mekan arasında akıcı bir geçiş sağladı.',
+      'Yatak katı kullanıcı konforu önceliklendirilerek planlandı; banyo ve giyinme odaları suite mantığıyla entegre edildi. Proje 11 haftada teslim edildi.',
+    ],
+    metaTitle: 'Beykoz Villa Yenileme Projesi | Master İç Mimarlık',
+    metaDesc: 'Beykoz\'da 240 m² villanın komple yenileme projesi. Doğayla bütünleşik tasarım, özel mobilya ve bahçe entegrasyonu. Master İç Mimarlık.',
+  },
+  {
+    slug: 'cafe',
+    title: 'Cafe Projesi',
+    category: 'Ticari Mekan',
+    categorySlug: 'ticari',
+    size: 'small',
+    year: '2021',
+    location: 'İstanbul',
+    area: '90 m²',
+    duration: '4 Hafta',
+    services: ['Ticari Mekan Tasarımı', 'Mobilya Tasarımı', 'Aydınlatma', 'Marka Kimliği Entegrasyonu', 'Mutfak Altyapısı', 'Kaplama & Boya'],
+    description: [
+      'Bu cafe projesi; sıcak, davetkar ve markaya özgü bir atmosfer hedefiyle tasarlandı. Müşteri deneyimini önceliklendiren bir oturma düzeni ve sirkülasyon kurgusu oluşturuldu.',
+      'Doğal ahşap, sıcak metaller ve dokulu yüzeyler bir araya getirilerek karakterli bir mekan yaratıldı. Bar ve servis bölümleri operasyonel verimlilik gözetilerek konumlandırıldı.',
+      'Aydınlatma tasarımı, gün içinde değişen kullanıma uyum sağlayacak şekilde katmanlı planlandı. Proje 4 haftada işletmeye hazır şekilde teslim edildi.',
+    ],
+    metaTitle: 'Cafe Tasarım Projesi | Ticari Mekan İç Mimarlık | Master',
+    metaDesc: 'Marka odaklı cafe iç mimari tasarım projesi. Mobilya, aydınlatma ve mutfak altyapısı. Master İç Mimarlık.',
+  },
+  {
+    slug: 'hilton-otel',
+    title: 'Hilton Otel',
+    category: 'Otel & Konaklama',
+    categorySlug: 'otel',
+    size: 'large',
+    year: '2022',
+    location: 'İstanbul',
+    area: '—',
+    duration: '—',
+    services: ['Otel İç Mimari Uygulaması', 'Lobi & Ortak Alan', 'Oda Yenileme', 'Kaplama & Boya', 'Mobilya', 'Aydınlatma'],
+    description: [
+      'Uluslararası bir otel zincirinin İstanbul lokasyonunda gerçekleştirilen bu iç mimari uygulama projesi, marka standartlarına tam uyumlu bir teslimat hedefiyle yürütüldü.',
+      'Lobi ve ortak alanlar konuk deneyimini önceliklendiren bir düzenle yenilendi. Detay işçiliği ve malzeme seçiminde kalite çıtası yüksek tutuldu.',
+      'Proje, otelin operasyonunu minimum etkileyecek bir çalışma takviminde tamamlandı.',
+    ],
+    metaTitle: 'Hilton Otel İç Mimari Projesi | Master İç Mimarlık',
+    metaDesc: 'Uluslararası otel zinciri için iç mimari uygulama projesi. Lobi, ortak alan ve oda yenileme. Master İç Mimarlık.',
+  },
+  {
+    slug: 'kadikoy-moda',
+    title: 'Kadıköy Moda Daire',
+    category: 'Anahtar Teslim Ev Yenileme',
+    categorySlug: 'anahtar-teslim',
+    size: 'small',
+    year: '2023',
+    location: 'Moda, Kadıköy, İstanbul',
+    area: '115 m²',
+    duration: '8 Hafta',
+    services: ['İç Mimari Tasarım', 'Komple Yenileme', 'Mutfak & Banyo', 'Zemin Kaplama', 'Boya & Dekor', 'Aydınlatma'],
+    description: [
+      'Kadıköy Moda\'da denize yürüme mesafesindeki bu 115 m² daire, sahili ve mahalle dokusunu evin içine taşıyacak şekilde tasarlandı. Açık plan kurgu mekanı görsel olarak genişletti.',
+      'Doğal tonlar, mat yüzeyler ve doku detaylarıyla zamansız bir iç mekan elde edildi. Mutfak ve oturma alanı bütünleştirildi; banyo yenileme ile modern bir his yakalandı.',
+      'Tüm elektrik ve sıhhi tesisat yenilendi; proje 8 haftada anahtar teslim tamamlandı.',
+    ],
+    metaTitle: 'Kadıköy Moda Ev Yenileme | Anahtar Teslim | Master İç Mimarlık',
+    metaDesc: 'Kadıköy Moda\'da 115 m² dairenin komple anahtar teslim yenileme projesi. Modern iç mimari tasarım. Master İç Mimarlık İstanbul.',
+  },
+  {
+    slug: 'karisik-projeler',
+    title: 'Karışık Projeler',
+    category: 'Seçilmiş Çalışmalar',
+    categorySlug: 'karisik',
+    size: 'small',
+    year: '—',
+    location: 'İstanbul',
+    area: '—',
+    duration: '—',
+    services: ['İç Mimari Tasarım', 'Komple Yenileme', 'Mutfak & Banyo', 'Mobilya', 'Aydınlatma', 'Dekor'],
+    description: [
+      'Farklı projelerden seçilmiş detay ve uygulama görsellerinin bir araya getirildiği bu galeri, ekibin çalışma yelpazesini gösteren bir özet niteliğindedir.',
+      'Detay işçiliği, malzeme seçimleri ve atmosfer kurgusu açısından çeşitli örnekler bir arada sunuluyor.',
+    ],
+    metaTitle: 'Seçilmiş Çalışmalar | Master İç Mimarlık İstanbul',
+    metaDesc: 'Master İç Mimarlık\'ın farklı projelerinden seçilmiş detay ve uygulama görselleri.',
+  },
+  {
+    slug: 'maltepe',
+    title: 'Maltepe Daire',
+    category: 'Anahtar Teslim Ev Yenileme',
+    categorySlug: 'anahtar-teslim',
+    size: 'small',
+    year: '2021',
+    location: 'Maltepe, İstanbul',
+    area: '105 m²',
+    duration: '7 Hafta',
+    services: ['İç Mimari Tasarım', 'Komple Yenileme', 'Mutfak & Banyo', 'Zemin Kaplama', 'Boya & Dekor', 'Aydınlatma'],
+    description: [
+      'Maltepe\'de bu 105 m² daire; aile yaşamına uygun, sade ve fonksiyonel bir iç mekan hedefiyle yenilendi. Mevcut planın gözden geçirilmesiyle daha geniş ortak alanlar oluşturuldu.',
+      'Nötr renk paleti ve doğal dokular bir araya getirildi; mutfakta ankastre çözümler ve pratik depolama önceliklendirildi.',
+      'Banyo ve yatak odaları kullanıcı konforu gözetilerek yeniden düzenlendi. Proje 7 haftada anahtar teslim tamamlandı.',
+    ],
+    metaTitle: 'Maltepe Ev Yenileme Projesi | Anahtar Teslim | Master İç Mimarlık',
+    metaDesc: 'Maltepe\'de 105 m² dairenin komple yenileme projesi. Modern iç mimari, mutfak ve banyo renovasyonu. Master İç Mimarlık.',
+  },
+  {
+    slug: 'nurol-park',
+    title: 'Nurol Park Daire',
+    category: 'Anahtar Teslim Ev Yenileme',
+    categorySlug: 'anahtar-teslim',
+    size: 'small',
+    year: '2021',
+    location: 'Nurol Park, İstanbul',
+    area: '125 m²',
+    duration: '8 Hafta',
+    services: ['İç Mimari Tasarım', 'Komple Yenileme', 'Mutfak & Banyo', 'Mobilya Seçimi', 'Boya & Dekor', 'Aydınlatma'],
+    description: [
+      'Nurol Park\'taki bu 125 m² daire, modern site yaşamının ihtiyaçlarına uygun olarak baştan tasarlandı. Açık plan oturma-mutfak ilişkisi kuruldu.',
+      'Nötr ton paleti ve doğal ahşap detaylar ile sıcak bir atmosfer kurgulandı. Mutfakta ada tipi tezgah ve ankastre cihazlar tercih edildi.',
+      'Banyolar ve yatak odaları kullanıcı konforu önceliklendirilerek yenilendi. Proje 8 haftada anahtar teslim tamamlandı.',
+    ],
+    metaTitle: 'Nurol Park Ev Yenileme | Anahtar Teslim | Master İç Mimarlık',
+    metaDesc: 'Nurol Park\'ta 125 m² dairenin komple yenileme projesi. Modern iç mimari ve mutfak-banyo renovasyonu. Master İç Mimarlık.',
+  },
+  {
+    slug: 'ofis',
+    title: 'Ofis Projesi',
+    category: 'Ofis Yenileme',
+    categorySlug: 'ofis-yenileme',
+    size: 'small',
+    year: '2022',
+    location: 'İstanbul',
+    area: '180 m²',
+    duration: '7 Hafta',
+    services: ['Ofis İç Mimari Tasarımı', 'Açık Ofis Planlaması', 'Toplantı Odası', 'Aydınlatma', 'Mobilya', 'Akustik Çözümler'],
+    description: [
+      'Kurumsal bir ekip için tasarlanan bu ofis projesinde, esnek çalışma alanları ve fonksiyonel toplantı bölümleri önceliklendirildi.',
+      'Açık çalışma adaları, odaklanma kabinleri ve dinlenme köşeleri birlikte planlandı; marka kimliği renk ve detaylarla mekana yansıtıldı.',
+      'Aydınlatma ve akustik çözümler çalışma verimliliğini desteklemek üzere katmanlı kurgulandı. Proje 7 haftada teslim edildi.',
+    ],
+    metaTitle: 'Ofis İç Mimari Projesi | Kurumsal Tasarım | Master İç Mimarlık',
+    metaDesc: 'Kurumsal ofis için iç mimari tasarım ve uygulama. Açık ofis planlaması, toplantı odası ve aydınlatma. Master İç Mimarlık.',
+  },
+];
+
+// Display order: Beylikdüzü ve Selimpaşa villaları en üstte; gerisi karma bir
+// dağılımla (büyük/küçük, kategori ve yıl bakımından dengeli) listelenir.
+const DISPLAY_ORDER = [
+  'beylikduzu-villa',
+  'selimpasa-villa',
+  'beykoz-pasabahce',
+  'tepekent',
+  'beyoglu-galata',
+  'beykoz-villa',
+  'mecidiyekoy-dublex',
+  'kadikoy-moda',
+  'caddebostan',
+  'artas-ofis',
+  'zeytinburnu',
+  'nurol-park',
+  'ofis',
+  'atakoy',
+  'hilton-otel',
+  'maltepe',
+  'artas-ofis-2',
+  'cafe',
+  'kozyatagi-banyo',
+  'karisik-projeler',
 ];
 
 type GalleryEntry = { folder: string; files: GalleryFile[] };
@@ -220,15 +434,23 @@ export type Project = ProjectMeta & {
   gallery: GalleryFile[];
 };
 
-export const projects: Project[] = META.filter((m) => galleryMap[m.slug]?.files?.length).map((m) => {
-  const files = galleryMap[m.slug].files;
-  return {
-    ...m,
-    heroImage: files[0].src,
-    heroSrcset: files[0].srcset,
-    gallery: files,
-  };
-});
+const byOrder = (slug: string) => {
+  const i = DISPLAY_ORDER.indexOf(slug);
+  return i === -1 ? Number.MAX_SAFE_INTEGER : i;
+};
+
+export const projects: Project[] = META
+  .filter((m) => galleryMap[m.slug]?.files?.length)
+  .map((m) => {
+    const files = galleryMap[m.slug].files;
+    return {
+      ...m,
+      heroImage: files[0].src,
+      heroSrcset: files[0].srcset,
+      gallery: files,
+    };
+  })
+  .sort((a, b) => byOrder(a.slug) - byOrder(b.slug));
 
 export function getProject(slug: string): Project | undefined {
   return projects.find((p) => p.slug === slug);

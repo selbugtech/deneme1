@@ -92,51 +92,32 @@ const breadcrumbSchema = {
       </div>
     </div>
 
-    <!-- Project meta strip -->
-    <div class="border-b border-white/10">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/10">
-          {[
-            { label: 'Konum', value: project.location },
-            { label: 'Alan', value: project.area },
-            { label: 'Süre', value: project.duration },
-            { label: 'Yıl', value: project.year },
-          ].map(item => (
-            <div class="py-6 px-4 first:pl-0">
-              <p class="text-[10px] tracking-[0.25em] uppercase text-white/30 mb-1">{item.label}</p>
-              <p class="text-white font-medium text-sm">{item.value}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-
-    <!-- Photo gallery -->
+    <!-- Photo gallery — CSS masonry columns for elegant, non-cramped layout -->
     <div class="max-w-6xl mx-auto px-6 py-16">
-      <div class="flex items-center gap-3 mb-6">
+      <div class="flex items-center gap-3 mb-8">
         <span class="w-8 h-px bg-gold"></span>
         <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Proje Fotoğrafları</span>
       </div>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+      <div class="gallery-masonry">
         {project.gallery.map((img, i) => (
           <button
             type="button"
             data-lightbox-image={img.src}
             data-lightbox-srcset={img.srcset}
             data-lightbox-title={`${project.title} — Fotoğraf ${i + 1}`}
-            class={`overflow-hidden cursor-zoom-in group relative ${i === 0 ? 'col-span-2 row-span-2' : ''}`}
+            class="gallery-item group relative overflow-hidden cursor-zoom-in mb-5 md:mb-6 w-full"
             aria-label={`Fotoğraf ${i + 1} büyüt`}
           >
             <img
               src={img.src}
               srcset={img.srcset}
-              sizes={i === 0 ? '(min-width:768px) 50vw, 100vw' : '(min-width:768px) 25vw, 50vw'}
+              sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
               alt={`${project.title} — fotoğraf ${i + 1}`}
-              loading={i === 0 ? 'eager' : 'lazy'}
-              decoding={i === 0 ? 'sync' : 'async'}
-              class={`w-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ${i === 0 ? 'h-[320px] md:h-[400px]' : 'h-[155px] md:h-[195px]'}`}
+              loading={i < 2 ? 'eager' : 'lazy'}
+              decoding={i < 2 ? 'sync' : 'async'}
+              class="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.03]"
             />
-            <div class="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/30 transition-colors duration-300 flex items-center justify-center">
+            <div class="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/25 transition-colors duration-300 flex items-center justify-center">
               <svg class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/>
               </svg>
@@ -145,6 +126,25 @@ const breadcrumbSchema = {
         ))}
       </div>
     </div>
+
+    <style>
+      .gallery-masonry {
+        column-count: 1;
+        column-gap: 1.25rem;
+      }
+      @media (min-width: 640px) {
+        .gallery-masonry { column-count: 2; column-gap: 1.25rem; }
+      }
+      @media (min-width: 1024px) {
+        .gallery-masonry { column-count: 3; column-gap: 1.5rem; }
+      }
+      .gallery-item {
+        break-inside: avoid;
+        -webkit-column-break-inside: avoid;
+        page-break-inside: avoid;
+        display: block;
+      }
+    </style>
 
     <!-- Content -->
     <div class="max-w-6xl mx-auto px-6 pb-16">
