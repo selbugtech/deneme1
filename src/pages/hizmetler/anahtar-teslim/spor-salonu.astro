@@ -1,0 +1,217 @@
+---
+import ServiceLayout from '../../../layouts/ServiceLayout.astro';
+import { CANONICAL_BASE } from '../../../config';
+import { optimizedImage } from '../../../lib/cloudinary';
+
+const heroPath = '/images/merdiven2.jpeg';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Spor Salonu Tadilatı",
+  "name": "İstanbul Spor Salonu ve Fitness Merkezi Tadilat",
+  "description": "Spor salonu, fitness merkezi ve stüdyolar için darbe emici zemin, titreşim ve akustik yalıtım, havalandırma ve anahtar teslim uygulama.",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
+  "areaServed": { "@type": "City", "name": "İstanbul" },
+  "url": `${CANONICAL_BASE}/hizmetler/anahtar-teslim/spor-salonu`,
+};
+
+const faqItems = [
+  {
+    q: "Spor salonu tadilatı ne kadar sürer?",
+    a: "Orta ölçekli bir salonda anahtar teslim tadilat genellikle 8–12 hafta sürüyor. Süreyi belirleyen üç kalem var: havalandırma kanallarının çekilmesi, soyunma odası ve duşların ıslak hacim uygulaması, ve ağırlık alanının zemin yalıtımı. Yalnızca stüdyo ölçeğinde ve ıslak hacim içermeyen projeler 4–6 haftada tamamlanabiliyor.",
+  },
+  {
+    q: "Alt kattan gürültü şikâyeti gelmesini nasıl önlüyorsunuz?",
+    a: "Bu, spor salonlarının en sık yaşadığı işletme sorunu ve neredeyse tamamen zemin yapısıyla çözülüyor. Ağırlık düşürülen alanlarda tek kat kauçuk kaplama yetmiyor; darbeyi taşıyıcıya iletmeyen, yüzer (yüzen) zemin sistemi kurulması gerekiyor. Kardiyo alanında ise cihaz titreşimini kesmek için ara katman uygulanıyor. Bu yapı en baştan kurulmazsa sonradan çözmek zeminin tamamen sökülmesi anlamına geliyor.",
+  },
+  {
+    q: "Havalandırma neden bu kadar önemli?",
+    a: "Spor salonlarında kişi başına düşen taze hava ihtiyacı, ofis veya mağazadan kat kat yüksek. Yetersiz havalandırılan salonlarda hem koku hem de nem birikiyor; nem ise aynalarda buğu, duvarda küf ve zemin kaplamasında bozulma olarak geri dönüyor. Mekanik havalandırmayı taze hava beslemeli ve egzozlu olarak, kullanım kapasitesine göre hesaplayarak kuruyoruz.",
+  },
+  {
+    q: "Hangi zemin nerede kullanılmalı?",
+    a: "Salon tek bir zeminle çözülmüyor. Serbest ağırlık alanında kalın ve darbe emici kauçuk, kardiyo alanında titreşim kesen daha ince kauçuk, fonksiyonel antrenman alanında suni çim şerit, stüdyo ve grup derslerinde ise sporcu zemini veya ahşap tercih ediliyor. Bölgeleri baştan ayırmak, hem performans hem de zeminin ömrü açısından belirleyici.",
+  },
+  {
+    q: "Soyunma odası ve duşlarda nelere dikkat ediyorsunuz?",
+    a: "Islak hacim, spor salonlarında en çok sorun çıkan bölüm. Su yalıtımının kesintisiz olması, zeminin süzgece doğru doğru eğimle şaplanması ve havalandırmanın nemi dışarı atacak kapasitede olması şart. Dolap düzeninde ise kuru ve ıslak bölgeyi ayırmak, zeminin sürekli ıslak kalmasını önlüyor. Bu bölümde yapılan bir eksiklik birkaç ay içinde koku ve küf olarak geri dönüyor.",
+  },
+  {
+    q: "Bina yönetimi ve ruhsat açısından dikkat edilmesi gerekenler neler?",
+    a: "Spor salonları işyeri açma ve çalışma ruhsatına tabi; mekanın yangın güvenliği, acil çıkış, havalandırma ve ıslak hacim koşullarını sağlaması gerekiyor. Ayrıca bina yönetim planının bu kullanıma izin vermesi ve alt kat maliklerinin gürültü konusundaki hassasiyetinin baştan hesaba katılması önemli. Keşifte bu üç başlığı birlikte değerlendiriyoruz.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const dahil = [
+  'Bölge planı ve antrenman alanı kurgusu',
+  'Bölgeye göre zemin sistemi seçimi ve uygulaması',
+  'Titreşim ve darbe yalıtımı (yüzer zemin)',
+  'Akustik iyileştirme ve ses yalıtımı',
+  'Taze hava beslemeli mekanik havalandırma',
+  'Soyunma odası, duş ve ıslak hacim uygulaması',
+  'Ayna, aydınlatma ve elektrik altyapısı',
+  'Resepsiyon, bekleme ve depolama alanları',
+];
+
+const teknik = [
+  { t: 'Yüzer zemin ve titreşim', d: 'Ağırlık düşürülen alanda darbenin taşıyıcıya iletilmemesi gerekiyor. Tek kat kauçuk bunu sağlamıyor; ara elastik katmanlı yüzer sistem kuruluyor. Alt kat şikâyetlerinin neredeyse tamamı bu detayda çözülüyor.' },
+  { t: 'Bölgeye göre zemin', d: 'Serbest ağırlık, kardiyo, fonksiyonel alan ve stüdyo farklı zemin istiyor. Tek tip kaplamayla kurulan salonlarda ya performans ya da zemin ömrü kaybediliyor.' },
+  { t: 'Havalandırma ve nem', d: 'Kişi başı taze hava ihtiyacı ofisin çok üzerinde. Yetersiz havalandırma; koku, aynada buğu, duvarda küf ve zeminde bozulma olarak geri dönüyor. Kapasiteye göre hesaplanıyor.' },
+  { t: 'Akustik', d: 'Müzik ve ağırlık sesi hem komşu birimleri hem de salon içi konuşmayı etkiliyor. Duvar ve tavanda ses yutan yüzeyler, kapı ve şaftlarda geçiş kesici detaylar uygulanıyor.' },
+  { t: 'Ayna ve aydınlatma', d: 'Aynanın önündeki aydınlatma gölge bırakmamalı; ayrıca ayna yüzeyinde armatürün doğrudan yansıması rahatsız edici oluyor. Armatür konumu ayna hattı belirlendikten sonra planlanıyor.' },
+  { t: 'Islak hacim', d: 'Kesintisiz su yalıtımı, süzgece doğru eğim ve nemi atan havalandırma. Kuru-ıslak bölge ayrımı, soyunma odasının sürekli ıslak kalmasını önlüyor.' },
+];
+---
+
+<ServiceLayout
+  title="Spor Salonu ve Fitness Merkezi Tadilat İstanbul"
+  description="İstanbul'da spor salonu ve fitness merkezi tadilatı. Darbe emici zemin, titreşim yalıtımı, havalandırma ve anahtar teslim uygulama. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/hizmetler/anahtar-teslim/spor-salonu`}
+  h1="Spor Salonu ve Fitness Merkezi Tadilat"
+  eyebrow="Anahtar Teslim"
+  lead="Spor salonunda projenin başarısı görünmeyen katmanlarda: zeminin darbeyi taşıyıcıya iletmemesi, havalandırmanın nemi atması ve akustiğin komşuyu rahatsız etmemesi."
+  heroImage={heroPath}
+  ogImage={optimizedImage(heroPath)}
+  expandedByDefault={true}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
+    { label: "Anahtar Teslim", href: `${CANONICAL_BASE}/hizmetler/anahtar-teslim` },
+    { label: "Spor Salonu" }
+  ]}
+  structuredData={[serviceSchema, faqSchema]}
+>
+
+  <section class="py-12 border-b border-border">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Spor Salonunda İş, Zeminin Altında Biter</h2>
+        <p class="text-muted leading-relaxed mb-4">
+          Spor salonu projelerinde işletmeyi zora sokan sorunların neredeyse tamamı görünmeyen katmanlardan
+          çıkıyor. Alt kattan gelen gürültü şikâyeti, aynada biriken buğu, soyunma odasında birkaç ay içinde
+          başlayan koku, kısa sürede yıpranan zemin — dördü de estetik değil, yapı kararı.
+        </p>
+        <p class="text-muted leading-relaxed mb-4">
+          Bunların en kritiği zemin. Ağırlığın düşürüldüğü alanda tek kat kauçuk kaplama, darbeyi taşıyıcı
+          sisteme iletmeyi engellemiyor; ses ve titreşim binanın alt katlarına yayılıyor. Çözüm, elastik ara
+          katmanla kurulan yüzer zemin sistemi. Bu yapı en baştan kurulmadığında, sonradan müdahale etmek
+          zeminin tamamen sökülmesi anlamına geliyor.
+        </p>
+        <p class="text-muted leading-relaxed">
+          İkinci başlık havalandırma. Spor salonlarında kişi başına düşen taze hava ihtiyacı ofis veya
+          mağazadan kat kat yüksek. Yetersiz havalandırılan bir salonda nem birikiyor ve bu; aynada buğu,
+          duvarda küf, zeminde bozulma olarak geri dönüyor. Havalandırmayı bu nedenle mekanın alanına değil,
+          hedeflenen kullanım kapasitesine göre hesaplıyoruz.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-charcoal mb-4">Hizmete dahil olanlar</h3>
+        <ul class="space-y-3">
+          {dahil.map(item => (
+            <li class="flex items-start gap-3 text-sm text-muted">
+              <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+                <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+          <p class="text-sm text-charcoal font-medium">Mekan seçiminden önce</p>
+          <p class="text-muted text-sm mt-2">
+            Kat yüksekliği, havalandırma güzergâhı ve bina yönetim planı, bir mekanın spor salonu olarak
+            uygun olup olmadığını baştan belirliyor. Kiralamadan önce keşfe gelebiliriz.
+          </p>
+          <a href="/iletisim" class="text-xs text-gold hover:underline mt-2 inline-block">Keşif randevusu →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Projeyi Belirleyen Altı Teknik Başlık</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      {teknik.map((k, i) => (
+        <div class="border border-border p-7 bg-[#FAF6F1]">
+          <p class="text-[10px] tracking-[0.25em] uppercase text-gold mb-2">0{i + 1}</p>
+          <h3 class="font-display text-lg font-bold text-charcoal mb-2">{k.t}</h3>
+          <p class="text-muted text-sm leading-relaxed">{k.d}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Çalıştığımız Mekan Tipleri</h2>
+    <div class="grid md:grid-cols-2 gap-x-12 gap-y-3">
+      {[
+        'Fitness merkezi ve ağırlık salonu',
+        'Pilates ve yoga stüdyosu',
+        'Kişisel antrenman (PT) stüdyosu',
+        'Crossfit ve fonksiyonel antrenman alanı',
+        'Dövüş sporları ve boks salonu',
+        'Dans ve bale stüdyosu',
+        'Site ve rezidans içi spor alanları',
+        'Kurumsal ofis spor salonları',
+      ].map(item => (
+        <div class="flex items-start gap-3 text-sm text-muted">
+          <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+            <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+            </svg>
+          </span>
+          {item}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="w-8 h-px bg-gold"></span>
+      <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Sıkça Sorulan Sorular</span>
+    </div>
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Spor salonu tadilatı hakkında</h2>
+    <div class="space-y-4">
+      {faqItems.map(f => (
+        <details class="border border-border bg-[#FAF6F1] p-6 group">
+          <summary class="font-semibold text-charcoal cursor-pointer list-none flex items-start justify-between gap-4">
+            <span>{f.q}</span>
+            <span class="text-gold shrink-0 transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="text-muted text-sm leading-relaxed mt-4">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">İlgili Sayfalar</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Tüm Hizmetler', href: '/hizmetler' },
+        { label: 'Anahtar Teslim Hizmetler', href: '/hizmetler/anahtar-teslim' },
+        { label: 'Ofis Tadilat', href: '/hizmetler/anahtar-teslim/ofis-tadilat' },
+        { label: 'Otel Tadilat', href: '/hizmetler/anahtar-teslim/otel-tadilat' },
+        { label: 'Kreş & Anaokulu', href: '/hizmetler/anahtar-teslim/kres' },
+        { label: '3D Tasarım', href: '/hizmetler/3d-tasarim' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </section>
+
+</ServiceLayout>

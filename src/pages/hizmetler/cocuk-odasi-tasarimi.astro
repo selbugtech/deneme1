@@ -1,0 +1,221 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImage } from '../../lib/cloudinary';
+
+const heroPath = '/images/yatakodasi1.jpeg';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Çocuk ve Genç Odası Tasarımı",
+  "name": "İstanbul Çocuk Odası ve Genç Odası Tasarımı",
+  "description": "Güvenli malzeme, güçlü depolama ve yaşla birlikte dönüşebilen kurguyla çocuk ve genç odası tasarımı ve uygulaması.",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
+  "areaServed": { "@type": "City", "name": "İstanbul" },
+  "url": `${CANONICAL_BASE}/hizmetler/cocuk-odasi-tasarimi`,
+};
+
+const faqItems = [
+  {
+    q: "Çocuk odasını kaç yılda bir yenilemek gerekir?",
+    a: "Doğru kurgulanmış bir odayı komple yenilemek gerekmez. Karyola, çalışma masası ve dolabın büyümeye uyum sağlayacak şekilde seçildiği bir odada, yıllar içinde yalnızca tekstil, aksesuar ve raf düzeni değişir. Tasarımı temanın değil ölçünün üzerine kurmamızın sebebi bu: karakter figürleriyle kaplanmış bir oda üç yılda eskirken, nötr kurgulu bir oda on yıl kullanılabilir.",
+  },
+  {
+    q: "Ranza güvenli mi, kaç yaşından itibaren kullanılabilir?",
+    a: "Üst yatak için genel kabul gören alt sınır 6 yaştır. Güvenlik açısından üst katta çepeçevre korkuluk bulunması, merdivenin dik değil eğimli ve basamaklarının geniş olması, üst yatak ile tavan arasında oturabilecek kadar yükseklik kalması gerekir. Ranzayı her zaman duvara sabitliyoruz; serbest duran bir ranza devrilme riski taşır.",
+  },
+  {
+    q: "Çalışma masası nereye konumlanmalı?",
+    a: "Masayı pencereye dik konumlandırmayı tercih ediyoruz; böylece hem doğal ışık yandan gelir hem de ekranda yansıma oluşmaz. Sağ elini kullanan bir çocukta ışığın soldan gelmesi, elin kendi gölgesini düşürmesini engeller. Masa üstü aydınlatmanın ayrı bir armatürle desteklenmesi ise akşam çalışmaları için şart.",
+  },
+  {
+    q: "Hangi malzemeler çocuk odası için uygun?",
+    a: "Düşük emisyonlu ahşap panel, su bazlı boya ve leke tutmayan kolay temizlenebilir yüzeyler tercih ediyoruz. Zeminde sert ve kaygan yüzey yerine sıcak ve ses yutan seçenekler daha uygun. Köşeleri yuvarlatılmış mobilya, frenli menteşe ve yumuşak kapanan çekmece rayları ise parmak sıkışmalarını önlediği için standart olarak kullandığımız donanımlar.",
+  },
+  {
+    q: "İki çocuk aynı odayı paylaşacaksa nasıl planlıyorsunuz?",
+    a: "Ortak alanı azaltmak yerine her çocuğa ait olan alanı netleştiriyoruz: ayrı dolap bölümü, ayrı çalışma yüzeyi ve kişisel raf. Yataklar ranza yerine yan yana veya L düzeninde yerleştirilebiliyorsa mekan daha esnek kalır. Ortak oyun alanını ise mümkün olduğunca odanın ortasında serbest bırakıyoruz.",
+  },
+  {
+    q: "Uygulama ne kadar sürer?",
+    a: "Boya, tekstil ve hazır mobilya yerleşimiyle sınırlı bir yenileme birkaç gün sürer. Ölçüye özel dolap, çalışma ünitesi ve zemin değişimi içeren kapsamlı bir çocuk odası projesi ise 2–4 hafta alır. Sürenin büyük bölümü mobilya üretimini bekler.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const dahil = [
+  'Yaş grubuna göre yerleşim planı',
+  'Ölçüye özel dolap ve çalışma ünitesi',
+  'Oyun, uyku ve çalışma bölgelerinin ayrılması',
+  'Güvenli malzeme ve donanım seçimi',
+  'Çalışma masası aydınlatması ve priz planı',
+  'Depolama ve oyuncak düzeni çözümleri',
+  'Zemin, duvar ve tekstil uygulamaları',
+  'Montaj, duvara sabitleme ve teslim',
+];
+
+const donemler = [
+  { t: '0–3 yaş', d: 'Bebeklik döneminde oda ebeveyn kullanımına da hizmet eder: alt değiştirme yüzeyi, emzirme koltuğu ve gece için kısık ışık. Karyola seçilirken sonradan çocuk yatağına dönüşebilen modeller uzun vadede avantaj sağlar.' },
+  { t: '4–6 yaş', d: 'Oyun alanı odanın merkezine geçer. Zemin serbest kalmalı, depolama çocuğun kendi ulaşabileceği alçak kotta olmalıdır. Bu dönemde toplanabilirlik, tasarımın en önemli ölçütü haline gelir.' },
+  { t: '7–12 yaş', d: 'Çalışma masası odaya girer ve düzenin merkezi olur. Kitap ve kırtasiye için raf ihtiyacı artar; masa yüksekliğinin ayarlanabilir olması birkaç yıllık kullanım ömrü kazandırır.' },
+  { t: '13+ yaş', d: 'Oda artık bir genç odasıdır: arkadaş ağırlanan, müzik dinlenen, uzun süre çalışılan bir alan. Renk ve dekor kararlarında gencin kendi tercihine alan bırakmak, odanın sahiplenilmesini sağlıyor.' },
+];
+---
+
+<ServiceLayout
+  title="Çocuk Odası ve Genç Odası Tasarımı İstanbul"
+  description="İstanbul'da çocuk odası ve genç odası tasarımı: güvenli malzeme, güçlü depolama ve yaşla birlikte büyüyen kurgu. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/hizmetler/cocuk-odasi-tasarimi`}
+  h1="Çocuk ve Genç Odası Tasarımı"
+  eyebrow="Oda Bazlı Hizmet"
+  lead="Birkaç yılda eskiyen tema odaları yerine, çocuk büyüdükçe onunla birlikte dönüşebilen bir kurgu. Güvenlik ve depolama en baştan planlanır."
+  heroImage={heroPath}
+  ogImage={optimizedImage(heroPath)}
+  expandedByDefault={true}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
+    { label: "Çocuk Odası Tasarımı" }
+  ]}
+  structuredData={[serviceSchema, faqSchema]}
+>
+
+  <section class="py-12 border-b border-border">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Tema Üzerine Değil, Ölçü Üzerine Kurulan Oda</h2>
+        <p class="text-muted leading-relaxed mb-4">
+          Çocuk odası tasarımında en sık karşılaştığımız pişmanlık, odanın belirli bir yaşa ya da o dönemin
+          popüler bir karakterine göre kurgulanmış olması. Bu odalar üç dört yıl içinde çocuğun ilgisinin dışında
+          kalıyor ve baştan yenilenmesi gerekiyor.
+        </p>
+        <p class="text-muted leading-relaxed mb-4">
+          Biz kalıcı olan katmanı (dolap, çalışma ünitesi, zemin, duvar rengi) nötr ve büyümeye açık kuruyoruz;
+          değişken olan katmanı (tekstil, poster, aksesuar, raf üstü düzen) ise kolayca yenilenebilir bırakıyoruz.
+          Böylece oda beş yıl sonra da güncel kalıyor, değişim ise birkaç günlük bir iş oluyor.
+        </p>
+        <p class="text-muted leading-relaxed">
+          Güvenlik tarafında ise pazarlık yok. Devrilme riski taşıyan tüm mobilyalar duvara sabitlenir, köşeler
+          yuvarlatılır, çekmeceler yumuşak kapanan raylarla donatılır ve elektrik prizleri çocuk güvenlik
+          kapaklarıyla kapatılır.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-charcoal mb-4">Hizmete dahil olanlar</h3>
+        <ul class="space-y-3">
+          {dahil.map(item => (
+            <li class="flex items-start gap-3 text-sm text-muted">
+              <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+                <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+          <p class="text-sm text-charcoal font-medium">Tüm evi birlikte ele almak</p>
+          <p class="text-muted text-sm mt-2">
+            Çocuk odasıyla birlikte diğer mekanları da yenilemeyi düşünüyorsanız
+            <a href="/hizmetler/anahtar-teslim/ev-yenileme" class="text-gold hover:underline">ev yenileme</a>
+            sayfamıza bakabilirsiniz.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Yaş dönemleri -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Yaşa Göre Değişen İhtiyaçlar</h2>
+    <p class="text-muted leading-relaxed max-w-3xl mb-8">
+      Odayı planlarken sadece bugünkü yaşa değil, sonraki döneme de bakıyoruz. Aşağıdaki dört dönemin her biri
+      odadan farklı bir şey istiyor; iyi bir kurgu ikisini birden karşılayabiliyor.
+    </p>
+    <div class="grid md:grid-cols-2 gap-6">
+      {donemler.map(d => (
+        <div class="border border-border p-7 bg-[#FAF6F1]">
+          <p class="text-[10px] tracking-[0.25em] uppercase text-gold mb-2">{d.t}</p>
+          <p class="text-muted text-sm leading-relaxed">{d.d}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Güvenlik -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Standart Uyguladığımız Güvenlik Detayları</h2>
+    <p class="text-muted leading-relaxed max-w-3xl mb-8">
+      Aşağıdakiler talep edilmesine bakmaksızın her çocuk odası projesinde uyguladığımız kalemler.
+    </p>
+    <div class="grid md:grid-cols-2 gap-x-12 gap-y-3">
+      {[
+        'Dolap ve raf ünitelerinin duvara sabitlenmesi',
+        'Köşesi yuvarlatılmış veya kenar korumalı yüzeyler',
+        'Frenli menteşe ve yumuşak kapanan çekmece rayları',
+        'Çocuk güvenlik kapaklı elektrik prizleri',
+        'Pencere önünde tırmanılabilecek mobilya bulundurulmaması',
+        'Perde ve stor kordonlarının erişilemez yükseklikte sabitlenmesi',
+        'Ranzada çepeçevre korkuluk ve eğimli merdiven',
+        'Düşük emisyonlu panel ve su bazlı boya kullanımı',
+      ].map(item => (
+        <div class="flex items-start gap-3 text-sm text-muted">
+          <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+            <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+            </svg>
+          </span>
+          {item}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- SSS -->
+  <section class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="w-8 h-px bg-gold"></span>
+      <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Sıkça Sorulan Sorular</span>
+    </div>
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Çocuk odası tasarımı hakkında</h2>
+    <div class="space-y-4">
+      {faqItems.map(f => (
+        <details class="border border-border bg-[#FAF6F1] p-6 group">
+          <summary class="font-semibold text-charcoal cursor-pointer list-none flex items-start justify-between gap-4">
+            <span>{f.q}</span>
+            <span class="text-gold shrink-0 transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="text-muted text-sm leading-relaxed mt-4">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">İlgili Sayfalar</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Yatak Odası Tasarımı', href: '/hizmetler/yatak-odasi-tasarimi' },
+        { label: 'Giyinme Odası Tasarımı', href: '/hizmetler/giyinme-odasi-tasarimi' },
+        { label: 'Küçük Daire Dekorasyonu', href: '/blog/kucuk-daire-dekorasyon-fikirleri' },
+        { label: 'Ev Aydınlatma Rehberi', href: '/blog/ev-aydinlatma-rehberi' },
+        { label: 'Anahtar Teslim Ev Yenileme', href: '/hizmetler/anahtar-teslim/ev-yenileme' },
+        { label: 'Tüm Hizmetler', href: '/hizmetler' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </section>
+
+</ServiceLayout>

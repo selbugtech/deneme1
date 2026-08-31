@@ -14,6 +14,7 @@ export default defineConfig({
     }),
   ],
   site: 'https://www.mastericmimarlik.com',
+  trailingSlash: 'never',
   output: 'server',
   adapter: vercel(),
 });

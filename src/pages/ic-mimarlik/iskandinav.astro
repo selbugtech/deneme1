@@ -1,0 +1,211 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImage } from '../../lib/cloudinary';
+import { styles } from '../../data/styles';
+
+const heroPath = '/images/oturmaodasi.jpeg';
+const others = styles.filter(s => s.slug !== 'iskandinav');
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "İskandinav İç Mimarlık — İstanbul Dairelerinde Uygulama Rehberi",
+  "description": "İskandinav iç mimarlığın malzeme paleti, ışık yaklaşımı ve az ışık alan İstanbul dairelerinde uygulanışı.",
+  "author": { "@id": `${CANONICAL_BASE}/#organization` },
+  "publisher": { "@id": `${CANONICAL_BASE}/#organization` },
+  "mainEntityOfPage": `${CANONICAL_BASE}/ic-mimarlik/iskandinav`,
+};
+
+const faqItems = [
+  {
+    q: "İskandinav stili neden az ışık alan mekanlarda önerilir?",
+    a: "Çünkü tam olarak bu sorunu çözmek için gelişmiş bir dil. Kışın gün ışığının çok kısa sürdüğü kuzey ülkelerinde, mekanın var olan az miktardaki ışığı en verimli şekilde kullanması gerekiyordu. Açık tonlu ahşap, kırık beyaz duvarlar, hafif ve yerden yüksek mobilyalar ile pencereyi mümkün olduğunca açık bırakan perde çözümleri bu ihtiyaçtan doğdu. Aynı yaklaşım, kuzey cepheli ve dar sokağa bakan İstanbul dairelerinde de belirgin biçimde işe yarıyor.",
+  },
+  {
+    q: "İskandinav stili sadece beyaz mı demek?",
+    a: "Hayır, bu en yaygın yanlış anlama. Beyaz baskın bir zemin rengi ama tek başına kullanıldığında mekan hastane gibi görünüyor. Dilin asıl karakterini kuran şey; açık tonlu ahşabın sıcaklığı, yün ve keten gibi doğal tekstillerin dokusu ve bunların yumuşak gri, sütlü kahve, adaçayı yeşili gibi kısık tonlarla dengelenmesi.",
+  },
+  {
+    q: "Bu stil küçük dairelerde işe yarar mı?",
+    a: "Küçük dairelerde en iyi sonuç veren yaklaşımlardan biri. Açık renk paleti ve yerden yüksek ayaklı mobilya kullanımı mekanı görsel olarak genişletiyor; hafif ve taşınabilir parçalar ise planın esnek kullanılmasına imkan veriyor. Ayrıca depolamanın açık raflarla değil kapalı ve sade üniteyle çözülmesi, dar mekanlarda görsel yükü azaltıyor.",
+  },
+  {
+    q: "Ahşap seçiminde neye dikkat etmeliyim?",
+    a: "İskandinav paletinde ahşabın tonu koyu değil açık: huş, dişbudak, açık meşe gibi sarımsı-nötr tonlar. Damar dokusunun görünür ama sakin olması, cilanın yüksek parlaklıkta değil mat veya yağlı bitişte olması dilin bütünlüğü için önemli. Koyu ceviz gibi tonlar aynı mekanda kullanıldığında karakter modern veya klasik tarafa kayıyor.",
+  },
+  {
+    q: "İskandinav stilinde aydınlatma nasıl kurulmalı?",
+    a: "Bu dilde aydınlatma, tek bir güçlü kaynaktan değil mekana dağılmış birçok yumuşak kaynaktan geliyor. Akşam saatlerinde tavan armatürü hiç açılmadan yaşanabilen bir ortam hedefleniyor: lambader, masa lambası, duvar apliği ve dolaylı ışık bir arada. Işığın renk sıcaklığının sıcak tarafta kalması ve kısılabilir olması, bu atmosferi kuran iki teknik detay.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const ilkeler = [
+  { t: 'Işığı çoğaltmak', d: 'Açık yüzeyler gelen ışığı yansıtarak mekana yayıyor. Pencereyi kapatmayan hafif perde, açık zemin ve kırık beyaz duvar; az ışık alan mekanı belirgin biçimde açıyor.' },
+  { t: 'Açık tonlu ahşap', d: 'Huş, dişbudak ve açık meşe. Mat veya yağlı bitiş, damarın sakin kalması; dilin sıcaklığı büyük ölçüde bu tercihe bağlı.' },
+  { t: 'Hafiflik', d: 'Yerden yüksek ayaklı, ince profilli ve kolay taşınabilir mobilya. Altındaki zemin göründüğü için mekan daha geniş algılanıyor.' },
+  { t: 'Doğal tekstil', d: 'Yün halı, keten perde, dokuma yastık. Sadeliği bozmadan sıcaklık katan ve aynı zamanda akustiği düzelten katman bu.' },
+];
+
+const hatalar = [
+  { t: 'Her yeri beyaza boyamak', d: 'Tek başına beyaz, mekanı sıcak değil steril yapıyor. Ahşap ve doğal tekstille dengelenmediğinde dilin karakteri kayboluyor.' },
+  { t: 'Koyu ahşap kullanmak', d: 'Koyu ceviz veya venge tonları paleti bozup karakteri modern ya da klasik tarafa kaydırıyor. Ahşap tonu bu dilde tercih değil, tanım.' },
+  { t: 'Kalın ve ağır perde', d: 'Pencereyi kapatan ağır perde, dilin tüm amacı olan ışığı geri alıyor. Karartma gerekiyorsa gizli kornişli stor, dekoratif katmandan ayrı çözülüyor.' },
+  { t: 'Tek tavan armatürüne bağlı kalmak', d: 'Bu dilde atmosferi kuran şey dağılmış yumuşak ışık. Merkezi tek armatür, akşam saatlerinde mekanı düz ve karaktersiz bırakıyor.' },
+];
+---
+
+<ServiceLayout
+  title="İskandinav İç Mimarlık — İstanbul Uygulama Rehberi"
+  description="İskandinav iç mimarlık nedir, hangi mekanlarda işe yarar? Açık ahşap paleti, ışık kurgusu ve az ışık alan dairelerde uygulanışı. 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/ic-mimarlik/iskandinav`}
+  h1="İskandinav İç Mimarlık"
+  eyebrow="Stil Rehberi"
+  lead="Az ışığı en verimli kullanmak için gelişmiş bir dil. Kuzey cepheli ve dar sokağa bakan İstanbul dairelerinde en çok işe yarayan yaklaşım."
+  heroImage={heroPath}
+  ogImage={optimizedImage(heroPath)}
+  expandedByDefault={true}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İç Mimarlık Stilleri", href: `${CANONICAL_BASE}/ic-mimarlik` },
+    { label: "İskandinav" }
+  ]}
+  structuredData={[articleSchema, faqSchema]}
+>
+
+  <section class="py-12 border-b border-border">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Işık Sorununa Verilmiş Bir Cevap</h2>
+        <p class="text-muted leading-relaxed mb-4">
+          İskandinav iç mimarlık, estetik bir tercih olarak değil pratik bir ihtiyaçtan doğdu. Kışın gün
+          ışığının birkaç saatle sınırlı kaldığı kuzey ülkelerinde mekanın, var olan az miktardaki ışığı
+          mümkün olduğunca yansıtması ve çoğaltması gerekiyordu. Açık tonlu ahşap, kırık beyaz duvarlar,
+          pencereyi kapatmayan hafif perdeler ve yerden yüksek mobilyalar bu gereklilikten çıktı.
+        </p>
+        <p class="text-muted leading-relaxed mb-4">
+          Bu, dili İstanbul için özellikle kullanışlı kılıyor. Kuzey cepheli daireler, dar sokağa bakan
+          eski apartmanlar ve bitişik nizam yapılarda alt katlar — hepsi aynı sorunu yaşıyor: gün boyu
+          yetersiz ve soğuk ışık. Bu mekanlarda koyu tonlu bir kurgu durumu ağırlaştırırken, İskandinav
+          yaklaşımı gözle görülür bir fark yaratıyor.
+        </p>
+        <p class="text-muted leading-relaxed">
+          Dilin en sık yanlış anlaşılan tarafı ise "her şeyin beyaz olması" sanılması. Oysa beyaz burada
+          yalnızca zemin rengi; karakteri kuran şey açık tonlu ahşabın sıcaklığı ve doğal tekstillerin
+          dokusu. Bu iki katman olmadan mekan sıcak değil, steril görünüyor.
+        </p>
+      </div>
+      <div>
+        <div class="border border-border p-7 bg-[#FAF6F1] mb-6">
+          <p class="text-[10px] tracking-[0.25em] uppercase text-gold mb-3">Malzeme ve renk paleti</p>
+          <ul class="space-y-2 text-sm text-muted">
+            <li>· Kırık beyaz ve çok açık gri duvarlar</li>
+            <li>· Huş, dişbudak, açık meşe — mat bitiş</li>
+            <li>· Yün, keten ve dokuma tekstiller</li>
+            <li>· Kısık aksan tonları: adaçayı, sütlü kahve, toz mavi</li>
+            <li>· Açık tonlu ahşap ya da açık gri zemin</li>
+          </ul>
+        </div>
+        <h3 class="font-semibold text-charcoal mb-4">En iyi çalıştığı mekanlar</h3>
+        <ul class="space-y-3">
+          {[
+            'Kuzey cepheli, az ışık alan daireler',
+            'Dar sokağa bakan eski apartman daireleri',
+            'Küçük ve orta ölçekli konutlar',
+            'Bitişik nizam yapılarda alt kat daireler',
+            'Yatak odası ve oturma alanları',
+          ].map(item => (
+            <li class="flex items-start gap-3 text-sm text-muted">
+              <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+                <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">İskandinav Kurgunun Dört İlkesi</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      {ilkeler.map((k, i) => (
+        <div class="border border-border p-7 bg-[#FAF6F1]">
+          <p class="text-[10px] tracking-[0.25em] uppercase text-gold mb-2">0{i + 1}</p>
+          <h3 class="font-display text-lg font-bold text-charcoal mb-2">{k.t}</h3>
+          <p class="text-muted text-sm leading-relaxed">{k.d}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Uygulamada En Sık Görülen Dört Hata</h2>
+    <div class="space-y-4">
+      {hatalar.map((h, i) => (
+        <div class="flex gap-5 border border-border p-6 bg-[#FAF6F1]">
+          <p class="font-display text-2xl font-bold text-gold/40 shrink-0">0{i + 1}</p>
+          <div>
+            <h3 class="font-semibold text-charcoal mb-1">{h.t}</h3>
+            <p class="text-muted text-sm leading-relaxed">{h.d}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="w-8 h-px bg-gold"></span>
+      <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Sıkça Sorulan Sorular</span>
+    </div>
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">İskandinav iç mimarlık hakkında</h2>
+    <div class="space-y-4">
+      {faqItems.map(f => (
+        <details class="border border-border bg-[#FAF6F1] p-6 group">
+          <summary class="font-semibold text-charcoal cursor-pointer list-none flex items-start justify-between gap-4">
+            <span>{f.q}</span>
+            <span class="text-gold shrink-0 transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="text-muted text-sm leading-relaxed mt-4">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Stiller</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+      {others.map(s => (
+        <a href={`/ic-mimarlik/${s.slug}`} class="group block border border-border p-5 hover:border-gold hover:bg-gold/5 transition-colors">
+          <h3 class="font-display text-base font-bold text-charcoal group-hover:text-gold transition-colors mb-1">{s.fullName}</h3>
+          <p class="text-muted text-xs">{s.tagline}</p>
+        </a>
+      ))}
+    </div>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Ev Aydınlatma Rehberi', href: '/blog/ev-aydinlatma-rehberi' },
+        { label: 'Yatak Odası Tasarımı', href: '/hizmetler/yatak-odasi-tasarimi' },
+        { label: 'Salon Tasarımı', href: '/hizmetler/salon-tasarimi' },
+        { label: 'Beyoğlu İç Mimarlık', href: '/istanbul/beyoglu-ic-mimarlik' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </section>
+
+</ServiceLayout>

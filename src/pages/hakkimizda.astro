@@ -1,0 +1,268 @@
+---
+import ServiceLayout from '../layouts/ServiceLayout.astro';
+import { CANONICAL_BASE, SITE_NAME } from '../config';
+import { optimizedImage } from '../lib/cloudinary';
+import { byGroup } from '../data/services';
+import { projects } from '../data/projects';
+
+const heroPath = '/images/salon1.png';
+
+const anaServices = byGroup('ana');
+const showcase = projects.slice(0, 3);
+
+const aboutSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "Hakkımızda — Master İç Mimarlık",
+  "url": `${CANONICAL_BASE}/hakkimizda`,
+  "description": "Master İç Mimarlık; İstanbul'da 8 yılı aşkın süredir konut, villa ve ticari mekanlarda iç mimari tasarım ve anahtar teslim uygulama yapıyor.",
+  "mainEntity": { "@id": `${CANONICAL_BASE}/#organization` },
+};
+
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${CANONICAL_BASE}/#organization`,
+  "name": SITE_NAME,
+  "url": `${CANONICAL_BASE}/`,
+  "foundingLocation": { "@type": "Place", "name": "İstanbul, Türkiye" },
+  "areaServed": { "@type": "City", "name": "İstanbul" },
+  "knowsAbout": [
+    "İç mimari tasarım",
+    "Anahtar teslim yenileme",
+    "Konut ve villa tadilatı",
+    "Ticari mekan iç mimarlığı",
+    "3D görselleştirme",
+    "Şantiye yönetimi",
+  ],
+  "sameAs": [
+    "https://www.instagram.com/mastericmimarlik/",
+    "https://www.facebook.com/master.mmrlk",
+    "https://tr.pinterest.com/mastericmimarlik/",
+    "https://www.youtube.com/channel/UC1vs1O0VUe_VNZIpo8B1KzA",
+    "https://x.com/mastericmimar",
+  ],
+};
+
+const faqItems = [
+  {
+    q: "Master İç Mimarlık ne kadar süredir çalışıyor?",
+    a: "8 yılı aşkın süredir İstanbul'da faaliyet gösteriyoruz. Bu süre içinde 150'den fazla konut, villa ve ticari mekan projesini tamamladık. Tamamlanan işlerin bir bölümünü proje sayfalarımızda fotoğraflarıyla birlikte inceleyebilirsiniz.",
+  },
+  {
+    q: "Tasarımı ve uygulamayı aynı ekip mi yapıyor?",
+    a: "Evet. İç mimari tasarım ekibimiz ile uygulama ekiplerimiz aynı çatı altında çalışır ve şantiyeyi tasarımı yapan kişi takip eder. Bu, çizimde görünen detayın uygulamada kaybolmamasını sağlar. Müşteri için sonuç tek muhatap, tek sorumluluktur.",
+  },
+  {
+    q: "Uygulamada hangi ekiplerle çalışıyorsunuz?",
+    a: "Elektrik, sıhhi tesisat, alçıpan, seramik, marangoz, boya ve montaj ekiplerimizle uzun yıllardır aynı kadroyla çalışıyoruz. Her ekibin işe hangi sırayla gireceğini şantiye programında önceden planlıyoruz; iş sıralamasındaki hatalar tadilatta süre ve maliyet kaybının en yaygın nedenidir.",
+  },
+  {
+    q: "Projenin ilerleyişini nasıl takip edebilirim?",
+    a: "Şantiye süresince düzenli fotoğraf ve video raporları paylaşıyoruz; WhatsApp üzerinden anlık soru sorabilirsiniz. Müşterilerimizin önemli bir bölümü proje süresince şehir dışında ya da yurt dışında olduğu için bu takip düzenini standart hale getirdik.",
+  },
+  {
+    q: "İşçilik garantisi veriyor musunuz?",
+    a: "Evet. Tamamladığımız işlerde işçilik garantisi sunuyoruz; kapsam ve süre sözleşmede yazılı olarak belirlenir. Teslimden sonra ortaya çıkan işçilik kaynaklı sorunlarda ekibimiz müdahale eder. Kullanılan malzemelerin üretici garantileri ayrıca geçerlidir.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const degerler = [
+  {
+    t: 'Tek muhatap, tek sorumluluk',
+    d: 'Usta bulmak, malzeme tedarik etmek ve ekipler arası sırayı kurmak müşterinin işi değildir. Koordinasyonun tamamını tek sözleşme altında üstleniyoruz.',
+  },
+  {
+    t: 'Görmeden söz vermemek',
+    d: 'Mekanı yerinde incelemeden kapsam ve takvim taahhüdünde bulunmuyoruz. Keşif ücretsizdir ve hiçbir yükümlülük doğurmaz.',
+  },
+  {
+    t: 'Yazılı kapsam',
+    d: 'Ne yapılacağı, hangi malzemenin kullanılacağı ve takvimin nasıl işleyeceği sözleşmede yazılıdır. Kapsam dışı iş, yazılı onayınız olmadan yapılmaz.',
+  },
+  {
+    t: 'Uygulamadan önce görmek',
+    d: '3D görselleştirme tüm projelerimizde standarttır. Malzeme ve renk kararlarını dijital ortamda test edip onaylarsınız; şantiyede sürprizle karşılaşmazsınız.',
+  },
+];
+---
+
+<ServiceLayout
+  title="Hakkımızda — Master İç Mimarlık İstanbul"
+  description="Master İç Mimarlık: İstanbul'da 8+ yıl deneyim, 150'den fazla tamamlanan konut, villa ve ticari mekan projesi. Tasarımdan anahtar teslime tek ekip. 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/hakkimizda`}
+  h1="Hakkımızda"
+  eyebrow="Master İç Mimarlık"
+  lead="İstanbul'da 8 yılı aşkın süredir iç mimari tasarım ve anahtar teslim uygulama yapıyoruz. Tasarımı çizen ekiple şantiyeyi yürüten ekip aynı; sorumluluk bölünmüyor."
+  heroImage={heroPath}
+  ogImage={optimizedImage(heroPath)}
+  expandedByDefault={true}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "Hakkımızda" }
+  ]}
+  structuredData={[aboutSchema, orgSchema, faqSchema]}
+>
+
+  <!-- Biz kimiz -->
+  <section class="py-12 border-b border-border">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Tasarım ve Uygulamada Güvenilir Adres</h2>
+        <p class="text-muted leading-relaxed mb-4">
+          Master İç Mimarlık olarak 8 yılı aşkın deneyimimizle İstanbul'da yüzlerce evi, villayı ve ticari mekanı
+          yeniledik. Her projeye özgün bir bakış açısı, titiz bir işçilik ve müşteri memnuniyetini ön planda tutan
+          bir anlayışla yaklaşıyoruz.
+        </p>
+        <p class="text-muted leading-relaxed mb-4">
+          Tasarım sürecinden anahtar teslime kadar tüm aşamaları sizin adınıza yönetiyoruz. İstanbul ana hizmet
+          bölgemiz olmakla birlikte, büyük ölçekli projelerde çevre illere de gidiyoruz.
+        </p>
+        <p class="text-muted leading-relaxed">
+          Ofisimiz Acıbadem'de, Akasya A Kule'de bulunuyor. Keşif için İstanbul'un her iki yakasına da gidiyoruz;
+          malzeme ve numune seçimi için randevuyla ofisimizde de görüşebiliriz.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 gap-4 self-start">
+        <div class="border border-border p-6 bg-[#FAF6F1]">
+          <p class="font-display text-4xl font-bold text-gold mb-1">8+</p>
+          <p class="text-muted text-sm">yıllık uygulama deneyimi</p>
+        </div>
+        <div class="border border-border p-6 bg-[#FAF6F1]">
+          <p class="font-display text-4xl font-bold text-gold mb-1">150+</p>
+          <p class="text-muted text-sm">tamamlanan proje</p>
+        </div>
+        <div class="border border-border p-6 bg-[#FAF6F1]">
+          <p class="font-display text-4xl font-bold text-gold mb-1">3D</p>
+          <p class="text-muted text-sm">görselleştirme her projede standart</p>
+        </div>
+        <div class="border border-border p-6 bg-[#FAF6F1]">
+          <p class="font-display text-4xl font-bold text-gold mb-1">2</p>
+          <p class="text-muted text-sm">yakada aktif şantiye ekibi</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Çalışma prensipleri -->
+  <section class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="w-8 h-px bg-gold"></span>
+      <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Çalışma Prensiplerimiz</span>
+    </div>
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Neden Master İç Mimarlık?</h2>
+    <p class="text-muted leading-relaxed max-w-3xl mb-8">
+      Tadilat süreçlerinde müşterileri en çok yoran şey işin kendisi değil, belirsizlik. Kimin ne zaman geleceğinin
+      bilinmemesi, kapsamın sözlü kalması ve sürekli değişen tarihler. Çalışma biçimimizi bu üç sorunu ortadan
+      kaldıracak şekilde kurduk.
+    </p>
+    <div class="grid md:grid-cols-2 gap-6">
+      {degerler.map(v => (
+        <div class="border border-border p-7 bg-[#FAF6F1]">
+          <h3 class="font-display text-lg font-bold text-charcoal mb-2">{v.t}</h3>
+          <p class="text-muted text-sm leading-relaxed">{v.d}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Süreç -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Nasıl Çalışıyoruz?</h2>
+    <p class="text-muted leading-relaxed max-w-3xl mb-8">
+      Her projede aynı dört adımlı süreci izliyoruz. Adımlar arasında geçiş, bir önceki adımın sizin onayınızla
+      kapanmasına bağlıdır — böylece hiçbir aşamada sürece dışarıdan bakmak zorunda kalmazsınız.
+    </p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      {[
+        { no: '01', t: 'Ücretsiz Keşif', d: 'Mekanı yerinde inceler, ölçü alır ve ihtiyacınızı dinleriz.' },
+        { no: '02', t: 'Tasarım & 3D', d: 'Konseptten 3D görselleştirmeye kadar her detayı önceden görürsünüz.' },
+        { no: '03', t: 'Uygulama', d: 'Yetkin ekibimizle tadilat ve montaj süreçlerini biz yönetiriz.' },
+        { no: '04', t: 'Anahtar Teslim', d: 'Final kontrol sonrası temizlenmiş ve kullanıma hazır teslim ederiz.' },
+      ].map(s => (
+        <div>
+          <p class="font-display text-3xl font-bold text-gold/40 mb-2">{s.no}</p>
+          <h3 class="font-semibold text-charcoal text-sm mb-2">{s.t}</h3>
+          <p class="text-muted text-xs leading-relaxed">{s.d}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Uzmanlık alanları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Uzmanlık Alanlarımız</h2>
+    <p class="text-muted leading-relaxed max-w-3xl mb-8">
+      Portföyümüz 95 m²'lik bir Galata dairesinden 320 m²'lik bir Beylikdüzü villasına, butik bir kafeden otel
+      kat yenilemesine kadar uzanıyor. Ölçek değişse de yöntem aynı kalıyor.
+    </p>
+    <div class="grid md:grid-cols-3 gap-6">
+      {anaServices.map(s => (
+        <a href={s.href} class="group block bg-[#FAF6F1] p-7 hover:bg-[#EDE5D8] transition-colors duration-300">
+          <div class="text-gold mb-4 [&_svg]:w-9 [&_svg]:h-9" set:html={s.icon} />
+          <h3 class="font-display text-lg font-bold text-charcoal mb-2 group-hover:text-gold transition-colors">{s.title}</h3>
+          <p class="text-muted text-sm leading-relaxed">{s.desc}</p>
+        </a>
+      ))}
+    </div>
+    <a href="/hizmetler" class="inline-block mt-6 text-sm text-gold hover:underline">Tüm hizmetlerimizi görün →</a>
+  </section>
+
+  <!-- Referans projeler -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Tamamladığımız İşlerden</h2>
+    <p class="text-muted leading-relaxed max-w-3xl mb-8">
+      Anlatmak yerine göstermeyi tercih ediyoruz. Aşağıdaki projelerin her birinde uygulama fotoğraflarının
+      tamamını, kullanılan hizmet kalemlerini ve süreyi yayımladık.
+    </p>
+    <div class="grid md:grid-cols-3 gap-6">
+      {showcase.map(p => (
+        <a href={`/projeler/${p.slug}`} class="group block border border-border hover:border-gold transition-colors duration-200">
+          <div class="overflow-hidden">
+            <img src={p.heroImage} srcset={p.heroSrcset} sizes="(max-width: 768px) 100vw, 33vw"
+                 alt={p.title} loading="lazy" decoding="async"
+                 class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="p-5">
+            <p class="text-[10px] tracking-[0.25em] uppercase text-gold mb-2">{p.category}</p>
+            <h3 class="font-display text-base font-bold text-charcoal group-hover:text-gold transition-colors mb-1">{p.title}</h3>
+            <p class="text-muted text-xs">{p.location} · {p.area} · {p.duration}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+    <a href="/projeler" class="inline-block mt-6 text-sm text-gold hover:underline">Tüm projeleri inceleyin →</a>
+  </section>
+
+  <!-- SSS -->
+  <section class="py-12">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Firmamız hakkında sık sorulanlar</h2>
+    <div class="space-y-4">
+      {faqItems.map(f => (
+        <details class="border border-border bg-[#FAF6F1] p-6 group">
+          <summary class="font-semibold text-charcoal cursor-pointer list-none flex items-start justify-between gap-4">
+            <span>{f.q}</span>
+            <span class="text-gold shrink-0 transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="text-muted text-sm leading-relaxed mt-4">{f.a}</p>
+        </details>
+      ))}
+    </div>
+    <p class="text-muted text-sm leading-relaxed mt-8">
+      Daha fazlası için <a href="/sikca-sorulan-sorular" class="text-gold hover:underline">sıkça sorulan sorular</a>
+      sayfamıza bakabilir, doğrudan konuşmak isterseniz <a href="/iletisim" class="text-gold hover:underline">iletişim</a>
+      sayfamızdan bize ulaşabilirsiniz.
+    </p>
+  </section>
+
+</ServiceLayout>

@@ -11,8 +11,7 @@ const serviceSchema = {
   "description": "İstanbul'da iç mimar danışmanlık hizmetleri, iç mimar danışmanlık ücreti ve fiyatları hakkında şeffaf bilgi. Tek oturumdan süreç boyunca rehberliğe esnek paketler.",
   "provider": { "@type": "Organization", "@id": `${CANONICAL_BASE}/#organization`, "name": "Master İç Mimarlık" },
   "areaServed": { "@type": "City", "name": "İstanbul" },
-  "url": `${CANONICAL_BASE}/hizmetler/ic-mimarlik-danismanligi`,
-  "offers": { "@type": "Offer", "priceCurrency": "TRY", "description": "İlk görüşme ücretsiz — iç mimar danışmanlık fiyatları projeye özel belirlenir", "availability": "https://schema.org/InStock" }
+  "url": `${CANONICAL_BASE}/hizmetler/ic-mimarlik-danismanligi`
 };
 
 const faqSchema = {
@@ -37,8 +36,8 @@ const faqSchema = {
   eyebrow="İç Mimar Danışmanlığı"
   lead="İstanbul'da iç mimar danışmanlık hizmetleri, danışmanlık ücreti ve fiyatları hakkında şeffaf bilgi. 8 yılı aşkın deneyim ve 150'den fazla proje ile malzeme seçiminden uygulama denetimine uzman rehberlik sunuyoruz. İlk görüşme ücretsizdir."
   breadcrumb={[
-    { label: "Ana Sayfa", href: "/" },
-    { label: "Hizmetler", href: "/#hizmetler" },
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
     { label: "İç Mimarlık Danışmanlığı" }
   ]}
   heroImage={optimizedImage('/images/salon4.jpeg')}

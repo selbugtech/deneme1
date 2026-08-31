@@ -1,0 +1,226 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImage } from '../../lib/cloudinary';
+
+const heroPath = '/images/yatakodasi.jpeg';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Yatak Odası Tasarımı",
+  "name": "İstanbul Yatak Odası Tasarımı ve Yenileme",
+  "description": "Yatak odası için yerleşim planı, ölçüye özel dolap, katmanlı aydınlatma ve tekstil kurgusu dahil iç mimarlık hizmeti.",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
+  "areaServed": { "@type": "City", "name": "İstanbul" },
+  "url": `${CANONICAL_BASE}/hizmetler/yatak-odasi-tasarimi`,
+};
+
+const faqItems = [
+  {
+    q: "Yatak odasında dolabı nereye koymalıyız?",
+    a: "Dolap için ideal konum, yatağın ayak ucundaki duvar ya da kapıyla aynı hizadaki yüzeydir; böylece dolap kapağı açıldığında geçişi kapatmaz. Yatağın baş ucuna dolap yapmaktan genellikle kaçınıyoruz — hem kapak açılışı hem de üstten gelen kapalılık hissi uykuyu rahatsız eder. Odada tavana kadar yükselen bir dolap, üstte toz tutan bir boşluk bırakmadığı için hem daha çok depolama hem daha derli toplu bir görünüm sağlar.",
+  },
+  {
+    q: "Küçük yatak odasında ne kadar dolaşım payı bırakmalıyız?",
+    a: "Yatağın en az bir uzun kenarında 70 cm, mümkünse iki kenarında da bu payın bırakılması gerekir; çift kişilik kullanımda iki taraftan da inip kalkabilmek konfor açısından belirleyicidir. Dolap kapağının önünde ise açılma payı dahil yaklaşık 90 cm ister. Alan yetmiyorsa sürgülü kapak, menteşeli kapağa göre önemli bir kazanç sağlar.",
+  },
+  {
+    q: "Yatak odasında hangi renkler doğru?",
+    a: "Renk seçimini odanın aldığı ışığa göre yapıyoruz. Kuzeye bakan ve gün boyu soğuk ışık alan odalarda sıcak nötrler mekanı dengeler; güneye bakan aydınlık odalarda daha derin ve doygun tonlar rahatlıkla kullanılabilir. Yatak odasında yüksek kontrastlı ve canlı renklerden kaçınmak, uykuya geçişi kolaylaştırdığı için genel olarak daha iyi sonuç verir.",
+  },
+  {
+    q: "Yatak odasında televizyon olmalı mı?",
+    a: "Karar tamamen kullanım alışkanlığınıza bağlı. Televizyon isteniyorsa kablo ve priz altyapısını duvar içine gizleyerek planlıyoruz; sonradan eklenen ekranların kablo düzeni odanın en çok göze batan detayı haline geliyor. Ekran karşısına gelen duvarda mat yüzey tercih etmek, yansımayı azalttığı için kullanımı rahatlatır.",
+  },
+  {
+    q: "Ölçüye özel dolap mı, hazır gardırop mu?",
+    a: "Odanızda kolon çıkıntısı, eğimli tavan ya da standart dışı bir niş varsa ölçüye özel üretim boşa alan bırakmaz ve tavana kadar yükselebilir. Duvar düzgün ve ölçüler standartsa hazır gardırop da iyi çalışır. Ölçüye özel çözümün asıl kazancı depolama hacmi değil, iç düzenin sizin eşya envanterinize göre kurgulanabilmesidir.",
+  },
+  {
+    q: "Yatak odası yenilemesi ne kadar sürer?",
+    a: "Boya, aydınlatma ve tekstil değişimiyle sınırlı bir yenileme birkaç gün içinde tamamlanır. Zemin değişimi ve ölçüye özel dolap üretimi içeren kapsamlı bir çalışma ise 2–4 hafta sürer; bu sürenin büyük bölümü dolap üretimini bekler.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const dahil = [
+  'Yerleşim planı ve dolaşım analizi',
+  'Ölçüye özel gardırop tasarımı ve üretimi',
+  'Baş ucu ünitesi ve komodin çözümleri',
+  'Katmanlı aydınlatma ve okuma apliği planı',
+  'Renk paleti ve yüzey malzemesi seçimi',
+  'Zemin kaplaması ve duvar uygulamaları',
+  'Perde, karartma sistemi ve tekstil seçimi',
+  'Tedarik, montaj ve yerleşim',
+];
+---
+
+<ServiceLayout
+  title="Yatak Odası Tasarımı İstanbul | İç Mimarlık Hizmeti"
+  description="İstanbul'da yatak odası tasarımı ve yenileme: yerleşim planı, ölçüye özel dolap, katmanlı aydınlatma ve tekstil kurgusu. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/hizmetler/yatak-odasi-tasarimi`}
+  h1="Yatak Odası Tasarımı"
+  eyebrow="Oda Bazlı Hizmet"
+  lead="Dinlendirici bir yatak odası; doğru yerleşim, yeterli depolama ve kontrol edilebilir ışıkla kurulur. Üçünü birlikte planlıyoruz."
+  heroImage={heroPath}
+  ogImage={optimizedImage(heroPath)}
+  expandedByDefault={true}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
+    { label: "Yatak Odası Tasarımı" }
+  ]}
+  structuredData={[serviceSchema, faqSchema]}
+>
+
+  <section class="py-12 border-b border-border">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Yatak Odasında Önce Plan, Sonra Görünüm</h2>
+        <p class="text-muted leading-relaxed mb-4">
+          Yatak odası, evin en çok görsel referansla konuşulan ama en çok ölçüyle çözülen mekanıdır. Odayı
+          dinlendirici yapan şey seçilen renk kadar, yataktan kalkarken dolaba çarpmamanız, kapıyı açtığınızda
+          önünüze bir mobilya çıkmaması ve gece lambasını yataktan uzanıp kapatabilmenizdir.
+        </p>
+        <p class="text-muted leading-relaxed mb-4">
+          Bu nedenle çalışmaya yerleşimden başlıyoruz. Yatağın konumu, kapı ve pencere hizası, dolabın açılma
+          yönü ve dolaşım payları netleşmeden mobilya ya da renk konuşmuyoruz. İstanbul dairelerinde yatak
+          odaları çoğunlukla 10–14 m² arasında; bu ölçüde yanlış bir dolap konumu tüm odayı kullanışsız hale
+          getirebiliyor.
+        </p>
+        <p class="text-muted leading-relaxed">
+          Depolama tarafında ise ihtiyacı gerçek envanter üzerinden hesaplıyoruz. Kaç askılık, kaç raf ve kaç
+          çekmece gerektiğini konuşmadan yapılan dolaplar ya boş kalıyor ya da ilk aydan itibaren yetmiyor.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-charcoal mb-4">Hizmete dahil olanlar</h3>
+        <ul class="space-y-3">
+          {dahil.map(item => (
+            <li class="flex items-start gap-3 text-sm text-muted">
+              <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+                <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+          <p class="text-sm text-charcoal font-medium">Ayrı bir giyinme alanı isterseniz</p>
+          <p class="text-muted text-sm mt-2">
+            Yatak odasından ayrılan bir niş ya da müstakil bir oda için
+            <a href="/hizmetler/giyinme-odasi-tasarimi" class="text-gold hover:underline">giyinme odası tasarımı</a>
+            sayfamıza bakabilirsiniz.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Üç belirleyici -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Uyku Kalitesini Etkileyen Üç Tasarım Kararı</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-7 bg-[#FAF6F1]">
+        <h3 class="font-display text-lg font-bold text-charcoal mb-2">Karartma</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Sokak lambası ve erken gün ışığı, İstanbul'da yatak odalarının en yaygın sorunu. Blackout perde ya da
+          stor sistemini korniş kutusu içine gizleyerek planlıyoruz; yandan ve üstten sızan ışığı kesmeyen bir
+          perde, karartma işlevini büyük ölçüde kaybeder.
+        </p>
+      </div>
+      <div class="border border-border p-7 bg-[#FAF6F1]">
+        <h3 class="font-display text-lg font-bold text-charcoal mb-2">Işık kontrolü</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Tavan armatürünün yataktan da anahtarlanabilmesi (vaevien) ve baş ucunda ayrı okuma apliklerinin
+          bulunması, günlük konforu en çok artıran iki detay. Bunlar elektrik planında öngörülmezse sonradan
+          eklemek duvar açmayı gerektirir.
+        </p>
+      </div>
+      <div class="border border-border p-7 bg-[#FAF6F1]">
+        <h3 class="font-display text-lg font-bold text-charcoal mb-2">Yüzey ve akustik</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Halı, kalın perde ve kumaş kaplı baş ucu ünitesi odadaki yankıyı belirgin biçimde düşürür. Sert
+          yüzeylerin baskın olduğu yatak odaları, aynı ses seviyesinde daha gürültülü algılanır.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Yerleşim kuralları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Yerleşimde Uyduğumuz Ölçüler</h2>
+    <p class="text-muted leading-relaxed max-w-3xl mb-8">
+      Aşağıdaki paylar, odanın rahat kullanılabilmesi için pratikte gözettiğimiz alt sınırlardır. Alan
+      yetmediğinde hangisinden ödün verileceğini birlikte konuşuyoruz.
+    </p>
+    <div class="grid md:grid-cols-2 gap-x-12 gap-y-3">
+      {[
+        'Yatağın uzun kenarında en az 70 cm dolaşım payı',
+        'Menteşeli dolap kapağı önünde yaklaşık 90 cm açılma payı',
+        'Yatak ayak ucu ile karşı mobilya arasında en az 70 cm',
+        'Komodin için yatak yüksekliğine yakın bir üst kot',
+        'Kapının açılma yayı içinde mobilya bulunmaması',
+        'Radyatör önünün dolap veya yatakla kapatılmaması',
+      ].map(item => (
+        <div class="flex items-start gap-3 text-sm text-muted">
+          <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+            <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+            </svg>
+          </span>
+          {item}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- SSS -->
+  <section class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="w-8 h-px bg-gold"></span>
+      <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Sıkça Sorulan Sorular</span>
+    </div>
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Yatak odası tasarımı hakkında</h2>
+    <div class="space-y-4">
+      {faqItems.map(f => (
+        <details class="border border-border bg-[#FAF6F1] p-6 group">
+          <summary class="font-semibold text-charcoal cursor-pointer list-none flex items-start justify-between gap-4">
+            <span>{f.q}</span>
+            <span class="text-gold shrink-0 transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="text-muted text-sm leading-relaxed mt-4">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">İlgili Sayfalar</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Yatak Odası Dekorasyon Fikirleri', href: '/blog/yatak-odasi-dekorasyon-fikirleri' },
+        { label: 'Giyinme Odası Tasarımı', href: '/hizmetler/giyinme-odasi-tasarimi' },
+        { label: 'Çocuk Odası Tasarımı', href: '/hizmetler/cocuk-odasi-tasarimi' },
+        { label: 'Salon Tasarımı', href: '/hizmetler/salon-tasarimi' },
+        { label: 'Ev Aydınlatma Rehberi', href: '/blog/ev-aydinlatma-rehberi' },
+        { label: 'Anahtar Teslim Ev Yenileme', href: '/hizmetler/anahtar-teslim/ev-yenileme' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </section>
+
+</ServiceLayout>

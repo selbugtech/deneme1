@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import WhatsAppFloat from '../../components/WhatsAppFloat.astro';
+import GoogleRatingCard from '../../components/GoogleRatingCard.astro';
 import { CANONICAL_BASE } from '../../config';
 import { projects, getProject } from '../../data/projects';
 
@@ -10,6 +11,8 @@ export async function getStaticPaths() {
   const { projects } = await import('../../data/projects');
   return projects.map((p) => ({ params: { slug: p.slug } }));
 }
+
+export const prerender = true;
 
 const { slug } = Astro.params;
 const project = getProject(slug!)!;
@@ -390,6 +393,11 @@ const breadcrumbSchema = {
           >
             0533 039 15 65
           </a>
+        </div>
+
+        <!-- Google puanı -->
+        <div class="mt-10 flex justify-center">
+          <GoogleRatingCard variant="compact" />
         </div>
       </div>
     </div>

@@ -1,0 +1,212 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImage } from '../../lib/cloudinary';
+import { styles } from '../../data/styles';
+
+const heroPath = '/images/merdiven3.jpeg';
+const others = styles.filter(s => s.slug !== 'endustriyel');
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Endüstriyel İç Mimarlık — İstanbul Uygulama Rehberi",
+  "description": "Endüstriyel iç mimarlığın malzeme dili, akustik ve konfor sorunları ile ticari mekanlarda uygulanışı.",
+  "author": { "@id": `${CANONICAL_BASE}/#organization` },
+  "publisher": { "@id": `${CANONICAL_BASE}/#organization` },
+  "mainEntityOfPage": `${CANONICAL_BASE}/ic-mimarlik/endustriyel`,
+};
+
+const faqItems = [
+  {
+    q: "Endüstriyel stil konutta da uygulanabilir mi?",
+    a: "Uygulanabilir ama kısmi kullanım genellikle daha iyi sonuç veriyor. Dilin bütün hâliyle uygulandığı konutlarda iki sorun çıkıyor: akustik ve ısıl konfor. Ham beton, metal ve cam gibi sert yüzeyler sesi yansıtıyor, aynı zamanda mekanı serin algılatıyor. Konutta genellikle tek bir duvarı ya da tavan detayını endüstriyel bırakıp, geri kalanı yumuşak yüzeylerle dengeliyoruz.",
+  },
+  {
+    q: "Açık tesisat gerçekten uygulanabilir mi, yoksa dekoratif mi?",
+    a: "Gerçekten uygulanabilir ve doğru yapıldığında ciddi avantajı var: tavan içine kanal gizlemek gerekmediği için tavan yüksekliği korunuyor ve bakım-onarım çok kolaylaşıyor. Ancak açıkta kalacak tesisatın estetik olarak planlanması gerekiyor — güzergâhların paralel ve hizalı olması, boru ve kanal renklerinin belirlenmiş olması, askı elemanlarının düzenli olması şart. Rastgele bırakılan açık tesisat endüstriyel değil, bitmemiş görünüyor.",
+  },
+  {
+    q: "Ham beton yüzey nasıl elde ediliyor?",
+    a: "İki yol var. Mevcut betonarme yüzey nitelikliyse temizlenip şeffaf koruyucuyla bırakılabiliyor; bu en otantik sonucu veriyor ama her binada mümkün olmuyor çünkü yüzey kalitesi öngörülemez. İkinci yol mikro beton veya beton görünümlü kaplama uygulamak; kontrollü ve tekrarlanabilir bir sonuç veriyor. Hangisinin uygun olduğuna, mevcut yüzeyi açıp gördükten sonra karar veriyoruz.",
+  },
+  {
+    q: "Endüstriyel mekanda akustik nasıl çözülür?",
+    a: "Bu, dilin en kritik teknik sorunu. Sert yüzeylerin baskın olduğu mekanlarda yankı süresi uzuyor ve kafe, restoran gibi işletmelerde konuşma güçleşiyor. Çözümü dili bozmadan kurmak gerekiyor: tavanda metal delikli akustik panel, arkada emici dolgu; oturma birimlerinde kumaş döşeme; zeminde bölgesel halı. Bu üçü, mekanın ham karakterini korurken yankıyı belirgin biçimde düşürüyor.",
+  },
+  {
+    q: "Bu stil hangi mekanlarda en iyi çalışır?",
+    a: "Ticari mekanlarda ve yüksek tavanlı hacimlerde. Kafe, bar, butik mağaza, showroom, kreatif ajans ofisleri ve loft tipi konutlar dilin doğal alanı. Yüksek tavan burada belirleyici: açık tesisat ve kaba tavan detayları ancak yeterli yükseklik varken karakter olarak okunuyor, alçak tavanda ise bastırıcı hale geliyor.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const ilkeler = [
+  { t: 'Yapıyı göstermek', d: 'Kolon, kiriş, döşeme altı ve tesisat gizlenmiyor, malzeme olarak kullanılıyor. Bu aynı zamanda tavan yüksekliğini koruyan pratik bir tercih.' },
+  { t: 'Ham ve işlenmiş karşıtlığı', d: 'Ham beton ve tuğlanın yanında hassas işlenmiş metal ve cam. Dilin gerilimi bu karşıtlıktan doğuyor; tek başına ham yüzey bitmemiş görünüyor.' },
+  { t: 'Düzenli açık tesisat', d: 'Açıkta kalan boru ve kanalların paralel, hizalı ve renk kararı verilmiş olması gerekiyor. Rastgele bırakılan tesisat karakter değil özensizlik olarak okunuyor.' },
+  { t: 'Yumuşak karşı katman', d: 'Deri, kalın dokuma, yaşlandırılmış ahşap ve bitki. Sert yüzeylerin yanına konulan bu katman olmadan mekan hem soğuk hem yankılı kalıyor.' },
+];
+
+const hatalar = [
+  { t: 'Akustiği hesaba katmamak', d: 'Sert yüzeylerin baskın olduğu mekanlarda yankı, özellikle kafe ve restoranda müşteri deneyimini doğrudan bozuyor. Akustik çözüm dilin bozulması değil, tamamlayıcısı.' },
+  { t: 'Alçak tavanda uygulamak', d: 'Açık tesisat ve kaba tavan detayları yeterli yükseklik olmadan bastırıcı hale geliyor. Standart daire tavanında bu dil kısmi kullanılmalı.' },
+  { t: 'Tesisatı plansız bırakmak', d: 'Güzergâh, hiza ve renk kararı verilmemiş açık tesisat, endüstriyel değil yarım kalmış görünüyor. Bu detay proje aşamasında çizilmesi gereken bir konu.' },
+  { t: 'Isıl konforu atlamak', d: 'Ham beton ve metal yüzeyler mekanı serin algılatıyor. Yerden ısıtma, halı ve tekstil katmanı olmadan mekan kışın kullanışsız hale gelebiliyor.' },
+];
+---
+
+<ServiceLayout
+  title="Endüstriyel İç Mimarlık — İstanbul Uygulama Rehberi"
+  description="Endüstriyel iç mimarlık nedir? Ham beton, açık tesisat, malzeme dili ve akustik çözümleri. Kafe, ofis ve loft uygulamaları. 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/ic-mimarlik/endustriyel`}
+  h1="Endüstriyel İç Mimarlık"
+  eyebrow="Stil Rehberi"
+  lead="Yapıyı gizlemek yerine gösteren karakterli bir dil. Doğru uygulandığında tavan yüksekliği kazandırıyor; akustik hesaba katılmadığında ise en çok şikâyet edilen yaklaşım."
+  heroImage={heroPath}
+  ogImage={optimizedImage(heroPath)}
+  expandedByDefault={true}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İç Mimarlık Stilleri", href: `${CANONICAL_BASE}/ic-mimarlik` },
+    { label: "Endüstriyel" }
+  ]}
+  structuredData={[articleSchema, faqSchema]}
+>
+
+  <section class="py-12 border-b border-border">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Yapıyı Gizlemek Yerine Göstermek</h2>
+        <p class="text-muted leading-relaxed mb-4">
+          Endüstriyel dil, iç mimarlığın alışılmış refleksini tersine çeviriyor. Normalde gizlenen ne varsa
+          — kolon, kiriş, döşeme altı, havalandırma kanalı, elektrik tavası — burada malzeme olarak
+          kullanılıyor. Bunun estetik olduğu kadar pratik bir karşılığı da var: tavan içine kanal gizlemek
+          gerekmediği için mekanın tavan yüksekliği korunuyor ve bakım-onarım çok kolaylaşıyor.
+        </p>
+        <p class="text-muted leading-relaxed mb-4">
+          Ancak burada kritik bir ayrım var: açıkta bırakılan tesisatın planlanmış olması gerekiyor.
+          Güzergâhların paralel ve hizalı olması, boru ve kanal renklerinin belirlenmesi, askı elemanlarının
+          düzenli olması şart. Bu kararlar verilmediğinde ortaya çıkan sonuç endüstriyel değil, sadece
+          bitmemiş görünüyor — ve bu, dilin en sık yapılan uygulama hatası.
+        </p>
+        <p class="text-muted leading-relaxed">
+          İkinci belirleyici konu akustik. Ham beton, metal, cam ve tuğla gibi sert yüzeyler sesi
+          yansıtıyor; kafe ve restoran gibi işletmelerde bu, konuşmayı zorlaştıran bir gürültü düzeyine
+          çıkabiliyor. Akustik çözümleri dili bozmadan kurmak mümkün: metal delikli akustik tavan paneli,
+          kumaş döşemeli oturma birimleri ve bölgesel halı bu üçlüyü oluşturuyor.
+        </p>
+      </div>
+      <div>
+        <div class="border border-border p-7 bg-[#FAF6F1] mb-6">
+          <p class="text-[10px] tracking-[0.25em] uppercase text-gold mb-3">Malzeme ve renk paleti</p>
+          <ul class="space-y-2 text-sm text-muted">
+            <li>· Ham beton veya mikro beton yüzeyler</li>
+            <li>· Açık tuğla ve sıvasız duvar dokusu</li>
+            <li>· Siyah ve füme metal profil, doğrama</li>
+            <li>· Yaşlandırılmış ve koyu tonlu ahşap</li>
+            <li>· Deri, kalın dokuma ve bitki karşı katmanı</li>
+          </ul>
+        </div>
+        <h3 class="font-semibold text-charcoal mb-4">En iyi çalıştığı mekanlar</h3>
+        <ul class="space-y-3">
+          {[
+            'Kafe, bar ve restoranlar',
+            'Butik mağaza ve showroomlar',
+            'Kreatif ajans ve teknoloji ofisleri',
+            'Loft tipi ve yüksek tavanlı konutlar',
+            'Dönüştürülmüş depo ve atölye mekanları',
+          ].map(item => (
+            <li class="flex items-start gap-3 text-sm text-muted">
+              <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+                <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Endüstriyel Kurgunun Dört İlkesi</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      {ilkeler.map((k, i) => (
+        <div class="border border-border p-7 bg-[#FAF6F1]">
+          <p class="text-[10px] tracking-[0.25em] uppercase text-gold mb-2">0{i + 1}</p>
+          <h3 class="font-display text-lg font-bold text-charcoal mb-2">{k.t}</h3>
+          <p class="text-muted text-sm leading-relaxed">{k.d}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Uygulamada En Sık Görülen Dört Hata</h2>
+    <div class="space-y-4">
+      {hatalar.map((h, i) => (
+        <div class="flex gap-5 border border-border p-6 bg-[#FAF6F1]">
+          <p class="font-display text-2xl font-bold text-gold/40 shrink-0">0{i + 1}</p>
+          <div>
+            <h3 class="font-semibold text-charcoal mb-1">{h.t}</h3>
+            <p class="text-muted text-sm leading-relaxed">{h.d}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="w-8 h-px bg-gold"></span>
+      <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Sıkça Sorulan Sorular</span>
+    </div>
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Endüstriyel iç mimarlık hakkında</h2>
+    <div class="space-y-4">
+      {faqItems.map(f => (
+        <details class="border border-border bg-[#FAF6F1] p-6 group">
+          <summary class="font-semibold text-charcoal cursor-pointer list-none flex items-start justify-between gap-4">
+            <span>{f.q}</span>
+            <span class="text-gold shrink-0 transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="text-muted text-sm leading-relaxed mt-4">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Stiller</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+      {others.map(s => (
+        <a href={`/ic-mimarlik/${s.slug}`} class="group block border border-border p-5 hover:border-gold hover:bg-gold/5 transition-colors">
+          <h3 class="font-display text-base font-bold text-charcoal group-hover:text-gold transition-colors mb-1">{s.fullName}</h3>
+          <p class="text-muted text-xs">{s.tagline}</p>
+        </a>
+      ))}
+    </div>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Cafe & Restaurant Tadilat', href: '/hizmetler/anahtar-teslim/cafe-restaurant-tadilat' },
+        { label: 'Ofis Tadilat', href: '/hizmetler/anahtar-teslim/ofis-tadilat' },
+        { label: 'Showroom Tadilat', href: '/hizmetler/anahtar-teslim/showroom' },
+        { label: 'Beyoğlu İç Mimarlık', href: '/istanbul/beyoglu-ic-mimarlik' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </section>
+
+</ServiceLayout>

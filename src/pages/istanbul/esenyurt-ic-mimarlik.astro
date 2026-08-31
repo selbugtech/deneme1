@@ -1,0 +1,154 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictFAQ from '../../components/DistrictFAQ.astro';
+import ProcessStrip from '../../components/ProcessStrip.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImageW } from '../../lib/cloudinary';
+
+const heroPath = '/images/salon1.png';
+const heroAbs = optimizedImageW(heroPath, 1600);
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "InteriorDesigner",
+  "name": "Master İç Mimarlık",
+  "@id": `${CANONICAL_BASE}/#business`,
+  "areaServed": { "@type": "Place", "name": "Esenyurt, İstanbul" },
+  "url": `${CANONICAL_BASE}/istanbul/esenyurt-ic-mimarlik`,
+  "description": "Esenyurt'ta anahtar teslim daire yenileme, rezidans iç mimarlığı ve depolama çözümleri.",
+  "image": heroAbs,
+};
+
+const faqItems = [
+  {
+    q: "Esenyurt'ta daire yenileme ne kadar sürer?",
+    a: "Yapı stoku genç olduğu için altyapıya müdahale çoğunlukla gerekmiyor. 2+1 ve 3+1 dairelerde anahtar teslim yenileme genellikle 4–7 hafta sürüyor. Sürenin büyük bölümünü ölçüye özel dolap ve tezgah üretimi alıyor.",
+  },
+  {
+    q: "Esenyurt'ta hangi mahallelerde hizmet veriyorsunuz?",
+    a: "Cumhuriyet, Yenikent, Balıkyolu, Saadetdere, Ardıçlı ve İnönü başta olmak üzere ilçe genelinde çalışıyoruz. Hem yüksek katlı rezidanslarda hem de site dairelerinde uygulama yapıyoruz.",
+  },
+  {
+    q: "Yüksek katlı rezidansta tadilat nasıl yürütülüyor?",
+    a: "Rezidans yönetimleri genellikle yazılı izin, ekip listesi ve depozito istiyor; ayrıca gürültülü çalışma saatleri ile yük asansörü kullanım aralıkları sınırlanmış oluyor. Malzeme sevkiyatı ve moloz tahliyesi bu aralıklara göre planlanıyor. Şantiye takvimini bu kısıtlara göre kuruyor, gerekli yönetim yazışmalarını sizin adınıza yürütüyoruz.",
+  },
+  {
+    q: "Yeni teslim dairemde ne yaptırmalıyım?",
+    a: "En sık çalıştığımız kalemler mutfak dolabı kurgusunun yeniden ele alınması, gömme depolama eklenmesi ve zemin ile duvar yüzeylerinin güncellenmesi. Toplu konut projelerinde daireler standart bir paketle teslim edildiği için bu üç kalem çoğu ailede belirgin fark yaratıyor. Taşınmadan önce başlamak en verimli senaryo.",
+  },
+  {
+    q: "Esenyurt merkeze uzak, keşfe geliyor musunuz?",
+    a: "Evet, ilçe genelinde ücretsiz keşif yapıyoruz. Uzaklık şantiye takviminde yalnızca sevkiyat planlamasını etkiliyor, bunu da baştan programlıyoruz. Keşif randevusunu WhatsApp veya telefonla alabilirsiniz.",
+  },
+];
+---
+
+<ServiceLayout
+  title="Esenyurt İç Mimarlık ve Ev Yenileme"
+  description="Esenyurt'ta iç mimarlık, rezidans ve site dairesi yenileme, anahtar teslim tadilat. Cumhuriyet, Yenikent ve Ardıçlı'da aktif. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/istanbul/esenyurt-ic-mimarlik`}
+  h1="Esenyurt İç Mimarlık ve Ev Yenileme"
+  eyebrow="İstanbul · Esenyurt"
+  lead="İstanbul'un en kalabalık ilçesi ve en genç yapı stoklarından biri. Altyapı yeni olduğu için projeler hızlı ilerliyor; asıl mesele standart planı kişiselleştirmek."
+  heroImage={heroPath}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İstanbul", href: `${CANONICAL_BASE}/istanbul` },
+    { label: "Esenyurt" }
+  ]}
+  structuredData={localSchema}
+>
+
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Esenyurt'ta İç Mimarlık Hizmeti</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Esenyurt, son yirmi yılda İstanbul'un en hızlı büyüyen ilçesi oldu ve bugün nüfus olarak birinci sırada. Bu büyüme, ilçeyi yoğun bir rezidans ve site konsantrasyonuna dönüştürdü; yapı stokunun büyük bölümü 2005 sonrası inşa edildi.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Genç yapı stoku, yenileme projeleri açısından belirgin bir avantaj. Elektrik ve sıhhi tesisat çoğunlukla sağlam olduğu için yıkım ve altyapı aşamaları kısalıyor, süre ve toz doğrudan azalıyor. Esenyurt'taki işlerimizin büyük bölümü bu nedenle kapsamlı tadilat değil, altyapıya dokunmayan yenileme oluyor.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Buna karşılık ilçede standartlaşma sorunu belirgin. Aynı sitede yüzlerce daire tek bir planla ve tek bir malzeme paketiyle teslim ediliyor. En sık çalıştığımız kalemler bu nedenle depolama kapasitesinin artırılması, mutfak dolabı kurgusunun yeniden ele alınması ve salonun gerçek kullanım senaryosuna göre düzenlenmesi. Yüksek katlı rezidanslarda ise yönetim planındaki çalışma saati ve yük asansörü kısıtları şantiye takvimini belirleyen ana unsur.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4">Esenyurt'de Sunduğumuz Hizmetler</h3>
+      <ul class="space-y-3">
+        {[
+          'Rezidans ve site dairelerinde anahtar teslim yenileme',
+          'Ölçüye özel dolap ve depolama çözümleri',
+          'Mutfak ve banyo yenileme',
+          'Salon, yatak odası ve çocuk odası tasarımı',
+          '3D görselleştirme ile tasarım onayı',
+          'Site yönetimi izin süreçlerinin takibi',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+        <p class="text-sm text-charcoal font-medium">Komşu ilçedeki villa projemiz</p>
+        <p class="text-muted text-sm mt-2">
+          Beylikdüzü’nde tamamladığımız 320 m² villa, Esenyurt’a komşu bölgedeki yapı tipine yakın bir örnek. Uygulama fotoğraflarını proje sayfasında yayımladık.
+        </p>
+        <a href="/projeler/beylikduzu-villa" class="text-xs text-gold hover:underline mt-2 inline-block">Beylikdüzü villa projesi →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bölge notları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Esenyurt'ta Bölge Notlarımız</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Cumhuriyet · Yenikent</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Yüksek katlı rezidans yoğunluğunun en fazla olduğu hat. Yönetim planı çalışma saatlerini ve yük asansörü kullanımını sınırlıyor; şantiye takvimi bu kısıtlara göre kuruluyor.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Ardıçlı · Saadetdere</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Site projelerinin yoğunlaştığı bölge. Teslim alınmış ama henüz taşınılmamış daire sayısı yüksek; taşınmadan önce yenileme en verimli senaryo.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Balıkyolu · İnönü</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Görece daha eski stok. Bazı binalarda altyapı yenilemesi gerekebildiği için kapsamı sökümden sonra netleştiriyoruz.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <ProcessStrip districtName="Esenyurt" />
+
+  <DistrictFAQ districtName="Esenyurt" items={faqItems} />
+
+  <div class="py-12 border-t border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Hizmetlerimiz</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Tüm Hizmetler', href: '/hizmetler' },
+        { label: 'Anahtar Teslim Ev Yenileme', href: '/hizmetler/anahtar-teslim/ev-yenileme' },
+        { label: 'Mutfak Yenileme', href: '/hizmetler/mutfak-yenileme' },
+        { label: 'Çocuk Odası Tasarımı', href: '/hizmetler/cocuk-odasi-tasarimi' },
+        { label: 'Esenyurt Ev Tadilatı Rehberi', href: '/blog/esenyurt-ev-tadilati' },
+        { label: 'Beylikdüzü İç Mimarlık', href: '/istanbul/beylikduzu-ic-mimarlik' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </div>
+
+  <RelatedDistricts currentSlug="esenyurt-ic-mimarlik" />
+
+</ServiceLayout>

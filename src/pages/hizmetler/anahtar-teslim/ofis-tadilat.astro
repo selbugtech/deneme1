@@ -11,8 +11,7 @@ const serviceSchema = {
   "description": "İstanbul'da anahtar teslim ofis tadilat. Elektrik, tesisat, bölme sistemleri ve yapısal müdahale dahil kapsamlı kurumsal mekan dönüşümü.",
   "provider": { "@type": "Organization", "@id": `${CANONICAL_BASE}/#organization`, "name": "Master İç Mimarlık" },
   "areaServed": { "@type": "City", "name": "İstanbul" },
-  "url": `${CANONICAL_BASE}/hizmetler/anahtar-teslim/ofis-tadilat`,
-  "offers": { "@type": "Offer", "priceCurrency": "TRY", "description": "Ücretsiz keşif ve özel teklif için iletişime geçin", "availability": "https://schema.org/InStock" }
+  "url": `${CANONICAL_BASE}/hizmetler/anahtar-teslim/ofis-tadilat`
 };
 
 const faqSchema = {
@@ -36,9 +35,9 @@ const faqSchema = {
   eyebrow="Anahtar Teslim"
   lead="Elektrik altyapısından bölme duvar sistemlerine, HVAC'tan akustik iyileştirmeye kadar teknik müdahale gerektiren kapsamlı ofis dönüşümleri. Çalışan verimliliğini ve kurumsal imajı güçlendiren işlevsel mekanlar."
   breadcrumb={[
-    { label: "Ana Sayfa", href: "/" },
-    { label: "Hizmetler", href: "/#hizmetler" },
-    { label: "Anahtar Teslim Hizmetler", href: "/hizmetler/anahtar-teslim" },
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
+    { label: "Anahtar Teslim Hizmetler", href: `${CANONICAL_BASE}/hizmetler/anahtar-teslim` },
     { label: "Ofis Tadilat" }
   ]}
   structuredData={[serviceSchema, faqSchema]}

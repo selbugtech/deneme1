@@ -1,0 +1,154 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictFAQ from '../../components/DistrictFAQ.astro';
+import ProcessStrip from '../../components/ProcessStrip.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImageW } from '../../lib/cloudinary';
+
+const heroPath = '/images/salon6.jpeg';
+const heroAbs = optimizedImageW(heroPath, 1600);
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "InteriorDesigner",
+  "name": "Master İç Mimarlık",
+  "@id": `${CANONICAL_BASE}/#business`,
+  "areaServed": { "@type": "Place", "name": "Bağcılar, İstanbul" },
+  "url": `${CANONICAL_BASE}/istanbul/bagcilar-ic-mimarlik`,
+  "description": "Bağcılar'da anahtar teslim daire yenileme, kentsel dönüşüm sonrası iç mimarlık ve kapsamlı tadilat.",
+  "image": heroAbs,
+};
+
+const faqItems = [
+  {
+    q: "Bağcılar'da daire yenileme ne kadar sürer?",
+    a: "Güneşli ve Mahmutbey hattındaki yeni site dairelerinde altyapı sağlam olduğu için anahtar teslim yenileme 4–7 hafta sürüyor. Kirazlı ve Yenimahalle çevresindeki eski apartmanlarda elektrik ve tesisat yenilemesi devreye girdiğinde bu süre 7–10 haftaya çıkıyor.",
+  },
+  {
+    q: "Bağcılar'da hangi mahallelerde hizmet veriyorsunuz?",
+    a: "Güneşli, Kirazlı, Mahmutbey, Yenimahalle, Demirkapı ve Göztepe başta olmak üzere ilçe genelinde çalışıyoruz. Hem yeni site dairelerinde hem de dönüşüm öncesi apartman stokunda uygulama yapıyoruz.",
+  },
+  {
+    q: "Binam kentsel dönüşüme girecek, yenileme yaptırmalı mıyım?",
+    a: "Bu soruyu keşifte biz de soruyoruz. Bina kısa vadede dönüşüm gündemindeyse kapsamlı bir tadilat yatırımı mantıklı olmuyor; bu durumda altyapıya girmeyen, yüzey ve donanım güncellemesiyle sınırlı bir çalışma öneriyoruz. Dönüşüm belirsiz ya da uzun vadeliyse kapsamlı yenileme değerlendirilebilir.",
+  },
+  {
+    q: "Site yönetiminden tadilat izni gerekiyor mu?",
+    a: "Bağcılar’daki yeni sitelerin çoğunda gerekiyor. Yönetimler önceden bildirim, bazı sitelerde yazılı izin ve depozito istiyor; gürültülü çalışma saatleri ile yük asansörü kullanım aralıkları da yönetim planında sınırlanmış oluyor. Keşif sırasında bu kısıtları birlikte gözden geçirip başvuruları sizin adınıza yapıyoruz.",
+  },
+  {
+    q: "Dar sokaklarda malzeme taşıma sorun oluyor mu?",
+    a: "Planlanmadığında oluyor. Bağcılar’ın yoğun yapılaşmış bölgelerinde sokaklar dar ve park alanı sınırlı. Bu nedenle sevkiyat ve moloz tahliyesini önceden saatlendiriyor, gerekiyorsa araç park iznini ayarlıyoruz. Asansörsüz binalarda ölçüye özel dolapları merdivenden çıkabilecek modüller halinde üretiyoruz.",
+  },
+];
+---
+
+<ServiceLayout
+  title="Bağcılar İç Mimarlık ve Ev Yenileme"
+  description="Bağcılar'da iç mimarlık, daire yenileme ve anahtar teslim tadilat. Güneşli, Kirazlı ve Mahmutbey'de aktif. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/istanbul/bagcilar-ic-mimarlik`}
+  h1="Bağcılar İç Mimarlık ve Ev Yenileme"
+  eyebrow="İstanbul · Bağcılar"
+  lead="Kentsel dönüşümün hızla ilerlediği, yeni site daireleriyle eski apartman stokunun yan yana durduğu bir ilçe. Kapsam kararı burada her zaman binadan başlıyor."
+  heroImage={heroPath}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İstanbul", href: `${CANONICAL_BASE}/istanbul` },
+    { label: "Bağcılar" }
+  ]}
+  structuredData={localSchema}
+>
+
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Bağcılar'da İç Mimarlık Hizmeti</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Bağcılar, İstanbul'un en kalabalık ilçelerinden biri ve son on yılda kentsel dönüşümün belirgin biçimde hızlandığı bölgelerden. Güneşli ve Mahmutbey hattında yeni site ve rezidans projeleri yükselirken, Kirazlı, Yenimahalle ve Demirkapı çevresinde 1990'lar apartman stoku hâlâ ağırlığını koruyor.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Bu iki grup arasındaki fark, işin kapsamını doğrudan belirliyor. Yeni sitelerde altyapı sağlam olduğu için yıkım ve tesisat aşamaları kısalıyor; iş depolama kapasitesi, mutfak kurgusu ve yüzey kalitesi üzerinden ilerliyor. Eski stokta ise elektrik ve sıhhi tesisat çoğu projede baştan kuruluyor ve süre buna göre uzuyor.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Bağcılar'da müşterilerimize sorduğumuz ilk sorulardan biri binanın dönüşüm gündeminde olup olmadığı. Kısa vadede yıkım ihtimali varsa kapsamlı bir tadilat yatırımı mantıklı olmuyor; bu durumda altyapıya girmeyen, yüzey ve donanım güncellemesiyle sınırlı bir çalışma öneriyoruz.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4">Bağcılar'de Sunduğumuz Hizmetler</h3>
+      <ul class="space-y-3">
+        {[
+          'Anahtar teslim daire yenileme',
+          'Elektrik ve tesisat dahil kapsamlı tadilat',
+          'Mutfak ve banyo yenileme',
+          'Salon, yatak odası ve giyinme odası tasarımı',
+          '3D görselleştirme ile tasarım onayı',
+          'Malzeme seçimi ve tedarik',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+        <p class="text-sm text-charcoal font-medium">Bölgedeki projemiz</p>
+        <p class="text-muted text-sm mt-2">
+          Nurol Park’ta tamamladığımız 125 m² daire projesi, Bağcılar hattındaki yeni site dairelerinin yapı tipine yakın bir örnek. Uygulama fotoğraflarını proje sayfasında yayımladık.
+        </p>
+        <a href="/projeler/nurol-park" class="text-xs text-gold hover:underline mt-2 inline-block">Nurol Park daire projesi →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bölge notları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Bağcılar'da Bölge Notlarımız</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Güneşli · Mahmutbey</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Yeni site ve rezidans yoğunluğunun en yüksek olduğu hat. Altyapı sağlam; iş depolama, dolap kurgusu ve yüzey kalitesi üzerinden ilerliyor. Yönetim planındaki çalışma saati ve yük asansörü kısıtları takvimi belirliyor.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Kirazlı · Yenimahalle</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          1990’lar apartman stoku ağırlıkta. Elektrik ve sıhhi tesisat çoğu projede baştan kuruluyor. Binanın dönüşüm gündeminde olup olmadığı, kapsam kararını doğrudan etkiliyor.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Demirkapı · Göztepe</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Karma stok. Dar sokaklar ve park kısıtı nedeniyle malzeme sevkiyatı ile moloz tahliyesi önceden saatlendiriliyor; bina yönetimiyle giriş-çıkış planını baştan yapıyoruz.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <ProcessStrip districtName="Bağcılar" />
+
+  <DistrictFAQ districtName="Bağcılar" items={faqItems} />
+
+  <div class="py-12 border-t border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Hizmetlerimiz</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Tüm Hizmetler', href: '/hizmetler' },
+        { label: 'Anahtar Teslim Ev Yenileme', href: '/hizmetler/anahtar-teslim/ev-yenileme' },
+        { label: 'Anahtar Teslim Ev Tadilat', href: '/hizmetler/anahtar-teslim/ev-tadilat' },
+        { label: 'Mutfak Yenileme', href: '/hizmetler/mutfak-yenileme' },
+        { label: 'Bağcılar Ev Tadilatı Rehberi', href: '/blog/bagcilar-ev-tadilati' },
+        { label: 'Küçükçekmece İç Mimarlık', href: '/istanbul/kucukcekmece-ic-mimarlik' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </div>
+
+  <RelatedDistricts currentSlug="bagcilar-ic-mimarlik" />
+
+</ServiceLayout>

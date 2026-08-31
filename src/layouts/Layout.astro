@@ -1,8 +1,6 @@
 ---
 import { SEO } from 'astro-seo';
 import { CANONICAL_BASE, OG_IMAGE, SITE_NAME, SITE_PHONE } from '../config';
-import { getAggregateRating } from '../lib/google-places';
-import type { GoogleReview } from '../lib/google-places';
 
 interface Props {
   title?: string;
@@ -11,7 +9,6 @@ interface Props {
   ogImage?: string;
   ogType?: string;
   structuredData?: object | object[];
-  reviewData?: { reviews: GoogleReview[]; rating: number; totalRatings: number };
   lcpImage?: string;
   lcpImageSrcset?: string;
   lcpImageSizes?: string;
@@ -24,16 +21,10 @@ const {
   ogImage = OG_IMAGE,
   ogType = 'website',
   structuredData,
-  reviewData,
   lcpImage,
   lcpImageSrcset,
   lcpImageSizes,
 } = Astro.props;
-
-// aggregateRating: reviewData varsa ondan al, yoksa API'den çek
-const aggRating = reviewData
-  ? { rating: reviewData.rating, totalRatings: reviewData.totalRatings }
-  : await getAggregateRating();
 
 const canonical = canonicalUrl ?? `${CANONICAL_BASE}${Astro.url.pathname}`;
 
@@ -108,30 +99,10 @@ const localBusinessSchema = {
   "areaServed": [
     { "@type": "City", "name": "İstanbul" },
     { "@type": "AdministrativeArea", "name": "İstanbul ili" }
-  ],
-  ...(aggRating.rating > 0 ? {
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": String(aggRating.rating),
-      "reviewCount": String(aggRating.totalRatings),
-      "bestRating": "5",
-      "worstRating": "1"
-    }
-  } : {}),
-  ...(reviewData && reviewData.reviews.length > 0 ? {
-    "review": reviewData.reviews.map(r => ({
-      "@type": "Review",
-      "author": { "@type": "Person", "name": r.author_name },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": String(r.rating),
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "reviewBody": r.text,
-      "datePublished": new Date(r.time * 1000).toISOString().split('T')[0]
-    }))
-  } : {})
+  ]
+  // Not: aggregateRating / review alanları bilerek yok. Google, işletmenin kendisi
+  // hakkındaki puanı (self-serving) LocalBusiness zengin sonuçlarında kullanmıyor ve
+  // Google yorumlarının siteye kopyalanması yapısal veri kurallarına aykırı.
 };
 
 const allStructuredData = [

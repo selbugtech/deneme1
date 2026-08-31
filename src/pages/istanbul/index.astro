@@ -1,0 +1,214 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImage } from '../../lib/cloudinary';
+import { districts, bySide } from '../../data/districts';
+import { byGroup } from '../../data/services';
+
+const heroPath = '/images/salon5.jpeg';
+
+const anadolu = bySide('anadolu');
+const avrupa = bySide('avrupa');
+const oda = byGroup('oda');
+
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Master İç Mimarlık — İstanbul Hizmet Bölgeleri",
+  "description": "Master İç Mimarlık'ın iç mimarlık, yenileme ve tadilat hizmeti verdiği İstanbul ilçeleri.",
+  "itemListElement": districts.map((d, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": `${d.name} İç Mimarlık`,
+    "url": `${CANONICAL_BASE}/istanbul/${d.slug}`,
+  })),
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "İç Mimarlık ve Ev Yenileme",
+  "name": "İstanbul İç Mimarlık ve Ev Yenileme Hizmeti",
+  "description": "İstanbul'un iki yakasında iç mimari tasarım, anahtar teslim daire ve villa yenileme, mutfak-banyo tadilatı.",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
+  "areaServed": districts.map(d => ({ "@type": "AdministrativeArea", "name": `${d.name}, İstanbul` })),
+  "url": `${CANONICAL_BASE}/istanbul`,
+};
+
+const faqItems = [
+  {
+    q: "İstanbul'un hangi ilçelerinde hizmet veriyorsunuz?",
+    a: "Ofisimiz Acıbadem'de olduğu için Anadolu yakasında Kadıköy, Üsküdar, Ataşehir ve Maltepe hattında yoğun çalışıyoruz. Avrupa yakasında ise Beşiktaş, Şişli, Nişantaşı, Levent, Beyoğlu, Fatih, Bakırköy, Sarıyer, Zekeriyaköy ve Beylikdüzü'nde aktif projelerimiz var. Listede olmayan bir ilçedeyseniz de arayabilirsiniz; İstanbul genelinde keşfe gidiyoruz.",
+  },
+  {
+    q: "Bulunduğum ilçe sayfanızda yok, yine de gelir misiniz?",
+    a: "Evet. Sayfası olan ilçeler en sık çalıştığımız bölgeler; hizmet alanımız İstanbul'un tamamıdır. Büyük ölçekli projelerde İstanbul dışına, çevre illere de çıkıyoruz.",
+  },
+  {
+    q: "İlçeye göre uygulama süresi değişir mi?",
+    a: "İlçenin kendisi değil, oradaki yapı stoku süreyi etkiler. Tesisatı 30–40 yıllık bir Beyoğlu apartmanında altyapı yenilemesi zorunlu hale gelirken, yeni teslim bir Beylikdüzü sitesinde aynı iş yüzeysel bir güncellemeyle biter. Bina yönetiminin çalışma saati kısıtları ve asansör durumu da takvimi etkileyen unsurlar arasında.",
+  },
+  {
+    q: "Site ve apartman yönetiminden izin gerekiyor mu?",
+    a: "Çoğu sitede ve apartmanda tadilat için yönetim bilgilendirmesi, bazılarında yazılı izin gerekir; çalışma saatleri ve asansör kullanımı da kurala bağlanmış olabilir. Keşif sırasında yönetim planındaki kısıtları birlikte gözden geçiriyor, gerekli yazışmaları sizin adınıza yürütüyoruz.",
+  },
+  {
+    q: "İki yakada da aynı ekip mi çalışıyor?",
+    a: "Her iki yakada da aktif uygulama ekiplerimiz var; şantiye koordinasyonu tek merkezden yürütülür. Proje hangi yakada olursa olsun tasarımı yapan iç mimar şantiyeyi takip eder.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<ServiceLayout
+  title="İstanbul İç Mimarlık ve Ev Yenileme Hizmet Bölgeleri"
+  description="Master İç Mimarlık'ın İstanbul'da hizmet verdiği ilçeler. Anadolu ve Avrupa yakasında iç mimarlık, anahtar teslim yenileme ve tadilat. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/istanbul`}
+  h1="İstanbul İç Mimarlık Hizmet Bölgeleri"
+  eyebrow="İstanbul"
+  lead="Ofisimiz Acıbadem'de; keşif için İstanbul'un iki yakasına da gidiyoruz. Her ilçenin yapı stoku farklı olduğu için uygulama planını bulunduğunuz bölgenin koşullarına göre kuruyoruz."
+  heroImage={heroPath}
+  ogImage={optimizedImage(heroPath)}
+  expandedByDefault={true}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İstanbul" }
+  ]}
+  structuredData={[serviceSchema, itemListSchema, faqSchema]}
+>
+
+  <!-- Giriş -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">İstanbul'da Bölge Bölge Çalışıyoruz</h2>
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <p class="text-muted leading-relaxed mb-4">
+          İstanbul'da bir daireyi yenilemek, şehrin neresinde olduğuna göre farklı bir işe dönüşür. Beyoğlu ve
+          Fatih'te asansörsüz binalar, dar merdivenler ve korunması gereken özgün detaylar devreye girer; malzeme
+          taşıma lojistiği başlı başına bir planlama konusudur. Beylikdüzü ve Başakşehir'de ise yapı yeni, altyapı
+          sağlamdır — orada mesele plan optimizasyonu ve depolamadır.
+        </p>
+        <p class="text-muted leading-relaxed mb-4">
+          Sarıyer, Zekeriyaköy ve Beykoz hattında bahçeli müstakil yapılar ağırlıktadır; dış cephe, teras ve peyzaj
+          entegrasyonu iç mekan kadar önemlidir. Nişantaşı ve Levent'te ise yüksek katlı rezidanslarda çalışma
+          saatleri ve asansör kullanımı yönetim planıyla sınırlıdır, şantiye takvimi buna göre kurulur.
+        </p>
+        <p class="text-muted leading-relaxed">
+          Bu farklar nedeniyle ilçe sayfalarımızı jenerik metinlerle doldurmuyoruz; her sayfada o bölgenin yapı
+          stokuna dair fiilen karşılaştığımız durumları yazıyoruz.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-charcoal mb-4">Her bölgede sunduğumuz hizmetler</h3>
+        <ul class="space-y-3">
+          {[
+            'Anahtar teslim daire ve villa yenileme',
+            'Elektrik ve tesisat dahil kapsamlı tadilat',
+            'Mutfak ve banyo yenileme',
+            'Salon, yatak odası ve giyinme odası tasarımı',
+            'Ofis, mağaza, kafe ve otel projeleri',
+            '3D görselleştirme ile uygulama öncesi onay',
+          ].map(item => (
+            <li class="flex items-start gap-3 text-sm text-muted">
+              <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+                <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+          <p class="text-sm text-charcoal font-medium">Ofis konumumuz</p>
+          <p class="text-muted text-sm mt-2">
+            Akasya A Kule, Çeçen Sok., Acıbadem — 34660 Üsküdar. Keşif randevusu için
+            <a href="/iletisim" class="text-gold hover:underline">iletişim sayfamıza</a> bakabilirsiniz.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Anadolu yakası -->
+  <section class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="w-8 h-px bg-gold"></span>
+      <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Anadolu Yakası</span>
+    </div>
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Anadolu Yakası Hizmet Bölgeleri</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {anadolu.map(d => (
+        <a href={`/istanbul/${d.slug}`} class="group block border border-border p-6 hover:border-gold hover:bg-gold/5 transition-colors duration-200">
+          <h3 class="font-display text-lg font-bold text-charcoal mb-1 group-hover:text-gold transition-colors">{d.name}</h3>
+          <p class="text-[11px] tracking-[0.15em] uppercase text-gold mb-3">{d.focus}</p>
+          <p class="text-muted text-xs leading-relaxed">{d.neighborhoods.slice(0, 5).join(' · ')}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Avrupa yakası -->
+  <section class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="w-8 h-px bg-gold"></span>
+      <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Avrupa Yakası</span>
+    </div>
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Avrupa Yakası Hizmet Bölgeleri</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {avrupa.map(d => (
+        <a href={`/istanbul/${d.slug}`} class="group block border border-border p-6 hover:border-gold hover:bg-gold/5 transition-colors duration-200">
+          <h3 class="font-display text-lg font-bold text-charcoal mb-1 group-hover:text-gold transition-colors">{d.name}</h3>
+          <p class="text-[11px] tracking-[0.15em] uppercase text-gold mb-3">{d.focus}</p>
+          <p class="text-muted text-xs leading-relaxed">{d.neighborhoods.slice(0, 5).join(' · ')}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Oda bazlı -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-4">Tek Odayla Başlamak İsterseniz</h2>
+    <p class="text-muted leading-relaxed max-w-3xl mb-6">
+      Bulunduğunuz ilçe fark etmeksizin oda bazlı çalışıyoruz. Mutfak veya banyo gibi tek bir alana odaklanan
+      projelerde evde yaşamaya devam edebilirsiniz.
+    </p>
+    <div class="flex flex-wrap gap-3">
+      {oda.map(s => (
+        <a href={s.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">
+          {s.title}
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- SSS -->
+  <section class="py-12">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="w-8 h-px bg-gold"></span>
+      <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Sıkça Sorulan Sorular</span>
+    </div>
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">İstanbul'da hizmet bölgelerimiz hakkında</h2>
+    <div class="space-y-4">
+      {faqItems.map(f => (
+        <details class="border border-border bg-[#FAF6F1] p-6 group">
+          <summary class="font-semibold text-charcoal cursor-pointer list-none flex items-start justify-between gap-4">
+            <span>{f.q}</span>
+            <span class="text-gold shrink-0 transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="text-muted text-sm leading-relaxed mt-4">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+</ServiceLayout>

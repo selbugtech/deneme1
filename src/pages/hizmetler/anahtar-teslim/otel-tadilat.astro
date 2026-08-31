@@ -16,8 +16,7 @@ const serviceSchema = {
     { "@type": "AdministrativeArea", "name": "Fatih" },
     { "@type": "AdministrativeArea", "name": "Beşiktaş" }
   ],
-  "url": `${CANONICAL_BASE}/hizmetler/anahtar-teslim/otel-tadilat`,
-  "offers": { "@type": "Offer", "priceCurrency": "TRY", "description": "Ücretsiz keşif ve özel teklif için iletişime geçin", "availability": "https://schema.org/InStock" }
+  "url": `${CANONICAL_BASE}/hizmetler/anahtar-teslim/otel-tadilat`
 };
 
 const faqSchema = {
@@ -41,9 +40,9 @@ const faqSchema = {
   eyebrow="Anahtar Teslim"
   lead="Elektrik ve tesisat yenilemesinden yapısal müdahaleye, oda tadilatından lobi dönüşümüne kadar kapsamlı otel renovasyonu. Fazlı uygulama planıyla operasyonunuz sürerken tadilat tamamlanır."
   breadcrumb={[
-    { label: "Ana Sayfa", href: "/" },
-    { label: "Hizmetler", href: "/#hizmetler" },
-    { label: "Anahtar Teslim Hizmetler", href: "/hizmetler/anahtar-teslim" },
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
+    { label: "Anahtar Teslim Hizmetler", href: `${CANONICAL_BASE}/hizmetler/anahtar-teslim` },
     { label: "Otel Tadilat" }
   ]}
   structuredData={[serviceSchema, faqSchema]}

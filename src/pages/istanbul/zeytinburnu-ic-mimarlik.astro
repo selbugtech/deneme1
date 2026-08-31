@@ -1,0 +1,157 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictFAQ from '../../components/DistrictFAQ.astro';
+import ProcessStrip from '../../components/ProcessStrip.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImageW } from '../../lib/cloudinary';
+import { getProject } from '../../data/projects';
+
+const heroPath = '/images/salon3.jpeg';
+const heroAbs = optimizedImageW(heroPath, 1600);
+const refProject = getProject('zeytinburnu');
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "InteriorDesigner",
+  "name": "Master İç Mimarlık",
+  "@id": `${CANONICAL_BASE}/#business`,
+  "areaServed": { "@type": "Place", "name": "Zeytinburnu, İstanbul" },
+  "url": `${CANONICAL_BASE}/istanbul/zeytinburnu-ic-mimarlik`,
+  "description": "Zeytinburnu'nda anahtar teslim daire yenileme, mutfak-banyo tadilatı ve iç mimarlık danışmanlığı.",
+  "image": heroAbs,
+};
+
+const faqItems = [
+  {
+    q: "Zeytinburnu'nda daire yenileme ne kadar sürer?",
+    a: "Yapının durumuna göre değişiyor. Kazlıçeşme hattındaki yeni teslim dairelerde anahtar teslim yenileme 4–7 hafta sürüyor. Telsiz ve Yeşiltepe çevresindeki eski apartmanlarda elektrik ve tesisat yenilemesi devreye girdiğinde bu süre 7–10 haftaya çıkıyor. Zeytinburnu'nda tamamladığımız 100 m² daire projesi sekiz haftada teslim edilmişti.",
+  },
+  {
+    q: "Zeytinburnu'nda hangi mahallelerde hizmet veriyorsunuz?",
+    a: "Merkezefendi, Kazlıçeşme, Seyitnizam, Telsiz, Veliefendi ve Yeşiltepe başta olmak üzere ilçe genelinde çalışıyoruz. İlçede tamamlanmış bir daire projemiz bulunuyor.",
+  },
+  {
+    q: "Yeni teslim dairemde yenileme yaptırmalı mıyım?",
+    a: "Teslim aldıysanız ve henüz taşınmadıysanız, yenileme için en verimli an bu. Eşya yok, süre kısıtı yok ve tüm mekanlara aynı anda girilebiliyor. Toplu konut projelerinde daireler standart bir dolap paketiyle teslim edildiği için mutfak kurgusu ve depolama kapasitesi çoğu ailenin ihtiyacını karşılamıyor; altyapıya dokunmadan yapılan bir yenileme belirgin fark yaratıyor.",
+  },
+  {
+    q: "Eski binada tesisat yenilemesi gerekli mi?",
+    a: "Bina 25 yaşın üzerindeyse ve tesisat hiç elden geçmediyse büyük olasılıkla evet. Bu yapılarda sıklıkla galvaniz su borusuyla karşılaşıyoruz; iç yüzeyi zamanla daraldığı için basınç düşüyor ve delinme riski taşıyor. Yeni bir mutfak veya banyo yaptıktan sonra tesisat nedeniyle geri sökmek zorunda kalmamak için sökümden sonra ara değerlendirme yapıyoruz.",
+  },
+  {
+    q: "Zeytinburnu için keşif ve teklif süreci nasıl işliyor?",
+    a: "WhatsApp veya telefon üzerinden randevu alıyor, adresinize gelerek ücretsiz keşif yapıyoruz. Ölçü, fotoğraf ve ihtiyaç görüşmesinin ardından 2–3 iş günü içinde kapsamı kalem kalem ayrıştırılmış teklifimizi ve mood-board sunumumuzu paylaşıyoruz. Keşif hiçbir yükümlülük doğurmaz.",
+  },
+];
+---
+
+<ServiceLayout
+  title="Zeytinburnu İç Mimarlık ve Ev Yenileme"
+  description="Zeytinburnu'nda iç mimarlık, daire yenileme ve anahtar teslim tadilat. Merkezefendi, Kazlıçeşme ve Telsiz'de aktif. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/istanbul/zeytinburnu-ic-mimarlik`}
+  h1="Zeytinburnu İç Mimarlık ve Ev Yenileme"
+  eyebrow="İstanbul · Zeytinburnu"
+  lead="Zeytinburnu'nda 100 m²'lik bir daireyi anahtar teslim yeniledik. İlçe kentsel dönüşümün en hızlı ilerlediği bölgelerden biri; yapı stoku yıl yıl değişiyor."
+  heroImage={heroPath}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İstanbul", href: `${CANONICAL_BASE}/istanbul` },
+    { label: "Zeytinburnu" }
+  ]}
+  structuredData={localSchema}
+>
+
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Zeytinburnu'nda İç Mimarlık Hizmeti</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Zeytinburnu, İstanbul'un tarihi yarımadaya komşu, sanayiden konuta dönüşmüş ilçelerinden biri. Kazlıçeşme'nin deri sanayi geçmişinden bugüne uzanan dönüşüm, ilçenin yapı stokunu son yirmi yılda büyük ölçüde yeniledi. Sonuçta ortaya karışık bir tablo çıktı: yeni teslim site daireleri, dönüşümü tamamlanmış apartmanlar ve hâlâ sırasını bekleyen eski yapılar aynı sokakta bulunabiliyor.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Bu karışıklık, keşif aşamasını normalden daha belirleyici kılıyor. Aynı mahallede iki daire, tesisat yaşı ve yapı durumu bakımından tamamen farklı iki iş olabiliyor. Bu nedenle Zeytinburnu projelerinde kapsamı görmeden konuşmuyor, sökümden sonra bir ara değerlendirme yapıp değişiklik gerekiyorsa yazılı onayınızı almadan devam etmiyoruz.
+      </p>
+      <p class="text-muted leading-relaxed">
+        İlçenin bir diğer özelliği konumu: sahil yolu ve Marmaray bağlantısıyla merkeze yakın, bu da şantiye lojistiğini kolaylaştırıyor. Buna karşılık yoğun yapılaşma nedeniyle sokaklar dar ve park kısıtlı; malzeme sevkiyatı ile moloz tahliyesini önceden saatlendiriyoruz.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4">Zeytinburnu'de Sunduğumuz Hizmetler</h3>
+      <ul class="space-y-3">
+        {[
+          'Anahtar teslim daire yenileme',
+          'Elektrik ve tesisat dahil kapsamlı tadilat',
+          'Mutfak ve banyo yenileme',
+          'Salon, yatak odası ve giyinme odası tasarımı',
+          '3D görselleştirme ile tasarım onayı',
+          'Malzeme seçimi ve tedarik',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+      {refProject && (
+        <a href={`/projeler/${refProject.slug}`} class="group block mt-6 border border-gold/20 bg-gold/5 p-4 hover:border-gold transition-colors">
+          <p class="text-[10px] tracking-[0.25em] uppercase text-gold mb-1">Zeytinburnu'ndaki projemiz</p>
+          <p class="text-sm text-charcoal font-medium group-hover:text-gold transition-colors">{refProject.title}</p>
+          <p class="text-muted text-xs mt-1">{refProject.location} · {refProject.area} · {refProject.duration} · {refProject.year}</p>
+          <p class="text-xs text-gold mt-2">Proje fotoğraflarını görün →</p>
+        </a>
+      )}
+    </div>
+  </div>
+
+  <!-- Bölge notları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Zeytinburnu'nda Bölge Notlarımız</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Kazlıçeşme · Veliefendi</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Dönüşümün en yoğun yaşandığı hat. Yeni teslim daireler ağırlıkta; altyapı sağlam olduğu için iş plan optimizasyonu ve depolama üzerinden ilerliyor. Taşınmadan önce başlamak en verimli senaryo.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Merkezefendi · Seyitnizam</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Dönüşümü tamamlanmış apartmanlarla eski stok yan yana. Aynı sokakta iki daire tamamen farklı kapsam gerektirebiliyor; bu yüzden keşif olmadan takvim ve kapsam taahhüdü vermiyoruz.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Telsiz · Yeşiltepe</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Eski apartman stokunun yoğun olduğu bölge. Elektrik ve sıhhi tesisat çoğu projede baştan kuruluyor. Dar sokaklar nedeniyle sevkiyat ve moloz tahliyesi önceden saatlendiriliyor.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <ProcessStrip districtName="Zeytinburnu" />
+
+  <DistrictFAQ districtName="Zeytinburnu" items={faqItems} />
+
+  <div class="py-12 border-t border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Hizmetlerimiz</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Tüm Hizmetler', href: '/hizmetler' },
+        { label: 'Anahtar Teslim Ev Yenileme', href: '/hizmetler/anahtar-teslim/ev-yenileme' },
+        { label: 'Anahtar Teslim Ev Tadilat', href: '/hizmetler/anahtar-teslim/ev-tadilat' },
+        { label: 'Zeytinburnu Daire Projesi', href: '/projeler/zeytinburnu' },
+        { label: 'Zeytinburnu Ev Tadilatı Rehberi', href: '/blog/zeytinburnu-ev-tadilati' },
+        { label: 'Bakırköy İç Mimarlık', href: '/istanbul/bakirkoy-ic-mimarlik' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </div>
+
+  <RelatedDistricts currentSlug="zeytinburnu-ic-mimarlik" />
+
+</ServiceLayout>

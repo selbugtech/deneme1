@@ -1,0 +1,193 @@
+---
+import ServiceLayout from '../../../layouts/ServiceLayout.astro';
+import { CANONICAL_BASE } from '../../../config';
+import { optimizedImage } from '../../../lib/cloudinary';
+
+const heroPath = '/images/salon6.jpeg';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Eczane Tadilatı ve Dekorasyonu",
+  "name": "İstanbul Eczane Tadilat ve Dekorasyon",
+  "description": "Eczaneler için raf sistemi, tezgah kurgusu, soğuk zincir alanı ve mevzuata uygun anahtar teslim iç mimari uygulama.",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
+  "areaServed": { "@type": "City", "name": "İstanbul" },
+  "url": `${CANONICAL_BASE}/hizmetler/anahtar-teslim/eczane`,
+};
+
+const faqItems = [
+  {
+    q: "Eczane tadilatı ne kadar sürer?",
+    a: "Orta ölçekli bir eczanede anahtar teslim tadilat genellikle 4–7 hafta sürüyor. Sürenin büyük bölümünü ölçüye özel raf sistemi ve tezgahın üretimi alıyor; yerinde uygulama kısmı çoğunlukla 2–3 hafta içinde tamamlanıyor. Bu nedenle ölçü alımını ve raf projesini sürecin en başına koyuyoruz.",
+  },
+  {
+    q: "Eczanenin mevzuata uygun olması için nelere dikkat ediyorsunuz?",
+    a: "Eczaneler İl Sağlık Müdürlüğü denetimine tabi ve mekanın asgari alan, laboratuvar bölümü, ilaç saklama koşulları ve engelli erişimi gibi başlıklarda belirli koşulları sağlaması gerekiyor. Tasarımı bu koşulları karşılayacak şekilde kuruyor, mahal listesini ve teknik çizimleri buna göre hazırlıyoruz. Başvuru ve ruhsat işlemleri eczacı tarafından yürütülüyor; biz mimari tarafın gerektirdiği belgeleri sağlıyoruz.",
+  },
+  {
+    q: "Raf sistemini hazır mı almalı, ölçüye özel mi yaptırmalı?",
+    a: "Eczanelerde ölçüye özel üretim neredeyse her zaman daha verimli. Hazır sistemler standart modüllerle geldiği için duvar boyunca kaçınılmaz olarak boşluklar bırakıyor; eczanede ise raf metresi doğrudan stok kapasitesi demek. Ayrıca kolon ve kiriş çıkıntılarının değerlendirilmesi, ilaç kutusu yüksekliğine göre raf aralığı ayarlanması ve tavana kadar yükselen depolama yalnızca özel üretimle mümkün.",
+  },
+  {
+    q: "Soğuk zincir gerektiren ilaçlar için ne planlıyorsunuz?",
+    a: "Soğuk zincir dolabının konumu, elektrik hattı ve kesinti durumunda devreye girecek düzen proje aşamasında planlanması gereken bir konu. Dolabın arka havalandırma boşluğunun kapatılmaması, ayrı sigorta hattına bağlanması ve tezgaha yakın ama müşteri erişiminin dışında konumlandırılması standart yaklaşımımız.",
+  },
+  {
+    q: "Vitrin ve tabela çalışmasını da yapıyor musunuz?",
+    a: "Evet. Eczanelerde vitrin, mağazacılıktan farklı çalışıyor: amaç ürün sergilemekten çok görünürlük ve güven vermek. Vitrin aydınlatması, cam yüzeyinde gündüz oluşan yansımayı azaltacak biçimde planlanıyor. Tabela ve ışıklı pano işlerinde belediye reklam yönetmeliğine uygunluk gözetiliyor; başvuru sürecinde gereken görselleri hazırlıyoruz.",
+  },
+  {
+    q: "Eczane açıkken tadilat yapılabilir mi?",
+    a: "Kısmi çalışmalarda mümkün ve sık tercih ediliyor. Mekanı bölümlere ayırıp bir tarafta hizmet sürerken diğer tarafta çalışıyoruz; raf montajları gece ve mesai dışı saatlere alınabiliyor. Zemin değişimi ve elektrik altyapısı yenilemesi gibi kalemlerde ise kısa süreli tam kapanma hem daha hızlı hem daha güvenli oluyor.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const dahil = [
+  'Mahal kurgusu ve müşteri akışı planı',
+  'Ölçüye özel raf sistemi tasarımı ve üretimi',
+  'Tezgah, kasa ve danışma ünitesi',
+  'Laboratuvar ve hazırlık alanı düzenlemesi',
+  'Soğuk zincir dolabı konumu ve elektrik hattı',
+  'Depolama, arşiv ve personel alanı',
+  'Vitrin, tabela ve marka kimliği entegrasyonu',
+  'Aydınlatma kurgusu ve engelli erişimi',
+];
+
+const teknik = [
+  { t: 'Raf metresi ve stok', d: 'Eczanede duvarın her santimi stok kapasitesi. Ölçüye özel üretim, kolon ve kiriş çıkıntılarını değerlendirerek hazır sisteme göre belirgin şekilde daha fazla raf metresi kazandırıyor.' },
+  { t: 'Tezgah ve akış', d: 'Girişten tezgaha, tezgahtan reçete hazırlama alanına ve kasaya giden hattın kesişmemesi gerekiyor. Yoğun saatlerde kuyruk oluşan eczanelerde bekleme alanının tezgah önünde yeterli derinliğe sahip olması kritik.' },
+  { t: 'Soğuk zincir', d: 'Dolabın ayrı sigorta hattına bağlanması, arka havalandırma boşluğunun kapatılmaması ve tezgaha yakın ama müşteri erişiminin dışında konumlanması. Bu üçü proje aşamasında çözülüyor.' },
+  { t: 'Aydınlatma', d: 'Raf yüzeylerinde gölge bırakmayan, kutu üzerindeki yazıyı okunur kılan bir kurgu gerekiyor. Yalnızca tavandan gelen aydınlatma, raf derinliğinde okunurluğu belirgin biçimde düşürüyor.' },
+  { t: 'Engelli erişimi', d: 'Eşiksiz giriş veya rampa, kapı net geçiş genişliği ve iç mekanda manevra alanı denetimde aranan başlıklar arasında. Mekan seçimi aşamasında bunların sağlanabilirliğini kontrol ediyoruz.' },
+  { t: 'Zemin ve dayanım', d: 'Yoğun yaya trafiği, kışın gelen ıslaklık ve düzenli temizlik yükü nedeniyle aşınmaya dayanıklı, kaymaz ve derz sayısı düşük kaplamalar tercih ediliyor.' },
+];
+---
+
+<ServiceLayout
+  title="Eczane Tadilat ve Dekorasyon İstanbul | Anahtar Teslim"
+  description="İstanbul'da eczane tadilatı ve dekorasyonu. Ölçüye özel raf sistemi, tezgah kurgusu, soğuk zincir alanı ve anahtar teslim uygulama. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/hizmetler/anahtar-teslim/eczane`}
+  h1="Eczane Tadilat ve Dekorasyon"
+  eyebrow="Anahtar Teslim"
+  lead="Eczanede tasarımın ölçüsü estetik değil verim: kazanılan her raf metresi stok kapasitesi, doğru kurgulanan her akış ise yoğun saatte kısalan bir kuyruk demek."
+  heroImage={heroPath}
+  ogImage={optimizedImage(heroPath)}
+  expandedByDefault={true}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
+    { label: "Anahtar Teslim", href: `${CANONICAL_BASE}/hizmetler/anahtar-teslim` },
+    { label: "Eczane" }
+  ]}
+  structuredData={[serviceSchema, faqSchema]}
+>
+
+  <section class="py-12 border-b border-border">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Eczanede Tasarım, Stok ve Akış Üzerine Kurulur</h2>
+        <p class="text-muted leading-relaxed mb-4">
+          Eczane, perakende mekanları içinde metrekare verimliliğinin en kritik olduğu tiplerden biri.
+          Satış alanı görece küçük, buna karşılık taşınması gereken ürün çeşidi çok fazla. Bu nedenle
+          eczane projelerinde tasarımın başarısı, duvarlardan ne kadar raf metresi kazanıldığı ve bu rafların
+          günlük kullanımda ne kadar erişilebilir olduğuyla ölçülüyor.
+        </p>
+        <p class="text-muted leading-relaxed mb-4">
+          Ölçüye özel üretimi bu yüzden neredeyse her projede öneriyoruz. Hazır raf sistemleri standart
+          modüllerle geldiği için duvar boyunca kaçınılmaz boşluklar bırakıyor; kolon ve kiriş çıkıntıları
+          ise tamamen ölü alana dönüşüyor. Özel üretimde hem bu alanlar değerlendiriliyor hem de raf aralıkları
+          taşıdığınız kutu yüksekliklerine göre ayarlanabiliyor.
+        </p>
+        <p class="text-muted leading-relaxed">
+          İkinci başlık akış. Girişten tezgaha, tezgahtan reçete hazırlama alanına ve kasaya giden hatların
+          birbirini kesmemesi, yoğun saatlerde bekleme süresini doğrudan etkiliyor. Buna bir de mevzuatın
+          gerektirdiği laboratuvar bölümü, ilaç saklama koşulları ve engelli erişimi ekleniyor — hepsi
+          mahal listesi aşamasında çözülüyor.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-charcoal mb-4">Hizmete dahil olanlar</h3>
+        <ul class="space-y-3">
+          {dahil.map(item => (
+            <li class="flex items-start gap-3 text-sm text-muted">
+              <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+                <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+          <p class="text-sm text-charcoal font-medium">Nakil ve yeni açılışlarda</p>
+          <p class="text-muted text-sm mt-2">
+            Nakil sürecinde takvim kritik. Raf üretimini ruhsat süreciyle paralel yürüterek mekan hazır
+            olduğunda montaja hemen başlayacak şekilde planlıyoruz.
+          </p>
+          <a href="/iletisim" class="text-xs text-gold hover:underline mt-2 inline-block">Keşif randevusu →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Projeyi Belirleyen Altı Teknik Başlık</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      {teknik.map((k, i) => (
+        <div class="border border-border p-7 bg-[#FAF6F1]">
+          <p class="text-[10px] tracking-[0.25em] uppercase text-gold mb-2">0{i + 1}</p>
+          <h3 class="font-display text-lg font-bold text-charcoal mb-2">{k.t}</h3>
+          <p class="text-muted text-sm leading-relaxed">{k.d}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="w-8 h-px bg-gold"></span>
+      <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Sıkça Sorulan Sorular</span>
+    </div>
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Eczane tadilatı hakkında</h2>
+    <div class="space-y-4">
+      {faqItems.map(f => (
+        <details class="border border-border bg-[#FAF6F1] p-6 group">
+          <summary class="font-semibold text-charcoal cursor-pointer list-none flex items-start justify-between gap-4">
+            <span>{f.q}</span>
+            <span class="text-gold shrink-0 transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="text-muted text-sm leading-relaxed mt-4">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">İlgili Sayfalar</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Tüm Hizmetler', href: '/hizmetler' },
+        { label: 'Anahtar Teslim Hizmetler', href: '/hizmetler/anahtar-teslim' },
+        { label: 'Mağaza & Dükkan Tadilat', href: '/hizmetler/anahtar-teslim/magaza-dukkan-tadilat' },
+        { label: 'Klinik & Muayenehane', href: '/hizmetler/anahtar-teslim/klinik-muayenehane' },
+        { label: 'Showroom Tadilat', href: '/hizmetler/anahtar-teslim/showroom' },
+        { label: '3D Tasarım', href: '/hizmetler/3d-tasarim' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </section>
+
+</ServiceLayout>

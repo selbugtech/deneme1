@@ -1,0 +1,154 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictFAQ from '../../components/DistrictFAQ.astro';
+import ProcessStrip from '../../components/ProcessStrip.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImageW } from '../../lib/cloudinary';
+
+const heroPath = '/images/salon5.jpeg';
+const heroAbs = optimizedImageW(heroPath, 1600);
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "InteriorDesigner",
+  "name": "Master İç Mimarlık",
+  "@id": `${CANONICAL_BASE}/#business`,
+  "areaServed": { "@type": "Place", "name": "Kartal, İstanbul" },
+  "url": `${CANONICAL_BASE}/istanbul/kartal-ic-mimarlik`,
+  "description": "Kartal'da anahtar teslim daire yenileme, rezidans iç mimarlığı ve kapsamlı tadilat hizmeti.",
+  "image": heroAbs,
+};
+
+const faqItems = [
+  {
+    q: "Kartal'da daire yenileme ne kadar sürer?",
+    a: "Kordonboyu ve Yalı hattındaki yeni rezidanslarda altyapı sağlam olduğu için anahtar teslim yenileme 4–7 hafta sürüyor. Soğanlık ve Yakacık çevresindeki eski apartmanlarda elektrik ve tesisat yenilemesi devreye girdiğinde bu süre 7–10 haftaya çıkıyor.",
+  },
+  {
+    q: "Kartal'da hangi mahallelerde hizmet veriyorsunuz?",
+    a: "Kordonboyu, Soğanlık, Yakacık, Cevizli, Esentepe ve Yalı başta olmak üzere ilçe genelinde çalışıyoruz. Sahil hattındaki rezidanslardan iç kesimlerdeki apartman dairelerine kadar farklı yapı tiplerinde uygulama yapıyoruz.",
+  },
+  {
+    q: "Binam kentsel dönüşüme girecek, yine de yenileme yaptırmalı mıyım?",
+    a: "Bu soruyu keşifte biz de soruyoruz. Bina kısa vadede dönüşüm gündemindeyse kapsamlı bir tadilat yatırımı mantıklı olmuyor; bu durumda altyapıya girmeyen, yüzey ve donanım güncellemesiyle sınırlı bir çalışma öneriyoruz. Dönüşüm belirsiz ya da uzun vadeliyse kapsamlı yenileme değerlendirilebilir. Kararı sizinle birlikte veriyoruz.",
+  },
+  {
+    q: "Yüksek katlı rezidanslarda tadilat nasıl yürütülüyor?",
+    a: "Rezidans yönetimleri genellikle tadilat için yazılı izin, ekip listesi ve depozito istiyor; ayrıca gürültülü çalışma saatleri ile yük asansörü kullanım aralıkları sınırlanmış oluyor. Şantiye takvimini bu kısıtlara göre kuruyor, gerekli yönetim yazışmalarını sizin adınıza yürütüyoruz.",
+  },
+  {
+    q: "Kartal için keşif ve teklif süreci nasıl işliyor?",
+    a: "WhatsApp veya telefon üzerinden randevu alıyor, Kartal’daki adresinize gelerek ücretsiz keşif yapıyoruz. Ölçü, fotoğraf ve ihtiyaç görüşmesinin ardından 2–3 iş günü içinde kapsamı kalem kalem ayrıştırılmış teklifimizi paylaşıyoruz. Keşif hiçbir yükümlülük doğurmaz.",
+  },
+];
+---
+
+<ServiceLayout
+  title="Kartal İç Mimarlık ve Ev Yenileme"
+  description="Kartal'da iç mimarlık, sahil rezidansı ve daire yenileme, anahtar teslim tadilat. Kordonboyu, Soğanlık ve Yakacık'ta aktif. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/istanbul/kartal-ic-mimarlik`}
+  h1="Kartal İç Mimarlık ve Ev Yenileme"
+  eyebrow="İstanbul · Kartal"
+  lead="Sahil hattındaki yeni rezidanslarla iç kesimlerdeki dönüşüm öncesi apartman stoku bir arada. Hangi grupta olduğunuz, işin kapsamını baştan belirliyor."
+  heroImage={heroPath}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İstanbul", href: `${CANONICAL_BASE}/istanbul` },
+    { label: "Kartal" }
+  ]}
+  structuredData={localSchema}
+>
+
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Kartal'da İç Mimarlık Hizmeti</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Kartal, son on beş yılda kentsel dönüşümün en yoğun yaşandığı Anadolu yakası ilçelerinden biri. Kordonboyu ve Yalı hattındaki sahil şeridinde yeni rezidanslar yükselirken, Soğanlık, Yakacık ve Esentepe çevresinde dönüşüm sırası bekleyen 1980–2000 arası apartman stoku duruyor. Bu iki grup, yenileme açısından farklı öncelikler taşıyor.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Sahil hattındaki rezidanslarda tasarımın çıkış noktası genellikle manzara oluyor. Pencere hizası, oturma grubunun yönü ve akşam aydınlatmasının camda yansıma yaratmayacak biçimde kurgulanması belirleyici kararlar. Altyapı yeni olduğu için müdahale gerekmiyor; iş plan optimizasyonu, depolama ve yüzey kalitesi üzerinden ilerliyor.
+      </p>
+      <p class="text-muted leading-relaxed">
+        İç kesimlerdeki eski stokta ise tablo değişiyor. Bu yapılarda elektrik ve sıhhi tesisat çoğu projede baştan kuruluyor. Burada müşterilerimize sorduğumuz ilk soru binanın dönüşüm gündeminde olup olmadığı: kısa vadede yıkım ihtimali varsa kapsamı buna göre daraltmak, altyapıya girmeden yapılacak bir güncellemeyle yetinmek daha mantıklı oluyor.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4">Kartal'de Sunduğumuz Hizmetler</h3>
+      <ul class="space-y-3">
+        {[
+          'Anahtar teslim daire yenileme',
+          'Elektrik ve tesisat dahil kapsamlı tadilat',
+          'Mutfak ve banyo yenileme',
+          'Salon, yatak odası ve giyinme odası tasarımı',
+          '3D görselleştirme ile tasarım onayı',
+          'Malzeme seçimi ve tedarik',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+        <p class="text-sm text-charcoal font-medium">Komşu ilçedeki projemiz</p>
+        <p class="text-muted text-sm mt-2">
+          Maltepe’de tamamladığımız 105 m² daire, Kartal’ın sahil hattındaki yapı tipine yakın bir örnek. Uygulama fotoğraflarını proje sayfasında yayımladık.
+        </p>
+        <a href="/projeler/maltepe" class="text-xs text-gold hover:underline mt-2 inline-block">Maltepe daire projesi →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bölge notları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Kartal'da Bölge Notlarımız</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Kordonboyu · Yalı</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Sahil hattındaki yeni rezidanslar. Manzara odaklı tasarım, yansıma yaratmayan akşam aydınlatması ve depolama optimizasyonu öne çıkıyor. Yüksek katlı binalarda yönetim planı çalışma saatlerini sınırlıyor.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Soğanlık · Esentepe</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Dönüşüm gündemindeki apartman stoku yoğun. Kapsam belirlenirken binanın kısa vadeli yıkım ihtimali dikkate alınıyor; gerekiyorsa altyapıya girmeyen daha dar bir güncelleme öneriyoruz.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Yakacık · Cevizli</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          1990’lar apartman stoku ve yeni site projeleri karışık. Eski yapılarda elektrik ve tesisat yenilemesi çoğu projede zorunlu; plan şemalarının bugünün kullanımına uyarlanması sık talep ediliyor.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <ProcessStrip districtName="Kartal" />
+
+  <DistrictFAQ districtName="Kartal" items={faqItems} />
+
+  <div class="py-12 border-t border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Hizmetlerimiz</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Tüm Hizmetler', href: '/hizmetler' },
+        { label: 'Anahtar Teslim Ev Yenileme', href: '/hizmetler/anahtar-teslim/ev-yenileme' },
+        { label: 'Anahtar Teslim Ev Tadilat', href: '/hizmetler/anahtar-teslim/ev-tadilat' },
+        { label: 'Mutfak Yenileme', href: '/hizmetler/mutfak-yenileme' },
+        { label: 'Kartal Ev Tadilatı Rehberi', href: '/blog/kartal-ev-tadilati' },
+        { label: 'Maltepe İç Mimarlık', href: '/istanbul/maltepe-ic-mimarlik' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </div>
+
+  <RelatedDistricts currentSlug="kartal-ic-mimarlik" />
+
+</ServiceLayout>

@@ -16,8 +16,7 @@ const serviceSchema = {
     { "@type": "AdministrativeArea", "name": "Beşiktaş" },
     { "@type": "AdministrativeArea", "name": "Şişli" }
   ],
-  "url": `${CANONICAL_BASE}/hizmetler/anahtar-teslim/ev-yenileme`,
-  "offers": { "@type": "Offer", "priceCurrency": "TRY", "description": "Ücretsiz keşif ve özel teklif için iletişime geçin", "availability": "https://schema.org/InStock" }
+  "url": `${CANONICAL_BASE}/hizmetler/anahtar-teslim/ev-yenileme`
 };
 
 const faqSchema = {
@@ -40,9 +39,9 @@ const faqSchema = {
   eyebrow="Anahtar Teslim"
   lead="Altyapısı sağlam ama modası geçmiş bir eve modern bir kimlik kazandırmak için yapısal müdahaleye gerek yok. Zemin, kaplama, donanım ve aydınlatma güncellemeleriyle evinizi daha kısa sürede ve daha ekonomik biçimde yeniliyoruz."
   breadcrumb={[
-    { label: "Ana Sayfa", href: "/" },
-    { label: "Hizmetler", href: "/#hizmetler" },
-    { label: "Anahtar Teslim Hizmetler", href: "/hizmetler/anahtar-teslim" },
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
+    { label: "Anahtar Teslim Hizmetler", href: `${CANONICAL_BASE}/hizmetler/anahtar-teslim` },
     { label: "Ev Yenileme" }
   ]}
   structuredData={[serviceSchema, faqSchema]}

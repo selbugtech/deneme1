@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppFloat from '../components/WhatsAppFloat.astro';
+import GoogleRatingCard from '../components/GoogleRatingCard.astro';
 import { CANONICAL_BASE } from '../config';
 import { projects } from '../data/projects';
 
@@ -39,17 +40,22 @@ const rightProjects = projects.filter((_, i) => i % 2 === 1);
         <span class="text-white/40 text-sm tracking-wide">Projeler</span>
       </div>
 
-      <div class="mt-6 reveal">
-        <div class="flex items-center gap-3 mb-4">
-          <span class="w-8 h-px bg-gold"></span>
-          <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Tüm Projelerimiz</span>
+      <div class="mt-6 reveal flex flex-wrap items-end justify-between gap-8">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-8 h-px bg-gold"></span>
+            <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Tüm Projelerimiz</span>
+          </div>
+          <h1 class="font-display text-4xl md:text-5xl font-bold text-white max-w-lg leading-tight">
+            Tamamlanan<br />Çalışmalarımız
+          </h1>
+          <p class="text-white/50 mt-4 max-w-md leading-relaxed">
+            150'den fazla tamamlanan proje ile İstanbul'un güvenilir iç mimarlık firması. Ev yenileme, villa, mağaza ve ofis projelerimizi inceleyin.
+          </p>
         </div>
-        <h1 class="font-display text-4xl md:text-5xl font-bold text-white max-w-lg leading-tight">
-          Tamamlanan<br />Çalışmalarımız
-        </h1>
-        <p class="text-white/50 mt-4 max-w-md leading-relaxed">
-          150'den fazla tamamlanan proje ile İstanbul'un güvenilir iç mimarlık firması. Ev yenileme, villa, mağaza ve ofis projelerimizi inceleyin.
-        </p>
+
+        <!-- Google puanı -->
+        <GoogleRatingCard variant="compact" />
       </div>
     </div>
 

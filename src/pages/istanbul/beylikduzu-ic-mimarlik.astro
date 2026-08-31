@@ -1,0 +1,170 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictFAQ from '../../components/DistrictFAQ.astro';
+import ProcessStrip from '../../components/ProcessStrip.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImageW } from '../../lib/cloudinary';
+import { getProject } from '../../data/projects';
+
+const heroPath = '/images/salon9.jpeg';
+const heroAbs = optimizedImageW(heroPath, 1600);
+const refProject = getProject('beylikduzu-villa');
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "InteriorDesigner",
+  "name": "Master İç Mimarlık",
+  "@id": `${CANONICAL_BASE}/#business`,
+  "areaServed": { "@type": "Place", "name": "Beylikdüzü, İstanbul" },
+  "url": `${CANONICAL_BASE}/istanbul/beylikduzu-ic-mimarlik`,
+  "description": "Beylikdüzü'nde site dairelerinde iç mimarlık, villa yenileme ve anahtar teslim tadilat hizmeti.",
+  "image": heroAbs,
+};
+
+const faqItems = [
+  {
+    q: "Beylikdüzü'nde daire yenileme ne kadar sürer?",
+    a: "Beylikdüzü'ndeki site daireleri görece yeni olduğu için elektrik ve tesisat altyapısı çoğunlukla sağlam. Bu nedenle yenilemeler daha hızlı ilerliyor: 2+1 ve 3+1 dairelerde anahtar teslim yenileme genellikle 4–7 hafta sürüyor. Villalarda ise kapsam büyüdüğü için süre 10–14 haftaya çıkabiliyor; Beylikdüzü'nde tamamladığımız 320 m²'lik villa on dört haftada teslim edilmişti.",
+  },
+  {
+    q: "Beylikdüzü'nde hangi mahallelerde hizmet veriyorsunuz?",
+    a: "Barış, Gürpınar, Adnan Kahveci, Cumhuriyet, Kavaklı, Yakuplu ve Marmara mahalleleri başta olmak üzere ilçe genelinde çalışıyoruz. Beylikdüzü'nde projelerimizin büyük bölümü site içi daireler ve müstakil villalardan oluşuyor.",
+  },
+  {
+    q: "Site yönetiminden tadilat için izin almam gerekir mi?",
+    a: "Beylikdüzü'ndeki sitelerin çoğunda gerekiyor. Site yönetimleri genellikle tadilat için önceden bildirim, bazı sitelerde yazılı izin ve depozito istiyor; ayrıca gürültülü çalışma saatleri ve yük asansörü kullanım aralıkları yönetim planında sınırlanmış oluyor. Keşif sırasında yönetim planındaki kısıtları birlikte gözden geçiriyor, gerekli başvuruları sizin adınıza yapıyoruz.",
+  },
+  {
+    q: "Yeni bir daire neden yenileme gerektiriyor?",
+    a: "Beylikdüzü'nde en sık karşılaştığımız talep, teknik bir arıza değil kullanım uyumsuzluğu. Toplu konut projelerinde daireler standart bir plan ve standart bir malzeme paketiyle teslim ediliyor; mutfak dolabı çoğu ailenin ihtiyacını karşılamıyor, depolama yetersiz kalıyor, salon-mutfak ilişkisi kullanım biçimine uymuyor. Altyapıya dokunmadan yapılan bir yenileme bu daireleri belirgin biçimde iyileştiriyor.",
+  },
+  {
+    q: "Beylikdüzü'nde villa projesi yapıyor musunuz?",
+    a: "Evet. Beylikdüzü'nde 320 m²'lik bir villada kapsamlı yenileme uyguladık; iç mimari tasarım, yapısal düzenlemeler, özel mobilya üretimi ve bahçe-teras entegrasyonunu kapsayan bir projeydi. Uygulama fotoğraflarının tamamını proje sayfasında yayımladık.",
+  },
+];
+---
+
+<ServiceLayout
+  title="Beylikdüzü İç Mimarlık ve Ev Yenileme"
+  description="Beylikdüzü'nde iç mimarlık, site dairesi yenileme ve villa tadilat. Barış, Gürpınar, Adnan Kahveci ve Kavaklı'da aktif. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/istanbul/beylikduzu-ic-mimarlik`}
+  h1="Beylikdüzü İç Mimarlık ve Ev Yenileme"
+  eyebrow="İstanbul · Beylikdüzü"
+  lead="Yeni site dairelerinde standart teslim paketini kişiselleştiriyor, müstakil villalarda kapsamlı yenileme uyguluyoruz. Altyapı sağlam olduğu için süreç daha hızlı ilerliyor."
+  heroImage={heroPath}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İstanbul", href: `${CANONICAL_BASE}/istanbul` },
+    { label: "Beylikdüzü" }
+  ]}
+  structuredData={localSchema}
+>
+
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Beylikdüzü'nde İç Mimarlık Hizmeti</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Beylikdüzü, İstanbul'un en genç yapı stokuna sahip ilçelerinden biri. Bu, yenileme projeleri açısından
+        önemli bir avantaj: elektrik ve sıhhi tesisat çoğunlukla sağlam olduğu için yıkım ve altyapı aşamaları
+        kısalıyor, süre ve toz doğrudan azalıyor. İlçedeki işlerimizin büyük bölümü bu nedenle tadilat değil,
+        altyapıya dokunmayan kapsamlı yenileme oluyor.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Buna karşılık toplu konut projelerinin getirdiği kendine özgü bir sorun var: standartlaşma. Yüzlerce
+        daire aynı planla, aynı dolap ölçüsüyle ve aynı yüzey malzemesiyle teslim ediliyor. Sonuçta ortaya
+        teknik olarak sorunsuz ama kullanım olarak kimseye tam oturmayan mekanlar çıkıyor. Beylikdüzü
+        projelerimizde en çok çalıştığımız konular depolama kapasitesi, mutfak dolabı kurgusu ve salonun
+        gerçek kullanım senaryosuna göre yeniden düzenlenmesi.
+      </p>
+      <p class="text-muted leading-relaxed">
+        İlçenin ikinci yapı grubu ise Gürpınar ve Kavaklı hattındaki müstakil villalar. Burada kapsam
+        genişliyor: iç mekanın yanında teras, bahçe ilişkisi ve gerektiğinde yapısal düzenlemeler de projeye
+        dahil oluyor.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4">Beylikdüzü'nde Sunduğumuz Hizmetler</h3>
+      <ul class="space-y-3">
+        {[
+          'Site dairelerinde anahtar teslim yenileme',
+          'Villa yenileme ve kapsamlı tadilat',
+          'Ölçüye özel dolap ve depolama çözümleri',
+          'Mutfak ve banyo yenileme',
+          'Salon ve yatak odası tasarımı',
+          'Site yönetimi izin süreçlerinin takibi',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+      {refProject && (
+        <a href={`/projeler/${refProject.slug}`} class="group block mt-6 border border-gold/20 bg-gold/5 p-4 hover:border-gold transition-colors">
+          <p class="text-[10px] tracking-[0.25em] uppercase text-gold mb-1">Beylikdüzü'ndeki projemiz</p>
+          <p class="text-sm text-charcoal font-medium group-hover:text-gold transition-colors">{refProject.title}</p>
+          <p class="text-muted text-xs mt-1">{refProject.location} · {refProject.area} · {refProject.duration} · {refProject.year}</p>
+          <p class="text-xs text-gold mt-2">Proje fotoğraflarını görün →</p>
+        </a>
+      )}
+    </div>
+  </div>
+
+  <!-- Bölge notları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Beylikdüzü'nde Yapı Tipine Göre Yaklaşımımız</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Site daireleri</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Barış, Adnan Kahveci ve Cumhuriyet hattında yoğunlaşıyor. Altyapı sağlam; iş depolama, dolap kurgusu
+          ve yüzey kalitesi üzerinden ilerliyor. Yönetim planındaki çalışma saati kısıtları takvimi belirleyen
+          ana unsur.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Müstakil villalar</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Gürpınar ve Kavaklı çevresinde. Kapsam iç mekanla sınırlı kalmıyor; teras, bahçe ilişkisi ve
+          gerektiğinde yapısal düzenlemeler de projeye giriyor. Süre ve ekip koordinasyonu buna göre planlanıyor.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Yeni teslim daireler</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Henüz taşınılmamış dairelerde yenileme en verimli haliyle yapılabiliyor: eşya yok, süre kısıtı yok,
+          tüm mekanlara aynı anda girilebiliyor. Teslim aldıysanız taşınmadan önce başlamanızı öneriyoruz.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <ProcessStrip districtName="Beylikdüzü" />
+
+  <DistrictFAQ districtName="Beylikdüzü" items={faqItems} />
+
+  <div class="py-12 border-t border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Hizmetlerimiz</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Tüm Hizmetler', href: '/hizmetler' },
+        { label: 'Villa Yenileme', href: '/hizmetler/anahtar-teslim/villa-yenileme' },
+        { label: 'Anahtar Teslim Ev Yenileme', href: '/hizmetler/anahtar-teslim/ev-yenileme' },
+        { label: 'Mutfak Yenileme', href: '/hizmetler/mutfak-yenileme' },
+        { label: 'Giyinme Odası Tasarımı', href: '/hizmetler/giyinme-odasi-tasarimi' },
+        { label: 'Beylikdüzü Ev Tadilatı Rehberi', href: '/blog/beylikduzu-ev-tadilati' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </div>
+
+  <RelatedDistricts currentSlug="beylikduzu-ic-mimarlik" />
+
+</ServiceLayout>

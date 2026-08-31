@@ -1,0 +1,218 @@
+---
+import ServiceLayout from '../../../layouts/ServiceLayout.astro';
+import { CANONICAL_BASE } from '../../../config';
+import { optimizedImage } from '../../../lib/cloudinary';
+
+const heroPath = '/images/salon9.jpeg';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Showroom Tadilatı",
+  "name": "İstanbul Showroom Tadilat ve Tasarım",
+  "description": "Showroom ve sergi alanları için ürün odaklı aydınlatma, müşteri yolculuğu kurgusu ve anahtar teslim iç mimari uygulama.",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
+  "areaServed": { "@type": "City", "name": "İstanbul" },
+  "url": `${CANONICAL_BASE}/hizmetler/anahtar-teslim/showroom`,
+};
+
+const faqItems = [
+  {
+    q: "Showroom tadilatı ne kadar sürer?",
+    a: "Orta ölçekli bir showroomda anahtar teslim tadilat genellikle 6–10 hafta sürüyor. Sergileme üniteleri ölçüye özel üretiliyorsa üretim süresi takvimin en uzun kalemi oluyor; bu nedenle yıkım ve altyapı işlerini üretimle paralel yürütüyoruz. Yalnızca aydınlatma ve yüzey güncellemesiyle sınırlı projeler 3–4 haftada tamamlanabiliyor.",
+  },
+  {
+    q: "Showroom aydınlatmasında neye dikkat etmek gerekir?",
+    a: "Showroomda aydınlatma dekoratif bir unsur değil, satış aracı. En kritik parametre renk geri verimi: ürünün mekan içinde gördüğü renk, müşterinin evinde veya gün ışığında göreceğinden farklıysa iade ve memnuniyetsizlik kaçınılmaz oluyor. Bunun yanında genel aydınlatma ile ürün üstü vurgu aydınlatması arasında belirgin bir kontrast kurulması, ürünü öne çıkaran şey oluyor. Her ikisi de tek tip armatürle çözülemez.",
+  },
+  {
+    q: "Müşteri yolculuğunu nasıl planlıyorsunuz?",
+    a: "Girişte müşterinin ilk 3–4 metrede ne göreceğine karar vererek başlıyoruz; bu alan mağazanın karakterini belirliyor ve genellikle en güçlü ürünün sergilendiği yer oluyor. Ardından mekanı bir hat üzerinde kurguluyoruz: müşteri doğal bir güzergâh boyunca ilerlerken kategorileri sırayla görüyor ve çıkışa danışma veya satış noktasından geçerek ulaşıyor. Kör köşe bırakmamak ve her noktadan mekanın devamının görünmesini sağlamak temel kurallarımız.",
+  },
+  {
+    q: "Ağır ürünler için zemin dayanımı sorun olur mu?",
+    a: "Mobilya, beyaz eşya, seramik ve yapı malzemesi showroomlarında olabiliyor. Sergilenen ürünlerin nokta yükü, özellikle üst katlarda ve asma kat çözümlerinde kontrol edilmesi gereken bir konu. Ayrıca zemin kaplamasının çizilme ve darbe dayanımı önemli; ürünlerin sık yer değiştirdiği showroomlarda yumuşak kaplamalar kısa sürede yıpranıyor.",
+  },
+  {
+    q: "Depo ve sergi alanını nasıl ilişkilendiriyorsunuz?",
+    a: "Depo erişiminin müşteri güzergâhını kesmemesi gerekiyor. Mümkün olduğunda ayrı bir servis girişi ve personel koridoru planlıyoruz; alan buna elverişli değilse depo kapısını sergi hattının dışında bir noktaya alıyoruz. Ürün getirip götürmenin müşterinin gözü önünde yapılması, showroomun algılanan kalitesini düşüren en yaygın işletme sorunlarından biri.",
+  },
+  {
+    q: "Marka kimliğini tasarıma nasıl yansıtıyorsunuz?",
+    a: "Kurumsal kimliği renk ve logodan ibaret görmüyoruz. Marka; malzeme seçiminde, aydınlatmanın sıcaklığında, sergileme ünitesinin detay diliyle ve hatta mekanın boşluk oranında kendini gösteriyor. Varsa kurumsal kimlik kılavuzunuzla çalışıyor, yoksa mekana özgü bir dil kurup 3D görsellerle onayınıza sunuyoruz.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const dahil = [
+  'Müşteri yolculuğu ve sergileme planı',
+  'Ürün odaklı aydınlatma projesi',
+  'Ölçüye özel sergileme ünitesi ve podyum',
+  'Danışma, satış ve görüşme alanı kurgusu',
+  'Depo ve servis erişiminin ayrıştırılması',
+  'Dayanıklı zemin ve duvar kaplaması',
+  'Vitrin, tabela ve marka kimliği entegrasyonu',
+  'Elektrik altyapısı ve teknik donanım',
+];
+
+const teknik = [
+  { t: 'Renk geri verimi', d: 'Ürünün mekan içinde göründüğü renk ile gün ışığındaki rengi arasındaki fark, iade ve memnuniyetsizliğin sessiz kaynağı. Tekstil, mobilya, seramik ve boya showroomlarında armatür seçimi bu ölçüte göre yapılıyor.' },
+  { t: 'Vurgu ve kontrast', d: 'Genel aydınlatma ile ürün üstü vurgu arasında belirgin bir kontrast olmadığında mekan düz ve vitrinsiz algılanıyor. Vurgu armatürlerinin açısı ve konumu, sergileme düzeni netleşmeden belirlenemiyor.' },
+  { t: 'İlk 4 metre', d: 'Girişte müşterinin gördüğü ilk alan mağazanın karakterini belirliyor. Bu bölgenin yoğun ürünle doldurulması yerine, en güçlü ürünle ve boşlukla kurgulanması algılanan kaliteyi yükseltiyor.' },
+  { t: 'Güzergâh ve görüş hattı', d: 'Kör köşe bırakmamak ve her noktadan mekanın devamının görünmesini sağlamak, müşterinin içeride kalma süresini uzatıyor. Yüksek üniteler bu nedenle görüş hattını kesmeyecek biçimde konumlandırılıyor.' },
+  { t: 'Zemin dayanımı', d: 'Ürünlerin sık yer değiştirdiği showroomlarda zemin, çizilme ve nokta yüküne dayanmalı. Ağır ürün sergilenen üst kat ve asma kat çözümlerinde taşıma kapasitesi ayrıca kontrol ediliyor.' },
+  { t: 'Depo ayrımı', d: 'Servis erişiminin müşteri güzergâhını kesmemesi gerekiyor. Ürün taşımanın müşterinin gözü önünde yapılması, showroomun algılanan kalitesini doğrudan düşürüyor.' },
+];
+---
+
+<ServiceLayout
+  title="Showroom Tadilat ve Tasarım İstanbul | Anahtar Teslim"
+  description="İstanbul'da showroom tadilatı ve iç mimari tasarımı. Ürün odaklı aydınlatma, müşteri yolculuğu kurgusu ve anahtar teslim uygulama. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/hizmetler/anahtar-teslim/showroom`}
+  h1="Showroom Tadilat ve Tasarım"
+  eyebrow="Anahtar Teslim"
+  lead="Showroomda aydınlatma dekoratif bir tercih değil satış aracı. Ürünün doğru renkte görünmesi ve müşterinin doğru güzergâhta ilerlemesi tasarımın iki temel ölçütü."
+  heroImage={heroPath}
+  ogImage={optimizedImage(heroPath)}
+  expandedByDefault={true}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
+    { label: "Anahtar Teslim", href: `${CANONICAL_BASE}/hizmetler/anahtar-teslim` },
+    { label: "Showroom" }
+  ]}
+  structuredData={[serviceSchema, faqSchema]}
+>
+
+  <section class="py-12 border-b border-border">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Showroom Tasarımı Ürünü Öne Çıkarmakla Başlar</h2>
+        <p class="text-muted leading-relaxed mb-4">
+          Bir showroomun işi, mekanın kendisini değil sergilediği ürünü göstermek. Bu basit görünen ilke,
+          pratikte pek çok tasarım kararını ters çeviriyor: mekanın karakterini kuran yüzeyler geri plana
+          çekiliyor, aydınlatma ürüne yöneliyor ve boşluk, doldurulması gereken bir eksiklik olmaktan çıkıp
+          bilinçli bir araca dönüşüyor.
+        </p>
+        <p class="text-muted leading-relaxed mb-4">
+          Projeye müşteri yolculuğunu kurarak başlıyoruz. Girişte ilk görülen alan, mekanın karakterini
+          belirliyor; ardından mekan bir güzergâh üzerinde kurgulanıyor ve müşteri kategorileri sırayla
+          görerek ilerliyor. Kör köşe bırakmamak ve her noktadan mekanın devamını görünür kılmak, içeride
+          geçirilen süreyi doğrudan etkiliyor.
+        </p>
+        <p class="text-muted leading-relaxed">
+          Aydınlatma ise showroomda en çok geri dönüş aldığımız başlık. Renk geri verimi düşük armatürlerle
+          aydınlatılan bir showroomda ürünün mekandaki rengi ile müşterinin evindeki rengi farklı çıkıyor;
+          bu da tekstil, mobilya, seramik ve boya gibi kategorilerde doğrudan iade sebebi. Armatür seçimini
+          bu nedenle estetikten önce ölçülebilir bir kritere bağlıyoruz.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-charcoal mb-4">Hizmete dahil olanlar</h3>
+        <ul class="space-y-3">
+          {dahil.map(item => (
+            <li class="flex items-start gap-3 text-sm text-muted">
+              <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+                <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+          <p class="text-sm text-charcoal font-medium">Uygulamadan önce görün</p>
+          <p class="text-muted text-sm mt-2">
+            Sergileme düzeni ve aydınlatma kurgusu 3D görsellerle onaylanıyor. Ürün yerleşimini uygulamadan
+            önce test etmek, showroom projelerinde en çok işe yarayan aşama.
+          </p>
+          <a href="/hizmetler/3d-tasarim" class="text-xs text-gold hover:underline mt-2 inline-block">3D tasarım hizmetimiz →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Projeyi Belirleyen Altı Teknik Başlık</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      {teknik.map((k, i) => (
+        <div class="border border-border p-7 bg-[#FAF6F1]">
+          <p class="text-[10px] tracking-[0.25em] uppercase text-gold mb-2">0{i + 1}</p>
+          <h3 class="font-display text-lg font-bold text-charcoal mb-2">{k.t}</h3>
+          <p class="text-muted text-sm leading-relaxed">{k.d}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Çalıştığımız Showroom Tipleri</h2>
+    <div class="grid md:grid-cols-2 gap-x-12 gap-y-3">
+      {[
+        'Mobilya ve ev tekstili showroomu',
+        'Seramik, banyo ve yapı malzemesi showroomu',
+        'Mutfak ve dolap sistemleri showroomu',
+        'Aydınlatma ve dekoratif ürün showroomu',
+        'Beyaz eşya ve elektronik sergi alanı',
+        'Otomotiv ve yedek parça showroomu',
+        'Emlak ve proje satış ofisi',
+        'Kurumsal ürün sergi ve tanıtım alanı',
+      ].map(item => (
+        <div class="flex items-start gap-3 text-sm text-muted">
+          <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+            <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+            </svg>
+          </span>
+          {item}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="w-8 h-px bg-gold"></span>
+      <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Sıkça Sorulan Sorular</span>
+    </div>
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Showroom tadilatı hakkında</h2>
+    <div class="space-y-4">
+      {faqItems.map(f => (
+        <details class="border border-border bg-[#FAF6F1] p-6 group">
+          <summary class="font-semibold text-charcoal cursor-pointer list-none flex items-start justify-between gap-4">
+            <span>{f.q}</span>
+            <span class="text-gold shrink-0 transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="text-muted text-sm leading-relaxed mt-4">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">İlgili Sayfalar</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Tüm Hizmetler', href: '/hizmetler' },
+        { label: 'Mağaza & Dükkan Yenileme', href: '/hizmetler/anahtar-teslim/magaza-dukkan-yenileme' },
+        { label: 'Ofis Yenileme', href: '/hizmetler/anahtar-teslim/ofis-yenileme' },
+        { label: 'Eczane Tadilat', href: '/hizmetler/anahtar-teslim/eczane' },
+        { label: '3D Tasarım', href: '/hizmetler/3d-tasarim' },
+        { label: 'Projelerimiz', href: '/projeler' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </section>
+
+</ServiceLayout>

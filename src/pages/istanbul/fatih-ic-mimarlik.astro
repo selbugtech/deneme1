@@ -1,0 +1,168 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictFAQ from '../../components/DistrictFAQ.astro';
+import ProcessStrip from '../../components/ProcessStrip.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImageW } from '../../lib/cloudinary';
+
+const heroPath = '/images/oturmaodasi.jpeg';
+const heroAbs = optimizedImageW(heroPath, 1600);
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "InteriorDesigner",
+  "name": "Master İç Mimarlık",
+  "@id": `${CANONICAL_BASE}/#business`,
+  "areaServed": { "@type": "Place", "name": "Fatih, İstanbul" },
+  "url": `${CANONICAL_BASE}/istanbul/fatih-ic-mimarlik`,
+  "description": "Fatih'te tarihi yarımadada daire yenileme, restorasyon ağırlıklı iç mimarlık ve ticari mekan tadilatı.",
+  "image": heroAbs,
+};
+
+const faqItems = [
+  {
+    q: "Fatih'te daire yenileme ne kadar sürer?",
+    a: "Fatih'te yapı stokunun yaşı yüksek olduğu için elektrik ve sıhhi tesisat neredeyse her projede baştan kuruluyor. Bu nedenle tipik bir dairede anahtar teslim yenileme 7–10 hafta sürüyor. Tescilli yapılarda izin süreci devreye girdiğinde bu süreye başvuru ve onay bekleme süresi de eklenir; keşif sonrasında takvimi bu ihtimali de içerecek şekilde paylaşıyoruz.",
+  },
+  {
+    q: "Fatih'te hangi mahallelerde hizmet veriyorsunuz?",
+    a: "Balat, Fener, Zeyrek, Süleymaniye, Çapa, Samatya, Cerrahpaşa ve Aksaray başta olmak üzere ilçe genelinde çalışıyoruz. Tarihi yarımadanın her mahallesinde yapı karakteri ve koruma statüsü değiştiği için uygulama planını binaya özel kuruyoruz.",
+  },
+  {
+    q: "Tarihi yarımadada tadilat için hangi izinler gerekiyor?",
+    a: "Fatih'in büyük bölümü kentsel sit alanı içinde ve ilçede yoğun bir tescilli yapı stoku var. Tescilli bir yapıda cephe, çatı, doğrama ve taşıyıcı sisteme yönelik her müdahale koruma kurulu iznine tabidir. Sit alanında olup tescilli olmayan yapılarda ise belediye süreci işler. Keşifte önce yapının statüsünü kontrol ediyoruz; bu tespit yapılmadan başlanan işler durdurulma riski taşır.",
+  },
+  {
+    q: "Eski binalarda zemin ve duvar sorunları çıkıyor mu?",
+    a: "Sıklıkla. Fatih'teki yapılarda ahşap döşeme üzerine yapılmış eski dolgular, rutubet almış duvar dipleri ve zamanla oturmuş zemin kotları en çok karşılaştığımız üç durum. Bu nedenle sökümden sonra bir ara değerlendirme yapıyor, kapsamda değişiklik gerekiyorsa yazılı onayınızı almadan devam etmiyoruz. Nem kaynağı çözülmeden yapılan yüzeysel bir yenileme birkaç ay içinde geri döner.",
+  },
+  {
+    q: "Fatih'te ticari mekan projesi yapıyor musunuz?",
+    a: "Evet. Balat ve Fener hattında butik otel, kafe ve mağaza dönüşümleri ilçenin en canlı proje alanlarından biri. Bu işlerde tasarımla paralel olarak işyeri açma ruhsatı, varsa koruma kurulu onayı ve teknik altyapı gereklilikleri birlikte yürütülür. Ticari mekan projelerinde operasyonun ne zaman açılacağı takvimin çıkış noktası oluyor.",
+  },
+];
+---
+
+<ServiceLayout
+  title="Fatih İç Mimarlık ve Ev Yenileme"
+  description="Fatih'te iç mimarlık, tarihi yapı yenileme ve anahtar teslim daire tadilatı. Balat, Fener, Zeyrek ve Samatya'da aktif. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/istanbul/fatih-ic-mimarlik`}
+  h1="Fatih İç Mimarlık ve Ev Yenileme"
+  eyebrow="İstanbul · Fatih"
+  lead="Tarihi yarımadada yenileme, koruma ile konforu birlikte düşünmeyi gerektirir. Yapının statüsünü baştan tespit ediyor, kapsamı buna göre kuruyoruz."
+  heroImage={heroPath}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İstanbul", href: `${CANONICAL_BASE}/istanbul` },
+    { label: "Fatih" }
+  ]}
+  structuredData={localSchema}
+>
+
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Fatih'te İç Mimarlık Hizmeti</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Fatih, İstanbul'da yenileme yapılırken en fazla ön hazırlık gerektiren ilçe. Bunun sebebi işin teknik
+        olarak daha zor olması değil, hukuki çerçevenin farklı olması: ilçenin büyük bölümü kentsel sit alanı
+        içinde ve yoğun bir tescilli yapı stoku barındırıyor. Bir dairede hangi müdahalenin serbest, hangisinin
+        izne tabi olduğu binaya göre değişiyor.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Bu nedenle Fatih projelerinde ilk adımımız tasarım değil, tespit. Yapının tescilli olup olmadığı, varsa
+        koruma grubu, sit alanı statüsü ve yönetim planındaki kısıtlar keşif aşamasında kontrol ediliyor. Bu
+        tespit yapılmadan başlanan işler durdurulma riski taşıyor; kapsamı doğru çizmek hem takvimi hem de
+        işin sürdürülebilirliğini belirliyor.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Teknik tarafta ise yapı yaşı belirleyici. Balat, Fener ve Zeyrek'teki binalarda ahşap döşeme üzerine
+        yapılmış eski dolgular, rutubet almış duvar dipleri ve oturmuş zemin kotlarıyla sık karşılaşıyoruz.
+        Nem kaynağını çözmeden yapılan yüzeysel bir yenileme kısa sürede geri döndüğü için, bu binalarda
+        yalıtım ve nem yönetimini kapsamın ayrılmaz parçası olarak ele alıyoruz.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4">Fatih'te Sunduğumuz Hizmetler</h3>
+      <ul class="space-y-3">
+        {[
+          'Tarihi yapılarda restorasyon ağırlıklı yenileme',
+          'Elektrik ve sıhhi tesisatın baştan kurulması',
+          'Nem ve rutubet çözümleri, yalıtım uygulamaları',
+          'Anahtar teslim daire yenileme',
+          'Butik otel, kafe ve mağaza projeleri',
+          'Koruma kurulu ve belediye izin süreçlerinin takibi',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+        <p class="text-sm text-charcoal font-medium">Benzer karakterde bir projemiz</p>
+        <p class="text-muted text-sm mt-2">
+          Komşu Beyoğlu'nda, Galata'daki tarihi bir apartman dairesinde tamamladığımız anahtar teslim yenileme
+          projesi Fatih'teki yapı karakterine yakın bir örnek.
+        </p>
+        <a href="/projeler/beyoglu-galata" class="text-xs text-gold hover:underline mt-2 inline-block">Beyoğlu Galata projesini görün →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bölge notları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Fatih'te Mahalle Notlarımız</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Balat · Fener</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Renkli cepheleriyle bilinen tescilli yapı yoğunluğu yüksek bölge. Konut yenilemesinin yanında butik
+          otel ve kafe dönüşümleri yaygın. Dar sokaklar nedeniyle sevkiyat ve moloz tahliyesi önceden
+          saatlendiriliyor.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Zeyrek · Süleymaniye</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Koruma statüsünün en katı olduğu bölge. Cephe, çatı ve doğramaya yönelik her müdahale izne tabi;
+          iç mekanda ise özgün detayları koruyan restorasyon ağırlıklı çalışıyoruz.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Çapa · Samatya · Cerrahpaşa</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Yapı stoku daha çok 1970–1990 arası apartmanlardan oluşuyor. Burada koruma kısıtı yerine tesisat
+          yaşı ve plan şemasının bugünün kullanımına uymaması öne çıkıyor.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <ProcessStrip districtName="Fatih" />
+
+  <DistrictFAQ districtName="Fatih" items={faqItems} />
+
+  <div class="py-12 border-t border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Hizmetlerimiz</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Tüm Hizmetler', href: '/hizmetler' },
+        { label: 'Anahtar Teslim Ev Tadilat', href: '/hizmetler/anahtar-teslim/ev-tadilat' },
+        { label: 'Otel Tadilat', href: '/hizmetler/anahtar-teslim/otel-tadilat' },
+        { label: 'Cafe & Restaurant Tadilat', href: '/hizmetler/anahtar-teslim/cafe-restaurant-tadilat' },
+        { label: 'Fatih Ev Tadilatı Rehberi', href: '/blog/fatih-ev-tadilati' },
+        { label: 'Beyoğlu İç Mimarlık', href: '/istanbul/beyoglu-ic-mimarlik' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </div>
+
+  <RelatedDistricts currentSlug="fatih-ic-mimarlik" />
+
+</ServiceLayout>

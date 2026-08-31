@@ -1,0 +1,213 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImage } from '../../lib/cloudinary';
+import { styles } from '../../data/styles';
+
+const heroPath = '/images/salon8.jpeg';
+const others = styles.filter(s => s.slug !== 'klasik');
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Klasik İç Mimarlık — İstanbul Dairelerinde Uygulama Rehberi",
+  "description": "Klasik iç mimarlığın simetri ve oran anlayışı, malzeme paleti ve yüksek tavanlı İstanbul dairelerinde uygulanışı.",
+  "author": { "@id": `${CANONICAL_BASE}/#organization` },
+  "publisher": { "@id": `${CANONICAL_BASE}/#organization` },
+  "mainEntityOfPage": `${CANONICAL_BASE}/ic-mimarlik/klasik`,
+};
+
+const faqItems = [
+  {
+    q: "Klasik tasarım için yüksek tavan şart mı?",
+    a: "Şart değil ama belirleyici. Klasik dilin araçları — kornis, lambri, tavan göbeği, yüksek süpürgelik — mekanı dikey olarak bölüyor ve her biri bir miktar yükseklik tüketiyor. 2,60 m civarında bir tavanda bunların tamamını kullanmak mekanı basıklaştırıyor. Bu durumda araçları seçici kullanıyoruz: ince profilli bir kornis ve yüksek süpürgelik, lambri ve tavan göbeği olmadan da klasik karakteri kuruyor.",
+  },
+  {
+    q: "Klasik ile avangard (art deco) arasındaki fark nedir?",
+    a: "Klasik dil simetri, oran ve dinginlik üzerine kurulu; renk paleti derin ama sakin, detaylar el işçiliğine dayanıyor. Art deco ise geometrik cesaret, güçlü kontrast ve parlak yüzeyler kullanıyor: pirinç, ayna, keskin geometrik desenler. İkisi karıştırılabiliyor çünkü ikisi de zengin bir malzeme dili kullanıyor, ancak klasik dinginlik ararken art deco gösteriş arıyor.",
+  },
+  {
+    q: "Klasik mekan koyu ve karanlık mı olur?",
+    a: "Olmak zorunda değil. Klasik palette derin tonlar (koyu yeşil, bordo, lacivert) bulunuyor ama bunlar mekanın tamamına değil belirli yüzeylere uygulanıyor. Krem ve kırık beyaz baskın kalırken, derin renk tek bir duvarda veya lambri yüzeyinde kullanıldığında mekan hem aydınlık hem karakterli oluyor. Az ışık alan mekanlarda derin tonları tavandan uzak tutmak ve yüzey sayısını sınırlamak gerekiyor.",
+  },
+  {
+    q: "Eski bir apartman dairesindeki özgün detayları korumalı mıyım?",
+    a: "Mümkünse kesinlikle evet. İstanbul'un eski apartmanlarındaki özgün kornis, tavan göbeği ve ahşap doğrama detayları, bugün aynı kalitede yeniden üretilmesi hem zor hem pahalı olan öğeler. Bunları sökmek yerine restore etmek, mekana yeni yapılan hiçbir uygulamayla kurulamayacak bir derinlik katıyor. Beyoğlu ve Fatih projelerimizde bu detayları korumak neredeyse her zaman tasarımın çıkış noktası oluyor.",
+  },
+  {
+    q: "Klasik mobilyayla modern mutfağı bir arada kullanabilir miyim?",
+    a: "Evet, hatta günümüzde en sık uygulanan yaklaşım bu. Yaşam alanlarında klasik dilin oran ve detay anlayışını sürdürüp, mutfak ve banyo gibi işlev odaklı mekanlarda daha sade bir kurgu kullanmak dengeli sonuç veriyor. Geçişin sert olmaması için ortak bir öğe belirliyoruz — genellikle kapı ve doğrama detayı ya da ortak bir renk tonu bu köprüyü kuruyor.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const ilkeler = [
+  { t: 'Simetri', d: 'Klasik dilin omurgası. Kapı, pencere ve mobilya yerleşimi bir eksene göre dengeleniyor; simetrinin bozulduğu noktalarda bunun bilinçli bir vurgu olması gerekiyor.' },
+  { t: 'Oran ve dikey bölüm', d: 'Duvar yüzeyi süpürgelik, lambri hattı ve kornisle yatay bantlara ayrılıyor. Bu bantların birbirine oranı, mekanın doğru veya zorlama görünmesini belirliyor.' },
+  { t: 'El işçiliği detayı', d: 'Profilli kapı, kasetli lambri, oyma detaylar ve pirinç donanım. Bu dilde detay, malzemeden çok işçilikle kuruluyor; taklit profiller mekanı hemen ucuzlatıyor.' },
+  { t: 'Katmanlı zenginlik', d: 'Perde, halı, döşemelik ve aksesuar birbirini destekleyen katmanlar oluşturuyor. Klasik mekan yalın değil, ama dağınık da değil — zenginlik düzen içinde kuruluyor.' },
+];
+
+const hatalar = [
+  { t: 'Düşük tavanda tüm araçları kullanmak', d: 'Kornis, lambri ve tavan göbeğinin birlikte kullanıldığı 2,60 m tavanlı bir oda basık görünüyor. Araçları tavan yüksekliğine göre seçmek gerekiyor.' },
+  { t: 'Taklit profil ve plastik detay', d: 'Bu dilde kaliteyi işçilik taşıyor. Ucuz kalıp profiller ve baskı desenler, mekanın tamamının algılanan değerini düşürüyor.' },
+  { t: 'Simetriyi yarım bırakmak', d: 'Bir duvarda kurulan simetrinin karşı duvarda karşılığının olmaması, mekanı tamamlanmamış gösteriyor. Simetri kararı tüm hacim için verilir.' },
+  { t: 'Aydınlatmayı tek avizeye bırakmak', d: 'Klasik mekanda avize güçlü bir odak ama tek başına yetersiz. Duvar apliği, masa lambası ve dolaylı ışık olmadan mekanın derinliği kayboluyor.' },
+];
+---
+
+<ServiceLayout
+  title="Klasik İç Mimarlık — İstanbul Uygulama Rehberi"
+  description="Klasik iç mimarlık nedir? Simetri, oran ve detay anlayışı, malzeme paleti ve yüksek tavanlı dairelerde uygulanışı. 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/ic-mimarlik/klasik`}
+  h1="Klasik İç Mimarlık"
+  eyebrow="Stil Rehberi"
+  lead="Simetri, oran ve el işçiliğine dayanan bir dil. Yüksek tavanlı eski apartman dairelerinde başka hiçbir yaklaşımın kuramadığı bir derinlik veriyor."
+  heroImage={heroPath}
+  ogImage={optimizedImage(heroPath)}
+  expandedByDefault={true}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İç Mimarlık Stilleri", href: `${CANONICAL_BASE}/ic-mimarlik` },
+    { label: "Klasik" }
+  ]}
+  structuredData={[articleSchema, faqSchema]}
+>
+
+  <section class="py-12 border-b border-border">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Klasik Dil Oranla Konuşur</h2>
+        <p class="text-muted leading-relaxed mb-4">
+          Klasik iç mimarlık çoğu zaman "süslü" olarak özetleniyor, oysa dili tanımlayan şey süsleme değil
+          oran. Duvar yüzeyinin süpürgelik, lambri hattı ve kornisle nasıl bölündüğü; kapı ve pencerelerin
+          bir eksene göre nasıl dengelendiği; mobilyanın bu düzeni destekleyip desteklemediği — mekanın
+          doğru ya da zorlama görünmesini bunlar belirliyor.
+        </p>
+        <p class="text-muted leading-relaxed mb-4">
+          Bu yüzden klasik dil, mekanın kendisine en çok bağımlı olan yaklaşım. Yüksek tavanlı, düzgün
+          geometrili ve simetriye elverişli hacimlerde son derece güçlü sonuç veriyor. Buna karşılık
+          2,60 m tavanlı, kolonlu ve düzensiz planlı bir dairede aynı araçların tamamını kullanmak mekanı
+          basıklaştırıyor. Bu durumda araç setini daraltıyoruz: ince profilli bir kornis ve yüksek
+          süpürgelik, lambri ve tavan göbeği olmadan da klasik karakteri kurmaya yetiyor.
+        </p>
+        <p class="text-muted leading-relaxed">
+          İstanbul'da bu dilin en doğal karşılığı Beyoğlu, Fatih, Nişantaşı ve Şişli'nin eski apartman
+          daireleri. Bu binalardaki özgün kornis, tavan göbeği ve ahşap doğrama detayları bugün aynı
+          kalitede yeniden üretilmesi zor öğeler; sökmek yerine restore etmek, mekana yeni uygulamayla
+          kurulamayacak bir derinlik katıyor.
+        </p>
+      </div>
+      <div>
+        <div class="border border-border p-7 bg-[#FAF6F1] mb-6">
+          <p class="text-[10px] tracking-[0.25em] uppercase text-gold mb-3">Malzeme ve renk paleti</p>
+          <ul class="space-y-2 text-sm text-muted">
+            <li>· Krem ve kırık beyaz baskın yüzeyler</li>
+            <li>· Derin aksan tonları: koyu yeşil, bordo, lacivert</li>
+            <li>· Koyu ahşap: ceviz, maun, yaşlandırılmış meşe</li>
+            <li>· Pirinç ve bronz donanım</li>
+            <li>· Kadife, damask ve ipek dokulu tekstiller</li>
+          </ul>
+        </div>
+        <h3 class="font-semibold text-charcoal mb-4">En iyi çalıştığı mekanlar</h3>
+        <ul class="space-y-3">
+          {[
+            'Yüksek tavanlı eski apartman daireleri',
+            'Özgün detayları korunmuş tarihi yapılar',
+            'Geniş salonlu ve simetriye elverişli planlar',
+            'Villalar ve müstakil konutlar',
+            'Butik otel ve ortak kullanım alanları',
+          ].map(item => (
+            <li class="flex items-start gap-3 text-sm text-muted">
+              <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+                <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Klasik Kurgunun Dört İlkesi</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      {ilkeler.map((k, i) => (
+        <div class="border border-border p-7 bg-[#FAF6F1]">
+          <p class="text-[10px] tracking-[0.25em] uppercase text-gold mb-2">0{i + 1}</p>
+          <h3 class="font-display text-lg font-bold text-charcoal mb-2">{k.t}</h3>
+          <p class="text-muted text-sm leading-relaxed">{k.d}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Uygulamada En Sık Görülen Dört Hata</h2>
+    <div class="space-y-4">
+      {hatalar.map((h, i) => (
+        <div class="flex gap-5 border border-border p-6 bg-[#FAF6F1]">
+          <p class="font-display text-2xl font-bold text-gold/40 shrink-0">0{i + 1}</p>
+          <div>
+            <h3 class="font-semibold text-charcoal mb-1">{h.t}</h3>
+            <p class="text-muted text-sm leading-relaxed">{h.d}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="w-8 h-px bg-gold"></span>
+      <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Sıkça Sorulan Sorular</span>
+    </div>
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Klasik iç mimarlık hakkında</h2>
+    <div class="space-y-4">
+      {faqItems.map(f => (
+        <details class="border border-border bg-[#FAF6F1] p-6 group">
+          <summary class="font-semibold text-charcoal cursor-pointer list-none flex items-start justify-between gap-4">
+            <span>{f.q}</span>
+            <span class="text-gold shrink-0 transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="text-muted text-sm leading-relaxed mt-4">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Stiller</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+      {others.map(s => (
+        <a href={`/ic-mimarlik/${s.slug}`} class="group block border border-border p-5 hover:border-gold hover:bg-gold/5 transition-colors">
+          <h3 class="font-display text-base font-bold text-charcoal group-hover:text-gold transition-colors mb-1">{s.fullName}</h3>
+          <p class="text-muted text-xs">{s.tagline}</p>
+        </a>
+      ))}
+    </div>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Fatih İç Mimarlık', href: '/istanbul/fatih-ic-mimarlik' },
+        { label: 'Beyoğlu İç Mimarlık', href: '/istanbul/beyoglu-ic-mimarlik' },
+        { label: 'Nişantaşı İç Mimarlık', href: '/istanbul/nisantasi-ic-mimarlik' },
+        { label: 'Villa Yenileme', href: '/hizmetler/anahtar-teslim/villa-yenileme' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </section>
+
+</ServiceLayout>

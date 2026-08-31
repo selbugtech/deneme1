@@ -1,0 +1,258 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImage } from '../../lib/cloudinary';
+
+const heroPath = '/images/mutfak1.jpeg';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Mutfak Yenileme",
+  "name": "İstanbul Mutfak Yenileme ve Tadilat",
+  "description": "Ölçüye özel dolap, tezgah değişimi, su ve elektrik altyapısı dahil anahtar teslim mutfak yenileme. Tasarım, üretim ve montaj tek elden.",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
+  "areaServed": { "@type": "City", "name": "İstanbul" },
+  "url": `${CANONICAL_BASE}/hizmetler/mutfak-yenileme`,
+};
+
+const faqItems = [
+  {
+    q: "Mutfak yenileme ne kadar sürer?",
+    a: "Dolap ve tezgah değişimiyle sınırlı bir yenileme genellikle 2–3 hafta sürer. Zemin, duvar seramiği ve elektrik-su altyapısının da yenilendiği kapsamlı bir mutfak tadilatı 3–5 haftaya çıkar. Süreyi belirleyen en kritik kalem çoğu zaman uygulama değil, ölçüye özel dolapların ve tezgahın üretim süresidir; bu nedenle ölçü alımını sürecin en başına koyuyoruz.",
+  },
+  {
+    q: "Mutfağı yenilerken evde kalabilir miyim?",
+    a: "Evet, çoğu projede müşterilerimiz evde kalmaya devam ediyor. Yıkım ve seramik kırımının yapıldığı ilk birkaç gün toz nedeniyle yoğun geçer; bu aşamada mutfağı naylon perdeyle izole ediyor, geçici bir çay-kahve alanı kuruyoruz. Su kesintisi genellikle tesisat bağlantısı yapılan bir iki gün ile sınırlı kalır.",
+  },
+  {
+    q: "Mevcut dolapları koruyup sadece kapak değiştirebilir miyiz?",
+    a: "Gövdeler sağlamsa ve ölçüleri kullanışlıysa mümkün. Kapak, kulp, tezgah ve mekanizmaların değiştirildiği bu yöntem hem daha kısa sürer hem de daha az yıkım gerektirir. Ancak gövdelerde su kabarması, menteşe yuvalarında dağılma veya plan şemasında değişiklik ihtiyacı varsa komple yenileme daha doğru olur — keşifte gövdeleri açıp durumu birlikte değerlendiriyoruz.",
+  },
+  {
+    q: "Ada mutfak her mekana yapılabilir mi?",
+    a: "Hayır. Adanın rahat çalışması için çevresinde en az 90–100 cm dolaşım payı gerekir; ada üzerine ocak veya eviye alınacaksa davlumbaz bacası ve su-gider hattının da o noktaya taşınabilmesi lazım. Dar ve uzun mutfaklarda ada yerine yarım duvar veya uzatılmış tezgah çözümü çoğu zaman daha kullanışlı sonuç verir.",
+  },
+  {
+    q: "Tezgah malzemesini nasıl seçmeliyim?",
+    a: "Kullanım alışkanlığınıza göre değişir. Çok pişiren ve tezgahı yoğun kullanan bir mutfakta çizilme ve lekelenme direnci yüksek yüzeyler öne çıkar; görsel olarak damarlı doğal taş tercih ediliyorsa lekelenmeye karşı düzenli bakım gerektiğini baştan bilmek gerekir. Keşifte kullanım biçiminizi konuşup uygun seçenekleri numuneleriyle birlikte sunuyoruz.",
+  },
+  {
+    q: "Mutfağın yerini tamamen değiştirebilir miyiz?",
+    a: "Teknik olarak mümkün ama basit bir iş değil. Su gider hattının eğim alabilmesi ve doğalgaz hattının taşınabilmesi belirleyicidir; gider hattı yeterli eğimi bulamıyorsa yeni konum uygulanamaz. Ayrıca doğalgaz taşıma işlemi yetkili firma tarafından yapılmalıdır. Bu tür bir değişiklik istiyorsanız keşifte mevcut tesisat şemasını inceleyip uygulanabilirliğini net olarak söylüyoruz.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const dahil = [
+  'Yerinde ölçü ve mevcut tesisat değerlendirmesi',
+  'Plan şeması ve 3D görselleştirme',
+  'Ölçüye özel dolap tasarımı ve üretimi',
+  'Tezgah, eviye ve armatür montajı',
+  'Su ve elektrik altyapısının yenilenmesi',
+  'Zemin ve duvar kaplaması uygulaması',
+  'Davlumbaz ve ankastre ürün montajı',
+  'Aydınlatma kurgusu ve tezgah altı armatürler',
+];
+
+const hatalar = [
+  { t: 'Ölçüyü uygulamadan önce almak', d: 'Dolap siparişi eski duvara göre verildiğinde, seramik kalınlığı değiştiğinde ölçü tutmaz. Ölçüyü kaplama kararları netleştikten sonra alıyoruz.' },
+  { t: 'Priz sayısını az tutmak', d: 'Tezgah üstü priz eksikliği, yenilenmiş bir mutfakta en sık şikâyet edilen konu. Küçük ev aletlerinin sabit duracağı noktaları önceden belirleyip priz planını ona göre kuruyoruz.' },
+  { t: 'Davlumbazı dekoratif seçmek', d: 'Bacasız veya yetersiz emişli bir davlumbaz, dolap kapaklarında ve tavanda yağ birikmesine yol açar. Emiş kapasitesini mutfağın hacmine göre hesaplıyoruz.' },
+  { t: 'Aydınlatmayı tek tavan armatürüne bırakmak', d: 'Tavandan gelen tek ışık, tezgahta çalışırken kendi gölgenizde kalmanıza neden olur. Tezgah altı bant aydınlatma neredeyse her projede standart.' },
+];
+---
+
+<ServiceLayout
+  title="Mutfak Yenileme İstanbul — Anahtar Teslim Mutfak Tadilat"
+  description="İstanbul'da mutfak yenileme ve tadilat: ölçüye özel dolap, tezgah değişimi, su-elektrik altyapısı ve montaj tek elden. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/hizmetler/mutfak-yenileme`}
+  h1="Mutfak Yenileme ve Tadilat"
+  eyebrow="Oda Bazlı Hizmet"
+  lead="Evin en yoğun kullanılan alanı için ölçüye özel dolap, doğru plan şeması ve sağlam altyapı. Tasarımdan montaja kadar tüm süreci tek ekiple yürütüyoruz."
+  heroImage={heroPath}
+  ogImage={optimizedImage(heroPath)}
+  expandedByDefault={true}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
+    { label: "Mutfak Yenileme" }
+  ]}
+  structuredData={[serviceSchema, faqSchema]}
+>
+
+  <section class="py-12 border-b border-border">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-3xl font-bold text-charcoal mb-4">İstanbul'da Mutfak Yenileme</h2>
+        <p class="text-muted leading-relaxed mb-4">
+          Mutfak, evin birim alan başına en çok karar gerektiren mekanıdır. Dolap yüksekliğinden priz konumuna,
+          çekmece mekanizmasından davlumbaz kapasitesine kadar onlarca ayrıntı, günlük kullanımda doğrudan
+          hissedilir. Yenilemenin başarısı da genellikle görselden çok bu ayrıntıların doğru kurulmasına bağlıdır.
+        </p>
+        <p class="text-muted leading-relaxed mb-4">
+          Çalışmaya her zaman mevcut durumu okuyarak başlıyoruz: tesisatın yaşı, gider hattının eğimi, doğalgaz
+          hattının konumu, duvarın taşıyıcı olup olmadığı. Bu tespitler yapılmadan verilen dolap ölçüsü ya da
+          taşınması planlanan eviye, uygulamada geri dönülmesi pahalı sürprizlere yol açar.
+        </p>
+        <p class="text-muted leading-relaxed">
+          Ardından plan şemasını kuruyoruz. Ocak, eviye ve buzdolabının birbirine göre konumu — mutfakta çalışma
+          üçgeni olarak bilinen düzen — hazırlık sırasında kaç adım attığınızı belirler. Dar mutfaklarda tek sıra
+          veya paralel düzen, geniş ve açık planlı mekanlarda L ya da ada kurgusu genellikle daha verimli sonuç verir.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-charcoal mb-4">Hizmete dahil olanlar</h3>
+        <ul class="space-y-3">
+          {dahil.map(item => (
+            <li class="flex items-start gap-3 text-sm text-muted">
+              <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+                <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+          <p class="text-sm text-charcoal font-medium">Mutfak tek başına mı yenilenecek?</p>
+          <p class="text-muted text-sm mt-2">
+            Salon ve mutfağı birlikte ele almak istiyorsanız
+            <a href="/hizmetler/anahtar-teslim/ev-yenileme" class="text-gold hover:underline">komple ev yenileme</a>
+            sayfamıza da bakabilirsiniz.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teknik konular -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Mutfakta Kararı Belirleyen Teknik Konular</h2>
+    <p class="text-muted leading-relaxed max-w-3xl mb-8">
+      Aşağıdaki başlıklar, keşif sırasında mutlaka konuştuğumuz ve plan şemasını doğrudan etkileyen konulardır.
+    </p>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="border border-border p-7 bg-[#FAF6F1]">
+        <h3 class="font-display text-lg font-bold text-charcoal mb-2">Tesisat ve gider hattı</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Eviyenin yerini değiştirmek isteyip istemediğiniz, mutfak yenilemesinin kapsamını belirleyen ilk sorudur.
+          Gider hattı yerçekimiyle çalışır; yeterli eğim sağlanamayan noktaya eviye taşımak tıkanma sorunlarını
+          kalıcı hale getirir. Eski binalarda ayrıca ana kolon durumunun kontrol edilmesi gerekir.
+        </p>
+      </div>
+      <div class="border border-border p-7 bg-[#FAF6F1]">
+        <h3 class="font-display text-lg font-bold text-charcoal mb-2">Elektrik yükü ve priz planı</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Ankastre fırın, bulaşık makinesi, mikrodalga ve su ısıtıcının aynı hatta bindiği mutfaklarda sigorta
+          atmaları kaçınılmaz olur. Yenileme sırasında ankastre ürünler için ayrı hat çekiyor, tezgah üstü priz
+          konumlarını kullanım alışkanlığınıza göre yerleştiriyoruz.
+        </p>
+      </div>
+      <div class="border border-border p-7 bg-[#FAF6F1]">
+        <h3 class="font-display text-lg font-bold text-charcoal mb-2">Havalandırma ve baca</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Binada baca varsa davlumbazı bacaya bağlamak en sağlıklı çözümdür. Baca yoksa karbon filtreli sistemlerle
+          çalışılır; bu durumda filtre değişim periyoduna uymak gerekir. Ada üzerine davlumbaz düşünülüyorsa
+          tavan içi kanal güzergâhının önceden planlanması şarttır.
+        </p>
+      </div>
+      <div class="border border-border p-7 bg-[#FAF6F1]">
+        <h3 class="font-display text-lg font-bold text-charcoal mb-2">Ölçü ve üretim takvimi</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Ölçüye özel dolap ve tezgah üretimi, uygulamanın en uzun bekleme kalemidir. Bu nedenle yıkım ve altyapı
+          işleri sürerken üretimi paralel yürütüyor, montajı tam zamanında planlıyoruz. Hazır ölçü mobilyaya göre
+          en büyük avantajı, kolon ve kiriş çıkıntılarının boşa alan bırakmadan değerlendirilebilmesidir.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Yaygın hatalar -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Sık Karşılaştığımız Dört Hata</h2>
+    <p class="text-muted leading-relaxed max-w-3xl mb-8">
+      Yenilenmiş mutfaklarda sonradan yaşanan memnuniyetsizliklerin büyük kısmı, aşağıdaki dört başlıkta
+      toplanıyor. Dördü de tasarım aşamasında ücretsiz olarak çözülebilecek konular.
+    </p>
+    <div class="space-y-4">
+      {hatalar.map((h, i) => (
+        <div class="flex gap-5 border border-border p-6 bg-[#FAF6F1]">
+          <p class="font-display text-2xl font-bold text-gold/40 shrink-0">0{i + 1}</p>
+          <div>
+            <h3 class="font-semibold text-charcoal mb-1">{h.t}</h3>
+            <p class="text-muted text-sm leading-relaxed">{h.d}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Süreç -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Mutfak Yenileme Süreci</h2>
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+      {[
+        { no: '01', t: 'Keşif', d: 'Ölçü alınır, tesisat ve gider hattı değerlendirilir.' },
+        { no: '02', t: 'Plan & 3D', d: 'Yerleşim şeması kurulur, mutfak 3D görsellerle onaylanır.' },
+        { no: '03', t: 'Üretim', d: 'Dolap ve tezgah üretimi başlar; paralelde yıkım yapılır.' },
+        { no: '04', t: 'Altyapı', d: 'Su, elektrik ve kaplama işleri tamamlanır.' },
+        { no: '05', t: 'Montaj', d: 'Dolap, tezgah, ankastre ve armatür montajı yapılır.' },
+      ].map(s => (
+        <div>
+          <p class="font-display text-2xl font-bold text-gold/40 mb-2">{s.no}</p>
+          <h3 class="font-semibold text-charcoal text-sm mb-2">{s.t}</h3>
+          <p class="text-muted text-xs leading-relaxed">{s.d}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- SSS -->
+  <section class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="w-8 h-px bg-gold"></span>
+      <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Sıkça Sorulan Sorular</span>
+    </div>
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Mutfak yenileme hakkında</h2>
+    <div class="space-y-4">
+      {faqItems.map(f => (
+        <details class="border border-border bg-[#FAF6F1] p-6 group">
+          <summary class="font-semibold text-charcoal cursor-pointer list-none flex items-start justify-between gap-4">
+            <span>{f.q}</span>
+            <span class="text-gold shrink-0 transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="text-muted text-sm leading-relaxed mt-4">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <!-- İç linkler -->
+  <section class="py-12">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">İlgili Sayfalar</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Mutfak Dekorasyon Fikirleri', href: '/blog/mutfak-dekorasyon-fikirleri' },
+        { label: 'Mutfak Yenileme Rehberi', href: '/blog/mutfak-yenileme-istanbul' },
+        { label: 'Banyo Yenileme', href: '/hizmetler/banyo-yenileme' },
+        { label: 'Anahtar Teslim Ev Yenileme', href: '/hizmetler/anahtar-teslim/ev-yenileme' },
+        { label: '3D Tasarım', href: '/hizmetler/3d-tasarim' },
+        { label: 'İstanbul Hizmet Bölgeleri', href: '/istanbul' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </section>
+
+</ServiceLayout>

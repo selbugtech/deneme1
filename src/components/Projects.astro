@@ -1,5 +1,6 @@
 ---
 import { projects as allProjects } from '../data/projects';
+import GoogleRatingCard from './GoogleRatingCard.astro';
 
 const projects = allProjects;
 
@@ -10,14 +11,19 @@ const rightProjects = projects.filter((_, i) => i % 2 === 1);
 <section id="projeler" class="py-24 bg-charcoal">
   <div class="max-w-6xl mx-auto px-6">
 
-    <div class="mb-14 reveal">
-      <div class="flex items-center gap-3 mb-4">
-        <span class="w-8 h-px bg-gold"></span>
-        <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Projelerimiz</span>
+    <div class="mb-14 reveal flex flex-wrap items-end justify-between gap-8">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-8 h-px bg-gold"></span>
+          <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Projelerimiz</span>
+        </div>
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-white max-w-md leading-tight">
+          Tamamlanan<br />Çalışmalarımız
+        </h2>
       </div>
-      <h2 class="font-display text-4xl md:text-5xl font-bold text-white max-w-md leading-tight">
-        Tamamlanan<br />Çalışmalarımız
-      </h2>
+
+      <!-- Google puanı — başlığın sağ üstü -->
+      <GoogleRatingCard variant="compact" />
     </div>
 
     <div class="grid md:grid-cols-2 gap-8 md:gap-10">

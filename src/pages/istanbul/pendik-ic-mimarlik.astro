@@ -1,0 +1,154 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictFAQ from '../../components/DistrictFAQ.astro';
+import ProcessStrip from '../../components/ProcessStrip.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImageW } from '../../lib/cloudinary';
+
+const heroPath = '/images/salon9.jpeg';
+const heroAbs = optimizedImageW(heroPath, 1600);
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "InteriorDesigner",
+  "name": "Master İç Mimarlık",
+  "@id": `${CANONICAL_BASE}/#business`,
+  "areaServed": { "@type": "Place", "name": "Pendik, İstanbul" },
+  "url": `${CANONICAL_BASE}/istanbul/pendik-ic-mimarlik`,
+  "description": "Pendik'te anahtar teslim daire yenileme, site dairesi iç mimarlığı ve kapsamlı tadilat hizmeti.",
+  "image": heroAbs,
+};
+
+const faqItems = [
+  {
+    q: "Pendik'te daire yenileme ne kadar sürer?",
+    a: "Kaynarca ve Kurtköy hattındaki yeni site dairelerinde altyapı sağlam olduğu için anahtar teslim yenileme 4–7 hafta sürüyor. Velibaba ve Çamçeşme çevresindeki daha eski apartmanlarda elektrik ve tesisat yenilemesi devreye girdiğinde bu süre 7–10 haftaya çıkıyor.",
+  },
+  {
+    q: "Pendik'te hangi mahallelerde hizmet veriyorsunuz?",
+    a: "Kaynarca, Batı, Çamçeşme, Velibaba, Kurtköy, Yenişehir ve Güzelyalı başta olmak üzere ilçe genelinde çalışıyoruz. Hem sahil hattındaki site dairelerinde hem de iç kesimlerdeki apartman stokunda uygulama yapıyoruz.",
+  },
+  {
+    q: "Yeni teslim dairemde ne yaptırmalıyım?",
+    a: "En sık çalıştığımız kalemler mutfak dolabı kurgusunun yeniden ele alınması, gömme depolama eklenmesi ve zemin ile duvar yüzeylerinin güncellenmesi. Toplu konut projelerinde daireler standart bir paketle teslim edildiği için bu üç kalem çoğu ailede belirgin fark yaratıyor. Taşınmadan önce başlamak en verimli senaryo: eşya yok, tüm mekanlara aynı anda girilebiliyor.",
+  },
+  {
+    q: "Site yönetiminden tadilat izni gerekiyor mu?",
+    a: "Pendik’teki sitelerin çoğunda gerekiyor. Yönetimler önceden bildirim, bazılarında yazılı izin ve depozito istiyor; gürültülü çalışma saatleri ile yük asansörü kullanım aralıkları da yönetim planında sınırlanmış oluyor. Keşif sırasında bu kısıtları birlikte gözden geçirip başvuruları sizin adınıza yapıyoruz.",
+  },
+  {
+    q: "Pendik için keşif ve teklif süreci nasıl işliyor?",
+    a: "WhatsApp veya telefon üzerinden randevu alıyor, Pendik’teki adresinize gelerek ücretsiz keşif yapıyoruz. Ölçü, fotoğraf ve ihtiyaç görüşmesinin ardından 2–3 iş günü içinde kapsamı kalem kalem ayrıştırılmış teklifimizi paylaşıyoruz. Keşif hiçbir yükümlülük doğurmaz.",
+  },
+];
+---
+
+<ServiceLayout
+  title="Pendik İç Mimarlık ve Ev Yenileme"
+  description="Pendik'te iç mimarlık, site dairesi yenileme ve anahtar teslim tadilat. Kaynarca, Kurtköy ve Güzelyalı'da aktif. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/istanbul/pendik-ic-mimarlik`}
+  h1="Pendik İç Mimarlık ve Ev Yenileme"
+  eyebrow="İstanbul · Pendik"
+  lead="Sahil hattındaki yeni site projelerinden Kurtköy'ün havalimanı çevresindeki gelişen bölgesine kadar geniş bir alan. Yapı stoku çoğunlukla genç."
+  heroImage={heroPath}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İstanbul", href: `${CANONICAL_BASE}/istanbul` },
+    { label: "Pendik" }
+  ]}
+  structuredData={localSchema}
+>
+
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Pendik'te İç Mimarlık Hizmeti</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Pendik, Anadolu yakasının doğu ucunda, Sabiha Gökçen Havalimanı ve Marmaray hattının getirdiği ivmeyle son on beş yılda hızla büyüyen bir ilçe. Kaynarca, Batı ve Güzelyalı hattındaki sahil şeridinde yeni site projeleri yoğunlaşırken, Kurtköy çevresinde havalimanına yakınlığın tetiklediği yeni bir konut bölgesi oluştu.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Yapı stokunun genç olması, projeler açısından avantaj. Elektrik ve sıhhi tesisat çoğunlukla sağlam olduğu için yıkım ve altyapı aşamaları kısalıyor; işlerimizin büyük bölümü kapsamlı tadilat değil, altyapıya dokunmayan yenileme oluyor. Bu da süreyi ve toz yükünü belirgin biçimde azaltıyor.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Buna karşılık toplu konut standartlaşması burada da geçerli. Aynı sitede yüzlerce daire tek bir planla ve tek bir malzeme paketiyle teslim ediliyor. En sık çalıştığımız kalemler depolama kapasitesinin artırılması, mutfak dolabı kurgusunun yeniden ele alınması ve salonun kullanım senaryosuna göre düzenlenmesi. Velibaba ve Çamçeşme çevresindeki daha eski stokta ise altyapı yenilemesi gündeme gelebiliyor.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4">Pendik'de Sunduğumuz Hizmetler</h3>
+      <ul class="space-y-3">
+        {[
+          'Anahtar teslim daire yenileme',
+          'Elektrik ve tesisat dahil kapsamlı tadilat',
+          'Mutfak ve banyo yenileme',
+          'Salon, yatak odası ve giyinme odası tasarımı',
+          '3D görselleştirme ile tasarım onayı',
+          'Malzeme seçimi ve tedarik',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+        <p class="text-sm text-charcoal font-medium">Komşu ilçedeki projemiz</p>
+        <p class="text-muted text-sm mt-2">
+          Maltepe’de tamamladığımız 105 m² daire, Pendik’in sahil hattındaki yapı tipine yakın bir örnek. Uygulama fotoğraflarını proje sayfasında yayımladık.
+        </p>
+        <a href="/projeler/maltepe" class="text-xs text-gold hover:underline mt-2 inline-block">Maltepe daire projesi →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bölge notları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Pendik'te Bölge Notlarımız</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Kaynarca · Batı · Güzelyalı</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Sahil hattındaki yeni site projeleri. Altyapı sağlam; iş depolama, dolap kurgusu ve yüzey kalitesi üzerinden ilerliyor. Manzaralı dairelerde pencere hizası ve akşam aydınlatması tasarımın merkezinde.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Kurtköy · Yenişehir</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Havalimanına yakınlığın tetiklediği yeni konut bölgesi. Teslim alınmış ama henüz taşınılmamış daire sayısı yüksek; taşınmadan önce yenileme en verimli senaryo.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Velibaba · Çamçeşme</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Görece daha eski apartman stoku. Elektrik ve tesisat yenilemesi bazı binalarda zorunlu hale geliyor; kapsamı sökümden sonra netleştiriyoruz.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <ProcessStrip districtName="Pendik" />
+
+  <DistrictFAQ districtName="Pendik" items={faqItems} />
+
+  <div class="py-12 border-t border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Hizmetlerimiz</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Tüm Hizmetler', href: '/hizmetler' },
+        { label: 'Anahtar Teslim Ev Yenileme', href: '/hizmetler/anahtar-teslim/ev-yenileme' },
+        { label: 'Anahtar Teslim Ev Tadilat', href: '/hizmetler/anahtar-teslim/ev-tadilat' },
+        { label: 'Mutfak Yenileme', href: '/hizmetler/mutfak-yenileme' },
+        { label: 'Pendik Ev Tadilatı Rehberi', href: '/blog/pendik-ev-tadilati' },
+        { label: 'Kartal İç Mimarlık', href: '/istanbul/kartal-ic-mimarlik' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </div>
+
+  <RelatedDistricts currentSlug="pendik-ic-mimarlik" />
+
+</ServiceLayout>

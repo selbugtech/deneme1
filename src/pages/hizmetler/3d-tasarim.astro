@@ -11,8 +11,7 @@ const serviceSchema = {
   "description": "İstanbul'da iç mimarlık 3D görselleştirme ve mimari proje hizmetleri. Uygulamadan önce mekanınızı gerçekçi 3D görseller ile deneyimleyin.",
   "provider": { "@type": "Organization", "@id": `${CANONICAL_BASE}/#organization`, "name": "Master İç Mimarlık" },
   "areaServed": { "@type": "City", "name": "İstanbul" },
-  "url": `${CANONICAL_BASE}/hizmetler/3d-tasarim`,
-  "offers": { "@type": "Offer", "priceCurrency": "TRY", "description": "Ücretsiz keşif ve özel teklif için iletişime geçin", "availability": "https://schema.org/InStock" }
+  "url": `${CANONICAL_BASE}/hizmetler/3d-tasarim`
 };
 
 const faqSchema = {
@@ -35,8 +34,8 @@ const faqSchema = {
   eyebrow="Hizmet"
   lead="Uygulamaya başlamadan önce mekanınızı fotorealistik 3D görseller ile deneyimleyin. Malzeme, renk ve mobilya seçimlerini somut olarak görerek onaylayın — sürprizle karşılaşmayın."
   breadcrumb={[
-    { label: "Ana Sayfa", href: "/" },
-    { label: "Hizmetler", href: "/#hizmetler" },
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
     { label: "3D Tasarım" }
   ]}
   heroImage={optimizedImage('/images/mutfak3.jpeg')}

@@ -1,0 +1,238 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImage } from '../../lib/cloudinary';
+import { getProject } from '../../data/projects';
+
+const heroPath = '/images/banyo1.webp';
+const refProject = getProject('kozyatagi-banyo');
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Banyo Yenileme",
+  "name": "İstanbul Banyo Yenileme ve Tadilat",
+  "description": "Sıhhi tesisat yenilemesi, su yalıtımı, seramik ve vitrifiye montajı dahil anahtar teslim banyo yenileme hizmeti.",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
+  "areaServed": { "@type": "City", "name": "İstanbul" },
+  "url": `${CANONICAL_BASE}/hizmetler/banyo-yenileme`,
+};
+
+const faqItems = [
+  {
+    q: "Banyo yenileme ne kadar sürer?",
+    a: "Standart ölçülerde bir banyonun komple yenilenmesi genellikle 2–3 hafta sürer. Bu sürenin önemli bir kısmı beklemeyle geçer: su yalıtımının kürlenmesi ve şap kurumasi hızlandırılamaz. Yalıtım yeterince beklemeden seramik döşenirse, alttan sızıntı riski uzun vadede geri gelir.",
+  },
+  {
+    q: "Evde tek banyo var, süreç boyunca ne yapacağız?",
+    a: "Tek banyolu evlerde takvimi mümkün olduğunca sıkıştırıp kesintisiz çalışıyoruz. Yine de duşun ve klozetin kullanılamayacağı bir aralık kaçınılmaz oluyor; bu aralığı önceden gün gün paylaşıyoruz ki ona göre plan yapabilesiniz. İki banyolu evlerde işi sırayla yürüterek her zaman bir banyoyu kullanımda tutuyoruz.",
+  },
+  {
+    q: "Su yalıtımı gerçekten şart mı?",
+    a: "Evet, banyo yenilemesinde pazarlık edilmemesi gereken tek kalem budur. Seramik ve derz suyu geçirmez değildir; zemine ve duvara ulaşan nemi durduran şey altındaki yalıtım katmanıdır. Yalıtımı atlanmış bir banyo ilk aylarda sorun göstermez, ancak alt komşuya sızıntı olarak birkaç yıl içinde geri döner ve o noktada yapılacak tek şey banyoyu baştan sökmektir.",
+  },
+  {
+    q: "Küvet yerine duş yapmak mantıklı mı?",
+    a: "Küçük banyolarda genellikle evet. Küvetin kapladığı alan duş teknesiyle değiştirildiğinde ortaya çıkan boşluk, çamaşır makinesi veya depolama dolabı için kullanılabilir hale gelir. Ancak küçük çocuğu olan aileler için küvet pratik bir ihtiyaç olabiliyor; kararı kullanım alışkanlığınıza göre birlikte veriyoruz.",
+  },
+  {
+    q: "Banyonun yerini veya klozetin konumunu değiştirebilir miyiz?",
+    a: "Klozetin yerini değiştirmek, gider hattının yeni konumdan yeterli eğimle ana kolona ulaşabilmesine bağlıdır. Kısa mesafelerde çoğu zaman mümkündür; uzun mesafelerde zemin kotunu yükseltmek gerekebilir ve bu da tavan yüksekliğinden feragat anlamına gelir. Keşifte mevcut kolon konumunu görüp uygulanabilirliği net söylüyoruz.",
+  },
+  {
+    q: "Eski seramiğin üzerine yeni seramik döşenebilir mi?",
+    a: "Teknik olarak mümkün ama tavsiye etmiyoruz. Bu yöntem altta kalan yalıtımın durumunu görmenizi engeller, zemin kotunu yükselterek kapı altında sorun çıkarır ve mevcut seramikte gizli bir kabarma varsa yeni kaplamayı da beraberinde bozar. Yenileme yapıyorsak eskisini söküp zemini baştan kuruyoruz.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const dahil = [
+  'Mevcut seramik ve vitrifiyenin sökümü',
+  'Sıhhi tesisat ve gider hattının yenilenmesi',
+  'Çift kat su yalıtımı uygulaması',
+  'Zemin ve duvar seramiği döşemesi',
+  'Klozet, lavabo, duş teknesi ve batarya montajı',
+  'Duşakabin ölçü alımı ve montajı',
+  'Banyo dolabı ve ayna üretimi',
+  'Havalandırma fanı ve aydınlatma uygulaması',
+];
+
+const katmanlar = [
+  { t: 'Söküm ve hazırlık', d: 'Mevcut kaplama ve vitrifiye sökülür, zemin ana betona kadar temizlenir. Bu aşamada gizli sızıntı izleri ve tesisatın gerçek durumu ortaya çıkar.' },
+  { t: 'Tesisat', d: 'Su giriş hatları ve gider borulari yenilenir. Eski binalarda galvaniz boru kalmışsa mutlaka değiştirilir; iç yüzeyi zamanla daraldığı için su basıncını düşürür.' },
+  { t: 'Su yalıtımı', d: 'Zemin ve ıslanan duvar yüzeylerine çift kat yalıtım uygulanır, köşe ve gider çevresine bandaj yapılır. Kürlenme süresi beklenir.' },
+  { t: 'Şap ve eğim', d: 'Zemin, süzgece doğru eğimle şaplanır. Eğimi doğru verilmemiş bir zeminde su durur ve derzlerde kalıcı leke oluşur.' },
+  { t: 'Seramik', d: 'Zemin ve duvar kaplaması döşenir, derz uygulanır. Büyük format seramikte derz sayısı azaldığı için temizlik kolaylaşır.' },
+  { t: 'Montaj ve teslim', d: 'Vitrifiye, batarya, duşakabin, dolap ve aydınlatma montajı yapılır; silikon detayları tamamlanır ve banyo temizlenerek teslim edilir.' },
+];
+---
+
+<ServiceLayout
+  title="Banyo Yenileme İstanbul — Anahtar Teslim Banyo Tadilat"
+  description="İstanbul'da banyo yenileme: sıhhi tesisat, su yalıtımı, seramik ve vitrifiye montajı dahil anahtar teslim uygulama. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/hizmetler/banyo-yenileme`}
+  h1="Banyo Yenileme ve Tadilat"
+  eyebrow="Oda Bazlı Hizmet"
+  lead="Banyo yenilemesinin kalitesi, seramiğin altında kalan katmanlarda belli olur. Tesisat, yalıtım ve eğim doğru kurulduğunda sonuç yıllarca sorun çıkarmaz."
+  heroImage={heroPath}
+  ogImage={optimizedImage(heroPath)}
+  expandedByDefault={true}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
+    { label: "Banyo Yenileme" }
+  ]}
+  structuredData={[serviceSchema, faqSchema]}
+>
+
+  <section class="py-12 border-b border-border">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-3xl font-bold text-charcoal mb-4">İstanbul'da Banyo Yenileme</h2>
+        <p class="text-muted leading-relaxed mb-4">
+          Banyo, evin en küçük ama teknik olarak en zorlu mekanıdır. Görünen yüzey birkaç metrekaredir; asıl iş
+          o yüzeyin altında yapılır. Sıhhi tesisatın durumu, su yalıtımının sürekliliği ve zeminin süzgece doğru
+          eğimi, yenilemenin beş yıl mı yoksa yirmi yıl mı sorunsuz kalacağını belirler.
+        </p>
+        <p class="text-muted leading-relaxed mb-4">
+          İstanbul'un yapı stokunun büyük bölümü 25 yaş üzerinde. Bu binalarda banyo söküldüğünde çoğu zaman
+          galvaniz su borusuyla, çatlamış gider hattıyla veya hiç yapılmamış bir yalıtımla karşılaşıyoruz. Bu
+          nedenle keşifte tespit edilemeyen kalemler için sökümden sonra bir ara değerlendirme yapıyor,
+          kapsam değişecekse yazılı onayınızı almadan devam etmiyoruz.
+        </p>
+        <p class="text-muted leading-relaxed">
+          Tasarım tarafında ise küçük banyolarda kazanılan her santimetre değerlidir. Duvara asılı klozet ve lavabo,
+          gizli rezervuar, niş çözümleri ve doğru ayna-aydınlatma kurgusuyla dar bir banyo gözle görülür biçimde
+          ferahlar.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-charcoal mb-4">Hizmete dahil olanlar</h3>
+        <ul class="space-y-3">
+          {dahil.map(item => (
+            <li class="flex items-start gap-3 text-sm text-muted">
+              <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+                <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+        {refProject && (
+          <a href={`/projeler/${refProject.slug}`} class="group block mt-6 border border-gold/20 bg-gold/5 p-4 hover:border-gold transition-colors">
+            <p class="text-[10px] tracking-[0.25em] uppercase text-gold mb-1">Referans proje</p>
+            <p class="text-sm text-charcoal font-medium group-hover:text-gold transition-colors">{refProject.title}</p>
+            <p class="text-muted text-xs mt-1">{refProject.location} · {refProject.area} · {refProject.duration}</p>
+          </a>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <!-- Katmanlar -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Seramiğin Altında Ne Var?</h2>
+    <p class="text-muted leading-relaxed max-w-3xl mb-8">
+      Bir banyo yenilemesi altı katmanda kurulur. Katmanlardan biri atlandığında ya da yeterince beklenmeden
+      üzerine geçildiğinde sorun hemen değil, birkaç yıl sonra ortaya çıkar. Aşağıda uyguladığımız sıra var.
+    </p>
+    <div class="space-y-4">
+      {katmanlar.map((k, i) => (
+        <div class="flex gap-5 border border-border p-6 bg-[#FAF6F1]">
+          <p class="font-display text-2xl font-bold text-gold/40 shrink-0">0{i + 1}</p>
+          <div>
+            <h3 class="font-semibold text-charcoal mb-1">{k.t}</h3>
+            <p class="text-muted text-sm leading-relaxed">{k.d}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Küçük banyo -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Küçük Banyoyu Ferahlatan Kararlar</h2>
+    <p class="text-muted leading-relaxed max-w-3xl mb-8">
+      İstanbul'daki dairelerde banyolar çoğunlukla 4–6 m² arasında. Bu ölçüde alan kazanmak, büyük hamlelerden
+      değil doğru detay kararlarından geçiyor.
+    </p>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="border border-border p-7 bg-[#FAF6F1]">
+        <h3 class="font-display text-lg font-bold text-charcoal mb-2">Zeminden yükseltmek</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Duvara asılı klozet ve lavabo, zeminin kesintisiz görünmesini sağlar ve temizliği kolaylaştırır. Gizli
+          rezervuar arkasında oluşan raf boşluğu da günlük kullanım için ek bir yüzey kazandırır.
+        </p>
+      </div>
+      <div class="border border-border p-7 bg-[#FAF6F1]">
+        <h3 class="font-display text-lg font-bold text-charcoal mb-2">Duş alanını sınırlamamak</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Sıfır eşikli duş alanı ve şeffaf cam bölme, mekanı ikiye bölmek yerine bütün olarak algılatır. Perde
+          veya yüksek tekne kullanımı aynı banyoyu görsel olarak belirgin biçimde küçültür.
+        </p>
+      </div>
+      <div class="border border-border p-7 bg-[#FAF6F1]">
+        <h3 class="font-display text-lg font-bold text-charcoal mb-2">Niş ve gömme depolama</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Duş içi niş, duvar kalınlığından kazanılan depolama alanıdır ve dışarı taşan hiçbir eleman gerektirmez.
+          Yenileme sırasında planlanması gerekir; sonradan açmak mümkün değildir.
+        </p>
+      </div>
+      <div class="border border-border p-7 bg-[#FAF6F1]">
+        <h3 class="font-display text-lg font-bold text-charcoal mb-2">Ayna ve aydınlatma</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Aynanın iki yanından gelen ışık, yüzde gölge bırakmaz ve mekanı derinleştirir. Tavandan gelen tek
+          armatürle yetinilen banyolarda ayna önü kullanımı her zaman sorunlu kalır.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SSS -->
+  <section class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="w-8 h-px bg-gold"></span>
+      <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Sıkça Sorulan Sorular</span>
+    </div>
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Banyo yenileme hakkında</h2>
+    <div class="space-y-4">
+      {faqItems.map(f => (
+        <details class="border border-border bg-[#FAF6F1] p-6 group">
+          <summary class="font-semibold text-charcoal cursor-pointer list-none flex items-start justify-between gap-4">
+            <span>{f.q}</span>
+            <span class="text-gold shrink-0 transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="text-muted text-sm leading-relaxed mt-4">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">İlgili Sayfalar</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Banyo Yenileme Rehberi', href: '/blog/banyo-yenileme-rehberi' },
+        { label: 'Mutfak Yenileme', href: '/hizmetler/mutfak-yenileme' },
+        { label: 'Anahtar Teslim Ev Tadilat', href: '/hizmetler/anahtar-teslim/ev-tadilat' },
+        { label: '3D Tasarım', href: '/hizmetler/3d-tasarim' },
+        { label: 'Kozyatağı Banyo Projesi', href: '/projeler/kozyatagi-banyo' },
+        { label: 'İstanbul Hizmet Bölgeleri', href: '/istanbul' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </section>
+
+</ServiceLayout>

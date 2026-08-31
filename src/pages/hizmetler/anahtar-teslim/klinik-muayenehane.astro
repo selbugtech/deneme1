@@ -1,0 +1,221 @@
+---
+import ServiceLayout from '../../../layouts/ServiceLayout.astro';
+import { CANONICAL_BASE } from '../../../config';
+import { optimizedImage } from '../../../lib/cloudinary';
+
+const heroPath = '/images/salon4.jpeg';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Klinik ve Muayenehane Tadilatı",
+  "name": "İstanbul Klinik ve Muayenehane Tadilat",
+  "description": "Klinik, muayenehane ve poliklinikler için hijyen odaklı iç mimari tasarım, ruhsat sürecine uygun uygulama ve anahtar teslim tadilat.",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
+  "areaServed": { "@type": "City", "name": "İstanbul" },
+  "url": `${CANONICAL_BASE}/hizmetler/anahtar-teslim/klinik-muayenehane`,
+};
+
+const faqItems = [
+  {
+    q: "Klinik tadilatı ne kadar sürer?",
+    a: "Orta ölçekli bir muayenehanede anahtar teslim tadilat genellikle 6–10 hafta sürüyor. Poliklinik ölçeğinde ve birden fazla muayene odası, görüntüleme veya girişimsel işlem alanı bulunan projelerde bu süre 12–16 haftaya çıkabiliyor. Süreyi belirleyen asıl unsur uygulama değil, ruhsat için gereken teknik şartların projeye baştan doğru işlenmesi.",
+  },
+  {
+    q: "Ruhsat sürecini siz mi yürütüyorsunuz?",
+    a: "Sağlık kuruluşu ruhsatlandırması İl Sağlık Müdürlüğü üzerinden yürüyor ve mekanın oda ölçüleri, tavan yüksekliği, havalandırma, engelli erişimi ve ıslak hacim düzeni gibi başlıklarda belirli asgari koşulları sağlaması gerekiyor. Biz tasarımı bu koşulları karşılayacak şekilde kuruyor, teknik çizim ve mahal listesini hazırlıyor ve başvuru sürecinde mimari tarafın gerektirdiği belgeleri sağlıyoruz. Başvurunun kendisi ise hekimin veya kurumun yetkilisi tarafından yapılıyor.",
+  },
+  {
+    q: "Klinikte hangi zemin malzemesi kullanılmalı?",
+    a: "Sağlık mekanlarında zeminin dezenfektana dayanıklı, gözeneksiz ve mümkün olduğunca derzsiz olması gerekir. Homojen vinil ve kauçuk esaslı rulo kaplamalar bu nedenle öne çıkıyor; süpürgelik kısmında zemine kavisli olarak yükseltilen detay, köşede kir birikmesini engellediği için sıklıkla tercih ediliyor. Seramik kullanılacaksa derz sayısının düşük tutulması ve epoksi derz uygulanması önemli.",
+  },
+  {
+    q: "Bekleme alanını nasıl planlıyorsunuz?",
+    a: "Bekleme alanının tasarımında iki şeye bakıyoruz: mahremiyet ve akış. Hasta sekreterya ile konuşurken bekleyenlerin duymaması için tezgah konumu ve arka fon malzemesi önemli; akustik panel ve halı bu noktada işe yarıyor. Akış tarafında ise girişten sekreteryaya, oradan muayene odasına ve çıkışa giden hattın kesişmemesi, özellikle çocuk ve göz gibi yoğun branşlarda beklemeyi belirgin şekilde rahatlatıyor.",
+  },
+  {
+    q: "Mevcut bir daireyi muayenehaneye çevirebilir miyiz?",
+    a: "Çoğu muayenehane zaten konuttan dönüştürülmüş mekanlarda faaliyet gösteriyor. Ancak bunun için binanın imar durumunun ve yönetim planının ticari kullanıma izin vermesi, kat malikleri kurulundan gerekli kararın alınması ve mekanın sağlık mevzuatındaki asgari ölçüleri sağlayabilmesi gerekiyor. Keşifte önce bu üç başlığı kontrol ediyoruz; dönüşümün mümkün olmadığı durumlarda bunu baştan söylüyoruz.",
+  },
+  {
+    q: "Klinik çalışırken tadilat yapılabilir mi?",
+    a: "Faaliyeti sürdüren kliniklerde fazlı uygulama yapıyoruz: mekanı bölümlere ayırıp bir bölümü kapalıyken diğerinde hizmet sürüyor. Toz bariyeri, ayrı giriş ve mesai dışı çalışma bu düzenin standart parçaları. Yine de girişimsel işlem yapılan alanlarda, hijyen gerekçesiyle o bölümün tamamen kapatılmasını öneriyoruz.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const dahil = [
+  'Mahal listesi ve ruhsata uygun teknik çizim',
+  'Bekleme, sekreterya ve muayene alanı kurgusu',
+  'Hijyen odaklı zemin ve duvar kaplaması',
+  'Havalandırma ve klima altyapısı',
+  'Elektrik altyapısı ve cihaz hattı planlaması',
+  'Islak hacim ve engelli erişimi düzenlemesi',
+  'Akustik yalıtım ve mahremiyet çözümleri',
+  'Ölçüye özel dolap, tezgah ve depolama',
+];
+
+const teknik = [
+  { t: 'Hijyen ve temizlenebilirlik', d: 'Gözeneksiz, derzsiz ve dezenfektana dayanıklı yüzeyler; süpürgelikte kavisli birleşim detayı; kolay silinebilen duvar kaplamaları. Sağlık mekanlarında malzeme kararı estetikten önce temizlenebilirlikle veriliyor.' },
+  { t: 'Mahremiyet ve akustik', d: 'Muayene odası duvarlarında ses geçişini kesen yalıtım, kapıda akustik fitil, bekleme alanında yankıyı düşüren yüzeyler. Hasta mahremiyeti mimari bir konu; sonradan eklenen paravanla çözülmüyor.' },
+  { t: 'Havalandırma', d: 'Penceresiz muayene ve işlem odalarında mekanik havalandırma zorunlu hale geliyor. Taze hava debisi ve egzoz güzergâhı, asma tavan kotu belirlenmeden önce planlanmalı; sonradan kanal geçirmek tavan yüksekliğini yer yer kaybettiriyor.' },
+  { t: 'Elektrik ve cihaz hattı', d: 'Görüntüleme ve girişimsel cihazların çektiği yük normal bir ofisin çok üzerinde. Cihazların konumu ve güç ihtiyacı proje aşamasında netleşmezse pano kapasitesi ve hat kesiti yetersiz kalıyor.' },
+  { t: 'Engelli erişimi', d: 'Giriş rampası veya eşiksiz geçiş, kapı net geçiş genişliği, engelli tuvaleti ve manevra alanı ruhsat için aranan başlıklar arasında. Mekan seçimi aşamasında bunların sağlanabilir olup olmadığını kontrol ediyoruz.' },
+  { t: 'Aydınlatma', d: 'Muayene alanında renk geri verimi yüksek ve gölge bırakmayan aydınlatma; bekleme alanında ise daha yumuşak ve düşük kontrastlı bir kurgu. İki bölgenin aynı armatürle çözülmesi her ikisini de bozuyor.' },
+];
+---
+
+<ServiceLayout
+  title="Klinik ve Muayenehane Tadilat İstanbul | Anahtar Teslim"
+  description="İstanbul'da klinik, muayenehane ve poliklinik tadilatı. Hijyen odaklı tasarım, ruhsat şartlarına uygun mahal kurgusu ve anahtar teslim uygulama. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/hizmetler/anahtar-teslim/klinik-muayenehane`}
+  h1="Klinik ve Muayenehane Tadilat"
+  eyebrow="Anahtar Teslim"
+  lead="Sağlık mekanlarında tasarım, ruhsat şartlarıyla birlikte kurulur. Mahal ölçüleri, havalandırma ve hijyen gereklilikleri projenin çıkış noktası; estetik bunun üzerine geliyor."
+  heroImage={heroPath}
+  ogImage={optimizedImage(heroPath)}
+  expandedByDefault={true}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
+    { label: "Anahtar Teslim", href: `${CANONICAL_BASE}/hizmetler/anahtar-teslim` },
+    { label: "Klinik & Muayenehane" }
+  ]}
+  structuredData={[serviceSchema, faqSchema]}
+>
+
+  <section class="py-12 border-b border-border">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Klinik Tadilatında Sıra: Önce Mevzuat, Sonra Tasarım</h2>
+        <p class="text-muted leading-relaxed mb-4">
+          Sağlık mekanları, iç mimarlıkta serbestliğin en kısıtlı olduğu alanlardan biri. Bir muayenehanenin
+          ruhsat alabilmesi için oda ölçüleri, tavan yüksekliği, havalandırma, ıslak hacim düzeni ve engelli
+          erişimi gibi başlıklarda belirli asgari koşulları sağlaması gerekiyor. Bu koşullar tasarımın önüne
+          konulmadığında ortaya güzel görünen ama ruhsat alamayan mekanlar çıkıyor.
+        </p>
+        <p class="text-muted leading-relaxed mb-4">
+          Bu yüzden klinik projelerinde çalışmaya mahal listesiyle başlıyoruz: hangi oda kaç metrekare olacak,
+          hangi odada lavabo bulunacak, hasta akışı nereden nereye gidecek, engelli erişimi nasıl sağlanacak.
+          Bu iskelet oturmadan renk, malzeme veya mobilya konuşmuyoruz.
+        </p>
+        <p class="text-muted leading-relaxed">
+          İkinci belirleyici başlık hijyen. Sağlık mekanlarında malzeme kararı görünüşten önce
+          temizlenebilirlikle veriliyor: gözeneksiz yüzeyler, düşük derz sayısı, dezenfektana dayanıklı
+          kaplamalar ve köşelerde kir biriktirmeyen birleşim detayları. Doğru seçilmiş bir zemin, kliniğin
+          günlük işletme yükünü yıllarca düşürüyor.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-charcoal mb-4">Hizmete dahil olanlar</h3>
+        <ul class="space-y-3">
+          {dahil.map(item => (
+            <li class="flex items-start gap-3 text-sm text-muted">
+              <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+                <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+          <p class="text-sm text-charcoal font-medium">Mekan henüz kesinleşmediyse</p>
+          <p class="text-muted text-sm mt-2">
+            Kiralamadan önce keşfe gelmemizi isteyebilirsiniz. Mekanın ruhsat şartlarını sağlayıp
+            sağlayamayacağını baştan söylemek, yanlış bir kiralamayı önlüyor.
+          </p>
+          <a href="/iletisim" class="text-xs text-gold hover:underline mt-2 inline-block">Keşif randevusu →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Projeyi Belirleyen Altı Teknik Başlık</h2>
+    <p class="text-muted leading-relaxed max-w-3xl mb-8">
+      Klinik projelerinde bu altı başlık, tasarımın hemen her kararını etkiliyor. Hepsi asma tavan kotu ve
+      duvar örgüsü kesinleşmeden önce çözülmesi gereken konular.
+    </p>
+    <div class="grid md:grid-cols-2 gap-6">
+      {teknik.map((k, i) => (
+        <div class="border border-border p-7 bg-[#FAF6F1]">
+          <p class="text-[10px] tracking-[0.25em] uppercase text-gold mb-2">0{i + 1}</p>
+          <h3 class="font-display text-lg font-bold text-charcoal mb-2">{k.t}</h3>
+          <p class="text-muted text-sm leading-relaxed">{k.d}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Çalıştığımız Mekan Tipleri</h2>
+    <div class="grid md:grid-cols-2 gap-x-12 gap-y-3">
+      {[
+        'Diş hekimliği muayenehanesi ve ağız-diş sağlığı polikliniği',
+        'Dermatoloji, estetik ve medikal güzellik merkezi',
+        'Fizik tedavi ve rehabilitasyon merkezi',
+        'Göz, kulak-burun-boğaz ve dahiliye muayenehanesi',
+        'Psikolog, psikiyatri ve danışmanlık ofisi',
+        'Diyetisyen, podoloji ve poliklinik birimleri',
+        'Veteriner kliniği',
+        'Görüntüleme ve laboratuvar birimleri',
+      ].map(item => (
+        <div class="flex items-start gap-3 text-sm text-muted">
+          <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+            <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+            </svg>
+          </span>
+          {item}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="w-8 h-px bg-gold"></span>
+      <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Sıkça Sorulan Sorular</span>
+    </div>
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Klinik ve muayenehane tadilatı hakkında</h2>
+    <div class="space-y-4">
+      {faqItems.map(f => (
+        <details class="border border-border bg-[#FAF6F1] p-6 group">
+          <summary class="font-semibold text-charcoal cursor-pointer list-none flex items-start justify-between gap-4">
+            <span>{f.q}</span>
+            <span class="text-gold shrink-0 transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="text-muted text-sm leading-relaxed mt-4">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">İlgili Sayfalar</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Tüm Hizmetler', href: '/hizmetler' },
+        { label: 'Anahtar Teslim Hizmetler', href: '/hizmetler/anahtar-teslim' },
+        { label: 'Ofis Tadilat', href: '/hizmetler/anahtar-teslim/ofis-tadilat' },
+        { label: 'Kuaför & Güzellik Salonu', href: '/hizmetler/anahtar-teslim/kuafor-guzellik-salonu' },
+        { label: 'Eczane Tadilat', href: '/hizmetler/anahtar-teslim/eczane' },
+        { label: '3D Tasarım', href: '/hizmetler/3d-tasarim' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </section>
+
+</ServiceLayout>

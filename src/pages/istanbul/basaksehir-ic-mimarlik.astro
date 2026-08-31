@@ -1,0 +1,154 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictFAQ from '../../components/DistrictFAQ.astro';
+import ProcessStrip from '../../components/ProcessStrip.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImageW } from '../../lib/cloudinary';
+
+const heroPath = '/images/salonvemutfak.jpeg';
+const heroAbs = optimizedImageW(heroPath, 1600);
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "InteriorDesigner",
+  "name": "Master İç Mimarlık",
+  "@id": `${CANONICAL_BASE}/#business`,
+  "areaServed": { "@type": "Place", "name": "Başakşehir, İstanbul" },
+  "url": `${CANONICAL_BASE}/istanbul/basaksehir-ic-mimarlik`,
+  "description": "Başakşehir'de anahtar teslim daire yenileme, toplu konut dairelerinde iç mimarlık ve depolama çözümleri.",
+  "image": heroAbs,
+};
+
+const faqItems = [
+  {
+    q: "Başakşehir'de daire yenileme ne kadar sürer?",
+    a: "Toplu konut daireleri görece yeni olduğu için altyapıya müdahale çoğunlukla gerekmiyor. Bu nedenle 2+1 ve 3+1 dairelerde anahtar teslim yenileme genellikle 4–7 hafta sürüyor. Sürenin büyük bölümünü ölçüye özel dolap üretimi alıyor; bu yüzden ölçü alımını sürecin en başına koyuyoruz.",
+  },
+  {
+    q: "Başakşehir'de hangi mahallelerde hizmet veriyorsunuz?",
+    a: "Kayaşehir, Başak, Ziya Gökalp, Altınşehir ve Şahintepe başta olmak üzere ilçe genelinde çalışıyoruz. Bahçeşehir sınırındaki site projelerinde de aktifiz.",
+  },
+  {
+    q: "Yeni bir daire neden yenileme gerektiriyor?",
+    a: "Başakşehir’de en sık karşılaştığımız talep teknik bir arıza değil, kullanım uyumsuzluğu. Toplu konut projelerinde binlerce daire aynı planla ve aynı malzeme paketiyle teslim ediliyor; mutfak dolabı çoğu ailenin ihtiyacını karşılamıyor, depolama yetersiz kalıyor ve salon-mutfak ilişkisi kullanım biçimine uymuyor. Altyapıya dokunmadan yapılan bir yenileme bu daireleri belirgin biçimde iyileştiriyor.",
+  },
+  {
+    q: "Taşınmadan önce mi yaptırmalıyım?",
+    a: "Mümkünse evet. Boş dairede çalışmak hem daha hızlı hem daha ekonomik: eşya koruma gerekmiyor, tüm mekanlara aynı anda girilebiliyor ve ekipler paralel çalışabiliyor. Teslim aldıysanız ve taşınma tarihiniz esnekse yenilemeyi öncesine almanızı öneriyoruz.",
+  },
+  {
+    q: "Site yönetiminden tadilat izni gerekiyor mu?",
+    a: "Başakşehir’deki sitelerin çoğunda gerekiyor. Yönetimler önceden bildirim, bazılarında yazılı izin ve depozito istiyor; gürültülü çalışma saatleri ile yük asansörü kullanım aralıkları da yönetim planında sınırlanmış oluyor. Keşif sırasında bu kısıtları birlikte gözden geçirip başvuruları sizin adınıza yapıyoruz.",
+  },
+];
+---
+
+<ServiceLayout
+  title="Başakşehir İç Mimarlık ve Ev Yenileme"
+  description="Başakşehir'de iç mimarlık, site dairesi yenileme ve anahtar teslim tadilat. Kayaşehir, Başak ve Ziya Gökalp'te aktif. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/istanbul/basaksehir-ic-mimarlik`}
+  h1="Başakşehir İç Mimarlık ve Ev Yenileme"
+  eyebrow="İstanbul · Başakşehir"
+  lead="Planlı toplu konutun İstanbul'daki en büyük örneklerinden biri. Altyapı sağlam, planlar standart — bu yüzden iş neredeyse tamamen kişiselleştirme üzerine kurulu."
+  heroImage={heroPath}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İstanbul", href: `${CANONICAL_BASE}/istanbul` },
+    { label: "Başakşehir" }
+  ]}
+  structuredData={localSchema}
+>
+
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Başakşehir'de İç Mimarlık Hizmeti</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Başakşehir, İstanbul'da baştan planlanarak kurulmuş sayılı ilçeden biri. Kayaşehir, Başak ve Ziya Gökalp hattındaki toplu konut projeleri, ilçenin yapı stokunun büyük bölümünü oluşturuyor. Bu, yenileme açısından hem avantaj hem de kendine özgü bir sorun anlamına geliyor.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Avantaj tarafında altyapı var: yapılar görece yeni olduğu için elektrik ve sıhhi tesisat sağlam, yıkım ve altyapı aşamaları büyük ölçüde devre dışı kalıyor. Bu da süreyi kısaltıyor, tozu ve gürültüyü azaltıyor. Başakşehir projelerimizin çoğu bu nedenle tadilat değil, altyapıya dokunmayan kapsamlı yenileme oluyor.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Sorun tarafında ise standartlaşma var. Binlerce daire aynı planla, aynı dolap ölçüsüyle ve aynı yüzey malzemesiyle teslim ediliyor. Sonuçta teknik olarak sorunsuz ama kullanım olarak kimseye tam oturmayan mekanlar çıkıyor. Burada en çok çalıştığımız konular depolama kapasitesi, mutfak dolabı kurgusu ve salonun gerçek kullanım senaryosuna göre yeniden düzenlenmesi.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4">Başakşehir'de Sunduğumuz Hizmetler</h3>
+      <ul class="space-y-3">
+        {[
+          'Site dairelerinde anahtar teslim yenileme',
+          'Ölçüye özel dolap ve depolama çözümleri',
+          'Mutfak ve banyo yenileme',
+          'Salon, yatak odası ve çocuk odası tasarımı',
+          '3D görselleştirme ile tasarım onayı',
+          'Site yönetimi izin süreçlerinin takibi',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+        <p class="text-sm text-charcoal font-medium">Benzer yapı tipinde projemiz</p>
+        <p class="text-muted text-sm mt-2">
+          Nurol Park’ta tamamladığımız 125 m² daire, Başakşehir’deki toplu konut dairelerine yakın bir örnek. Uygulama fotoğraflarını proje sayfasında yayımladık.
+        </p>
+        <a href="/projeler/nurol-park" class="text-xs text-gold hover:underline mt-2 inline-block">Nurol Park daire projesi →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bölge notları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Başakşehir'de Bölge Notlarımız</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Kayaşehir</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          İlçenin en yeni konut bölgesi. Teslim alınmış ama henüz taşınılmamış daire sayısı yüksek; yenileme için en verimli senaryo bu. Eşya yok, süre kısıtı yok, tüm mekanlara aynı anda girilebiliyor.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Başak · Ziya Gökalp</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Toplu konut yoğunluğunun en yüksek olduğu hat. Planlar tekrar ettiği için çözümlerimiz de olgunlaşmış durumda; depolama ve mutfak kurgusu üzerine odaklanıyoruz.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Altınşehir · Şahintepe</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Daha karışık bir yapı stoku. Burada bazı binalarda altyapı yenilemesi gerekebiliyor; kapsamı sökümden sonra netleştiriyoruz.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <ProcessStrip districtName="Başakşehir" />
+
+  <DistrictFAQ districtName="Başakşehir" items={faqItems} />
+
+  <div class="py-12 border-t border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Hizmetlerimiz</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Tüm Hizmetler', href: '/hizmetler' },
+        { label: 'Anahtar Teslim Ev Yenileme', href: '/hizmetler/anahtar-teslim/ev-yenileme' },
+        { label: 'Mutfak Yenileme', href: '/hizmetler/mutfak-yenileme' },
+        { label: 'Giyinme Odası Tasarımı', href: '/hizmetler/giyinme-odasi-tasarimi' },
+        { label: 'Başakşehir Ev Tadilatı Rehberi', href: '/blog/basaksehir-ev-tadilati' },
+        { label: 'Esenyurt İç Mimarlık', href: '/istanbul/esenyurt-ic-mimarlik' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </div>
+
+  <RelatedDistricts currentSlug="basaksehir-ic-mimarlik" />
+
+</ServiceLayout>

@@ -1,9 +1,19 @@
 ---
+import { districts } from '../data/districts';
+
 interface Props {
   districtName?: string;
 }
 
 const { districtName } = Astro.props;
+
+// Bulunma hali eki Türkçede ünlü uyumu, ünsüz sertleşmesi ve özel isimlerde
+// kaynaştırma n'sine göre değişiyor (Fatih'te, Beşiktaş'ta, Beyoğlu'nda).
+// Doğru biçimi districts.ts'ten alıyoruz; listede olmayan bir ad gelirse
+// varsayılan eke düşüyoruz.
+const districtLocative = districtName
+  ? districts.find(d => d.name === districtName)?.locative ?? `${districtName}'de`
+  : null;
 
 const steps = [
   {
@@ -39,7 +49,7 @@ const steps = [
     <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Süreç</span>
   </div>
   <h2 class="font-display text-2xl md:text-3xl font-bold text-charcoal mb-3">
-    {districtName ? `${districtName}'de` : 'Projenizde'} nasıl çalışıyoruz?
+    {districtLocative ?? 'Projenizde'} nasıl çalışıyoruz?
   </h2>
   <p class="text-muted leading-relaxed mb-8 max-w-2xl text-sm md:text-base">
     Her projede aynı şeffaf 4 adımlı süreci izliyoruz. {districtName ? `${districtName} ` : ''}projelerinde

@@ -2,12 +2,6 @@
 import { optimizedImage, optimizedImageW, srcsetImage } from '../lib/cloudinary';
 import GoogleRatingCard from './GoogleRatingCard.astro';
 
-interface Props {
-  rating: number;
-  totalRatings: number;
-}
-
-const { rating, totalRatings } = Astro.props;
 ---
 
 <section id="hakkimizda" class="py-24 bg-[#EDE5D8]">
@@ -52,7 +46,7 @@ const { rating, totalRatings } = Astro.props;
         </p>
 
         <div class="reveal reveal-d3">
-          <GoogleRatingCard rating={rating} totalRatings={totalRatings} />
+          <GoogleRatingCard />
         </div>
       </div>
 

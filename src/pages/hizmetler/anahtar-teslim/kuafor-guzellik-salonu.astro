@@ -1,0 +1,217 @@
+---
+import ServiceLayout from '../../../layouts/ServiceLayout.astro';
+import { CANONICAL_BASE } from '../../../config';
+import { optimizedImage } from '../../../lib/cloudinary';
+
+const heroPath = '/images/giyinmeodasi.jpeg';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Kuaför ve Güzellik Salonu Tadilatı",
+  "name": "İstanbul Kuaför ve Güzellik Salonu Tadilat",
+  "description": "Kuaför, berber ve güzellik salonları için su tesisatı, havalandırma, ayna-aydınlatma kurgusu ve anahtar teslim iç mimari uygulama.",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
+  "areaServed": { "@type": "City", "name": "İstanbul" },
+  "url": `${CANONICAL_BASE}/hizmetler/anahtar-teslim/kuafor-guzellik-salonu`,
+};
+
+const faqItems = [
+  {
+    q: "Kuaför salonu tadilatı ne kadar sürer?",
+    a: "Orta ölçekli bir salonda anahtar teslim tadilat genellikle 5–8 hafta sürüyor. Süreyi en çok etkileyen kalem yıkama ünitelerinin konumu: ünitelerin yeri değişiyorsa su giriş ve gider hatlarının yeniden çekilmesi, zemin şapının kısmen sökülmesi ve eğim verilmesi gerekiyor. Üniteler mevcut yerinde kalıyorsa süre 3–5 haftaya iniyor.",
+  },
+  {
+    q: "Yıkama ünitesini istediğim yere koyabilir miyim?",
+    a: "Su giriş hattını hemen her noktaya taşımak mümkün; belirleyici olan gider hattı. Atık su yerçekimiyle akıyor, dolayısıyla üniteden ana kolona kadar kesintisiz bir eğim sağlanması gerekiyor. Mesafe uzunsa zemin kotunu yükseltmek ya da gizli bir kanal oluşturmak gerekiyor ki bu da tavan yüksekliğinden veya basamaktan feragat anlamına geliyor. Keşifte kolon konumunu görüp hangi yerleşimlerin uygulanabilir olduğunu net söylüyoruz.",
+  },
+  {
+    q: "Havalandırmada nelere dikkat ediyorsunuz?",
+    a: "Kuaför ve güzellik salonlarında havalandırma, konfor değil işletme sorunu. Boya, açıcı, oje ve keratin gibi ürünlerin yaydığı koku doğal havalandırmayla dağılmıyor; mekanda kalıcı hale geliyor ve müşteri deneyimini doğrudan etkiliyor. Bu nedenle boyama ve tırnak alanlarına lokal egzoz, mekana ise taze hava beslemeli mekanik havalandırma kuruyoruz. Egzoz güzergâhının bina cephesine veya bacaya nasıl bağlanacağı, proje aşamasında çözülmesi gereken bir konu.",
+  },
+  {
+    q: "Ayna aydınlatmasında hangi ışık doğru?",
+    a: "Salon aydınlatmasında kritik olan ışığın parlaklığı değil, renk geri verimi. Renkleri gerçeğine yakın gösteren ve nötr beyaza yakın armatürler kullanılmazsa, boya sonucunun mekan içinde ve dışarıda farklı görünmesi kaçınılmaz oluyor — bu da salonların en sık yaşadığı müşteri şikâyeti. Ayrıca ışığın aynanın iki yanından, yüz hizasında gelmesi gerekiyor; yalnızca tavandan gelen ışık göz altında ve çene altında gölge bırakıyor.",
+  },
+  {
+    q: "Elektrik altyapısını yenilemek gerekir mi?",
+    a: "Çoğu projede evet. Fön makineleri, düzleştiriciler, başlıklar ve tırnak üniteleri aynı anda çalıştığında toplam yük, konut ölçeğinde kurulmuş bir tesisatın kapasitesini aşıyor. Her koltuk grubuna ayrı hat çekilmesi, pano kapasitesinin yeniden hesaplanması ve ıslak alanlarda kaçak akım koruması standart uygulamalarımız arasında.",
+  },
+  {
+    q: "Salon açıkken tadilat yapılabilir mi?",
+    a: "Kısmi çalışmalarda mümkün. Mekanı bölümlere ayırıp bir tarafta hizmet sürerken diğer tarafta çalışabiliyoruz; toz bariyeri ve mesai dışı çalışma bu düzenin parçası. Ancak zemin değişimi ve tesisat yenilemesi gibi kalemlerde mekanın tamamen kapatılması hem daha hızlı hem daha ekonomik oluyor. Kapalı kalınacak süreyi baştan gün gün paylaşıyoruz.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const dahil = [
+  'Yerleşim planı ve müşteri akışı kurgusu',
+  'Yıkama ünitesi su ve gider hattı uygulaması',
+  'Mekanik havalandırma ve lokal egzoz',
+  'Elektrik altyapısı ve koltuk başı hat çekimi',
+  'Ölçüye özel ayna, tezgah ve ürün rafı',
+  'Renk geri verimi yüksek aydınlatma kurgusu',
+  'Dayanıklı ve kolay temizlenen zemin kaplaması',
+  'Vitrin, tabela ve marka kimliği entegrasyonu',
+];
+
+const teknik = [
+  { t: 'Su ve gider hattı', d: 'Yıkama üniteleri projenin omurgası. Gider hattının eğimi ve ana kolona mesafesi, salon yerleşimini büyük ölçüde belirliyor. Bu nedenle koltuk düzenini gider hattı çözülmeden çizmiyoruz.' },
+  { t: 'Havalandırma ve koku', d: 'Boyama ve tırnak alanlarında lokal egzoz, mekan genelinde taze hava beslemesi. Kokunun mekanda kalıcı hale gelmesi, salonlarda tadilat sonrası en sık duyduğumuz pişmanlık.' },
+  { t: 'Elektrik yükü', d: 'Aynı anda çalışan ısı üreten cihazların toplam yükü konut tesisatını aşıyor. Koltuk başı ayrı hat, yeniden hesaplanmış pano ve ıslak alanda kaçak akım koruması gerekiyor.' },
+  { t: 'Aydınlatma ve renk', d: 'Renk geri verimi yüksek, nötr beyaza yakın armatürler; ışığın aynanın iki yanından yüz hizasında gelmesi. Boya sonucunun içeride ve dışarıda aynı görünmesi buna bağlı.' },
+  { t: 'Zemin', d: 'Saç, su, boya ve kimyasala aynı anda dayanması gereken bir yüzey. Gözeneksiz, kaymaz ve süpürgesi kolay bir kaplama; derz sayısının düşük tutulması günlük temizlik yükünü belirgin biçimde azaltıyor.' },
+  { t: 'Depolama', d: 'Ürün stoğu, havlu ve alet düzeni salonun görsel dağınıklığının ana kaynağı. Kapalı depolamayı en baştan yeterli hacimde planlamak, mekanın ilk günkü görünümünü koruyor.' },
+];
+---
+
+<ServiceLayout
+  title="Kuaför ve Güzellik Salonu Tadilat İstanbul | Anahtar Teslim"
+  description="İstanbul'da kuaför, berber ve güzellik salonu tadilatı. Yıkama ünitesi tesisatı, havalandırma, ayna-aydınlatma ve anahtar teslim uygulama. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/hizmetler/anahtar-teslim/kuafor-guzellik-salonu`}
+  h1="Kuaför ve Güzellik Salonu Tadilat"
+  eyebrow="Anahtar Teslim"
+  lead="Salon tasarımının başarısı üç teknik başlıkta belli oluyor: yıkama ünitesinin tesisatı, kokuyu tutmayan havalandırma ve rengi doğru gösteren aydınlatma."
+  heroImage={heroPath}
+  ogImage={optimizedImage(heroPath)}
+  expandedByDefault={true}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
+    { label: "Anahtar Teslim", href: `${CANONICAL_BASE}/hizmetler/anahtar-teslim` },
+    { label: "Kuaför & Güzellik Salonu" }
+  ]}
+  structuredData={[serviceSchema, faqSchema]}
+>
+
+  <section class="py-12 border-b border-border">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Salon Tasarımı Bir Vitrin İşi Değil, Altyapı İşi</h2>
+        <p class="text-muted leading-relaxed mb-4">
+          Kuaför ve güzellik salonu projelerinde müşterilerimiz genellikle görsel bir referansla geliyor:
+          beğenilen bir salonun fotoğrafı, bir renk paleti, bir mobilya tarzı. Oysa bir salonun günlük
+          işleyişini belirleyen şey görünen katman değil; suyun nereden gelip nereye gittiği, kokunun mekanda
+          kalıp kalmadığı ve ışığın rengi doğru gösterip göstermediği.
+        </p>
+        <p class="text-muted leading-relaxed mb-4">
+          Bu nedenle projeye her zaman yıkama ünitelerinin konumuyla başlıyoruz. Atık su yerçekimiyle aktığı
+          için ünitelerin ana gider kolonuna göre konumu, salonun tüm yerleşimini belirliyor. Koltuk düzenini,
+          bekleme alanını ve tezgah konumunu bu iskelet oturduktan sonra kuruyoruz.
+        </p>
+        <p class="text-muted leading-relaxed">
+          İkinci belirleyici başlık havalandırma. Boya, açıcı ve keratin ürünlerinin yaydığı koku, doğal
+          havalandırmayla dağılmıyor ve zamanla mekanın kalıcı bir özelliği haline geliyor. Lokal egzoz ve
+          taze hava beslemesi olmadan yapılan bir salon yenilemesi, birkaç ay içinde ilk günkü etkisini
+          kaybediyor.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-charcoal mb-4">Hizmete dahil olanlar</h3>
+        <ul class="space-y-3">
+          {dahil.map(item => (
+            <li class="flex items-start gap-3 text-sm text-muted">
+              <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+                <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+          <p class="text-sm text-charcoal font-medium">Dükkan henüz tutulmadıysa</p>
+          <p class="text-muted text-sm mt-2">
+            Kiralamadan önce keşfe gelelim. Gider kolonunun konumu ve egzoz güzergâhının çözülüp
+            çözülemeyeceği, o mekanın salon olarak uygun olup olmadığını baştan belirliyor.
+          </p>
+          <a href="/iletisim" class="text-xs text-gold hover:underline mt-2 inline-block">Keşif randevusu →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Projeyi Belirleyen Altı Teknik Başlık</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      {teknik.map((k, i) => (
+        <div class="border border-border p-7 bg-[#FAF6F1]">
+          <p class="text-[10px] tracking-[0.25em] uppercase text-gold mb-2">0{i + 1}</p>
+          <h3 class="font-display text-lg font-bold text-charcoal mb-2">{k.t}</h3>
+          <p class="text-muted text-sm leading-relaxed">{k.d}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Çalıştığımız Mekan Tipleri</h2>
+    <div class="grid md:grid-cols-2 gap-x-12 gap-y-3">
+      {[
+        'Kadın kuaförü ve saç tasarım stüdyosu',
+        'Erkek kuaförü ve berber dükkanı',
+        'Güzellik merkezi ve cilt bakım salonu',
+        'Tırnak (nail art) ve kirpik stüdyosu',
+        'Epilasyon ve lazer uygulama merkezi',
+        'Masaj ve spa alanları',
+        'Gelin hazırlık ve makyaj stüdyosu',
+        'Karma konseptli bakım merkezleri',
+      ].map(item => (
+        <div class="flex items-start gap-3 text-sm text-muted">
+          <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+            <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+            </svg>
+          </span>
+          {item}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="w-8 h-px bg-gold"></span>
+      <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Sıkça Sorulan Sorular</span>
+    </div>
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Salon tadilatı hakkında</h2>
+    <div class="space-y-4">
+      {faqItems.map(f => (
+        <details class="border border-border bg-[#FAF6F1] p-6 group">
+          <summary class="font-semibold text-charcoal cursor-pointer list-none flex items-start justify-between gap-4">
+            <span>{f.q}</span>
+            <span class="text-gold shrink-0 transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="text-muted text-sm leading-relaxed mt-4">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">İlgili Sayfalar</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Tüm Hizmetler', href: '/hizmetler' },
+        { label: 'Anahtar Teslim Hizmetler', href: '/hizmetler/anahtar-teslim' },
+        { label: 'Mağaza & Dükkan Tadilat', href: '/hizmetler/anahtar-teslim/magaza-dukkan-tadilat' },
+        { label: 'Klinik & Muayenehane', href: '/hizmetler/anahtar-teslim/klinik-muayenehane' },
+        { label: 'Showroom Tadilat', href: '/hizmetler/anahtar-teslim/showroom' },
+        { label: '3D Tasarım', href: '/hizmetler/3d-tasarim' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </section>
+
+</ServiceLayout>

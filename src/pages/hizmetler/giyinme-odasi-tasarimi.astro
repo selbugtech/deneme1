@@ -1,0 +1,223 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImage } from '../../lib/cloudinary';
+
+const heroPath = '/images/giyinmeodasi.jpeg';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Giyinme Odası Tasarımı",
+  "name": "İstanbul Giyinme Odası Tasarımı ve Uygulaması",
+  "description": "Ölçüye özel dolap sistemleri, ada, ayna ve aydınlatma kurgusuyla giyinme odası tasarımı ve anahtar teslim uygulama.",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
+  "areaServed": { "@type": "City", "name": "İstanbul" },
+  "url": `${CANONICAL_BASE}/hizmetler/giyinme-odasi-tasarimi`,
+};
+
+const faqItems = [
+  {
+    q: "Giyinme odası için en az ne kadar alan gerekir?",
+    a: "Tek sıra dolabın olduğu bir koridor tipi giyinme alanı için dolap derinliği 60 cm ve önünde en az 90 cm dolaşım payı, yani yaklaşık 150 cm genişlik yeterlidir. Karşılıklı iki sıra dolap için bu ölçü 210 cm'e çıkar. Ortada ada bulunan U düzeninde ise 280 cm ve üzeri genişlik gerekir; daha darında ada dolaşımı engeller.",
+  },
+  {
+    q: "Yatak odasından bölerek giyinme odası yapılabilir mi?",
+    a: "Sıkça yaptığımız bir çözüm. Yatağın baş ucu arkasına yarım duvar örülerek arkada bir giyinme koridoru kazanılır; bu yöntem odayı görsel olarak da toparlar. Uygulanabilirliği odanın derinliğine bağlıdır — bölme sonrası yatak tarafında en az 3 metre derinlik kalmalıdır, aksi halde yatak odası sıkışır.",
+  },
+  {
+    q: "Kapaklı mı, açık raflı mı olmalı?",
+    a: "Açık sistem daha ferah görünür, erişimi kolaylaştırır ve daha ekonomiktir; ancak tozlanır ve düzenin sürekli korunmasını gerektirir. Kapaklı sistem tozdan korur ve dağınıklığı gizler. Pratikte en çok işe yarayan çözüm karma kurgu: günlük kullanılan askılıklar açık, mevsimlik ve az kullanılan eşya kapaklı bölümde.",
+  },
+  {
+    q: "Giyinme odasında havalandırma sorun olur mu?",
+    a: "Penceresiz giyinme odalarında olabilir. Kapalı ve havalandırılmayan alanlarda nem birikerek tekstilde koku ve küf riski doğurur. Penceresi olmayan hacimlerde sessiz bir aspiratör veya kapı altında hava akışı payı bırakılmasını öneriyoruz; ayrıca dolapları tabandan birkaç santim yükseltmek hava sirkülasyonuna yardımcı olur.",
+  },
+  {
+    q: "Aydınlatmada nelere dikkat ediyorsunuz?",
+    a: "Giyinme odasında ışığın rengi kritik. Çok sarı bir ışık kumaş renklerini olduğundan farklı gösterir ve dışarı çıktığınızda uyumsuz kombinlerle karşılaşırsınız. Nötr beyaza yakın ve renk geri verimi yüksek armatürler tercih ediyoruz. Ayrıca dolap içi bant aydınlatma ve aynanın iki yanından gelen ışık, gölgesiz kullanım için neredeyse zorunlu.",
+  },
+  {
+    q: "Uygulama ne kadar sürer?",
+    a: "Mevcut bir odanın giyinme odasına dönüştürülmesi, ölçüye özel dolap üretimi dahil genellikle 2–4 hafta sürer. Bölme duvar örülmesi veya elektrik hattı çekilmesi gereken projelerde süre birkaç gün uzar. Üretim öncesi ölçü alımı ve iç düzen planlaması yaklaşık bir hafta sürer.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const dahil = [
+  'Eşya envanteri ve depolama ihtiyacı analizi',
+  'Yerleşim tipi seçimi (tek sıra, karşılıklı, U, ada)',
+  'Ölçüye özel dolap ve raf sistemi üretimi',
+  'Askılık, çekmece ve aksesuar donanımı',
+  'Boy aynası ve ada ünitesi',
+  'Dolap içi bant aydınlatma ve ayna aydınlatması',
+  'Gerekiyorsa bölme duvar ve kapı uygulaması',
+  'Montaj, ince temizlik ve teslim',
+];
+
+const duzenler = [
+  { t: 'Tek sıra (I düzeni)', d: 'Dar ve uzun alanlarda tek duvara yaslanan sistem. Yaklaşık 150 cm genişlik yeterlidir; yatak odasından ayrılan koridor tipi nişlerde en sık kullandığımız kurgu.' },
+  { t: 'Karşılıklı (II düzeni)', d: 'İki duvarın da değerlendirildiği düzen. Depolama hacmini ikiye katlar ancak aradaki dolaşım payı için en az 90 cm bırakılması gerekir.' },
+  { t: 'U düzeni', d: 'Üç duvarın kullanıldığı, müstakil giyinme odalarına uygun kurgu. Ortada ada varsa toplam genişliğin 280 cm üzerinde olması gerekir.' },
+  { t: 'Adalı düzen', d: 'Ortadaki ada hem katlama yüzeyi hem de takı ve aksesuar için çekmeceli depolama sağlar. Üzeri açık bırakıldığında oda daha ferah, camlı yapıldığında daha butik bir karakter kazanır.' },
+];
+---
+
+<ServiceLayout
+  title="Giyinme Odası Tasarımı İstanbul | Ölçüye Özel Dolap Sistemleri"
+  description="İstanbul'da giyinme odası tasarımı ve uygulaması: ölçüye özel dolap, ada, ayna ve aydınlatma kurgusu. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/hizmetler/giyinme-odasi-tasarimi`}
+  h1="Giyinme Odası Tasarımı"
+  eyebrow="Oda Bazlı Hizmet"
+  lead="Küçük bir nişten müstakil bir odaya. Eşya envanterinizi ölçüp iç düzeni ona göre kurguluyor, dolapları ölçüye özel üretiyoruz."
+  heroImage={heroPath}
+  ogImage={optimizedImage(heroPath)}
+  expandedByDefault={true}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
+    { label: "Giyinme Odası Tasarımı" }
+  ]}
+  structuredData={[serviceSchema, faqSchema]}
+>
+
+  <section class="py-12 border-b border-border">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Giyinme Odası Envanterle Başlar</h2>
+        <p class="text-muted leading-relaxed mb-4">
+          Giyinme odası tasarımının çıkış noktası mekan değil, eşyadır. Kaç metre askılık gerektiği, kaç adet
+          katlanan parça olduğu, ayakkabı ve çanta sayısı, bavul gibi büyük hacimli eşyaların nereye gireceği —
+          bunlar konuşulmadan yapılan bir giyinme odası ya ilk aydan itibaren yetmez ya da yarısı boş kalır.
+        </p>
+        <p class="text-muted leading-relaxed mb-4">
+          Bu nedenle çalışmaya envanterle başlıyoruz. Uzun askılık (elbise, palto) ile kısa askılığın (gömlek,
+          ceket) oranı, çekmece ve raf dengesi buradan çıkar. Kadın ve erkek kullanımının bir arada olduğu
+          odalarda bölgeleri ayırmak, günlük kullanımı belirgin biçimde kolaylaştırıyor.
+        </p>
+        <p class="text-muted leading-relaxed">
+          Ardından mekanın hangi düzene uygun olduğuna karar veriyoruz. İstanbul dairelerinde çoğu giyinme
+          odası müstakil bir hacim değil, yatak odasından bölünen bir alan oluyor; bu durumda bölme sonrası
+          yatak odasında kalan derinliği önceden hesaplamak kritik.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-charcoal mb-4">Hizmete dahil olanlar</h3>
+        <ul class="space-y-3">
+          {dahil.map(item => (
+            <li class="flex items-start gap-3 text-sm text-muted">
+              <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+                <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+          <p class="text-sm text-charcoal font-medium">Yatak odasıyla birlikte planlamak</p>
+          <p class="text-muted text-sm mt-2">
+            Bölme yapılacaksa iki mekanı birlikte ele almak gerekir.
+            <a href="/hizmetler/yatak-odasi-tasarimi" class="text-gold hover:underline">Yatak odası tasarımı</a>
+            sayfamıza da bakabilirsiniz.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Düzenler -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Dört Yerleşim Düzeni</h2>
+    <p class="text-muted leading-relaxed max-w-3xl mb-8">
+      Hangi düzenin uygulanabileceğini mekanın net genişliği belirler. Aşağıdaki ölçüler, dolap derinliği ve
+      rahat dolaşım payı hesaba katılarak verilmiştir.
+    </p>
+    <div class="grid md:grid-cols-2 gap-6">
+      {duzenler.map((d, i) => (
+        <div class="border border-border p-7 bg-[#FAF6F1]">
+          <p class="text-[10px] tracking-[0.25em] uppercase text-gold mb-2">Düzen 0{i + 1}</p>
+          <h3 class="font-display text-lg font-bold text-charcoal mb-2">{d.t}</h3>
+          <p class="text-muted text-sm leading-relaxed">{d.d}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- İç donanım -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">İç Donanımda Fark Yaratan Detaylar</h2>
+    <p class="text-muted leading-relaxed max-w-3xl mb-8">
+      Giyinme odasının uzun vadede düzenli kalıp kalmadığını belirleyen şey dolabın dışı değil, içidir.
+      Aşağıdakiler projelerimizde en çok geri dönüş aldığımız donanım kararları.
+    </p>
+    <div class="grid md:grid-cols-2 gap-x-12 gap-y-3">
+      {[
+        'Uzun ve kısa askılık bölgelerinin ayrılması',
+        'Pantolon askılığı ve çekmeceli katlama bölümü',
+        'Ayakkabı için eğimli raf veya ayarlanabilir yükseklik',
+        'Bavul ve mevsimlik eşya için üst kot depolama',
+        'Çekmece içi bölmeli takı ve aksesuar düzenleyici',
+        'Kapı açılışında devreye giren dolap içi aydınlatma',
+        'Boy aynasının ışığa dik değil, yan konumlandırılması',
+        'Frenli menteşe ve yumuşak kapanan çekmece rayları',
+      ].map(item => (
+        <div class="flex items-start gap-3 text-sm text-muted">
+          <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+            <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+            </svg>
+          </span>
+          {item}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- SSS -->
+  <section class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="w-8 h-px bg-gold"></span>
+      <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Sıkça Sorulan Sorular</span>
+    </div>
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Giyinme odası hakkında</h2>
+    <div class="space-y-4">
+      {faqItems.map(f => (
+        <details class="border border-border bg-[#FAF6F1] p-6 group">
+          <summary class="font-semibold text-charcoal cursor-pointer list-none flex items-start justify-between gap-4">
+            <span>{f.q}</span>
+            <span class="text-gold shrink-0 transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="text-muted text-sm leading-relaxed mt-4">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">İlgili Sayfalar</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Giyinme Odası Tasarım Rehberi', href: '/blog/giyinme-odasi-tasarimi' },
+        { label: 'Yatak Odası Tasarımı', href: '/hizmetler/yatak-odasi-tasarimi' },
+        { label: 'Küçük Daire Dekorasyonu', href: '/blog/kucuk-daire-dekorasyon-fikirleri' },
+        { label: 'Anahtar Teslim Ev Yenileme', href: '/hizmetler/anahtar-teslim/ev-yenileme' },
+        { label: '3D Tasarım', href: '/hizmetler/3d-tasarim' },
+        { label: 'İstanbul Hizmet Bölgeleri', href: '/istanbul' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </section>
+
+</ServiceLayout>

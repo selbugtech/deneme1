@@ -1,0 +1,212 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImage } from '../../lib/cloudinary';
+import { styles } from '../../data/styles';
+
+const heroPath = '/images/salon1.png';
+const others = styles.filter(s => s.slug !== 'minimalist');
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Minimalist İç Mimarlık — İstanbul Dairelerinde Uygulama Rehberi",
+  "description": "Minimalist iç mimarlığın gerektirdiği depolama planlaması, malzeme paleti ve uygulama disiplini.",
+  "author": { "@id": `${CANONICAL_BASE}/#organization` },
+  "publisher": { "@id": `${CANONICAL_BASE}/#organization` },
+  "mainEntityOfPage": `${CANONICAL_BASE}/ic-mimarlik/minimalist`,
+};
+
+const faqItems = [
+  {
+    q: "Minimalist tasarım daha mı ekonomik?",
+    a: "Genellikle hayır, tam tersi. Az eleman kullanmak maliyeti düşürmüyor; çünkü minimalizmin gerektirdiği şey ucuz malzeme değil, kusursuz uygulama. Kulpsuz dolaplarda derz payı milimetrik olmak zorunda, gizli menteşe ve mekanizmalar daha nitelikli olmalı, kesintisiz yüzeyler daha az birleşimle çözülmeli. Görünen eleman azaldıkça, görünen her elemanın kalitesi daha çok ortaya çıkıyor.",
+  },
+  {
+    q: "Minimalist bir evde eşyalarımı nereye koyacağım?",
+    a: "Bu, minimalist projelerin en kritik sorusu ve cevabı en baştan verilmek zorunda. Minimalizm eşyanın olmaması değil, görünmemesi demek — dolayısıyla gizli depolama hacmi normalden daha fazla planlanmalı. Projeye başlarken eşya envanterinizi çıkarıyoruz: kaç metre askılık, kaç raf, hangi büyük hacimli eşyalar. Bu hesaplanmadan kurulan minimalist mekanlar ilk aydan itibaren dağılıyor.",
+  },
+  {
+    q: "Minimalist ve modern arasındaki fark nedir?",
+    a: "Modern, yalın bir dil ama karakter ve renk kullanmaktan kaçınmıyor. Minimalizm ise bunu bir adım öteye taşıyıp eleman sayısını, renk çeşidini ve görsel bilgiyi bilinçli olarak en aza indiriyor. Modern bir salonda birkaç güçlü renk vurgusu doğal karşılanırken, minimalist bir salonda tüm mekan tek bir ton ailesinde kalıyor ve fark dokuyla yaratılıyor.",
+  },
+  {
+    q: "Çocuklu bir evde minimalizm sürdürülebilir mi?",
+    a: "Sürdürülebilir, ama depolama planlamasının çok daha cömert olması şartıyla. Çocuklu evlerde oyuncak, kitap ve malzeme hacmi hızla artıyor; bunların kolayca ve hızlıca kaldırılabileceği kapalı depolama olmadığında mekan sürekli dağınık görünüyor. Alçak kotta, çocuğun kendi ulaşıp toplayabileceği kapaklı üniteler bu noktada belirleyici oluyor.",
+  },
+  {
+    q: "Minimalist mekanda akustik sorun olur mu?",
+    a: "Olabiliyor. Az mobilya, az tekstil ve sert yüzeylerin baskın olduğu mekanlarda ses yankılanıyor ve konuşma daha yorucu hale geliyor. Bunu çözmek için görsel sadeliği bozmayan yöntemler kullanıyoruz: kalın ve gizli kornişli perde, geniş bir yün halı, akustik özellikli asma tavan ve kumaş kaplı oturma birimleri.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const ilkeler = [
+  { t: 'Gizli depolama önce planlanır', d: 'Minimalizm eşyanın yokluğu değil görünmezliği. Envanter çıkarılmadan ve kapalı depolama hacmi hesaplanmadan atılan hiçbir adım kalıcı olmuyor.' },
+  { t: 'Kesintisiz yüzey', d: 'Kulpsuz kapaklar, gizli menteşe, duvarla hizalanan dolap yüzeyleri, süpürgeliksiz veya gölge derzli birleşimler. Göz takılacak bir kesinti bulamadığında mekan genişliyor.' },
+  { t: 'Tek ton ailesi', d: 'Renk çeşidi yerine tonlar arası fark. Aynı ailenin farklı doygunluktaki tonları, mekana renk gürültüsü katmadan derinlik kazandırıyor.' },
+  { t: 'Doku ile fark yaratmak', d: 'Renk azaldıkça doku öne çıkıyor. Mat ve saten yüzey karşıtlığı, dokuma tekstil, fırçalanmış ahşap; minimalist mekanda karakteri bunlar kuruyor.' },
+];
+
+const hatalar = [
+  { t: 'Depolamayı yetersiz planlamak', d: 'Minimalist projelerde en sık ve en pahalı hata. Sonradan eklenen açık raf veya serbest dolap, kurgunun tamamını bozuyor.' },
+  { t: 'Akustiği hesaba katmamak', d: 'Sert yüzey ve az tekstil, mekanı yankılı ve yorucu hale getiriyor. Halı ve kalın perde bu noktada dekorasyon değil teknik çözüm.' },
+  { t: 'Uygulama toleransını küçümsemek', d: 'Kulpsuz dolapta 1 mm sapma gözle görülüyor. Minimalist bir mekan, düşük hassasiyetli bir uygulamayla kurulduğunda sadelikten çok özensizlik olarak okunuyor.' },
+  { t: 'Aydınlatmayı düz bırakmak', d: 'Renk ve eleman azaldığında mekanın derinliğini ışık kuruyor. Tek seviyeli, gölgesiz bir aydınlatma minimalist mekanı düpedüz boş gösteriyor.' },
+];
+---
+
+<ServiceLayout
+  title="Minimalist İç Mimarlık — İstanbul Uygulama Rehberi"
+  description="Minimalist iç mimarlık nasıl kurulur? Gizli depolama planlaması, kesintisiz yüzeyler, malzeme paleti ve sık yapılan hatalar. 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/ic-mimarlik/minimalist`}
+  h1="Minimalist İç Mimarlık"
+  eyebrow="Stil Rehberi"
+  lead="Minimalizm eşyanın yokluğu değil, görünmemesi. Bu yüzden en çok emek isteyen aşama görünen katman değil, arkadaki depolama planlaması."
+  heroImage={heroPath}
+  ogImage={optimizedImage(heroPath)}
+  expandedByDefault={true}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İç Mimarlık Stilleri", href: `${CANONICAL_BASE}/ic-mimarlik` },
+    { label: "Minimalist" }
+  ]}
+  structuredData={[articleSchema, faqSchema]}
+>
+
+  <section class="py-12 border-b border-border">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Minimalizm Bir Görünüm Değil, Bir Disiplin</h2>
+        <p class="text-muted leading-relaxed mb-4">
+          Minimalist mekanların fotoğrafları yanıltıcı olabiliyor: görünen az sayıda eleman, işin de az
+          olduğu izlenimi veriyor. Oysa pratikte tam tersi. Bir mekanın bu kadar sade görünebilmesi için
+          eşyanın tamamının bir yere kaldırılabiliyor olması, yüzeylerin kesintisiz çözülmesi ve uygulamanın
+          çok düşük toleransla yapılması gerekiyor.
+        </p>
+        <p class="text-muted leading-relaxed mb-4">
+          Bu nedenle minimalist projelerde çalışmaya envanterle başlıyoruz. Kaç metre askılık gerekiyor,
+          kaç raf, hangi büyük hacimli eşyalar (bavul, mevsimlik tekstil, spor ekipmanı) nereye girecek.
+          Bu hesap yapılmadan kurulan minimalist mekanlar, taşınmadan birkaç hafta sonra dağılmaya başlıyor
+          ve ortaya ne minimalist ne de işlevsel bir sonuç çıkıyor.
+        </p>
+        <p class="text-muted leading-relaxed">
+          İkinci belirleyici konu uygulama hassasiyeti. Kulpsuz bir dolap kapağında derz payının milimetrik
+          olması, duvarla dolabın aynı düzlemde birleşmesi, süpürgelik yerine gölge derzi kullanılması —
+          bunlar minimalist mekanın kalitesini belirleyen detaylar. Görünen eleman sayısı azaldıkça,
+          görünen her elemanın kusuru daha çok fark ediliyor.
+        </p>
+      </div>
+      <div>
+        <div class="border border-border p-7 bg-[#FAF6F1] mb-6">
+          <p class="text-[10px] tracking-[0.25em] uppercase text-gold mb-3">Malzeme ve renk paleti</p>
+          <ul class="space-y-2 text-sm text-muted">
+            <li>· Beyaz, bej ve açık gri tek ton ailesi</li>
+            <li>· Mat ve saten yüzey karşıtlığı</li>
+            <li>· Açık tonlu, damarı sakin ahşap</li>
+            <li>· Kesintisiz büyük format zemin</li>
+            <li>· Tek bir doku vurgusu (taş, kumaş ya da mikro çimento)</li>
+          </ul>
+        </div>
+        <h3 class="font-semibold text-charcoal mb-4">En iyi çalıştığı mekanlar</h3>
+        <ul class="space-y-3">
+          {[
+            'Küçük ve orta ölçekli daireler',
+            'Az eşyayla yaşayan haneler',
+            'Yeni teslim, düzgün geometrili site daireleri',
+            'Stüdyo daireler ve 1+1 planlar',
+            'Ofis ve showroom mekanları',
+          ].map(item => (
+            <li class="flex items-start gap-3 text-sm text-muted">
+              <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+                <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Minimalist Kurgunun Dört İlkesi</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      {ilkeler.map((k, i) => (
+        <div class="border border-border p-7 bg-[#FAF6F1]">
+          <p class="text-[10px] tracking-[0.25em] uppercase text-gold mb-2">0{i + 1}</p>
+          <h3 class="font-display text-lg font-bold text-charcoal mb-2">{k.t}</h3>
+          <p class="text-muted text-sm leading-relaxed">{k.d}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Uygulamada En Sık Görülen Dört Hata</h2>
+    <div class="space-y-4">
+      {hatalar.map((h, i) => (
+        <div class="flex gap-5 border border-border p-6 bg-[#FAF6F1]">
+          <p class="font-display text-2xl font-bold text-gold/40 shrink-0">0{i + 1}</p>
+          <div>
+            <h3 class="font-semibold text-charcoal mb-1">{h.t}</h3>
+            <p class="text-muted text-sm leading-relaxed">{h.d}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="w-8 h-px bg-gold"></span>
+      <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Sıkça Sorulan Sorular</span>
+    </div>
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Minimalist iç mimarlık hakkında</h2>
+    <div class="space-y-4">
+      {faqItems.map(f => (
+        <details class="border border-border bg-[#FAF6F1] p-6 group">
+          <summary class="font-semibold text-charcoal cursor-pointer list-none flex items-start justify-between gap-4">
+            <span>{f.q}</span>
+            <span class="text-gold shrink-0 transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="text-muted text-sm leading-relaxed mt-4">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Stiller</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+      {others.map(s => (
+        <a href={`/ic-mimarlik/${s.slug}`} class="group block border border-border p-5 hover:border-gold hover:bg-gold/5 transition-colors">
+          <h3 class="font-display text-base font-bold text-charcoal group-hover:text-gold transition-colors mb-1">{s.fullName}</h3>
+          <p class="text-muted text-xs">{s.tagline}</p>
+        </a>
+      ))}
+    </div>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Giyinme Odası Tasarımı', href: '/hizmetler/giyinme-odasi-tasarimi' },
+        { label: 'Küçük Daire Dekorasyonu', href: '/blog/kucuk-daire-dekorasyon-fikirleri' },
+        { label: 'Salon Tasarımı', href: '/hizmetler/salon-tasarimi' },
+        { label: '3D Tasarım', href: '/hizmetler/3d-tasarim' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </section>
+
+</ServiceLayout>

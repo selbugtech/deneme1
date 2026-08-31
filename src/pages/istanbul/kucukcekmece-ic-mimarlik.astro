@@ -1,0 +1,154 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictFAQ from '../../components/DistrictFAQ.astro';
+import ProcessStrip from '../../components/ProcessStrip.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImageW } from '../../lib/cloudinary';
+
+const heroPath = '/images/salon4.jpeg';
+const heroAbs = optimizedImageW(heroPath, 1600);
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "InteriorDesigner",
+  "name": "Master İç Mimarlık",
+  "@id": `${CANONICAL_BASE}/#business`,
+  "areaServed": { "@type": "Place", "name": "Küçükçekmece, İstanbul" },
+  "url": `${CANONICAL_BASE}/istanbul/kucukcekmece-ic-mimarlik`,
+  "description": "Küçükçekmece'de anahtar teslim daire yenileme, mutfak-banyo tadilatı ve iç mimarlık danışmanlığı.",
+  "image": heroAbs,
+};
+
+const faqItems = [
+  {
+    q: "Küçükçekmece'de daire yenileme ne kadar sürer?",
+    a: "Halkalı ve Atakent hattındaki yeni site dairelerinde anahtar teslim yenileme 4–7 hafta sürüyor. Sefaköy ve Cennet çevresindeki eski apartmanlarda elektrik ve tesisat yenilemesi devreye girdiğinde bu süre 7–10 haftaya çıkıyor.",
+  },
+  {
+    q: "Küçükçekmece'de hangi mahallelerde hizmet veriyorsunuz?",
+    a: "Halkalı, Sefaköy, Atakent, İnönü, Cennet, Kanarya ve Yeşilova başta olmak üzere ilçe genelinde çalışıyoruz. Hem yeni site dairelerinde hem de eski apartman stokunda uygulama yapıyoruz.",
+  },
+  {
+    q: "Yeni teslim dairemde ne yaptırmalıyım?",
+    a: "Toplu konut projelerinde daireler standart bir plan ve standart bir malzeme paketiyle teslim ediliyor. En sık çalıştığımız kalemler mutfak dolabı kurgusunun yeniden ele alınması, gömme depolama eklenmesi ve zemin ile duvar yüzeylerinin güncellenmesi oluyor. Taşınmadan önce başlamak en verimli senaryo: eşya yok, tüm mekanlara aynı anda girilebiliyor.",
+  },
+  {
+    q: "Eski apartmanda tesisat yenilemesi şart mı?",
+    a: "Bina 25 yaşın üzerindeyse ve tesisat hiç elden geçmediyse büyük olasılıkla evet. Bu yapılarda sıklıkla galvaniz su borusuyla karşılaşıyoruz; iç yüzeyi daraldığı için basınç düşüyor ve delinme riski taşıyor. Sökümden sonra bir ara değerlendirme yapıp kapsamı netleştiriyor, değişiklik gerekiyorsa yazılı onayınızı almadan devam etmiyoruz.",
+  },
+  {
+    q: "Küçükçekmece için keşif ve teklif süreci nasıl işliyor?",
+    a: "WhatsApp veya telefon üzerinden randevu alıyor, adresinize gelerek ücretsiz keşif yapıyoruz. Ölçü, fotoğraf ve ihtiyaç görüşmesinin ardından 2–3 iş günü içinde kapsamı kalem kalem ayrıştırılmış teklifimizi paylaşıyoruz. Keşif hiçbir yükümlülük doğurmaz.",
+  },
+];
+---
+
+<ServiceLayout
+  title="Küçükçekmece İç Mimarlık ve Ev Yenileme"
+  description="Küçükçekmece'de iç mimarlık, daire yenileme ve anahtar teslim tadilat. Halkalı, Sefaköy ve Atakent'te aktif. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/istanbul/kucukcekmece-ic-mimarlik`}
+  h1="Küçükçekmece İç Mimarlık ve Ev Yenileme"
+  eyebrow="İstanbul · Küçükçekmece"
+  lead="Halkalı'nın yeni site projelerinden Sefaköy'ün eski apartman dokusuna kadar geniş bir yapı yelpazesi. Kapsam kararını her zaman bina belirliyor."
+  heroImage={heroPath}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İstanbul", href: `${CANONICAL_BASE}/istanbul` },
+    { label: "Küçükçekmece" }
+  ]}
+  structuredData={localSchema}
+>
+
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Küçükçekmece'de İç Mimarlık Hizmeti</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Küçükçekmece, yapı çeşitliliği yüksek bir ilçe. Halkalı ve Atakent hattında son on beş yılın planlı site projeleri, Sefaköy ve Cennet çevresinde 1980–2000 arası apartman stoku, Kanarya ve Yeşilova'da ise dönüşüm sırası bekleyen daha eski yapılar bir arada bulunuyor.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Bu üç grubun her biri farklı bir kapsam gerektiriyor. Halkalı'daki yeni sitelerde altyapı sağlam; iş plan optimizasyonu, depolama kapasitesi ve yüzey kalitesi üzerinden ilerliyor ve süreç kısa sürüyor. Sefaköy hattındaki apartman stokunda elektrik ve sıhhi tesisat çoğu projede baştan kuruluyor. Dönüşüm gündemindeki yapılarda ise kapsamı bilinçli olarak daraltmayı öneriyoruz.
+      </p>
+      <p class="text-muted leading-relaxed">
+        İlçenin bir diğer özelliği ulaşım kolaylığı: Halkalı hattı ve E-5 bağlantısı sayesinde şantiye lojistiği görece rahat ilerliyor. Buna karşılık Sefaköy ve Cennet gibi yoğun yapılaşmış bölgelerde sokaklar dar ve park kısıtlı olduğu için sevkiyat saatlerini önceden planlıyoruz.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4">Küçükçekmece'de Sunduğumuz Hizmetler</h3>
+      <ul class="space-y-3">
+        {[
+          'Anahtar teslim daire yenileme',
+          'Elektrik ve tesisat dahil kapsamlı tadilat',
+          'Mutfak ve banyo yenileme',
+          'Salon, yatak odası ve giyinme odası tasarımı',
+          '3D görselleştirme ile tasarım onayı',
+          'Malzeme seçimi ve tedarik',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+        <p class="text-sm text-charcoal font-medium">Benzer yapı tipinde projemiz</p>
+        <p class="text-muted text-sm mt-2">
+          Nurol Park’ta tamamladığımız 125 m² daire, Halkalı hattındaki yeni site dairelerine yakın bir örnek. Uygulama fotoğraflarını proje sayfasında yayımladık.
+        </p>
+        <a href="/projeler/nurol-park" class="text-xs text-gold hover:underline mt-2 inline-block">Nurol Park daire projesi →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bölge notları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Küçükçekmece'de Bölge Notlarımız</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Halkalı · Atakent</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Planlı site projelerinin yoğunlaştığı hat. Altyapı sağlam; iş depolama, dolap kurgusu ve yüzey kalitesi üzerinden ilerliyor. Site yönetimlerinin çalışma saati kısıtları takvimi belirleyen ana unsur.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Sefaköy · Cennet</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          1980–2000 arası apartman stoku ağırlıkta. Elektrik ve tesisat çoğu projede baştan kuruluyor; dar plan şemalarından alan kazanmak en sık çalıştığımız konu.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Kanarya · Yeşilova</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Dönüşüm gündemindeki daha eski yapılar. Binanın kısa vadeli yıkım ihtimali varsa kapsamı daraltıp altyapıya girmeyen bir güncelleme öneriyoruz.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <ProcessStrip districtName="Küçükçekmece" />
+
+  <DistrictFAQ districtName="Küçükçekmece" items={faqItems} />
+
+  <div class="py-12 border-t border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Hizmetlerimiz</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Tüm Hizmetler', href: '/hizmetler' },
+        { label: 'Anahtar Teslim Ev Yenileme', href: '/hizmetler/anahtar-teslim/ev-yenileme' },
+        { label: 'Anahtar Teslim Ev Tadilat', href: '/hizmetler/anahtar-teslim/ev-tadilat' },
+        { label: 'Banyo Yenileme', href: '/hizmetler/banyo-yenileme' },
+        { label: 'Küçükçekmece Ev Tadilatı Rehberi', href: '/blog/kucukcekmece-ev-tadilati' },
+        { label: 'Bahçelievler İç Mimarlık', href: '/istanbul/bahcelievler-ic-mimarlik' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </div>
+
+  <RelatedDistricts currentSlug="kucukcekmece-ic-mimarlik" />
+
+</ServiceLayout>

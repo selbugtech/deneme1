@@ -1,0 +1,154 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictFAQ from '../../components/DistrictFAQ.astro';
+import ProcessStrip from '../../components/ProcessStrip.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImageW } from '../../lib/cloudinary';
+
+const heroPath = '/images/oturmaodasi.jpeg';
+const heroAbs = optimizedImageW(heroPath, 1600);
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "InteriorDesigner",
+  "name": "Master İç Mimarlık",
+  "@id": `${CANONICAL_BASE}/#business`,
+  "areaServed": { "@type": "Place", "name": "Bahçelievler, İstanbul" },
+  "url": `${CANONICAL_BASE}/istanbul/bahcelievler-ic-mimarlik`,
+  "description": "Bahçelievler'de anahtar teslim daire yenileme, mutfak-banyo tadilatı ve iç mimarlık danışmanlığı.",
+  "image": heroAbs,
+};
+
+const faqItems = [
+  {
+    q: "Bahçelievler'de daire yenileme ne kadar sürer?",
+    a: "Yapı stokunun yaşı yüksek olduğu için elektrik ve tesisat çoğu projede baştan kuruluyor. Bu nedenle tipik bir dairede anahtar teslim yenileme 6–10 hafta sürüyor. Altyapıya dokunulmayan, yüzey ve donanım güncellemesiyle sınırlı çalışmalar ise 3–5 haftada tamamlanıyor.",
+  },
+  {
+    q: "Bahçelievler'de hangi mahallelerde hizmet veriyorsunuz?",
+    a: "Şirinevler, Siyavuşpaşa, Kocasinan, Yenibosna, Soğanlı ve Zafer başta olmak üzere ilçe genelinde çalışıyoruz. İlçenin apartman stokunu ve tekrar eden plan şemalarını yakından biliyoruz.",
+  },
+  {
+    q: "Mutfakla salon arasındaki duvarı kaldırabilir miyiz?",
+    a: "Duvarın taşıyıcı olup olmadığına bağlı. Taşıyıcı değilse kaldırmak veya kısmen açmak mümkün ve bu, dar planlarda en çok fark yaratan müdahalelerden biri. Taşıyıcıysa tamamen kaldırmak söz konusu olmuyor; bu durumda geçiş açıklığı büyütmek veya görsel bağlantı kuran alternatif çözümler öneriyoruz. Keşifte yapısal durumu değerlendirip net cevap veriyoruz.",
+  },
+  {
+    q: "Küçük bir daireden nasıl alan kazanılır?",
+    a: "En etkili üç yöntem: koridor ve niş gibi ölü alanları gömme depolamaya çevirmek, banyoda duvara asılı klozet ve lavabo kullanarak zemini serbest bırakmak, ve zemin kaplamasını mekan boyunca kesintisiz sürdürmek. Bunlara ek olarak yerden yüksek ayaklı mobilya, altındaki zemin göründüğü için mekanı görsel olarak genişletiyor.",
+  },
+  {
+    q: "Yenileme sırasında evde kalabilir miyim?",
+    a: "Oda bazlı çalışmalarda evet; mekanı naylon perdeyle izole edip alan alan ilerliyoruz. Ancak elektrik ve tesisatın baştan kurulduğu komple yenilemelerde evin boşaltılması hem daha hızlı hem daha sağlıklı oluyor. Hangi senaryonun geçerli olacağını keşif sonrası netleştirip gün gün paylaşıyoruz.",
+  },
+];
+---
+
+<ServiceLayout
+  title="Bahçelievler İç Mimarlık ve Ev Yenileme"
+  description="Bahçelievler'de iç mimarlık, daire yenileme ve anahtar teslim tadilat. Şirinevler, Siyavuşpaşa ve Kocasinan'da aktif. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/istanbul/bahcelievler-ic-mimarlik`}
+  h1="Bahçelievler İç Mimarlık ve Ev Yenileme"
+  eyebrow="İstanbul · Bahçelievler"
+  lead="İstanbul'un en yoğun apartman stokuna sahip ilçelerinden biri. Burada iş neredeyse her zaman aynı yerden başlıyor: dar plan şemasından kullanılabilir alan kazanmak."
+  heroImage={heroPath}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İstanbul", href: `${CANONICAL_BASE}/istanbul` },
+    { label: "Bahçelievler" }
+  ]}
+  structuredData={localSchema}
+>
+
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Bahçelievler'de İç Mimarlık Hizmeti</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Bahçelievler, 1980–2000 arasında yoğun biçimde yapılaşmış ve bugün İstanbul'un en sık apartman dokusuna sahip ilçelerinden biri. Şirinevler, Siyavuşpaşa, Kocasinan ve Soğanlı hattında birbirine benzeyen kat planları hâkim: dar koridorlar, küçük mutfaklar, birbirinden kopuk yaşam alanları.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Bu yapı stokunda en sık çalıştığımız konu alan kazanmak. Mutfakla salonu ayıran duvarın kaldırılması ya da kısmen açılması, koridorun gömme depolamayla değerlendirilmesi ve banyoda duvara asılı donanımla zemin yüzeyinin serbest bırakılması, aynı metrekarede belirgin bir ferahlık yaratıyor. Ancak duvar kaldırma kararı yapısal değerlendirme gerektiriyor; taşıyıcı olup olmadığını kontrol etmeden bu adıma girmiyoruz.
+      </p>
+      <p class="text-muted leading-relaxed">
+        İkinci belirleyici başlık tesisat yaşı. Bu dönemin binalarında elektrik altyapısı bugünün cihaz yüküne göre kurulmamış; mutfak ve banyo söküldüğünde sıklıkla galvaniz su borusuyla karşılaşıyoruz. Kapsamı bu nedenle sökümden sonra netleştiriyor, değişiklik gerekiyorsa yazılı onayınızı almadan devam etmiyoruz.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4">Bahçelievler'de Sunduğumuz Hizmetler</h3>
+      <ul class="space-y-3">
+        {[
+          'Anahtar teslim daire yenileme',
+          'Elektrik ve tesisat dahil kapsamlı tadilat',
+          'Plan şeması düzenleme ve duvar kaldırma',
+          'Mutfak ve banyo yenileme',
+          'Gömme depolama ve ölçüye özel dolap',
+          '3D görselleştirme ile tasarım onayı',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+        <p class="text-sm text-charcoal font-medium">Benzer plan şemasında projemiz</p>
+        <p class="text-muted text-sm mt-2">
+          Ataköy’de tamamladığımız 120 m² daire, Bahçelievler’deki apartman stokuna yakın bir plan şemasına sahipti. Uygulama fotoğraflarını proje sayfasında yayımladık.
+        </p>
+        <a href="/projeler/atakoy" class="text-xs text-gold hover:underline mt-2 inline-block">Ataköy daire projesi →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bölge notları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Bahçelievler'de Bölge Notlarımız</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Şirinevler · Yenibosna</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Metro ve havalimanı bağlantısı nedeniyle yoğun; apartman stoku sık. Dar sokaklar ve park kısıtı sevkiyat planlamasını zorunlu kılıyor. Kiralık daire dönüşümleri de sık talep ediliyor.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Siyavuşpaşa · Kocasinan</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          1980–2000 arası apartman dokusunun en yoğun olduğu hat. Dar koridor ve küçük mutfak planları standart; alan kazanma odaklı düzenlemeler projelerin merkezinde.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Soğanlı · Zafer</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Dönüşüm hareketinin başladığı bölgeler. Binanın dönüşüm gündeminde olup olmadığı kapsam kararını etkilediği için keşifte bunu da konuşuyoruz.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <ProcessStrip districtName="Bahçelievler" />
+
+  <DistrictFAQ districtName="Bahçelievler" items={faqItems} />
+
+  <div class="py-12 border-t border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Hizmetlerimiz</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Tüm Hizmetler', href: '/hizmetler' },
+        { label: 'Anahtar Teslim Ev Tadilat', href: '/hizmetler/anahtar-teslim/ev-tadilat' },
+        { label: 'Mutfak Yenileme', href: '/hizmetler/mutfak-yenileme' },
+        { label: 'Banyo Yenileme', href: '/hizmetler/banyo-yenileme' },
+        { label: 'Bahçelievler Ev Tadilatı Rehberi', href: '/blog/bahcelievler-ev-tadilati' },
+        { label: 'Küçük Daire Dekorasyonu', href: '/blog/kucuk-daire-dekorasyon-fikirleri' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </div>
+
+  <RelatedDistricts currentSlug="bahcelievler-ic-mimarlik" />
+
+</ServiceLayout>

@@ -11,8 +11,7 @@ const serviceSchema = {
   "description": "İstanbul'da anahtar teslim cafe, restoran ve bar tadilat. Elektrik, tesisat, mutfak altyapısı ve yapısal müdahale dahil kapsamlı F&B mekan dönüşümü.",
   "provider": { "@type": "Organization", "@id": `${CANONICAL_BASE}/#organization`, "name": "Master İç Mimarlık" },
   "areaServed": { "@type": "City", "name": "İstanbul" },
-  "url": `${CANONICAL_BASE}/hizmetler/anahtar-teslim/cafe-restaurant-tadilat`,
-  "offers": { "@type": "Offer", "priceCurrency": "TRY", "description": "Ücretsiz keşif ve özel teklif için iletişime geçin", "availability": "https://schema.org/InStock" }
+  "url": `${CANONICAL_BASE}/hizmetler/anahtar-teslim/cafe-restaurant-tadilat`
 };
 
 const faqSchema = {
@@ -35,9 +34,9 @@ const faqSchema = {
   eyebrow="Anahtar Teslim"
   lead="Mutfak altyapısından havalandırmaya, elektrik güçlendirmesinden yapısal düzenlemeye kadar teknik müdahale gerektiren kapsamlı cafe ve restoran dönüşümleri. Müşteri deneyimini ve ciro potansiyelini artıran mekanlar."
   breadcrumb={[
-    { label: "Ana Sayfa", href: "/" },
-    { label: "Hizmetler", href: "/#hizmetler" },
-    { label: "Anahtar Teslim Hizmetler", href: "/hizmetler/anahtar-teslim" },
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
+    { label: "Anahtar Teslim Hizmetler", href: `${CANONICAL_BASE}/hizmetler/anahtar-teslim` },
     { label: "Cafe & Restaurant Tadilat" }
   ]}
   structuredData={[serviceSchema, faqSchema]}

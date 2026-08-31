@@ -16,8 +16,7 @@ const serviceSchema = {
     { "@type": "AdministrativeArea", "name": "Acıbadem" },
     { "@type": "AdministrativeArea", "name": "Sarıyer" }
   ],
-  "url": `${CANONICAL_BASE}/hizmetler/anahtar-teslim/villa-yenileme`,
-  "offers": { "@type": "Offer", "priceCurrency": "TRY", "description": "Ücretsiz keşif ve özel teklif için iletişime geçin", "availability": "https://schema.org/InStock" }
+  "url": `${CANONICAL_BASE}/hizmetler/anahtar-teslim/villa-yenileme`
 };
 
 const faqSchema = {
@@ -41,9 +40,9 @@ const faqSchema = {
   eyebrow="Anahtar Teslim"
   lead="Altyapısı sağlam ama görünümü güncelleme isteyen lüks villalar için estetik dönüşüm. Zemin, kaplama, malzeme ve aydınlatma seçimleriyle yapısal müdahale olmadan villanızı çağdaş bir kimliğe kavuşturuyoruz."
   breadcrumb={[
-    { label: "Ana Sayfa", href: "/" },
-    { label: "Hizmetler", href: "/#hizmetler" },
-    { label: "Anahtar Teslim Hizmetler", href: "/hizmetler/anahtar-teslim" },
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
+    { label: "Anahtar Teslim Hizmetler", href: `${CANONICAL_BASE}/hizmetler/anahtar-teslim` },
     { label: "Villa Yenileme" }
   ]}
   structuredData={[serviceSchema, faqSchema]}

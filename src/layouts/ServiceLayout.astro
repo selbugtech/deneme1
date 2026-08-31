@@ -6,8 +6,8 @@ import WhatsAppFloat from '../components/WhatsAppFloat.astro';
 import Projects from '../components/Projects.astro';
 import Contact from '../components/Contact.astro';
 import { CANONICAL_BASE, TEL_URL, WHATSAPP_URL_PROJECT, WHATSAPP_URL_SERVICE } from '../config';
-import { optimizedImage, optimizedImageW, srcsetImage } from '../lib/cloudinary';
-import { getReviewsForDisplay } from '../lib/google-places';
+import { optimizedImageW, srcsetImage } from '../lib/cloudinary';
+import { byGroup, getService } from '../data/services';
 
 interface Props {
   title: string;
@@ -21,6 +21,8 @@ interface Props {
   heroImage?: string;
   ogImage?: string;
   expandedByDefault?: boolean;
+  /** /iletisim gibi kendi büyük haritası olan sayfalarda alttaki küçük harita gizlenir */
+  contactShowMap?: boolean;
 }
 
 const {
@@ -29,18 +31,20 @@ const {
   breadcrumb, structuredData,
   heroImage, ogImage,
   expandedByDefault = false,
+  contactShowMap = true,
 } = Astro.props;
 
-const reviewData = await getReviewsForDisplay();
-
-const allServices = [
-  { title: 'Anahtar Teslim Hizmetler',    slug: 'anahtar-teslim', desc: 'Tasarımdan uygulamaya tüm süreci biz yönetiyoruz.', image: optimizedImage('/images/salon2.jpeg'), keyword: 'En çok tercih edilen' },
-  { title: 'İç Mimarlık Danışmanlığı',    slug: 'ic-mimarlik-danismanligi',    desc: 'Uzman görüş, malzeme seçimi ve rehberlik.',         image: optimizedImage('/images/salon4.jpeg'), keyword: 'Esnek paketler' },
-  { title: '3D Tasarım & Proje',          slug: '3d-tasarim',                  desc: 'Uygulamadan önce mekanınızı gerçekçi görselle görün.', image: optimizedImage('/images/mutfak3.jpeg'), keyword: 'Tüm projelerde standart' },
-];
-
 const currentSlug = canonicalUrl.split('/').pop() ?? '';
-const relatedServices = allServices.filter(s => s.slug !== currentSlug).slice(0, 3);
+const current = getService(currentSlug);
+
+// Önce aynı gruptaki hizmetler, yetmezse ana hizmetlerle tamamla
+const relatedServices = [
+  ...(current ? byGroup(current.group) : []),
+  ...byGroup('ana'),
+]
+  .filter(s => s.slug !== currentSlug)
+  .filter((s, i, arr) => arr.findIndex(x => x.slug === s.slug) === i)
+  .slice(0, 3);
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -170,9 +174,6 @@ const allSchema = [
       </div>
     </section>
 
-    <!-- Projects (social proof) -->
-    <Projects />
-
     <!-- Page-specific content with auto-collapse -->
     <div class="max-w-6xl mx-auto px-6 py-16">
       <div class="article-collapse" data-collapsed={expandedByDefault ? 'false' : 'true'}>
@@ -198,18 +199,18 @@ const allSchema = [
             <span class="w-8 h-px bg-gold"></span>
             <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Diğer Hizmetler</span>
           </div>
-          <a href="/#hizmetler" class="text-xs text-muted hover:text-gold transition-colors">Tümünü Gör →</a>
+          <a href="/hizmetler" class="text-xs text-muted hover:text-gold transition-colors">Tümünü Gör →</a>
         </div>
         <div class="grid md:grid-cols-3 gap-6">
           {relatedServices.map(s => (
-            <a href={`/hizmetler/${s.slug}`} class="group block border border-border hover:border-gold transition-colors duration-200">
+            <a href={s.href} class="group block border border-border hover:border-gold transition-colors duration-200">
               <div class="overflow-hidden">
                 <img src={s.image} alt={s.title} loading="lazy" decoding="async" class="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
               <div class="p-5">
-                <p class="text-[10px] tracking-[0.25em] uppercase text-gold mb-2">{s.keyword}</p>
+                {s.keyword && <p class="text-[10px] tracking-[0.25em] uppercase text-gold mb-2">{s.keyword}</p>}
                 <h3 class="font-display text-base font-bold text-charcoal group-hover:text-gold transition-colors mb-1">{s.title}</h3>
-                <p class="text-muted text-xs leading-relaxed">{s.desc}</p>
+                <p class="text-muted text-xs leading-relaxed">{s.shortDesc}</p>
               </div>
             </a>
           ))}
@@ -217,8 +218,11 @@ const allSchema = [
       </div>
     </div>
 
+    <!-- Projects (social proof) — içerikten sonra, dönüşüm bloğunun hemen öncesinde -->
+    <Projects />
+
     <!-- Contact section (full) -->
-    <Contact rating={reviewData.rating} totalRatings={reviewData.totalRatings} />
+    <Contact showMap={contactShowMap} />
 
   </main>
 

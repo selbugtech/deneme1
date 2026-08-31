@@ -40,11 +40,11 @@ const categories = [
     faqs: [
       {
         question: 'Anahtar teslim ev yenileme maliyeti nedir?',
-        answer: 'İstanbul\'da anahtar teslim ev yenileme maliyeti metrekare başına yaklaşık 3.000 ₺ ile 8.000 ₺ arasında değişmektedir. Fiyat; mevcut yapı durumu, seçilen malzemelerin kalitesi, dairenin büyüklüğü ve lokasyon gibi faktörlere göre şekillenir. Kesin fiyat için ücretsiz keşif randevusu alabilirsiniz — bizim için gizli maliyet yoktur.',
+        answer: 'Maliyet; mevcut yapı durumu, seçilen malzeme segmenti, dairenin büyüklüğü, lokasyon ve uygulama kapsamına göre değişir. Bu nedenle mekanı görmeden rakam vermiyoruz. Ücretsiz keşif sonrasında projenize özel, kalem kalem ayrıştırılmış teklifimizi paylaşıyoruz — bizim için gizli maliyet yoktur.',
       },
       {
         question: 'Ödeme planı nasıl çalışıyor?',
-        answer: 'Güvenilir bir tadilat sürecinde tüm ödeme başlangıçta talep edilmez. Genel uygulamamız şu şekildedir: %30 sözleşme imzalanırken, %40 uygulama orta aşamasında, %30 teslim sonrasında. Bu yapı hem müşterimizi korur hem de proje süresince karşılıklı güveni sürdürür. Kesin ödeme planı sözleşmede yazılı olarak belirlenir.',
+        answer: 'Güvenilir bir tadilat sürecinde tüm ödeme başlangıçta talep edilmez. Ödemeyi sözleşme, uygulama aşamaları ve teslim olmak üzere dilimlere bölüyoruz; her dilim işin fiilen ilerleyişine bağlanır. Bu yapı hem müşterimizi korur hem de proje süresince karşılıklı güveni sürdürür. Size özel ödeme planı sözleşmede yazılı olarak belirlenir.',
       },
       {
         question: 'Gizli maliyet veya sürpriz ek faturalar çıkar mı?',
@@ -52,7 +52,7 @@ const categories = [
       },
       {
         question: 'Sadece tasarım (danışmanlık) hizmeti alabilir miyim?',
-        answer: 'Evet. Uygulamayı kendiniz yönetmek istiyorsanız yalnızca iç mimari proje ve 3D görselleştirme hizmeti alabilirsiniz. Bu kapsamda konsept tasarım, teknik çizimler, malzeme listesi ve tedarikçi tavsiyeleri sunulur. Fiyatlandırma proje kapsamına ve metrekareye göre belirlenir.',
+        answer: 'Evet. Uygulamayı kendiniz yönetmek istiyorsanız yalnızca iç mimari proje ve 3D görselleştirme hizmeti alabilirsiniz. Bu kapsamda konsept tasarım, teknik çizimler, malzeme listesi ve tedarikçi tavsiyeleri sunulur. Kapsam ve mekan büyüklüğüne göre projeye özel çalışıyoruz.',
       },
     ],
   },
@@ -143,8 +143,8 @@ const localBusinessSchema = {
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": "41.0082",
-    "longitude": "28.9784"
+    "latitude": 41.001739,
+    "longitude": 29.0543556
   },
   "areaServed": [
     { "@type": "City", "name": "İstanbul" },
@@ -345,11 +345,11 @@ const webPageSchema = {
         </div>
         <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
           {[
-            { label: 'Hizmetlerimiz',        href: '/#hizmetler',                  desc: 'Tüm iç mimarlık hizmetleri' },
+            { label: 'Hizmetlerimiz',        href: '/hizmetler',                          desc: 'Tüm iç mimarlık hizmetleri' },
             { label: 'Projelerimiz',          href: '/projeler',                    desc: 'Tamamlanan proje portföyü' },
             { label: 'Blog',                  href: '/blog',                        desc: 'Rehber içerikler ve trendler' },
             { label: 'Anahtar Teslim Tadilat', href: '/hizmetler/anahtar-teslim', desc: 'Süreç ve kapsam detayı' },
-            { label: 'Daire Yenileme',        href: '/hizmetler/anahtar-teslim/ev-yenileme',   desc: 'Daire projeleri ve maliyetler' },
+            { label: 'Daire Yenileme',        href: '/hizmetler/anahtar-teslim/ev-yenileme',   desc: 'Daire projeleri ve süreç' },
             { label: 'Villa Yenileme',        href: '/hizmetler/anahtar-teslim/villa-yenileme',   desc: 'Villa tadilat rehberi' },
           ].map(link => (
             <a href={link.href} class="group block border border-border p-5 hover:border-gold transition-colors">

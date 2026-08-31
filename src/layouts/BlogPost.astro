@@ -7,7 +7,6 @@ import Projects from '../components/Projects.astro';
 import Contact from '../components/Contact.astro';
 import { CANONICAL_BASE, TEL_URL, WHATSAPP_URL_PROJECT } from '../config';
 import { allPosts } from '../data/blog-posts';
-import { getReviewsForDisplay } from '../lib/google-places';
 
 interface Props {
   title: string;
@@ -22,11 +21,22 @@ interface Props {
 
 const { title, description, canonicalUrl, publishDate, readingTime = '5 dk okuma', ogImage, heroImage, tag = 'Rehber' } = Astro.props;
 
-const reviewData = await getReviewsForDisplay();
-
-// Derive current slug from canonicalUrl, then pick 3 other posts as related
+// Derive current slug from canonicalUrl, then pick 3 other posts as related.
+// Aynı etiketli yazılar önce gelir; başlangıç noktası yazının sırasına göre
+// kaydırılır ki her makalede aynı 3 öneri tekrarlanmasın.
 const currentSlug = canonicalUrl.split('/').pop() ?? '';
-const relatedPosts = allPosts.filter(p => p.slug !== currentSlug).slice(0, 3);
+const currentIndex = allPosts.findIndex(p => p.slug === currentSlug);
+const currentTag = currentIndex >= 0 ? allPosts[currentIndex].tag : '';
+const offset = Math.max(currentIndex, 0);
+
+const rotate = (arr: typeof allPosts) =>
+  arr.length ? [...arr.slice(offset % arr.length), ...arr.slice(0, offset % arr.length)] : arr;
+
+const others = allPosts.filter(p => p.slug !== currentSlug);
+const relatedPosts = [
+  ...rotate(others.filter(p => p.tag === currentTag)),
+  ...rotate(others.filter(p => p.tag !== currentTag)),
+].slice(0, 3);
 
 const displayTitle = title.split('|')[0].trim();
 const formattedDate = new Date(publishDate).toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -187,9 +197,6 @@ const breadcrumbSchema = {
       </div>
     </section>
 
-    <!-- Projects (social proof) -->
-    <Projects />
-
     <!-- Article + sidebar -->
     <div class="max-w-6xl mx-auto px-6 py-16">
       <div class="grid md:grid-cols-3 gap-12 items-start">
@@ -290,8 +297,11 @@ const breadcrumbSchema = {
       </div>
     </div>
 
+    <!-- Projects (social proof) — içerikten sonra, dönüşüm bloğunun hemen öncesinde -->
+    <Projects />
+
     <!-- Contact section (full) -->
-    <Contact rating={reviewData.rating} totalRatings={reviewData.totalRatings} />
+    <Contact />
 
   </main>
 

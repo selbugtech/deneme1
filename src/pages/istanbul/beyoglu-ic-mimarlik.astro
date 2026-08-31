@@ -1,0 +1,170 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictFAQ from '../../components/DistrictFAQ.astro';
+import ProcessStrip from '../../components/ProcessStrip.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImageW } from '../../lib/cloudinary';
+import { getProject } from '../../data/projects';
+
+const heroPath = '/images/salon6.jpeg';
+const heroAbs = optimizedImageW(heroPath, 1600);
+const refProject = getProject('beyoglu-galata');
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "InteriorDesigner",
+  "name": "Master İç Mimarlık",
+  "@id": `${CANONICAL_BASE}/#business`,
+  "areaServed": { "@type": "Place", "name": "Beyoğlu, İstanbul" },
+  "url": `${CANONICAL_BASE}/istanbul/beyoglu-ic-mimarlik`,
+  "description": "Beyoğlu'nda tarihi apartman dairelerinde iç mimarlık, anahtar teslim yenileme ve kapsamlı tadilat.",
+  "image": heroAbs,
+};
+
+const faqItems = [
+  {
+    q: "Beyoğlu'nda daire yenileme ne kadar sürer?",
+    a: "Beyoğlu'nda tipik bir dairenin anahtar teslim yenilemesi 6–10 hafta sürüyor. Süreyi uzatan başlıca iki etken var: eski binalarda elektrik ve sıhhi tesisatın neredeyse her projede baştan kurulması, ve malzeme taşıma lojistiği. Galata Kulesi çevresi ile Cihangir'in dik sokaklarında asansörsüz binalarda malzeme merdivenden taşınıyor; bu tek başına takvime birkaç gün ekliyor. Galata'da tamamladığımız 95 m²'lik daire projesi yedi haftada teslim edilmişti.",
+  },
+  {
+    q: "Beyoğlu'nda hangi mahallelerde hizmet veriyorsunuz?",
+    a: "Galata, Cihangir, Karaköy, Asmalımescit, Çukurcuma, Şişhane, Kasımpaşa ve Beyoğlu Merkez başta olmak üzere ilçe genelinde çalışıyoruz. Her mahallenin yapı stoku farklı olduğu için uygulama planını binaya özel kuruyoruz.",
+  },
+  {
+    q: "Tarihi bir binada tadilat yapmak için izin gerekiyor mu?",
+    a: "Beyoğlu'nda çok sayıda tescilli yapı ve kentsel sit alanı bulunuyor. Tescilli yapılarda cephe, doğrama, çatı ve taşıyıcı sisteme yönelik her müdahale koruma kurulu iznine tabidir. İç mekanda taşıyıcıya dokunulmayan yenilemeler ise daha esnek yürür. Keşifte önce yapının tescil durumunu ve varsa koruma grubunu kontrol ediyor, gereken izin sürecini net olarak anlatıyoruz.",
+  },
+  {
+    q: "Asansörsüz binada tadilat yapılabilir mi?",
+    a: "Evet, Beyoğlu projelerimizin önemli bir kısmı asansörsüz binalarda. Bu durumda büyük ve tek parça malzemelerden kaçınıyor, dolap ve tezgahları merdivenden çıkabilecek modüllere bölerek üretiyoruz. Moloz tahliyesi ve malzeme sevkiyatı için bina yönetimiyle önceden saat planı yapıyoruz; dar sokaklarda araç park izni de önceden ayarlanması gereken bir konu.",
+  },
+  {
+    q: "Beyoğlu'nda örnek projeniz var mı?",
+    a: "Evet. Galata'da 95 m²'lik bir dairede anahtar teslim yenileme yaptık: asma tavan ve yüksek pencerelerin yarattığı ışıklı atmosferi koruyarak oturma ve yemek alanını açık plana çevirdik, mutfak ve banyoyu baştan kurduk. Projenin tüm uygulama fotoğraflarını proje sayfasında yayımladık.",
+  },
+];
+---
+
+<ServiceLayout
+  title="Beyoğlu İç Mimarlık ve Ev Yenileme"
+  description="Beyoğlu'nda iç mimarlık ve anahtar teslim daire yenileme. Galata, Cihangir, Karaköy ve Çukurcuma'da tarihi yapı deneyimi. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/istanbul/beyoglu-ic-mimarlik`}
+  h1="Beyoğlu İç Mimarlık ve Ev Yenileme"
+  eyebrow="İstanbul · Beyoğlu"
+  lead="Tarihi dokuyu modern yaşam konforuyla buluşturuyoruz. Galata'dan Cihangir'e, yüksek tavanlı eski apartman dairelerinde uygulama deneyimimiz var."
+  heroImage={heroPath}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İstanbul", href: `${CANONICAL_BASE}/istanbul` },
+    { label: "Beyoğlu" }
+  ]}
+  structuredData={localSchema}
+>
+
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Beyoğlu'nda İç Mimarlık Hizmeti</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Beyoğlu'nda bir daireyi yenilemek, İstanbul'un başka hiçbir ilçesine benzemez. Yapı stokunun büyük
+        bölümü yüz yıl civarında; tavanlar yüksek, pencereler geniş, kat planları bugünün konut anlayışından
+        farklı kurgulanmış. Bu özellikler doğru okunduğunda dairenin en güçlü tarafı haline gelir — yanlış
+        okunduğunda ise yenileme, binanın karakterini silen bir müdahaleye dönüşür.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Yaklaşımımız korunabilir olanı korumak yönünde. Yüksek tavan oranını bozmayan aydınlatma çözümleri,
+        özgün kapı ve doğrama detaylarının restore edilmesi, kornis ve tavan göbeği gibi öğelerin
+        değerlendirilmesi çoğu projede tasarımın omurgasını oluşturuyor. Buna karşılık elektrik ve sıhhi
+        tesisat neredeyse istisnasız baştan kuruluyor; bu binalarda mevcut altyapı günümüz yüküne dayanmıyor.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Uygulama tarafında ise lojistik başlı başına bir planlama konusu. Dar ve dik sokaklar, asansörsüz
+        binalar, sınırlı araç erişimi ve park kısıtları nedeniyle malzeme sevkiyatını ve moloz tahliyesini
+        önceden saatlendiriyoruz. Ölçüye özel dolapları merdivenden çıkabilecek modüller halinde üretmek,
+        Beyoğlu projelerinde standart hale gelmiş bir çözümümüz.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4">Beyoğlu'nda Sunduğumuz Hizmetler</h3>
+      <ul class="space-y-3">
+        {[
+          'Tarihi apartman dairelerinde anahtar teslim yenileme',
+          'Elektrik ve sıhhi tesisatın baştan kurulması',
+          'Özgün doğrama, kornis ve tavan detayı restorasyonu',
+          'Mutfak ve banyo yenileme',
+          'Küçük dairelerde plan optimizasyonu',
+          'Koruma kurulu izin süreçlerinin takibi',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+      {refProject && (
+        <a href={`/projeler/${refProject.slug}`} class="group block mt-6 border border-gold/20 bg-gold/5 p-4 hover:border-gold transition-colors">
+          <p class="text-[10px] tracking-[0.25em] uppercase text-gold mb-1">Beyoğlu'ndaki projemiz</p>
+          <p class="text-sm text-charcoal font-medium group-hover:text-gold transition-colors">{refProject.title}</p>
+          <p class="text-muted text-xs mt-1">{refProject.location} · {refProject.area} · {refProject.duration} · {refProject.year}</p>
+          <p class="text-xs text-gold mt-2">Proje fotoğraflarını görün →</p>
+        </a>
+      )}
+    </div>
+  </div>
+
+  <!-- Bölge notları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Beyoğlu'nda Mahalle Notlarımız</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Galata · Şişhane</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Yüksek tavanlı, cephesi karakterli apartmanlar. Tescil durumu yapı yapı değişiyor. Dar merdivenler
+          nedeniyle mobilya modüllerini küçük ölçekli üretmek gerekiyor. Turist yoğunluğu olan sokaklarda
+          sevkiyat için erken saatler tercih ediliyor.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Cihangir · Çukurcuma</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Dik yokuşlar ve sınırlı park alanı nedeniyle araç erişimi planlamanın parçası. Daireler genellikle
+          orta ölçekli; manzarayı öne çıkaran pencere hizası ve doğal ışık kurgusu tasarımın merkezinde.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Karaköy · Asmalımescit</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Konut yanında ofis ve ticari mekan dönüşümlerinin yoğun olduğu bölge. Kafe, ofis ve butik mağaza
+          projelerinde ruhsat ve işyeri açma süreçleri tasarımla paralel yürütülüyor.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <ProcessStrip districtName="Beyoğlu" />
+
+  <DistrictFAQ districtName="Beyoğlu" items={faqItems} />
+
+  <div class="py-12 border-t border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Hizmetlerimiz</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Tüm Hizmetler', href: '/hizmetler' },
+        { label: 'Anahtar Teslim Ev Tadilat', href: '/hizmetler/anahtar-teslim/ev-tadilat' },
+        { label: 'Cafe & Restaurant Yenileme', href: '/hizmetler/anahtar-teslim/cafe-restaurant-yenileme' },
+        { label: 'Mutfak Yenileme', href: '/hizmetler/mutfak-yenileme' },
+        { label: 'Beyoğlu Ev Tadilatı Rehberi', href: '/blog/beyoglu-ev-tadilati' },
+        { label: 'Beyoğlu İç Mimarlık Ofisleri', href: '/blog/beyoglu-ic-mimarlik-ofisleri' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </div>
+
+  <RelatedDistricts currentSlug="beyoglu-ic-mimarlik" />
+
+</ServiceLayout>

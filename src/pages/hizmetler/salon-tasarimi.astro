@@ -1,0 +1,229 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImage } from '../../lib/cloudinary';
+
+const heroPath = '/images/salon7.jpeg';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Salon ve Oturma Odası Tasarımı",
+  "name": "İstanbul Salon ve Oturma Odası Tasarımı",
+  "description": "Salon ve oturma odası için plan kurgusu, aydınlatma tasarımı, ölçüye özel ünite ve mobilya seçimi dahil iç mimarlık hizmeti.",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
+  "areaServed": { "@type": "City", "name": "İstanbul" },
+  "url": `${CANONICAL_BASE}/hizmetler/salon-tasarimi`,
+};
+
+const faqItems = [
+  {
+    q: "Salon tasarımı sadece mobilya seçimi mi demek?",
+    a: "Hayır, mobilya işin son adımıdır. Önce salonun nasıl kullanıldığını çözüyoruz: kaç kişi oturuyor, televizyon izleniyor mu, yemek masası salonda mı, misafir ağırlanıyor mu, çalışma alanı gerekiyor mu. Bu cevaplar oturma grubunun yönünü, geçiş akslarını ve aydınlatma kurgusunu belirler. Mobilya bu kararlar netleştikten sonra seçilir.",
+  },
+  {
+    q: "Salonu yenilemek için tadilat gerekir mi?",
+    a: "Çoğu salon projesi yapısal müdahale gerektirmez. Zemin kaplaması, duvar rengi, ölçüye özel ünite, aydınlatma ve tekstil değişimiyle mekan bütünüyle başka bir karaktere kavuşur. Duvar kaldırarak salonu mutfakla birleştirmek gibi bir hedef varsa o zaman taşıyıcı sistem incelemesi ve gerekiyorsa izin süreci devreye girer.",
+  },
+  {
+    q: "Açık planlı salon-mutfak her ev için doğru mu?",
+    a: "Değil. Açık plan mekanı ferahlatır ve doğal ışığı daha derine taşır; ancak koku ve ses yalıtımını ortadan kaldırır. Yoğun pişirilen bir mutfak, evde ders çalışan biri veya farklı saatlerde uyuyan bir hane varsa açık plan günlük yaşamı zorlaştırabilir. Bu durumda cam bölme veya sürgülü panel gibi ara çözümler öneriyoruz.",
+  },
+  {
+    q: "Televizyon ünitesini hazır mı almalıyım, ölçüye özel mi yaptırmalıyım?",
+    a: "Duvarınızda kolon çıkıntısı, pencere hizası ya da düzensiz bir niş varsa ölçüye özel üretim boşa alan bırakmadığı için belirgin avantaj sağlar. Duvar düz ve standart ölçüdeyse hazır ünite de iyi sonuç verebilir. Kablo yönetimi ve priz konumlarını her iki durumda da tasarım aşamasında planlıyoruz.",
+  },
+  {
+    q: "Küçük bir salonu nasıl büyük gösterebiliriz?",
+    a: "En etkili üç karar şunlar: mobilyayı duvara yaslamak yerine geçiş akslarını açık bırakmak, zemin kaplamasını mekan boyunca kesintisiz sürdürmek ve aydınlatmayı tek tavan armatürü yerine katmanlara yaymak. Ayrıca yerden yüksek ayaklı mobilya, altındaki zemin göründüğü için mekanı görsel olarak genişletir.",
+  },
+  {
+    q: "Salon tasarımı ne kadar sürer?",
+    a: "Tasarım ve 3D onay aşaması genellikle 1–2 hafta sürer. Uygulama ise kapsamla değişir: boya, aydınlatma ve mobilya yerleşimiyle sınırlı bir çalışma birkaç gün içinde biterken, zemin değişimi ve ölçüye özel ünite üretimi içeren projeler 2–4 haftayı bulur.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const dahil = [
+  'Mekan analizi ve yerleşim planı',
+  'Renk paleti ve malzeme kurgusu',
+  '3D görselleştirme ile tasarım onayı',
+  'Ölçüye özel TV ünitesi ve depolama',
+  'Katmanlı aydınlatma projesi',
+  'Zemin ve duvar kaplaması uygulaması',
+  'Mobilya, halı ve tekstil seçimi',
+  'Tedarik, montaj ve yerleşim',
+];
+
+const katmanlar = [
+  { t: 'Genel aydınlatma', d: 'Mekanın temel ışık seviyesini kurar. Tek bir tavan avizesi yerine mekana dağıtılmış spot veya lineer armatürler, gölgesiz ve dengeli bir taban sağlar.' },
+  { t: 'Görev aydınlatması', d: 'Okuma köşesi, çalışma masası ya da oturma grubunun yanındaki lambader gibi belirli bir eylemi destekleyen ışıktır. Konumu, kullanıcının nerede oturduğuna göre belirlenir.' },
+  { t: 'Aksan aydınlatması', d: 'Tablo, raf, doku duvarı veya bitki gibi öğeleri vurgular. Mekana derinlik kazandıran katman budur; salonlarda en sık atlanan da yine bu.' },
+  { t: 'Dolaylı ışık', d: 'Asma tavan bandı, perde kornişi arkası veya ünite içi gizli aydınlatma. Akşam saatlerinde tavan armatürünü hiç açmadan yaşanabilir bir ortam kurar.' },
+];
+---
+
+<ServiceLayout
+  title="Salon ve Oturma Odası Tasarımı İstanbul | İç Mimarlık"
+  description="İstanbul'da salon ve oturma odası tasarımı: yerleşim planı, katmanlı aydınlatma, ölçüye özel ünite ve mobilya seçimi. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/hizmetler/salon-tasarimi`}
+  h1="Salon ve Oturma Odası Tasarımı"
+  eyebrow="Oda Bazlı Hizmet"
+  lead="Evin en çok vakit geçirilen alanı. Doğru plan kurgusu, katmanlı aydınlatma ve ölçüye özel depolama ile salonu hem ferah hem yaşanabilir hale getiriyoruz."
+  heroImage={heroPath}
+  ogImage={optimizedImage(heroPath)}
+  expandedByDefault={true}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
+    { label: "Salon Tasarımı" }
+  ]}
+  structuredData={[serviceSchema, faqSchema]}
+>
+
+  <section class="py-12 border-b border-border">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Salon Tasarımına Nereden Başlıyoruz?</h2>
+        <p class="text-muted leading-relaxed mb-4">
+          Salon, evin içinde en çok işlevi aynı anda üstlenen mekandır. Aynı alanda televizyon izlenir, misafir
+          ağırlanır, kimi evde yemek yenir, kimi evde çalışılır. Bu nedenle salon tasarımı bir dekorasyon
+          çalışmasından çok, bir kullanım senaryosu kurma işidir.
+        </p>
+        <p class="text-muted leading-relaxed mb-4">
+          İlk adımda mekanın sabitlerini okuyoruz: pencerenin yönü ve günün hangi saatinde ışık aldığı, kapı ve
+          geçiş aksları, kolon ve kiriş çıkıntıları, radyatör ve priz konumları. Bu sabitler oturma grubunun
+          yerleşebileceği seçenekleri baştan sınırlar; iyi bir salon planı bunlara rağmen değil, bunlarla
+          birlikte kurulur.
+        </p>
+        <p class="text-muted leading-relaxed">
+          İkinci adımda kullanım önceliğini belirliyoruz. Oturma grubunun televizyona mı yoksa birbirine mi
+          döneceği, yemek masasının salonda kalıp kalmayacağı, geçiş akslarının nereden akacağı bu aşamada
+          netleşir. Mobilya ve renk kararları ancak bu iskelet oturduktan sonra anlamlı hale gelir.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-charcoal mb-4">Hizmete dahil olanlar</h3>
+        <ul class="space-y-3">
+          {dahil.map(item => (
+            <li class="flex items-start gap-3 text-sm text-muted">
+              <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+                <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+          <p class="text-sm text-charcoal font-medium">Salonu mutfakla birleştirmek</p>
+          <p class="text-muted text-sm mt-2">
+            Duvar kaldırma içeren projeler yapısal değerlendirme gerektirir.
+            <a href="/hizmetler/anahtar-teslim/ev-tadilat" class="text-gold hover:underline">Ev tadilat</a>
+            sayfamızda bu kapsamı anlatıyoruz.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Aydınlatma -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Salonun Karakterini Aydınlatma Belirler</h2>
+    <p class="text-muted leading-relaxed max-w-3xl mb-8">
+      Aynı salon, aydınlatma kurgusuna göre tamamen farklı iki mekana dönüşebilir. Tek tavan armatürüyle
+      aydınlatılan bir oda gündüz nötr, akşam ise düz ve yorucu görünür. Dört katmanı birlikte kurduğumuzda
+      mekan gün içinde kendini yeniden düzenler.
+    </p>
+    <div class="grid md:grid-cols-2 gap-6">
+      {katmanlar.map((k, i) => (
+        <div class="border border-border p-7 bg-[#FAF6F1]">
+          <p class="text-[10px] tracking-[0.25em] uppercase text-gold mb-2">Katman 0{i + 1}</p>
+          <h3 class="font-display text-lg font-bold text-charcoal mb-2">{k.t}</h3>
+          <p class="text-muted text-sm leading-relaxed">{k.d}</p>
+        </div>
+      ))}
+    </div>
+    <p class="text-muted text-sm leading-relaxed max-w-3xl mt-6">
+      Katmanların ayrı anahtarlardan kontrol edilebilmesi de en az kendileri kadar önemli. Elektrik planını
+      bu nedenle aydınlatma kurgusu netleştikten sonra çiziyoruz — sonradan hat çekmek duvar açmayı gerektirir.
+      Konuyu daha ayrıntılı okumak isterseniz
+      <a href="/blog/ev-aydinlatma-rehberi" class="text-gold hover:underline">ev aydınlatma rehberimize</a> bakabilirsiniz.
+    </p>
+  </section>
+
+  <!-- Plan kurguları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Salonda Sık Kullandığımız Üç Plan Kurgusu</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-7 bg-[#FAF6F1]">
+        <h3 class="font-display text-lg font-bold text-charcoal mb-2">Karşılıklı oturma</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          İki kanepenin birbirine baktığı düzen. Sohbet odaklı hanelerde ve misafirin sık ağırlandığı evlerde
+          iyi çalışır. Televizyonun ikinci planda kaldığı bu kurgu, geniş ve kare oranlı salonlar için uygundur.
+        </p>
+      </div>
+      <div class="border border-border p-7 bg-[#FAF6F1]">
+        <h3 class="font-display text-lg font-bold text-charcoal mb-2">L düzeni</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Köşe kanepe ve tekli koltukla kurulan en yaygın çözüm. Hem televizyona hem sohbete açık olması ve
+          köşeyi verimli kullanması nedeniyle dikdörtgen salonlarda ilk tercihimiz genellikle bu olur.
+        </p>
+      </div>
+      <div class="border border-border p-7 bg-[#FAF6F1]">
+        <h3 class="font-display text-lg font-bold text-charcoal mb-2">Bölgeleme</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Uzun ve dar salonlarda mekanı halı, aydınlatma ve sırtı açık bir konsolla iki bölgeye ayırmak; bir
+          tarafta oturma, diğer tarafta yemek ya da çalışma alanı kurmak. Duvar örmeden bölme sağlar.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SSS -->
+  <section class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="w-8 h-px bg-gold"></span>
+      <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Sıkça Sorulan Sorular</span>
+    </div>
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Salon tasarımı hakkında</h2>
+    <div class="space-y-4">
+      {faqItems.map(f => (
+        <details class="border border-border bg-[#FAF6F1] p-6 group">
+          <summary class="font-semibold text-charcoal cursor-pointer list-none flex items-start justify-between gap-4">
+            <span>{f.q}</span>
+            <span class="text-gold shrink-0 transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="text-muted text-sm leading-relaxed mt-4">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">İlgili Sayfalar</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Salon Dekorasyon Fikirleri', href: '/blog/salon-dekorasyon-fikirleri' },
+        { label: 'Ev Aydınlatma Rehberi', href: '/blog/ev-aydinlatma-rehberi' },
+        { label: 'Küçük Daire Dekorasyonu', href: '/blog/kucuk-daire-dekorasyon-fikirleri' },
+        { label: 'Yatak Odası Tasarımı', href: '/hizmetler/yatak-odasi-tasarimi' },
+        { label: 'Anahtar Teslim Ev Yenileme', href: '/hizmetler/anahtar-teslim/ev-yenileme' },
+        { label: 'Caddebostan Daire Projesi', href: '/projeler/caddebostan' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </section>
+
+</ServiceLayout>

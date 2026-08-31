@@ -1,0 +1,157 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictFAQ from '../../components/DistrictFAQ.astro';
+import ProcessStrip from '../../components/ProcessStrip.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImageW } from '../../lib/cloudinary';
+import { getProject } from '../../data/projects';
+
+const heroPath = '/images/merdiven1.jpeg';
+const heroAbs = optimizedImageW(heroPath, 1600);
+const refProject = getProject('tepekent');
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "InteriorDesigner",
+  "name": "Master İç Mimarlık",
+  "@id": `${CANONICAL_BASE}/#business`,
+  "areaServed": { "@type": "Place", "name": "Büyükçekmece, İstanbul" },
+  "url": `${CANONICAL_BASE}/istanbul/buyukcekmece-ic-mimarlik`,
+  "description": "Büyükçekmece'de villa yenileme, sahil konutu tadilatı ve anahtar teslim iç mimarlık hizmeti.",
+  "image": heroAbs,
+};
+
+const faqItems = [
+  {
+    q: "Büyükçekmece'de villa yenileme ne kadar sürer?",
+    a: "Villa projeleri genellikle 10–16 hafta sürüyor. Tepekent'te tamamladığımız 140 m² villa on haftada teslim edilmişti. Kapsam iç mekanla sınırlıysa süre alt banda yaklaşıyor; dış cephe, teras ve bahçe düzenlemesi de dahilse üst banda çıkıyor. Site dairelerinde ise 4–8 hafta yeterli oluyor.",
+  },
+  {
+    q: "Büyükçekmece'de hangi mahallelerde hizmet veriyorsunuz?",
+    a: "Tepekent, Mimaroba, Sinanoba, Kumburgaz, Güzelce, Karaağaç ve merkez başta olmak üzere ilçe genelinde çalışıyoruz. İlçede tamamlanmış bir villa projemiz bulunuyor.",
+  },
+  {
+    q: "Yazlık bir evi dört mevsim yaşanabilir hale getirebilir misiniz?",
+    a: "Evet, Büyükçekmece’de sık yaptığımız işlerden biri. Bu dönüşümde üç başlık belirleyici: dış cephe ve çatı yalıtımı, ısıtma sisteminin yeniden kurgulanması ve nem yönetimi. Yazlık standardında yapılmış yapılarda duvar ve döşeme yalıtımı çoğunlukla yetersiz; bu çözülmeden yapılan iç mekan yenilemesi kışın konfor sağlamıyor.",
+  },
+  {
+    q: "Denize yakın yapılarda malzeme seçimi değişiyor mu?",
+    a: "Evet. Sahil hattında nem ve tuzluluk, özellikle dış cephe kaplamaları, metal donanım ve doğrama seçimlerini etkiliyor. Korozyona dayanıklı donanım ve neme dirençli yüzeyler tercih ediyoruz. İç mekanda ise ıslak hacim yalıtımına daha yüksek bir standart uyguluyoruz.",
+  },
+  {
+    q: "Büyükçekmece merkeze uzak, keşfe geliyor musunuz?",
+    a: "Evet, ilçe genelinde ücretsiz keşif yapıyoruz. Uzaklık şantiye takviminde yalnızca sevkiyat planlamasını etkiliyor, bunu da baştan programlıyoruz. Keşif randevusunu WhatsApp veya telefonla alabilirsiniz.",
+  },
+];
+---
+
+<ServiceLayout
+  title="Büyükçekmece İç Mimarlık ve Villa Yenileme"
+  description="Büyükçekmece'de villa yenileme, site dairesi tadilatı ve iç mimarlık. Tepekent, Mimaroba ve Kumburgaz'da aktif. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/istanbul/buyukcekmece-ic-mimarlik`}
+  h1="Büyükçekmece İç Mimarlık ve Villa Yenileme"
+  eyebrow="İstanbul · Büyükçekmece"
+  lead="Tepekent'te 140 m²'lik bir villayı anahtar teslim yeniledik. Göl ve sahil hattındaki villa siteleri ilçenin en belirgin yapı tipi."
+  heroImage={heroPath}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İstanbul", href: `${CANONICAL_BASE}/istanbul` },
+    { label: "Büyükçekmece" }
+  ]}
+  structuredData={localSchema}
+>
+
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Büyükçekmece'de İç Mimarlık Hizmeti</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Büyükçekmece, İstanbul'un batı ucunda, göl ve deniz arasında konumlanmış bir ilçe. Yapı stokunun karakterini bu coğrafya belirliyor: Tepekent, Mimaroba ve Sinanoba hattındaki villa siteleri, Kumburgaz ve Güzelce'deki sahil konutları ve merkez çevresindeki apartman dokusu.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        İlçenin kendine özgü bir tarafı da ikinci konut geçmişi. Uzun yıllar yazlık olarak kullanılan pek çok yapı, zamanla kalıcı konuta dönüştü. Bu dönüşüm belirli bir iş kalemini öne çıkarıyor: yazlık standardında yapılmış bir evi dört mevsim yaşanabilir hale getirmek. Yalıtım, ısıtma sistemi ve nem yönetimi bu projelerin merkezinde duruyor.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Villa ve müstakil konut projelerinde kapsam iç mekanla sınırlı kalmıyor. Terasın iç mekanla kot ilişkisi, bahçeye açılan doğrama tipi ve dış cephe kalemleri projeye giriyor. Deniz ve göle yakınlık nedeniyle cephe malzemelerinin nem ve tuzluluğa dayanımı da seçim kriterlerimiz arasında.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4">Büyükçekmece'de Sunduğumuz Hizmetler</h3>
+      <ul class="space-y-3">
+        {[
+          'Villa ve müstakil konut yenileme',
+          'Yazlıktan kalıcı konuta dönüşüm ve yalıtım',
+          'Teras, bahçe ve dış mekan entegrasyonu',
+          'Site dairelerinde anahtar teslim yenileme',
+          'Elektrik, tesisat ve ısıtma sistemi yenilemesi',
+          'Özel mobilya tasarımı ve üretimi',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+      {refProject && (
+        <a href={`/projeler/${refProject.slug}`} class="group block mt-6 border border-gold/20 bg-gold/5 p-4 hover:border-gold transition-colors">
+          <p class="text-[10px] tracking-[0.25em] uppercase text-gold mb-1">Büyükçekmece'deki projemiz</p>
+          <p class="text-sm text-charcoal font-medium group-hover:text-gold transition-colors">{refProject.title}</p>
+          <p class="text-muted text-xs mt-1">{refProject.location} · {refProject.area} · {refProject.duration} · {refProject.year}</p>
+          <p class="text-xs text-gold mt-2">Proje fotoğraflarını görün →</p>
+        </a>
+      )}
+    </div>
+  </div>
+
+  <!-- Bölge notları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Büyükçekmece'de Bölge Notlarımız</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Tepekent · Mimaroba · Sinanoba</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Villa sitelerinin yoğunlaştığı hat. Kapsam iç mekanla sınırlı kalmıyor; teras, bahçe ve dış cephe kalemleri projeye giriyor. Tepekent’te 140 m² villa projemizi 10 haftada teslim ettik.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Kumburgaz · Güzelce</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Sahil hattı. Yazlıktan kalıcı konuta dönüşen yapı sayısı yüksek; yalıtım, ısıtma ve nem yönetimi bu projelerin merkezinde. Cephe malzemesi seçilirken tuzluluk ve neme dayanım gözetiliyor.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Merkez · Atatürk · Karaağaç</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Apartman ve site dairelerinin ağırlıkta olduğu bölge. Altyapı durumu binaya göre değiştiği için kapsamı keşifte netleştiriyoruz.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <ProcessStrip districtName="Büyükçekmece" />
+
+  <DistrictFAQ districtName="Büyükçekmece" items={faqItems} />
+
+  <div class="py-12 border-t border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Hizmetlerimiz</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Tüm Hizmetler', href: '/hizmetler' },
+        { label: 'Villa Yenileme', href: '/hizmetler/anahtar-teslim/villa-yenileme' },
+        { label: 'Villa Tadilat', href: '/hizmetler/anahtar-teslim/villa-tadilat' },
+        { label: 'Tepekent Villa Projesi', href: '/projeler/tepekent' },
+        { label: 'Villa Tadilat Rehberi', href: '/blog/villa-tadilati-istanbul' },
+        { label: 'Beylikdüzü İç Mimarlık', href: '/istanbul/beylikduzu-ic-mimarlik' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </div>
+
+  <RelatedDistricts currentSlug="buyukcekmece-ic-mimarlik" />
+
+</ServiceLayout>

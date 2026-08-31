@@ -1,0 +1,222 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImage } from '../../lib/cloudinary';
+import { styles } from '../../data/styles';
+import { byGroup } from '../../data/services';
+
+const heroPath = '/images/salon5.jpeg';
+const oda = byGroup('oda');
+
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "İç Mimarlık Stilleri",
+  "description": "Modern, minimalist, İskandinav, klasik ve endüstriyel iç mimarlık yaklaşımları ve İstanbul dairelerinde uygulanışı.",
+  "itemListElement": styles.map((s, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": s.fullName,
+    "url": `${CANONICAL_BASE}/ic-mimarlik/${s.slug}`,
+  })),
+};
+
+const faqItems = [
+  {
+    q: "Hangi iç mimarlık stilini seçmeliyim?",
+    a: "Stil seçimini beğendiğiniz görsellerden değil, mekanın kendisinden başlatmanızı öneriyoruz. Tavan yüksekliği, pencerelerin yönü ve aldığı ışık miktarı, mekanın oranları ve binanın yaşı hangi dilin gerçekten işe yarayacağını büyük ölçüde belirliyor. Az ışık alan kuzey cepheli bir dairede koyu tonlu endüstriyel bir kurgu zorlanırken, aynı mekan İskandinav yaklaşımıyla belirgin biçimde açılıyor.",
+  },
+  {
+    q: "Stilleri karıştırabilir miyim?",
+    a: "Evet ve pratikte çoğu proje zaten karma çıkıyor. Önemli olan bir dilin baskın kalması ve diğerinin sınırlı sayıda öğeyle destek vermesi. İki dilin eşit ağırlıkta kullanıldığı mekanlar kararsız görünüyor. Genelde şu yöntemi izliyoruz: kalıcı katmanı (zemin, dolap, duvar) tek bir dile bağlıyor, karışımı tekstil ve aksesuar gibi değiştirilebilir katmanda yapıyoruz.",
+  },
+  {
+    q: "Trend olan bir stili seçmek doğru mu?",
+    a: "Kalıcı katmanda değil. Zemin, mutfak dolabı ve gömme depolama on yıl veya daha uzun süre kullanılıyor; bunları döneme özgü bir tercihe bağlamak, birkaç yıl içinde eskimiş bir mekana yol açıyor. Trendi tekstil, aydınlatma armatürü ve aksesuar gibi kolay değiştirilebilen katmanda kullanmak hem daha ekonomik hem daha sürdürülebilir.",
+  },
+  {
+    q: "3D görselle stili önceden görebilir miyim?",
+    a: "Evet, tüm projelerimizde standart. Aynı mekanı farklı malzeme ve renk kurgularıyla görselleştirip karşılaştırmalı olarak sunabiliyoruz. Stil kararının uygulamadan önce, ekranda verilmesi hem maliyet hem de pişmanlık açısından en güvenli yol.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<ServiceLayout
+  title="İç Mimarlık Stilleri — Modern, Minimalist, Klasik ve Daha Fazlası"
+  description="Modern, minimalist, İskandinav, klasik ve endüstriyel iç mimarlık stilleri; İstanbul dairelerinde nasıl uygulandıkları ve hangi mekana uyduğu. 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/ic-mimarlik`}
+  h1="İç Mimarlık Stilleri"
+  eyebrow="Konsept Rehberi"
+  lead="Stil seçimi beğenilen görselden değil, mekanın kendisinden başlar. Tavan yüksekliği, ışık ve oranlar hangi dilin gerçekten işe yarayacağını belirler."
+  heroImage={heroPath}
+  ogImage={optimizedImage(heroPath)}
+  expandedByDefault={true}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İç Mimarlık Stilleri" }
+  ]}
+  structuredData={[itemListSchema, faqSchema]}
+>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Stil, Mekanın Verdiği Cevaptır</h2>
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <p class="text-muted leading-relaxed mb-4">
+          Müşterilerimizin çoğu ilk görüşmeye bir görsel klasörüyle geliyor. Bu iyi bir başlangıç; ne
+          sevdiğinizi göstermenin en hızlı yolu. Ama o görsellerin çekildiği mekanların tavan yüksekliği,
+          pencere büyüklüğü ve aldığı ışık, çoğu zaman sizin dairenizle örtüşmüyor. Aynı malzeme paletinin
+          iki farklı mekanda tamamen farklı sonuç vermesinin sebebi bu.
+        </p>
+        <p class="text-muted leading-relaxed mb-4">
+          Bu nedenle stil kararını mekanın verileriyle birlikte alıyoruz. Kuzey cepheli, gün boyu soğuk ve
+          az ışık alan bir dairede koyu tonlu endüstriyel bir kurgu mekanı daha da kapatırken, aynı daire
+          İskandinav yaklaşımıyla belirgin biçimde açılıyor. Tavanı 3 metreyi geçen eski bir apartman
+          dairesinde ise klasik dilin kornis ve oran çalışması, modern bir kurgudan çok daha güçlü sonuç
+          veriyor.
+        </p>
+        <p class="text-muted leading-relaxed">
+          Aşağıdaki beş sayfada, her dilin ne olduğunu değil — bunu zaten her yerde bulabilirsiniz —
+          İstanbul dairelerinde fiilen nasıl uygulandığını, hangi mekanda çalışıp hangisinde zorlandığını
+          ve uygulamada en sık nerede yanlış gittiğini anlatıyoruz.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-charcoal mb-4">Stil kararını etkileyen veriler</h3>
+        <ul class="space-y-3">
+          {[
+            'Tavan yüksekliği ve mekanın oranları',
+            'Pencere yönü ve gün içinde alınan ışık',
+            'Binanın yaşı ve özgün mimari detayları',
+            'Kolon, kiriş ve taşıyıcı duvar konumları',
+            'Hanenin günlük kullanım biçimi',
+            'Mevcut mobilyalardan korunacaklar',
+          ].map(item => (
+            <li class="flex items-start gap-3 text-sm text-muted">
+              <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+                <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+          <p class="text-sm text-charcoal font-medium">Kararı ekranda verin</p>
+          <p class="text-muted text-sm mt-2">
+            Aynı mekanı farklı kurgularla görselleştirip karşılaştırıyoruz.
+            <a href="/hizmetler/3d-tasarim" class="text-gold hover:underline">3D tasarım</a>
+            tüm projelerimizde standart.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="w-8 h-px bg-gold"></span>
+      <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Beş Yaklaşım</span>
+    </div>
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Çalıştığımız İç Mimarlık Stilleri</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {styles.map(s => (
+        <a href={`/ic-mimarlik/${s.slug}`} class="group block border border-border hover:border-gold transition-colors duration-200">
+          <div class="overflow-hidden">
+            <img src={s.image} alt={s.fullName} loading="lazy" decoding="async"
+                 class="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="p-5">
+            <p class="text-[10px] tracking-[0.25em] uppercase text-gold mb-2">{s.tagline}</p>
+            <h3 class="font-display text-lg font-bold text-charcoal group-hover:text-gold transition-colors mb-2">{s.fullName}</h3>
+            <p class="text-muted text-sm leading-relaxed mb-3">{s.desc}</p>
+            <p class="text-muted text-xs">{s.palette}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-4">Kalıcı Katman ve Değişken Katman</h2>
+    <p class="text-muted leading-relaxed max-w-3xl mb-8">
+      Stil kararlarını iki katmana ayırmak, hem bütçeyi hem de mekanın ömrünü koruyor. Kalıcı katman on yıl
+      ve üzeri kullanılıyor; burada döneme özgü tercihlerden kaçınmak gerekiyor. Değişken katman ise birkaç
+      yılda bir yenilenebiliyor — denemeye açık olan taraf burası.
+    </p>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="border border-border p-7 bg-[#FAF6F1]">
+        <p class="text-[10px] tracking-[0.25em] uppercase text-gold mb-2">Kalıcı katman</p>
+        <h3 class="font-display text-lg font-bold text-charcoal mb-3">Zamansız tutun</h3>
+        <ul class="space-y-2 text-sm text-muted">
+          <li>· Zemin kaplaması</li>
+          <li>· Mutfak ve banyo dolapları, tezgah</li>
+          <li>· Gömme depolama ve ölçüye özel üniteler</li>
+          <li>· Duvar ve tavan yüzey kararları</li>
+          <li>· Kapı ve doğrama detayları</li>
+        </ul>
+      </div>
+      <div class="border border-border p-7 bg-[#FAF6F1]">
+        <p class="text-[10px] tracking-[0.25em] uppercase text-gold mb-2">Değişken katman</p>
+        <h3 class="font-display text-lg font-bold text-charcoal mb-3">Denemeye açık bırakın</h3>
+        <ul class="space-y-2 text-sm text-muted">
+          <li>· Tekstil: perde, halı, döşemelik</li>
+          <li>· Aydınlatma armatürleri</li>
+          <li>· Serbest mobilya ve oturma grubu</li>
+          <li>· Aksesuar, tablo ve bitki</li>
+          <li>· Duvar rengi (boya en kolay geri alınan karar)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-4">Stili Odaya Göre Uygulamak</h2>
+    <p class="text-muted leading-relaxed max-w-3xl mb-6">
+      Seçtiğiniz dil her odada aynı yoğunlukta uygulanmıyor. Salonda karakterin güçlü olması beklenirken
+      yatak odasında daha sakin, mutfakta ise işlevin öne çıktığı bir yorum genellikle daha iyi çalışıyor.
+    </p>
+    <div class="flex flex-wrap gap-3">
+      {oda.map(s => (
+        <a href={s.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">
+          {s.title}
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="w-8 h-px bg-gold"></span>
+      <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Sıkça Sorulan Sorular</span>
+    </div>
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Stil seçimi hakkında</h2>
+    <div class="space-y-4">
+      {faqItems.map(f => (
+        <details class="border border-border bg-[#FAF6F1] p-6 group">
+          <summary class="font-semibold text-charcoal cursor-pointer list-none flex items-start justify-between gap-4">
+            <span>{f.q}</span>
+            <span class="text-gold shrink-0 transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="text-muted text-sm leading-relaxed mt-4">{f.a}</p>
+        </details>
+      ))}
+    </div>
+    <p class="text-muted text-sm leading-relaxed mt-8">
+      Güncel eğilimler için <a href="/blog/ic-mimarlik-trendleri-2025" class="text-gold hover:underline">iç mimarlık trendleri</a>
+      yazımıza, uygulama tarafı için <a href="/hizmetler" class="text-gold hover:underline">hizmetlerimize</a> bakabilirsiniz.
+    </p>
+  </section>
+
+</ServiceLayout>

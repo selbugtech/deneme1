@@ -1,0 +1,154 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictFAQ from '../../components/DistrictFAQ.astro';
+import ProcessStrip from '../../components/ProcessStrip.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImageW } from '../../lib/cloudinary';
+
+const heroPath = '/images/salon2.jpeg';
+const heroAbs = optimizedImageW(heroPath, 1600);
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "InteriorDesigner",
+  "name": "Master İç Mimarlık",
+  "@id": `${CANONICAL_BASE}/#business`,
+  "areaServed": { "@type": "Place", "name": "Ümraniye, İstanbul" },
+  "url": `${CANONICAL_BASE}/istanbul/umraniye-ic-mimarlik`,
+  "description": "Ümraniye'de anahtar teslim daire yenileme, mutfak-banyo tadilatı ve ofis iç mimarlığı.",
+  "image": heroAbs,
+};
+
+const faqItems = [
+  {
+    q: "Ümraniye'de daire yenileme ne kadar sürer?",
+    a: "Yapı tipine göre belirgin şekilde değişiyor. Atakent ve Çakmak hattındaki yeni site dairelerinde altyapı sağlam olduğu için anahtar teslim yenileme 4–7 hafta sürüyor. Yukarı Dudullu ve Esenşehir çevresindeki eski apartmanlarda elektrik ve tesisat yenilemesi zorunlu hale geldiğinde bu süre 7–10 haftaya çıkıyor.",
+  },
+  {
+    q: "Ümraniye'de hangi mahallelerde hizmet veriyorsunuz?",
+    a: "Atakent, Çakmak, Ihlamurkuyu, Tepeüstü, Esenşehir ve Yukarı Dudullu başta olmak üzere ilçe genelinde çalışıyoruz. Ofisimiz Acıbadem’de olduğu için Ümraniye’ye keşif randevularını çoğunlukla aynı hafta içinde verebiliyoruz.",
+  },
+  {
+    q: "Yeni bir daire neden yenileme gerektiriyor?",
+    a: "Ümraniye’de en sık karşılaştığımız talep teknik bir arıza değil, kullanım uyumsuzluğu. Toplu konut projelerinde daireler standart bir plan ve standart bir malzeme paketiyle teslim ediliyor; mutfak dolabı çoğu ailenin ihtiyacını karşılamıyor, depolama yetersiz kalıyor ve salon-mutfak ilişkisi kullanım biçimine uymuyor. Altyapıya dokunmadan yapılan bir yenileme bu daireleri belirgin biçimde iyileştiriyor.",
+  },
+  {
+    q: "Site yönetiminden tadilat için izin almam gerekir mi?",
+    a: "Ümraniye’deki sitelerin çoğunda gerekiyor. Yönetimler genellikle önceden bildirim, bazı sitelerde yazılı izin ve depozito istiyor; ayrıca gürültülü çalışma saatleri ve yük asansörü kullanım aralıkları yönetim planında sınırlanmış oluyor. Keşif sırasında bu kısıtları birlikte gözden geçirip gerekli başvuruları sizin adınıza yapıyoruz.",
+  },
+  {
+    q: "Eski binalarda tesisat yenilemesi şart mı?",
+    a: "Bina 25 yaşın üzerindeyse ve tesisat hiç elden geçmediyse büyük olasılıkla evet. Bu yapılarda sıklıkla galvaniz su borusuyla karşılaşıyoruz; iç yüzeyi zamanla daraldığı için basınç düşüyor ve delinme riski taşıyor. Yeni bir mutfak veya banyo yaptıktan sonra tesisat yüzünden geri sökmek zorunda kalmamak için sökümden sonra bir ara değerlendirme yapıyoruz.",
+  },
+];
+---
+
+<ServiceLayout
+  title="Ümraniye İç Mimarlık ve Ev Yenileme"
+  description="Ümraniye'de iç mimarlık, site dairesi yenileme ve anahtar teslim tadilat. Atakent, Çakmak ve Tepeüstü'nde aktif. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/istanbul/umraniye-ic-mimarlik`}
+  h1="Ümraniye İç Mimarlık ve Ev Yenileme"
+  eyebrow="İstanbul · Ümraniye"
+  lead="Ümraniye, İstanbul'un en hızlı dönüşen ilçelerinden biri. Yeni site daireleriyle 1990'lar apartman stoku yan yana duruyor ve ikisi bütünüyle farklı iş demek."
+  heroImage={heroPath}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İstanbul", href: `${CANONICAL_BASE}/istanbul` },
+    { label: "Ümraniye" }
+  ]}
+  structuredData={localSchema}
+>
+
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Ümraniye'de İç Mimarlık Hizmeti</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Ümraniye, son yirmi yılda karakterini en çok değiştiren İstanbul ilçelerinden biri. Atakent, Çakmak ve Tepeüstü hattında yükselen yeni site projeleri ile Yukarı Dudullu ve Esenşehir çevresindeki 1990'lar apartman stoku aynı ilçe içinde yan yana bulunuyor. Bu iki grup, yenileme açısından tamamen farklı iki iş anlamına geliyor.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Yeni sitelerde altyapı sağlam olduğu için müdahale gerekmiyor; iş plan optimizasyonu ve depolama üzerinden ilerliyor. Toplu konut projelerinde daireler standart bir dolap paketiyle teslim edildiği için mutfak kurgusu ve depolama kapasitesi çoğu ailenin ihtiyacını karşılamıyor. Bu dairelerde altyapıya dokunmadan yapılan bir yenileme belirgin fark yaratıyor ve süreç kısa sürüyor.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Eski apartman stokunda ise durum tersine dönüyor. 25–30 yaşındaki binalarda elektrik tesisatı bugünün yüküne göre kurulmamış; mutfak ve banyo söküldüğünde çoğu zaman galvaniz su borusuyla karşılaşıyoruz. Bu yapılarda kapsamı sökümden sonra netleştiriyor, değişiklik gerekiyorsa yazılı onayınızı almadan devam etmiyoruz.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4">Ümraniye'de Sunduğumuz Hizmetler</h3>
+      <ul class="space-y-3">
+        {[
+          'Site dairelerinde anahtar teslim yenileme',
+          'Elektrik ve tesisat dahil kapsamlı tadilat',
+          'Ölçüye özel dolap ve depolama çözümleri',
+          'Mutfak ve banyo yenileme',
+          'Ofis ve plaza içi iç mimari uygulamalar',
+          'Site yönetimi izin süreçlerinin takibi',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+        <p class="text-sm text-charcoal font-medium">Komşu ilçedeki projemiz</p>
+        <p class="text-muted text-sm mt-2">
+          Ataşehir sınırındaki benzer site dairelerinde çalışıyoruz. Ataşehir sayfamızda bu yapı tipine dair notlarımızı bulabilirsiniz.
+        </p>
+        <a href="/istanbul/atasehir-ic-mimarlik" class="text-xs text-gold hover:underline mt-2 inline-block">Ataşehir iç mimarlık →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bölge notları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Ümraniye'de Yapı Tipine Göre Yaklaşımımız</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Atakent · Çakmak · Tepeüstü</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Yeni site yoğunluğunun en yüksek olduğu hat. Altyapı sağlam; iş depolama, dolap kurgusu ve yüzey kalitesi üzerinden ilerliyor. Yönetim planındaki çalışma saati ve yük asansörü kısıtları takvimi belirleyen ana unsur.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Yukarı Dudullu · Esenşehir</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          1990’lar apartman stoku ağırlıkta. Elektrik ve sıhhi tesisat çoğu projede baştan kuruluyor; plan şemaları bugünün kullanımına göre dar kaldığı için salon-mutfak ilişkisinin yeniden kurgulanması sık talep ediliyor.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Finans merkezi çevresi</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Ofis ve plaza yoğunluğunun arttığı bölge. Kurumsal ofislerde çalışma saatleri bina yönetimince sınırlandığı için uygulamayı mesai dışına ve hafta sonuna planlıyor, fazlı ilerleyerek operasyonu kesintiye uğratmıyoruz.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <ProcessStrip districtName="Ümraniye" />
+
+  <DistrictFAQ districtName="Ümraniye" items={faqItems} />
+
+  <div class="py-12 border-t border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Hizmetlerimiz</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Tüm Hizmetler', href: '/hizmetler' },
+        { label: 'Anahtar Teslim Ev Yenileme', href: '/hizmetler/anahtar-teslim/ev-yenileme' },
+        { label: 'Anahtar Teslim Ev Tadilat', href: '/hizmetler/anahtar-teslim/ev-tadilat' },
+        { label: 'Mutfak Yenileme', href: '/hizmetler/mutfak-yenileme' },
+        { label: 'Ofis Yenileme', href: '/hizmetler/anahtar-teslim/ofis-yenileme' },
+        { label: 'Ataşehir İç Mimarlık', href: '/istanbul/atasehir-ic-mimarlik' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </div>
+
+  <RelatedDistricts currentSlug="umraniye-ic-mimarlik" />
+
+</ServiceLayout>

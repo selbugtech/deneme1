@@ -1,11 +1,26 @@
 ---
 import { optimizedImage } from '../lib/cloudinary';
 import { TEL_URL, WHATSAPP_URL, EMAIL_URL } from '../config';
+import { byGroup } from '../data/services';
+import { bySide } from '../data/districts';
+import { styles } from '../data/styles';
 
 const year = new Date().getFullYear();
-const { pathname } = Astro.url;
-const isHome = pathname === '/' || pathname === '/';
-const hizmetlerHref = isHome ? '#hizmetler' : '/#hizmetler';
+
+const anaServices = byGroup('ana');
+const anahtarTeslim = byGroup('anahtar-teslim');
+const odaServices = byGroup('oda');
+const mekanServices = byGroup('mekan');
+const anadolu = bySide('anadolu');
+const avrupa = bySide('avrupa');
+
+const kurumsal = [
+  { label: 'Hakkımızda', href: '/hakkimizda' },
+  { label: 'Projeler', href: '/projeler' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Sıkça Sorulan Sorular', href: '/sikca-sorulan-sorular' },
+  { label: 'İletişim', href: '/iletisim' },
+];
 ---
 
 <footer class="bg-charcoal border-t border-white/10 py-12">
@@ -29,7 +44,7 @@ const hizmetlerHref = isHome ? '#hizmetler' : '/#hizmetler';
       <!-- Nav links -->
       <nav class="flex flex-wrap gap-x-6 gap-y-3">
         <a href="/projeler" class="text-xs tracking-[0.15em] uppercase text-white/40 hover:text-gold transition-colors">Projeler</a>
-        <a href={hizmetlerHref} class="text-xs tracking-[0.15em] uppercase text-white/40 hover:text-gold transition-colors">Hizmetler</a>
+        <a href="/hizmetler" class="text-xs tracking-[0.15em] uppercase text-white/40 hover:text-gold transition-colors">Hizmetler</a>
         <a href="/blog" class="text-xs tracking-[0.15em] uppercase text-white/40 hover:text-gold transition-colors">Blog</a>
         <a href="/sikca-sorulan-sorular" class="text-xs tracking-[0.15em] uppercase text-white/40 hover:text-gold transition-colors">SSS</a>
       </nav>
@@ -50,8 +65,81 @@ const hizmetlerHref = isHome ? '#hizmetler' : '/#hizmetler';
       </div>
     </div>
 
+    <!-- Site geneli iç link bloğu -->
+    <div class="mt-10 pt-10 border-t border-white/10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-8 gap-y-10">
+
+      <!-- Hizmetler -->
+      <div>
+        <h3 class="text-[10px] tracking-[0.25em] uppercase text-gold mb-4">Hizmetler</h3>
+        <ul class="space-y-2.5">
+          <li><a href="/hizmetler" class="text-xs text-white/50 hover:text-gold transition-colors">Tüm Hizmetler</a></li>
+          {anaServices.map(s => (
+            <li><a href={s.href} class="text-xs text-white/50 hover:text-gold transition-colors">{s.title}</a></li>
+          ))}
+          {anahtarTeslim.map(s => (
+            <li><a href={s.href} class="text-xs text-white/50 hover:text-gold transition-colors">{s.title}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Oda bazlı + Özel mekanlar -->
+      <div>
+        <h3 class="text-[10px] tracking-[0.25em] uppercase text-gold mb-4">Oda Bazlı Yenileme</h3>
+        <ul class="space-y-2.5 mb-8">
+          {odaServices.map(s => (
+            <li><a href={s.href} class="text-xs text-white/50 hover:text-gold transition-colors">{s.title}</a></li>
+          ))}
+        </ul>
+        <h3 class="text-[10px] tracking-[0.25em] uppercase text-gold mb-4">Özel Mekanlar</h3>
+        <ul class="space-y-2.5">
+          {mekanServices.map(s => (
+            <li><a href={s.href} class="text-xs text-white/50 hover:text-gold transition-colors">{s.title}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Stiller + Kurumsal -->
+      <div>
+        <h3 class="text-[10px] tracking-[0.25em] uppercase text-gold mb-4">İç Mimarlık Stilleri</h3>
+        <ul class="space-y-2.5 mb-8">
+          <li><a href="/ic-mimarlik" class="text-xs text-white/50 hover:text-gold transition-colors">Tüm Stiller</a></li>
+          {styles.map(s => (
+            <li><a href={`/ic-mimarlik/${s.slug}`} class="text-xs text-white/50 hover:text-gold transition-colors">{s.fullName}</a></li>
+          ))}
+        </ul>
+        <h3 class="text-[10px] tracking-[0.25em] uppercase text-gold mb-4">Kurumsal</h3>
+        <ul class="space-y-2.5">
+          {kurumsal.map(l => (
+            <li><a href={l.href} class="text-xs text-white/50 hover:text-gold transition-colors">{l.label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- İstanbul · Anadolu -->
+      <div>
+        <h3 class="text-[10px] tracking-[0.25em] uppercase text-gold mb-4">İstanbul · Anadolu Yakası</h3>
+        <ul class="space-y-2.5 mb-8">
+          {anadolu.map(d => (
+            <li><a href={`/istanbul/${d.slug}`} class="text-xs text-white/50 hover:text-gold transition-colors">{d.name} İç Mimarlık</a></li>
+          ))}
+        </ul>
+        <a href="/istanbul" class="text-xs text-gold hover:text-white transition-colors">Tüm bölgeler →</a>
+      </div>
+
+      <!-- İstanbul · Avrupa -->
+      <div>
+        <h3 class="text-[10px] tracking-[0.25em] uppercase text-gold mb-4">İstanbul · Avrupa Yakası</h3>
+        <ul class="space-y-2.5">
+          {avrupa.map(d => (
+            <li><a href={`/istanbul/${d.slug}`} class="text-xs text-white/50 hover:text-gold transition-colors">{d.name} İç Mimarlık</a></li>
+          ))}
+        </ul>
+      </div>
+
+    </div>
+
     <!-- Social media icons -->
-    <div class="mt-8 flex items-center gap-4">
+    <div class="mt-10 pt-8 border-t border-white/10 flex items-center gap-4">
       <!-- Facebook -->
       <a href="https://www.facebook.com/master.mmrlk" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="text-white/40 hover:text-gold transition-colors">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

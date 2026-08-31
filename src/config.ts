@@ -15,7 +15,20 @@ export const WHATSAPP_URL_SERVICE = 'https://wa.me/905330391565?text=Merhaba%2C%
 export const TEL_URL = 'tel:+905330391565';
 export const EMAIL = 'mastericmimarlik@gmail.com';
 export const EMAIL_URL = `mailto:${'mastericmimarlik@gmail.com'}`;
-export const GOOGLE_MAPS_URL = 'https://www.google.com/maps/place/Master+%C4%B0%C3%A7+Mimarl%C4%B1k/(@41.001743,29.0517807,17z/data=!3m1!4b1!4m6!3m5!1s0x14cac7c6fa2bf56f:0xc70948d46d95fa04!8m2!3d41.001739!4d29.0543556!16s%2Fg%2F11fsx7788y?entry=ttu&g_ep=EgoyMDI2MDMxMS4wIKXMDSoASAFQAw%3D%3D';
+// Google Haritalar kaydı. CID biçimi işletme kartını doğrudan açar;
+// eski /maps/place/... URL'i bozuktu (adres ile @lat,lng arasında fazladan bir paranteze
+// takılıyordu) ve ham koordinat embed'i işletmeyi değil boş bir iğne gösteriyordu.
+export const GOOGLE_MAPS_CID = '14342074565546867204';
+export const GOOGLE_MAPS_URL = `https://maps.google.com/?cid=${GOOGLE_MAPS_CID}`;
+export const GOOGLE_MAPS_EMBED_URL = `https://maps.google.com/maps?cid=${GOOGLE_MAPS_CID}&hl=tr&z=17&output=embed`;
+
+// ————— Google puanı: ELLE güncellenir —————
+// Google İşletme Profili'nden okuyup buradan güncelleyin.
+// Otomatik çekilmiyor; Google, işletmenin kendi hakkındaki aggregateRating'ini
+// LocalBusiness zengin sonuçlarında kullanmadığı için API'nin SEO katkısı yoktu.
+// Son güncelleme: 2026-08-31
+export const GOOGLE_RATING = '4,9';
+export const GOOGLE_REVIEW_COUNT = 166;
 export const OG_IMAGE = `${CANONICAL_BASE}/og-image.png`;
 
 // Cloudinary görsel optimizasyonu

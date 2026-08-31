@@ -1,0 +1,218 @@
+---
+import ServiceLayout from '../../../layouts/ServiceLayout.astro';
+import { CANONICAL_BASE } from '../../../config';
+import { optimizedImage } from '../../../lib/cloudinary';
+
+const heroPath = '/images/yatakodasi2.jpeg';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Kreş ve Anaokulu Tadilatı",
+  "name": "İstanbul Kreş ve Anaokulu Tadilat",
+  "description": "Kreş, anaokulu ve etüt merkezleri için güvenlik odaklı iç mimari tasarım, mevzuata uygun mahal kurgusu ve anahtar teslim uygulama.",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
+  "areaServed": { "@type": "City", "name": "İstanbul" },
+  "url": `${CANONICAL_BASE}/hizmetler/anahtar-teslim/kres`,
+};
+
+const faqItems = [
+  {
+    q: "Kreş tadilatı ne kadar sürer?",
+    a: "Orta ölçekli bir kreşte anahtar teslim tadilat genellikle 8–12 hafta sürüyor. Süreyi belirleyen kalemler; ıslak hacimlerin çocuk ölçüsüne göre yeniden kurulması, yangın güvenliği ve acil çıkış düzenlemeleri ve ölçüye özel mobilya üretimi. Yalnızca yüzey ve mobilya güncellemesiyle sınırlı projeler 4–6 haftada tamamlanabiliyor.",
+  },
+  {
+    q: "Mevzuata uygunluk için nelere dikkat ediyorsunuz?",
+    a: "Kreş ve anaokulları Millî Eğitim Bakanlığı özel öğretim kurumları mevzuatına tabi ve mekanın; çocuk başına düşen alan, tavan yüksekliği, doğal aydınlatma, tuvalet ve lavabo sayısı, yangın güvenliği ile acil çıkış gibi başlıklarda belirli koşulları sağlaması gerekiyor. Tasarımı bu koşulları karşılayacak şekilde kuruyor, mahal listesi ve teknik çizimleri buna göre hazırlıyoruz. Kurum açma başvurusu kurucu tarafından yürütülüyor; biz mimari tarafın gerektirdiği belgeleri sağlıyoruz.",
+  },
+  {
+    q: "Çocuk güvenliği için standart olarak neler uyguluyorsunuz?",
+    a: "Talep edilmesine bakmaksızın uyguladığımız kalemler var: tüm dolap ve raf ünitelerinin duvara sabitlenmesi, köşe yuvarlatma veya kenar koruma, frenli menteşe ve yumuşak kapanan çekmece rayları, çocuk güvenlik kapaklı prizler, parmak sıkışmasını önleyen kapı detayları, pencerelerde açılım sınırlayıcı ve tırmanılabilecek mobilyanın pencere önünden uzak tutulması. Merdiven varsa korkuluk aralığının çocuk geçemeyecek ölçüde olması gerekiyor.",
+  },
+  {
+    q: "Islak hacimleri nasıl planlıyorsunuz?",
+    a: "Çocuk tuvaletleri ve lavaboları yetişkin ölçüsüyle çözülmüyor; klozet ve lavabo yüksekliği yaş grubuna göre alçaltılıyor, musluklar çocuğun kendi kullanabileceği tipte seçiliyor. Zeminde kaymaz kaplama ve kesintisiz su yalıtımı şart. Ayrıca öğretmenin görüş hattını kesmeyen ama mahremiyeti koruyan bir bölme düzeni kuruyoruz — bu denge, kreş ıslak hacimlerinin en çok düşünülmesi gereken tarafı.",
+  },
+  {
+    q: "Akustik neden önemli?",
+    a: "Kreşlerde sert yüzeylerin baskın olduğu mekanlarda ses birikiyor ve yankı, hem çocukların hem öğretmenlerin gün sonunda yorulmasına yol açıyor. Yüksek gürültü seviyesi ayrıca çocukların birbirini ve öğretmeni anlamasını zorlaştırıyor. Tavanda ses yutucu panel, zeminde yumuşak kaplama ve duvarlarda kumaş yüzeyler kullanarak yankıyı belirgin biçimde düşürüyoruz.",
+  },
+  {
+    q: "Hangi malzemeleri kullanıyorsunuz?",
+    a: "Düşük emisyonlu ahşap panel, su bazlı ve kokusu hızlı dağılan boya, leke tutmayan ve silinebilir duvar yüzeyleri ile darbe emici zemin kaplamaları tercih ediyoruz. Çocukların uzun süre kapalı mekanda bulunduğu düşünülürse malzemenin iç hava kalitesine etkisi, dayanıklılık kadar önemli bir kriter haline geliyor.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const dahil = [
+  'Mevzuata uygun mahal listesi ve teknik çizim',
+  'Sınıf, oyun ve dinlenme alanı kurgusu',
+  'Çocuk ölçüsünde ıslak hacim uygulaması',
+  'Güvenlik donanımı ve köşe koruma detayları',
+  'Darbe emici zemin ve akustik iyileştirme',
+  'Düşük emisyonlu malzeme ve boya seçimi',
+  'Ölçüye özel mobilya ve depolama',
+  'Yangın güvenliği ve acil çıkış düzenlemeleri',
+];
+
+const teknik = [
+  { t: 'Güvenlik donanımı', d: 'Duvara sabitlenmiş üniteler, yuvarlatılmış köşeler, frenli menteşe, güvenlik kapaklı priz, pencerede açılım sınırlayıcı. Bunlar tercih değil, projenin standart parçası.' },
+  { t: 'Çocuk ölçüsü ıslak hacim', d: 'Klozet ve lavabo yüksekliği yaş grubuna göre alçaltılıyor, musluk çocuğun kullanabileceği tipte seçiliyor. Bölme düzeni öğretmenin görüş hattını kesmeden mahremiyeti koruyacak biçimde kuruluyor.' },
+  { t: 'Zemin', d: 'Darbe emici, kaymaz ve kolay temizlenen kaplama. Oyun alanında yumuşaklık, koridorda dayanım öne çıktığı için bölgelere göre farklı çözümler kullanılıyor.' },
+  { t: 'Akustik', d: 'Sert yüzeylerin baskın olduğu kreşlerde yankı hem çocukları hem öğretmenleri yoruyor. Tavanda ses yutucu panel ve yumuşak yüzeyler bu yükü belirgin biçimde azaltıyor.' },
+  { t: 'Doğal aydınlatma', d: 'Mevzuatın aradığı bir başlık olmasının ötesinde, gün ışığı alan sınıflar günlük kullanımda gözle görülür fark yaratıyor. Pencere önünün mobilyayla kapatılmaması bu nedenle plan kararı.' },
+  { t: 'Malzeme ve iç hava', d: 'Düşük emisyonlu panel ve su bazlı boya. Çocukların uzun süre kapalı mekanda bulunduğu düşünülürse malzemenin iç hava kalitesine etkisi dayanıklılık kadar belirleyici.' },
+];
+---
+
+<ServiceLayout
+  title="Kreş ve Anaokulu Tadilat İstanbul | Anahtar Teslim"
+  description="İstanbul'da kreş ve anaokulu tadilatı. Güvenlik odaklı tasarım, çocuk ölçüsünde ıslak hacim, akustik ve mevzuata uygun mahal kurgusu. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/hizmetler/anahtar-teslim/kres`}
+  h1="Kreş ve Anaokulu Tadilat"
+  eyebrow="Anahtar Teslim"
+  lead="Kreşte tasarımın ilk ölçütü güvenlik, ikincisi mevzuat. Renk ve tema bu ikisi çözüldükten sonra geliyor — tersi sırada kurulan projeler kurum açma aşamasında takılıyor."
+  heroImage={heroPath}
+  ogImage={optimizedImage(heroPath)}
+  expandedByDefault={true}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
+    { label: "Anahtar Teslim", href: `${CANONICAL_BASE}/hizmetler/anahtar-teslim` },
+    { label: "Kreş & Anaokulu" }
+  ]}
+  structuredData={[serviceSchema, faqSchema]}
+>
+
+  <section class="py-12 border-b border-border">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Kreşte Tasarım, Güvenlik ve Mevzuatla Başlar</h2>
+        <p class="text-muted leading-relaxed mb-4">
+          Kreş ve anaokulu projelerinde en sık karşılaştığımız hata, işe renk paleti ve tema seçerek
+          başlanması. Oysa bu mekanların Millî Eğitim mevzuatı kapsamında karşılaması gereken somut koşullar
+          var: çocuk başına düşen alan, tavan yüksekliği, doğal aydınlatma, tuvalet ve lavabo sayısı, yangın
+          güvenliği ve acil çıkış. Bu koşullar sağlanmadığında ortaya güzel görünen ama kurum açma izni
+          alamayan bir mekan çıkıyor.
+        </p>
+        <p class="text-muted leading-relaxed mb-4">
+          Bu nedenle projeye mahal listesiyle başlıyoruz: kaç sınıf olacak, her biri kaç çocuk kapasiteli,
+          ıslak hacimler nerede konumlanacak, acil çıkış hangi güzergâhtan sağlanacak. Bu iskelet oturduktan
+          sonra çocukların mekanı nasıl kullanacağına geçiyoruz.
+        </p>
+        <p class="text-muted leading-relaxed">
+          Güvenlik tarafında pazarlık yok. Devrilme riski taşıyan tüm üniteler duvara sabitleniyor, köşeler
+          yuvarlatılıyor, prizler güvenlik kapağıyla kapatılıyor, kapılarda parmak sıkışmasını önleyen
+          detaylar kullanılıyor ve pencerelere açılım sınırlayıcı takılıyor. Bunlar müşteri talebine bağlı
+          seçenekler değil, projenin standart parçası.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-charcoal mb-4">Hizmete dahil olanlar</h3>
+        <ul class="space-y-3">
+          {dahil.map(item => (
+            <li class="flex items-start gap-3 text-sm text-muted">
+              <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+                <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+          <p class="text-sm text-charcoal font-medium">Mekan seçiminden önce</p>
+          <p class="text-muted text-sm mt-2">
+            Bir mekanın kreş olarak uygun olup olmadığı; alan, tavan yüksekliği, doğal ışık ve acil çıkış
+            imkanıyla belirleniyor. Kiralamadan önce keşfe gelip bunu net söyleyebiliriz.
+          </p>
+          <a href="/iletisim" class="text-xs text-gold hover:underline mt-2 inline-block">Keşif randevusu →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Projeyi Belirleyen Altı Teknik Başlık</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      {teknik.map((k, i) => (
+        <div class="border border-border p-7 bg-[#FAF6F1]">
+          <p class="text-[10px] tracking-[0.25em] uppercase text-gold mb-2">0{i + 1}</p>
+          <h3 class="font-display text-lg font-bold text-charcoal mb-2">{k.t}</h3>
+          <p class="text-muted text-sm leading-relaxed">{k.d}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Çalıştığımız Mekan Tipleri</h2>
+    <div class="grid md:grid-cols-2 gap-x-12 gap-y-3">
+      {[
+        'Kreş ve gündüz bakımevi',
+        'Anaokulu ve ana sınıfı',
+        'Etüt ve ders çalışma merkezi',
+        'Çocuk gelişim ve özel eğitim merkezi',
+        'Sanat, müzik ve beceri atölyeleri',
+        'Oyun grubu ve aktivite merkezi',
+        'Site ve rezidans içi çocuk alanları',
+        'Kurumsal işyeri kreşleri',
+      ].map(item => (
+        <div class="flex items-start gap-3 text-sm text-muted">
+          <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+            <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+            </svg>
+          </span>
+          {item}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="w-8 h-px bg-gold"></span>
+      <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Sıkça Sorulan Sorular</span>
+    </div>
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Kreş ve anaokulu tadilatı hakkında</h2>
+    <div class="space-y-4">
+      {faqItems.map(f => (
+        <details class="border border-border bg-[#FAF6F1] p-6 group">
+          <summary class="font-semibold text-charcoal cursor-pointer list-none flex items-start justify-between gap-4">
+            <span>{f.q}</span>
+            <span class="text-gold shrink-0 transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="text-muted text-sm leading-relaxed mt-4">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">İlgili Sayfalar</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Tüm Hizmetler', href: '/hizmetler' },
+        { label: 'Anahtar Teslim Hizmetler', href: '/hizmetler/anahtar-teslim' },
+        { label: 'Çocuk Odası Tasarımı', href: '/hizmetler/cocuk-odasi-tasarimi' },
+        { label: 'Spor Salonu Tadilat', href: '/hizmetler/anahtar-teslim/spor-salonu' },
+        { label: 'Klinik & Muayenehane', href: '/hizmetler/anahtar-teslim/klinik-muayenehane' },
+        { label: '3D Tasarım', href: '/hizmetler/3d-tasarim' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </section>
+
+</ServiceLayout>

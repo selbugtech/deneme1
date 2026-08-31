@@ -1,13 +1,13 @@
 ---
 import GoogleRatingCard from './GoogleRatingCard.astro';
-import { WHATSAPP_URL_WITH_MESSAGE, TEL_URL } from '../config';
+import { WHATSAPP_URL_WITH_MESSAGE, TEL_URL, GOOGLE_MAPS_EMBED_URL } from '../config';
 
 interface Props {
-  rating?: number;
-  totalRatings?: number;
+  /** /iletisim sayfasında kendi büyük haritası olduğu için buradaki küçük harita gizlenir */
+  showMap?: boolean;
 }
 
-const { rating = 0, totalRatings = 0 } = Astro.props;
+const { showMap = true } = Astro.props;
 
 const wa = WHATSAPP_URL_WITH_MESSAGE;
 const tel = TEL_URL;
@@ -16,11 +16,9 @@ const tel = TEL_URL;
 <section id="iletisim" class="py-24 bg-[#F5EFE6]">
   <div class="max-w-6xl mx-auto px-6">
 
-    {rating > 0 && (
-      <div class="mb-12 reveal">
-        <GoogleRatingCard rating={rating} totalRatings={totalRatings} />
-      </div>
-    )}
+    <div class="mb-12 reveal">
+      <GoogleRatingCard variant="light" />
+    </div>
 
     <div class="grid lg:grid-cols-2 gap-16 items-start">
 
@@ -123,18 +121,20 @@ const tel = TEL_URL;
       <!-- Right: Map + CTA cards -->
       <div class="flex flex-col gap-4 reveal reveal-d2">
 
-        <!-- Google Maps iframe -->
-        <div class="overflow-hidden border border-border">
-          <iframe
-            src="https://maps.google.com/maps?q=41.001739,29.0543556&hl=tr&z=16&output=embed"
-            width="100%"
-            height="220"
-            style="border:0; display:block;"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Master İç Mimarlık Konum"
-          ></iframe>
-        </div>
+        <!-- Google Maps iframe — /iletisim gibi kendi büyük haritası olan sayfalarda gizli -->
+        {showMap && (
+          <div class="overflow-hidden border border-border">
+            <iframe
+              src={GOOGLE_MAPS_EMBED_URL}
+              width="100%"
+              height="220"
+              style="border:0; display:block;"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Master İç Mimarlık Konum"
+            ></iframe>
+          </div>
+        )}
 
         <!-- WhatsApp card -->
         <a

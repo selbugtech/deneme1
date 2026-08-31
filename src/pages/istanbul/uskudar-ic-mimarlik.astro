@@ -1,0 +1,167 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictFAQ from '../../components/DistrictFAQ.astro';
+import ProcessStrip from '../../components/ProcessStrip.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImageW } from '../../lib/cloudinary';
+
+const heroPath = '/images/salon3.jpeg';
+const heroAbs = optimizedImageW(heroPath, 1600);
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "InteriorDesigner",
+  "name": "Master İç Mimarlık",
+  "@id": `${CANONICAL_BASE}/#business`,
+  "areaServed": { "@type": "Place", "name": "Üsküdar, İstanbul" },
+  "url": `${CANONICAL_BASE}/istanbul/uskudar-ic-mimarlik`,
+  "description": "Üsküdar'da anahtar teslim daire yenileme, mutfak-banyo tadilatı ve iç mimarlık danışmanlığı. Ofisimiz Acıbadem'de.",
+  "image": heroAbs,
+};
+
+const faqItems = [
+  {
+    q: "Üsküdar'da iç mimarlık ve daire yenileme ne kadar sürer?",
+    a: "Üsküdar'da yapı stoku çok çeşitli olduğu için süre de buna göre değişiyor. Altunizade ve Acıbadem'deki yeni site dairelerinde altyapı sağlam olduğundan anahtar teslim yenileme 4–7 hafta sürüyor. Kuzguncuk, Beylerbeyi ve Çengelköy'deki eski yapılarda ise elektrik ve tesisat yenilemesi çoğu zaman zorunlu hale geliyor; bu projelerde süre 7–10 haftaya çıkıyor.",
+  },
+  {
+    q: "Üsküdar'da hangi mahallelerde hizmet veriyorsunuz?",
+    a: "Acıbadem, Altunizade, Kuzguncuk, Beylerbeyi, Çengelköy, Bulgurlu, Kısıklı, Ünalan, Burhaniye ve Üsküdar Merkez başta olmak üzere ilçenin tamamında çalışıyoruz. Ofisimiz Acıbadem'de Akasya A Kule'de olduğu için Üsküdar bizim en hızlı ulaştığımız bölge; keşif randevularını çoğu zaman aynı hafta içinde veriyoruz.",
+  },
+  {
+    q: "Boğaz'a bakan eski yapılarda tadilat için özel izin gerekiyor mu?",
+    a: "Kuzguncuk, Beylerbeyi ve Çengelköy'ün sahil hattında tescilli yapılar ve koruma alanları bulunuyor. Bu yapılarda cephe, doğrama ve çatıya yönelik müdahaleler koruma kurulu iznine tabidir; iç mekanda ise taşıyıcı sisteme dokunulmadığı sürece süreç daha esnek işler. Keşif sırasında yapının tescil durumunu kontrol ediyor, gerekiyorsa izin sürecini sizin adınıza yürütüyoruz.",
+  },
+  {
+    q: "Üsküdar'daki eski apartmanlarda tesisat yenilemesi şart mı?",
+    a: "Bina 25–30 yaşın üzerindeyse ve tesisat hiç elden geçmediyse büyük olasılıkla evet. Bu yapılarda sıklıkla galvaniz su borusuyla karşılaşıyoruz; iç yüzeyi zamanla daraldığı için basınç düşüyor ve delinme riski taşıyor. Yeni bir mutfak veya banyo yaptıktan sonra tesisat nedeniyle geri sökmek zorunda kalmamak için sökümden sonra bir ara değerlendirme yapıyoruz.",
+  },
+  {
+    q: "Üsküdar için keşif ve teklif süreci nasıl işliyor?",
+    a: "WhatsApp veya telefon üzerinden randevu alıyor, Üsküdar'daki adresinize gelerek ücretsiz keşif yapıyoruz. Ölçü, fotoğraf ve ihtiyaç görüşmesinin ardından 2–3 iş günü içinde kapsamı kalem kalem ayrıştırılmış teklifimizi ve mood-board sunumumuzu paylaşıyoruz. Keşif hiçbir yükümlülük doğurmaz.",
+  },
+];
+---
+
+<ServiceLayout
+  title="Üsküdar İç Mimarlık ve Ev Yenileme"
+  description="Üsküdar'da iç mimarlık, anahtar teslim daire yenileme ve mutfak-banyo tadilatı. Acıbadem, Altunizade, Kuzguncuk ve Çengelköy'de aktif. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/istanbul/uskudar-ic-mimarlik`}
+  h1="Üsküdar İç Mimarlık ve Ev Yenileme"
+  eyebrow="İstanbul · Üsküdar"
+  lead="Ofisimiz Acıbadem'de, Üsküdar sınırları içinde. İlçenin sahil hattındaki tarihi yapılardan Altunizade'deki yeni sitelere kadar farklı yapı tiplerinde uygulama yapıyoruz."
+  heroImage={heroPath}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İstanbul", href: `${CANONICAL_BASE}/istanbul` },
+    { label: "Üsküdar" }
+  ]}
+  structuredData={localSchema}
+>
+
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Üsküdar'da İç Mimarlık Hizmeti</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Üsküdar, İstanbul'un yapı çeşitliliği en yüksek ilçelerinden biri. Boğaz kıyısındaki Kuzguncuk ve
+        Beylerbeyi'nde yüz yılı aşkın ahşap ve kâgir yapılar, Çengelköy'de bahçeli müstakil evler, Altunizade
+        ve Acıbadem'de son on beş yılın yüksek katlı siteleri, Bulgurlu ve Ünalan'da ise 1990'lar apartman
+        stoku bir arada bulunuyor. Bu üç grubun her biri farklı bir uygulama yaklaşımı gerektiriyor.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Sahil hattındaki eski yapılarda önceliğimiz mevcut karakteri korumak: yüksek tavanlar, özgün doğrama
+        oranları ve ahşap detaylar çoğu zaman tasarımın çıkış noktası oluyor. Buna karşılık elektrik ve sıhhi
+        tesisat neredeyse her projede baştan kuruluyor. Altunizade ve Acıbadem'deki yeni sitelerde ise altyapı
+        sağlam olduğu için mesele plan optimizasyonu, depolama ve yüzey kalitesine dönüşüyor.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Ofisimizin Akasya A Kule'de, Çeçen Sokak'ta bulunması Üsküdar projelerinde belirgin bir avantaj sağlıyor:
+        keşfe hızlı gidiyor, şantiye ziyaretlerini sıklaştırabiliyor ve malzeme seçimi için sizi ofise davet
+        edebiliyoruz.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4">Üsküdar'da Sunduğumuz Hizmetler</h3>
+      <ul class="space-y-3">
+        {[
+          'Anahtar teslim daire yenileme',
+          'Elektrik ve tesisat dahil kapsamlı tadilat',
+          'Mutfak ve banyo yenileme',
+          'Salon, yatak odası ve giyinme odası tasarımı',
+          'Tarihi yapılarda karakteri koruyan yenileme',
+          '3D görselleştirme ile tasarım onayı',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+        <p class="text-sm text-charcoal font-medium">Ofisimiz Üsküdar'da</p>
+        <p class="text-muted text-sm mt-2">
+          Akasya A Kule, No: 25/A, Çeçen Sok., Acıbadem — 34660 Üsküdar. Malzeme ve numune seçimi için
+          randevuyla ofisimize gelebilirsiniz.
+        </p>
+        <a href="/iletisim" class="text-xs text-gold hover:underline mt-2 inline-block">İletişim ve harita →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bölge notları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Üsküdar'da Bölge Bölge Notlarımız</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Kuzguncuk · Beylerbeyi · Çengelköy</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Dar sokaklar ve sınırlı araç erişimi nedeniyle malzeme taşıma lojistiği ayrı planlanır. Tescilli
+          yapılarda cephe ve doğramaya yönelik müdahaleler izne tabidir; iç mekanda özgün detayları koruyan
+          restorasyon ağırlıklı çalışıyoruz.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Acıbadem · Altunizade</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Yüksek katlı sitelerde yönetim planı çalışma saatlerini ve asansör kullanımını sınırlayabiliyor.
+          Şantiye takvimini bu kısıtlara göre kuruyor, gerekli yönetim yazışmalarını sizin adınıza yürütüyoruz.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Bulgurlu · Kısıklı · Ünalan</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          1990'lar apartman stokunda plan şemaları bugünün kullanımına göre dar kalıyor. Salon-mutfak
+          ilişkisinin yeniden kurgulanması ve depolama alanı kazanılması en sık talep edilen iki konu.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <ProcessStrip districtName="Üsküdar" />
+
+  <DistrictFAQ districtName="Üsküdar" items={faqItems} />
+
+  <div class="py-12 border-t border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Hizmetlerimiz</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Tüm Hizmetler', href: '/hizmetler' },
+        { label: 'Anahtar Teslim Ev Tadilat', href: '/hizmetler/anahtar-teslim/ev-tadilat' },
+        { label: 'Mutfak Yenileme', href: '/hizmetler/mutfak-yenileme' },
+        { label: 'Banyo Yenileme', href: '/hizmetler/banyo-yenileme' },
+        { label: 'Üsküdar Ev Tadilatı Rehberi', href: '/blog/uskudar-ev-tadilati' },
+        { label: 'Acıbadem İç Mimarlık', href: '/istanbul/acibadem-ic-mimarlik' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </div>
+
+  <RelatedDistricts currentSlug="uskudar-ic-mimarlik" />
+
+</ServiceLayout>
