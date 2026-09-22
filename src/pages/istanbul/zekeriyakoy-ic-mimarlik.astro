@@ -1,11 +1,17 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictBlogLinks from '../../components/DistrictBlogLinks.astro';
 import DistrictFAQ from '../../components/DistrictFAQ.astro';
 import ProcessStrip from '../../components/ProcessStrip.astro';
+import DistrictProjects from '../../components/DistrictProjects.astro';
 import { CANONICAL_BASE } from '../../config';
 import { optimizedImageW } from '../../lib/cloudinary';
+import { getDistrict } from '../../data/districts';
 
+// İlçe adı ve bulunma hali eki tek kaynaktan: src/data/districts.ts.
+// Elle yazılan ek Türkçe'de sessizce yanlış olabiliyor (Bağcılar'de → Bağcılar'da).
+const district = getDistrict('zekeriyakoy-ic-mimarlik')!;
 const heroPath = '/images/salon9.jpeg';
 const heroAbs = optimizedImageW(heroPath, 1600);
 
@@ -35,7 +41,7 @@ const faqItems = [
   },
   {
     q: "Zekeriyaköy'de örnek projeleriniz var mı?",
-    a: "Zekeriyaköy Villa projemiz 450 m²'lik bir villanın tüm iç mekanlarının yenilenmesini içerir (2024). Müşteri yorumumuz: 'Villayı yeniletirken 3D görselleştirme sayesinde her şeyi önceden gördük. Süreç tam vaat edildiği gibi ilerledi' — Murat B. Keşif sırasında ek villa referanslarını paylaşıyoruz.",
+    a: "Zekeriyaköy'de yayımladığımız bir proje henüz yok. Beykoz'daki iki villa projemiz — Paşabahçe'de 280 m² ve Beykoz merkezde 240 m² — bölgenin villa yapı tipine en yakın referanslarımız; ikisinin de uygulama fotoğrafları proje sayfalarında. Keşif sırasında ölçeğinize en yakın çalışmaları gösteriyoruz.",
   },
 ];
 ---
@@ -63,14 +69,14 @@ const faqItems = [
         Zekeriyaköy; İstanbul'un kuzeyinde, doğayla iç içe, lüks villa ve müstakil ev projelerinin yoğunlaştığı prestijli bir semttir. Bu bölgedeki projeler büyük alan yönetimi, kaliteli malzeme seçimi ve detay odaklı işçilik gerektirmektedir; ekibimiz uzun yıllardır villa projelerinde uzmanlaşmıştır.
       </p>
       <p class="text-muted leading-relaxed mb-4">
-        Zekeriyaköy Villa projemizde 450 m²'lik bir villanın tüm iç mekanlarını yeniledik. Salon, mutfak, yatak odaları, giyinme odaları, çalışma odası ve banyolar entegre bir tasarım anlayışıyla ele alındı. Referans müşterimiz Murat B., 3D görselleştirme sayesinde süreci sürprizsiz tamamladıklarını belirtti.
+        Zekeriyaköy'de işlerin çoğu müstakil villa ve bahçeli konut. Bu ölçekte salon, mutfak, yatak odaları, giyinme odaları, çalışma odası ve banyolar tek bir tasarım kurgusu içinde ele alınıyor; 3D görselleştirmeyi de bu yüzden uygulama öncesinde mutlaka çıkarıyoruz.
       </p>
       <p class="text-muted leading-relaxed">
         Zekeriyaköy, Göktürk, Kemerburgaz, Demirciköy ve Uskumruköy başta olmak üzere kuzey İstanbul'un villa bölgelerinde hizmet veriyoruz.
       </p>
     </div>
     <div>
-      <h3 class="font-semibold text-charcoal mb-4">Zekeriyaköy'de Sunduğumuz Hizmetler</h3>
+      <h3 class="font-semibold text-charcoal mb-4">{district.locative} Sunduğumuz Hizmetler</h3>
       <ul class="space-y-3">
         {[
           'Villa yenileme ve iç mimarlık',
@@ -90,15 +96,12 @@ const faqItems = [
           </li>
         ))}
       </ul>
-      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
-        <p class="text-sm text-charcoal font-medium">Referans Proje · Zekeriyaköy Villa</p>
-        <p class="text-muted text-sm mt-2 italic">"Villayı yeniletirken 3D görselleştirme sayesinde her şeyi önceden gördük. Süreç tam vaat edildiği gibi ilerledi."</p>
-        <p class="text-xs text-gold mt-2">— Murat B., Zekeriyaköy · 5 yıldız · 450 m² · 2024</p>
-      </div>
     </div>
   </div>
 
-  <ProcessStrip districtName="Zekeriyaköy" />
+  <DistrictProjects districtSlug="zekeriyakoy-ic-mimarlik" />
+
+  <ProcessStrip districtSlug="zekeriyakoy-ic-mimarlik" />
 
   <DistrictFAQ districtName="Zekeriyaköy" items={faqItems} />
 
@@ -115,6 +118,8 @@ const faqItems = [
       ))}
     </div>
   </div>
+
+  <DistrictBlogLinks districtSlug="zekeriyakoy-ic-mimarlik" />
 
   <RelatedDistricts currentSlug="zekeriyakoy-ic-mimarlik" />
 

@@ -20,17 +20,22 @@ interface Props {
   structuredData?: object | object[];
   heroImage?: string;
   ogImage?: string;
-  expandedByDefault?: boolean;
   /** /iletisim gibi kendi büyük haritası olan sayfalarda alttaki küçük harita gizlenir */
   contactShowMap?: boolean;
 }
 
+// Not: eskiden bir `expandedByDefault` seçeneği vardı; gövde 600px'e kırpılıp
+// "Detaylı Bilgiyi Gör" düğmesinin arkasına alınıyordu. Bu sayfaların gövdesi
+// 2.500–3.000px: bölge notları, süreç, SSS, proje referansları ve ilçeler arası
+// linklerin tamamı fade'in altında kalıyordu — yani sayfaları şablon olmaktan
+// çıkaran içeriğin tamamı. 23 sayfa zaten tek tek seçenekten çıkmıştı, hiçbiri
+// kırpmayı istemiyordu; seçenek tamamen kaldırıldı. DistrictFAQ zaten <details>
+// ile aşamalı gösterim yapıyor, ikinci bir katmana gerek yok.
 const {
   title, description, canonicalUrl, h1,
   eyebrow = 'Hizmetlerimiz', lead,
   breadcrumb, structuredData,
   heroImage, ogImage,
-  expandedByDefault = false,
   contactShowMap = true,
 } = Astro.props;
 
@@ -174,21 +179,11 @@ const allSchema = [
       </div>
     </section>
 
-    <!-- Page-specific content with auto-collapse -->
+    <!-- Sayfaya özel içerik -->
     <div class="max-w-6xl mx-auto px-6 py-16">
-      <div class="article-collapse" data-collapsed={expandedByDefault ? 'false' : 'true'}>
-        <div class="prose prose-charcoal max-w-none service-content">
-          <slot />
-        </div>
-        <div class="article-fade" aria-hidden="true"></div>
+      <div class="prose prose-charcoal max-w-none service-content">
+        <slot />
       </div>
-      <button type="button" class="article-toggle" aria-expanded={expandedByDefault ? 'true' : 'false'}>
-        <span class="article-toggle-open">Detaylı Bilgiyi Gör</span>
-        <span class="article-toggle-close">Daralt</span>
-        <svg class="w-4 h-4 article-toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-        </svg>
-      </button>
     </div>
 
     <!-- Related services -->
@@ -269,76 +264,5 @@ const allSchema = [
     color: #A8894A;
     text-decoration: underline;
   }
-
-  /* Article auto-collapse (shared with BlogPost) */
-  .article-collapse {
-    position: relative;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-  }
-  .article-collapse[data-collapsed="true"] {
-    max-height: 600px;
-  }
-  .article-collapse[data-collapsed="false"] {
-    max-height: none;
-  }
-  .article-fade {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 180px;
-    background: linear-gradient(to bottom, rgba(245, 239, 230, 0), #F5EFE6 85%);
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-  }
-  .article-collapse[data-collapsed="false"] .article-fade {
-    opacity: 0;
-  }
-  .article-toggle {
-    margin-top: 1.5rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: #1C1C1A;
-    color: #fff;
-    padding: 0.875rem 1.75rem;
-    font-size: 0.8125rem;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    cursor: pointer;
-    border: none;
-    transition: background 0.2s ease;
-  }
-  .article-toggle:hover {
-    background: #A8894A;
-  }
-  .article-toggle-close,
-  .article-toggle[aria-expanded="true"] .article-toggle-open {
-    display: none;
-  }
-  .article-toggle[aria-expanded="true"] .article-toggle-close {
-    display: inline;
-  }
-  .article-toggle[aria-expanded="true"] .article-toggle-icon {
-    transform: rotate(180deg);
-  }
-  .article-toggle-icon {
-    transition: transform 0.3s ease;
-  }
 </style>
 
-<script is:inline>
-  document.querySelectorAll('.article-toggle').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const wrap = btn.parentElement?.querySelector('.article-collapse');
-      if (!wrap) return;
-      const collapsed = wrap.getAttribute('data-collapsed') === 'true';
-      wrap.setAttribute('data-collapsed', collapsed ? 'false' : 'true');
-      btn.setAttribute('aria-expanded', collapsed ? 'true' : 'false');
-      if (!collapsed) {
-        wrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  });
-</script>

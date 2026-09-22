@@ -1,11 +1,17 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictBlogLinks from '../../components/DistrictBlogLinks.astro';
 import DistrictFAQ from '../../components/DistrictFAQ.astro';
 import ProcessStrip from '../../components/ProcessStrip.astro';
+import DistrictProjects from '../../components/DistrictProjects.astro';
 import { CANONICAL_BASE } from '../../config';
 import { optimizedImageW } from '../../lib/cloudinary';
+import { getDistrict } from '../../data/districts';
 
+// İlçe adı ve bulunma hali eki tek kaynaktan: src/data/districts.ts.
+// Elle yazılan ek Türkçe'de sessizce yanlış olabiliyor (Bağcılar'de → Bağcılar'da).
+const district = getDistrict('besiktas-ic-mimarlik')!;
 const heroPath = '/images/salon4.jpeg';
 const heroAbs = optimizedImageW(heroPath, 1600);
 
@@ -35,14 +41,14 @@ const faqItems = [
   },
   {
     q: "Beşiktaş'ta örnek projeleriniz var mı?",
-    a: "Beşiktaş Dairesi referansımız 120 m²'lik komple anahtar teslim bir yenileme projesidir; salon, mutfak, 2 banyo ve 3 yatak odası 6 haftada teslim edilmiştir. Levent ve Etiler'de tamamladığımız ek projeleri de keşif sırasında paylaşıyoruz.",
+    a: "Beşiktaş'ta henüz yayımladığımız bir proje yok; tamamladığımız işlerin tamamı projeler sayfamızda. Keşif sırasında dairenizin tipine ve ölçeğine en yakın çalışmalarımızı gösteriyoruz.",
   },
 ];
 ---
 
 <ServiceLayout
   title="Beşiktaş İç Mimarlık ve Ev Yenileme"
-  description="Beşiktaş'ta iç mimarlık, anahtar teslim daire yenileme ve mutfak-banyo tadilatı. Levent, Etiler, Bebek ve Beşiktaş Merkez'de aktif. Ücretsiz keşif: 0533 039 15 65"
+  description="Beşiktaş'ta iç mimarlık, anahtar teslim daire yenileme ve mutfak-banyo tadilatı. Levent, Etiler, Bebek ve Beşiktaş Merkez'de aktif."
   canonicalUrl={`${CANONICAL_BASE}/istanbul/besiktas-ic-mimarlik`}
   h1="Beşiktaş İç Mimarlık ve Ev Yenileme"
   eyebrow="İstanbul · Beşiktaş"
@@ -63,14 +69,14 @@ const faqItems = [
         Beşiktaş; Boğaz manzaralı rezidanslar, tarihi apartmanlar ve modern yaşam kompleksleriyle İstanbul'un en dinamik ve değerli ilçelerinden biridir. Bu semtte yaşayan sakinlerin beklentileri yüksek, zevkleri rafine; tasarım ve uygulama da bu çıtaya göre kurulmalı.
       </p>
       <p class="text-muted leading-relaxed mb-4">
-        Beşiktaş Dairesi projemizde 120 m²'lik komple anahtar teslim yenileme gerçekleştirdik. Salon, mutfak, banyo ve yatak odalarını çağdaş bir anlayışla yenileyerek 6 hafta içinde müşterimize teslim ettik. Tarihi yapılarda zemin, tesisat ve elektrik altyapısını yenilemek; modern rezidanslarda ise planlama ve depolama optimizasyonu öne çıkıyor.
+        Beşiktaş'ta yapı stoku iki uçta duruyor. Arnavutköy ve Ortaköy hattındaki tarihi yapılarda zemin, tesisat ve elektrik altyapısını yenilemek öne çıkıyor; Etiler ve Dikilitaş'taki modern rezidanslarda ise planlama ve depolama optimizasyonu belirleyici oluyor.
       </p>
       <p class="text-muted leading-relaxed">
         Beşiktaş Merkez, Levent, Etiler, Bebek, Ortaköy, Arnavutköy, Akatlar, Ulus, Gayrettepe ve Balmumcu başta olmak üzere ilçe genelinde hizmet veriyoruz.
       </p>
     </div>
     <div>
-      <h3 class="font-semibold text-charcoal mb-4">Beşiktaş'ta Sunduğumuz Hizmetler</h3>
+      <h3 class="font-semibold text-charcoal mb-4">{district.locative} Sunduğumuz Hizmetler</h3>
       <ul class="space-y-3">
         {[
           'Anahtar teslim daire yenileme',
@@ -90,14 +96,12 @@ const faqItems = [
           </li>
         ))}
       </ul>
-      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
-        <p class="text-sm text-charcoal font-medium">Referans Proje · Beşiktaş Dairesi</p>
-        <p class="text-muted text-sm mt-2">120 m² · Anahtar teslim ev yenileme · 2024. Komple daire yenileme: salon, mutfak, 2 banyo, 3 yatak odası — 6 haftada teslim.</p>
-      </div>
     </div>
   </div>
 
-  <ProcessStrip districtName="Beşiktaş" />
+  <DistrictProjects districtSlug="besiktas-ic-mimarlik" />
+
+  <ProcessStrip districtSlug="besiktas-ic-mimarlik" />
 
   <DistrictFAQ districtName="Beşiktaş" items={faqItems} />
 
@@ -114,6 +118,8 @@ const faqItems = [
       ))}
     </div>
   </div>
+
+  <DistrictBlogLinks districtSlug="besiktas-ic-mimarlik" />
 
   <RelatedDistricts currentSlug="besiktas-ic-mimarlik" />
 

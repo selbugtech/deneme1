@@ -1,19 +1,27 @@
 ---
-import { districts } from '../data/districts';
+import { districts, getDistrict } from '../data/districts';
 
 interface Props {
+  /** Tercih edilen: districts.ts slug’ı. Eki ve adı tek kaynaktan alır. */
+  districtSlug?: string;
+  /** Geriye dönük uyum. Ad değişirse sessizce yanlış eke düşer — slug tercih edin. */
   districtName?: string;
 }
 
-const { districtName } = Astro.props;
+const { districtSlug, districtName } = Astro.props;
 
 // Bulunma hali eki Türkçede ünlü uyumu, ünsüz sertleşmesi ve özel isimlerde
 // kaynaştırma n'sine göre değişiyor (Fatih'te, Beşiktaş'ta, Beyoğlu'nda).
-// Doğru biçimi districts.ts'ten alıyoruz; listede olmayan bir ad gelirse
-// varsayılan eke düşüyoruz.
-const districtLocative = districtName
-  ? districts.find(d => d.name === districtName)?.locative ?? `${districtName}'de`
-  : null;
+// Tek doğru kaynak districts.ts. Slug ile eşleşme isim değişikliğine dayanıklı;
+// isimle eşleşme ise bir yazım farkında sessizce yanlış eke düşer.
+const district = districtSlug
+  ? getDistrict(districtSlug)
+  : districtName
+    ? districts.find(d => d.name === districtName)
+    : undefined;
+
+const resolvedName = district?.name ?? districtName ?? null;
+const districtLocative = district?.locative ?? (districtName ? `${districtName}'de` : null);
 
 const steps = [
   {
@@ -52,7 +60,7 @@ const steps = [
     {districtLocative ?? 'Projenizde'} nasıl çalışıyoruz?
   </h2>
   <p class="text-muted leading-relaxed mb-8 max-w-2xl text-sm md:text-base">
-    Her projede aynı şeffaf 4 adımlı süreci izliyoruz. {districtName ? `${districtName} ` : ''}projelerinde
+    Her projede aynı şeffaf 4 adımlı süreci izliyoruz. {resolvedName ? `${resolvedName} ` : ''}projelerinde
     ortalama anahtar teslim süre <strong class="text-charcoal font-semibold">4–10 hafta</strong>; daire
     boyutu, malzeme tedariği ve uygulama kapsamına göre netleştiriyoruz.
   </p>

@@ -1,11 +1,17 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictBlogLinks from '../../components/DistrictBlogLinks.astro';
 import DistrictFAQ from '../../components/DistrictFAQ.astro';
 import ProcessStrip from '../../components/ProcessStrip.astro';
+import DistrictProjects from '../../components/DistrictProjects.astro';
 import { CANONICAL_BASE } from '../../config';
 import { optimizedImageW } from '../../lib/cloudinary';
+import { getDistrict } from '../../data/districts';
 
+// İlçe adı ve bulunma hali eki tek kaynaktan: src/data/districts.ts.
+// Elle yazılan ek Türkçe'de sessizce yanlış olabiliyor (Bağcılar'de → Bağcılar'da).
+const district = getDistrict('kadikoy-ic-mimarlik')!;
 const heroPath = '/images/salon1.png';
 const heroAbs = optimizedImageW(heroPath, 1600);
 
@@ -42,7 +48,7 @@ const faqItems = [
 
 <ServiceLayout
   title="Kadıköy İç Mimarlık ve Ev Yenileme"
-  description="Kadıköy'de iç mimarlık, anahtar teslim daire yenileme ve mutfak-banyo tadilatı. Moda, Caddebostan, Fenerbahçe ve Göztepe'de aktif. Ücretsiz keşif: 0533 039 15 65"
+  description="Kadıköy'de iç mimarlık, anahtar teslim daire yenileme ve mutfak-banyo tadilatı. Moda, Caddebostan, Fenerbahçe ve Göztepe'de aktif."
   canonicalUrl={`${CANONICAL_BASE}/istanbul/kadikoy-ic-mimarlik`}
   h1="Kadıköy İç Mimarlık ve Ev Yenileme"
   eyebrow="İstanbul · Kadıköy"
@@ -63,14 +69,14 @@ const faqItems = [
         Kadıköy; birbirinden farklı mimari dönemlerden kalma binaları, yaratıcı sakinleri ve canlı yaşamıyla İstanbul'un en ilgi çekici ilçelerinden biridir. Buradaki konutlar genellikle büyük balkonlar, yüksek tavanlar ve karakterli detaylar içerir; bu özellikleri korumak çoğu zaman tasarımın çıkış noktası oluyor.
       </p>
       <p class="text-muted leading-relaxed mb-4">
-        Moda ve Caddebostan'daki klasik apartman dairelerinde özgün dokuyu koruyan restorasyon ağırlıklı uygulamalar yaparken, Bostancı ve Suadiye'deki yeni nesil site dairelerinde planlama ve depolama optimizasyonu öne çıkıyor. Referans müşterimiz Ayşe K., Kadıköy'deki dairesinin yenilenmesinden son derece memnun kaldı.
+        Moda ve Caddebostan'daki klasik apartman dairelerinde özgün dokuyu koruyan restorasyon ağırlıklı uygulamalar yaparken, Bostancı ve Suadiye'deki yeni nesil site dairelerinde planlama ve depolama optimizasyonu öne çıkıyor.
       </p>
       <p class="text-muted leading-relaxed">
         Moda, Caddebostan, Fenerbahçe, Göztepe, Suadiye, Bostancı, Kalamış, Erenköy ve Sahrayıcedit başta olmak üzere Kadıköy genelinde hizmet veriyoruz.
       </p>
     </div>
     <div>
-      <h3 class="font-semibold text-charcoal mb-4">Kadıköy'de Sunduğumuz Hizmetler</h3>
+      <h3 class="font-semibold text-charcoal mb-4">{district.locative} Sunduğumuz Hizmetler</h3>
       <ul class="space-y-3">
         {[
           'Anahtar teslim daire yenileme',
@@ -90,15 +96,12 @@ const faqItems = [
           </li>
         ))}
       </ul>
-      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
-        <p class="text-sm text-charcoal font-medium">Müşteri Yorumu</p>
-        <p class="text-muted text-sm mt-2 italic">"Dairemizin tüm yenileme sürecini Master İç Mimarlık yönetti. Hem tasarım hem uygulama aşamasında son derece profesyoneldiler."</p>
-        <p class="text-xs text-gold mt-2">— Ayşe K., Kadıköy · 5 yıldız</p>
-      </div>
     </div>
   </div>
 
-  <ProcessStrip districtName="Kadıköy" />
+  <DistrictProjects districtSlug="kadikoy-ic-mimarlik" />
+
+  <ProcessStrip districtSlug="kadikoy-ic-mimarlik" />
 
   <DistrictFAQ districtName="Kadıköy" items={faqItems} />
 
@@ -115,6 +118,8 @@ const faqItems = [
       ))}
     </div>
   </div>
+
+  <DistrictBlogLinks districtSlug="kadikoy-ic-mimarlik" />
 
   <RelatedDistricts currentSlug="kadikoy-ic-mimarlik" />
 

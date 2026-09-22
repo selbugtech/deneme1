@@ -5,8 +5,11 @@
   "scripts": {
     "dev": "astro dev",
     "images": "node scripts/build-images.mjs",
-    "build": "node scripts/build-images.mjs && astro build",
-    "preview": "astro preview"
+    "build": "astro build",
+    "preview": "astro preview",
+    "redirects:sync": "node scripts/sync-redirects.mjs",
+    "seo:check": "node scripts/seo-check.mjs",
+    "seo:ci": "astro build && node scripts/seo-check.mjs"
   },
   "engines": {
     "node": "20.x"

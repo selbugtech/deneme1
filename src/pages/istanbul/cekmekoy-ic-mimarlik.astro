@@ -1,11 +1,17 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictBlogLinks from '../../components/DistrictBlogLinks.astro';
 import DistrictFAQ from '../../components/DistrictFAQ.astro';
 import ProcessStrip from '../../components/ProcessStrip.astro';
+import DistrictProjects from '../../components/DistrictProjects.astro';
 import { CANONICAL_BASE } from '../../config';
 import { optimizedImageW } from '../../lib/cloudinary';
+import { getDistrict } from '../../data/districts';
 
+// İlçe adı ve bulunma hali eki tek kaynaktan: src/data/districts.ts.
+// Elle yazılan ek Türkçe'de sessizce yanlış olabiliyor (Bağcılar'de → Bağcılar'da).
+const district = getDistrict('cekmekoy-ic-mimarlik')!;
 const heroPath = '/images/salon8.jpeg';
 const heroAbs = optimizedImageW(heroPath, 1600);
 
@@ -74,7 +80,7 @@ const faqItems = [
       </p>
     </div>
     <div>
-      <h3 class="font-semibold text-charcoal mb-4">Çekmeköy'de Sunduğumuz Hizmetler</h3>
+      <h3 class="font-semibold text-charcoal mb-4">{district.locative} Sunduğumuz Hizmetler</h3>
       <ul class="space-y-3">
         {[
           'Villa ve müstakil konut yenileme',
@@ -97,7 +103,7 @@ const faqItems = [
       <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
         <p class="text-sm text-charcoal font-medium">Benzer ölçekte projelerimiz</p>
         <p class="text-muted text-sm mt-2">
-          Beykoz ve Zekeriyaköy hattındaki villa projelerimiz Çekmeköy’deki yapı tipine yakın örnekler. Uygulama fotoğraflarının tamamını proje sayfalarında yayımladık.
+          Beykoz’daki iki villa projemiz Çekmeköy’deki yapı tipine yakın örnekler. Uygulama fotoğraflarının tamamını proje sayfalarında yayımladık.
         </p>
         <a href="/projeler" class="text-xs text-gold hover:underline mt-2 inline-block">Villa projelerimiz →</a>
       </div>
@@ -129,7 +135,9 @@ const faqItems = [
     </div>
   </section>
 
-  <ProcessStrip districtName="Çekmeköy" />
+  <DistrictProjects districtSlug="cekmekoy-ic-mimarlik" />
+
+  <ProcessStrip districtSlug="cekmekoy-ic-mimarlik" />
 
   <DistrictFAQ districtName="Çekmeköy" items={faqItems} />
 
@@ -148,6 +156,8 @@ const faqItems = [
       ))}
     </div>
   </div>
+
+  <DistrictBlogLinks districtSlug="cekmekoy-ic-mimarlik" />
 
   <RelatedDistricts currentSlug="cekmekoy-ic-mimarlik" />
 

@@ -1,11 +1,17 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictBlogLinks from '../../components/DistrictBlogLinks.astro';
 import DistrictFAQ from '../../components/DistrictFAQ.astro';
 import ProcessStrip from '../../components/ProcessStrip.astro';
+import DistrictProjects from '../../components/DistrictProjects.astro';
 import { CANONICAL_BASE } from '../../config';
 import { optimizedImageW } from '../../lib/cloudinary';
+import { getDistrict } from '../../data/districts';
 
+// İlçe adı ve bulunma hali eki tek kaynaktan: src/data/districts.ts.
+// Elle yazılan ek Türkçe'de sessizce yanlış olabiliyor (Bağcılar'de → Bağcılar'da).
+const district = getDistrict('uskudar-ic-mimarlik')!;
 const heroPath = '/images/salon3.jpeg';
 const heroAbs = optimizedImageW(heroPath, 1600);
 
@@ -46,7 +52,7 @@ const faqItems = [
 
 <ServiceLayout
   title="Üsküdar İç Mimarlık ve Ev Yenileme"
-  description="Üsküdar'da iç mimarlık, anahtar teslim daire yenileme ve mutfak-banyo tadilatı. Acıbadem, Altunizade, Kuzguncuk ve Çengelköy'de aktif. Ücretsiz keşif: 0533 039 15 65"
+  description="Üsküdar'da iç mimarlık, anahtar teslim daire yenileme ve mutfak-banyo tadilatı. Acıbadem, Altunizade, Kuzguncuk ve Çengelköy'de aktif."
   canonicalUrl={`${CANONICAL_BASE}/istanbul/uskudar-ic-mimarlik`}
   h1="Üsküdar İç Mimarlık ve Ev Yenileme"
   eyebrow="İstanbul · Üsküdar"
@@ -82,7 +88,7 @@ const faqItems = [
       </p>
     </div>
     <div>
-      <h3 class="font-semibold text-charcoal mb-4">Üsküdar'da Sunduğumuz Hizmetler</h3>
+      <h3 class="font-semibold text-charcoal mb-4">{district.locative} Sunduğumuz Hizmetler</h3>
       <ul class="space-y-3">
         {[
           'Anahtar teslim daire yenileme',
@@ -142,7 +148,9 @@ const faqItems = [
     </div>
   </section>
 
-  <ProcessStrip districtName="Üsküdar" />
+  <DistrictProjects districtSlug="uskudar-ic-mimarlik" />
+
+  <ProcessStrip districtSlug="uskudar-ic-mimarlik" />
 
   <DistrictFAQ districtName="Üsküdar" items={faqItems} />
 
@@ -161,6 +169,8 @@ const faqItems = [
       ))}
     </div>
   </div>
+
+  <DistrictBlogLinks districtSlug="uskudar-ic-mimarlik" />
 
   <RelatedDistricts currentSlug="uskudar-ic-mimarlik" />
 

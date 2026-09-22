@@ -1,0 +1,50 @@
+---
+import { bySide } from '../data/districts';
+
+// Ana sayfanın gövdesinde /istanbul hub'ına hiç link yoktu — yalnızca footer'da
+// geçiyordu. Sitenin en güçlü sayfasından ilçe sayfalarına gövde içi link vermek
+// otoriteyi oraya akıtıyor.
+const anadolu = bySide('anadolu');
+const avrupa = bySide('avrupa');
+---
+
+<section class="py-20 bg-[#F5EFE6]">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <div class="flex items-center gap-3 mb-4">
+      <span class="w-8 h-px bg-gold"></span>
+      <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Hizmet Bölgelerimiz</span>
+    </div>
+    <h2 class="font-display text-3xl md:text-4xl font-bold text-charcoal mb-4">
+      İstanbul'un tüm ilçelerinde iç mimarlık
+    </h2>
+    <p class="text-muted leading-relaxed max-w-3xl mb-8">
+      Her ilçenin yapı stoku farklı: Kadıköy'de yüksek tavanlı eski apartman daireleri, Beylikdüzü'nde
+      yeni site konutları, Sarıyer ve Zekeriyaköy'de bahçeli villalar. Uygulama planını, süreyi ve
+      site yönetimiyle koordinasyonu bulunduğunuz bölgeye göre kuruyoruz.
+      <a href="/istanbul" class="text-gold hover:underline">İstanbul iç mimarlık hizmetlerimizin</a>
+      tamamını ve bölgeye özgü notlarımızı ilçe sayfalarımızda bulabilirsiniz.
+    </p>
+
+    <h3 class="text-xs tracking-[0.25em] uppercase text-muted mb-3">Anadolu Yakası</h3>
+    <div class="flex flex-wrap gap-2 mb-6">
+      {anadolu.map(d => (
+        <a
+          href={`/istanbul/${d.slug}`}
+          class="px-3 py-1.5 border border-border text-charcoal text-xs font-medium hover:border-gold hover:text-gold transition-colors"
+        >{d.name}</a>
+      ))}
+    </div>
+
+    <h3 class="text-xs tracking-[0.25em] uppercase text-muted mb-3">Avrupa Yakası</h3>
+    <div class="flex flex-wrap gap-2">
+      {avrupa.map(d => (
+        <a
+          href={`/istanbul/${d.slug}`}
+          class="px-3 py-1.5 border border-border text-charcoal text-xs font-medium hover:border-gold hover:text-gold transition-colors"
+        >{d.name}</a>
+      ))}
+    </div>
+
+  </div>
+</section>

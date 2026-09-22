@@ -6,6 +6,7 @@ import WhatsAppFloat from '../../components/WhatsAppFloat.astro';
 import GoogleRatingCard from '../../components/GoogleRatingCard.astro';
 import { CANONICAL_BASE } from '../../config';
 import { projects, getProject } from '../../data/projects';
+import { getDistrict } from '../../data/districts';
 
 export async function getStaticPaths() {
   const { projects } = await import('../../data/projects');
@@ -40,6 +41,10 @@ const projectSchema = {
   "url": `${CANONICAL_BASE}/projeler/${project.slug}`
 };
 
+// Projeden ilce sayfasina geri link. DistrictProjects ilce → proje yonunu kuruyor;
+// bu da tersini kurarak cift yonlu bir ic link iliskisi olusturuyor.
+const district = project.districtSlug ? getDistrict(project.districtSlug) : undefined;
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -55,6 +60,7 @@ const breadcrumbSchema = {
   title={project.metaTitle}
   description={project.metaDesc}
   canonicalUrl={`${CANONICAL_BASE}/projeler/${project.slug}`}
+  ogImage={project.heroImage}
   structuredData={[breadcrumbSchema, projectSchema]}
 >
   <Header />
@@ -174,6 +180,21 @@ const breadcrumbSchema = {
             ))}
           </ul>
 
+          {district && (
+            <div class="mt-8 pt-8 border-t border-white/10">
+              <p class="text-xs tracking-[0.3em] uppercase text-white/30 mb-3">Bölge</p>
+              <a
+                href={`/istanbul/${district.slug}`}
+                class="inline-flex items-center gap-2 text-sm text-gold hover:underline"
+              >
+                {district.locative} iç mimarlık hizmetlerimiz
+                <span aria-hidden="true">→</span>
+              </a>
+              <p class="text-white/40 text-xs leading-relaxed mt-2">
+                {district.name} genelinde tamamladığımız diğer çalışmaları ve bölgeye özgü notlarımızı ilçe sayfasında bulabilirsiniz.
+              </p>
+            </div>
+          )}
           <div class="mt-10 pt-8 border-t border-white/10">
             <p class="text-xs tracking-wide text-white/30 mb-4 uppercase">Bu proje gibi bir çalışma ister misiniz?</p>
             <a

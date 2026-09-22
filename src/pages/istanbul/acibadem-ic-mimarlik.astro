@@ -1,11 +1,17 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictBlogLinks from '../../components/DistrictBlogLinks.astro';
 import DistrictFAQ from '../../components/DistrictFAQ.astro';
 import ProcessStrip from '../../components/ProcessStrip.astro';
+import DistrictProjects from '../../components/DistrictProjects.astro';
 import { CANONICAL_BASE } from '../../config';
 import { optimizedImageW } from '../../lib/cloudinary';
+import { getDistrict } from '../../data/districts';
 
+// İlçe adı ve bulunma hali eki tek kaynaktan: src/data/districts.ts.
+// Elle yazılan ek Türkçe'de sessizce yanlış olabiliyor (Bağcılar'de → Bağcılar'da).
+const district = getDistrict('acibadem-ic-mimarlik')!;
 const heroPath = '/images/salon3.jpeg';
 const heroAbs = optimizedImageW(heroPath, 1600);
 
@@ -35,7 +41,7 @@ const faqItems = [
   },
   {
     q: "Acıbadem'de örnek projeleriniz var mı?",
-    a: "Acıbadem Villa projemiz geniş bir köşk villanın iç mekanlarının lüks malzemeler ve özel mobilyalarla yenilenmesini içeriyor (2023). Bunun yanında Acıbadem Merkez'deki büyük daire yenilemelerimizi de keşif sırasında referans olarak paylaşıyoruz.",
+    a: "Acıbadem'de yayımladığımız bir proje henüz yok. Ofisimiz Acıbadem'de olduğu için bölgede aynı gün keşif verebiliyoruz; tamamladığımız işlerin tamamını projeler sayfamızda görebilir, keşif sırasında yapı tipinize en yakın örnekleri inceleyebilirsiniz.",
   },
 ];
 ---
@@ -63,14 +69,14 @@ const faqItems = [
         Acıbadem; Kadıköy'e komşu, yeşil dokusu ve sakin yaşam alanlarıyla tercih edilen, köklü aileler ve profesyonellerin yoğunlaştığı bir semttir. Bu semtte villa ve büyük daire projeleri ağırlıklı olarak talep görür; tasarım her zaman kaliteli malzeme ve detay odağıyla kurulur.
       </p>
       <p class="text-muted leading-relaxed mb-4">
-        Acıbadem Villa projemizde geniş bir köşk villanın iç mekanlarını lüks malzemeler ve özel mobilyalarla donattık (2023). Villa projelerinde salon, mutfak, yatak odaları ve giyinme odalarının yanı sıra dış mekan-iç mekan geçişlerini, kütüphane ve ev ofis gibi özel alanları da birlikte ele alıyoruz.
+        Villa ve büyük daire projelerinde salon, mutfak, yatak odaları ve giyinme odalarının yanı sıra dış mekan-iç mekan geçişlerini, kütüphane ve ev ofis gibi özel alanları da birlikte ele alıyoruz. Ofisimiz Acıbadem'de olduğu için keşif ve uygulama takibini aynı gün içinde yapabiliyoruz.
       </p>
       <p class="text-muted leading-relaxed">
         Acıbadem Merkez, Bağlarbaşı, Koşuyolu, Hasanpaşa ve Üsküdar sınırı başta olmak üzere ilçe genelinde hizmet veriyoruz.
       </p>
     </div>
     <div>
-      <h3 class="font-semibold text-charcoal mb-4">Acıbadem'de Sunduğumuz Hizmetler</h3>
+      <h3 class="font-semibold text-charcoal mb-4">{district.locative} Sunduğumuz Hizmetler</h3>
       <ul class="space-y-3">
         {[
           'Villa yenileme ve iç mimarlık',
@@ -90,14 +96,12 @@ const faqItems = [
           </li>
         ))}
       </ul>
-      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
-        <p class="text-sm text-charcoal font-medium">Referans Proje · Acıbadem Villa</p>
-        <p class="text-muted text-sm mt-2">Geniş bir köşk villa için tüm iç mekanların lüks malzeme ve özel mobilyalarla yenilenmesi (2023). Salon, mutfak, banyo, yatak odaları ve özel alanlar projeye dahil edilmiştir.</p>
-      </div>
     </div>
   </div>
 
-  <ProcessStrip districtName="Acıbadem" />
+  <DistrictProjects districtSlug="acibadem-ic-mimarlik" />
+
+  <ProcessStrip districtSlug="acibadem-ic-mimarlik" />
 
   <DistrictFAQ districtName="Acıbadem" items={faqItems} />
 
@@ -114,6 +118,8 @@ const faqItems = [
       ))}
     </div>
   </div>
+
+  <DistrictBlogLinks districtSlug="acibadem-ic-mimarlik" />
 
   <RelatedDistricts currentSlug="acibadem-ic-mimarlik" />
 

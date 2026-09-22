@@ -1,6 +1,7 @@
 ---
 import { SEO } from 'astro-seo';
-import { CANONICAL_BASE, OG_IMAGE, SITE_NAME, SITE_PHONE } from '../config';
+import { CANONICAL_BASE, OG_IMAGE_PATH, SITE_NAME, SITE_PHONE } from '../config';
+import { ogImageUrl } from '../lib/cloudinary';
 
 interface Props {
   title?: string;
@@ -15,10 +16,15 @@ interface Props {
 }
 
 const {
-  title = 'Master İç Mimarlık | Anahtar Teslim Ev, Villa ve Mağaza Yenileme | İstanbul',
-  description = 'İstanbul\'da anahtar teslim ev yenileme, villa yenileme, mağaza ve ofis yenileme hizmetleri. Master İç Mimarlık ile mekanınızı hayalinizdeki tasarıma kavuşturun. 0533 039 15 65',
+  // Varsayılan başlık/açıklama yalnızca ana sayfada kullanılıyor (diğer tüm sayfalar
+  // kendi değerini geçiyor). Eski başlık markayla başlayıp 75 karakterdi: arama
+  // sonucunda "| İstanbul" kesiliyordu ve markasız aramada en değerli ilk kelimeler
+  // marka adına harcanıyordu. Yeni hali ana sayfa H1'iyle aynı; marka eki aşağıda
+  // otomatik ekleniyor → "İstanbul İç Mimarlık ve Ev Yenileme | Master İç Mimarlık".
+  title: rawTitle = 'İstanbul İç Mimarlık ve Ev Yenileme',
+  description = 'İstanbul\'da iç mimarlık, anahtar teslim ev ve villa yenileme, mağaza ve ofis tadilatı. 27 ilçede ücretsiz keşif ve 3D tasarım. 0533 039 15 65',
   canonicalUrl,
-  ogImage = OG_IMAGE,
+  ogImage = OG_IMAGE_PATH,
   ogType = 'website',
   structuredData,
   lcpImage,
@@ -26,7 +32,24 @@ const {
   lcpImageSizes,
 } = Astro.props;
 
+// Marka eki koşullu. Sayfaların büyük çoğunluğu başlığı markasız geçiyor, ama
+// " | Master İç Mimarlık" 21 karakter: düz bir şablon başlıkların önemli kısmını
+// Google'ın arama sonucunda kestiği ~65 karakterin üstüne taşırdı. Eki yalnızca
+// sığdığı yerde ekliyoruz — anahtar kelimeyi kestirmektense marka eksik kalsın.
+const BRAND_SUFFIX = ` | ${SITE_NAME}`;
+const title = rawTitle.includes(SITE_NAME) || rawTitle.length + BRAND_SUFFIX.length > 65
+  ? rawTitle
+  : rawTitle + BRAND_SUFFIX;
+
 const canonical = canonicalUrl ?? `${CANONICAL_BASE}${Astro.url.pathname}`;
+
+// og:image HER ZAMAN mutlak olmalı. Çağıranlar üç şekilde geçiyor: mutlak http(s)
+// URL, site-göreli /images/... yolu, ya da hiç. ServiceLayout ve BlogPost
+// `ogImage ?? heroImage` forward ettiği için 28 sayfa çıplak bir /images/... yolu
+// geçiriyordu — Facebook/X/WhatsApp göreli URL çözmez. Tek nokta burası:
+// ServiceLayout/BlogPost'ta ayrıca mutlaklaştırma YAPILMAYACAK, yoksa
+// Cloudinary URL'i iki kez sarılır.
+const ogImageAbs = ogImageUrl(ogImage);
 
 const websiteSchema = {
   "@context": "https://schema.org",
@@ -65,7 +88,7 @@ const localBusinessSchema = {
   "name": SITE_NAME,
   "url": `${CANONICAL_BASE}/`,
   "logo": `${CANONICAL_BASE}/favicon.png`,
-  "image": OG_IMAGE,
+  "image": ogImageAbs,
   "description": "İstanbul'da anahtar teslim ev yenileme, villa yenileme, mağaza ve ofis yenileme hizmetleri.",
   "telephone": SITE_PHONE,
   "priceRange": "₺₺₺",
@@ -127,7 +150,7 @@ const allStructuredData = [
         basic: {
           title: title,
           type: ogType,
-          image: ogImage,
+          image: ogImageAbs,
           url: canonical,
         },
         optional: {
@@ -145,7 +168,7 @@ const allStructuredData = [
         card: 'summary_large_image',
         title: title,
         description: description,
-        image: ogImage,
+        image: ogImageAbs,
       }}
       extend={{
         meta: [

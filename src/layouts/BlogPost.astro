@@ -7,6 +7,7 @@ import Projects from '../components/Projects.astro';
 import Contact from '../components/Contact.astro';
 import { CANONICAL_BASE, TEL_URL, WHATSAPP_URL_PROJECT } from '../config';
 import { allPosts } from '../data/blog-posts';
+import { getDistrict } from '../data/districts';
 
 interface Props {
   title: string;
@@ -27,6 +28,15 @@ const { title, description, canonicalUrl, publishDate, readingTime = '5 dk okuma
 const currentSlug = canonicalUrl.split('/').pop() ?? '';
 const currentIndex = allPosts.findIndex(p => p.slug === currentSlug);
 const currentTag = currentIndex >= 0 ? allPosts[currentIndex].tag : '';
+
+// Blog → ilçe geri linki. DistrictBlogLinks ilçe → blog yönünü kuruyor; bu da
+// tersini kurarak 37 ilçe yazısını düzgün bir hub-and-spoke kümesine çeviriyor.
+// 'kadikoy-ev-tadilati' / 'kadikoy-ic-mimarlik-ofisleri' → 'kadikoy-ic-mimarlik'.
+// İlçe sayfası olmayan 4 yazı (gaziosmanpasa, gungoren, sultangazi, maslak)
+// eşleşme bulamayıp /istanbul hub'ına düşüyor.
+const districtBase = currentSlug.replace(/-(ev-tadilati|ic-mimarlik-ofisleri)$/, '');
+const isDistrictPost = districtBase !== currentSlug;
+const postDistrict = isDistrictPost ? getDistrict(`${districtBase}-ic-mimarlik`) : undefined;
 const offset = Math.max(currentIndex, 0);
 
 const rotate = (arr: typeof allPosts) =>
@@ -220,6 +230,30 @@ const breadcrumbSchema = {
 
         <!-- Sidebar: related posts -->
         <aside class="md:sticky md:top-28">
+          {isDistrictPost && (
+            <div class="mb-8 p-5 bg-gold/5 border border-gold/20">
+              <p class="text-[10px] tracking-[0.3em] uppercase text-gold font-medium mb-3">Hizmet Sayfası</p>
+              {postDistrict ? (
+                <>
+                  <a href={`/istanbul/${postDistrict.slug}`} class="font-display text-base font-bold text-charcoal hover:text-gold transition-colors">
+                    {postDistrict.name} iç mimarlık hizmetlerimiz →
+                  </a>
+                  <p class="text-muted text-xs leading-relaxed mt-2">
+                    {postDistrict.locative} sunduğumuz hizmetler, tamamladığımız projeler ve bölgeye özgü notlarımız.
+                  </p>
+                </>
+              ) : (
+                <>
+                  <a href="/istanbul" class="font-display text-base font-bold text-charcoal hover:text-gold transition-colors">
+                    İstanbul hizmet bölgelerimiz →
+                  </a>
+                  <p class="text-muted text-xs leading-relaxed mt-2">
+                    Hizmet verdiğimiz 27 ilçenin tamamını ve bölgeye özgü notlarımızı burada bulabilirsiniz.
+                  </p>
+                </>
+              )}
+            </div>
+          )}
           <div class="flex items-center gap-2 mb-4">
             <span class="w-5 h-px bg-gold"></span>
             <span class="text-[10px] tracking-[0.3em] uppercase text-gold font-medium">İlgili Yazılar</span>
@@ -386,8 +420,16 @@ const breadcrumbSchema = {
     overflow: hidden;
     transition: max-height 0.4s ease;
   }
+  /* Kırpma yalnızca mobilde ve 1200px'ten sonra. Masaüstünde 2.000 kelimelik bir
+     yazıyı 600px'e sıkıştırmanın okuma kolaylığı açısından karşılığı yok; mobilde
+     ise uzun kaydırmayı kısalttığı için korunuyor. */
   .article-collapse[data-collapsed="true"] {
-    max-height: 600px;
+    max-height: none;
+  }
+  @media (max-width: 767px) {
+    .article-collapse[data-collapsed="true"] {
+      max-height: 1200px;
+    }
   }
   .article-collapse[data-collapsed="false"] {
     max-height: none;
@@ -404,6 +446,14 @@ const breadcrumbSchema = {
   }
   .article-collapse[data-collapsed="false"] .article-fade {
     opacity: 0;
+  }
+  /* Masaüstünde kırpma yok — fade ve "Detaylı Bilgiyi Gör" düğmesi de gizleniyor,
+     yoksa gizleyecek bir şey olmadan duran ölü bir arayüz kalıyor. */
+  @media (min-width: 768px) {
+    .article-fade,
+    .article-toggle {
+      display: none;
+    }
   }
   .article-toggle {
     margin-top: 1.5rem;

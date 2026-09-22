@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import Services from '../components/Services.astro';
+import HomeServiceAreas from '../components/HomeServiceAreas.astro';
 import About from '../components/About.astro';
 import BeforeAfter from '../components/BeforeAfter.astro';
 import GoogleRatingCard from '../components/GoogleRatingCard.astro';
@@ -24,12 +25,23 @@ import { optimizedImageW, srcsetImage } from '../lib/cloudinary';
   <Header />
   <main>
     <Hero />
+    <Projects />
     {/*
+    About: metni hakkimizda.astro ile birebir aynı — açılırsa kopya içerik olur.
+
+    BeforeAfter: şimdilik kapalı, sonra açılabilir. Bileşen ARTIK ÇALIŞIR durumda:
+    görsel yolları /images/beforeafter/ → /beforeafter/ olarak düzeltildi ve
+    villaoncesi.HEIC (tarayıcıda açılmayan format) JPG'ye dönüştürüldü.
+    İçerik gerçek: Beyoğlu Galata, Beykoz Paşabahçe ve Ataköy projelerinin
+    öncesi/sonrası fotoğrafları. Görseller data-bg + IntersectionObserver ile
+    tembel yükleniyor, LCP'yi etkilemiyor.
+    Açmadan önce: public/beforeafter/ git'e eklenmeli, yoksa Cloudinary fetch
+    404 alır ve bölüm boş görünür.
     <About />
     <BeforeAfter />
     */}
-    <Projects />
     <Services />
+    <HomeServiceAreas />
     <Contact />
   </main>
   <Footer />

@@ -1,11 +1,17 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictBlogLinks from '../../components/DistrictBlogLinks.astro';
 import DistrictFAQ from '../../components/DistrictFAQ.astro';
 import ProcessStrip from '../../components/ProcessStrip.astro';
+import DistrictProjects from '../../components/DistrictProjects.astro';
 import { CANONICAL_BASE } from '../../config';
 import { optimizedImageW } from '../../lib/cloudinary';
+import { getDistrict } from '../../data/districts';
 
+// İlçe adı ve bulunma hali eki tek kaynaktan: src/data/districts.ts.
+// Elle yazılan ek Türkçe'de sessizce yanlış olabiliyor (Bağcılar'de → Bağcılar'da).
+const district = getDistrict('fatih-ic-mimarlik')!;
 const heroPath = '/images/oturmaodasi.jpeg';
 const heroAbs = optimizedImageW(heroPath, 1600);
 
@@ -83,7 +89,7 @@ const faqItems = [
       </p>
     </div>
     <div>
-      <h3 class="font-semibold text-charcoal mb-4">Fatih'te Sunduğumuz Hizmetler</h3>
+      <h3 class="font-semibold text-charcoal mb-4">{district.locative} Sunduğumuz Hizmetler</h3>
       <ul class="space-y-3">
         {[
           'Tarihi yapılarda restorasyon ağırlıklı yenileme',
@@ -143,7 +149,9 @@ const faqItems = [
     </div>
   </section>
 
-  <ProcessStrip districtName="Fatih" />
+  <DistrictProjects districtSlug="fatih-ic-mimarlik" />
+
+  <ProcessStrip districtSlug="fatih-ic-mimarlik" />
 
   <DistrictFAQ districtName="Fatih" items={faqItems} />
 
@@ -162,6 +170,8 @@ const faqItems = [
       ))}
     </div>
   </div>
+
+  <DistrictBlogLinks districtSlug="fatih-ic-mimarlik" />
 
   <RelatedDistricts currentSlug="fatih-ic-mimarlik" />
 

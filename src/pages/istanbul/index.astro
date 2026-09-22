@@ -38,7 +38,7 @@ const serviceSchema = {
 const faqItems = [
   {
     q: "İstanbul'un hangi ilçelerinde hizmet veriyorsunuz?",
-    a: "Ofisimiz Acıbadem'de olduğu için Anadolu yakasında Kadıköy, Üsküdar, Ataşehir ve Maltepe hattında yoğun çalışıyoruz. Avrupa yakasında ise Beşiktaş, Şişli, Nişantaşı, Levent, Beyoğlu, Fatih, Bakırköy, Sarıyer, Zekeriyaköy ve Beylikdüzü'nde aktif projelerimiz var. Listede olmayan bir ilçedeyseniz de arayabilirsiniz; İstanbul genelinde keşfe gidiyoruz.",
+    a: "Ofisimiz Acıbadem'de olduğu için Anadolu yakasında Kadıköy, Üsküdar, Ataşehir ve Maltepe hattında yoğun çalışıyoruz. Avrupa yakasında Beşiktaş, Şişli, Nişantaşı, Levent, Beyoğlu, Fatih, Bakırköy, Sarıyer, Zekeriyaköy ve Beylikdüzü başta olmak üzere hizmet veriyoruz. Listede olmayan bir ilçedeyseniz de arayabilirsiniz; İstanbul genelinde keşfe gidiyoruz.",
   },
   {
     q: "Bulunduğum ilçe sayfanızda yok, yine de gelir misiniz?",
@@ -71,14 +71,13 @@ const faqSchema = {
 
 <ServiceLayout
   title="İstanbul İç Mimarlık ve Ev Yenileme Hizmet Bölgeleri"
-  description="Master İç Mimarlık'ın İstanbul'da hizmet verdiği ilçeler. Anadolu ve Avrupa yakasında iç mimarlık, anahtar teslim yenileme ve tadilat. Ücretsiz keşif: 0533 039 15 65"
+  description="Master İç Mimarlık'ın İstanbul'da hizmet verdiği ilçeler. Anadolu ve Avrupa yakasında iç mimarlık, anahtar teslim yenileme ve tadilat."
   canonicalUrl={`${CANONICAL_BASE}/istanbul`}
   h1="İstanbul İç Mimarlık Hizmet Bölgeleri"
   eyebrow="İstanbul"
   lead="Ofisimiz Acıbadem'de; keşif için İstanbul'un iki yakasına da gidiyoruz. Her ilçenin yapı stoku farklı olduğu için uygulama planını bulunduğunuz bölgenin koşullarına göre kuruyoruz."
   heroImage={heroPath}
   ogImage={optimizedImage(heroPath)}
-  expandedByDefault={true}
   breadcrumb={[
     { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
     { label: "İstanbul" }

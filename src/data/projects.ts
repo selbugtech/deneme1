@@ -16,11 +16,20 @@ export type ProjectMeta = {
   description: string[];
   metaTitle: string;
   metaDesc: string;
+  /**
+   * Projenin ait oldugu ilce sayfasinin slug’i (src/data/districts.ts).
+   * `location` serbest metin oldugu icin (“Caddebostan, Istanbul”) programatik
+   * eslesmeye uygun degil — ilce bagi burada acikca tutuluyor.
+   * Bos birakilanlar: ilcesi belirsiz ya da ilce sayfasi olmayan projeler
+   * (Artas, Selimpasa/Silivri, jenerik ofis/cafe/otel calismalari).
+   */
+  districtSlug?: string;
 };
 
 const META: ProjectMeta[] = [
   {
     slug: 'beyoglu-galata',
+    districtSlug: 'beyoglu-ic-mimarlik',
     title: 'Beyoğlu Galata Daire',
     category: 'Anahtar Teslim Ev Yenileme',
     categorySlug: 'anahtar-teslim',
@@ -35,11 +44,12 @@ const META: ProjectMeta[] = [
       'Oturma ve yemek alanı açık plan anlayışıyla bütünleştirildi; renk paleti olarak kırık beyaz, doğal taş ve koyu ahşap detaylar seçildi. Mutfak dolapları ve tezgah, tarihi yapının karakterine uyum sağlayan mat yüzeyler ve bakır aksesuar grubuyla tamamlandı.',
       'Banyo baştan sona yenilenerek terazo görünümlü büyük format seramikler ve rainfall duş başlığıyla lüks bir his yaratıldı. Tüm proje, binanın kültürel dokusuna saygı gösterilerek ve belirlenen bütçe dahilinde 7 haftada teslim edildi.',
     ],
-    metaTitle: 'Beyoğlu Galata Ev Yenileme Projesi | Anahtar Teslim | Master İç Mimarlık',
-    metaDesc: 'Beyoğlu Galata\'da 95 m² tarihi dairenin komple anahtar teslim yenileme projesi. Modern iç mimari tasarım, özel mutfak ve banyo çalışmaları. Master İç Mimarlık İstanbul.',
+    metaTitle: 'Beyoğlu Galata Ev Yenileme Projesi | Master İç Mimarlık',
+    metaDesc: 'Beyoğlu Galata\'da 95 m² tarihi dairenin komple anahtar teslim yenileme projesi. Modern iç mimari tasarım, özel mutfak ve banyo çalışmaları.',
   },
   {
     slug: 'beykoz-pasabahce',
+    districtSlug: 'beykoz-ic-mimarlik',
     title: 'Beykoz Paşabahçe Villa',
     category: 'Villa Yenileme',
     categorySlug: 'villa-yenileme',
@@ -54,11 +64,12 @@ const META: ProjectMeta[] = [
       'Ana yaşam katında, manzarayı öne çıkarmak için bölücü duvarlar kaldırılarak panoramik bir oturma—yemek—mutfak sirkülasyonu oluşturuldu. Geniş terastan iç mekana akan doğal ışık, açık renkli mermer zemin ve bej-gri ton mobilyalarla güçlendirildi.',
       'Üst kattaki yatak odaları, her birinde ayrı banyo ve giyinme odası bulunacak şekilde yeniden planlandı. Bahçeye inen teras, dış mekan döşeme ve peyzaj düzenlemesiyle ailenin dört mevsim kullanabileceği bir yaşam alanına kavuştu. Proje 12 haftada eksiksiz teslim edildi.',
     ],
-    metaTitle: 'Beykoz Paşabahçe Villa Yenileme Projesi | Master İç Mimarlık İstanbul',
+    metaTitle: 'Beykoz Paşabahçe Villa Yenileme Projesi | Master İç Mimarlık',
     metaDesc: 'Beykoz Paşabahçe\'de 280 m² villanın komple yenilenmesi. Özel mobilya tasarımı ve bahçe-teras entegrasyonu. Master İç Mimarlık.',
   },
   {
     slug: 'caddebostan',
+    districtSlug: 'kadikoy-ic-mimarlik',
     title: 'Caddebostan Daire',
     category: 'Anahtar Teslim Ev Yenileme',
     categorySlug: 'anahtar-teslim',
@@ -73,11 +84,12 @@ const META: ProjectMeta[] = [
       'Giriş holü ile oturma alanı birleştirilerek derinlik hissi artırıldı. Mutfakta ankastre beyaz cihazlar ve mat antrasit dolap kapakları tercih edildi; ada tipi tezgah hem hazırlık hem de sosyal alan olarak çift işlev görüyor. Zemin kaplaması olarak büyük formatlı porselen kullanıldı.',
       'Çocuk odası ve ana yatak odası, pratik depolama çözümleri gözetilerek ayrı ayrı tasarlandı. Alçıpan çalışmalarıyla güçlendirilen tavan; gizli aydınlatma ve spot gruplarıyla katmanlı bir ışık atmosferi yaratıyor. Proje 8 hafta içinde anahtar teslim tamamlandı.',
     ],
-    metaTitle: 'Caddebostan Ev Yenileme Projesi | Anahtar Teslim | Master İç Mimarlık',
-    metaDesc: 'Kadıköy Caddebostan\'da 110 m² dairenin komple anahtar teslim yenileme projesi. Açık plan mutfak, asma tavan ve özel depolama çözümleri. Master İç Mimarlık İstanbul.',
+    metaTitle: 'Caddebostan Ev Yenileme Projesi | Master İç Mimarlık',
+    metaDesc: 'Kadıköy Caddebostan\'da 110 m² dairenin komple anahtar teslim yenileme projesi. Açık plan mutfak, asma tavan ve özel depolama çözümleri.',
   },
   {
     slug: 'mecidiyekoy-dublex',
+    districtSlug: 'sisli-ic-mimarlik',
     title: 'Mecidiyeköy Dublex',
     category: 'Anahtar Teslim Ev Yenileme',
     categorySlug: 'anahtar-teslim',
@@ -92,8 +104,8 @@ const META: ProjectMeta[] = [
       'Alt katta oturma, yemek ve mutfak açık plan anlayışıyla bütünleştirildi; özel tasarım ankastre raf sistemi ve nötr renk paleti ile sıcak ama sade bir atmosfer kurgulandı. Merdiven boşluğu mekanın odak noktası haline getirildi.',
       'Üst katta yatak odaları ve banyolar, akıllı depolama çözümleriyle her metrekareyi verimli kullanacak şekilde planlandı. Tüm elektrik ve sıhhi tesisat yenilenerek proje 10 haftada eksiksiz teslim edildi.',
     ],
-    metaTitle: 'Mecidiyeköy Dubleks Yenileme Projesi | Anahtar Teslim | Master İç Mimarlık',
-    metaDesc: 'Mecidiyeköy\'de 180 m² dubleks dairenin komple anahtar teslim yenileme projesi. Modern iç mimari tasarım, açık plan mutfak ve banyo renovasyonu. Master İç Mimarlık İstanbul.',
+    metaTitle: 'Mecidiyeköy Dubleks Yenileme Projesi | Master İç Mimarlık',
+    metaDesc: 'Mecidiyeköy\'de 180 m² dubleks dairenin komple anahtar teslim yenileme projesi. Modern iç mimari tasarım, açık plan mutfak ve banyo renovasyonu.',
   },
   {
     slug: 'artas-ofis',
@@ -111,7 +123,7 @@ const META: ProjectMeta[] = [
       'Açık çalışma alanları, farklı kapasiteli toplantı odaları ve dinlenme köşeleri işlevsel bir denge içinde konumlandırıldı. Kurumsal renk paleti mekana yansıtılırken cam bölmeler sayesinde hem şeffaflık hem de gizlilik ihtiyacı karşılandı.',
       'Akustik panel uygulamaları, LED aydınlatma tasarımı ve yükseltilmiş döşeme ile teknik altyapı modernize edildi. Proje, ofisin kapalı kalma süresini minimize eden bir çalışma takviminde 8 haftada tamamlanarak teslim edildi.',
     ],
-    metaTitle: 'Artaş Ofis Yenileme Projesi | Kurumsal İç Mimarlık | Master İç Mimarlık',
+    metaTitle: 'Artaş Ofis Yenileme Projesi | Master İç Mimarlık',
     metaDesc: 'Artaş\'ta 200 m² kurumsal ofis yenileme projesi. Açık ofis planlaması, toplantı odası tasarımı ve akustik çözümler. Master İç Mimarlık İstanbul.',
   },
   {
@@ -130,11 +142,12 @@ const META: ProjectMeta[] = [
       'Giriş lobisi kurumsal kimliği yansıtacak şekilde markalı bir karşılama alanına dönüştürüldü. Ortak çalışma adaları ile bireysel odaklanma kabinleri aynı mekan içinde tasarlandı; farklı çalışma modlarını destekleyen esnek bir ofis elde edildi.',
       'Doğal ışık odaklı pencere düzenlemesi ve açık renkli zemin kaplama ile iç mekan ferahlatıldı. Teknik altyapı ve kablolama gizlenerek temiz ve düzenli bir görünüm sağlandı. Proje 6 hafta içinde tamamlanarak kullanıma alındı.',
     ],
-    metaTitle: 'Artaş Ofis II Yenileme Projesi | Kurumsal İç Mimarlık | Master İç Mimarlık',
+    metaTitle: 'Artaş Ofis II Yenileme Projesi | Master İç Mimarlık',
     metaDesc: 'Artaş\'ta 150 m² kurumsal ofis yenileme projesi. Esnek çalışma alanları, aydınlatma tasarımı ve mobilya seçimi. Master İç Mimarlık İstanbul.',
   },
   {
     slug: 'tepekent',
+    districtSlug: 'buyukcekmece-ic-mimarlik',
     title: 'Tepekent Villa',
     category: 'Anahtar Teslim Ev Yenileme',
     categorySlug: 'anahtar-teslim',
@@ -149,11 +162,12 @@ const META: ProjectMeta[] = [
       'Oturma alanı ve mutfak, çocuklu aile yaşamına uygun geniş ve gözetimli bir düzen içinde planlandı. Yüksek kapasiteli gizli depolama çözümleri ile mekanda sade ve düzenli bir görünüm korundu. Mutfak adası hem yemek hazırlama hem de aile buluşma noktası olarak tasarlandı.',
       'Ana yatak odası, giyinme odası ve banyo bütünlüğüyle kullanıcıya suite otel konforu sunuyor. Çocuk odası ergonomik mobilya ve oyun alanı tasarımıyla büyümeye uygun bir düzen içinde kurgulandı. 10 haftalık titiz bir sürecin ardından ev anahtar teslim teslim edildi.',
     ],
-    metaTitle: 'Tepekent Ev Yenileme Projesi | Anahtar Teslim | Master İç Mimarlık',
+    metaTitle: 'Tepekent Ev Yenileme Projesi | Master İç Mimarlık',
     metaDesc: 'Tepekent\'te 140 m² dairenin komple anahtar teslim yenileme projesi. Doğal malzemeler, özel mobilya tasarımı ve aile yaşamına uygun iç mekan. Master İç Mimarlık.',
   },
   {
     slug: 'kozyatagi-banyo',
+    districtSlug: 'kadikoy-ic-mimarlik',
     title: 'Kozyatağı Banyo',
     category: 'Kısmi Yenileme',
     categorySlug: 'kismi-yenileme',
@@ -173,6 +187,7 @@ const META: ProjectMeta[] = [
   },
   {
     slug: 'zeytinburnu',
+    districtSlug: 'zeytinburnu-ic-mimarlik',
     title: 'Zeytinburnu Daire',
     category: 'Anahtar Teslim Ev Yenileme',
     categorySlug: 'anahtar-teslim',
@@ -187,11 +202,12 @@ const META: ProjectMeta[] = [
       'Girişten oturma alanına uzanan açık plan kurgu, mekanı görsel olarak genişletirken pratik bir sirkülasyon sağladı. Mutfakta beyaz lake dolap cephesi ve geniş tezgah yüzeyi tercih edildi; mutfak ile yemek masası aynı ada üzerinde konumlandırıldı.',
       'Banyo, su bazlı görünümlü yüzeyler ve mat altın donanımlarla yenilendi. İnce çerçeveli iç kapılar ve dolaylı aydınlatma uygulamaları tavan yüksekliği algısını artırdı. Proje zamanında ve bütçe dahilinde 8 haftada anahtar teslim tamamlandı.',
     ],
-    metaTitle: 'Zeytinburnu Ev Yenileme Projesi | Anahtar Teslim | Master İç Mimarlık',
+    metaTitle: 'Zeytinburnu Ev Yenileme Projesi | Master İç Mimarlık',
     metaDesc: 'Zeytinburnu\'nda 100 m² dairenin komple anahtar teslim yenileme projesi. Açık plan düzeni, modern mutfak ve banyo yenileme. Master İç Mimarlık İstanbul.',
   },
   {
     slug: 'atakoy',
+    districtSlug: 'bakirkoy-ic-mimarlik',
     title: 'Ataköy Daire',
     category: 'Anahtar Teslim Ev Yenileme',
     categorySlug: 'anahtar-teslim',
@@ -211,6 +227,7 @@ const META: ProjectMeta[] = [
   },
   {
     slug: 'beylikduzu-villa',
+    districtSlug: 'beylikduzu-ic-mimarlik',
     title: 'Beylikdüzü Villa',
     category: 'Villa Yenileme',
     categorySlug: 'villa-yenileme',
@@ -249,6 +266,7 @@ const META: ProjectMeta[] = [
   },
   {
     slug: 'beykoz-villa',
+    districtSlug: 'beykoz-ic-mimarlik',
     title: 'Beykoz Villa',
     category: 'Villa Yenileme',
     categorySlug: 'villa-yenileme',
@@ -283,7 +301,7 @@ const META: ProjectMeta[] = [
       'Aydınlatma tasarımı, gün içinde değişen kullanıma uyum sağlayacak şekilde katmanlı planlandı. Proje 4 haftada işletmeye hazır şekilde teslim edildi.',
     ],
     metaTitle: 'Cafe Tasarım Projesi | Ticari Mekan İç Mimarlık | Master',
-    metaDesc: 'Marka odaklı cafe iç mimari tasarım projesi. Mobilya, aydınlatma ve mutfak altyapısı. Master İç Mimarlık.',
+    metaDesc: '90 m² cafe için marka odaklı iç mimari tasarım ve uygulama: mobilya, katmanlı aydınlatma ve mutfak altyapısı. Dört haftada işletmeye hazır teslim edildi.',
   },
   {
     slug: 'hilton-otel',
@@ -302,10 +320,11 @@ const META: ProjectMeta[] = [
       'Proje, otelin operasyonunu minimum etkileyecek bir çalışma takviminde tamamlandı.',
     ],
     metaTitle: 'Hilton Otel İç Mimari Projesi | Master İç Mimarlık',
-    metaDesc: 'Uluslararası otel zinciri için iç mimari uygulama projesi. Lobi, ortak alan ve oda yenileme. Master İç Mimarlık.',
+    metaDesc: 'Uluslararası bir otel zincirinin İstanbul lokasyonunda iç mimari uygulama: lobi, ortak alanlar ve oda yenilemesi, otel operasyonunu aksatmayan bir takvimle.',
   },
   {
     slug: 'kadikoy-moda',
+    districtSlug: 'kadikoy-ic-mimarlik',
     title: 'Kadıköy Moda Daire',
     category: 'Anahtar Teslim Ev Yenileme',
     categorySlug: 'anahtar-teslim',
@@ -339,10 +358,11 @@ const META: ProjectMeta[] = [
       'Detay işçiliği, malzeme seçimleri ve atmosfer kurgusu açısından çeşitli örnekler bir arada sunuluyor.',
     ],
     metaTitle: 'Seçilmiş Çalışmalar | Master İç Mimarlık İstanbul',
-    metaDesc: 'Master İç Mimarlık\'ın farklı projelerinden seçilmiş detay ve uygulama görselleri.',
+    metaDesc: 'Master İç Mimarlık\'ın farklı projelerinden seçilmiş detay ve uygulama görselleri: malzeme seçimi, işçilik ve atmosfer kurgusu örnekleri bir arada.',
   },
   {
     slug: 'maltepe',
+    districtSlug: 'maltepe-ic-mimarlik',
     title: 'Maltepe Daire',
     category: 'Anahtar Teslim Ev Yenileme',
     categorySlug: 'anahtar-teslim',
@@ -358,10 +378,11 @@ const META: ProjectMeta[] = [
       'Banyo ve yatak odaları kullanıcı konforu gözetilerek yeniden düzenlendi. Proje 7 haftada anahtar teslim tamamlandı.',
     ],
     metaTitle: 'Maltepe Ev Yenileme Projesi | Anahtar Teslim | Master İç Mimarlık',
-    metaDesc: 'Maltepe\'de 105 m² dairenin komple yenileme projesi. Modern iç mimari, mutfak ve banyo renovasyonu. Master İç Mimarlık.',
+    metaDesc: 'Maltepe\'de 105 m² dairenin yedi haftada anahtar teslim yenilenmesi: genişletilmiş ortak alanlar, ankastre mutfak, banyo ve yatak odası düzenlemesi.',
   },
   {
     slug: 'nurol-park',
+    districtSlug: 'bagcilar-ic-mimarlik',
     title: 'Nurol Park Daire',
     category: 'Anahtar Teslim Ev Yenileme',
     categorySlug: 'anahtar-teslim',
@@ -451,6 +472,14 @@ export const projects: Project[] = META
     };
   })
   .sort((a, b) => byOrder(a.slug) - byOrder(b.slug));
+
+/**
+ * Bir ilce sayfasinda gosterilecek gercek projeler.
+ * Sirali: projects zaten DISPLAY_ORDER’a gore dizili.
+ */
+export function projectsByDistrict(districtSlug: string): Project[] {
+  return projects.filter((p) => p.districtSlug === districtSlug);
+}
 
 export function getProject(slug: string): Project | undefined {
   return projects.find((p) => p.slug === slug);

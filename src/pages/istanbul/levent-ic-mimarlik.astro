@@ -1,11 +1,17 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictBlogLinks from '../../components/DistrictBlogLinks.astro';
 import DistrictFAQ from '../../components/DistrictFAQ.astro';
 import ProcessStrip from '../../components/ProcessStrip.astro';
+import DistrictProjects from '../../components/DistrictProjects.astro';
 import { CANONICAL_BASE } from '../../config';
 import { optimizedImageW } from '../../lib/cloudinary';
+import { getDistrict } from '../../data/districts';
 
+// İlçe adı ve bulunma hali eki tek kaynaktan: src/data/districts.ts.
+// Elle yazılan ek Türkçe'de sessizce yanlış olabiliyor (Bağcılar'de → Bağcılar'da).
+const district = getDistrict('levent-ic-mimarlik')!;
 const heroPath = '/images/ofis2.jpeg';
 const heroAbs = optimizedImageW(heroPath, 1600);
 
@@ -35,7 +41,7 @@ const faqItems = [
   },
   {
     q: "Levent'te örnek projeleriniz var mı?",
-    a: "Levent Ofis projemiz 320 m²'lik kurumsal bir alanın açık ofis, toplantı odaları ve lobi tasarımıyla yenilenmesini içerir. Müşteri yorumumuz: 'Çalışanlar ve müşteriler değişimden çok etkilendi' (Serra D.). Konut tarafında da Levent'teki lüks daire referanslarımızı keşif sırasında paylaşıyoruz.",
+    a: "Levent'te henüz yayımladığımız bir proje yok; tamamladığımız işlerin tamamını projeler sayfamızda görebilirsiniz. Keşif sırasında plan şemanıza ve kullanım amacınıza en yakın çalışmalarımızı gösteriyoruz.",
   },
 ];
 ---
@@ -63,14 +69,14 @@ const faqItems = [
         Levent; İstanbul'un finans ve iş merkezi olmasının yanı sıra, üst gelir grubuna hitap eden lüks rezidans ve konutlarıyla da öne çıkan bir semttir. Bu yapı, hem kurumsal ofis projelerinde hem de lüks ev yenilemelerinde uzmanlaşmamızı gerektirdi.
       </p>
       <p class="text-muted leading-relaxed mb-4">
-        Levent Ofis projemizde 320 m²'lik kurumsal bir alanı yeniledik. Açık ofis alanları, toplantı odaları ve lobi tasarımıyla çalışan motivasyonunu artıran bir ortam yarattık. Konut tarafında ise Boğaz manzaralı rezidans daireleri ve klasik Levent apartmanlarında uyguladığımız malzeme seçimi ve detay işçiliği farkımızı oluşturuyor.
+        Levent'te plaza ofisleri ve rezidans daireleri iki ayrı çalışma biçimi gerektiriyor. Ofis tarafında bina yönetiminin çalışma saatleri ve asansör kullanımı planı baştan kuruluyor; konut tarafında ise kat mülkiyeti kuralları ve komşu bildirimi süreci belirleyici oluyor. Her iki durumda da uygulama takvimini bu kısıtlara göre çıkarıyoruz.
       </p>
       <p class="text-muted leading-relaxed">
         1. Levent, 4. Levent, Sanayi Mahallesi, Çırağan, Etiler sınırı ve Maslak sınırı başta olmak üzere Levent ve çevresinde aktif olarak hizmet veriyoruz.
       </p>
     </div>
     <div>
-      <h3 class="font-semibold text-charcoal mb-4">Levent'te Sunduğumuz Hizmetler</h3>
+      <h3 class="font-semibold text-charcoal mb-4">{district.locative} Sunduğumuz Hizmetler</h3>
       <ul class="space-y-3">
         {[
           'Kurumsal ofis yenileme',
@@ -90,15 +96,12 @@ const faqItems = [
           </li>
         ))}
       </ul>
-      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
-        <p class="text-sm text-charcoal font-medium">Müşteri Yorumu · Levent Ofis</p>
-        <p class="text-muted text-sm mt-2 italic">"320 m²'lik ofis alanımızı yenilettik. Çalışanlar ve müşteriler değişimden çok etkilendi; süreç boyunca iş akışımız hiç kesilmedi."</p>
-        <p class="text-xs text-gold mt-2">— Serra D., Levent · 5 yıldız</p>
-      </div>
     </div>
   </div>
 
-  <ProcessStrip districtName="Levent" />
+  <DistrictProjects districtSlug="levent-ic-mimarlik" />
+
+  <ProcessStrip districtSlug="levent-ic-mimarlik" />
 
   <DistrictFAQ districtName="Levent" items={faqItems} />
 
@@ -115,6 +118,8 @@ const faqItems = [
       ))}
     </div>
   </div>
+
+  <DistrictBlogLinks districtSlug="levent-ic-mimarlik" />
 
   <RelatedDistricts currentSlug="levent-ic-mimarlik" />
 

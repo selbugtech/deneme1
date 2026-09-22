@@ -1,0 +1,60 @@
+---
+import { allPosts } from '../data/blog-posts';
+import { getDistrict } from '../data/districts';
+
+interface Props {
+  /** districts.ts slug'ı — blog yazıları buradan türetilir. */
+  districtSlug: string;
+}
+
+const { districtSlug } = Astro.props;
+
+const district = getDistrict(districtSlug);
+
+// İlçe slug'ından blog slug'ı türetiliyor: 'kadikoy-ic-mimarlik' → 'kadikoy'.
+// Blog yazılarının 37'si bu iki kalıpta; eşleşme yoksa bileşen hiç render edilmiyor.
+// Blog → ilçe yönü zaten kuruluydu (35 yazı link veriyordu) ama ilçe → blog yönü
+// hiç yoktu: src/pages/istanbul altında href="/blog için sıfır eşleşme vardı.
+const base = districtSlug.replace(/-ic-mimarlik$/, '');
+const related = allPosts.filter(
+  (p) => p.slug === `${base}-ev-tadilati` || p.slug === `${base}-ic-mimarlik-ofisleri`
+);
+---
+
+{related.length > 0 && (
+  <section class="py-12 border-t border-border">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="w-8 h-px bg-gold"></span>
+      <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Bölge Rehberleri</span>
+    </div>
+    <h2 class="font-display text-2xl md:text-3xl font-bold text-charcoal mb-6">
+      {district?.name} hakkında yazdıklarımız
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      {related.map((p) => (
+        <a href={`/blog/${p.slug}`} class="group block border border-border hover:border-gold transition-colors duration-200">
+          <div class="overflow-hidden">
+            <img
+              src={p.image}
+              alt={p.title}
+              sizes="(min-width: 768px) 50vw, 100vw"
+              width="800"
+              height="400"
+              loading="lazy"
+              decoding="async"
+              class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div class="p-5">
+            <p class="text-[10px] tracking-[0.25em] uppercase text-gold mb-2">{p.tag} · {p.readingTime}</p>
+            <h3 class="font-display text-base font-bold text-charcoal group-hover:text-gold transition-colors mb-2">
+              {p.title}
+            </h3>
+            <p class="text-muted text-xs leading-relaxed">{p.excerpt}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+)}

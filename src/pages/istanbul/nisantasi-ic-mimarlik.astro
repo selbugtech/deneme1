@@ -1,11 +1,17 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictBlogLinks from '../../components/DistrictBlogLinks.astro';
 import DistrictFAQ from '../../components/DistrictFAQ.astro';
 import ProcessStrip from '../../components/ProcessStrip.astro';
+import DistrictProjects from '../../components/DistrictProjects.astro';
 import { CANONICAL_BASE } from '../../config';
 import { optimizedImageW } from '../../lib/cloudinary';
+import { getDistrict } from '../../data/districts';
 
+// İlçe adı ve bulunma hali eki tek kaynaktan: src/data/districts.ts.
+// Elle yazılan ek Türkçe'de sessizce yanlış olabiliyor (Bağcılar'de → Bağcılar'da).
+const district = getDistrict('nisantasi-ic-mimarlik')!;
 const heroPath = '/images/salon6.jpeg';
 const heroAbs = optimizedImageW(heroPath, 1600);
 
@@ -35,7 +41,7 @@ const faqItems = [
   },
   {
     q: "Nişantaşı'nda örnek projeleriniz var mı?",
-    a: "Nişantaşı Butik projemiz 180 m²'lik bir moda mağazasının marka kimliğini yansıtan iç mekan tasarımıyla yenilenmesini içerir (2024). Müşteri akışı, aydınlatma ve vitrin tasarımı entegre biçimde ele alınmıştır. Konut tarafında da Teşvikiye ve Maçka referanslarımızı paylaşıyoruz.",
+    a: "Nişantaşı'nda yayımladığımız bir proje henüz yok; tamamladığımız işlerin tamamını projeler sayfamızda görebilirsiniz. Keşif sırasında mekan tipinize — konut ya da ticari — en yakın çalışmalarımızı gösteriyoruz.",
   },
 ];
 ---
@@ -63,14 +69,14 @@ const faqItems = [
         Nişantaşı; İstanbul'un en seçkin alışveriş ve yaşam bölgesi olarak lüks marka butikleri, galeriler ve kozmopolit bir yaşam tarzını barındırır. Bu semtte tasarım, sadece estetik değil — bir kimlik ifadesidir; daire ve mağaza projelerini bu bilinçle ele alıyoruz.
       </p>
       <p class="text-muted leading-relaxed mb-4">
-        Nişantaşı Butik projemizde 180 m²'lik bir moda mağazasını marka kimliğini yansıtan bir iç mekan tasarımıyla donattık. Müşteri akışı, aydınlatma ve vitrin tasarımı entegre biçimde ele alındı. Konut tarafında ise Teşvikiye ve Maçka'daki tarihi apartman dairelerinde özgün mimari dokuyu koruyan restorasyon ağırlıklı projeler tamamladık.
+        Nişantaşı'nda ticari ve konut işleri farklı önceliklerle ilerliyor. Butik mağazalarda müşteri akışını, aydınlatmayı ve vitrin tasarımını entegre biçimde ele alıyoruz; Teşvikiye ve Maçka'daki tarihi apartman dairelerinde ise özgün mimari dokuyu koruyan, restorasyon ağırlıklı bir yaklaşım gerekiyor.
       </p>
       <p class="text-muted leading-relaxed">
         Teşvikiye, Maçka, Harbiye, Bostan Sokak ve Abdi İpekçi Caddesi başta olmak üzere Nişantaşı ve çevresinde hem konut hem de ticari mekan projelerinde aktif olarak hizmet veriyoruz.
       </p>
     </div>
     <div>
-      <h3 class="font-semibold text-charcoal mb-4">Nişantaşı'nda Sunduğumuz Hizmetler</h3>
+      <h3 class="font-semibold text-charcoal mb-4">{district.locative} Sunduğumuz Hizmetler</h3>
       <ul class="space-y-3">
         {[
           'Lüks daire iç mimarlığı',
@@ -90,14 +96,12 @@ const faqItems = [
           </li>
         ))}
       </ul>
-      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
-        <p class="text-sm text-charcoal font-medium">Referans Proje · Nişantaşı Butik</p>
-        <p class="text-muted text-sm mt-2">180 m² · Mağaza yenileme · 2024. Lüks moda markası için marka kimliği odaklı butik mağaza iç mekan tasarımı.</p>
-      </div>
     </div>
   </div>
 
-  <ProcessStrip districtName="Nişantaşı" />
+  <DistrictProjects districtSlug="nisantasi-ic-mimarlik" />
+
+  <ProcessStrip districtSlug="nisantasi-ic-mimarlik" />
 
   <DistrictFAQ districtName="Nişantaşı" items={faqItems} />
 
@@ -114,6 +118,8 @@ const faqItems = [
       ))}
     </div>
   </div>
+
+  <DistrictBlogLinks districtSlug="nisantasi-ic-mimarlik" />
 
   <RelatedDistricts currentSlug="nisantasi-ic-mimarlik" />
 

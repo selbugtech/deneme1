@@ -2,13 +2,1443 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/anadolu-yakasi-villa-tadilat",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/anahtar-teslim-villa-tadilat",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/anahtar-teslim-villa-tadilat-firmalari",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/anahtar-teslim-villa-tadilat-fiyatlari-2021",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/anahtar-teslim-villa-tadilat-fiyatlari-2022",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/anahtar-teslim-villa-tadilat-maliyeti-2021",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/anahtar-teslim-villa-tadilat-maliyeti-2022",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/anahtar-teslim-villa-tadilat-ve-mimarlik-hizmeti",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/anahtar-teslim-villa-tadilatlari",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/ant-villa",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/avrupa-yakasi-villa-tadilat",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/en-uygun-villa-tadilat-fiyatlari-ve-maliyetleri",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/ev-ve-villa-tadilat-fiyatlari",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/istanbul-tadilat-komple-ev-villa-anahtar-teslim-fiyatlari",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/istanbul-villa-tadilat-firmalari",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/komple-villa-tadilat",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/villa-dizayn-ve-tadilat",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/villa-tadilat",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/villa-tadilat-fiyat-2021",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/villa-tadilat-fiyati-hesapla",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/villa-tadilat-fiyatlari-2021",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/villa-tadilat-fiyatlari-2022",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/villa-tadilat-islemleri",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/villa-tadilat-maliyeti-2021",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/villa-tadilat-maliyeti-2022",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/villa-tadilat-maliyeti-hesaplama",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/villa-tadilat-nasil-yaptirilir",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/villa-tadilat-sureci-nasil-isler",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/villa-tadilat-ve-bahce-duzeni",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/villa-tadilat-ve-boyama-islemleri",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/villa-tadilat-ve-maliyet",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/villa-tadilat-ve-mimarlik",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/villa-tadilat-ve-yenileme-asamalari",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/villa-tadilati",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/villa-tadilati-neden-gereklidir",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/villa-tadilati-ozen-ister",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/villa-tadilatinda-dogayla-uyumlu-yasam-alanlari-yarat",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/villa-tadilatinda-essiz-tasarim-dokunuslariyla-evini-kisisellestir",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/yakip-su-villa",
+      "destination": "/hizmetler/anahtar-teslim/villa-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/acibadem-cafe",
+      "destination": "/hizmetler/anahtar-teslim/cafe-restaurant-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/almanya-dugun-salonu",
+      "destination": "/hizmetler/anahtar-teslim/cafe-restaurant-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/avm-restoran",
+      "destination": "/hizmetler/anahtar-teslim/cafe-restaurant-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/basha-cafe",
+      "destination": "/hizmetler/anahtar-teslim/cafe-restaurant-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/besiktas-cafe-of-thrones",
+      "destination": "/hizmetler/anahtar-teslim/cafe-restaurant-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/borek-istanbul",
+      "destination": "/hizmetler/anahtar-teslim/cafe-restaurant-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/cafe-dekorasyon-dizayni",
+      "destination": "/hizmetler/anahtar-teslim/cafe-restaurant-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/cafe-dekorasyonlarinda-yeni-tarz",
+      "destination": "/hizmetler/anahtar-teslim/cafe-restaurant-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/cafe-tadilat",
+      "destination": "/hizmetler/anahtar-teslim/cafe-restaurant-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/cafe-tadilat-proje",
+      "destination": "/hizmetler/anahtar-teslim/cafe-restaurant-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/cafe-ve-restoran-tadilatinda-ic-mekan-tasariminin-onemi",
+      "destination": "/hizmetler/anahtar-teslim/cafe-restaurant-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/cafe-ve-restoran-tadilatinda-mobilya-ve-dekorasyon-trendleri",
+      "destination": "/hizmetler/anahtar-teslim/cafe-restaurant-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/catalca-cafe",
+      "destination": "/hizmetler/anahtar-teslim/cafe-restaurant-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/catalca-kafe",
+      "destination": "/hizmetler/anahtar-teslim/cafe-restaurant-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/dugun-salonu-dizayn-ve-tadilat",
+      "destination": "/hizmetler/anahtar-teslim/cafe-restaurant-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/erzurum-ekmekkafe",
+      "destination": "/hizmetler/anahtar-teslim/cafe-restaurant-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/garnish-bap-cafe",
+      "destination": "/hizmetler/anahtar-teslim/cafe-restaurant-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/hilton-teras-cafe",
+      "destination": "/hizmetler/anahtar-teslim/cafe-restaurant-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/kadikoy-borek",
+      "destination": "/hizmetler/anahtar-teslim/cafe-restaurant-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/kadikoy-cafe",
+      "destination": "/hizmetler/anahtar-teslim/cafe-restaurant-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/kafe-dekorasyon",
+      "destination": "/hizmetler/anahtar-teslim/cafe-restaurant-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/ki-dugun-salonu",
+      "destination": "/hizmetler/anahtar-teslim/cafe-restaurant-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/musteri-deneyimini-artirmak-icin-cafe-ve-restoran-tadilati-ipuclari",
+      "destination": "/hizmetler/anahtar-teslim/cafe-restaurant-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/otel-ve-restoran-tasarimi:",
+      "destination": "/hizmetler/anahtar-teslim/cafe-restaurant-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/ozlem-borek",
+      "destination": "/hizmetler/anahtar-teslim/cafe-restaurant-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/pamuk-ova-lokanta",
+      "destination": "/hizmetler/anahtar-teslim/cafe-restaurant-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/pasha-cafe",
+      "destination": "/hizmetler/anahtar-teslim/cafe-restaurant-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/pendik-cafe",
+      "destination": "/hizmetler/anahtar-teslim/cafe-restaurant-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/pukka-cafe",
+      "destination": "/hizmetler/anahtar-teslim/cafe-restaurant-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/restoran-dekorasyon-dizayni",
+      "destination": "/hizmetler/anahtar-teslim/cafe-restaurant-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/restoran-dekorasyonu",
+      "destination": "/hizmetler/anahtar-teslim/cafe-restaurant-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/tekirdag-cafe",
+      "destination": "/hizmetler/anahtar-teslim/cafe-restaurant-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/venezia-cafe-tadilat",
+      "destination": "/hizmetler/anahtar-teslim/cafe-restaurant-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/zinde-dugun-salonu",
+      "destination": "/hizmetler/anahtar-teslim/cafe-restaurant-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/betul-hanim",
+      "destination": "/projeler",
+      "permanent": true
+    },
+    {
+      "source": "/cavus-basi",
+      "destination": "/projeler",
+      "permanent": true
+    },
+    {
+      "source": "/copcu-mehmet",
+      "destination": "/projeler",
+      "permanent": true
+    },
+    {
+      "source": "/dis-klinigi",
+      "destination": "/projeler",
+      "permanent": true
+    },
+    {
+      "source": "/elazig-yapim",
+      "destination": "/projeler",
+      "permanent": true
+    },
+    {
+      "source": "/erten-bey-ev",
+      "destination": "/projeler",
+      "permanent": true
+    },
+    {
+      "source": "/esenler",
+      "destination": "/projeler",
+      "permanent": true
+    },
+    {
+      "source": "/essenora-sitesi",
+      "destination": "/projeler",
+      "permanent": true
+    },
+    {
+      "source": "/firat-dis-ticaret",
+      "destination": "/projeler",
+      "permanent": true
+    },
+    {
+      "source": "/garnish",
+      "destination": "/projeler",
+      "permanent": true
+    },
+    {
+      "source": "/gulcan-hanim",
+      "destination": "/projeler",
+      "permanent": true
+    },
+    {
+      "source": "/gunduz-bey",
+      "destination": "/projeler",
+      "permanent": true
+    },
+    {
+      "source": "/hasan-bey",
+      "destination": "/projeler",
+      "permanent": true
+    },
+    {
+      "source": "/hayat-park",
+      "destination": "/projeler",
+      "permanent": true
+    },
+    {
+      "source": "/istanbul-forum",
+      "destination": "/projeler",
+      "permanent": true
+    },
+    {
+      "source": "/katibim",
+      "destination": "/projeler",
+      "permanent": true
+    },
+    {
+      "source": "/merdiven-projeleri",
+      "destination": "/projeler",
+      "permanent": true
+    },
+    {
+      "source": "/pergola-projeler-karisik",
+      "destination": "/projeler",
+      "permanent": true
+    },
+    {
+      "source": "/remoil",
+      "destination": "/projeler",
+      "permanent": true
+    },
+    {
+      "source": "/sakarya-koy-emel-hanim",
+      "destination": "/projeler",
+      "permanent": true
+    },
+    {
+      "source": "/saroglu-yapim",
+      "destination": "/projeler",
+      "permanent": true
+    },
+    {
+      "source": "/serdar-bey",
+      "destination": "/projeler",
+      "permanent": true
+    },
+    {
+      "source": "/silivri-anne",
+      "destination": "/projeler",
+      "permanent": true
+    },
+    {
+      "source": "/tente-projeler",
+      "destination": "/projeler",
+      "permanent": true
+    },
+    {
+      "source": "/topcular",
+      "destination": "/projeler",
+      "permanent": true
+    },
+    {
+      "source": "/vatan-cad-erkan-bey",
+      "destination": "/projeler",
+      "permanent": true
+    },
+    {
+      "source": "/veysel-bey",
+      "destination": "/projeler",
+      "permanent": true
+    },
+    {
+      "source": "/zemin-sistemleri",
+      "destination": "/projeler",
+      "permanent": true
+    },
+    {
+      "source": "/anasayfa/blog/ev-tadilati-ve-insaati-yaparken-nelere-dikkat-edilmelidir",
+      "destination": "/hizmetler/anahtar-teslim/ev-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/anasayfa/blog/komple-ev-tadilat-asamalari-nelerdir",
+      "destination": "/hizmetler/anahtar-teslim/ev-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/anasayfa/blog/komple-ev-tadilati-ve-insaatinda-kullanilan-malzemeler",
+      "destination": "/hizmetler/anahtar-teslim/ev-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/and-dublex",
+      "destination": "/hizmetler/anahtar-teslim/ev-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/eski-ev-tadilati",
+      "destination": "/hizmetler/anahtar-teslim/ev-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/ev-tadilat-projeleri",
+      "destination": "/hizmetler/anahtar-teslim/ev-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/ev-tadilat-surecleri",
+      "destination": "/hizmetler/anahtar-teslim/ev-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/ev-tadilat-surecleri-2",
+      "destination": "/hizmetler/anahtar-teslim/ev-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/ev-tadilat-ve-musteri-memnuniyeti",
+      "destination": "/hizmetler/anahtar-teslim/ev-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/ev-tadilati",
+      "destination": "/hizmetler/anahtar-teslim/ev-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/ev-tadilati-ev-dekorasyonu-ve-ic-mekan-yenileme",
+      "destination": "/hizmetler/anahtar-teslim/ev-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/ev-tadilati-ve-dekorasyonu",
+      "destination": "/hizmetler/anahtar-teslim/ev-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/ev-tadilati-ve-insaati-yaparken-nelere-dikkat-edilmelidir",
+      "destination": "/hizmetler/anahtar-teslim/ev-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/ev-tadilati-ve-malzeme-kalitesi",
+      "destination": "/hizmetler/anahtar-teslim/ev-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/ev-tadilatinda-tesisat-islemleri",
+      "destination": "/hizmetler/anahtar-teslim/ev-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/istanbul-anadolu-yakasi-ev-tadilati",
+      "destination": "/hizmetler/anahtar-teslim/ev-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/istanbul-avrupa-yakasi-ev-tadilat",
+      "destination": "/hizmetler/anahtar-teslim/ev-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/istanbul-ev-tadilati-yapana-firmalar",
+      "destination": "/hizmetler/anahtar-teslim/ev-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/komple-daire-tadilati",
+      "destination": "/hizmetler/anahtar-teslim/ev-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/komple-ev-tadilat-asamalari-nelerdir",
+      "destination": "/hizmetler/anahtar-teslim/ev-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/komple-ev-tadilati",
+      "destination": "/hizmetler/anahtar-teslim/ev-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/komple-ev-tadilati-nasil-yapilir",
+      "destination": "/hizmetler/anahtar-teslim/ev-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/komple-ev-tadilati-ve-insaatinda-kullanilan-malzemeler",
+      "destination": "/hizmetler/anahtar-teslim/ev-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/profesyonel-ev-tadilat",
+      "destination": "/hizmetler/anahtar-teslim/ev-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/sifirdan-ev-tadilati",
+      "destination": "/hizmetler/anahtar-teslim/ev-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/ucretsiz-kesif-ve-anahtar-teslim-ev-tadilat",
+      "destination": "/hizmetler/anahtar-teslim/ev-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/anadolu-yakasi-ev-tadilat-fiyatlari-2022",
+      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "permanent": true
+    },
+    {
+      "source": "/anahtar-teslim-ev-tadilat-butcesi",
+      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "permanent": true
+    },
+    {
+      "source": "/anahtar-teslim-ev-tadilat-fiyat-2021",
+      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "permanent": true
+    },
+    {
+      "source": "/anahtar-teslim-tadilat-fiyati-hesapla",
+      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "permanent": true
+    },
+    {
+      "source": "/anasayfa/blog/ev-tadilat-fiyatlari",
+      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "permanent": true
+    },
+    {
+      "source": "/detayli-ev-tadilat-uygulama-fiyatlari-2022",
+      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "permanent": true
+    },
+    {
+      "source": "/en-uygun-fiyatli-ev-tadilatlari-istanbul",
+      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "permanent": true
+    },
+    {
+      "source": "/ev-tadilat-fiyati-hesapla",
+      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "permanent": true
+    },
+    {
+      "source": "/ev-tadilat-fiyatlari",
+      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "permanent": true
+    },
+    {
+      "source": "/ev-tadilat-maliyeti-hesaplama",
+      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "permanent": true
+    },
+    {
+      "source": "/ev-tadilat-maliyeti-hesaplama-2022",
+      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "permanent": true
+    },
+    {
+      "source": "/guncel-ev-tadilat-fiyatlari-2022",
+      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "permanent": true
+    },
+    {
+      "source": "/guncel-ev-tadilat-maliyeti-nasil-hesaplanir",
+      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "permanent": true
+    },
+    {
+      "source": "/her-butceye-uygun-ev-tadilati",
+      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "permanent": true
+    },
+    {
+      "source": "/konut-tadilat-kredisi-hesaplama-2022",
+      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "permanent": true
+    },
+    {
+      "source": "/modern-teslim-ev-tadilat-fiyati-hesaplama",
+      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "permanent": true
+    },
+    {
+      "source": "/rustik-ev-tadilat-fiyati-hesaplama",
+      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "permanent": true
+    },
+    {
+      "source": "/tadilat-fiyatlari-2022",
+      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "permanent": true
+    },
+    {
+      "source": "/tadilat-ve-dekorasyon-fiyatlari",
+      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "permanent": true
+    },
+    {
+      "source": "/uygun-maliyetli-ev-tadilat",
+      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "permanent": true
+    },
+    {
+      "source": "/anasayfa/blog/her-ihtiyaca-yonelik-tasarim-anlayisi",
+      "destination": "/hizmetler",
+      "permanent": true
+    },
+    {
+      "source": "/dekorasyon-icin-harekete-gecmenin-tam-sirasi",
+      "destination": "/hizmetler",
+      "permanent": true
+    },
+    {
+      "source": "/dekorasyon-ve-tadilat",
+      "destination": "/hizmetler",
+      "permanent": true
+    },
+    {
+      "source": "/dekorasyonda-renk-uyumu-nasil-yapilir",
+      "destination": "/hizmetler",
+      "permanent": true
+    },
+    {
+      "source": "/ev-dekorasyon-dizayni",
+      "destination": "/hizmetler",
+      "permanent": true
+    },
+    {
+      "source": "/ev-ic-mekan-tasarimi",
+      "destination": "/hizmetler",
+      "permanent": true
+    },
+    {
+      "source": "/evi-kucuk-olanlara-dekorasyon-fikirleri",
+      "destination": "/hizmetler",
+      "permanent": true
+    },
+    {
+      "source": "/her-ihtiyaca-yonelik-tasarim-anlayisi",
+      "destination": "/hizmetler",
+      "permanent": true
+    },
+    {
+      "source": "/hizmetlerimiz",
+      "destination": "/hizmetler",
+      "permanent": true
+    },
+    {
+      "source": "/ic-mekan-dekorasyonu",
+      "destination": "/hizmetler",
+      "permanent": true
+    },
+    {
+      "source": "/ic-mimarlik-dekorasyon",
+      "destination": "/hizmetler",
+      "permanent": true
+    },
+    {
+      "source": "/ic-mimarlik-firmalari",
+      "destination": "/hizmetler",
+      "permanent": true
+    },
+    {
+      "source": "/ic-mimarlik-firmalarinin-calisma-sekli",
+      "destination": "/hizmetler",
+      "permanent": true
+    },
+    {
+      "source": "/ic-mimarlik-istanbul",
+      "destination": "/hizmetler",
+      "permanent": true
+    },
+    {
+      "source": "/istanbul-dekorasyon-firmalari",
+      "destination": "/hizmetler",
+      "permanent": true
+    },
+    {
+      "source": "/istanbul-mimarlik-firmasi",
+      "destination": "/hizmetler",
+      "permanent": true
+    },
+    {
+      "source": "/istanbul-ozel-dekorasyon-ve-tadilat",
+      "destination": "/hizmetler",
+      "permanent": true
+    },
+    {
+      "source": "/master-ic-mimarlik-olarak-hizmetlerimiz-nelerdir",
+      "destination": "/hizmetler",
+      "permanent": true
+    },
+    {
+      "source": "/modern-ic-mimarlik-ornekleri",
+      "destination": "/hizmetler",
+      "permanent": true
+    },
+    {
+      "source": "/tadilat-ve-dekorasyon",
+      "destination": "/hizmetler",
+      "permanent": true
+    },
+    {
+      "source": "/cakir-hukuk",
+      "destination": "/hizmetler/anahtar-teslim/ofis-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/ertan-bey-ofis",
+      "destination": "/hizmetler/anahtar-teslim/ofis-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/gulcan-hanim-ofis",
+      "destination": "/hizmetler/anahtar-teslim/ofis-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/kadikoy-anahtar-teslimi-ofis-ev-daire-dekorasyonu-komple-mutfak-banyo-tadilati",
+      "destination": "/hizmetler/anahtar-teslim/ofis-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/kadikoy-avukatlik-burosu",
+      "destination": "/hizmetler/anahtar-teslim/ofis-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/mimarlik-ofisleri-istanbul",
+      "destination": "/hizmetler/anahtar-teslim/ofis-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/modern-ofis-dekorasyonu-fikirleri",
+      "destination": "/hizmetler/anahtar-teslim/ofis-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/ofis-dekorasyonu-ve-tasarimi",
+      "destination": "/hizmetler/anahtar-teslim/ofis-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/ofis-tadilat-fiyati-hesapla",
+      "destination": "/hizmetler/anahtar-teslim/ofis-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/ofis-ve-is-yeri-tasarimi:",
+      "destination": "/hizmetler/anahtar-teslim/ofis-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/tuzla-ofis",
+      "destination": "/hizmetler/anahtar-teslim/ofis-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/zeyport-ofis",
+      "destination": "/hizmetler/anahtar-teslim/ofis-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/anasayfa/blog/otel-ve-hotel-dekorasyonlari",
+      "destination": "/hizmetler/anahtar-teslim/otel-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/anasayfa/projeler/otel-ve-hotel-dekorasyonlari",
+      "destination": "/hizmetler/anahtar-teslim/otel-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/antalya-otel",
+      "destination": "/hizmetler/anahtar-teslim/otel-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/antalya-otel-2",
+      "destination": "/hizmetler/anahtar-teslim/otel-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/antalya-otel-dekorasyon-tadilat",
+      "destination": "/hizmetler/anahtar-teslim/otel-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/elazig-doubletree",
+      "destination": "/hizmetler/anahtar-teslim/otel-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/hilton-proje",
+      "destination": "/hizmetler/anahtar-teslim/otel-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/luks-otel-dekorasyonlari",
+      "destination": "/hizmetler/anahtar-teslim/otel-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/otel-dekorasyonu",
+      "destination": "/hizmetler/anahtar-teslim/otel-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/otel-lobisi-dekorasyonlari",
+      "destination": "/hizmetler/anahtar-teslim/otel-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/otel-tadilat-fiyat-hesaplama",
+      "destination": "/hizmetler/anahtar-teslim/otel-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/otel-ve-hotel-dekorasyonlari",
+      "destination": "/hizmetler/anahtar-teslim/otel-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/3d-modelleme",
+      "destination": "/hizmetler/3d-tasarim",
+      "permanent": true
+    },
+    {
+      "source": "/3d-projeler",
+      "destination": "/hizmetler/3d-tasarim",
+      "permanent": true
+    },
+    {
+      "source": "/anahtar-teslim-ev-tadilat-projelendirme",
+      "destination": "/hizmetler/3d-tasarim",
+      "permanent": true
+    },
+    {
+      "source": "/anahtar-teslim-ev-tadilat-ve-mimari-projelendirme",
+      "destination": "/hizmetler/3d-tasarim",
+      "permanent": true
+    },
+    {
+      "source": "/anahtar-teslim-projelendirme",
+      "destination": "/hizmetler/3d-tasarim",
+      "permanent": true
+    },
+    {
+      "source": "/ev-tadilat-ve-projelendirme-maliyeti",
+      "destination": "/hizmetler/3d-tasarim",
+      "permanent": true
+    },
+    {
+      "source": "/ucretsiz-3d-tadilat-projelendirme",
+      "destination": "/hizmetler/3d-tasarim",
+      "permanent": true
+    },
+    {
+      "source": "/villa-tadilat-ve-projelendirme-istanbul",
+      "destination": "/hizmetler/3d-tasarim",
+      "permanent": true
+    },
+    {
+      "source": "/caddebostan-daire",
+      "destination": "/istanbul/kadikoy-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/caddebostan-tadilat-projesi",
+      "destination": "/istanbul/kadikoy-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/kadikoy-banyo-tadilati",
+      "destination": "/istanbul/kadikoy-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/kadikoy-brol",
+      "destination": "/istanbul/kadikoy-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/kozyatagi-daire",
+      "destination": "/istanbul/kadikoy-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/saskinbakkal-daire",
+      "destination": "/istanbul/kadikoy-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/suadiye-tadilat-projesi",
+      "destination": "/istanbul/kadikoy-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/ayhan-bey-umraniye",
+      "destination": "/istanbul/umraniye-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/burak-umraniye",
+      "destination": "/istanbul/umraniye-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/cakmak-proje",
+      "destination": "/istanbul/umraniye-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/emin-bey-umraniye",
+      "destination": "/istanbul/umraniye-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/umraniye-daire-mutfak",
+      "destination": "/istanbul/umraniye-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/yaman-evleri-umraniye",
+      "destination": "/istanbul/umraniye-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/yaman-evleri-umraniye-banyo",
+      "destination": "/istanbul/umraniye-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/anasayfa/blog/beklentiye-uygun-hizmet-ve-sektor-analizi",
+      "destination": "/hakkimizda",
+      "permanent": true
+    },
+    {
+      "source": "/anasayfa/blog/profesyonel-ekip",
+      "destination": "/hakkimizda",
+      "permanent": true
+    },
+    {
+      "source": "/beklentiye-uygun-hizmet-ve-sektor-analizi",
+      "destination": "/hakkimizda",
+      "permanent": true
+    },
+    {
+      "source": "/kurumsal",
+      "destination": "/hakkimizda",
+      "permanent": true
+    },
+    {
+      "source": "/kurumsal-2",
+      "destination": "/hakkimizda",
+      "permanent": true
+    },
+    {
+      "source": "/profesyonel-ekip",
+      "destination": "/hakkimizda",
+      "permanent": true
+    },
+    {
+      "source": "/al-nalbur",
+      "destination": "/hizmetler/anahtar-teslim/magaza-dukkan-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/ankara-mobilya",
+      "destination": "/hizmetler/anahtar-teslim/magaza-dukkan-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/ant-avm",
+      "destination": "/hizmetler/anahtar-teslim/magaza-dukkan-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/isik-gaz-showroom",
+      "destination": "/hizmetler/anahtar-teslim/magaza-dukkan-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/perakende-magaza-tasarimi:",
+      "destination": "/hizmetler/anahtar-teslim/magaza-dukkan-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/umraniye-giyim-magaza",
+      "destination": "/hizmetler/anahtar-teslim/magaza-dukkan-tadilat",
+      "permanent": true
+    },
+    {
+      "source": "/anasayfa/blog/banyo-tadilati",
+      "destination": "/hizmetler/banyo-yenileme",
+      "permanent": true
+    },
+    {
+      "source": "/banyo-aydinlatmasi-icin-oneriler",
+      "destination": "/hizmetler/banyo-yenileme",
+      "permanent": true
+    },
+    {
+      "source": "/banyo-tadilati",
+      "destination": "/hizmetler/banyo-yenileme",
+      "permanent": true
+    },
+    {
+      "source": "/banyolara-siklik-katmak-icin-oneriler",
+      "destination": "/hizmetler/banyo-yenileme",
+      "permanent": true
+    },
+    {
+      "source": "/banyosunu-yenilemek-isteyenlere-oneriler",
+      "destination": "/hizmetler/banyo-yenileme",
+      "permanent": true
+    },
+    {
+      "source": "/komple-banyo-tadilati-dekorasyon",
+      "destination": "/hizmetler/banyo-yenileme",
+      "permanent": true
+    },
+    {
+      "source": "/anasayfa/blog/mutfak-tadilat-ve-hazir-mutfak-uygulamalari",
+      "destination": "/hizmetler/mutfak-yenileme",
+      "permanent": true
+    },
+    {
+      "source": "/bahar-icin-renkli-mutfak-dekorasyon",
+      "destination": "/hizmetler/mutfak-yenileme",
+      "permanent": true
+    },
+    {
+      "source": "/duzenli-mutfak-icin-tuyolar",
+      "destination": "/hizmetler/mutfak-yenileme",
+      "permanent": true
+    },
+    {
+      "source": "/en-guzel-mutfak-perdeleri-modelleri",
+      "destination": "/hizmetler/mutfak-yenileme",
+      "permanent": true
+    },
+    {
+      "source": "/mutfak-proje",
+      "destination": "/hizmetler/mutfak-yenileme",
+      "permanent": true
+    },
+    {
+      "source": "/mutfak-tadilat-ve-hazir-mutfak-uygulamalari",
+      "destination": "/hizmetler/mutfak-yenileme",
+      "permanent": true
+    },
+    {
+      "source": "/duvarlarinizi-yeniliyoruz",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/eskiyen-yapi-sorunlari",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/evde-tadilat-isleri-yaparken-hangi-sirayi-izlemeliyiz",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/evinizin-konforunu-ve-emlak-degerini-artirin",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/hayallerinizdeki-evler-tadilat-sureci",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/beykoz-anahtar-teslim-ev-villa-tadilat",
+      "destination": "/istanbul/beykoz-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/beykoz-pasabahce-villa",
+      "destination": "/istanbul/beykoz-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/beykoz-villa",
+      "destination": "/istanbul/beykoz-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/pasabahce-villa",
+      "destination": "/istanbul/beykoz-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/anahtar-teslim-dekorasyon",
+      "destination": "/hizmetler/anahtar-teslim",
+      "permanent": true
+    },
+    {
+      "source": "/anahtar-teslim-tadilat",
+      "destination": "/hizmetler/anahtar-teslim",
+      "permanent": true
+    },
+    {
       "source": "/hizmetler/anahtar-teslim-ev-yenileme",
       "destination": "/hizmetler/anahtar-teslim",
       "permanent": true
     },
     {
+      "source": "/hastane-tadilati",
+      "destination": "/hizmetler/anahtar-teslim/klinik-muayenehane",
+      "permanent": true
+    },
+    {
+      "source": "/nisantasi-estetik-merkezi",
+      "destination": "/hizmetler/anahtar-teslim/klinik-muayenehane",
+      "permanent": true
+    },
+    {
+      "source": "/saglik-ve-egitim-kurumlari:",
+      "destination": "/hizmetler/anahtar-teslim/klinik-muayenehane",
+      "permanent": true
+    },
+    {
+      "source": "/bebek-odasi-nasil-hazirlanmali",
+      "destination": "/hizmetler/cocuk-odasi-tasarimi",
+      "permanent": true
+    },
+    {
+      "source": "/cocuk-odasi-hali-modelleri",
+      "destination": "/hizmetler/cocuk-odasi-tasarimi",
+      "permanent": true
+    },
+    {
+      "source": "/genc-odasi-dekorasyon-fikirleri",
+      "destination": "/hizmetler/cocuk-odasi-tasarimi",
+      "permanent": true
+    },
+    {
+      "source": "/atasehir-beyaz-konutlar-daire",
+      "destination": "/istanbul/atasehir-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/atasehir-ev-tadilat",
+      "destination": "/istanbul/atasehir-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/atasehir-kolej",
+      "destination": "/istanbul/atasehir-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/atakoy-daire",
+      "destination": "/istanbul/bakirkoy-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/bakirkoy-daire",
+      "destination": "/istanbul/bakirkoy-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/bakirkoy-tadilat-projesi",
+      "destination": "/istanbul/bakirkoy-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/bahcesehir-dublex-genc-kiz-odasi-gulden-hanim",
+      "destination": "/istanbul/basaksehir-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/basaksehir-villa",
+      "destination": "/istanbul/basaksehir-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/yalcin-bey-bahcesehir-dublex",
+      "destination": "/istanbul/basaksehir-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/kucuk-yali",
+      "destination": "/istanbul/maltepe-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/maltepe-aydinevler-dublex",
+      "destination": "/istanbul/maltepe-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/maltepe-daire",
+      "destination": "/istanbul/maltepe-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/kuafor-salonu",
+      "destination": "/hizmetler/anahtar-teslim/kuafor-guzellik-salonu",
+      "permanent": true
+    },
+    {
+      "source": "/nisantasi-guzellik-merkezi",
+      "destination": "/hizmetler/anahtar-teslim/kuafor-guzellik-salonu",
+      "permanent": true
+    },
+    {
+      "source": "/dans-okulu",
+      "destination": "/hizmetler/anahtar-teslim/spor-salonu",
+      "permanent": true
+    },
+    {
+      "source": "/spor-salonu",
+      "destination": "/hizmetler/anahtar-teslim/spor-salonu",
+      "permanent": true
+    },
+    {
+      "source": "/acibadem-brol",
+      "destination": "/istanbul/acibadem-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/kosu-yolu",
+      "destination": "/istanbul/acibadem-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/kartal-tadilat-projesi",
+      "destination": "/istanbul/kartal-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/yakacik",
+      "destination": "/istanbul/kartal-ic-mimarlik",
+      "permanent": true
+    },
+    {
       "source": "/hizmetler/anahtar-teslim-ev-yenileme/:path*",
       "destination": "/hizmetler/anahtar-teslim/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/iletisim",
+      "permanent": true
+    },
+    {
+      "source": "/nurol-park-daire",
+      "destination": "/istanbul/bagcilar-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/arnavutkoy-villa",
+      "destination": "/istanbul/besiktas-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/yakuplu-villa",
+      "destination": "/istanbul/beylikduzu-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/beyoglu-airbnb",
+      "destination": "/istanbul/beyoglu-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/hadim-koy",
+      "destination": "/istanbul/buyukcekmece-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/alemdag-dublex-emir-bey",
+      "destination": "/istanbul/cekmekoy-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/nisantasi-daire",
+      "destination": "/istanbul/nisantasi-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/sariyer-villa",
+      "destination": "/istanbul/sariyer-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/mecidiyekoy-dubleks-tadilat",
+      "destination": "/istanbul/sisli-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/kemerburgaz",
+      "destination": "/istanbul/zekeriyakoy-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/zeytinburnu-tadilat-projesi",
+      "destination": "/istanbul/zeytinburnu-ic-mimarlik",
       "permanent": true
     }
   ],
@@ -16,12 +1446,48 @@
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains" },
-        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com https://snap.licdn.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https: blob:; frame-src https://maps.google.com https://www.google.com https://td.doubleclick.net https://www.googletagmanager.com; connect-src 'self' https://maps.googleapis.com https://www.google-analytics.com https://www.googletagmanager.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com https://stats.g.doubleclick.net https://analytics.google.com;" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), payment=()" }
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=31536000; includeSubDomains"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com https://snap.licdn.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https: blob:; frame-src https://maps.google.com https://www.google.com https://td.doubleclick.net https://www.googletagmanager.com; connect-src 'self' https://maps.googleapis.com https://www.google-analytics.com https://www.googletagmanager.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com https://stats.g.doubleclick.net https://analytics.google.com;"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), payment=()"
+        }
+      ]
+    },
+    {
+      "source": "/img/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000"
+        }
+      ]
+    },
+    {
+      "source": "/images/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800"
+        }
       ]
     }
   ]

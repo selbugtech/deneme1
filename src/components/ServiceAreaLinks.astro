@@ -1,0 +1,41 @@
+---
+import { districts } from '../data/districts';
+
+interface Props {
+  /** İlçe adları. Verilmezse tüm ilçeler listelenir. */
+  names?: string[];
+  size?: 'sm' | 'md';
+}
+
+const { names, size = 'sm' } = Astro.props;
+
+// Hizmet sayfaları ilçe adlarını düz <span> olarak yazıyordu — 12 sayfada 12'şer ad,
+// hiçbiri tıklanabilir değildi. Ad → slug eşlemesi districts.ts'ten geliyor.
+// Sayfası olmayan bir ad (ör. Maslak) sessizce span olarak kalıyor: uydurma link
+// üretmektense görünümü korumak doğru.
+const byName = new Map(districts.map((d) => [d.name, d]));
+const items = (names ?? districts.map((d) => d.name)).map((n) => ({ name: n, district: byName.get(n) }));
+
+const base =
+  size === 'md'
+    ? 'px-4 py-2 border border-border text-sm'
+    : 'px-3 py-1.5 border border-border text-xs font-medium';
+---
+
+<div class="flex flex-wrap gap-2">
+  {items.map(({ name, district }) =>
+    district ? (
+      <a
+        href={`/istanbul/${district.slug}`}
+        class={`${base} text-charcoal hover:border-gold hover:text-gold transition-colors`}
+      >
+        {name}
+      </a>
+    ) : (
+      <span class={`${base} text-muted`}>{name}</span>
+    )
+  )}
+  <a href="/istanbul" class={`${base} border-gold text-gold hover:bg-gold/5 transition-colors`}>
+    Tüm bölgeler →
+  </a>
+</div>

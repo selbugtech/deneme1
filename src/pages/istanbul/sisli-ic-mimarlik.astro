@@ -1,11 +1,17 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictBlogLinks from '../../components/DistrictBlogLinks.astro';
 import DistrictFAQ from '../../components/DistrictFAQ.astro';
 import ProcessStrip from '../../components/ProcessStrip.astro';
+import DistrictProjects from '../../components/DistrictProjects.astro';
 import { CANONICAL_BASE } from '../../config';
 import { optimizedImageW } from '../../lib/cloudinary';
+import { getDistrict } from '../../data/districts';
 
+// İlçe adı ve bulunma hali eki tek kaynaktan: src/data/districts.ts.
+// Elle yazılan ek Türkçe'de sessizce yanlış olabiliyor (Bağcılar'de → Bağcılar'da).
+const district = getDistrict('sisli-ic-mimarlik')!;
 const heroPath = '/images/salon5.jpeg';
 const heroAbs = optimizedImageW(heroPath, 1600);
 
@@ -35,14 +41,14 @@ const faqItems = [
   },
   {
     q: "Şişli'de örnek projeleriniz var mı?",
-    a: "Mecidiyeköy'deki rezidans daire yenilemeleri, Bomonti ve Fulya'daki klasik apartman dairelerinin restorasyonu ve Şişli merkezde tamamladığımız ticari iç mekan projeleri referanslarımız arasındadır. Keşif sırasında benzer örnekleri sizinle paylaşıyoruz.",
+    a: "Mecidiyeköy'de tamamladığımız 180 m² dubleks yenilemesi Şişli'deki referansımız: on haftada anahtar teslim edildi, uygulama fotoğrafları proje sayfasında. Keşif sırasında dairenizin plan şemasına en yakın çalışmalarımızı gösteriyoruz.",
   },
 ];
 ---
 
 <ServiceLayout
   title="Şişli İç Mimarlık ve Ev Yenileme"
-  description="Şişli'de iç mimarlık, anahtar teslim daire yenileme ve ticari mekan tasarımı. Mecidiyeköy, Fulya, Bomonti ve Şişli Merkez'de aktif. Ücretsiz keşif: 0533 039 15 65"
+  description="Şişli'de iç mimarlık, anahtar teslim daire yenileme ve ticari mekan tasarımı. Mecidiyeköy, Fulya, Bomonti ve Şişli Merkez'de aktif."
   canonicalUrl={`${CANONICAL_BASE}/istanbul/sisli-ic-mimarlik`}
   h1="Şişli İç Mimarlık ve Ev Yenileme"
   eyebrow="İstanbul · Şişli"
@@ -70,7 +76,7 @@ const faqItems = [
       </p>
     </div>
     <div>
-      <h3 class="font-semibold text-charcoal mb-4">Şişli'de Sunduğumuz Hizmetler</h3>
+      <h3 class="font-semibold text-charcoal mb-4">{district.locative} Sunduğumuz Hizmetler</h3>
       <ul class="space-y-3">
         {[
           'Anahtar teslim daire yenileme',
@@ -90,15 +96,12 @@ const faqItems = [
           </li>
         ))}
       </ul>
-      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
-        <p class="text-sm text-charcoal font-medium">Müşteri Yorumu</p>
-        <p class="text-muted text-sm mt-2 italic">"Mecidiyeköy'deki rezidans dairemizi anahtar teslim yenilettik. Ekibin malzeme seçimindeki rehberliği ve site yönetimi ile koordinasyonu süreci çok kolaylaştırdı."</p>
-        <p class="text-xs text-gold mt-2">— Burcu E., Şişli · 5 yıldız</p>
-      </div>
     </div>
   </div>
 
-  <ProcessStrip districtName="Şişli" />
+  <DistrictProjects districtSlug="sisli-ic-mimarlik" />
+
+  <ProcessStrip districtSlug="sisli-ic-mimarlik" />
 
   <DistrictFAQ districtName="Şişli" items={faqItems} />
 
@@ -115,6 +118,8 @@ const faqItems = [
       ))}
     </div>
   </div>
+
+  <DistrictBlogLinks districtSlug="sisli-ic-mimarlik" />
 
   <RelatedDistricts currentSlug="sisli-ic-mimarlik" />
 

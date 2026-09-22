@@ -28,8 +28,12 @@ export const GOOGLE_MAPS_EMBED_URL = `https://maps.google.com/maps?cid=${GOOGLE_
 // LocalBusiness zengin sonuçlarında kullanmadığı için API'nin SEO katkısı yoktu.
 // Son güncelleme: 2026-08-31
 export const GOOGLE_RATING = '4,9';
-export const GOOGLE_REVIEW_COUNT = 166;
-export const OG_IMAGE = `${CANONICAL_BASE}/og-image.png`;
+export const GOOGLE_REVIEW_COUNT = 170;
+// Varsayilan paylasim gorseli. DIKKAT: burasi site-goreli bir YOL; mutlaklastirma ve
+// 1200x630 kirpma Layout.astro icinde ogImageUrl() ile yapiliyor.
+// Eskiden /og-image.png idi ama o dosya 400x145 bir logo — Layout ise 1200x630
+// bildiriyordu. Facebook 600x315 altini buyuk kart olarak kullanmaz.
+export const OG_IMAGE_PATH = '/images/salon1.png';
 
 // Cloudinary görsel optimizasyonu
 export const CLOUDINARY_CLOUD = 'dabltkglz';

@@ -1,11 +1,17 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictBlogLinks from '../../components/DistrictBlogLinks.astro';
 import DistrictFAQ from '../../components/DistrictFAQ.astro';
 import ProcessStrip from '../../components/ProcessStrip.astro';
+import DistrictProjects from '../../components/DistrictProjects.astro';
 import { CANONICAL_BASE } from '../../config';
 import { optimizedImageW } from '../../lib/cloudinary';
+import { getDistrict } from '../../data/districts';
 
+// İlçe adı ve bulunma hali eki tek kaynaktan: src/data/districts.ts.
+// Elle yazılan ek Türkçe'de sessizce yanlış olabiliyor (Bağcılar'de → Bağcılar'da).
+const district = getDistrict('maltepe-ic-mimarlik')!;
 const heroPath = '/images/salon2.jpeg';
 const heroAbs = optimizedImageW(heroPath, 1600);
 
@@ -35,14 +41,14 @@ const faqItems = [
   },
   {
     q: "Maltepe'de örnek projeleriniz var mı?",
-    a: "Maltepe sahil bandındaki rezidans projeleri, Cevizli ve Küçükyalı'daki site daireleri için tamamladığımız iç mimarlık ve mutfak-banyo yenilemelerini referans olarak sunabiliyoruz. Keşif sırasında benzer örnekler ve müşteri yorumlarını paylaşıyoruz.",
+    a: "Maltepe'de tamamladığımız 105 m² daire yenilemesi yedi haftada anahtar teslim edildi; uygulama fotoğraflarının tamamını proje sayfasında yayımladık. Keşif sırasında dairenizin plan şemasına en yakın çalışmalarımızı gösteriyoruz.",
   },
 ];
 ---
 
 <ServiceLayout
   title="Maltepe İç Mimarlık ve Ev Yenileme"
-  description="Maltepe'de iç mimarlık, anahtar teslim daire yenileme ve mutfak-banyo tadilatı. Cevizli, Bağlarbaşı, Küçükyalı ve sahil rezidanslarında aktif. Ücretsiz keşif: 0533 039 15 65"
+  description="Maltepe'de iç mimarlık, anahtar teslim daire yenileme ve mutfak-banyo tadilatı. Cevizli, Bağlarbaşı, Küçükyalı ve sahil rezidanslarında aktif."
   canonicalUrl={`${CANONICAL_BASE}/istanbul/maltepe-ic-mimarlik`}
   h1="Maltepe İç Mimarlık ve Ev Yenileme"
   eyebrow="İstanbul · Maltepe"
@@ -70,7 +76,7 @@ const faqItems = [
       </p>
     </div>
     <div>
-      <h3 class="font-semibold text-charcoal mb-4">Maltepe'de Sunduğumuz Hizmetler</h3>
+      <h3 class="font-semibold text-charcoal mb-4">{district.locative} Sunduğumuz Hizmetler</h3>
       <ul class="space-y-3">
         {[
           'Anahtar teslim daire yenileme',
@@ -90,15 +96,12 @@ const faqItems = [
           </li>
         ))}
       </ul>
-      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
-        <p class="text-sm text-charcoal font-medium">Müşteri Yorumu</p>
-        <p class="text-muted text-sm mt-2 italic">"Cevizli'deki yeni dairemizi anahtar teslim yenilettik. Site yönetimi prosedürlerini ekip kendi yönetti, biz sadece son kontrolde devreye girdik. Çok rahattık."</p>
-        <p class="text-xs text-gold mt-2">— Mert K., Maltepe · 5 yıldız</p>
-      </div>
     </div>
   </div>
 
-  <ProcessStrip districtName="Maltepe" />
+  <DistrictProjects districtSlug="maltepe-ic-mimarlik" />
+
+  <ProcessStrip districtSlug="maltepe-ic-mimarlik" />
 
   <DistrictFAQ districtName="Maltepe" items={faqItems} />
 
@@ -115,6 +118,8 @@ const faqItems = [
       ))}
     </div>
   </div>
+
+  <DistrictBlogLinks districtSlug="maltepe-ic-mimarlik" />
 
   <RelatedDistricts currentSlug="maltepe-ic-mimarlik" />
 

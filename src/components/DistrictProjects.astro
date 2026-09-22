@@ -1,0 +1,85 @@
+---
+import { projectsByDistrict } from '../data/projects';
+import { getDistrict } from '../data/districts';
+import { CANONICAL_BASE } from '../config';
+
+interface Props {
+  /** districts.ts slug'ı — projeler buna göre veriden çekilir. */
+  districtSlug: string;
+}
+
+const { districtSlug } = Astro.props;
+
+const district = getDistrict(districtSlug);
+// Eşleme elle değil veriden: projects.ts'teki districtSlug alanı tek kaynak.
+// Böylece bir ilçe sayfasına yanlış ilçenin projesi bağlanamıyor.
+const items = projectsByDistrict(districtSlug);
+
+// İlçedeki gerçek işleri yapısal veriyle de bildiriyoruz. Proje sayfaları zaten
+// kendi CreativeWork node'larını yayınlıyor; burada yalnızca url ile referans verip
+// tekrarı önlüyoruz. DistrictFAQ.astro da kendi şemasını aynı şekilde emit ediyor.
+const projectListSchema = items.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": `${district?.name} projelerimiz`,
+  "numberOfItems": items.length,
+  "itemListElement": items.map((p, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "url": `${CANONICAL_BASE}/projeler/${p.slug}`,
+    "name": p.title,
+  })),
+} : null;
+---
+
+{items.length > 0 && (
+  <section class="py-12 border-t border-border">
+    <script type="application/ld+json" set:html={JSON.stringify(projectListSchema).replace(/<\//g, '<\\/')} />
+    <div class="flex items-center gap-3 mb-4">
+      <span class="w-8 h-px bg-gold"></span>
+      <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Referanslarımız</span>
+    </div>
+    <h2 class="font-display text-2xl md:text-3xl font-bold text-charcoal mb-3">
+      {district?.locative} tamamladığımız projeler
+    </h2>
+    <p class="text-muted leading-relaxed mb-8 max-w-2xl text-sm md:text-base">
+      {items.length === 1
+        ? `${district?.name}'de tamamladığımız projenin uygulama fotoğraflarını ve süreç detaylarını proje sayfasında yayımladık.`
+        : `${district?.name} genelinde tamamladığımız ${items.length} projenin uygulama fotoğraflarını ve süreç detaylarını proje sayfalarında yayımladık.`}
+    </p>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {items.map((p) => (
+        <a href={`/projeler/${p.slug}`} class="group block border border-border hover:border-gold transition-colors duration-200">
+          <div class="overflow-hidden">
+            <img
+              src={p.heroImage}
+              srcset={p.heroSrcset}
+              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+              alt={`${p.title} — ${p.category}`}
+              {/* CSS kutusuyla aynı oran (h-48 sabit yükseklik ≈ 1.82:1).
+                  Kaynak görseller dikey de olabiliyor; object-cover kırpıyor.
+                  Doğru oranı bildirmek CSS yüklenmeden önceki sıçramayı önlüyor. */}
+              width="800"
+              height="440"
+              loading="lazy"
+              decoding="async"
+              class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div class="p-5">
+            <p class="text-[10px] tracking-[0.25em] uppercase text-gold mb-2">{p.category}</p>
+            <h3 class="font-display text-base font-bold text-charcoal group-hover:text-gold transition-colors mb-2">
+              {p.title}
+            </h3>
+            <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted">
+              {p.area !== '—' && <span>{p.area}</span>}
+              {p.duration !== '—' && <span>{p.duration}</span>}
+              {p.year !== '—' && <span>{p.year}</span>}
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+)}

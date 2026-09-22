@@ -1,13 +1,30 @@
 ---
-import { districts } from '../data/districts';
+import { districts, getDistrict } from '../data/districts';
 
 interface Props {
   currentSlug: string;
 }
 
 const { currentSlug } = Astro.props;
+const current = getDistrict(currentSlug);
 
-const others = districts.filter(d => d.slug !== currentSlug).slice(0, 4);
+// Eskiden `districts.filter(...).slice(0, 4)` idi: her ilçe sayfası AYNI ilk dört
+// ilçeyi gösteriyordu (Kadıköy, Üsküdar, Acıbadem, Ataşehir). Sonuç olarak 23 ilçe
+// sayfası kardeşlerinden neredeyse hiç link almıyor, link değeri ilk dördünde
+// havuzlanıyordu.
+//
+// Şimdi: aynı yakadan 6 + karşı yakadan 2. Kullanıcıya coğrafi olarak anlamlı,
+// Google'a da 27 sayfaya dağılmış bir link grafiği veriyor.
+const pool = districts.filter((d) => d.slug !== currentSlug);
+const sameSide = pool.filter((d) => d.side === current?.side);
+const otherSide = pool.filter((d) => d.side !== current?.side);
+
+// Deterministik döndürme — her sayfa farklı bir set gösteriyor ama çıktı build'ler
+// arasında sabit kalıyor. BlogPost.astro'daki ilgili-yazı mantığıyla aynı desen.
+const seed = Math.max(districts.findIndex((d) => d.slug === currentSlug), 0);
+const rotate = <T,>(a: T[]): T[] => (a.length ? [...a.slice(seed % a.length), ...a.slice(0, seed % a.length)] : a);
+
+const others = [...rotate(sameSide).slice(0, 6), ...rotate(otherSide).slice(0, 2)];
 ---
 
 <section class="py-12 border-t border-border">
@@ -27,4 +44,7 @@ const others = districts.filter(d => d.slug !== currentSlug).slice(0, 4);
       </a>
     ))}
   </div>
+  <a href="/istanbul" class="inline-block mt-6 text-sm text-gold hover:underline">
+    İstanbul genelindeki tüm hizmet bölgelerimiz →
+  </a>
 </section>

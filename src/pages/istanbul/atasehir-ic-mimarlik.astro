@@ -1,11 +1,17 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictBlogLinks from '../../components/DistrictBlogLinks.astro';
 import DistrictFAQ from '../../components/DistrictFAQ.astro';
 import ProcessStrip from '../../components/ProcessStrip.astro';
+import DistrictProjects from '../../components/DistrictProjects.astro';
 import { CANONICAL_BASE } from '../../config';
 import { optimizedImageW } from '../../lib/cloudinary';
+import { getDistrict } from '../../data/districts';
 
+// İlçe adı ve bulunma hali eki tek kaynaktan: src/data/districts.ts.
+// Elle yazılan ek Türkçe'de sessizce yanlış olabiliyor (Bağcılar'de → Bağcılar'da).
+const district = getDistrict('atasehir-ic-mimarlik')!;
 const heroPath = '/images/salon8.jpeg';
 const heroAbs = optimizedImageW(heroPath, 1600);
 
@@ -35,14 +41,14 @@ const faqItems = [
   },
   {
     q: "Ataşehir'de örnek projeleriniz var mı?",
-    a: "Ataşehir Residence projemiz 95 m²'lik modern bir dairenin anahtar teslim yenilenmesini içerir; açık mutfak-salon düzeni, özel depolama çözümleri ve konforlu yatak odaları (2023). Keşif sırasında bölgeden ek referansları paylaşıyoruz.",
+    a: "Ataşehir'de henüz yayımladığımız bir proje yok; tamamladığımız işlerin tamamı projeler sayfamızda. Keşif sırasında site dairenizin plan şemasına en yakın çalışmalarımızı gösteriyoruz.",
   },
 ];
 ---
 
 <ServiceLayout
   title="Ataşehir İç Mimarlık ve Ev Yenileme"
-  description="Ataşehir'de iç mimarlık, anahtar teslim daire yenileme ve mutfak-banyo tadilatı. Barbaros, Yenisahra, İçerenköy ve Atatürk Mahallesi'nde aktif. Ücretsiz keşif: 0533 039 15 65"
+  description="Ataşehir'de iç mimarlık, anahtar teslim daire yenileme ve mutfak-banyo tadilatı. Barbaros, Yenisahra, İçerenköy ve Atatürk Mahallesi'nde aktif."
   canonicalUrl={`${CANONICAL_BASE}/istanbul/atasehir-ic-mimarlik`}
   h1="Ataşehir İç Mimarlık ve Ev Yenileme"
   eyebrow="İstanbul · Ataşehir"
@@ -63,14 +69,14 @@ const faqItems = [
         Ataşehir; İstanbul'un Anadolu yakasında hızla gelişen, modern rezidans kompleksleri ve yeni nesil konut projelerine ev sahipliği yapan dinamik bir ilçedir. Bölgedeki yeni yapı stoku, yüksek standartlarda iç mekan beklentisi getiriyor ve tasarımı bu çıtaya göre kuruyoruz.
       </p>
       <p class="text-muted leading-relaxed mb-4">
-        Ataşehir Residence projemizde 95 m²'lik modern bir daireyi anahtar teslim olarak yeniledik. Açık mutfak-salon düzeni, özel depolama çözümleri ve konforlu yatak odalarıyla müşterimizin hayalindeki evi yarattık. Site dairelerinde yönetim koordinasyonunu, hafta sonu çalışma kısıtlarını ve asansör-zemin koruma kurallarını biz yönetiyoruz.
+        Ataşehir'in yapı stoku ağırlıklı olarak planlı site dairelerinden oluşuyor. Bu dairelerde yönetim koordinasyonunu, hafta sonu çalışma kısıtlarını ve asansör-zemin koruma kurallarını biz yönetiyoruz; uygulama takvimini site yönetiminin izin verdiği saatlere göre çıkarıyoruz.
       </p>
       <p class="text-muted leading-relaxed">
         Barbaros, Atatürk, Yenisahra, İçerenköy, Küçükbakkalköy, Kayışdağı, Mustafa Kemal ve Fetih başta olmak üzere Ataşehir genelinde hizmet veriyoruz.
       </p>
     </div>
     <div>
-      <h3 class="font-semibold text-charcoal mb-4">Ataşehir'de Sunduğumuz Hizmetler</h3>
+      <h3 class="font-semibold text-charcoal mb-4">{district.locative} Sunduğumuz Hizmetler</h3>
       <ul class="space-y-3">
         {[
           'Anahtar teslim daire yenileme',
@@ -90,14 +96,12 @@ const faqItems = [
           </li>
         ))}
       </ul>
-      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
-        <p class="text-sm text-charcoal font-medium">Referans Proje · Ataşehir Residence</p>
-        <p class="text-muted text-sm mt-2">95 m² · Anahtar teslim ev yenileme · 2023. Modern rezidans dairesi için açık plan düzenleme, mutfak yenileme ve yatak odaları projesi.</p>
-      </div>
     </div>
   </div>
 
-  <ProcessStrip districtName="Ataşehir" />
+  <DistrictProjects districtSlug="atasehir-ic-mimarlik" />
+
+  <ProcessStrip districtSlug="atasehir-ic-mimarlik" />
 
   <DistrictFAQ districtName="Ataşehir" items={faqItems} />
 
@@ -114,6 +118,8 @@ const faqItems = [
       ))}
     </div>
   </div>
+
+  <DistrictBlogLinks districtSlug="atasehir-ic-mimarlik" />
 
   <RelatedDistricts currentSlug="atasehir-ic-mimarlik" />
 

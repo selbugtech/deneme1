@@ -1,11 +1,17 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictBlogLinks from '../../components/DistrictBlogLinks.astro';
 import DistrictFAQ from '../../components/DistrictFAQ.astro';
 import ProcessStrip from '../../components/ProcessStrip.astro';
+import DistrictProjects from '../../components/DistrictProjects.astro';
 import { CANONICAL_BASE } from '../../config';
 import { optimizedImageW } from '../../lib/cloudinary';
+import { getDistrict } from '../../data/districts';
 
+// İlçe adı ve bulunma hali eki tek kaynaktan: src/data/districts.ts.
+// Elle yazılan ek Türkçe'de sessizce yanlış olabiliyor (Bağcılar'de → Bağcılar'da).
+const district = getDistrict('bakirkoy-ic-mimarlik')!;
 const heroPath = '/images/salon7.jpeg';
 const heroAbs = optimizedImageW(heroPath, 1600);
 
@@ -35,14 +41,14 @@ const faqItems = [
   },
   {
     q: "Bakırköy'de örnek projeleriniz var mı?",
-    a: "Bakırköy ve Ataköy bölgesinde tamamladığımız sahil sitesi daireleri, klasik Bakırköy apartman yenilemeleri ve Yeşilyurt müstakil ev iç mimarlık projelerini referans olarak gösterebiliyoruz. Keşif sırasında benzer örnekleri sizinle paylaşıyoruz.",
+    a: "Ataköy'de tamamladığımız 120 m² daire yenilemesi Bakırköy'deki referansımız: sekiz haftada anahtar teslim edildi, uygulama fotoğraflarının tamamı proje sayfasında. Keşif sırasında dairenizin plan şemasına en yakın çalışmalarımızı gösteriyoruz.",
   },
 ];
 ---
 
 <ServiceLayout
   title="Bakırköy İç Mimarlık ve Ev Yenileme"
-  description="Bakırköy'de iç mimarlık, anahtar teslim daire yenileme ve mutfak-banyo tadilatı. Ataköy, Yeşilköy, Yeşilyurt ve Bakırköy Merkez'de aktif. Ücretsiz keşif: 0533 039 15 65"
+  description="Bakırköy'de iç mimarlık, anahtar teslim daire yenileme ve mutfak-banyo tadilatı. Ataköy, Yeşilköy, Yeşilyurt ve Bakırköy Merkez'de aktif."
   canonicalUrl={`${CANONICAL_BASE}/istanbul/bakirkoy-ic-mimarlik`}
   h1="Bakırköy İç Mimarlık ve Ev Yenileme"
   eyebrow="İstanbul · Bakırköy"
@@ -70,7 +76,7 @@ const faqItems = [
       </p>
     </div>
     <div>
-      <h3 class="font-semibold text-charcoal mb-4">Bakırköy'de Sunduğumuz Hizmetler</h3>
+      <h3 class="font-semibold text-charcoal mb-4">{district.locative} Sunduğumuz Hizmetler</h3>
       <ul class="space-y-3">
         {[
           'Anahtar teslim daire yenileme',
@@ -90,15 +96,12 @@ const faqItems = [
           </li>
         ))}
       </ul>
-      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
-        <p class="text-sm text-charcoal font-medium">Müşteri Yorumu</p>
-        <p class="text-muted text-sm mt-2 italic">"Ataköy'deki dairemizin sahil sitesi olması nedeniyle nem sorunları vardı; ekip bunu önceden öngörüp uygun malzeme ve teknik çözümlerle yenilemeyi tamamladı. Süreç yorucu olmadı."</p>
-        <p class="text-xs text-gold mt-2">— Selin A., Ataköy · 5 yıldız</p>
-      </div>
     </div>
   </div>
 
-  <ProcessStrip districtName="Bakırköy" />
+  <DistrictProjects districtSlug="bakirkoy-ic-mimarlik" />
+
+  <ProcessStrip districtSlug="bakirkoy-ic-mimarlik" />
 
   <DistrictFAQ districtName="Bakırköy" items={faqItems} />
 
@@ -115,6 +118,8 @@ const faqItems = [
       ))}
     </div>
   </div>
+
+  <DistrictBlogLinks districtSlug="bakirkoy-ic-mimarlik" />
 
   <RelatedDistricts currentSlug="bakirkoy-ic-mimarlik" />
 

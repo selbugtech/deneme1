@@ -1,5 +1,6 @@
 ---
 import ServiceLayout from '../../../layouts/ServiceLayout.astro';
+import ServiceAreaLinks from '../../../components/ServiceAreaLinks.astro';
 import { CANONICAL_BASE } from '../../../config';
 import { optimizedImage } from '../../../lib/cloudinary';
 
@@ -33,7 +34,7 @@ const faqSchema = {
 
 <ServiceLayout
   title="İstanbul Otel Yenileme | Hızlı Otel Renovasyonu"
-  description="İstanbul'da anahtar teslim otel yenileme. Altyapıya dokunmadan oda, lobi ve ortak alan estetik güncellemesi. Operasyon sürerken hızlı renovasyon. Ücretsiz keşif: 0533 039 15 65"
+  description="İstanbul'da anahtar teslim otel yenileme. Altyapıya dokunmadan oda, lobi ve ortak alan estetik güncellemesi. Operasyon sürerken hızlı renovasyon."
   canonicalUrl={`${CANONICAL_BASE}/hizmetler/anahtar-teslim/otel-yenileme`}
   h1="İstanbul Otel Yenileme"
   eyebrow="Anahtar Teslim"
@@ -154,11 +155,7 @@ const faqSchema = {
       <span class="w-8 h-px bg-gold"></span>
       <h2 class="font-display text-2xl font-bold text-charcoal">Hizmet Verdiğimiz İlçeler</h2>
     </div>
-    <div class="flex flex-wrap gap-2">
-      {['Beyoğlu', 'Fatih', 'Beşiktaş', 'Kadıköy', 'Şişli', 'Sarıyer', 'Üsküdar', 'Bakırköy', 'Ataşehir', 'Levent', 'Zekeriyaköy', 'Maltepe'].map(ilce => (
-        <span class="px-3 py-1.5 border border-border text-charcoal text-xs font-medium">{ilce}</span>
-      ))}
-    </div>
+    <ServiceAreaLinks names={['Beyoğlu', 'Fatih', 'Beşiktaş', 'Kadıköy', 'Şişli', 'Sarıyer', 'Üsküdar', 'Bakırköy', 'Ataşehir', 'Levent', 'Zekeriyaköy', 'Maltepe']} />
   </div>
 
   <!-- FAQ -->
