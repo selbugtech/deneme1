@@ -2,9 +2,9 @@
 //
 // Liste Wayback CDX arşivinden çıkarıldı (425 arşivlenmiş URL), her biri canlı
 // sitede tek tek HTTP ile doğrulandı: 315’i 404 dönüyordu. Bunların 286’sı
-// aşağıda niyetine en yakın MEVCUT sayfaya eşlendi; kalan 29 teknik artık
-// (sayfalama numaraları, /feed, /panel/login, WhatsApp görsel yolları) bilerek
-// dışarıda bırakıldı — anlamsız bir hedefe yönlendirmek soft-404 sayılıyor.
+// aşağıda niyetine en yakın MEVCUT sayfaya eşlendi. Kalan 33'ü dışarıda: 29'u teknik artık
+// (sayfalama numaraları, /feed, /panel/login, WhatsApp görsel yolları), 4'ü ise sonu
+// ':' ile biten adresler — Vercel'in desen ayrıştırıcısı onları kabul etmiyor.
 //
 // Kural: her giriş niyeti en yakın sayfaya gitmeli. Toplu olarak ana sayfaya
 // ya da /404’e yönlendirme YOK.
@@ -80,7 +80,6 @@ export const legacyRedirects: Record<string, string> = {
   '/kafe-dekorasyon': '/hizmetler/anahtar-teslim/cafe-restaurant-tadilat',
   '/ki-dugun-salonu': '/hizmetler/anahtar-teslim/cafe-restaurant-tadilat',
   '/musteri-deneyimini-artirmak-icin-cafe-ve-restoran-tadilati-ipuclari': '/hizmetler/anahtar-teslim/cafe-restaurant-tadilat',
-  '/otel-ve-restoran-tasarimi:': '/hizmetler/anahtar-teslim/cafe-restaurant-tadilat',
   '/ozlem-borek': '/hizmetler/anahtar-teslim/cafe-restaurant-tadilat',
   '/pamuk-ova-lokanta': '/hizmetler/anahtar-teslim/cafe-restaurant-tadilat',
   '/pasha-cafe': '/hizmetler/anahtar-teslim/cafe-restaurant-tadilat',
@@ -208,7 +207,6 @@ export const legacyRedirects: Record<string, string> = {
   '/modern-ofis-dekorasyonu-fikirleri': '/hizmetler/anahtar-teslim/ofis-tadilat',
   '/ofis-dekorasyonu-ve-tasarimi': '/hizmetler/anahtar-teslim/ofis-tadilat',
   '/ofis-tadilat-fiyati-hesapla': '/hizmetler/anahtar-teslim/ofis-tadilat',
-  '/ofis-ve-is-yeri-tasarimi:': '/hizmetler/anahtar-teslim/ofis-tadilat',
   '/tuzla-ofis': '/hizmetler/anahtar-teslim/ofis-tadilat',
   '/zeyport-ofis': '/hizmetler/anahtar-teslim/ofis-tadilat',
 
@@ -267,7 +265,6 @@ export const legacyRedirects: Record<string, string> = {
   '/ankara-mobilya': '/hizmetler/anahtar-teslim/magaza-dukkan-tadilat',
   '/ant-avm': '/hizmetler/anahtar-teslim/magaza-dukkan-tadilat',
   '/isik-gaz-showroom': '/hizmetler/anahtar-teslim/magaza-dukkan-tadilat',
-  '/perakende-magaza-tasarimi:': '/hizmetler/anahtar-teslim/magaza-dukkan-tadilat',
   '/umraniye-giyim-magaza': '/hizmetler/anahtar-teslim/magaza-dukkan-tadilat',
 
   // → /hizmetler/banyo-yenileme  (6)
@@ -308,7 +305,6 @@ export const legacyRedirects: Record<string, string> = {
   // → /hizmetler/anahtar-teslim/klinik-muayenehane  (3)
   '/hastane-tadilati': '/hizmetler/anahtar-teslim/klinik-muayenehane',
   '/nisantasi-estetik-merkezi': '/hizmetler/anahtar-teslim/klinik-muayenehane',
-  '/saglik-ve-egitim-kurumlari:': '/hizmetler/anahtar-teslim/klinik-muayenehane',
 
   // → /hizmetler/cocuk-odasi-tasarimi  (3)
   '/bebek-odasi-nasil-hazirlanmali': '/hizmetler/cocuk-odasi-tasarimi',

@@ -312,11 +312,6 @@
       "permanent": true
     },
     {
-      "source": "/otel-ve-restoran-tasarimi:",
-      "destination": "/hizmetler/anahtar-teslim/cafe-restaurant-tadilat",
-      "permanent": true
-    },
-    {
       "source": "/ozlem-borek",
       "destination": "/hizmetler/anahtar-teslim/cafe-restaurant-tadilat",
       "permanent": true
@@ -882,11 +877,6 @@
       "permanent": true
     },
     {
-      "source": "/ofis-ve-is-yeri-tasarimi:",
-      "destination": "/hizmetler/anahtar-teslim/ofis-tadilat",
-      "permanent": true
-    },
-    {
       "source": "/tuzla-ofis",
       "destination": "/hizmetler/anahtar-teslim/ofis-tadilat",
       "permanent": true
@@ -1117,11 +1107,6 @@
       "permanent": true
     },
     {
-      "source": "/perakende-magaza-tasarimi:",
-      "destination": "/hizmetler/anahtar-teslim/magaza-dukkan-tadilat",
-      "permanent": true
-    },
-    {
       "source": "/umraniye-giyim-magaza",
       "destination": "/hizmetler/anahtar-teslim/magaza-dukkan-tadilat",
       "permanent": true
@@ -1253,11 +1238,6 @@
     },
     {
       "source": "/nisantasi-estetik-merkezi",
-      "destination": "/hizmetler/anahtar-teslim/klinik-muayenehane",
-      "permanent": true
-    },
-    {
-      "source": "/saglik-ve-egitim-kurumlari:",
       "destination": "/hizmetler/anahtar-teslim/klinik-muayenehane",
       "permanent": true
     },
