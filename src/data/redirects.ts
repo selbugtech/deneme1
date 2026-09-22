@@ -385,4 +385,20 @@ export const legacyRedirects: Record<string, string> = {
 
   // → /istanbul/zeytinburnu-ic-mimarlik  (1)
   '/zeytinburnu-tadilat-projesi': '/istanbul/zeytinburnu-ic-mimarlik',
+
+  // Eski WordPress yapisindan kalan .html adresleri. Wayback arsivinde HIC yoklar,
+  // ama Google indeksinde varlar (site: aramasiyla dogrulandi) — yani arsiv listesi
+  // tek basina yeterli degil. Bilinenler birebir eslendi; ayni ailedeki bilinmeyenler
+  // icin sonda genel kural var. Vercel ilk eslesen kurali uyguladigi icin birebir
+  // olanlar once geliyor. GSC 404 raporu gelince genel kurallarin yerini birebir
+  // eslemeler almali.
+  '/hizmet/otel-ic-mimarlik.html': '/hizmetler/anahtar-teslim/otel-yenileme',
+  '/hizmet/magaza-ic-mimarlik.html': '/hizmetler/anahtar-teslim/magaza-dukkan-yenileme',
+  '/proje/beykoz-villa.html': '/projeler/beykoz-villa',
+  '/proje/sariyer-villa.html': '/istanbul/sariyer-ic-mimarlik',
+
+  // Ayni ailedeki diger eski adresler: en yakin liste sayfasina. Ana sayfaya toplu
+  // yonlendirmeden farkli — hedef konuyla birebir ortusen hub sayfasi.
+  '/hizmet/:slug': '/hizmetler',
+  '/proje/:slug': '/projeler',
 };

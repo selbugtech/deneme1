@@ -1420,6 +1420,36 @@
       "source": "/zeytinburnu-tadilat-projesi",
       "destination": "/istanbul/zeytinburnu-ic-mimarlik",
       "permanent": true
+    },
+    {
+      "source": "/hizmet/otel-ic-mimarlik.html",
+      "destination": "/hizmetler/anahtar-teslim/otel-yenileme",
+      "permanent": true
+    },
+    {
+      "source": "/hizmet/magaza-ic-mimarlik.html",
+      "destination": "/hizmetler/anahtar-teslim/magaza-dukkan-yenileme",
+      "permanent": true
+    },
+    {
+      "source": "/proje/beykoz-villa.html",
+      "destination": "/projeler/beykoz-villa",
+      "permanent": true
+    },
+    {
+      "source": "/proje/sariyer-villa.html",
+      "destination": "/istanbul/sariyer-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/hizmet/:slug",
+      "destination": "/hizmetler",
+      "permanent": true
+    },
+    {
+      "source": "/proje/:slug",
+      "destination": "/projeler",
+      "permanent": true
     }
   ],
   "headers": [
