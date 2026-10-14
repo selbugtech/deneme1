@@ -1,5 +1,6 @@
 ---
 import { optimizedImage, optimizedImageW, srcsetImage } from '../lib/cloudinary';
+import GoogleRatingCard from './GoogleRatingCard.astro';
 
 const wa = 'https://wa.me/905330391565?text=Merhaba%2C%20i%C3%A7%20mimarl%C4%B1k%20hizmeti%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.';
 const tel = 'tel:+905330391565';
@@ -116,20 +117,19 @@ const slides = [
       </div>
 
       <!-- Info strip -->
-      <div class="flex flex-wrap items-center gap-6 pt-8 border-t border-white/15 reveal reveal-d4">
+      <div class="flex flex-wrap items-center gap-x-4 sm:gap-x-6 gap-y-4 pt-8 lg:w-[40rem] border-t border-white/15 reveal reveal-d4">
         <div>
-          <p class="text-[10px] tracking-[0.25em] uppercase text-white/45 mb-1">Telefon / WhatsApp</p>
-          <a href={tel} class="text-white font-semibold hover:text-gold transition-colors">0533 039 15 65</a>
-        </div>
-        <div class="w-px h-8 bg-white/15"></div>
-        <div>
-          <p class="text-[10px] tracking-[0.25em] uppercase text-white/45 mb-1">Hizmet Bölgesi</p>
-          <p class="text-white font-semibold">İstanbul &amp; Çevre İller</p>
+          <p class="text-[10px] tracking-[0.15em] sm:tracking-[0.25em] uppercase text-white/45 mb-1">Telefon / WhatsApp</p>
+          <a href={tel} class="text-sm sm:text-base text-white font-semibold hover:text-gold transition-colors">0533 039 15 65</a>
         </div>
         <div class="w-px h-8 bg-white/15 hidden sm:block"></div>
-        <div class="hidden sm:block">
-          <p class="text-[10px] tracking-[0.25em] uppercase text-white/45 mb-1">Ücretsiz Keşif</p>
-          <p class="text-white font-semibold">Randevu Alın</p>
+        <div>
+          <p class="text-[10px] tracking-[0.15em] sm:tracking-[0.25em] uppercase text-white/45 mb-1">Hizmet Bölgesi</p>
+          <p class="text-sm sm:text-base text-white font-semibold">İstanbul &amp; Çevre İller</p>
+        </div>
+        <div class="w-px h-8 bg-white/15 hidden lg:block"></div>
+        <div class="basis-full lg:basis-auto">
+          <GoogleRatingCard variant="hero" />
         </div>
       </div>
 
