@@ -1,0 +1,164 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictBlogLinks from '../../components/DistrictBlogLinks.astro';
+import DistrictFAQ from '../../components/DistrictFAQ.astro';
+import ProcessStrip from '../../components/ProcessStrip.astro';
+import DistrictProjects from '../../components/DistrictProjects.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImageW } from '../../lib/cloudinary';
+import { getDistrict } from '../../data/districts';
+
+// İlçe adı ve bulunma hali eki tek kaynaktan: src/data/districts.ts.
+const district = getDistrict('bayrampasa-ic-mimarlik')!;
+const heroPath = '/images/oturmaodasi.jpeg';
+const heroAbs = optimizedImageW(heroPath, 1600);
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "İç mimarlık, tadilat ve ev yenileme",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
+  "areaServed": { "@type": "Place", "name": "Bayrampaşa, İstanbul" },
+  "url": `${CANONICAL_BASE}/istanbul/bayrampasa-ic-mimarlik`,
+  "description": "Bayrampaşa'da apartman dairelerinde anahtar teslim yenileme, mutfak-banyo tadilatı ve ölçüye özel depolama çözümleri.",
+  "image": heroAbs,
+};
+
+const faqItems = [
+  {
+    q: "Bayrampaşa'da apartman dairesi tadilatında komşularla ilişkiyi nasıl yönetiyorsunuz?",
+    a: "Tadilat başlamadan önce kat malikleri ya da yöneticiyle bilgi paylaşmanızı öneriyoruz. Gürültülü işleri belirli saat aralıklarına topluyor, merdiven ve ortak alanı koruyor, molozu düzenli çıkarıyoruz. Gerekirse komşulara bilgi notu hazırlamanıza yardımcı oluyoruz; bu küçük adım sürecin sakin geçmesini sağlıyor.",
+  },
+  {
+    q: "Eski dairede banyo yenilerken alt komşuya sızıntı riskini nasıl azaltırsınız?",
+    a: "Banyo yenilemede en kritik nokta su yalıtımı ve gider bağlantıları. Söküm sonrası zemini inceliyor, yalıtım katmanını işin parçası olarak uyguluyor ve fayans kapanmadan önce durumu fotoğraflıyoruz. Eski borular çürümüşse bunu da kapsama açıkça yansıtıyoruz.",
+  },
+  {
+    q: "Fatih, Zeytinburnu ve Esenler arasında kalan bir ilçede ulaşım ve sevkiyat nasıl planlanıyor?",
+    a: "Bayrampaşa, birçok ana aksa yakın olduğu için malzeme temini genellikle kolay; ancak yoğun saatlerde trafik yoğunlaşıyor. Teslimatları sabah ve öğleden sonra daha sakin saatlere denk getiriyor, dar sokaklarda araç park ve boşaltma planını önceden yapıyoruz.",
+  },
+  {
+    q: "Küçük bir dairede yaşam alanını nasıl genişletebilirim?",
+    a: "Çoğu dairede zorunlu ölçüler değişmediği için çözümü düzende arıyoruz. Gömme dolap, yüksek mutfak dolapları, açık tonlu yüzeyler ve iyi kurgulanmış aydınlatma hacmi daha ferah gösteriyor. Mümkünse oda arası geçişleri azaltacak küçük plan değişikliklerini de keşifte değerlendiriyoruz.",
+  },
+  {
+    q: "Bayrampaşa'da keşif nasıl yapılıyor?",
+    a: "Telefon veya WhatsApp ile müsait olduğunuz günü bildirmeniz yeterli. Bayrampaşa'nın tüm mahallelerinde ücretsiz keşif yapıyoruz; ölçü alıyor, tesisat ve ıslak hacimleri kontrol ediyor, ardından kapsam ve takvimi yazılı sunuyoruz.",
+  },
+];
+---
+
+<ServiceLayout
+  title="Bayrampaşa İç Mimarlık, Ev Tadilatı ve Dekorasyon"
+  description="Bayrampaşa'da apartman dairelerinde iç mimarlık, ev tadilatı ve anahtar teslim dekorasyon. Kartaltepe ve Yıldırım'da ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/istanbul/bayrampasa-ic-mimarlik`}
+  h1="Bayrampaşa İç Mimarlık, Ev Tadilatı ve Dekorasyon"
+  eyebrow="İstanbul · Bayrampaşa"
+  lead="Merkeze ve ana ulaşım akslarına yakın, apartman ağırlıklı bir ilçe. Bayrampaşa tadilat projelerinde amaç, mevcut planı daha ferah ve düzenli bir yaşam alanına dönüştürmek."
+  heroImage={heroPath}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İstanbul", href: `${CANONICAL_BASE}/istanbul` },
+    { label: "Bayrampaşa" }
+  ]}
+  structuredData={localSchema}
+>
+
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Bayrampaşa'da İç Mimarlık Hizmeti</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Bayrampaşa, Altıntepsi, Kartaltepe, Yıldırım, Vatan ve Muratpaşa gibi mahalleleriyle, İstanbul'un merkezine yakın bir konumda yer alıyor. Konut dokusunda çoğunlukla apartman daireleri hakim. Bu yapı, Bayrampaşa'da ev tadilatı yapan ailelerin benzer isteklerle bize başvurmasına neden oluyor: daha kullanışlı bir mutfak, yenilenmiş bir banyo, ferah bir salon ve yeterli depolama.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Apartman daireleri çoğunlukla ortak duvarlara ve ortak tesisat hatlarına sahip olduğu için tadilat planı yapılırken komşuluk ilişkileri de hesaba katılıyor. Gürültülü işlerin saat aralıkları, merdiven ve ortak alanın korunması, molozun düzenli tahliyesi gibi konular bizim için işin teknik tarafı kadar önemli. Dekorasyonda ise sade, açık tonlu ve temizlenmesi kolay yüzeyleri, ölçüye özel dolap çözümlerini öne çıkarıyoruz.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Bayrampaşa tadilat işlerinde süreç yerinde keşifle başlıyor; mevcut planı, tesisatı ve ıslak hacimleri inceleyip kapsamı yazılı çıkarıyoruz. Ardından 3D görselle tasarımı onaylatıyor ve uygulamayı tek ekiple yürütüyoruz. Eski dairelerde sökümden sonra gerçek durumu fotoğraflarla paylaşmak, sürpriz kapsam artışlarını azaltıyor. Böylece Bayrampaşa dekorasyon projeniz boyunca ne yapıldığını her aşamada bilirsiniz.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4">{district.locative} Sunduğumuz Hizmetler</h3>
+      <ul class="space-y-3">
+        {[
+          'Apartman dairelerinde anahtar teslim ev tadilatı',
+          'Mutfak ve banyo yenileme, su yalıtımı kontrolü',
+          'Ölçüye özel dolap ve depolama çözümleri',
+          'Salon, yatak odası ve çocuk odası dekorasyonu',
+          '3D görselleştirme ile tasarım onayı',
+          'Komşu ve yönetim ilişkilerine uygun şantiye düzeni',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+        <p class="text-sm text-charcoal font-medium">Bayrampaşa keşif görüşmesi</p>
+        <p class="text-muted text-sm mt-2">
+          Dairenizi yerinde inceliyor, ölçüleri alıyor ve önceliklerinizi birlikte belirliyoruz. Keşif ücretsiz ve taahhütsüz.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bölge notları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Bayrampaşa'da Bölge Notlarımız</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Altıntepsi · Kartaltepe · Yıldırım</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Apartman bloklarının yoğun olduğu mahalleler. Ortak tesisat hatları ve komşu ilişkileri nedeniyle çalışma saatlerini ve ortak alan korumasını baştan planlıyoruz.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Vatan · Muratpaşa · Cevatpaşa</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Ana akslara yakın, hareketli bir bölge. Teslimat saatlerini trafik ve park düzenine göre ayarlıyor, dar sokaklarda boşaltma planını önceden yapıyoruz.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Terazidere · Ortabayır</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Yapım dönemi farklı binalar olduğundan tesisat ve ıslak hacim durumunu keşifte ayrıca kontrol ediyor, kapsamı sökümden sonra netleştiriyoruz.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <DistrictProjects districtSlug="bayrampasa-ic-mimarlik" />
+
+  <ProcessStrip districtSlug="bayrampasa-ic-mimarlik" />
+
+  <DistrictFAQ districtName="Bayrampaşa" items={faqItems} />
+
+  <div class="py-12 border-t border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Hizmetlerimiz</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Tüm Hizmetler', href: '/hizmetler' },
+        { label: 'Anahtar Teslim Ev Tadilatı', href: '/hizmetler/anahtar-teslim/ev-tadilat' },
+        { label: 'Banyo Yenileme', href: '/hizmetler/banyo-yenileme' },
+        { label: 'Salon Tasarımı', href: '/hizmetler/salon-tasarimi' },
+        { label: 'Fatih İç Mimarlık', href: '/istanbul/fatih-ic-mimarlik' },
+        { label: 'Zeytinburnu İç Mimarlık', href: '/istanbul/zeytinburnu-ic-mimarlik' },
+        { label: 'Esenler İç Mimarlık', href: '/istanbul/esenler-ic-mimarlik' },
+        { label: 'Gaziosmanpaşa İç Mimarlık', href: '/istanbul/gaziosmanpasa-ic-mimarlik' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </div>
+
+  <DistrictBlogLinks districtSlug="bayrampasa-ic-mimarlik" />
+
+  <RelatedDistricts currentSlug="bayrampasa-ic-mimarlik" />
+
+</ServiceLayout>

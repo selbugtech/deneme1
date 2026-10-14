@@ -9,7 +9,7 @@ const serviceSchema = {
   "@type": "Service",
   "serviceType": "Ev Tadilat",
   "name": "İstanbul Ev Tadilat",
-  "description": "İstanbul'da anahtar teslim ev ve daire tadilat. Elektrik, tesisat, duvar ve yapısal müdahaleler dahil kapsamlı konut tadilat projeleri.",
+  "description": "İstanbul'da anahtar teslim ev ve daire tadilat. Elektrik, tesisat, zemin, duvar ve ıslak hacim müdahaleleri; izin ve iş sırası planlamasıyla kapsamlı konut tadilat projeleri.",
   "provider": { "@type": "Organization", "@id": `${CANONICAL_BASE}/#organization`, "name": "Master İç Mimarlık" },
   "areaServed": [
     { "@type": "City", "name": "İstanbul" },
@@ -24,22 +24,22 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Ev tadilat ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Standart bir daire tadilatı (80–120 m²) genellikle 4–8 hafta içinde tamamlanmaktadır. Kapsam genişledikçe — özellikle elektrik ve tesisat müdahalesi gerekiyorsa — bu süre 10–12 haftaya uzayabilir. Malzeme temin süreleri ve yapının mevcut durumu da takvimi etkiler. Keşif ziyaretimizde projenize özel bir takvim sunuyoruz; bu takvim sözleşmede yer alır." } },
+    { "@type": "Question", "name": "Elektrik ve tesisat değişirse ev tadilatı ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Süre; elektrik ve tesisatın ne kadarının yenileneceğine, kırım-söküm hacmine, malzeme temin sürelerine ve gerekiyorsa izin sürecine bağlıdır. Altyapı işleri ve ardından gelen şap, kaplama ve doğrama aşamaları ardışık ilerlediği için tadilat, yenilemeye göre daha uzun bir takvim gerektirir. Keşifte projenize özel iş sırasını ve takvimi çıkarıyoruz; takvim sözleşmede yer alır." } },
     { "@type": "Question", "name": "Tadilat süresince evde oturabilir miyim?", "acceptedAnswer": { "@type": "Answer", "text": "Komple daire tadilat çalışmalarında — özellikle elektrik, tesisat veya zemin değişimi gibi yapısal müdahaleler varsa — evde oturmanızı tavsiye etmiyoruz. Toz, gürültü ve güvenlik açısından geçici taşınma hem sizin hem de ekibimizin verimliliğini artırır. Tek oda veya mutfak-banyo gibi kısmi tadilatlarda belirli dönemlerde mümkün olabilir; her projenin planlamasında bu konuyu önceden değerlendiriyoruz." } },
     { "@type": "Question", "name": "Sadece mutfak veya banyo tadilatı yaptırabilir miyim?", "acceptedAnswer": { "@type": "Answer", "text": "Evet. Yalnızca mutfak tadilat, banyo tadilat veya tek oda tadilat gibi kısmi projeler de yürütüyoruz. İhtiyacınıza özel kapsam belirlenir, gereksiz iş yapılmaz. Kısmi tadilat projeleri genellikle 2–4 haftada tamamlanır ve komple tadilatın yarattığı aksaklığı minimize eder." } },
-    { "@type": "Question", "name": "Ev tadilat bütçesi nasıl belirlenir?", "acceptedAnswer": { "@type": "Answer", "text": "Bütçe; dairenin büyüklüğü, mevcut yapı durumu, seçilen malzeme kalitesi ve tadilat kapsamına göre şekillenir. Elektrik ve tesisat yenileme gibi teknik işler, yalnızca kaplama değişimine kıyasla maliyeti artırır. Ücretsiz keşif ziyaretimizde projenize özel bütçe sunuyoruz; sürpriz maliyet yaşanmaması için tüm kalemler sözleşmede yer alır." } },
-    { "@type": "Question", "name": "Ev tadilat için ruhsat gerekir mi?", "acceptedAnswer": { "@type": "Answer", "text": "Taşıyıcı duvar yıkımı veya kat değişikliği içeren yapısal müdahaleler için belediyeden izin alınması gerekebilir. Standart kaplama, elektrik ve tesisat yenilemesi için ruhsat gerekmez. Projeniz ruhsat gerektiriyorsa bu süreci de sizin adınıza takip ediyoruz." } }
+    { "@type": "Question", "name": "Ev tadilatında işler hangi sırayla yürür?", "acceptedAnswer": { "@type": "Answer", "text": "Genel akış şöyledir: söküm ve gerekli kırım; elektrik ve tesisat hatlarının çekilmesi; duvar-bölme ve zemin hazırlığı; ıslak hacim yalıtımı ve kaplamalar; doğrama, mutfak-banyo montajı; boya ve aydınlatma; son temizlik. Sıra bozulursa aynı yerin yeniden kırılması gerekebilir; bu yüzden keşifte iş sırasını yazılı hale getiriyoruz." } },
+    { "@type": "Question", "name": "Ev tadilat için ruhsat gerekir mi?", "acceptedAnswer": { "@type": "Answer", "text": "Taşıyıcı duvar yıkımı veya kat değişikliği içeren yapısal müdahaleler için belediyeden izin alınması gerekebilir. Standart kaplama, elektrik ve tesisat yenilemesi için çoğunlukla ruhsat gerekmez. Apartman dairelerinde duvar değişikliği veya ıslak hacim yerinin değişmesi gibi işlerde bina yönetimine bilgi verilmesi ya da onay alınması gerekebilir; kurallar binaya göre değişir. Projeniz izin gerektiriyorsa bu süreci de sizin adınıza takip ediyoruz." } }
   ]
 };
 ---
 
 <ServiceLayout
-  title="İstanbul Ev Tadilat | Daire ve Konut Tadilat"
-  description="İstanbul'da anahtar teslim ev ve daire tadilat. Elektrik, tesisat, yapısal müdahale dahil kapsamlı konut tadilat. Beşiktaş, Kadıköy, Şişli."
+  title="Ev Tadilat İstanbul | Elektrik, Tesisat, Duvar"
+  description="İstanbul'da ev tadilat: elektrik, tesisat, zemin, duvar ve ıslak hacim müdahaleleri; izin, iş sırası ve şantiye düzeni dahil. Keşif: 0533 039 15 65"
   canonicalUrl={`${CANONICAL_BASE}/hizmetler/anahtar-teslim/ev-tadilat`}
-  h1="İstanbul Ev ve Daire Tadilat"
+  h1="İstanbul Ev Tadilat: Elektrik, Tesisat ve Yapısal Dönüşüm"
   eyebrow="Anahtar Teslim"
-  lead="Elektrik ve tesisat yenilemesinden yapısal dönüşüme, mutfak ve banyo tadilattan komple konut renovasyonuna kadar kapsamlı ev tadilat projeleri yürütüyoruz. Tasarım, uygulama ve şantiye yönetimi tek çatı altında."
+  lead="Elektrik hattına, tesisata, zemine ve duvarlara dokunan; gerektiğinde yapısal müdahale içeren kapsamlı ev tadilat işleri yürütüyoruz. Keşifte planı, gerekli izin ve onayları, işlerin sıra düzenini ve şantiye yönetimini baştan netleştirip tasarımdan anahtar teslimine kadar tek ekiple ilerliyoruz."
   breadcrumb={[
     { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
     { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
@@ -59,15 +59,15 @@ const faqSchema = {
   <!-- Scope -->
   <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
     <div>
-      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Ev Tadilat Hizmetimiz</h2>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Altyapıdan Başlayan Ev Tadilat</h2>
       <p class="text-muted leading-relaxed mb-4">
-        Ev tadilat; yalnızca boyama veya zemin değişiminden ibaret değildir. Eskimiş elektrik tesisatını yenilemek, su kaçağına neden olan boruları değiştirmek, ısı ve ses yalıtımını iyileştirmek ya da mekanı tamamen yeniden kurgulayacak duvar müdahalelerini de kapsar.
+        Ev tadilat; duvarın arkasındaki ve zeminin altındaki işlere inmek demektir: eskimiş elektrik tesisatının yenilenmesi, kaçak yapan boruların değişimi, ıslak hacimlerin baştan kurulması, yalıtımın iyileştirilmesi ve gerektiğinde duvar-bölme düzeninin değiştirilmesi. Bu işler birbirine bağlı olduğu için doğru sırayla planlanması sonucu belirler.
       </p>
       <p class="text-muted leading-relaxed mb-4">
         Kısmi tadilat mı istiyorsunuz, yoksa evi baştan sona mı dönüştürüyorsunuz? Her iki durumda da tasarım, malzeme tedariki, usta koordinasyonu ve şantiye yönetiminin tamamını üstleniyoruz. <a href="/hizmetler/3d-tasarim" class="text-gold hover:underline">3D görselleştirme</a> ile uygulamadan önce mekanınızı deneyimlemenizi sağlıyoruz.
       </p>
       <p class="text-muted leading-relaxed">
-        İstanbul genelinde Beşiktaş, Kadıköy, Şişli, Ataşehir ve tüm ilçelerde ev tadilat hizmeti sunuyoruz. Yalnızca estetik bir güncelleme istiyorsanız <a href="/hizmetler/anahtar-teslim/ev-yenileme" class="text-gold hover:underline">ev yenileme</a> hizmetimize göz atabilirsiniz.
+        Elektrik ve tesisata dokunmadan yalnızca boya, kaplama, mobilya ve aydınlatmayla tazelemek istiyorsanız <a href="/hizmetler/anahtar-teslim/ev-yenileme" class="text-gold hover:underline">altyapıya dokunmadan ev yenileme</a> sayfamıza bakabilirsiniz. Tadilat sonrası mekânı tamamlamak için <a href="/hizmetler/ev-dekorasyon" class="text-gold hover:underline">ev dekorasyon</a> ve <a href="/hizmetler/boya-badana" class="text-gold hover:underline">boya badana</a> hizmetlerimiz de ayrıca alınabilir. İstanbul genelinde Beşiktaş, Kadıköy, Şişli, Ataşehir ve tüm ilçelerde ev tadilat hizmeti sunuyoruz.
       </p>
     </div>
     <div>
@@ -100,7 +100,7 @@ const faqSchema = {
   <div class="py-12 border-b border-border">
     <div class="flex items-center gap-3 mb-8">
       <span class="w-8 h-px bg-gold"></span>
-      <h2 class="font-display text-2xl font-bold text-charcoal">Ev Tadilat Ne Zaman Gerekir?</h2>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Elektrik, Tesisat ve Duvar Müdahalesi Ne Zaman Gerekir?</h2>
     </div>
     <div class="grid md:grid-cols-3 gap-8">
       {[
@@ -109,8 +109,8 @@ const faqSchema = {
           desc: 'Elektrik tesisatı 20 yıldan eskiyse veya banyoda kronik su kaçağı, nem ve küf sorunu varsa tadilat zorunlu hale gelir. Yalnızca yüzeysel kaplama değiştirmek altta yatan sorunu çözmez; uzun vadede daha yüksek maliyete yol açar.',
         },
         {
-          title: 'Estetik Yıpranma',
-          desc: 'Yıllar içinde kaplamalar, dolaplar ve renkler eskir; mekan günlük kullanıma yetersiz hale gelir. Özellikle mutfak ve banyo gibi yoğun kullanılan alanlarda yenileme, günlük yaşam konforunu doğrudan iyileştirir.',
+          title: 'Islak Hacimler ve Zemin Sorunları',
+          desc: 'Banyo veya mutfakta su yalıtımı bozulmuş, zemin eğimi ve sızdırmazlık sorunları ortaya çıkmışsa yalnızca kaplamayı değiştirmek yetmez; zemin ve tesisat seviyesinde müdahale gerekir. Bu işler söküm, yeniden yalıtım ve ardından kaplama sırasıyla planlanır.',
         },
         {
           title: 'Mekan Kurgusu Değişiyor',
@@ -167,11 +167,11 @@ const faqSchema = {
     </div>
     <div class="divide-y divide-border">
       {[
-        { q: 'Ev tadilat ne kadar sürer?', a: 'Standart bir daire tadilatı (80–120 m²) genellikle 4–8 hafta içinde tamamlanmaktadır. Kapsam genişledikçe — özellikle elektrik ve tesisat müdahalesi gerekiyorsa — bu süre 10–12 haftaya uzayabilir. Malzeme temin süreleri ve yapının mevcut durumu da takvimi etkiler. Keşif ziyaretimizde projenize özel bir takvim sunuyoruz; bu takvim sözleşmede yer alır.' },
+        { q: 'Elektrik ve tesisat değişirse ev tadilatı ne kadar sürer?', a: 'Süre; elektrik ve tesisatın ne kadarının yenileneceğine, kırım-söküm hacmine, malzeme temin sürelerine ve gerekiyorsa izin sürecine bağlıdır. Altyapı işleri ve ardından gelen şap, kaplama ve doğrama aşamaları ardışık ilerlediği için tadilat, yenilemeye göre daha uzun bir takvim gerektirir. Keşifte projenize özel iş sırasını ve takvimi çıkarıyoruz; takvim sözleşmede yer alır.' },
         { q: 'Tadilat süresince evde oturabilir miyim?', a: 'Komple daire tadilat çalışmalarında — özellikle elektrik, tesisat veya zemin değişimi gibi yapısal müdahaleler varsa — evde oturmanızı tavsiye etmiyoruz. Toz, gürültü ve güvenlik açısından geçici taşınma hem sizin hem de ekibimizin verimliliğini artırır. Tek oda veya mutfak-banyo gibi kısmi tadilatlarda belirli dönemlerde mümkün olabilir.' },
         { q: 'Sadece mutfak veya banyo tadilatı yaptırabilir miyim?', a: 'Evet. Yalnızca mutfak tadilat, banyo tadilat veya tek oda tadilat gibi kısmi projeler de yürütüyoruz. İhtiyacınıza özel kapsam belirlenir, gereksiz iş yapılmaz. Kısmi tadilat projeleri genellikle 2–4 haftada tamamlanır ve komple tadilatın yarattığı aksaklığı minimize eder.' },
-        { q: 'Ev tadilat bütçesi nasıl belirlenir?', a: 'Bütçe; dairenin büyüklüğü, mevcut yapı durumu, seçilen malzeme kalitesi ve tadilat kapsamına göre şekillenir. Elektrik ve tesisat yenileme gibi teknik işler, yalnızca kaplama değişimine kıyasla maliyeti artırır. Ücretsiz keşif ziyaretimizde projenize özel bütçe sunuyoruz; sürpriz maliyet yaşanmaması için tüm kalemler sözleşmede yer alır.' },
-        { q: 'Ev tadilat için ruhsat gerekir mi?', a: 'Taşıyıcı duvar yıkımı veya kat değişikliği içeren yapısal müdahaleler için belediyeden izin alınması gerekebilir. Standart kaplama, elektrik ve tesisat yenilemesi için ruhsat gerekmez. Projeniz ruhsat gerektiriyorsa bu süreci de sizin adınıza takip ediyoruz.' },
+        { q: 'Ev tadilatında işler hangi sırayla yürür?', a: 'Genel akış şöyledir: söküm ve gerekli kırım; elektrik ve tesisat hatlarının çekilmesi; duvar-bölme ve zemin hazırlığı; ıslak hacim yalıtımı ve kaplamalar; doğrama, mutfak-banyo montajı; boya ve aydınlatma; son temizlik. Sıra bozulursa aynı yerin yeniden kırılması gerekebilir; bu yüzden keşifte iş sırasını yazılı hale getiriyoruz.' },
+        { q: 'Ev tadilat için ruhsat gerekir mi?', a: 'Taşıyıcı duvar yıkımı veya kat değişikliği içeren yapısal müdahaleler için belediyeden izin alınması gerekebilir. Standart kaplama, elektrik ve tesisat yenilemesi için çoğunlukla ruhsat gerekmez. Apartman dairelerinde duvar değişikliği veya ıslak hacim yerinin değişmesi gibi işlerde bina yönetimine bilgi verilmesi ya da onay alınması gerekebilir; kurallar binaya göre değişir. Projeniz izin gerektiriyorsa bu süreci de sizin adınıza takip ediyoruz.' },
       ].map((faq, i) => (
         <details class="group py-5" open={i === 0}>
           <summary class="flex items-start justify-between cursor-pointer list-none gap-4">

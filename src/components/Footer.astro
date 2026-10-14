@@ -10,6 +10,7 @@ const anaServices = byGroup('ana');
 const anahtarTeslim = byGroup('anahtar-teslim');
 const tadilat = byGroup('tadilat');
 const odaServices = byGroup('oda');
+const dekorasyonServices = byGroup('dekorasyon');
 const mekanServices = byGroup('mekan');
 const anadolu = bySide('anadolu');
 const avrupa = bySide('avrupa');
@@ -83,6 +84,12 @@ const kurumsal = [
         <h3 class="text-[10px] tracking-[0.25em] uppercase text-gold mt-8 mb-4">Tadilat</h3>
         <ul class="space-y-2.5">
           {tadilat.map(s => (
+            <li><a href={s.href} class="text-xs text-white/50 hover:text-gold transition-colors">{s.title}</a></li>
+          ))}
+        </ul>
+        <h3 class="text-[10px] tracking-[0.25em] uppercase text-gold mt-8 mb-4">Dekorasyon & Proje</h3>
+        <ul class="space-y-2.5">
+          {dekorasyonServices.map(s => (
             <li><a href={s.href} class="text-xs text-white/50 hover:text-gold transition-colors">{s.title}</a></li>
           ))}
         </ul>

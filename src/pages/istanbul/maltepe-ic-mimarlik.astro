@@ -36,8 +36,12 @@ const faqItems = [
     a: "Cevizli, Bağlarbaşı, Küçükyalı, Altayçeşme, Fındıklı, İdealtepe, Aydınevler ve sahil bandındaki rezidans projeleri başta olmak üzere Maltepe genelinde aktif çalışıyoruz. Site daireleri için yönetim onayı, hafta sonu çalışma kısıtları gibi konularda deneyimliyiz.",
   },
   {
-    q: "Maltepe için keşif ve teklif süreci nasıl işliyor?",
-    a: "WhatsApp veya telefon üzerinden randevu alıyor, Maltepe'deki adresinize gelerek ücretsiz keşif yapıyoruz. Yerinde ölçü ve fotoğraf çalışmasının ardından 2–3 iş günü içinde detaylı teklif ve mood-board sunuyoruz.",
+    q: "Sahil bandındaki rezidansta ve site dairesinde tadilat izni nasıl alınıyor?",
+    a: "İzin sürecini yöneten taraf site yönetimi oluyor. Genellikle yazılı başvuru, ekip listesi ve çalışma saati taahhüdü isteniyor; asansör ve ortak alan koruma önlemleri de şart koşulabiliyor. Bu yazışmaları sizin adınıza yürütüyor, şantiye başlamadan önce kuralları yazılı hale getiriyoruz.",
+  },
+  {
+    q: "Maltepe'de müstakil evde dış cephe ve bahçe bağlantısı tadilata dahil edilebilir mi?",
+    a: "İç mekan tasarımıyla birlikte dış cephe ve bahçe geçişini bütüncül ele alabiliyoruz. Kapsam; yapının durumuna, imar ve izin gereksinimlerine göre keşifte netleşiyor. Dış cephe gibi izne bağlı müdahaleleri başlamadan önce ayrıca değerlendiriyoruz.",
   },
   {
     q: "Maltepe'de örnek projeleriniz var mı?",
@@ -47,12 +51,12 @@ const faqItems = [
 ---
 
 <ServiceLayout
-  title="Maltepe İç Mimarlık ve Ev Yenileme"
-  description="Maltepe'de iç mimarlık, anahtar teslim daire yenileme ve mutfak-banyo tadilatı. Cevizli, Bağlarbaşı, Küçükyalı ve sahil rezidanslarında aktif."
+  title="Maltepe İç Mimarlık, Ev Tadilatı ve Dekorasyon"
+  description="Maltepe'de iç mimarlık, daire yenileme ve mutfak-banyo tadilatı. Cevizli, Bağlarbaşı ve Küçükyalı'da aktif. Ücretsiz keşif: 0533 039 15 65"
   canonicalUrl={`${CANONICAL_BASE}/istanbul/maltepe-ic-mimarlik`}
-  h1="Maltepe İç Mimarlık ve Ev Yenileme"
+  h1="Maltepe İç Mimarlık, Ev Tadilatı ve Dekorasyon"
   eyebrow="İstanbul · Maltepe"
-  lead="Maltepe'nin yeni nesil site daireleri, sahil rezidansları ve eski mahalle apartmanları için anahtar teslim iç mimarlık çözümleri sunuyoruz. Anadolu yakasının hızla gelişen bu ilçesinde 8+ yıllık deneyimimizle hizmet veriyoruz."
+  lead="Maltepe'nin yeni nesil site daireleri, sahil rezidansları ve eski mahalle apartmanları için anahtar teslim iç mimarlık çözümleri sunuyoruz. Anadolu yakasının hızla gelişen bu ilçesinde tadilat ve dekorasyonu baştan sona yönetiyoruz."
   heroImage={heroPath}
   breadcrumb={[
     { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
@@ -70,6 +74,9 @@ const faqItems = [
       </p>
       <p class="text-muted leading-relaxed mb-4">
         Yeni site dairelerinde genellikle planlama, depolama ve aydınlatma optimizasyonu öne çıkıyor. Eski Maltepe daire ve apartmanlarında ise tesisat-elektrik yenileme ve duvar düzenlemesi sürecin temelini oluşturuyor. Müstakil evler için ise ek tasarım ve dış cephe entegrasyonu yapabiliyoruz.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Maltepe'de iki farklı yapı dünyası yan yana duruyor: sahil bandında yeni rezidanslar, iç mahallelerde ise daha eski apartmanlar. Rezidansta sürecin belirleyicisi çoğunlukla yönetim kuralları ve standart plan; eski apartmanda tesisat, elektrik ve zemin. Bu yüzden tadilat planına geçmeden önce binanın yaşını ve yönetim düzenini konuşuyoruz. Maltepe'deki <a href="/projeler/maltepe" class="text-gold hover:underline">daire yenileme çalışmamızı</a> proje sayfasında inceleyebilirsiniz.
       </p>
       <p class="text-muted leading-relaxed">
         Cevizli, Bağlarbaşı, Küçükyalı, Altayçeşme, Fındıklı, İdealtepe, Aydınevler ve sahil bandındaki rezidans projelerinde aktif olarak hizmet veriyoruz.
@@ -99,6 +106,31 @@ const faqItems = [
     </div>
   </div>
 
+  <!-- Bölge notları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">{district.locative} Bölge Notlarımız</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Cevizli · Zümrütevler</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Site ve apartman dairelerinin birlikte bulunduğu yerleşik bölge. Yeni dairelerde depolama ve aydınlatma, eski dairelerde tesisat ve duvar düzenlemesi tadilatın ana başlıkları.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Bağlarbaşı · Altayçeşme</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Çarşıya ve ulaşıma yakın, karma yapı stoku. Binanın yaşına göre kapsam değişiyor; keşifte altyapıyı kontrol edip kapsamı sökümden sonra netleştiriyoruz.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Küçükyalı</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Sahile yakın konumuyla rezidans ve site daireleri öne çıkıyor. Yönetim izinleri, çalışma saatleri ve nem dayanımı yüksek malzeme tercihi planın parçası.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <DistrictProjects districtSlug="maltepe-ic-mimarlik" />
 
   <ProcessStrip districtSlug="maltepe-ic-mimarlik" />
@@ -113,6 +145,11 @@ const faqItems = [
         { label: 'Villa Yenileme', href: `${CANONICAL_BASE}/hizmetler/anahtar-teslim/villa-yenileme` },
         { label: 'Ofis Yenileme', href: `${CANONICAL_BASE}/hizmetler/anahtar-teslim/ofis-yenileme` },
         { label: '3D Tasarım', href: `${CANONICAL_BASE}/hizmetler/3d-tasarim` },
+        { label: 'Ev Tadilatı', href: '/hizmetler/anahtar-teslim/ev-tadilat' },
+        { label: 'Mutfak Yenileme', href: '/hizmetler/mutfak-yenileme' },
+        { label: 'Giyinme Odası Tasarımı', href: '/hizmetler/giyinme-odasi-tasarimi' },
+        { label: 'Maltepe Ev Tadilatı Rehberi', href: '/blog/maltepe-ev-tadilati' },
+        { label: 'Kartal İç Mimarlık', href: '/istanbul/kartal-ic-mimarlik' },
       ].map(l => (
         <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
       ))}

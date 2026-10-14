@@ -1,0 +1,284 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import ServiceAreaLinks from '../../components/ServiceAreaLinks.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImage } from '../../lib/cloudinary';
+
+const heroPath = '/images/merdiven3.jpeg';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Mimari Proje ve Uygulama Projesi",
+  "name": "İstanbul Mimari Proje ve Uygulama Projesi",
+  "description": "Plan değişikliği, uygulama çizimleri ve statik, tesisat, elektrik proje koordinasyonu. İzin süreçlerinde genel yönlendirme ve proje takibi.",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
+  "areaServed": { "@type": "City", "name": "İstanbul" },
+  "url": `${CANONICAL_BASE}/hizmetler/mimari-proje`,
+};
+
+const faqItems = [
+  {
+    q: "Mimari proje ile uygulama projesi aynı şey mi?",
+    a: "Hayır. Mimari proje, mekânın plan, kesit ve görünüşlerle genel kurgusunu anlatan çizim setidir. Uygulama projesi ise sahada işin nasıl yapılacağını anlatan detay çizimlerdir: duvar ve tavan detayları, dolap ve mobilya ölçüleri, kaplama düzenleri ve aydınlatma konumları gibi. İkisi birbirini tamamlar; uygulama kalitesi büyük ölçüde uygulama projesinin ayrıntısına bağlıdır.",
+  },
+  {
+    q: "Her tadilat için mimari proje gerekir mi?",
+    a: "Hayır. Boya, kaplama, dolap ve benzeri yüzey işleri çoğunlukla proje gerektirmez. Duvar kaldırma, plan değişikliği, ıslak hacim taşıma veya yapıya müdahale içeren işlerde ise bir proje çalışması ve ilgili izin süreçleri gündeme gelebilir. Gereklilikler binanın durumuna, yönetim planına ve yürürlükteki mevzuata göre değiştiği için durumu keşifte tek tek değerlendirmek gerekir.",
+  },
+  {
+    q: "Taşıyıcı duvarı kaldırabilir miyiz?",
+    a: "Taşıyıcı elemanlara müdahale, yetkili statik mühendisinin değerlendirmesi olmadan yapılmamalıdır. Bazı duvarlar yapının taşıyıcı sisteminin parçasıdır ve kaldırılması güvenlik riski doğurabilir. Bu tür taleplerde önce mevcut durum incelenir, ilgili uzmanların görüşü alınır ve uygulanabilirlik buna göre belirlenir. Uygun olmayan bir müdahaleyi kesinlikle önermeyiz.",
+  },
+  {
+    q: "İzin ve ruhsat süreçlerini siz mi yürütüyorsunuz?",
+    a: "Süreç, işin türüne ve binanın durumuna göre değişir. Gereken belgelerin hazırlanması, ilgili yetkili kişilerle iletişim ve takip konularında size yönlendirme ve koordinasyon desteği sunuyoruz. Resmî başvuruların ve yetkili imza gerektiren belgelerin ilgili mevzuata uygun şekilde ve yetkili kişilerce hazırlanması gerektiğini baştan belirtiriz.",
+  },
+  {
+    q: "Statik, tesisat ve elektrik projeleri de hizmete dahil mi?",
+    a: "Bu projeler ilgili alanın yetkili mühendisleri tarafından hazırlanır. Biz mimari kurgu ile bu disiplinleri koordine eder, çizimlerin birbiriyle çakışmamasını ve sahadaki uygulamanın projeyle uyumlu ilerlemesini takip ederiz. Böylece tek bir muhatapla, birbirinden kopuk projeler yerine bütüncül bir paket elde edersiniz.",
+  },
+  {
+    q: "Proje hazırlık süresi ne kadar sürer?",
+    a: "Süre; mekânın büyüklüğüne, kapsamın genişliğine ve gerekli onayların hızına göre değişir. Küçük bir plan değişikliği kısa sürede çizilebilir; çok disiplinli ve izin gerektiren projeler daha uzun bir takvim ister. Keşiften sonra kapsam netleşince tahmini bir takvim paylaşıyoruz.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const dahil = [
+  'Mevcut durum ölçümü ve rölöve çalışması',
+  'Plan değişikliği alternatifleri ve yerleşim çizimleri',
+  'Uygulama projesi ve detay çizimleri',
+  'Kaplama, tavan ve aydınlatma planları',
+  'Ölçüye özel mobilya ve dolap detayları',
+  'Statik, tesisat ve elektrik projelerinin koordinasyonu',
+  'İzin süreçleri için genel yönlendirme ve belge takibi',
+  'Sahada proje uyumunun kontrolü',
+];
+
+const konular = [
+  { t: 'Rölöve ve mevcut durum', d: 'İyi bir proje, mevcut durumun doğru ölçülmesiyle başlar. Duvar kalınlıkları, kolon ve kiriş konumları, tesisat bacaları ve tavan yükseklikleri çizime işlenmeden yapılan her kurgu sahada sürprizle karşılaşabilir.' },
+  { t: 'Plan değişikliği alternatifleri', d: 'Bir duvarı kaldırmak, mutfağı salona açmak ya da bir odayı ikiye bölmek gibi kararlar birden fazla alternatifle değerlendirilir. Her seçeneğin avantajını ve getireceği teknik gerekliliği görsel üzerinde göstererek karar vermenizi kolaylaştırırız.' },
+  { t: 'Disiplinler arası koordinasyon', d: 'Mimari kurgu, statik, tesisat ve elektrik projeleri birbirini etkiler. Tavanda gizli ışık planlıyorsanız tesisat kanalı nereden geçecek, bir niş açılıyorsa duvarın içinde ne var gibi soruların çizim aşamasında çözülmesi gerekir.' },
+  { t: 'Uygulama detayları', d: 'Uygulama projesi, ustanın sahada baktığı belgedir. Detaylar ne kadar net olursa saha yorumu o kadar azalır; bu da hem kaliteyi hem takvimi korur.' },
+];
+
+const hatalar = [
+  { t: 'Projeyi uygulamadan sonra çizdirmek', d: 'Önce yapıp sonra çizdirmek, değişiklik maliyetini ve riskini artırır. Proje, uygulamadan önce ve uygulamaya rehberlik edecek şekilde hazırlanmalıdır.' },
+  { t: 'Duvar kaldırma kararını erken vermek', d: 'Bir duvarın yapıdaki rolü anlaşılmadan alınan karar, sonradan geri dönülemez bir sorun yaratabilir. Önce mevcut durum ve ilgili uzman görüşü alınmalıdır.' },
+  { t: 'Disiplinleri ayrı yürütmek', d: 'Her projenin ayrı kişiler tarafından, birbirinden habersiz hazırlanması çakışmalara yol açar. Koordinasyon baştan kurulmalıdır.' },
+  { t: 'Bina yönetimiyle iletişimi atlamak', d: 'Çoğu apartman ve sitede tadilat için yönetim bilgilendirmesi veya yazılı izin gerekebilir. Sonradan çıkacak anlaşmazlıkları önlemek için işe başlamadan önce bu konuyu netleştirmek gerekir.' },
+];
+
+const surec = [
+  { no: '01', t: 'Keşif ve Ölçü', d: 'Mevcut durum yerinde ölçülür ve belgelenir.' },
+  { no: '02', t: 'Alternatifler', d: 'Plan seçenekleri çizilir, görsel üzerinde karşılaştırılır.' },
+  { no: '03', t: 'Proje', d: 'Seçilen kurgu mimari ve uygulama projesine dönüştürülür.' },
+  { no: '04', t: 'Koordinasyon', d: 'Statik, tesisat ve elektrik çizimleri kontrol edilir.' },
+  { no: '05', t: 'Saha Takibi', d: 'Uygulamanın projeye uyumu kontrol edilir.' },
+];
+---
+
+<ServiceLayout
+  title="İstanbul Mimari Proje ve Uygulama Projesi"
+  description="İstanbul mimari proje ve uygulama projesi: plan değişikliği, detay çizimleri, statik-tesisat-elektrik koordinasyonu. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/hizmetler/mimari-proje`}
+  h1="İstanbul Mimari Proje ve Uygulama Projesi"
+  eyebrow="Proje"
+  lead="Plan değişikliğinden uygulama çizimlerine, statik, tesisat ve elektrik projelerinin koordinasyonuna kadar mekânınızın projesini hazırlıyor, sahada uygulamayla uyumunu takip ediyoruz."
+  heroImage={heroPath}
+  ogImage={optimizedImage(heroPath)}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
+    { label: "Mimari Proje" }
+  ]}
+  structuredData={[serviceSchema, faqSchema]}
+>
+
+  <section class="py-12 border-b border-border">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-3xl font-bold text-charcoal mb-4">İstanbul'da Mimari Proje ve Uygulama Projesi</h2>
+        <p class="text-muted leading-relaxed mb-4">
+          Bir mekânın dönüşümü, sahada çekiç sallanmadan önce kâğıt üzerinde kararlaştırılır. Mimari proje ve
+          uygulama projesi, bu kararların hem sizin hem de uygulayıcı ekibin anlayabileceği bir dille belgelenmesidir.
+          İyi hazırlanmış bir proje, sahadaki belirsizliği azaltır; neyin, nerede, nasıl yapılacağı baştan bellidir.
+        </p>
+        <p class="text-muted leading-relaxed mb-4">
+          Hizmetimiz yalnızca çizimden ibaret değildir. Mevcut durumu ölçüyor, ihtiyacınıza uygun plan alternatiflerini
+          hazırlıyor ve seçilen kurguyu uygulanabilir detaylara dönüştürüyoruz. Süreçte statik, tesisat ve elektrik
+          gibi disiplinlerin projelerini ilgili alanın yetkili mühendisleriyle birlikte koordine ediyoruz; böylece
+          farklı kişilerin hazırladığı çizimler birbiriyle çakışmıyor.
+        </p>
+        <p class="text-muted leading-relaxed">
+          Gerek duyulan izin ve belge süreçlerinde, işin türüne ve binanın durumuna göre genel bir yol haritası
+          sunuyoruz. Her binanın ve her işin koşulu farklı olduğundan kesin gereklilikler, mevzuat ve ilgili
+          kurumların güncel uygulamasına göre belirlenir; resmî işlemler ve yetki gerektiren imzalar da ilgili
+          yetkili kişilerce yürütülür.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-charcoal mb-4">Hizmete dahil olanlar</h3>
+        <ul class="space-y-3">
+          {dahil.map(item => (
+            <li class="flex items-start gap-3 text-sm text-muted">
+              <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+                <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+          <p class="text-sm text-charcoal font-medium">Projeyi görsel olarak görmek ister misiniz?</p>
+          <p class="text-muted text-sm mt-2">
+            Plan alternatiflerini uygulamadan önce
+            <a href="/hizmetler/3d-tasarim" class="text-gold hover:underline">3D tasarım</a>
+            çalışmasıyla görselleştirebilir, projenin uygulamasını da
+            <a href="/hizmetler/anahtar-teslim/ev-tadilat" class="text-gold hover:underline">ev tadilat</a>
+            hizmetimiz kapsamında yürütebiliriz.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Proje Sürecinde Belirleyici Konular</h2>
+    <p class="text-muted leading-relaxed max-w-3xl mb-8">
+      Aşağıdaki başlıklar, projenin kalitesini ve sahadaki uygulama kolaylığını doğrudan belirler.
+    </p>
+    <div class="grid md:grid-cols-2 gap-6">
+      {konular.map(k => (
+        <div class="border border-border p-7 bg-[#FAF6F1]">
+          <h3 class="font-display text-lg font-bold text-charcoal mb-2">{k.t}</h3>
+          <p class="text-muted text-sm leading-relaxed">{k.d}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Hangi Durumlarda Proje Çalışması Gerekir?</h2>
+    <div class="grid md:grid-cols-2 gap-10">
+      <div>
+        <p class="text-muted leading-relaxed mb-4">
+          Her iş için proje gerekmez. Boya, kaplama değişimi ve mobilya yerleşimi gibi yüzey odaklı işlerde çoğu zaman
+          çizim yerine bir tasarım dosyası ve malzeme listesi yeterlidir. Ancak aşağıdaki durumlarda bir proje çalışması
+          sürecin güvenli ve düzenli ilerlemesi için faydalıdır.
+        </p>
+        <ul class="space-y-2 text-sm text-muted">
+          <li>· Duvar kaldırma, açıklık açma veya oda bölme</li>
+          <li>· Mutfak, banyo gibi ıslak hacimlerin yer değişikliği</li>
+          <li>· Ticari mekâna dönüşüm veya kullanım değişikliği</li>
+          <li>· Birden çok disiplinin birlikte çalıştığı kapsamlı projeler</li>
+          <li>· Ölçüye özel mobilya ve dolap sistemleri</li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-muted leading-relaxed mb-4">
+          Bu durumların bazılarında ilgili kurum onayı veya bina yönetiminin bilgilendirilmesi gerekebilir. Hangi
+          adımların gerektiği; yapının yaşına, taşıyıcı sistemine, yönetim planına ve işin kapsamına göre değişir. Bu
+          yüzden önce mekânı görüyor, ardından hangi sürecin sizin için geçerli olabileceğini genel hatlarıyla anlatıyoruz.
+        </p>
+        <p class="text-muted leading-relaxed text-sm">
+          Proje sonrası uygulama için <a href="/hizmetler/anahtar-teslim/ev-yenileme" class="text-gold hover:underline">ev yenileme</a>,
+          <a href="/hizmetler/anahtar-teslim/ofis-tadilat" class="text-gold hover:underline">ofis tadilat</a> veya
+          <a href="/hizmetler/anahtar-teslim/villa-tadilat" class="text-gold hover:underline">villa tadilat</a>
+          hizmetlerimizle devam edebilirsiniz. Mimari detay ve görsel yönlendirme için
+          <a href="/hizmetler/ic-mimarlik-danismanligi" class="text-gold hover:underline">iç mimarlık danışmanlığı</a> da ayrıca alınabilir.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Proje Aşamasında Sık Görülen Hatalar</h2>
+    <p class="text-muted leading-relaxed max-w-3xl mb-8">
+      Bu hatalar çoğunlukla işin başında önlenebilir; önlenmediğinde ise sahada zaman ve emek kaybına neden olur.
+    </p>
+    <div class="space-y-4">
+      {hatalar.map((h, i) => (
+        <div class="flex gap-5 border border-border p-6 bg-[#FAF6F1]">
+          <p class="font-display text-2xl font-bold text-gold/40 shrink-0">0{i + 1}</p>
+          <div>
+            <h3 class="font-semibold text-charcoal mb-1">{h.t}</h3>
+            <p class="text-muted text-sm leading-relaxed">{h.d}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Mimari Proje Sürecimiz</h2>
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+      {surec.map(s => (
+        <div>
+          <p class="font-display text-2xl font-bold text-gold/40 mb-2">{s.no}</p>
+          <h3 class="font-semibold text-charcoal text-sm mb-2">{s.t}</h3>
+          <p class="text-muted text-xs leading-relaxed">{s.d}</p>
+        </div>
+      ))}
+    </div>
+    <p class="text-muted leading-relaxed max-w-3xl mt-8 text-sm">
+      Dekorasyon kararlarını proje ile birlikte almak isterseniz <a href="/hizmetler/ev-dekorasyon" class="text-gold hover:underline">ev dekorasyon</a>,
+      <a href="/hizmetler/ofis-dekorasyon" class="text-gold hover:underline">ofis dekorasyon</a> ve
+      <a href="/hizmetler/dukkan-dekorasyon" class="text-gold hover:underline">dükkan dekorasyon</a> sayfalarımıza göz atabilirsiniz.
+      Ev tadilatında dikkat edilecek konular için <a href="/blog/ev-tadilati-ipuclari" class="text-gold hover:underline">ev tadilatı ipuçları</a> yazımız da faydalı olabilir.
+    </p>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Hizmet Verdiğimiz İlçeler</h2>
+    <ServiceAreaLinks names={['Kadıköy', 'Beşiktaş', 'Şişli', 'Ataşehir', 'Üsküdar', 'Bakırköy', 'Sarıyer', 'Beyoğlu', 'Maltepe']} />
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="w-8 h-px bg-gold"></span>
+      <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Sıkça Sorulan Sorular</span>
+    </div>
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Mimari proje hakkında</h2>
+    <div class="space-y-4">
+      {faqItems.map(f => (
+        <details class="border border-border bg-[#FAF6F1] p-6 group">
+          <summary class="font-semibold text-charcoal cursor-pointer list-none flex items-start justify-between gap-4">
+            <span>{f.q}</span>
+            <span class="text-gold shrink-0 transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="text-muted text-sm leading-relaxed mt-4">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">İlgili Sayfalar</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: '3D Tasarım', href: '/hizmetler/3d-tasarim' },
+        { label: 'İç Mimarlık Danışmanlığı', href: '/hizmetler/ic-mimarlik-danismanligi' },
+        { label: 'Ev Tadilatı İpuçları', href: '/blog/ev-tadilati-ipuclari' },
+        { label: 'Villa Tadilatı Rehberi', href: '/blog/villa-tadilati-istanbul' },
+        { label: 'Ev Dekorasyon', href: '/hizmetler/ev-dekorasyon' },
+        { label: 'İstanbul Hizmet Bölgeleri', href: '/istanbul' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </section>
+
+</ServiceLayout>

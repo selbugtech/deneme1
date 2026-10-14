@@ -36,23 +36,27 @@ const faqItems = [
     a: "Teşvikiye, Maçka, Harbiye, Bostan Sokak, Abdi İpekçi Caddesi ve çevresi başta olmak üzere Nişantaşı genelinde aktif çalışıyoruz. Hem konut hem de Abdi İpekçi ve civarındaki butik mağaza ve showroom projelerinde uygulama deneyimimiz var.",
   },
   {
-    q: "Nişantaşı için keşif ve teklif süreci nasıl işliyor?",
-    a: "WhatsApp veya telefon üzerinden randevu alıyor, Nişantaşı'ndaki adresinize ya da mağazanıza gelerek ücretsiz keşif yapıyoruz. 2–3 iş günü içinde detaylı teklif ve marka kimliğinize uygun mood-board paylaşıyoruz.",
+    q: "Nişantaşı'ndaki eski apartman dairesinde özgün detaylar korunarak tadilat yapılabilir mi?",
+    a: "Çoğu zaman evet. Yüksek tavan, bazı binalarda bulunan kartonpiyer ve ahşap doğrama gibi detayları mümkün olduğunca koruyup mutfak, banyo, aydınlatma ve depolamayı güncelliyoruz. Korunacak detay ile yenilenecek altyapıyı keşifte birlikte ayırıyor, tesisat ve elektriğin durumuna göre kapsamı sökümden sonra netleştiriyoruz.",
   },
   {
-    q: "Nişantaşı'nda örnek projeleriniz var mı?",
-    a: "Nişantaşı'nda yayımladığımız bir proje henüz yok; tamamladığımız işlerin tamamını projeler sayfamızda görebilirsiniz. Keşif sırasında mekan tipinize — konut ya da ticari — en yakın çalışmalarımızı gösteriyoruz.",
+    q: "Mağaza veya showroom tadilatı sırasında çalışma saatleri ve teslimat nasıl planlanıyor?",
+    a: "Yoğun ticari sokaklarda yükleme ve park kısıtları olabildiği için malzeme teslimatını ve gürültülü işleri önceden saat bazında planlıyoruz. Mesai dışı çalışma ve aşamalı ilerleme seçeneklerini keşifte birlikte değerlendiriyor, açılış tarihine göre geriye dönük bir takvim kuruyoruz.",
+  },
+  {
+    q: "Nişantaşı'nda konut ve ticari projelerde nasıl bir yaklaşım izliyorsunuz?",
+    a: "Konutta yaşam alışkanlıklarını, butikte ise müşteri akışını ve marka kimliğini başlangıç noktası alıyoruz. İki durumda da 3D görselleştirmeyle uygulama öncesi onay alıyor, malzeme paletini sakin ve uzun ömürlü seçimlere yaslıyoruz. Tamamladığımız işleri projeler sayfamızdan inceleyebilirsiniz.",
   },
 ];
 ---
 
 <ServiceLayout
   title="Nişantaşı İç Mimarlık ve Butik Tasarım"
-  description="Nişantaşı'nda iç mimarlık, lüks daire yenileme ve butik mağaza tasarımı. Teşvikiye, Maçka ve Harbiye'de aktif. Ücretsiz keşif: 0533 039 15 65"
+  description="Nişantaşı'nda iç mimarlık, lüks daire tadilatı ve butik mağaza tasarımı. Teşvikiye, Maçka ve Harbiye'de aktif. Ücretsiz keşif: 0533 039 15 65"
   canonicalUrl={`${CANONICAL_BASE}/istanbul/nisantasi-ic-mimarlik`}
   h1="Nişantaşı İç Mimarlık ve Lüks Mekan Tasarımı"
   eyebrow="İstanbul · Nişantaşı"
-  lead="Nişantaşı'nın sofistike ve avangard ruhuna uygun, lüks konut ve ticari mekan projeleri geliştiriyoruz. Hem klasik apartman dairelerinde hem de marka odaklı butik mağaza projelerinde 8+ yıllık deneyimimizle yanınızdayız."
+  lead="Nişantaşı'nın sofistike ve avangard ruhuna uygun, lüks konut ve ticari mekan projeleri geliştiriyoruz. Hem klasik apartman dairelerinde hem de marka odaklı butik mağaza projelerinde tadilat ve dekorasyonu baştan sona yönetiyoruz."
   heroImage={heroPath}
   breadcrumb={[
     { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
@@ -70,6 +74,9 @@ const faqItems = [
       </p>
       <p class="text-muted leading-relaxed mb-4">
         Nişantaşı'nda ticari ve konut işleri farklı önceliklerle ilerliyor. Butik mağazalarda müşteri akışını, aydınlatmayı ve vitrin tasarımını entegre biçimde ele alıyoruz; Teşvikiye ve Maçka'daki tarihi apartman dairelerinde ise özgün mimari dokuyu koruyan, restorasyon ağırlıklı bir yaklaşım gerekiyor.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Nişantaşı'nda tadilat çoğu zaman dokuyu koruyarak güncelleme anlamına geliyor. Eski apartman dairelerinde yüksek tavanı ve mevcut detayları öne çıkaran bir dekorasyon, genellikle sade bir malzeme paletiyle en iyi sonucu veriyor. Butik mağazalarda ise vitrin, aydınlatma ve müşteri akışı tek bir kurgu içinde ele alınıyor.
       </p>
       <p class="text-muted leading-relaxed">
         Teşvikiye, Maçka, Harbiye, Bostan Sokak ve Abdi İpekçi Caddesi başta olmak üzere Nişantaşı ve çevresinde hem konut hem de ticari mekan projelerinde aktif olarak hizmet veriyoruz.
@@ -99,6 +106,31 @@ const faqItems = [
     </div>
   </div>
 
+  <!-- Bölge notları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">{district.locative} Bölge Notlarımız</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Teşvikiye</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Konut ve butik kullanımın iç içe geçtiği çekirdek hat. Yoğun ticari sokaklarda yükleme ve park saatleri önceden planlanıyor; tarihi apartmanlarda özgün detay korunarak güncelleme yapılıyor.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Maçka</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Daha sakin, konut ağırlıklı bir hat. Eski apartmanlarda tesisat ve elektrik kontrolü keşifte yapılıyor; mutfak, banyo ve depolamanın güncellenmesi en sık gündeme gelen tadilat kalemleri.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Harbiye</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Konut, ofis ve ticari kullanımın bir arada bulunduğu geçiş bölgesi. Binanın kullanım türüne göre yönetim kuralları ve çalışma saatleri keşifte netleştiriliyor.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <DistrictProjects districtSlug="nisantasi-ic-mimarlik" />
 
   <ProcessStrip districtSlug="nisantasi-ic-mimarlik" />
@@ -113,6 +145,11 @@ const faqItems = [
         { label: 'Villa Yenileme', href: `${CANONICAL_BASE}/hizmetler/anahtar-teslim/villa-yenileme` },
         { label: 'Ofis Yenileme', href: `${CANONICAL_BASE}/hizmetler/anahtar-teslim/ofis-yenileme` },
         { label: '3D Tasarım', href: `${CANONICAL_BASE}/hizmetler/3d-tasarim` },
+        { label: 'Ev Tadilatı', href: '/hizmetler/anahtar-teslim/ev-tadilat' },
+        { label: 'Mağaza Tadilatı', href: '/hizmetler/anahtar-teslim/magaza-dukkan-tadilat' },
+        { label: 'Showroom Tasarımı', href: '/hizmetler/anahtar-teslim/showroom' },
+        { label: 'Nişantaşı İç Mimarlık Ofisleri', href: '/blog/nisantasi-ic-mimarlik-ofisleri' },
+        { label: 'Şişli İç Mimarlık', href: '/istanbul/sisli-ic-mimarlik' },
       ].map(l => (
         <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
       ))}

@@ -1,0 +1,172 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictBlogLinks from '../../components/DistrictBlogLinks.astro';
+import DistrictFAQ from '../../components/DistrictFAQ.astro';
+import ProcessStrip from '../../components/ProcessStrip.astro';
+import DistrictProjects from '../../components/DistrictProjects.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImageW } from '../../lib/cloudinary';
+import { getDistrict } from '../../data/districts';
+
+// İlçe adı ve bulunma hali eki tek kaynaktan: src/data/districts.ts.
+const district = getDistrict('eyupsultan-ic-mimarlik')!;
+const heroPath = '/images/salon1.png';
+const heroAbs = optimizedImageW(heroPath, 1600);
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "İç mimarlık, tadilat ve ev yenileme",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
+  "areaServed": { "@type": "Place", "name": "Eyüpsultan, İstanbul" },
+  "url": `${CANONICAL_BASE}/istanbul/eyupsultan-ic-mimarlik`,
+  "description": "Eyüpsultan'da Göktürk ve Kemerburgaz villaları, site daireleri ve tarihi dokudaki konutlar için iç mimarlık, ev tadilatı ve dekorasyon.",
+  "image": heroAbs,
+};
+
+const faqItems = [
+  {
+    q: "Göktürk ve Kemerburgaz'daki villalarda tadilat nasıl planlanıyor?",
+    a: "Villalarda iş çoğunlukla tek bir daire değil, birbirine bağlı birkaç katın birlikte ele alınması anlamına geliyor. Önce kat planı, merdiven, ıslak hacimlerin dağılımı ve bahçe ilişkisi çıkarılıyor; ardından iş kalemleri sıraya diziliyor. Villa dekorasyonunda zemin, aydınlatma ve ölçüye özel dolap kurgusu birlikte tasarlandığında sonradan söküm ihtiyacı azalıyor.",
+  },
+  {
+    q: "Site içindeki villada dış cephe, bahçe veya teras değişikliği yapabilir miyim?",
+    a: "Site içindeki villalarda cephe, çatı, bahçe duvarı ve teras düzenlemesi çoğunlukla site yönetiminin ve proje standartlarının kapsamında oluyor. Bu nedenle iç mekân çalışmasına başlamadan önce yönetim planını inceliyor, gerekiyorsa başvuruyu sizin adınıza hazırlıyoruz. Dış mekâna dokunmayan iç mimarlık projeleri bu açıdan genellikle daha serbest ilerliyor.",
+  },
+  {
+    q: "Alibeyköy, Rami ve Topçular gibi eski mahallelerde ev tadilatında nelere dikkat ediyorsunuz?",
+    a: "Bu hatlarda yapı yaşı ve türü birbirinden çok farklı olabiliyor. Tesisat, elektrik hattı ve zemin kotları sökümden önce kontrol ediliyor; kapsam, gizli kalan kısımlar görüldükten sonra netleştiriliyor. Eski binalarda tadilat gürültüsü komşuları etkilediği için çalışma saatlerini apartman yönetimiyle önceden konuşmak işi rahatlatıyor.",
+  },
+  {
+    q: "Şehir merkezine uzak konumdaki bir eve malzeme ve ekip sevkiyatı nasıl yönetiliyor?",
+    a: "Göktürk ve Kemerburgaz gibi şehir merkezinden uzak bölgelerde sevkiyat, şantiye takvimini etkileyen asıl kalemlerden biri. Malzeme ve ölçüye özel üretim parçaları tek seferde gelecek şekilde gruplanıyor, kritik teslimatlar sahada ekip hazır olduğu güne denk getiriliyor. Böylece boş bekleme ve tekrar eden sevkiyat azalıyor.",
+  },
+  {
+    q: "Eyüp Sultan Camii çevresindeki tarihi dokuda yer alan bir konutta dekorasyon yaptırırken kısıtlar var mı?",
+    a: "Koruma alanı içindeki yapılarda dış görünüme ve taşıyıcı sisteme müdahale için resmi kurumların izni gerekebiliyor. Yalnızca iç mekânı yenileyen çalışmalarda bile bina özelliğine göre kısıtlar çıkabildiğinden, keşif aşamasında yapının durumuna bakıyor ve hangi kalemlerin izin gerektirdiğini baştan netleştiriyoruz.",
+  },
+];
+---
+
+<ServiceLayout
+  title="Eyüpsultan İç Mimarlık, Villa Tadilatı ve Dekorasyon"
+  description="Eyüpsultan'da Göktürk ve Kemerburgaz villaları, site daireleri için iç mimarlık, ev tadilatı ve dekorasyon. Keşif için arayın: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/istanbul/eyupsultan-ic-mimarlik`}
+  h1="Eyüpsultan İç Mimarlık, Villa Tadilatı ve Dekorasyon"
+  eyebrow="İstanbul · Eyüpsultan"
+  lead="Tarihi Eyüp dokusundan Göktürk ve Kemerburgaz'ın villa sitelerine uzanan, birbirinden çok farklı konut tipleri olan bir ilçe. Her biri için ayrı bir tadilat dili gerekiyor."
+  heroImage={heroPath}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İstanbul", href: `${CANONICAL_BASE}/istanbul` },
+    { label: "Eyüpsultan" }
+  ]}
+  structuredData={localSchema}
+>
+
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Eyüpsultan'da İç Mimarlık Hizmeti</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Eyüpsultan, İstanbul'da tek bir kalıba sığmayan ilçelerden biri. Haliç kıyısındaki Nişancı, Karadolap ve Alibeyköy hattında eski ve yoğun yerleşim görülürken, kuzeye doğru Göktürk, Kemerburgaz ve Rami çevresinde villa siteleri ile modern konut projeleri yoğunlaşıyor. Bu çeşitlilik, ilçede yürüttüğümüz her işin başlangıçta ayrı bir okuma gerektirdiği anlamına geliyor.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Göktürk ve Kemerburgaz tarafında ağırlıklı talep villa tadilatı ve villa dekorasyonu. Geniş metrekare, birden fazla kat, bahçe ve teras ilişkisi, ısıtma ve aydınlatma kurgusu gibi konular bir daire yenilemesinden çok daha geniş bir plan istiyor. Bu tip işlerde zemin kaplamasından mutfak adasına, giyinme odasından merdiven detayına kadar tüm kalemi tek bir tasarım dilinde topluyor, uygulamayı da aynı ekiple yürütüyoruz. Böylece farklı ustaların farklı anlayışlarının sonradan çakışması riski azalıyor.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Alibeyköy, Rami, Topçular ve Esentepe hattında ise çoğunlukla apartman dairesi ve site dairesi tadilatı ile karşılaşıyoruz. Bu mahallelerde yapı yaşı farklı olabildiği için ev tadilatının kapsamını sökümden önce ve sonra iki aşamada değerlendirmek doğru oluyor. Tesisat hatları, ıslak hacim zeminleri ve elektrik panosu görüldükten sonra neyin yenilenip neyin korunacağı netleşiyor; böylece sürpriz kalemler en aza iniyor.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Eyüp'ün tarihi çekirdeğinde ise iş, çoğunlukla bir iç mekân yenilemesinden daha hassas. Eski yapılarda mevcut dokuyu korumak, mümkün olan yerde özgün öğeleri yeni tasarımla buluşturmak ve gerekiyorsa resmi izin süreçlerini önceden takip etmek gerekiyor. Eyüpsultan tadilat taleplerinin bu kadar farklı yönde olması, bizim de ilçeye standart bir paket değil, konuta özel bir yaklaşım getirmemizin nedeni.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4">{district.locative} Sunduğumuz Hizmetler</h3>
+      <ul class="space-y-3">
+        {[
+          'Villa iç mimarlığı ve komple villa tadilatı',
+          'Site dairelerinde anahtar teslim ev tadilatı',
+          'Geniş mutfak, ada ve ıslak hacim yenileme',
+          'Giyinme odası, ebeveyn banyosu ve yatak odası tasarımı',
+          'Katmanlı aydınlatma ve ölçüye özel mobilya',
+          'Bahçe, teras ve iç mekân bağlantısının kurgulanması',
+          'Site yönetimi ve izin süreçlerinin takibi',
+          '3D görselleştirme ile tasarım onayı',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+        <p class="text-sm text-charcoal font-medium">Villa tadilatı rehberi</p>
+        <p class="text-muted text-sm mt-2">
+          Villa yenilemede kapsamın nasıl belirlendiğini, hangi kalemlerin birlikte planlanması gerektiğini ve sürecin adımlarını ayrı bir yazıda anlattık.
+        </p>
+        <a href="/blog/villa-tadilati-istanbul" class="text-xs text-gold hover:underline mt-2 inline-block">İstanbul villa tadilatı rehberi →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bölge notları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Eyüpsultan'da Bölge Notlarımız</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Göktürk · Kemerburgaz</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Villa siteleri ve müstakil konutların yoğun olduğu hat. Geniş metrekare, bahçe ve teras ilişkisi ile katlar arası geçişler tasarımın ana konusu; site yönetiminin dış alan kuralları da planın parçası.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Rami · Topçular · Esentepe</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Apartman ve site dairelerinin çoğunlukta olduğu, yapı yaşının değişken olduğu bölge. Tesisat ve elektrik durumuna göre kapsam, söküm sonrası netleştiriliyor.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Alibeyköy · Nişancı · Karadolap</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Eski ve yoğun yerleşimin hakim olduğu Haliç hattı. Dar sokaklar sevkiyatı, eski bina yapısı ise tesisat ve zemin hazırlığını belirliyor; çalışma saatleri komşularla önceden konuşuluyor.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <DistrictProjects districtSlug="eyupsultan-ic-mimarlik" />
+
+  <ProcessStrip districtSlug="eyupsultan-ic-mimarlik" />
+
+  <DistrictFAQ districtName="Eyüpsultan" items={faqItems} />
+
+  <div class="py-12 border-t border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Hizmetlerimiz</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Tüm Hizmetler', href: '/hizmetler' },
+        { label: 'Villa Tadilatı', href: '/hizmetler/anahtar-teslim/villa-tadilat' },
+        { label: 'Villa Yenileme', href: '/hizmetler/anahtar-teslim/villa-yenileme' },
+        { label: 'Anahtar Teslim Ev Tadilatı', href: '/hizmetler/anahtar-teslim/ev-tadilat' },
+        { label: 'Mutfak Yenileme', href: '/hizmetler/mutfak-yenileme' },
+        { label: 'Giyinme Odası Tasarımı', href: '/hizmetler/giyinme-odasi-tasarimi' },
+        { label: 'Başakşehir Ev Tadilatı Rehberi', href: '/blog/basaksehir-ev-tadilati' },
+        { label: 'Sarıyer İç Mimarlık', href: '/istanbul/sariyer-ic-mimarlik' },
+        { label: 'Başakşehir İç Mimarlık', href: '/istanbul/basaksehir-ic-mimarlik' },
+        { label: 'Zekeriyaköy İç Mimarlık', href: '/istanbul/zekeriyakoy-ic-mimarlik' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </div>
+
+  <DistrictBlogLinks districtSlug="eyupsultan-ic-mimarlik" />
+
+  <RelatedDistricts currentSlug="eyupsultan-ic-mimarlik" />
+
+</ServiceLayout>

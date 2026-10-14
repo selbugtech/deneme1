@@ -36,23 +36,27 @@ const faqItems = [
     a: "Acıbadem Merkez, Bağlarbaşı, Üsküdar sınırı, Koşuyolu, Hasanpaşa ve Fikirtepe yönü dahil ilçenin tamamında çalışıyoruz. Acıbadem'deki villa projeleri ve yeşil alana yakın site daireleri için özel uygulama yaklaşımımız bulunuyor.",
   },
   {
-    q: "Acıbadem için keşif ve teklif süreci nasıl işliyor?",
-    a: "WhatsApp veya telefon üzerinden randevu alıyor, Acıbadem'deki adresinize gelerek ücretsiz keşif yapıyoruz. Yerinde ölçü ve fotoğraf çalışmasının ardından 2–3 iş günü içinde detaylı teklifimizi ve örnek görselleri paylaşıyoruz.",
+    q: "Villa tadilatında iç mekan ile bahçe ve dış cephe birlikte ele alınıyor mu?",
+    a: "Evet, kapsam istenirse birlikte planlanabiliyor. Salon ve mutfaktan bahçeye açılan geçişler, teras ve giriş alanı iç mekan kurgusunun parçası olduğu için aynı tasarım dilinde ele almak daha tutarlı sonuç veriyor. Dış cephe ve çatı gibi izne bağlı müdahaleleri ise keşifte ayrıca değerlendiriyoruz.",
   },
   {
-    q: "Acıbadem'de örnek projeleriniz var mı?",
-    a: "Acıbadem'de yayımladığımız bir proje henüz yok. Ofisimiz Acıbadem'de olduğu için bölgede aynı gün keşif verebiliyoruz; tamamladığımız işlerin tamamını projeler sayfamızda görebilir, keşif sırasında yapı tipinize en yakın örnekleri inceleyebilirsiniz.",
+    q: "Evde yaşarken villa veya büyük daire tadilatı yapılabilir mi?",
+    a: "Kapsama bağlı. Yalnızca mutfak ya da banyo gibi sınırlı yenilemelerde ev kullanımı çoğunlukla sürdürülebiliyor; tesisat, zemin ve elektriği baştan ele alan kapsamlı tadilatlarda ise taşınmak çok daha verimli. Keşifte iki senaryoyu da takvim ve toz-gürültü açısından birlikte değerlendiriyoruz.",
+  },
+  {
+    q: "Acıbadem'de keşif ve uygulama takibi nasıl ilerliyor?",
+    a: "Ofisimiz Acıbadem'de olduğu için bölgede aynı gün keşif verebiliyoruz; uygulama sürecinde de şantiye ziyaretleri kolay planlanıyor. Tamamladığımız işleri projeler sayfamızdan görebilir, keşif sırasında yapı tipinize en yakın örnekleri birlikte inceleyebiliriz.",
   },
 ];
 ---
 
 <ServiceLayout
-  title="Acıbadem İç Mimarlık ve Villa Yenileme"
-  description="Acıbadem'de iç mimarlık, villa yenileme ve anahtar teslim daire tadilatı. Bağlarbaşı, Koşuyolu ve Acıbadem Merkez'de aktif. Ücretsiz keşif: 0533 039 15 65"
+  title="Acıbadem İç Mimarlık, Villa Tadilatı ve Dekorasyon"
+  description="Acıbadem'de iç mimarlık, villa yenileme ve daire tadilatı. Bağlarbaşı, Koşuyolu ve Acıbadem Merkez'de aktif. Ücretsiz keşif: 0533 039 15 65"
   canonicalUrl={`${CANONICAL_BASE}/istanbul/acibadem-ic-mimarlik`}
-  h1="Acıbadem İç Mimarlık ve Villa Yenileme"
+  h1="Acıbadem İç Mimarlık, Villa Tadilatı ve Dekorasyon"
   eyebrow="İstanbul · Acıbadem"
-  lead="Acıbadem'in sakin ve prestijli yapısına uygun, kaliteli malzeme ve özenli işçilikle yenileme projeleri tamamlıyoruz. Villa ve büyük daire projelerinde 8+ yıllık deneyimimizle yanınızdayız."
+  lead="Acıbadem'in sakin ve prestijli yapısına uygun, kaliteli malzeme ve özenli işçilikle yenileme projeleri tamamlıyoruz. Villa ve büyük daire projelerinde tadilat ve dekorasyonu baştan sona yönetiyoruz."
   heroImage={heroPath}
   breadcrumb={[
     { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
@@ -70,6 +74,9 @@ const faqItems = [
       </p>
       <p class="text-muted leading-relaxed mb-4">
         Villa ve büyük daire projelerinde salon, mutfak, yatak odaları ve giyinme odalarının yanı sıra dış mekan-iç mekan geçişlerini, kütüphane ve ev ofis gibi özel alanları da birlikte ele alıyoruz. Ofisimiz Acıbadem'de olduğu için keşif ve uygulama takibini aynı gün içinde yapabiliyoruz.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Acıbadem'de villa ve büyük daire tadilatlarında kararlar tek tek odalardan çok bütünsel bir kurgu üzerinden veriliyor: salon-mutfak akışı, giyinme odası, ev ofis ve bahçe bağlantısı birlikte planlanıyor. Kapsam büyüdükçe 3D görselleştirmeyle uygulama öncesi onay almak karar sürecini kolaylaştırıyor; dekorasyonda malzeme ve aydınlatma seçimleri de bu aşamada netleşiyor.
       </p>
       <p class="text-muted leading-relaxed">
         Acıbadem Merkez, Bağlarbaşı, Koşuyolu, Hasanpaşa ve Üsküdar sınırı başta olmak üzere ilçe genelinde hizmet veriyoruz.
@@ -99,6 +106,31 @@ const faqItems = [
     </div>
   </div>
 
+  <!-- Bölge notları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">{district.locative} Bölge Notlarımız</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Acıbadem Merkez</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Villa ve geniş dairelerin yoğunlaştığı, yeşil dokuya yakın çekirdek bölge. Tadilat çoğunlukla çok odalı, bütünsel bir kurgu gerektiriyor; bahçe ve teras bağlantısı tasarıma dahil ediliyor.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Koşuyolu</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Sakin, yerleşik bir konut hattı. Apartman ve site dairelerinde mutfak, banyo ve depolamanın güncellenmesi öne çıkıyor; bina yönetimiyle çalışma saati ve moloz çıkışı baştan planlanıyor.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Bağlarbaşı</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Karma yapı stoku. Eski apartmanlarda tesisat ve elektrik durumunu keşifte kontrol ediyor, kapsamı sökümden sonra netleştiriyoruz.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <DistrictProjects districtSlug="acibadem-ic-mimarlik" />
 
   <ProcessStrip districtSlug="acibadem-ic-mimarlik" />
@@ -113,6 +145,11 @@ const faqItems = [
         { label: 'Villa Yenileme', href: `${CANONICAL_BASE}/hizmetler/anahtar-teslim/villa-yenileme` },
         { label: 'Ofis Yenileme', href: `${CANONICAL_BASE}/hizmetler/anahtar-teslim/ofis-yenileme` },
         { label: '3D Tasarım', href: `${CANONICAL_BASE}/hizmetler/3d-tasarim` },
+        { label: 'Villa Tadilatı', href: '/hizmetler/anahtar-teslim/villa-tadilat' },
+        { label: 'Ev Tadilatı', href: '/hizmetler/anahtar-teslim/ev-tadilat' },
+        { label: 'Giyinme Odası Tasarımı', href: '/hizmetler/giyinme-odasi-tasarimi' },
+        { label: 'Acıbadem İç Mimarlık Ofisleri', href: '/blog/acibadem-ic-mimarlik-ofisleri' },
+        { label: 'Kadıköy İç Mimarlık', href: '/istanbul/kadikoy-ic-mimarlik' },
       ].map(l => (
         <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
       ))}

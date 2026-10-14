@@ -9,7 +9,7 @@ const serviceSchema = {
   "@type": "Service",
   "serviceType": "Villa Tadilat",
   "name": "İstanbul Villa Tadilat",
-  "description": "İstanbul'da anahtar teslim villa tadilat. Yapısal dönüşüm, elektrik ve tesisat yenileme, dış cephe ve bahçe dahil kapsamlı lüks villa renovasyonu.",
+  "description": "İstanbul'da anahtar teslim villa tadilat. Yapısal dönüşüm, elektrik ve tesisat yenileme, yalıtım ve dış cephe işleri; izin ve şantiye koordinasyonu ile kapsamlı villa renovasyonu.",
   "provider": { "@type": "Organization", "@id": `${CANONICAL_BASE}/#organization`, "name": "Master İç Mimarlık" },
   "areaServed": [
     { "@type": "City", "name": "İstanbul" },
@@ -24,8 +24,8 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Villa tadilat bütçesi nasıl belirlenir?", "acceptedAnswer": { "@type": "Answer", "text": "Bütçe; villanın büyüklüğü, mevcut yapı durumu, bahçe ve dış cephe kapsamı ile seçilen malzeme kalitesine göre belirlenir. Villa projelerinde geniş alanlar, çoklu katlar ve yapısal müdahaleler maliyet belirleyici unsurlardır. Ücretsiz keşif ziyaretimizde projenize özel detaylı bütçe sunuyoruz; sürpriz maliyet yaşanmaması için tüm kalemler sözleşmede taahhüt edilir." } },
-    { "@type": "Question", "name": "Villa tadilat ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Ortalama bir villa tadilatı (250–400 m²) 10–20 hafta içinde tamamlanmaktadır. Yapısal müdahale kapsamı, ruhsat süreçleri ve özel malzeme temin süreleri bu takvimi etkileyebilir. Keşif ziyaretimizde gerçekçi bir proje takvimi hazırlıyor, bu takvimi sözleşmede taahhüt ediyoruz." } },
+    { "@type": "Question", "name": "Villa tadilatında iş sırası ve koordinasyon nasıl yönetilir?", "acceptedAnswer": { "@type": "Answer", "text": "Villalarda çok katlı yapı, geniş alan ve birden fazla ekibin aynı anda çalışması nedeniyle işler katlara ve bölümlere göre fazlandırılır: önce söküm ve yapısal işler, ardından elektrik-tesisat, sonra kaplama, doğrama ve montaj. Tek koordinasyon altında yürütülen bu sıra, tekrar kırma ve çakışan iş riskini azaltır. Keşifte fazlar ve sorumluluklar yazılı hale getirilir." } },
+    { "@type": "Question", "name": "Villa tadilat süresini ne belirler?", "acceptedAnswer": { "@type": "Answer", "text": "Süre; yapısal müdahalenin kapsamına, kat ve bölüm sayısına, ruhsat ve onay süreçlerine, özel malzemelerin temin süresine ve dış cephe-bahçe işlerinin dahil olup olmadığına bağlıdır. Gerçekçi bir takvim ancak yerinde keşiften sonra çıkarılabilir; bu takvimi sözleşmede paylaşıyoruz." } },
     { "@type": "Question", "name": "Villa tadilat için ruhsat gerekir mi?", "acceptedAnswer": { "@type": "Answer", "text": "Taşıyıcı duvar yıkımı, kat ekleme veya dış cephe değişikliği gibi yapısal müdahaleler için belediye ve ilgili kurumlardan izin alınması gerekir. Standart iç mekan kaplamaları, elektrik ve tesisat yenilemesi için ruhsat gerekmez. Projeniz izin gerektiriyorsa ruhsat ve proje sürecini sizin adınıza takip ediyoruz." } },
     { "@type": "Question", "name": "Tadilat süresince villada oturabilir miyim?", "acceptedAnswer": { "@type": "Answer", "text": "Komple villa tadilat çalışmalarında — özellikle elektrik, tesisat veya yapısal müdahale varsa — villada oturmanızı tavsiye etmiyoruz. Geniş villa projelerinde çoklu ekip ve ağır iş makinesi kullanımı güvenli bir ortam sağlamayı güçleştirir. Kısmi tadilatlarda (belirli kat veya bölümler) mümkün olabilir; her projenin planlamasında bu konuyu önceden değerlendiriyoruz." } },
     { "@type": "Question", "name": "Villa tadilatta bahçe ve dış cephe dahil mi?", "acceptedAnswer": { "@type": "Answer", "text": "Evet. Villa projelerinde iç mekânın yanı sıra bahçe düzenlemesi, dış cephe tadilat ve teras tasarımı da proje kapsamına dahil edilebilir. Villanın bütünsel dönüşümünü tek koordinasyon altında yönetmek hem süreç verimliliği hem de tasarım bütünlüğü açısından büyük avantaj sağlar. Keşif aşamasında projenizin tam kapsamını birlikte belirliyoruz." } }
@@ -34,12 +34,12 @@ const faqSchema = {
 ---
 
 <ServiceLayout
-  title="İstanbul Villa Tadilat | Anahtar Teslim Villa Tadilat"
-  description="İstanbul'da anahtar teslim villa tadilat. Yapısal dönüşüm, elektrik-tesisat ve dış cephe dahil lüks villa renovasyonu. Zekeriyaköy, Sarıyer, Acıbadem."
+  title="Villa Tadilat İstanbul | Yapısal ve Altyapı İşleri"
+  description="İstanbul'da villa tadilat: yapısal müdahale, elektrik-tesisat yenileme, yalıtım ve dış cephe; izin süreci ve fazlı şantiye. Keşif: 0533 039 15 65"
   canonicalUrl={`${CANONICAL_BASE}/hizmetler/anahtar-teslim/villa-tadilat`}
-  h1="İstanbul Villa Tadilat"
+  h1="İstanbul Villa Tadilat: Yapısal Dönüşüm ve Altyapı"
   eyebrow="Anahtar Teslim"
-  lead="Yapısal dönüşümden elektrik ve tesisat yenilemeye, dış cephe tadilattan bahçe düzenlemesine kadar lüks villalar için kapsamlı renovasyon. Tüm koordinasyon tek çatı altında, iç mimari tasarımdan anahtar teslime."
+  lead="Elektrik, tesisat ve yalıtımdan gerektiğinde yapısal müdahaleye uzanan kapsamlı villa dönüşümleri. İzin süreçleri, kat ve bölüm bazlı iş sırası ve şantiye düzeni tek koordinasyonla yönetilir."
   breadcrumb={[
     { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
     { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
@@ -59,7 +59,7 @@ const faqSchema = {
   <!-- Scope -->
   <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
     <div>
-      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Villa Tadilat Hizmetimiz</h2>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Yapısal ve Altyapı Odaklı Villa Tadilat</h2>
       <p class="text-muted leading-relaxed mb-4">
         Villa tadilat, standart konut projelerinden farklı bir uzmanlık ve koordinasyon gerektiren kapsamlı bir süreçtir. Geniş alanlar, çoklu katlar, bahçe ve dış cephe entegrasyonu, ruhsat süreçleri ve yapısal müdahaleler bu sürecin ayrılmaz parçalarıdır. Elektrik ve tesisat yenileme, duvar kaldırma, ısı yalıtımı güçlendirme gibi teknik işler sıklıkla bir arada yürütülür.
       </p>
@@ -67,7 +67,7 @@ const faqSchema = {
         Master İç Mimarlık olarak villa projelerinde iç mekândan dış cepheye, mutfak ve banyo tadilattan özel mobilya tasarımına kadar projenizin tüm kapsamını tek çatı altında yönetiyoruz. <a href="/hizmetler/3d-tasarim" class="text-gold hover:underline">3D görselleştirme</a> ile villanızın yeni görünümünü uygulamadan önce deneyimleyebilirsiniz.
       </p>
       <p class="text-muted leading-relaxed">
-        Yalnızca estetik güncelleme istiyorsanız <a href="/hizmetler/anahtar-teslim/villa-yenileme" class="text-gold hover:underline">villa yenileme</a> hizmetimiz daha hızlı bir alternatif olabilir. İstanbul genelinde Zekeriyaköy, Acıbadem, Sarıyer, Beşiktaş ve Boğaz hattı boyunca hizmet sunuyoruz.
+        Elektrik, tesisat ve yapıya dokunmadan zemin, kaplama ve aydınlatmayı tazelemek istiyorsanız <a href="/hizmetler/anahtar-teslim/villa-yenileme" class="text-gold hover:underline">altyapıya dokunmadan villa yenileme</a> daha hızlı bir yol olabilir. İç mekân kurgusu için <a href="/hizmetler/villa-dekorasyon" class="text-gold hover:underline">villa dekorasyon</a> hizmetimizden de yararlanabilirsiniz. İstanbul genelinde Zekeriyaköy, Acıbadem, Sarıyer, Beşiktaş ve Boğaz hattı boyunca hizmet sunuyoruz.
       </p>
     </div>
     <div>
@@ -100,7 +100,7 @@ const faqSchema = {
   <div class="py-12 border-b border-border">
     <div class="flex items-center gap-3 mb-8">
       <span class="w-8 h-px bg-gold"></span>
-      <h2 class="font-display text-2xl font-bold text-charcoal">Villa Tadilat Ne Zaman Gerekir?</h2>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Villada Yapısal ve Altyapı Müdahalesi Ne Zaman Gerekir?</h2>
     </div>
     <div class="grid md:grid-cols-3 gap-8">
       {[
@@ -167,8 +167,8 @@ const faqSchema = {
     </div>
     <div class="divide-y divide-border">
       {[
-        { q: 'Villa tadilat bütçesi nasıl belirlenir?', a: 'Bütçe; villanın büyüklüğü, mevcut yapı durumu, bahçe ve dış cephe kapsamı ile seçilen malzeme kalitesine göre belirlenir. Villa projelerinde geniş alanlar, çoklu katlar ve yapısal müdahaleler maliyet belirleyici unsurlardır. Ücretsiz keşif ziyaretimizde projenize özel detaylı bütçe sunuyoruz; tüm kalemler sözleşmede taahhüt edilir.' },
-        { q: 'Villa tadilat ne kadar sürer?', a: 'Ortalama bir villa tadilatı (250–400 m²) 10–20 hafta içinde tamamlanmaktadır. Yapısal müdahale kapsamı, ruhsat süreçleri ve özel malzeme temin süreleri bu takvimi etkileyebilir. Keşif ziyaretimizde gerçekçi bir proje takvimi hazırlıyor, bu takvimi sözleşmede taahhüt ediyoruz.' },
+        { q: 'Villa tadilatında iş sırası ve koordinasyon nasıl yönetilir?', a: 'Villalarda çok katlı yapı, geniş alan ve birden fazla ekibin aynı anda çalışması nedeniyle işler katlara ve bölümlere göre fazlandırılır: önce söküm ve yapısal işler, ardından elektrik-tesisat, sonra kaplama, doğrama ve montaj. Tek koordinasyon altında yürütülen bu sıra, tekrar kırma ve çakışan iş riskini azaltır. Keşifte fazlar ve sorumluluklar yazılı hale getirilir.' },
+        { q: 'Villa tadilat süresini ne belirler?', a: 'Süre; yapısal müdahalenin kapsamına, kat ve bölüm sayısına, ruhsat ve onay süreçlerine, özel malzemelerin temin süresine ve dış cephe-bahçe işlerinin dahil olup olmadığına bağlıdır. Gerçekçi bir takvim ancak yerinde keşiften sonra çıkarılabilir; bu takvimi sözleşmede paylaşıyoruz.' },
         { q: 'Villa tadilat için ruhsat gerekir mi?', a: 'Taşıyıcı duvar yıkımı, kat ekleme veya dış cephe değişikliği gibi yapısal müdahaleler için belediye ve ilgili kurumlardan izin alınması gerekir. Standart iç mekan kaplamaları, elektrik ve tesisat yenilemesi için ruhsat gerekmez. Projeniz izin gerektiriyorsa ruhsat ve proje sürecini sizin adınıza takip ediyoruz.' },
         { q: 'Tadilat süresince villada oturabilir miyim?', a: 'Komple villa tadilat çalışmalarında — özellikle elektrik, tesisat veya yapısal müdahale varsa — villada oturmanızı tavsiye etmiyoruz. Geniş villa projelerinde çoklu ekip ve ağır iş makinesi kullanımı güvenli ortamı güçleştirir. Kısmi tadilatlarda (belirli kat veya bölümler) mümkün olabilir; her projenin planlamasında bu konuyu önceden değerlendiriyoruz.' },
         { q: 'Villa tadilatta bahçe ve dış cephe dahil mi?', a: 'Evet. Villa projelerinde iç mekânın yanı sıra bahçe düzenlemesi, dış cephe tadilat ve teras tasarımı da proje kapsamına dahil edilebilir. Villanın bütünsel dönüşümünü tek koordinasyon altında yönetmek hem süreç verimliliği hem de tasarım bütünlüğü açısından büyük avantaj sağlar. Keşif aşamasında tam kapsamı birlikte belirliyoruz.' },

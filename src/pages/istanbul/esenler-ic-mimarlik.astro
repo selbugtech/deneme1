@@ -1,0 +1,164 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictBlogLinks from '../../components/DistrictBlogLinks.astro';
+import DistrictFAQ from '../../components/DistrictFAQ.astro';
+import ProcessStrip from '../../components/ProcessStrip.astro';
+import DistrictProjects from '../../components/DistrictProjects.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImageW } from '../../lib/cloudinary';
+import { getDistrict } from '../../data/districts';
+
+// İlçe adı ve bulunma hali eki tek kaynaktan: src/data/districts.ts.
+const district = getDistrict('esenler-ic-mimarlik')!;
+const heroPath = '/images/salon5.jpeg';
+const heroAbs = optimizedImageW(heroPath, 1600);
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "İç mimarlık, tadilat ve ev yenileme",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
+  "areaServed": { "@type": "Place", "name": "Esenler, İstanbul" },
+  "url": `${CANONICAL_BASE}/istanbul/esenler-ic-mimarlik`,
+  "description": "Esenler'de yoğun apartman stokunda anahtar teslim daire yenileme, mutfak-banyo tadilatı ve depolama çözümleri.",
+  "image": heroAbs,
+};
+
+const faqItems = [
+  {
+    q: "Esenler'de apartman dairesinde asansörsüz katlara malzeme nasıl taşınıyor?",
+    a: "Birçok apartmanda asansör ya hiç yok ya da dar kabinli. Bu durumda dolap elemanlarını parçalı üretiyor, ağır malzemeleri ekip halinde ve ortak alanı koruyarak taşıyoruz. Taşıma planını keşifte merdiven genişliği ve kat sayısına bakarak yapıyoruz; komşularınızı rahatsız etmeyecek saatleri birlikte belirliyoruz.",
+  },
+  {
+    q: "Eski apartmanda elektrik ve su tesisatı yenilemek gerekir mi?",
+    a: "Bu, binanın yapım dönemine ve daha önce bakım görüp görmediğine bağlı. Keşifte pano, kablo hatları, borular ve ıslak hacim zeminlerini kontrol ediyoruz. Sökümden sonra gerçek durum netleştiğinde, neyin değişmesi gerektiğini ve neyin kalabileceğini gerekçeleriyle size anlatıyoruz.",
+  },
+  {
+    q: "Küçük metrekareli dairede mutfak ve salonu nasıl kullanışlı hale getiriyorsunuz?",
+    a: "Esenler'deki yoğun yapılaşmada çok sayıda daire kompakt planlı. Mutfakta tezgah ve dolap düzenini yeniden kuruyor, salonu açık raf ve gömme depolamayla hafifletiyoruz. Hedef, daha fazla eşya sığdırmak değil; evde hareket alanı ve düzen hissi yaratmak.",
+  },
+  {
+    q: "Kiracı olarak ev tadilatı yaptırabilir miyim?",
+    a: "Kiracı olarak büyük değişikliklere girişmeden önce ev sahibinin yazılı onayı şart. Boya, dolap ve aydınlatma gibi geri alınabilir ya da düşük müdahaleli işlerle başlamak çoğu zaman daha sağlıklı. Kapsam ev sahibiyle netleşince biz de buna göre bir plan hazırlıyoruz.",
+  },
+  {
+    q: "Keşif için Esenler'de nasıl randevu alabilirim?",
+    a: "Telefon ya da WhatsApp ile yazmanız yeterli. Esenler'in tüm mahallelerinde ücretsiz keşif yapıyoruz. Ölçü alıp mevcut durumu kaydettikten sonra, kapsam ve takvimi içeren yazılı bir teklifi size iletiyoruz.",
+  },
+];
+---
+
+<ServiceLayout
+  title="Esenler İç Mimarlık, Ev Tadilatı ve Dekorasyon"
+  description="Esenler'de apartman dairelerinde iç mimarlık, ev tadilatı ve anahtar teslim dekorasyon. Menderes ve Tuna'da keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/istanbul/esenler-ic-mimarlik`}
+  h1="Esenler İç Mimarlık, Ev Tadilatı ve Dekorasyon"
+  eyebrow="İstanbul · Esenler"
+  lead="Sıkışık planlı ve yoğun apartman dokusuyla öne çıkan bir ilçe. Esenler tadilat projelerinde esas mesele, küçük metrekareyi daha fazla depolama ve daha rahat bir düzenle yeniden kurmak."
+  heroImage={heroPath}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İstanbul", href: `${CANONICAL_BASE}/istanbul` },
+    { label: "Esenler" }
+  ]}
+  structuredData={localSchema}
+>
+
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Esenler'de İç Mimarlık Hizmeti</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Esenler, Avrupa Yakası'nın yoğun apartman dokusuyla tanınan ilçelerinden biri. Menderes, Tuna, Havaalanı ve Davutpaşa gibi mahallelerde genellikle birbirine yakın dizilmiş, orta ölçekli apartman blokları görülüyor. Bu yapı, Esenler'de ev tadilatı yaptırmak isteyen ailelerin ortak sorusunu da ortaya çıkarıyor: sınırlı alanı daha verimli nasıl kullanırız?
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Cevap çoğunlukla ölçüye özel çözümlerde. Hazır dolaplar bu planlara tam oturmadığı için gömme gardırop, mutfakta tavana kadar uzanan dolap kurgusu ve salonda çok amaçlı mobilya düzeni öne çıkıyor. Dekorasyonda ise sade, açık tonlu ve kolay temizlenen yüzeyleri tercih eden aileler çoğunlukta; küçük hacimlerde bu tercih hem genişlik hissi veriyor hem de bakım yükünü azaltıyor.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Eski binalarda sökümden sonra tesisat ve duvar zeminlerinde sürprizlerle karşılaşılabiliyor. Bu yüzden Esenler tadilat işlerinde keşfi titiz yapıyor, kapsamı yazılı çıkarıyor ve söküm sonrası gerçek durumu fotoğraflarla paylaşıyoruz. Asansörsüz veya dar merdivenli binalarda malzeme taşıma planını da baştan kurarak komşularınıza saygılı, düzenli bir şantiye yürütüyoruz.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4">{district.locative} Sunduğumuz Hizmetler</h3>
+      <ul class="space-y-3">
+        {[
+          'Apartman dairelerinde anahtar teslim ev tadilatı',
+          'Küçük metrekarelere özel dolap ve depolama tasarımı',
+          'Mutfak ve banyo yenileme',
+          'Elektrik ve tesisat durumuna göre kapsam belirleme',
+          '3D görselleştirme ile tasarım onayı',
+          'Salon, yatak odası ve çocuk odası dekorasyonu',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+        <p class="text-sm text-charcoal font-medium">Esenler keşif görüşmesi</p>
+        <p class="text-muted text-sm mt-2">
+          Dairenin ölçülerini alıyor, tesisat ve ıslak hacimleri kontrol ediyor, kullanım alışkanlıklarınızı dinliyoruz. Görüşme ücretsiz ve taahhütsüz.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bölge notları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Esenler'de Bölge Notlarımız</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Menderes · Tuna · Davutpaşa</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Orta ölçekli apartman bloklarının yoğun olduğu mahalleler. Dar merdiven ve küçük kabinli asansör ihtimaline karşı dolap elemanlarını parçalı üretip taşıma planını önceden yapıyoruz.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Havaalanı · Oruçreis · Turgut Reis</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Ana yollara yakın cephelerde ses ve toz konforu öne çıkıyor. Pencere çevresi detayları ve yüzey hazırlığına bu yüzden özellikle önem veriyoruz.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Fatih · Kazım Karabekir</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Eski ve yeni yapıların birlikte bulunduğu mahalleler. Eski dairelerde kapsamı sökümden sonra netleştiriyor, değişmesi gerekenleri gerekçesiyle anlatıyoruz.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <DistrictProjects districtSlug="esenler-ic-mimarlik" />
+
+  <ProcessStrip districtSlug="esenler-ic-mimarlik" />
+
+  <DistrictFAQ districtName="Esenler" items={faqItems} />
+
+  <div class="py-12 border-t border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Hizmetlerimiz</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Tüm Hizmetler', href: '/hizmetler' },
+        { label: 'Anahtar Teslim Ev Tadilatı', href: '/hizmetler/anahtar-teslim/ev-tadilat' },
+        { label: 'Mutfak Yenileme', href: '/hizmetler/mutfak-yenileme' },
+        { label: 'Banyo Yenileme', href: '/hizmetler/banyo-yenileme' },
+        { label: 'Bağcılar İç Mimarlık', href: '/istanbul/bagcilar-ic-mimarlik' },
+        { label: 'Bahçelievler İç Mimarlık', href: '/istanbul/bahcelievler-ic-mimarlik' },
+        { label: 'Güngören İç Mimarlık', href: '/istanbul/gungoren-ic-mimarlik' },
+        { label: 'Bayrampaşa İç Mimarlık', href: '/istanbul/bayrampasa-ic-mimarlik' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </div>
+
+  <DistrictBlogLinks districtSlug="esenler-ic-mimarlik" />
+
+  <RelatedDistricts currentSlug="esenler-ic-mimarlik" />
+
+</ServiceLayout>

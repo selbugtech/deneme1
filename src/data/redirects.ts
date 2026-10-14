@@ -152,27 +152,27 @@ export const legacyRedirects: Record<string, string> = {
   '/ucretsiz-kesif-ve-anahtar-teslim-ev-tadilat': '/hizmetler/anahtar-teslim/ev-tadilat',
 
   // Fiyat, maliyet, bütçe ve hesaplama sayfaları — bilgi amaçlı niyet.
-  // → /blog/ev-yenileme-maliyeti-2025  (20)
-  '/anadolu-yakasi-ev-tadilat-fiyatlari-2022': '/blog/ev-yenileme-maliyeti-2025',
-  '/anahtar-teslim-ev-tadilat-butcesi': '/blog/ev-yenileme-maliyeti-2025',
-  '/anahtar-teslim-ev-tadilat-fiyat-2021': '/blog/ev-yenileme-maliyeti-2025',
-  '/anahtar-teslim-tadilat-fiyati-hesapla': '/blog/ev-yenileme-maliyeti-2025',
-  '/anasayfa/blog/ev-tadilat-fiyatlari': '/blog/ev-yenileme-maliyeti-2025',
-  '/detayli-ev-tadilat-uygulama-fiyatlari-2022': '/blog/ev-yenileme-maliyeti-2025',
-  '/en-uygun-fiyatli-ev-tadilatlari-istanbul': '/blog/ev-yenileme-maliyeti-2025',
-  '/ev-tadilat-fiyati-hesapla': '/blog/ev-yenileme-maliyeti-2025',
-  '/ev-tadilat-fiyatlari': '/blog/ev-yenileme-maliyeti-2025',
-  '/ev-tadilat-maliyeti-hesaplama': '/blog/ev-yenileme-maliyeti-2025',
-  '/ev-tadilat-maliyeti-hesaplama-2022': '/blog/ev-yenileme-maliyeti-2025',
-  '/guncel-ev-tadilat-fiyatlari-2022': '/blog/ev-yenileme-maliyeti-2025',
-  '/guncel-ev-tadilat-maliyeti-nasil-hesaplanir': '/blog/ev-yenileme-maliyeti-2025',
-  '/her-butceye-uygun-ev-tadilati': '/blog/ev-yenileme-maliyeti-2025',
-  '/konut-tadilat-kredisi-hesaplama-2022': '/blog/ev-yenileme-maliyeti-2025',
-  '/modern-teslim-ev-tadilat-fiyati-hesaplama': '/blog/ev-yenileme-maliyeti-2025',
-  '/rustik-ev-tadilat-fiyati-hesaplama': '/blog/ev-yenileme-maliyeti-2025',
-  '/tadilat-fiyatlari-2022': '/blog/ev-yenileme-maliyeti-2025',
-  '/tadilat-ve-dekorasyon-fiyatlari': '/blog/ev-yenileme-maliyeti-2025',
-  '/uygun-maliyetli-ev-tadilat': '/blog/ev-yenileme-maliyeti-2025',
+  // → /blog/ev-yenileme-maliyeti  (20)
+  '/anadolu-yakasi-ev-tadilat-fiyatlari-2022': '/blog/ev-yenileme-maliyeti',
+  '/anahtar-teslim-ev-tadilat-butcesi': '/blog/ev-yenileme-maliyeti',
+  '/anahtar-teslim-ev-tadilat-fiyat-2021': '/blog/ev-yenileme-maliyeti',
+  '/anahtar-teslim-tadilat-fiyati-hesapla': '/blog/ev-yenileme-maliyeti',
+  '/anasayfa/blog/ev-tadilat-fiyatlari': '/blog/ev-yenileme-maliyeti',
+  '/detayli-ev-tadilat-uygulama-fiyatlari-2022': '/blog/ev-yenileme-maliyeti',
+  '/en-uygun-fiyatli-ev-tadilatlari-istanbul': '/blog/ev-yenileme-maliyeti',
+  '/ev-tadilat-fiyati-hesapla': '/blog/ev-yenileme-maliyeti',
+  '/ev-tadilat-fiyatlari': '/blog/ev-yenileme-maliyeti',
+  '/ev-tadilat-maliyeti-hesaplama': '/blog/ev-yenileme-maliyeti',
+  '/ev-tadilat-maliyeti-hesaplama-2022': '/blog/ev-yenileme-maliyeti',
+  '/guncel-ev-tadilat-fiyatlari-2022': '/blog/ev-yenileme-maliyeti',
+  '/guncel-ev-tadilat-maliyeti-nasil-hesaplanir': '/blog/ev-yenileme-maliyeti',
+  '/her-butceye-uygun-ev-tadilati': '/blog/ev-yenileme-maliyeti',
+  '/konut-tadilat-kredisi-hesaplama-2022': '/blog/ev-yenileme-maliyeti',
+  '/modern-teslim-ev-tadilat-fiyati-hesaplama': '/blog/ev-yenileme-maliyeti',
+  '/rustik-ev-tadilat-fiyati-hesaplama': '/blog/ev-yenileme-maliyeti',
+  '/tadilat-fiyatlari-2022': '/blog/ev-yenileme-maliyeti',
+  '/tadilat-ve-dekorasyon-fiyatlari': '/blog/ev-yenileme-maliyeti',
+  '/uygun-maliyetli-ev-tadilat': '/blog/ev-yenileme-maliyeti',
 
   // Genel dekorasyon ve iç mimarlık sayfaları.
   // → /hizmetler  (20)
@@ -396,6 +396,10 @@ export const legacyRedirects: Record<string, string> = {
   '/hizmet/magaza-ic-mimarlik.html': '/hizmetler/anahtar-teslim/magaza-dukkan-yenileme',
   '/proje/beykoz-villa.html': '/projeler/beykoz-villa',
   '/proje/sariyer-villa.html': '/istanbul/sariyer-ic-mimarlik',
+
+  // Yıl içeren blog slug'ları yılsız slug'a taşındı (2026-10).
+  '/blog/ev-yenileme-maliyeti-2025': '/blog/ev-yenileme-maliyeti',
+  '/blog/ic-mimarlik-trendleri-2025': '/blog/ic-mimarlik-trendleri',
 
   // Ayni ailedeki diger eski adresler: en yakin liste sayfasina. Ana sayfaya toplu
   // yonlendirmeden farkli — hedef konuyla birebir ortusen hub sayfasi.

@@ -12,6 +12,7 @@ const yenileme = byGroup('anahtar-teslim');
 const tadilat = byGroup('tadilat');
 const mekan = byGroup('mekan');
 const oda = byGroup('oda');
+const dekorasyon = byGroup('dekorasyon');
 
 const itemListSchema = {
   "@context": "https://schema.org",
@@ -223,6 +224,24 @@ const surec = [
     </p>
     <div class="grid md:grid-cols-3 gap-4">
       {oda.map(s => (
+        <a href={s.href} class="group border border-border p-5 hover:border-gold transition-colors duration-200 block">
+          <div class="text-gold mb-3 group-hover:scale-110 transition-transform duration-300 inline-block" set:html={s.icon} />
+          <h3 class="font-display text-base font-bold text-charcoal mb-1 group-hover:text-gold transition-colors">{s.title}</h3>
+          <p class="text-muted text-sm leading-relaxed">{s.desc}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Dekorasyon ve proje -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Dekorasyon ve Proje Hizmetleri</h2>
+    <p class="text-muted leading-relaxed max-w-3xl mb-8">
+      Ev, villa, ofis ve dükkân için dekorasyon; plan değişikliği ve uygulama çizimi gerektiren projeler için
+      mimari proje koordinasyonu. Mekânın kullanımına göre kapsamı birlikte belirliyoruz.
+    </p>
+    <div class="grid md:grid-cols-3 gap-4">
+      {dekorasyon.map(s => (
         <a href={s.href} class="group border border-border p-5 hover:border-gold transition-colors duration-200 block">
           <div class="text-gold mb-3 group-hover:scale-110 transition-transform duration-300 inline-block" set:html={s.icon} />
           <h3 class="font-display text-base font-bold text-charcoal mb-1 group-hover:text-gold transition-colors">{s.title}</h3>

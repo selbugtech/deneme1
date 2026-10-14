@@ -7,6 +7,7 @@ import Projects from '../components/Projects.astro';
 import Contact from '../components/Contact.astro';
 import { CANONICAL_BASE, OG_IMAGE_PATH, TEL_URL, WHATSAPP_URL_PROJECT } from '../config';
 import { ogImageUrl } from '../lib/cloudinary';
+import { projectsByDistrict, relevantProjects } from '../data/projects';
 import { allPosts } from '../data/blog-posts';
 import { getDistrict } from '../data/districts';
 
@@ -21,7 +22,19 @@ interface Props {
   tag?: string;
 }
 
-const { title, description, canonicalUrl, publishDate, readingTime = '5 dk okuma', ogImage, heroImage, tag = 'Rehber' } = Astro.props;
+const { title, description, canonicalUrl, publishDate, readingTime = '5 dk okuma', ogImage, heroImage: heroImageProp, tag = 'Rehber' } = Astro.props;
+
+// Hero görseli verilmeyen yazılar (55 yazının çoğu) düz charcoal blok ve aynı varsayılan
+// og:image ile çıkıyordu. İlçe yazılarında o ilçenin gerçek projesinden, diğerlerinde
+// konuya uygun bir projeden (yola göre rotasyonlu) otomatik görsel seçiyoruz.
+const slugForHero = canonicalUrl.split('/').pop() ?? '';
+const districtMatch = slugForHero.match(/^(.+)-(?:ev-tadilati|ic-mimarlik-ofisleri)$/);
+const districtProject = districtMatch ? projectsByDistrict(`${districtMatch[1]}-ic-mimarlik`)[0] : undefined;
+const autoProject = districtProject ?? relevantProjects(new URL(canonicalUrl).pathname, 1)[0];
+const heroImage = heroImageProp ?? autoProject?.heroImage;
+const heroSrcset = heroImageProp ? undefined : autoProject?.heroSrcset;
+// Eski elle verilen görseller tam boyutta geliyordu (1,7 MB'a kadar): genişliği sınırla.
+const heroSrcFinal = heroImage?.includes('/f_auto,q_auto/') ? heroImage.replace('/f_auto,q_auto/', '/f_auto,q_auto,w_1600/') : heroImage;
 
 // Derive current slug from canonicalUrl, then pick 3 other posts as related.
 // Aynı etiketli yazılar önce gelir; başlangıç noktası yazının sırasına göre
@@ -102,7 +115,11 @@ const breadcrumbSchema = {
     <section class="relative w-full overflow-hidden min-h-[88vh] md:min-h-[85vh] flex items-end">
       {heroImage ? (
         <img
-          src={heroImage}
+          src={heroSrcFinal}
+          srcset={heroSrcset}
+          sizes="100vw"
+          width="1600"
+          height="900"
           alt={displayTitle}
           fetchpriority="high"
           decoding="async"

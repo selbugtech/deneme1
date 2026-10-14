@@ -36,23 +36,27 @@ const faqItems = [
     a: "1. Levent, 4. Levent, Sanayi Mahallesi, Çırağan, Etiler sınırı ve Maslak sınırındaki plazalar dahil bölgenin tamamında çalışıyoruz. Levent ofis kuleleri ve lüks rezidanslar için hem kurumsal hem konut deneyimimiz güçlüdür.",
   },
   {
-    q: "Levent için keşif ve teklif süreci nasıl işliyor?",
-    a: "WhatsApp veya telefon üzerinden randevu alıyor, Levent'teki adresinize ya da plazanıza gelerek ücretsiz keşif yapıyoruz. Yerinde ölçü ve ihtiyaç görüşmesinin ardından 2–3 iş günü içinde detaylı teklif ve mood-board paylaşıyoruz.",
+    q: "Plazadaki ofis katında tadilat için bina yönetiminden neler isteniyor?",
+    a: "Plaza yönetimleri genellikle çalışma saatlerini, yük asansörü randevusunu, ekip giriş-çıkış listesini ve ortak alan koruma önlemlerini önceden yazılı olarak istiyor. Bu başlıkların çoğu ofis tadilatında takvimi doğrudan belirlediği için, yönetim yazışmalarını ve randevu planını işe başlamadan önce tamamlıyoruz.",
   },
   {
-    q: "Levent'te örnek projeleriniz var mı?",
-    a: "Levent'te henüz yayımladığımız bir proje yok; tamamladığımız işlerin tamamını projeler sayfamızda görebilirsiniz. Keşif sırasında plan şemanıza ve kullanım amacınıza en yakın çalışmalarımızı gösteriyoruz.",
+    q: "Levent'te rezidans dairesi tadilatında komşu ve kat mülkiyeti süreci nasıl işler?",
+    a: "Kat mülkiyeti olan binalarda yönetim planındaki kurallar geçerli; gürültülü çalışma saatleri ve ortak alan kullanımı çoğunlukla sınırlı. Komşuları önceden bilgilendirmek, itirazları ve şikayetleri azaltan en pratik adım. Şantiye takvimini bu kurallara göre çıkarıyor, gereken yönetim yazışmalarını sizin adınıza yürütüyoruz.",
+  },
+  {
+    q: "Levent'te hem ofis hem ev için tek ekiple çalışmak mümkün mü?",
+    a: "Evet. Ofis ve konut işlerinde farklı önceliklerle, ancak aynı tasarım ve uygulama ekibiyle ilerliyoruz. Ofiste akustik, aydınlatma ve çalışma akışı; evde depolama ve günlük kullanım öne çıkıyor. Tamamladığımız işleri projeler sayfamızda inceleyebilir, keşifte mekan tipinize en yakın örnekleri görebilirsiniz.",
   },
 ];
 ---
 
 <ServiceLayout
-  title="Levent İç Mimarlık, Ev ve Ofis Yenileme"
-  description="Levent'te iç mimarlık, ev yenileme ve ofis yenileme hizmetleri. Kurumsal mekan ve lüks daire projelerinde Master İç Mimarlık. 0533 039 15 65"
+  title="Levent İç Mimarlık, Ev ve Ofis Tadilatı"
+  description="Levent'te iç mimarlık, ev ve ofis tadilatı, rezidans yenileme. 1. Levent, 4. Levent, Gültepe ve Sanayi Mahallesi'nde aktif. Ücretsiz keşif: 0533 039 15 65"
   canonicalUrl={`${CANONICAL_BASE}/istanbul/levent-ic-mimarlik`}
-  h1="Levent İç Mimarlık ve Ofis Yenileme"
+  h1="Levent İç Mimarlık, Ev ve Ofis Tadilatı"
   eyebrow="İstanbul · Levent"
-  lead="Levent'in kurumsal ve lüks konut dokusuna uygun, hem ev hem ofis yenileme projelerinde deneyimli ekibimizle hizmetinizdeyiz. Plaza ofisleri, lüks rezidanslar ve klasik daireler için 8+ yıllık uygulama deneyimimiz var."
+  lead="Levent'in kurumsal ve lüks konut dokusuna uygun, hem ev hem ofis yenileme projelerinde deneyimli ekibimizle hizmetinizdeyiz. Plaza ofisleri, lüks rezidanslar ve klasik daireler için tadilat ve dekorasyon süreçlerini baştan sona yönetiyoruz."
   heroImage={heroPath}
   breadcrumb={[
     { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
@@ -70,6 +74,9 @@ const faqItems = [
       </p>
       <p class="text-muted leading-relaxed mb-4">
         Levent'te plaza ofisleri ve rezidans daireleri iki ayrı çalışma biçimi gerektiriyor. Ofis tarafında bina yönetiminin çalışma saatleri ve asansör kullanımı planı baştan kuruluyor; konut tarafında ise kat mülkiyeti kuralları ve komşu bildirimi süreci belirleyici oluyor. Her iki durumda da uygulama takvimini bu kısıtlara göre çıkarıyoruz.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Levent'te dekorasyon tercihleri de kullanım türüne göre ayrışıyor. Ofiste akustik, aydınlatma ve marka kimliği; evde ise depolama, ışık ve günlük kullanım kolaylığı öne çıkıyor. İki durumda da tadilata başlamadan önce 3D görselleştirmeyle mekanı birlikte gözden geçirmek, uygulama sırasındaki değişiklik ihtiyacını çoğunlukla azaltıyor.
       </p>
       <p class="text-muted leading-relaxed">
         1. Levent, 4. Levent, Sanayi Mahallesi, Çırağan, Etiler sınırı ve Maslak sınırı başta olmak üzere Levent ve çevresinde aktif olarak hizmet veriyoruz.
@@ -99,6 +106,31 @@ const faqItems = [
     </div>
   </div>
 
+  <!-- Bölge notları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">{district.locative} Bölge Notlarımız</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">1. Levent · 4. Levent</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Plaza ve rezidans yoğunluğunun en fazla olduğu çekirdek hat. Bina yönetiminin çalışma saati, yük asansörü ve giriş-çıkış kuralları şantiye takvimini belirliyor.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Gültepe</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Konut ağırlıklı, daha yerleşik bir çevre. Binanın yaşına göre tesisat ve elektrik kontrolü yapılıyor; mutfak, banyo ve depolama güncellemesi sık gündeme geliyor.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Sanayi Mahallesi</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Ofis ve ticari kullanımın öne çıktığı karma bir çevre. Keşifte önce binanın kullanım türünü ve yönetim kurallarını netleştiriyor, tadilat planını bu çerçevede kuruyoruz.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <DistrictProjects districtSlug="levent-ic-mimarlik" />
 
   <ProcessStrip districtSlug="levent-ic-mimarlik" />
@@ -113,6 +145,11 @@ const faqItems = [
         { label: 'Villa Yenileme', href: `${CANONICAL_BASE}/hizmetler/anahtar-teslim/villa-yenileme` },
         { label: 'Ofis Yenileme', href: `${CANONICAL_BASE}/hizmetler/anahtar-teslim/ofis-yenileme` },
         { label: '3D Tasarım', href: `${CANONICAL_BASE}/hizmetler/3d-tasarim` },
+        { label: 'Ofis Tadilatı', href: '/hizmetler/anahtar-teslim/ofis-tadilat' },
+        { label: 'Ev Tadilatı', href: '/hizmetler/anahtar-teslim/ev-tadilat' },
+        { label: 'İç Mimarlık Danışmanlığı', href: '/hizmetler/ic-mimarlik-danismanligi' },
+        { label: 'Levent İç Mimarlık Ofisleri', href: '/blog/levent-ic-mimarlik-ofisleri' },
+        { label: 'Beşiktaş İç Mimarlık', href: '/istanbul/besiktas-ic-mimarlik' },
       ].map(l => (
         <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
       ))}

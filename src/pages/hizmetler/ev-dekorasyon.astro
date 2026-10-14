@@ -1,0 +1,290 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import ServiceAreaLinks from '../../components/ServiceAreaLinks.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImage } from '../../lib/cloudinary';
+
+const heroPath = '/images/oturmaodasi.jpeg';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Ev Dekorasyon",
+  "name": "İstanbul Ev Dekorasyon",
+  "description": "Daire ve konutlar için plan, renk, aydınlatma, mobilya ve detay kurgusunu bir bütün olarak ele alan ev dekorasyon hizmeti. Tasarım ve uygulama tek elden.",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
+  "areaServed": { "@type": "City", "name": "İstanbul" },
+  "url": `${CANONICAL_BASE}/hizmetler/ev-dekorasyon`,
+};
+
+const faqItems = [
+  {
+    q: "Ev dekorasyon hizmeti tam olarak neyi kapsıyor?",
+    a: "Kapsam evin durumuna ve beklentinize göre değişir. En yalın hâliyle renk, mobilya yerleşimi, perde, aydınlatma ve aksesuar seçimini; daha geniş hâliyle dolap, kaplama, tavan ve boya uygulamalarını da içerir. Elektrik ve tesisat gibi altyapı müdahaleleri gerekiyorsa bu iş kalemleri dekorasyondan ayrı, tadilat kapsamında değerlendirilir. Keşifte evi görerek hangi kapsamın size uygun olduğunu net biçimde söylüyoruz.",
+  },
+  {
+    q: "Dekorasyon için evi boşaltmam gerekir mi?",
+    a: "Çoğu zaman gerekmez. Mobilya, perde ve aydınlatma ağırlıklı bir dekorasyonda oda oda ilerleyerek evde yaşamaya devam edebilirsiniz. Boya, zemin veya dolap montajı gibi toz ve koku üreten işlerde ise ilgili odanın geçici olarak boşaltılması işi hem hızlandırır hem de eşyalarınızı korur. Bu planı iş başlamadan birlikte yapıyoruz.",
+  },
+  {
+    q: "Mevcut mobilyalarımı kullanmaya devam edebilir miyim?",
+    a: "Evet. İyi bir dekorasyon, elinizdeki sağlam ve sevdiğiniz parçaları yeni kurguya yerleştirmeyi de içerir. Keşifte mevcut mobilyaları gözden geçirir; boyut, malzeme ve stil olarak uyum sağlayanları koruyup eksik parçalar için yeni öneriler sunarız. Böylece her şeyi baştan almak zorunda kalmazsınız.",
+  },
+  {
+    q: "Tasarımı uygulamadan önce görebilir miyim?",
+    a: "Evet. Karar vermeden önce renk, malzeme ve yerleşimi görebilmeniz için 3D görselleştirme çalışması yapıyoruz. Görsel üzerinde yapılan değişiklikler uygulama sırasında yapılacak değişikliklere göre çok daha kolaydır; bu yüzden tasarım onayı alınmadan uygulamaya geçmiyoruz.",
+  },
+  {
+    q: "Kiralık evde dekorasyon yapılabilir mi?",
+    a: "Yapılabilir, ancak kapsamı kalıcı müdahale gerektirmeyen çözümlerle sınırlamak gerekir. Taşınabilir mobilya, perde, halı, aydınlatma armatürleri ve ev sahibinin izin verdiği yüzey değişiklikleri bu çerçevede ele alınır. Duvar ve zemine kalıcı müdahaleler için önce ev sahibinden yazılı onay almanızı öneririz.",
+  },
+  {
+    q: "Dekorasyon süresi neye göre değişir?",
+    a: "Süreyi en çok ölçüye özel üretim gerektiren kalemler belirler. Hazır mobilya ve aksesuar ağırlıklı işler kısa sürede tamamlanabilir; ölçüye özel dolap, kaplama ve ses-ısı yalıtımı gibi uygulamalar ise üretim ve montaj süresi nedeniyle daha uzun bir takvim gerektirir. Net takvimi keşiften sonra, kapsam belli olunca paylaşıyoruz.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const dahil = [
+  'Yerinde keşif ve yaşam alışkanlıklarının analizi',
+  'Plan ve mobilya yerleşim kurgusu',
+  'Renk, doku ve malzeme paleti',
+  'Aydınlatma senaryosu ve armatür seçimi',
+  'Perde, halı ve tekstil önerileri',
+  'Ölçüye özel dolap ve mobilya tasarımı',
+  'Duvar, tavan ve zemin yüzey uygulamaları',
+  'Aksesuar ve son dokunuş stilizasyonu',
+];
+
+const kararlar = [
+  { t: 'Plan ve dolaşım', d: 'Dekorasyonun ilk kararı mobilyanın nereye konacağıdır. Kapı açılımları, geçiş genişlikleri ve oturma grubunun televizyona ya da manzaraya göre konumu belirlenmeden alınan her parça sonradan sorun çıkarabilir. Plan şemasını mobilya seçiminden önce kuruyoruz.' },
+  { t: 'Renk ve ışık ilişkisi', d: 'Aynı renk kuzeye bakan bir odada soğuk, güneye bakan odada sıcak görünür. Bu yüzden renk paletini katalogdaki hâliyle değil, odanın aldığı doğal ışığa ve gün içindeki değişimine göre belirliyoruz.' },
+  { t: 'Katmanlı aydınlatma', d: 'Tek bir tavan armatürü evi aydınlatır ama atmosfer yaratmaz. Genel, görev ve vurgu aydınlatmayı ayrı devrelerde kurmak, aynı odanın gündüz çalışma, akşam dinlenme düzenine geçebilmesini sağlar.' },
+  { t: 'Depolama ve düzen', d: 'Dekorasyonun uzun ömürlü olması, eşyaların bir yeri olmasına bağlıdır. Giriş, salon ve yatak odasındaki depolama ihtiyacını baştan hesaplayıp ölçüye özel çözümlerle karşılamak, evin dağınık görünmesini önler.' },
+];
+
+const hatalar = [
+  { t: 'Önce mobilya, sonra plan', d: 'Beğenilen bir koltuk takımı satın alındıktan sonra odaya sığmadığı fark edilebilir. Ölçüleri ve yerleşimi önce kağıt üzerinde, ardından 3D görselde denemek bu riski ortadan kaldırır.' },
+  { t: 'Her odayı ayrı kurgulamak', d: 'Odalar kendi içinde güzel olsa da birbirine bağlanmadığında ev parçalı görünür. Ortak bir renk ve malzeme dili kullanmak, odalar arasındaki geçişi doğal kılar.' },
+  { t: 'Aydınlatmayı en sona bırakmak', d: 'Tavan ve duvar kurgusu bittikten sonra eklenen aydınlatma, kablo ve spot konumları açısından kısıtlı kalır. Aydınlatma senaryosu, boya ve tavan işleri başlamadan önce belli olmalıdır.' },
+  { t: 'Trendi mekâna uydurmaya çalışmak', d: 'Her trend her eve yakışmaz. Evin mimarisini, tavan yüksekliğini ve kullananların alışkanlıklarını esas almak, birkaç sezon sonra da yadırganmayan bir sonuç verir.' },
+];
+
+const surec = [
+  { no: '01', t: 'Keşif', d: 'Ev yerinde incelenir, yaşam alışkanlıkları ve beklentiler dinlenir.' },
+  { no: '02', t: 'Konsept', d: 'Plan, renk ve malzeme önerileri bir konsept dosyasında toplanır.' },
+  { no: '03', t: '3D Görsel', d: 'Mekân görselleştirilir, değişiklikler uygulamadan önce yapılır.' },
+  { no: '04', t: 'Uygulama', d: 'Üretim, yüzey işleri ve montaj tek ekiple koordine edilir.' },
+  { no: '05', t: 'Stilizasyon', d: 'Aksesuar ve aydınlatma ile ev yerleştirilir, teslim edilir.' },
+];
+---
+
+<ServiceLayout
+  title="İstanbul Ev Dekorasyon | Daire ve Konut Dekorasyonu"
+  description="İstanbul ev dekorasyon hizmeti: plan, renk, aydınlatma, ölçüye özel mobilya ve uygulama tek elden. 3D tasarımla onaylayın. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/hizmetler/ev-dekorasyon`}
+  h1="İstanbul Ev Dekorasyon"
+  eyebrow="Dekorasyon"
+  lead="Daire ve konutlarda plan, renk, aydınlatma ve mobilyayı tek bir bütün olarak kuruyoruz. Karar vermeden önce 3D görselle görüyor, uygulamayı aynı ekiple tamamlıyoruz."
+  heroImage={heroPath}
+  ogImage={optimizedImage(heroPath)}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
+    { label: "Ev Dekorasyon" }
+  ]}
+  structuredData={[serviceSchema, faqSchema]}
+>
+
+  <section class="py-12 border-b border-border">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-3xl font-bold text-charcoal mb-4">İstanbul'da Ev Dekorasyon Nasıl Yürür?</h2>
+        <p class="text-muted leading-relaxed mb-4">
+          Ev dekorasyonu çoğu zaman bir mobilya seçimi gibi algılanır; oysa iyi sonuç veren dekorasyon bir plan
+          işidir. Hangi duvarın boş bırakılacağı, ışığın nereden geleceği, eşyaların nerede saklanacağı ve evin
+          içinde nasıl dolaşılacağı belirlendikten sonra mobilya ve aksesuar seçimi çok daha kolay ve isabetli hâle gelir.
+        </p>
+        <p class="text-muted leading-relaxed mb-4">
+          Çalışmaya evi gezerek ve orada yaşayanları dinleyerek başlıyoruz. Evde kaç kişi yaşıyor, gün içinde hangi
+          oda ne amaçla kullanılıyor, misafir ağırlama sıklığı nedir, evden çalışılıyor mu gibi sorular, estetik
+          tercihlerden en az o kadar belirleyicidir. Dekorasyon, yaşam biçimine uymuyorsa güzel görünse bile yorucu olur.
+        </p>
+        <p class="text-muted leading-relaxed">
+          İstanbul'un yapı stokunda farklı ev tipleriyle çalışıyoruz: tavan yüksekliği fazla, odaları geniş eski
+          apartman daireleri, açık planlı yeni site daireleri ve metrekaresi sınırlı küçük konutlar. Her biri
+          farklı bir yaklaşım ister; küçük bir dairede çok amaçlı mobilya ve açık renkler öne çıkarken, yüksek tavanlı
+          bir dairede dikey vurgu ve katmanlı aydınlatma daha iyi sonuç verir.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-charcoal mb-4">Hizmete dahil olanlar</h3>
+        <ul class="space-y-3">
+          {dahil.map(item => (
+            <li class="flex items-start gap-3 text-sm text-muted">
+              <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+                <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+          <p class="text-sm text-charcoal font-medium">Altyapı da yenilenecek mi?</p>
+          <p class="text-muted text-sm mt-2">
+            Elektrik, tesisat veya duvar değişikliği gerekiyorsa
+            <a href="/hizmetler/anahtar-teslim/ev-tadilat" class="text-gold hover:underline">ev ve daire tadilat</a>
+            hizmetimiz, yalnızca yüzey ve donanım güncellemesi için
+            <a href="/hizmetler/anahtar-teslim/ev-yenileme" class="text-gold hover:underline">ev yenileme</a>
+            sayfamız size daha uygun olabilir.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Dekorasyonda Sonucu Belirleyen Kararlar</h2>
+    <p class="text-muted leading-relaxed max-w-3xl mb-8">
+      Aşağıdaki dört konu, keşif görüşmesinde mutlaka konuştuğumuz ve evin son hâlini en çok etkileyen başlıklardır.
+      Doğru sırayla alındıklarında hem uygulama kolaylaşır hem de sonradan düzeltme ihtiyacı azalır.
+    </p>
+    <div class="grid md:grid-cols-2 gap-6">
+      {kararlar.map(k => (
+        <div class="border border-border p-7 bg-[#FAF6F1]">
+          <h3 class="font-display text-lg font-bold text-charcoal mb-2">{k.t}</h3>
+          <p class="text-muted text-sm leading-relaxed">{k.d}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Odalara Göre Dekorasyon Yaklaşımı</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div>
+        <h3 class="font-semibold text-charcoal mb-2">Salon</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Salon, evin hem karşılama hem dinlenme alanıdır. Oturma grubunun yerleşimi, televizyon ve sohbet ekseninin
+          dengelenmesi, aydınlatmanın katmanlı kurulması ana konulardır. Ayrıntılı yaklaşım için
+          <a href="/hizmetler/salon-tasarimi" class="text-gold hover:underline">salon ve oturma odası tasarımı</a>
+          sayfamıza ve <a href="/blog/salon-dekorasyon-fikirleri" class="text-gold hover:underline">salon dekorasyon fikirleri</a>
+          yazımıza bakabilirsiniz.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-charcoal mb-2">Yatak odası</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Yatak odasında amaç dinlendirici bir atmosfer kurmaktır: sakin bir renk paleti, gün ışığını kontrol eden
+          perde çözümleri ve gizli depolama bu odanın temelidir.
+          <a href="/hizmetler/yatak-odasi-tasarimi" class="text-gold hover:underline">Yatak odası tasarımı</a>
+          sayfamızda bu yaklaşımı daha ayrıntılı anlatıyoruz.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-charcoal mb-2">Mutfak ve giriş</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Mutfak ve giriş, dekorasyonla işlevin en sıkı iç içe geçtiği alanlardır. Ölçüye özel
+          <a href="/hizmetler/mutfak-dolabi" class="text-gold hover:underline">mutfak dolabı</a>,
+          girişte askılık ve ayakkabı depolaması gibi çözümler, evin ilk izlenimini ve günlük düzenini doğrudan etkiler.
+        </p>
+      </div>
+    </div>
+    <p class="text-muted leading-relaxed max-w-3xl mt-8 text-sm">
+      Dekorasyon kararları yüzey uygulamalarıyla da bağlantılıdır. Duvar renkleri ve dokular için
+      <a href="/hizmetler/boya-badana" class="text-gold hover:underline">boya ve badana</a>, tavan kurgusu ve gizli ışık için
+      <a href="/hizmetler/alcipan-asma-tavan" class="text-gold hover:underline">alçıpan ve asma tavan</a>
+      hizmetlerimizden de yararlanabilirsiniz.
+    </p>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Ev Dekorasyonunda Sık Görülen Dört Hata</h2>
+    <p class="text-muted leading-relaxed max-w-3xl mb-8">
+      Memnuniyetsizliklerin büyük bölümü, tasarım aşamasında kolayca önlenebilecek bu dört başlıkta toplanıyor.
+    </p>
+    <div class="space-y-4">
+      {hatalar.map((h, i) => (
+        <div class="flex gap-5 border border-border p-6 bg-[#FAF6F1]">
+          <p class="font-display text-2xl font-bold text-gold/40 shrink-0">0{i + 1}</p>
+          <div>
+            <h3 class="font-semibold text-charcoal mb-1">{h.t}</h3>
+            <p class="text-muted text-sm leading-relaxed">{h.d}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Ev Dekorasyon Sürecimiz</h2>
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+      {surec.map(s => (
+        <div>
+          <p class="font-display text-2xl font-bold text-gold/40 mb-2">{s.no}</p>
+          <h3 class="font-semibold text-charcoal text-sm mb-2">{s.t}</h3>
+          <p class="text-muted text-xs leading-relaxed">{s.d}</p>
+        </div>
+      ))}
+    </div>
+    <p class="text-muted leading-relaxed max-w-3xl mt-8 text-sm">
+      Süreç boyunca tek bir muhatabınız olur. Tasarım ve uygulama aynı ekipte yürüdüğü için çizimde görülen ile
+      sahada yapılan arasında kopukluk yaşanmaz. Görsel tasarım desteği için
+      <a href="/hizmetler/3d-tasarim" class="text-gold hover:underline">3D tasarım</a> ve
+      <a href="/hizmetler/ic-mimarlik-danismanligi" class="text-gold hover:underline">iç mimarlık danışmanlığı</a>
+      hizmetlerimizi de ayrı olarak alabilirsiniz.
+    </p>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Hizmet Verdiğimiz İlçeler</h2>
+    <ServiceAreaLinks names={['Kadıköy', 'Beşiktaş', 'Şişli', 'Ataşehir', 'Üsküdar', 'Bakırköy', 'Maltepe', 'Sarıyer', 'Beylikdüzü', 'Başakşehir']} />
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="w-8 h-px bg-gold"></span>
+      <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Sıkça Sorulan Sorular</span>
+    </div>
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Ev dekorasyon hakkında</h2>
+    <div class="space-y-4">
+      {faqItems.map(f => (
+        <details class="border border-border bg-[#FAF6F1] p-6 group">
+          <summary class="font-semibold text-charcoal cursor-pointer list-none flex items-start justify-between gap-4">
+            <span>{f.q}</span>
+            <span class="text-gold shrink-0 transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="text-muted text-sm leading-relaxed mt-4">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">İlgili Sayfalar</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Küçük Daire Dekorasyon Fikirleri', href: '/blog/kucuk-daire-dekorasyon-fikirleri' },
+        { label: 'Ev Aydınlatma Rehberi', href: '/blog/ev-aydinlatma-rehberi' },
+        { label: 'İç Mimarlık Trendleri', href: '/blog/ic-mimarlik-trendleri' },
+        { label: 'Villa Dekorasyon', href: '/hizmetler/villa-dekorasyon' },
+        { label: 'Ev Tadilat', href: '/hizmetler/anahtar-teslim/ev-tadilat' },
+        { label: 'İstanbul Hizmet Bölgeleri', href: '/istanbul' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </section>
+
+</ServiceLayout>

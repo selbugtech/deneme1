@@ -1,0 +1,174 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictBlogLinks from '../../components/DistrictBlogLinks.astro';
+import DistrictFAQ from '../../components/DistrictFAQ.astro';
+import ProcessStrip from '../../components/ProcessStrip.astro';
+import DistrictProjects from '../../components/DistrictProjects.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImageW } from '../../lib/cloudinary';
+import { getDistrict } from '../../data/districts';
+
+// İlçe adı ve bulunma hali eki tek kaynaktan: src/data/districts.ts.
+const district = getDistrict('silivri-ic-mimarlik')!;
+const heroPath = '/images/salon1.png';
+const heroAbs = optimizedImageW(heroPath, 1600);
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "İç mimarlık, tadilat ve ev yenileme",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
+  "areaServed": { "@type": "Place", "name": "Silivri, İstanbul" },
+  "url": `${CANONICAL_BASE}/istanbul/silivri-ic-mimarlik`,
+  "description": "Silivri'de sahil villaları, yazlık konutlar ve site daireleri için iç mimarlık, ev tadilatı ve dekorasyon.",
+  "image": heroAbs,
+};
+
+const faqItems = [
+  {
+    q: "Yazlık veya sezonluk kullandığım evin tadilatını sezon dışında yaptırmak mantıklı mı?",
+    a: "Evet, çoğu zaman en verimli yol bu. Ev boşken ekip rahat çalışıyor, komşu ve site yönetimiyle çakışma azalıyor, boya ve yüzey işleri için gerekli kuruma süreleri kimseyi bekletmeden geçiyor. Yazlıklarda sezon açılmadan önce teslim almak en çok tercih edilen takvim; projenin kapsamına göre bu planı birlikte kuruyoruz.",
+  },
+  {
+    q: "Denize yakın evlerde nem ve tuzlu hava iç mekân seçimlerini nasıl etkiliyor?",
+    a: "Sahile yakın konutlarda nem, kapı-pencere doğramasında, ahşap yüzeylerde, metal aksesuarlarda ve dolap içlerinde daha çabuk belli oluyor. Bu yüzden malzeme seçiminde su ve neme dayanıklı yüzeyleri, iyi havalandırılan dolap kurgularını ve korozyona karşı uygun donanımı öne alıyoruz. Güzel görünen ama bakım isteyen malzemeleri baştan tartışıyoruz.",
+  },
+  {
+    q: "Silivri'de villa bahçesi ve terası iç mekânla nasıl bütünleştirilir?",
+    a: "Bahçe ve teras, Silivri'deki villaların en değerli alanı. Salon veya mutfaktan dışarıya geçişin zeminle, aydınlatmayla ve açıklıklarla sürekli bir akışa dönüşmesini hedefliyoruz. Dış mekânda gölgelik, oturma düzeni ve gece aydınlatması gibi kalemleri iç tasarımla aynı dilde ele alıyoruz.",
+  },
+  {
+    q: "Selimpaşa'da yaptığınız villa projesine bakabilir miyim?",
+    a: "Selimpaşa'da deniz manzaralı bir villayı komple yeniledik. Uygulama sürecini ve sonucu proje sayfasında yayımladık; bölgedeki benzer bir evi düşünüyorsanız önce o sayfaya göz atmanızı, ardından keşifte ihtiyaçlarınızı konuşmayı öneririz.",
+  },
+  {
+    q: "Şehir merkezinden uzakta olan evlere ekip ve malzeme nasıl ulaşıyor?",
+    a: "Silivri, şehir merkezine göre uzak bir konumda olduğu için sevkiyat planı şantiye takviminin önemli parçası. Ölçüye özel üretimleri ve ağır malzemeleri tek seferde gruplayarak getiriyoruz, ekibi de sahada boş bekleme oluşmayacak şekilde yönlendiriyoruz. Keşif randevusu için WhatsApp veya telefonla ulaşabilirsiniz.",
+  },
+];
+---
+
+<ServiceLayout
+  title="Silivri İç Mimarlık, Villa Tadilatı ve Dekorasyon"
+  description="Silivri'de sahil villası, yazlık ve site dairesi için iç mimarlık, ev tadilatı ve dekorasyon. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/istanbul/silivri-ic-mimarlik`}
+  h1="Silivri İç Mimarlık, Villa Tadilatı ve Dekorasyon"
+  eyebrow="İstanbul · Silivri"
+  lead="Deniz kıyısındaki villalar, yazlıklar ve site daireleri. Silivri'de tadilat; nem, manzara ve mevsimlik kullanım gibi sahile özgü konuların hesaba katıldığı bir iş."
+  heroImage={heroPath}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İstanbul", href: `${CANONICAL_BASE}/istanbul` },
+    { label: "Silivri" }
+  ]}
+  structuredData={localSchema}
+>
+
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Silivri'de İç Mimarlık Hizmeti</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Silivri, İstanbul'un batı ucunda Marmara kıyısı boyunca uzanan ve şehrin geri kalanından farklı bir tempoya sahip bir ilçe. Selimpaşa, Değirmenköy ve Gümüşyaka çevresinde sahile yakın villalar, müstakil evler ve yazlık siteler öne çıkıyor. Bu konutların bir bölümü yıl boyu oturulan ev olarak, bir bölümü ise hafta sonu ve yaz aylarında kullanılan ikinci konut olarak değerlendiriliyor. Tadilat ve dekorasyon kararlarını da buna göre vermek gerekiyor.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Sahil konutlarında ilk akla gelen konu nem. Denize yakın evlerde ahşap yüzeyler, doğrama, metal aksesuar ve dolap içleri çabuk etkilenebiliyor. İç mimarlık çalışmamızda bu yüzden estetik tercihle birlikte malzemenin dayanıklılığını ve bakım ihtiyacını da konuşuyoruz. Havalandırması iyi kurgulanmış dolaplar, neme dayanıklı yüzeyler ve kolay temizlenen zeminler, Silivri ev tadilatında sık tercih edilen çözümler oluyor.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        İkinci konut kullanımı bir başka belirleyici. Yazlıkta kalabalık bir aile ya da misafir ağırlandığı için yatak ve oturma kapasitesi, ortak alanların esnek kullanımı ve depolama öne çıkıyor. Kış boyunca kapalı kalan evde ise güvenlik, yalıtım ve kolay bakım önem kazanıyor. Silivri'de dekorasyon projelerini kurarken bu iki kullanım senaryosunu birlikte düşünüyoruz.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Villalarda manzara ve bahçe tasarımın başrolünde. Geniş açıklıkları, teras ve bahçe geçişlerini iç mekânla birleştirmek, aydınlatmayı gün ışığına ve akşam kullanımına göre katmanlamak gerekiyor. Selimpaşa'da tamamladığımız villa bu yaklaşımın somut örneklerinden biri. Projenin süreci ve sonuçları sayfasında paylaşıldı.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Mimar Sinan, Fevzipaşa, Cumhuriyet ve Piri Mehmet Paşa gibi yerleşik mahallelerde ise daha çok yıl boyu oturulan apartman ve site daireleri görüyoruz. Bu evlerde mutfak ve banyo yenileme, depolama çözümleri ve salonun gerçek kullanıma göre yeniden düzenlenmesi öne çıkıyor.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4">{district.locative} Sunduğumuz Hizmetler</h3>
+      <ul class="space-y-3">
+        {[
+          'Sahil villası ve yazlık için komple iç mimari tasarım',
+          'Anahtar teslim ev tadilatı ve yenileme',
+          'Neme dayanıklı malzeme ve dolap çözümleri',
+          'Bahçe, teras ve iç mekân bağlantısının kurgulanması',
+          'Mutfak ve banyo yenileme',
+          'Misafir ağırlamaya uygun yatak ve oturma kurguları',
+          'Sezon öncesi teslim edilen planlı şantiye takvimi',
+          '3D görselleştirme ile tasarım onayı',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+        <p class="text-sm text-charcoal font-medium">Selimpaşa'daki villa projemiz</p>
+        <p class="text-muted text-sm mt-2">
+          Selimpaşa'da deniz manzaralı konumdaki bir villayı komple yeniledik. Manzarayı içeri taşıyan açıklıklar, doğal malzemeler ve özel mobilyalar projenin temelini oluşturdu. Uygulama ayrıntıları proje sayfasında.
+        </p>
+        <a href="/projeler/selimpasa-villa" class="text-xs text-gold hover:underline mt-2 inline-block">Selimpaşa villa projesi →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bölge notları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Silivri'de Bölge Notlarımız</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Selimpaşa · Değirmenköy · Gümüşyaka</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Sahil şeridine yakın villa ve yazlık yoğunluğu. Nem, manzara ve mevsimlik kullanım bu hattaki projelerin ana başlıkları; malzeme seçimi bu üçlüye göre yapılıyor.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Mimar Sinan · Fevzipaşa · Cumhuriyet</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Yıl boyu oturulan apartman ve site dairelerinin yoğunlaştığı yerleşik mahalleler. Mutfak, banyo ve depolama yenilemeleri en sık talep gelen kalemler.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Piri Mehmet Paşa · Kavaklı</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Müstakil ve bahçeli konutların da görüldüğü bölge. Dış mekân düzeni ve ısıtma-aydınlatma kurgusu, iç mimari kararlarla birlikte ele alınıyor.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <DistrictProjects districtSlug="silivri-ic-mimarlik" />
+
+  <ProcessStrip districtSlug="silivri-ic-mimarlik" />
+
+  <DistrictFAQ districtName="Silivri" items={faqItems} />
+
+  <div class="py-12 border-t border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Hizmetlerimiz</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Tüm Hizmetler', href: '/hizmetler' },
+        { label: 'Villa Tadilatı', href: '/hizmetler/anahtar-teslim/villa-tadilat' },
+        { label: 'Villa Yenileme', href: '/hizmetler/anahtar-teslim/villa-yenileme' },
+        { label: 'Anahtar Teslim Ev Yenileme', href: '/hizmetler/anahtar-teslim/ev-yenileme' },
+        { label: 'Banyo Yenileme', href: '/hizmetler/banyo-yenileme' },
+        { label: 'Yatak Odası Tasarımı', href: '/hizmetler/yatak-odasi-tasarimi' },
+        { label: 'İstanbul Villa Tadilatı Rehberi', href: '/blog/villa-tadilati-istanbul' },
+        { label: 'Büyükçekmece İç Mimarlık', href: '/istanbul/buyukcekmece-ic-mimarlik' },
+        { label: 'Beylikdüzü İç Mimarlık', href: '/istanbul/beylikduzu-ic-mimarlik' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </div>
+
+  <DistrictBlogLinks districtSlug="silivri-ic-mimarlik" />
+
+  <RelatedDistricts currentSlug="silivri-ic-mimarlik" />
+
+</ServiceLayout>

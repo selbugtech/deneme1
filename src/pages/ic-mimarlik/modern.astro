@@ -1,5 +1,6 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import StyleNextSteps from '../../components/StyleNextSteps.astro';
 import { CANONICAL_BASE } from '../../config';
 import { optimizedImage, ogImageUrl } from '../../lib/cloudinary';
 import { styles } from '../../data/styles';
@@ -204,11 +205,13 @@ const hatalar = [
         { label: 'Salon Tasarımı', href: '/hizmetler/salon-tasarimi' },
         { label: 'Anahtar Teslim Ev Yenileme', href: '/hizmetler/anahtar-teslim/ev-yenileme' },
         { label: '3D Tasarım', href: '/hizmetler/3d-tasarim' },
-        { label: 'İç Mimarlık Trendleri', href: '/blog/ic-mimarlik-trendleri-2025' },
+        { label: 'İç Mimarlık Trendleri', href: '/blog/ic-mimarlik-trendleri' },
       ].map(l => (
         <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
       ))}
     </div>
   </section>
+
+  <StyleNextSteps styleName="Modern" />
 
 </ServiceLayout>

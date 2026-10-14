@@ -1,0 +1,281 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import ServiceAreaLinks from '../../components/ServiceAreaLinks.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImage } from '../../lib/cloudinary';
+
+const heroPath = '/images/salon6.jpeg';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Dükkan Dekorasyon",
+  "name": "İstanbul Dükkan ve Mağaza Dekorasyon",
+  "description": "Mağaza, dükkan ve cafe için vitrin, tezgah, raf ve aydınlatma odaklı iç mekân dekorasyonu. Müşteri akışına ve marka kimliğine göre kurgu.",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
+  "areaServed": { "@type": "City", "name": "İstanbul" },
+  "url": `${CANONICAL_BASE}/hizmetler/dukkan-dekorasyon`,
+};
+
+const faqItems = [
+  {
+    q: "Dükkan dekorasyonunda en önemli unsur nedir?",
+    a: "Tek bir unsur söylemek zor ama vitrin, aydınlatma ve müşteri akışı bir arada en belirleyici üçlüdür. Vitrin ilgiyi çeker, aydınlatma ürünü ve atmosferi öne çıkarır, akış ise müşterinin dükkânda nasıl dolaşacağını belirler. Bu üçü birlikte kurgulanmadığında güzel malzemeler bile istenen etkiyi vermeyebilir.",
+  },
+  {
+    q: "Cafe ve restoranlar için de dekorasyon yapıyor musunuz?",
+    a: "Evet. Cafe ve küçük yeme-içme mekânlarında tezgah, oturma düzeni ve atmosfer dekorasyonunu ele alıyoruz. Ancak mutfak altyapısı, havalandırma ve ruhsat gerektiren kapsamlı dönüşümler için cafe ve restoran tadilat sayfamızdaki kapsam daha uygun olabilir; keşifte hangisinin size gerektiğini birlikte belirliyoruz.",
+  },
+  {
+    q: "Dükkânı açık tutarak dekorasyon yapılabilir mi?",
+    a: "Çalışmanın niteliğine göre değişir. Aksesuar, aydınlatma ve raf düzenlemesi gibi işlerde kısa kapanışlar yeterli olabilir. Zemin, tavan ve tezgah değişikliği içeren işlerde ise kapalı kalınacak süreyi kısa tutmak için önceden üretim yapıp montajı hızlı tamamlamak tercih edilir. Kapalı kalma süresini baştan planlayıp sizinle paylaşıyoruz.",
+  },
+  {
+    q: "Vitrin tasarımı hangi aşamada ele alınır?",
+    a: "Vitrin, dükkânın dışarıya açılan yüzü olduğu için konsept aşamasında ele alınır ve iç mekânla birlikte düşünülür. Vitrin aydınlatması, mevsimsel değişime uygun raf sistemi ve iç mekâna görsel geçiş bu aşamada planlanır. Ayrıca belediye veya bina yönetiminin tabela ve cephe kurallarının bulunabileceğini hatırlatırız.",
+  },
+  {
+    q: "Ölçüye özel raf ve tezgah üretimi yapıyor musunuz?",
+    a: "Evet. Ürün gruplarına, stok miktarına ve satış yöntemine göre tasarlanmış raf, tezgah ve teşhir üniteleri hazırlıyor, üretim ve montajını koordine ediyoruz. Dar veya düzensiz dükkân planlarında ölçüye özel üretim, hazır sistemlerin bırakacağı boşlukları ortadan kaldırır.",
+  },
+  {
+    q: "Dükkân dekorasyonunun amacı yalnızca güzel görünmek mi?",
+    a: "Hayır. Güzel görünmek önemlidir ama asıl amaç, dükkânın işlevini yerine getirmesidir: ürün öne çıkmalı, kasa alanı verimli çalışmalı, müşteri rahat dolaşmalı, personel stoka kolay ulaşmalıdır. Bu yüzden keşifte markanız ve satış yönteminiz hakkında konuşur, dekorasyonu buna göre kurarız.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const dahil = [
+  'Yerinde keşif ve müşteri akışı analizi',
+  'Vitrin ve cephe kurgusu önerileri',
+  'Ölçüye özel raf, tezgah ve teşhir üniteleri',
+  'Kasa ve karşılama alanı yerleşimi',
+  'Ürün odaklı aydınlatma tasarımı',
+  'Marka kimliğine uygun renk ve malzeme paleti',
+  'Tavan, duvar ve zemin yüzey uygulamaları',
+  'Deneme kabini ve depo alanı düzenlemesi',
+];
+
+const konular = [
+  { t: 'Vitrin ve ilk izlenim', d: 'Müşteri dükkâna girmeye vitrinin önünde karar verir. Vitrin kompozisyonu, ışığı ve değiştirilebilirliği; sezonluk kampanya ve yeni ürünler için hızlıca yeniden düzenlenebilir olmalıdır.' },
+  { t: 'Müşteri akışı', d: 'Girişten kasaya uzanan yolun üzerinde ürünlerin nasıl göründüğü satışı etkiler. Çok dar geçişler müşteriyi rahatsız eder, çok geniş boşluklar ise dükkânı boş gösterir; dengeyi mekân ölçüsüne göre kurarız.' },
+  { t: 'Ürün odaklı aydınlatma', d: 'Genel aydınlatmaya ek olarak vurgu ışığı, ürünün renk ve dokusunu doğru gösterir. Yanlış renk sıcaklığı ürünü olduğundan farklı gösterebilir; bu yüzden mağaza tipine göre ışık senaryosu hazırlanır.' },
+  { t: 'Dayanıklı malzeme', d: 'Dükkânlar yoğun kullanıma ve sık temizliğe maruz kalır. Zemin, tezgah ve raf yüzeylerinin çizilmeye ve nemli silmeye dayanıklı olması bakım yükünü azaltır.' },
+];
+
+const hatalar = [
+  { t: 'Dükkânı ürünle doldurmak', d: 'Her rafı doldurmak, ürünün değerini düşürür. Boşluk, vurgu yaratır; öne çıkarılacak ürünleri belirlemek dekorasyonun bir parçasıdır.' },
+  { t: 'Vitrin ve iç mekânı ayrı düşünmek', d: 'Vitrinde verilen söz iç mekânda tutulmuyorsa müşteri hayal kırıklığı yaşar. İkisi aynı dili konuşmalıdır.' },
+  { t: 'Depo ve kasa alanını sona bırakmak', d: 'Kasa, paketleme ve stok alanı planlanmadığında günlük operasyon yavaşlar. Bu alanlar baştan yer ayrılarak tasarlanmalıdır.' },
+  { t: 'Aydınlatmayı tek tip seçmek', d: 'Her yeri aynı şiddette aydınlatmak, düz ve ilgisiz bir atmosfer yaratır. Katmanlı ışık, derinlik ve vurgu sağlar.' },
+];
+
+const surec = [
+  { no: '01', t: 'Keşif', d: 'Dükkân, ürün grubu ve müşteri profili yerinde değerlendirilir.' },
+  { no: '02', t: 'Konsept', d: 'Akış, vitrin, raf ve aydınlatma kurgusu hazırlanır.' },
+  { no: '03', t: '3D Görsel', d: 'Mağaza görselleştirilir, kararlar onaylanır.' },
+  { no: '04', t: 'Üretim', d: 'Raf ve tezgah üretimi yapılırken yüzey işleri sürer.' },
+  { no: '05', t: 'Montaj ve Teslim', d: 'Montaj, aydınlatma ayarı ve teslim yapılır.' },
+];
+---
+
+<ServiceLayout
+  title="İstanbul Dükkan Dekorasyon | Mağaza ve Cafe Tasarımı"
+  description="İstanbul dükkan dekorasyon: vitrin, ölçüye özel raf ve tezgah, ürün odaklı aydınlatma ile mağaza ve cafe iç mekânı. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/hizmetler/dukkan-dekorasyon`}
+  h1="İstanbul Dükkan ve Mağaza Dekorasyon"
+  eyebrow="Dekorasyon"
+  lead="Vitrinden kasa alanına, raftan aydınlatmaya dükkânınızı müşteri akışına ve marka kimliğine göre kuruyoruz. Mağaza, dükkan ve cafe iç mekânlarında tasarım ve uygulama tek elden."
+  heroImage={heroPath}
+  ogImage={optimizedImage(heroPath)}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
+    { label: "Dükkan Dekorasyon" }
+  ]}
+  structuredData={[serviceSchema, faqSchema]}
+>
+
+  <section class="py-12 border-b border-border">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-3xl font-bold text-charcoal mb-4">İstanbul'da Dükkan Dekorasyonu</h2>
+        <p class="text-muted leading-relaxed mb-4">
+          Dükkân dekorasyonu bir iç mimari işi olduğu kadar bir satış işidir. Müşterinin vitrine bakıp içeri girmesi,
+          ürünleri rahatça görmesi, kasaya yönelmesi ve tekrar gelmek istemesi dekorasyonun doğrudan etkilediği
+          davranışlardır. Bu yüzden projeye güzel bir görsel hedefinden önce, dükkânın nasıl çalışacağını sorarak başlıyoruz.
+        </p>
+        <p class="text-muted leading-relaxed mb-4">
+          Giyimden kuyumculuğa, kozmetikten küçük cafe ve fırınlara kadar farklı iş kollarında ihtiyaç değişir.
+          Giyim mağazasında askı düzeni, deneme kabini ve ayna konumu öne çıkarken; cafe tarafında tezgah, oturma
+          düzeni ve servis hattı belirleyici olur. Ürüne, stok miktarına ve satış biçimine göre bir dükkân dili kuruyoruz.
+        </p>
+        <p class="text-muted leading-relaxed">
+          Nişantaşı, Kadıköy, Beşiktaş ve çarşı içi dükkânlarda çalışırken sıkça karşılaştığımız durum, sınırlı
+          metrekare ve uzun, dar bir plandır. Bu planlarda ölçüye özel raf, ayna ile derinlik hissi ve katmanlı
+          aydınlatma ile küçük dükkânlar daha geniş ve düzenli bir izlenim verebilir.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-charcoal mb-4">Hizmete dahil olanlar</h3>
+        <ul class="space-y-3">
+          {dahil.map(item => (
+            <li class="flex items-start gap-3 text-sm text-muted">
+              <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+                <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+          <p class="text-sm text-charcoal font-medium">Altyapı ve zemin değişimi gerekiyor mu?</p>
+          <p class="text-muted text-sm mt-2">
+            Elektrik, vitrin sistemi ve zemin gibi teknik işler için
+            <a href="/hizmetler/anahtar-teslim/magaza-dukkan-tadilat" class="text-gold hover:underline">mağaza ve dükkan tadilat</a>,
+            estetik güncelleme için
+            <a href="/hizmetler/anahtar-teslim/magaza-dukkan-yenileme" class="text-gold hover:underline">mağaza ve dükkan yenileme</a>
+            sayfalarımıza göz atabilirsiniz.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Dükkan Dekorasyonunda Belirleyici Konular</h2>
+    <p class="text-muted leading-relaxed max-w-3xl mb-8">
+      Dükkân dekorasyonunda alınan kararların çoğu doğrudan günlük satış ve operasyonla ilgilidir. Keşifte en çok bu dört konuyu konuşuyoruz.
+    </p>
+    <div class="grid md:grid-cols-2 gap-6">
+      {konular.map(k => (
+        <div class="border border-border p-7 bg-[#FAF6F1]">
+          <h3 class="font-display text-lg font-bold text-charcoal mb-2">{k.t}</h3>
+          <p class="text-muted text-sm leading-relaxed">{k.d}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Mağaza, Dükkan ve Cafe İçin Ayrı Yaklaşım</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div>
+        <h3 class="font-semibold text-charcoal mb-2">Mağaza</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Mağazada ürün sunumu, askı ve raf düzeni, deneme kabini ve ayna konumu öne çıkar. Giriş ile kasa arasındaki
+          güzergâh, ürünlerin sergilendiği bir yol olarak tasarlanır.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-charcoal mb-2">Küçük dükkan</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Sınırlı metrekarede her santimetre kullanılmalıdır. Duvar boyunca ölçüye özel depolama, ayna ile derinlik
+          yaratma ve açık renk yüzeyler dükkânı daha ferah gösterir.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-charcoal mb-2">Cafe ve yeme-içme</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Tezgah, servis hattı ve oturma alanı ilişkisi belirleyicidir. Kapsamlı altyapı gerektiren projeler için
+          <a href="/hizmetler/anahtar-teslim/cafe-restaurant-tadilat" class="text-gold hover:underline">cafe ve restaurant tadilat</a> ve
+          <a href="/hizmetler/anahtar-teslim/cafe-restaurant-yenileme" class="text-gold hover:underline">cafe ve restaurant yenileme</a>
+          sayfalarımıza bakabilirsiniz.
+        </p>
+      </div>
+    </div>
+    <p class="text-muted leading-relaxed max-w-3xl mt-8 text-sm">
+      Dükkân yüzeyleri için <a href="/hizmetler/boya-badana" class="text-gold hover:underline">boya ve badana</a>,
+      tavan ve gizli ışık çözümleri için <a href="/hizmetler/alcipan-asma-tavan" class="text-gold hover:underline">alçıpan ve asma tavan</a>
+      hizmetlerimizden de faydalanabilirsiniz. Ofis ihtiyaçlarınız için <a href="/hizmetler/ofis-dekorasyon" class="text-gold hover:underline">ofis dekorasyon</a>
+      sayfamız yardımcı olabilir.
+    </p>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Dükkan Dekorasyonunda Sık Görülen Hatalar</h2>
+    <p class="text-muted leading-relaxed max-w-3xl mb-8">
+      Küçük görünen kararlar, günlük satış ve operasyonda büyük fark yaratabilir.
+    </p>
+    <div class="space-y-4">
+      {hatalar.map((h, i) => (
+        <div class="flex gap-5 border border-border p-6 bg-[#FAF6F1]">
+          <p class="font-display text-2xl font-bold text-gold/40 shrink-0">0{i + 1}</p>
+          <div>
+            <h3 class="font-semibold text-charcoal mb-1">{h.t}</h3>
+            <p class="text-muted text-sm leading-relaxed">{h.d}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Dükkan Dekorasyon Sürecimiz</h2>
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+      {surec.map(s => (
+        <div>
+          <p class="font-display text-2xl font-bold text-gold/40 mb-2">{s.no}</p>
+          <h3 class="font-semibold text-charcoal text-sm mb-2">{s.t}</h3>
+          <p class="text-muted text-xs leading-relaxed">{s.d}</p>
+        </div>
+      ))}
+    </div>
+    <p class="text-muted leading-relaxed max-w-3xl mt-8 text-sm">
+      Dükkânı açmadan önce nasıl görüneceğini görmek için <a href="/hizmetler/3d-tasarim" class="text-gold hover:underline">3D tasarım</a>
+      çalışmamızdan yararlanabilirsiniz.
+    </p>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Hizmet Verdiğimiz İlçeler</h2>
+    <ServiceAreaLinks names={['Nişantaşı', 'Kadıköy', 'Beşiktaş', 'Şişli', 'Beyoğlu', 'Fatih', 'Bakırköy', 'Ataşehir']} />
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="w-8 h-px bg-gold"></span>
+      <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Sıkça Sorulan Sorular</span>
+    </div>
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Dükkan dekorasyon hakkında</h2>
+    <div class="space-y-4">
+      {faqItems.map(f => (
+        <details class="border border-border bg-[#FAF6F1] p-6 group">
+          <summary class="font-semibold text-charcoal cursor-pointer list-none flex items-start justify-between gap-4">
+            <span>{f.q}</span>
+            <span class="text-gold shrink-0 transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="text-muted text-sm leading-relaxed mt-4">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">İlgili Sayfalar</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Mağaza ve Dükkan Tadilat', href: '/hizmetler/anahtar-teslim/magaza-dukkan-tadilat' },
+        { label: 'Mağaza ve Dükkan Yenileme', href: '/hizmetler/anahtar-teslim/magaza-dukkan-yenileme' },
+        { label: 'Showroom', href: '/hizmetler/anahtar-teslim/showroom' },
+        { label: 'Ofis Dekorasyon', href: '/hizmetler/ofis-dekorasyon' },
+        { label: 'Boya ve Badana', href: '/hizmetler/boya-badana' },
+        { label: 'İstanbul Hizmet Bölgeleri', href: '/istanbul' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </section>
+
+</ServiceLayout>

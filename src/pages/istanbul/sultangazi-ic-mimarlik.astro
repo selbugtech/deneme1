@@ -1,0 +1,164 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictBlogLinks from '../../components/DistrictBlogLinks.astro';
+import DistrictFAQ from '../../components/DistrictFAQ.astro';
+import ProcessStrip from '../../components/ProcessStrip.astro';
+import DistrictProjects from '../../components/DistrictProjects.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImageW } from '../../lib/cloudinary';
+import { getDistrict } from '../../data/districts';
+
+// İlçe adı ve bulunma hali eki tek kaynaktan: src/data/districts.ts.
+const district = getDistrict('sultangazi-ic-mimarlik')!;
+const heroPath = '/images/salon7.jpeg';
+const heroAbs = optimizedImageW(heroPath, 1600);
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "İç mimarlık, tadilat ve ev yenileme",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
+  "areaServed": { "@type": "Place", "name": "Sultangazi, İstanbul" },
+  "url": `${CANONICAL_BASE}/istanbul/sultangazi-ic-mimarlik`,
+  "description": "Sultangazi'de apartman ve site dairelerinde anahtar teslim yenileme, mutfak-banyo tadilatı ve depolama çözümleri.",
+  "image": heroAbs,
+};
+
+const faqItems = [
+  {
+    q: "Sultangazi'de site dairesi ile apartman dairesi tadilatı arasında ne fark var?",
+    a: "Sitelerde yönetim kuralları, güvenlik girişi ve yük asansörü saatleri şantiye düzenini belirliyor; apartmanlarda ise komşu ilişkileri, merdiven koruma ve moloz tahliyesi öne çıkıyor. İki durumda da önce binanın kurallarını öğreniyor, takvimi buna göre kuruyoruz. İşin teknik kapsamı daireden daireye değişse de çalışma yöntemimiz aynı.",
+  },
+  {
+    q: "Yeni yapılaşmış mahallelerde teslim edilen dairede ne tür sorunlar çıkabiliyor?",
+    a: "Hızlı yapılan ya da kısa sürede teslim edilen bazı dairelerde zemin düzgünlüğü, derz ve boya kalitesi, mutfak ölçüleri gibi konular daha sonra sorun olabiliyor. Keşifte bunları tek tek kontrol ediyor, ne düzeltilmeli ne korunmalı net bir liste çıkarıyoruz. Sorunu görmeden yeni yüzey uygulamıyoruz.",
+  },
+  {
+    q: "Geniş bir ailede çocuk odası ve ortak alanlar nasıl kurgulanıyor?",
+    a: "Sultangazi'deki daireler çoğunlukla çocuklu ailelerin kullandığı genişlikte planlanmış. Çocuk odasını oyun, ders ve uyku alanı olarak bölgelere ayırıyor, kolay temizlenen ve güvenli yüzeyleri tercih ediyoruz. Salonda ise misafir ve günlük kullanım dengesini kuruyoruz.",
+  },
+  {
+    q: "Mutfak yenilemede en sık hangi değişiklikleri yapıyorsunuz?",
+    a: "Çoğu mutfakta dolap yerleşiminin yeniden kurgulanması, tezgah üzerinde çalışma alanının genişletilmesi ve yüksek dolapla depolamanın artırılması öne çıkıyor. Suyun, gazın ve elektriğin yerleşimi değişmeyecekse süre ve karmaşa da azalıyor. Keşifte mevcut hatlara bakıp ona göre öneri sunuyoruz.",
+  },
+  {
+    q: "Sultangazi için keşif nasıl planlanıyor?",
+    a: "Sultangazi'nin tüm mahallelerinde ücretsiz keşif yapıyoruz. WhatsApp veya telefonla günü ve saati belirliyoruz. Yerinde ölçü alıp mevcut durumu kaydediyor, ardından kapsamı, malzeme tercihlerini ve takvimi içeren yazılı bir teklif hazırlıyoruz.",
+  },
+];
+---
+
+<ServiceLayout
+  title="Sultangazi İç Mimarlık, Ev Tadilatı ve Dekorasyon"
+  description="Sultangazi'de apartman ve site dairelerinde iç mimarlık, ev tadilatı ve anahtar teslim dekorasyon. Cebeci ve Habibler'de ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/istanbul/sultangazi-ic-mimarlik`}
+  h1="Sultangazi İç Mimarlık, Ev Tadilatı ve Dekorasyon"
+  eyebrow="İstanbul · Sultangazi"
+  lead="Apartman ve site dairelerinin birlikte yer aldığı, aile yaşamının ağır bastığı bir ilçe. Sultangazi tadilat projelerinde öncelik, evi herkesin rahat kullandığı bir düzene kavuşturmak."
+  heroImage={heroPath}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İstanbul", href: `${CANONICAL_BASE}/istanbul` },
+    { label: "Sultangazi" }
+  ]}
+  structuredData={localSchema}
+>
+
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Sultangazi'de İç Mimarlık Hizmeti</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Sultangazi, Cebeci, Esentepe, Habibler, Gazi ve İsmetpaşa gibi mahallelerden oluşan, Avrupa Yakası'nın kuzeybatısında konumlanan geniş bir ilçe. Apartmanların yanı sıra site yapıları da yaygın; aile yaşamı ilçenin günlük ritmini belirliyor. Bu nedenle Sultangazi'de ev tadilatı konuşulurken çoğunlukla kalabalık bir ailenin ihtiyaçları ve evin ortak kullanımı gündeme geliyor.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Talepler genellikle çok net: mutfağın daha kullanışlı olması, banyonun yenilenmesi, çocuk odasının işlevsel kurgulanması ve depolamanın artırılması. Dekorasyon tercihlerinde sade çizgiler, kolay temizlenen yüzeyler ve dayanıklı malzeme seçimleri öne çıkıyor. Biz de iç mimarlığı gösterişten çok kullanım konforu üzerine kuruyor, uzun vadede yıpranmayan çözümleri tercih ediyoruz.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Sürece yerinde keşifle başlıyor, kapsamı yazılı hale getiriyor, 3D görselle tasarımı onaylatıyor ve tek ekiple uygulamayı yürütüyoruz. Sultangazi tadilat işlerinde binanın yapım dönemine göre tesisat ve ıslak hacim durumunu mutlaka kontrol ediyor, sitelerde yönetimle yazışma ve çalışma saati düzenini de biz takip ediyoruz. Daha fazla bilgi için Sultangazi ev tadilatı rehberimize de göz atabilirsiniz.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4">{district.locative} Sunduğumuz Hizmetler</h3>
+      <ul class="space-y-3">
+        {[
+          'Apartman ve site dairelerinde anahtar teslim ev tadilatı',
+          'Mutfak ve banyo yenileme',
+          'Çocuk odası ve aile yaşam alanı tasarımı',
+          'Ölçüye özel dolap ve depolama çözümleri',
+          '3D görselleştirme ile tasarım onayı',
+          'Site yönetimi izin ve çalışma düzeni takibi',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+        <p class="text-sm text-charcoal font-medium">Sultangazi keşif görüşmesi</p>
+        <p class="text-muted text-sm mt-2">
+          Dairenizi yerinde inceliyor, aile düzeninize göre öncelikleri belirliyoruz. Keşif ücretsiz ve taahhütsüz.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bölge notları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Sultangazi'de Bölge Notlarımız</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Cebeci · Esentepe · Habibler</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Apartman ve site yapılarının birlikte görüldüğü mahalleler. Binanın kurallarına göre çalışma saatlerini ve moloz tahliye düzenini önceden netleştiriyoruz.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">50. Yıl · Gazi · İsmetpaşa</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Aile yaşamının yoğun olduğu bölgede çocuk odası, depolama ve mutfak düzeni en çok konuştuğumuz başlıklar. Dayanıklı ve temizlenmesi kolay yüzeyleri öneriyoruz.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Zübeyde Hanım · Uğur Mumcu</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Yapım dönemi birbirinden farklı binalar olduğu için her dairede tesisat ve ıslak hacim durumunu keşifte ayrıca kontrol ediyoruz.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <DistrictProjects districtSlug="sultangazi-ic-mimarlik" />
+
+  <ProcessStrip districtSlug="sultangazi-ic-mimarlik" />
+
+  <DistrictFAQ districtName="Sultangazi" items={faqItems} />
+
+  <div class="py-12 border-t border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Hizmetlerimiz</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Tüm Hizmetler', href: '/hizmetler' },
+        { label: 'Anahtar Teslim Ev Tadilatı', href: '/hizmetler/anahtar-teslim/ev-tadilat' },
+        { label: 'Mutfak Yenileme', href: '/hizmetler/mutfak-yenileme' },
+        { label: 'Çocuk Odası Tasarımı', href: '/hizmetler/cocuk-odasi-tasarimi' },
+        { label: 'Sultangazi Ev Tadilatı Rehberi', href: '/blog/sultangazi-ev-tadilati' },
+        { label: 'Gaziosmanpaşa İç Mimarlık', href: '/istanbul/gaziosmanpasa-ic-mimarlik' },
+        { label: 'Esenler İç Mimarlık', href: '/istanbul/esenler-ic-mimarlik' },
+        { label: 'Başakşehir İç Mimarlık', href: '/istanbul/basaksehir-ic-mimarlik' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </div>
+
+  <DistrictBlogLinks districtSlug="sultangazi-ic-mimarlik" />
+
+  <RelatedDistricts currentSlug="sultangazi-ic-mimarlik" />
+
+</ServiceLayout>

@@ -1,0 +1,31 @@
+---
+// Stil sayfalarının sonundaki ticari "sonraki adım" bloğu: bu sayfalar yalnızca
+// kardeş stillere link veriyordu; hizmet, proje ve ilçe sayfalarına bağ yoktu.
+interface Props {
+  styleName: string;
+}
+const { styleName } = Astro.props;
+
+const links = [
+  { label: 'Anahtar Teslim Ev Tadilatı', href: '/hizmetler/anahtar-teslim/ev-tadilat' },
+  { label: 'Ev Yenileme', href: '/hizmetler/anahtar-teslim/ev-yenileme' },
+  { label: 'Salon Tasarımı', href: '/hizmetler/salon-tasarimi' },
+  { label: 'Mutfak Yenileme', href: '/hizmetler/mutfak-yenileme' },
+  { label: '3D Tasarım', href: '/hizmetler/3d-tasarim' },
+  { label: 'Tamamlanan Projeler', href: '/projeler' },
+  { label: 'İstanbul İç Mimarlık Bölgeleri', href: '/istanbul' },
+];
+---
+
+<section class="py-12 border-t border-border">
+  <h2 class="font-display text-2xl font-bold text-charcoal mb-3">{styleName} Tarzı Mekânınıza Nasıl Uygulanır?</h2>
+  <p class="text-muted leading-relaxed mb-6 max-w-3xl">
+    Stil seçimi, mekânın planı ve mevcut altyapısıyla birlikte düşünüldüğünde anlam kazanıyor. Ücretsiz keşifte
+    mekânınızı yerinde inceleyip hangi kapsamın (tadilat ya da yenileme) uygun olduğunu birlikte belirliyoruz.
+  </p>
+  <div class="flex flex-wrap gap-3">
+    {links.map(l => (
+      <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+    ))}
+  </div>
+</section>

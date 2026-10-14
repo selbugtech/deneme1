@@ -9,7 +9,7 @@ const serviceSchema = {
   "@type": "Service",
   "serviceType": "Mağaza ve Dükkan Yenileme",
   "name": "İstanbul Mağaza ve Dükkan Yenileme",
-  "description": "İstanbul'da anahtar teslim mağaza ve dükkan yenileme. Altyapıya dokunmadan hızlı estetik güncelleme, raf düzeni yenileme ve görsel kimlik tazelemesi.",
+  "description": "İstanbul'da anahtar teslim mağaza ve dükkan yenileme. Altyapıya dokunmadan raf düzeni, boya, zemin ve aydınlatma tazeleme; kısa kapanma süresiyle marka güncellemesi.",
   "provider": { "@type": "Organization", "@id": `${CANONICAL_BASE}/#organization`, "name": "Master İç Mimarlık" },
   "areaServed": { "@type": "City", "name": "İstanbul" },
   "url": `${CANONICAL_BASE}/hizmetler/anahtar-teslim/magaza-dukkan-yenileme`
@@ -19,21 +19,21 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Mağaza yenileme ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Altyapıya dokunmayan bir mağaza yenilemesi genellikle 1–3 haftada tamamlanabilir. Zemin, boya ve raf değişimi gibi minimal projeler bu sürenin altında bitebilir. Bu süre, mağazanızın kapalı kalma süresini ve gelir kaybını minimumda tutar." } },
-    { "@type": "Question", "name": "Mağaza yenileme ile tadilat arasındaki fark nedir?", "acceptedAnswer": { "@type": "Answer", "text": "Mağaza yenilemesi; mevcut elektrik, vitrin sistemi ve yapısal altyapıya dokunmadan görünümü güncellemek demektir — raf, boya, zemin, aydınlatma armatürü ve dekor değişimleri bu kapsamdadır. Tadilat ise altyapı değişikliği veya yapısal müdahale içerir. Altyapınız sorunsuzsa yenileme çok daha hızlı ve ekonomiktir." } },
-    { "@type": "Question", "name": "Mağaza yenileme bütçesi nasıl belirlenir?", "acceptedAnswer": { "@type": "Answer", "text": "Bütçe; mağazanın büyüklüğü, seçilen malzeme kalitesi ve yenileme kapsamına göre belirlenir. Altyapı müdahalesi olmadığından yenileme, tadilata kıyasla çok daha ekonomiktir. Ücretsiz keşif ziyaretimizde tüm kalemleri içeren şeffaf bütçe sunuyoruz." } },
+    { "@type": "Question", "name": "Mağaza yenileme sezon veya kampanya öncesine yetiştirilebilir mi?", "acceptedAnswer": { "@type": "Answer", "text": "Altyapıya dokunulmadığı için iş kalemleri kısa ve birbirinden görece bağımsız ilerler; sezon geçişi, yeni koleksiyon veya kampanya tarihine göre takvim geriye doğru planlanabilir. Tarihi kesinleştirmeden önce kapsamın uygunluğunu keşifte birlikte değerlendiriyoruz." } },
+    { "@type": "Question", "name": "Mağaza yenilemede hangi işler yapılır, hangileri yapılmaz?", "acceptedAnswer": { "@type": "Answer", "text": "Yapılır: boya, zemin ve duvar kaplaması, raf ve sergileme düzeni, armatür değişimi, vitrin dekoru, grafik uygulamalar. Yapılmaz: elektrik hattı ve pano değişimi, tesisat, ön cephe-vitrin sistemi değişikliği, yapısal müdahale. Bunlar gerekiyorsa mağaza tadilat kapsamı geçerlidir." } },
+    { "@type": "Question", "name": "Yeni marka kimliğini mağazaya nasıl taşıyorsunuz?", "acceptedAnswer": { "@type": "Answer", "text": "Renk, logo ve grafik dili; duvar yüzeyleri, raf ve kasa alanı, aydınlatma ve vitrin dekoru üzerinden mekâna yansıtılır. Yeni görsel konsept 3D görselle onaylandıktan sonra uygulanır; ürün gruplarının sergileme düzeni de bu aşamada gözden geçirilir." } },
     { "@type": "Question", "name": "Yenileme süresince mağaza açık kalabilir mi?", "acceptedAnswer": { "@type": "Answer", "text": "Mağaza yenilemesinde altyapı müdahalesi olmadığından çoğu zaman mağaza açık tutulabilir. Zemin veya boyama gibi işler için kapalı saatlerde veya hafta sonu çalışmayı tercih edebiliriz. Müşteri trafiğini en az etkileyen takvimi birlikte planlıyoruz." } }
   ]
 };
 ---
 
 <ServiceLayout
-  title="İstanbul Mağaza ve Dükkan Yenileme | Hızlı Görsel Güncelleme"
-  description="İstanbul'da mağaza ve dükkan yenileme. Altyapıya dokunmadan hızlı estetik güncelleme ve görsel kimlik tazelemesi. Nişantaşı, Levent, Kadıköy."
+  title="Mağaza ve Dükkan Yenileme İstanbul | Hızlı"
+  description="İstanbul'da mağaza ve dükkan yenileme: altyapıya dokunmadan raf, boya, zemin ve aydınlatma ile kısa kapanma süresinde marka tazeleme. Keşif: 0533 039 15 65"
   canonicalUrl={`${CANONICAL_BASE}/hizmetler/anahtar-teslim/magaza-dukkan-yenileme`}
-  h1="İstanbul Mağaza ve Dükkan Yenileme"
+  h1="İstanbul Mağaza ve Dükkan Yenileme: Hızlı Görsel Tazeleme"
   eyebrow="Anahtar Teslim"
-  lead="Altyapısı sağlam ama görünümü eskimiş mağazalar için hızlı ve ekonomik çözüm. Raf, zemin, aydınlatma ve dekor güncellemeleriyle mağazanızı kısa kapanma süresinde yeniliyoruz."
+  lead="Elektrik ve vitrin sistemine dokunmadan raf düzenini, yüzeyleri, aydınlatmayı ve dekoru tazeliyoruz. Mağazanız kısa süre kapalı kalır, marka ve sezon güncellemeniz hızla mekâna yansır."
   breadcrumb={[
     { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
     { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
@@ -53,7 +53,7 @@ const faqSchema = {
   <!-- Scope -->
   <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
     <div>
-      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Mağaza & Dükkan Yenileme Hizmetimiz</h2>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Kısa Kapanma Süresiyle Mağaza Yenileme</h2>
       <p class="text-muted leading-relaxed mb-4">
         Mağaza yenilemesi; mevcut elektrik, vitrin sistemi ve yapısal altyapıya dokunmadan görsel kimliği güncellemek demektir. Raf ve sergileme düzeni yenileme, boya ve kaplama değişimi, aydınlatma armatürü güncelleme gibi işlemlerle mağazanın yeni ürün sezonlarına veya marka güncellemelerine ayak uydurması sağlanır.
       </p>
@@ -61,7 +61,7 @@ const faqSchema = {
         Perakende sektöründe görünüm güncellemesi hem müşteri ilgisini tazeler hem de çevrimiçi paylaşımlarda mağazanızın fotoğraflanabilirliğini artırır. <a href="/hizmetler/3d-tasarim" class="text-gold hover:underline">3D görselleştirme</a> ile yeni düzeni uygulamadan önce onaylayabilirsiniz.
       </p>
       <p class="text-muted leading-relaxed">
-        Elektrik altyapısı veya yapısal müdahale gerekiyorsa <a href="/hizmetler/anahtar-teslim/magaza-dukkan-tadilat" class="text-gold hover:underline">mağaza tadilat</a> hizmetimiz daha uygun seçenektir. Nişantaşı, Levent, Kadıköy, Beşiktaş ve tüm İstanbul'da hizmet veriyoruz.
+        Elektrik kapasitesi ya da vitrin sistemi değişecekse <a href="/hizmetler/anahtar-teslim/magaza-dukkan-tadilat" class="text-gold hover:underline">elektrik ve vitrin müdahalesi gerektiren mağaza tadilat</a> sayfasına göz atın. Nişantaşı, Levent, Kadıköy, Beşiktaş ve tüm İstanbul'da hizmet veriyoruz.
       </p>
     </div>
     <div>
@@ -94,7 +94,7 @@ const faqSchema = {
   <div class="py-12 border-b border-border">
     <div class="flex items-center gap-3 mb-8">
       <span class="w-8 h-px bg-gold"></span>
-      <h2 class="font-display text-2xl font-bold text-charcoal">Mağaza Yenileme ile Ne Değişir?</h2>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Altyapıya Dokunmadan Mağazada Ne Değişir?</h2>
     </div>
     <div class="grid md:grid-cols-3 gap-8">
       {[
@@ -161,9 +161,9 @@ const faqSchema = {
     </div>
     <div class="divide-y divide-border">
       {[
-        { q: 'Mağaza yenileme ne kadar sürer?', a: 'Altyapıya dokunmayan bir mağaza yenilemesi genellikle 1–3 haftada tamamlanabilir. Zemin, boya ve raf değişimi gibi minimal projeler bu sürenin altında bitebilir. Bu süre, mağazanızın kapalı kalma süresini ve gelir kaybını minimumda tutar.' },
-        { q: 'Mağaza yenileme ile tadilat arasındaki fark nedir?', a: 'Mağaza yenilemesi; mevcut elektrik, vitrin sistemi ve yapısal altyapıya dokunmadan görünümü güncellemek demektir — raf, boya, zemin, aydınlatma armatürü ve dekor değişimleri bu kapsamdadır. Tadilat ise altyapı değişikliği veya yapısal müdahale içerir. Altyapınız sorunsuzsa yenileme çok daha hızlı ve ekonomiktir.' },
-        { q: 'Mağaza yenileme bütçesi nasıl belirlenir?', a: 'Bütçe; mağazanın büyüklüğü, seçilen malzeme kalitesi ve yenileme kapsamına göre belirlenir. Altyapı müdahalesi olmadığından yenileme, tadilata kıyasla çok daha ekonomiktir. Ücretsiz keşif ziyaretimizde tüm kalemleri içeren şeffaf bütçe sunuyoruz.' },
+        { q: 'Mağaza yenileme sezon veya kampanya öncesine yetiştirilebilir mi?', a: 'Altyapıya dokunulmadığı için iş kalemleri kısa ve birbirinden görece bağımsız ilerler; sezon geçişi, yeni koleksiyon veya kampanya tarihine göre takvim geriye doğru planlanabilir. Tarihi kesinleştirmeden önce kapsamın uygunluğunu keşifte birlikte değerlendiriyoruz.' },
+        { q: 'Mağaza yenilemede hangi işler yapılır, hangileri yapılmaz?', a: 'Yapılır: boya, zemin ve duvar kaplaması, raf ve sergileme düzeni, armatür değişimi, vitrin dekoru, grafik uygulamalar. Yapılmaz: elektrik hattı ve pano değişimi, tesisat, ön cephe-vitrin sistemi değişikliği, yapısal müdahale. Bunlar gerekiyorsa mağaza tadilat kapsamı geçerlidir.' },
+        { q: 'Yeni marka kimliğini mağazaya nasıl taşıyorsunuz?', a: 'Renk, logo ve grafik dili; duvar yüzeyleri, raf ve kasa alanı, aydınlatma ve vitrin dekoru üzerinden mekâna yansıtılır. Yeni görsel konsept 3D görselle onaylandıktan sonra uygulanır; ürün gruplarının sergileme düzeni de bu aşamada gözden geçirilir.' },
         { q: 'Yenileme süresince mağaza açık kalabilir mi?', a: 'Mağaza yenilemesinde altyapı müdahalesi olmadığından çoğu zaman mağaza açık tutulabilir. Zemin veya boyama gibi işler için kapalı saatlerde veya hafta sonu çalışmayı tercih edebiliriz. Müşteri trafiğini en az etkileyen takvimi birlikte planlıyoruz.' },
       ].map((faq, i) => (
         <details class="group py-5" open={i === 0}>

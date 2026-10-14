@@ -1,0 +1,282 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import ServiceAreaLinks from '../../components/ServiceAreaLinks.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImage } from '../../lib/cloudinary';
+
+const heroPath = '/images/salon9.jpeg';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Alçıpan ve Asma Tavan",
+  "name": "Alçıpan ve Asma Tavan İstanbul",
+  "description": "Alçıpan, asma tavan, gizli ışık, kartonpiyer ve bölme duvar uygulamaları ile tavan ve duvar kurgusu. Ev, ofis ve ticari mekanlar için.",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
+  "areaServed": { "@type": "City", "name": "İstanbul" },
+  "url": `${CANONICAL_BASE}/hizmetler/alcipan-asma-tavan`,
+};
+
+const faqItems = [
+  {
+    q: "Asma tavan nedir, ne işe yarar?",
+    a: "Asma tavan, ana tavandan belirli bir mesafe aşağıda, metal bir iskeletin üzerine alçıpan levhalar monte edilerek oluşturulan ikinci bir tavan yüzeyidir. Tavandaki kiriş, tesisat ve kablo geçişlerini gizler, spot ve gizli ışık gibi aydınlatma çözümlerine imkân tanır ve mekâna şekil verir. Aralığa yalıtım malzemesi de konulabilir.",
+  },
+  {
+    q: "Asma tavan oda yüksekliğini ne kadar düşürür?",
+    a: "Düşme miktarı, seçilen sisteme ve aralıkta barındırılacak elemanlara göre değişir. Sadece spot için gereken boşluk ile klima kanalı veya tesisat geçirilecek boşluk aynı değildir. Tavan yüksekliği düşük mekânlarda kenar boyunca dar bir indirme (gizli ışık için çerçeve gibi) yapılarak ferahlık korunabilir. Keşifte oda yüksekliğine uygun çözümü belirliyoruz.",
+  },
+  {
+    q: "Gizli ışık nasıl yapılır?",
+    a: "Gizli ışık, tavanda veya duvarda bir çukur ya da çerçevenin içine yerleştirilen LED şerit aydınlatmanın dolaylı olarak yansıması ile elde edilir. Işık kaynağı görünmediği için yumuşak, gölgesiz bir atmosfer yaratır. Doğru uygulama için çerçeve derinliği, şerit tipi ve ışık renginin baştan planlanması gerekir; elektrik işleri uygun kişilerce yapılmalıdır.",
+  },
+  {
+    q: "Alçıpan bölme duvar ile tuğla duvar arasındaki fark nedir?",
+    a: "Alçıpan bölme duvar metal iskelet üzerine levha monte edilerek yapılır; hafiftir, hızlı kurulur ve içine yalıtım koymaya elverişlidir. Tuğla veya gazbeton duvar daha ağır ve kalıcı yapılardır. Alçıpan bölme duvar taşıyıcı olmadığı için yapıya ek yük getirmez ancak ağır eşyaların asılması için özel bağlantı elemanları gerekir.",
+  },
+  {
+    q: "Alçıpan ıslak hacimlerde kullanılır mı?",
+    a: "Nem dayanımı olan özel alçıpan levhalar mevcuttur ve nemli ortamlarda bu tür levhalar tercih edilir. Ancak doğrudan su ile temas eden yüzeylerde yalıtım ve seramik gibi uygun kaplamalar da gerekir. Kullanım yeri, nem seviyesi ve havalandırma durumuna göre doğru ürün ve uygulama yöntemi seçilmelidir.",
+  },
+  {
+    q: "Ses yalıtımı için alçıpan uygulaması yeterli mi?",
+    a: "Alçıpan bölme duvarlar uygun iskelet, çift kat levha ve yalıtım malzemesi ile kullanıldığında ses yalıtımını iyileştirebilir. Ancak sonuç, uygulama detayına, birleşim noktalarına ve ses kaynağına bağlıdır. Toplantı odası veya yatak odası gibi ses konforunun önemli olduğu alanlarda beklentinizi önceden konuşup uygun sistemi birlikte belirleriz.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const dahil = [
+  'Yerinde ölçü ve tavan yüksekliği değerlendirmesi',
+  'Asma tavan tasarımı ve uygulaması',
+  'Gizli ışık, spot ve LED şerit aydınlatma kurgusu',
+  'Kartonpiyer ve profil detayları',
+  'Alçıpan bölme duvar ve cephe duvarı',
+  'Perde kasası, niş ve raf detayları',
+  'Yalıtım malzemesi ile ses ve ısı konforu',
+  'Alçı, macun ve boyaya hazır yüzey teslimi',
+];
+
+const konular = [
+  { t: 'Yükseklik ve oran', d: 'Asma tavan her zaman tavanı alçaltır. Düşük tavanlı odalarda tüm tavanı indirmek yerine kenar boyunca dar bir çerçeve yapılması hem gizli ışığa imkân verir hem de mekânın ferahlığını korur.' },
+  { t: 'Aydınlatma planı', d: 'Spot, gizli ışık ve avize konumları tavan yapılmadan önce belirlenmelidir. Tavan kapandıktan sonra eklenen noktalar hem zor hem kusurlu olur; aydınlatma tasarımı tavan tasarımının parçasıdır.' },
+  { t: 'Tesisat ve erişim', d: 'Tavan arasında klima, havalandırma veya kablo geçiyorsa bakım için erişim kapağı planlanmalıdır. Aksi hâlde küçük bir müdahale için tavanı kırmak gerekebilir.' },
+  { t: 'Yüzey ve derz kalitesi', d: 'Alçıpan levha birleşimleri ve vida başları doğru derz ve macun uygulamasıyla gizlenmelidir. Bu aşamadaki eksik, boyadan sonra bile çatlak veya iz olarak kendini gösterir.' },
+];
+
+const hatalar = [
+  { t: 'Aydınlatmayı sonradan eklemek', d: 'Tavan bittikten sonra spot veya şerit eklemek zordur. Aydınlatma planı tavandan önce hazır olmalıdır.' },
+  { t: 'Tavan yüksekliğini hesaba katmamak', d: 'Çok alçak bir tavan, mekânı sıkışık gösterir. Oda yüksekliğine uygun bir indirme seviyesi belirlenmelidir.' },
+  { t: 'Ağır eşyaları özel bağlantısız asmak', d: 'Alçıpan duvar ve tavanlar ağır yükler için tasarlanmamıştır. Avize, televizyon veya raf gibi yükler için özel bağlantı elemanları veya takviye gerekir.' },
+  { t: 'Derz ve macun işini hızlı geçmek', d: 'Birleşim yerlerinin doğru kapatılmaması boyadan sonra çatlak ve iz olarak ortaya çıkar. Bu aşama sabır ve kuruma süresi gerektirir.' },
+];
+
+const surec = [
+  { no: '01', t: 'Keşif', d: 'Tavan yüksekliği ve tesisat durumu incelenir.' },
+  { no: '02', t: 'Tasarım', d: 'Tavan ve bölme planı, aydınlatma konumlarıyla çizilir.' },
+  { no: '03', t: 'İskelet', d: 'Metal iskelet ve elektrik hazırlıkları kurulur.' },
+  { no: '04', t: 'Levha ve Derz', d: 'Alçıpan levhalar monte edilir; derz ve macun yapılır.' },
+  { no: '05', t: 'Boya Hazırlığı', d: 'Yüzey boyaya hazır teslim edilir.' },
+];
+---
+
+<ServiceLayout
+  title="Alçıpan ve Asma Tavan İstanbul | Gizli Işık"
+  description="Alçıpan ve asma tavan İstanbul: gizli ışık, kartonpiyer, bölme duvar ve tavan kurgusu ev, ofis ve dükkanlar için. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/hizmetler/alcipan-asma-tavan`}
+  h1="Alçıpan ve Asma Tavan İstanbul: Gizli Işık ve Bölme Duvar"
+  eyebrow="Oda Bazlı Hizmet"
+  lead="Asma tavan, gizli ışık, kartonpiyer ve bölme duvar uygulamalarıyla ev, ofis ve dükkânlarda tavan ve duvar kurgusunu birlikte çözüyoruz. Aydınlatma planı en baştan tasarıma dahil."
+  heroImage={heroPath}
+  ogImage={optimizedImage(heroPath)}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
+    { label: "Alçıpan ve Asma Tavan" }
+  ]}
+  structuredData={[serviceSchema, faqSchema]}
+>
+
+  <section class="py-12 border-b border-border">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-3xl font-bold text-charcoal mb-4">İstanbul'da Alçıpan ve Asma Tavan Uygulaması</h2>
+        <p class="text-muted leading-relaxed mb-4">
+          Tavan, bir odada çoğu zaman en az dikkat edilen ama atmosfere en çok katkı yapan yüzeydir. Asma tavan ve
+          gizli ışık uygulamaları, düz bir tavanı aydınlatmanın, yalıtımın ve estetiğin birlikte çalıştığı bir yüzeye
+          dönüştürür. Alçıpan ise yalnızca tavan değil; bölme duvar, niş, perde kasası ve raf gibi pek çok detayın da temelidir.
+        </p>
+        <p class="text-muted leading-relaxed mb-4">
+          İstanbul'daki dairelerde tavan sorunları çoğunlukla benzerdir: açıkta kalan kiriş, düzgün olmayan tavan
+          yüzeyi, eski sıva çatlakları ve yetersiz aydınlatma. Asma tavan bu sorunların çoğunu gizler ve aynı anda
+          tesisat, kablo ve aydınlatma elemanlarına yer açar. Uygulamadan önce tavan yüksekliğini ve aralıkta bulunacak
+          elemanları değerlendirerek, mekânı alçaltmadan en iyi çözümü belirliyoruz.
+        </p>
+        <p class="text-muted leading-relaxed">
+          Aydınlatma, bu hizmetin kalbidir. Gizli ışık, spot ve dekoratif armatürlerin konumları tavan çizilirken
+          belirlenir; çünkü tavan kapandıktan sonra bu noktalara dönmek zordur. Işığın yönü, renk sıcaklığı ve
+          bağımsız devreler birlikte planlanınca aynı oda gündüz ve akşam farklı atmosferler sunabilir.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-charcoal mb-4">Hizmete dahil olanlar</h3>
+        <ul class="space-y-3">
+          {dahil.map(item => (
+            <li class="flex items-start gap-3 text-sm text-muted">
+              <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+                <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+          <p class="text-sm text-charcoal font-medium">Tavanla birlikte boya da mı gerekiyor?</p>
+          <p class="text-muted text-sm mt-2">
+            Alçıpan sonrası yüzeyi boyaya hazır teslim ediyoruz. Boya işi için
+            <a href="/hizmetler/boya-badana" class="text-gold hover:underline">boya badana</a>,
+            komple dönüşüm için <a href="/hizmetler/anahtar-teslim/ev-tadilat" class="text-gold hover:underline">ev tadilat</a>
+            sayfalarımıza bakabilirsiniz.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Asma Tavan ve Alçıpanda Belirleyici Konular</h2>
+    <p class="text-muted leading-relaxed max-w-3xl mb-8">
+      Aşağıdaki başlıklar, tavan ve bölme duvar işinin hem görünümünü hem kullanım ömrünü etkiler.
+    </p>
+    <div class="grid md:grid-cols-2 gap-6">
+      {konular.map(k => (
+        <div class="border border-border p-7 bg-[#FAF6F1]">
+          <h3 class="font-display text-lg font-bold text-charcoal mb-2">{k.t}</h3>
+          <p class="text-muted text-sm leading-relaxed">{k.d}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Uygulama Türleri</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div>
+        <h3 class="font-semibold text-charcoal mb-2">Asma tavan ve gizli ışık</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Kenarlarda veya tavanın bir bölümünde oluşturulan çerçeve içine LED şerit yerleştirilerek dolaylı ışık elde edilir.
+          Salon, yatak odası ve koridorlarda yumuşak ve gölgesiz bir ışık sağlar. Aydınlatma tasarımı için
+          <a href="/blog/ev-aydinlatma-rehberi" class="text-gold hover:underline">ev aydınlatma rehberimize</a> göz atabilirsiniz.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-charcoal mb-2">Bölme duvar</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Alçıpan bölme duvar, hafif ve hızlı kurulum sağlar; açık planlı mekânlarda alan ayırmak veya ofiste
+          toplantı odası oluşturmak için sık tercih edilir. İçine yalıtım konularak ses ve ısı konforu artırılabilir.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-charcoal mb-2">Kartonpiyer, niş ve perde kasası</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Duvar ve tavan birleşimlerinde profil detayları, perde rayını gizleyen kasalar ve dekoratif nişler
+          mekâna düzgün bir bitiş kazandırır. Detaylar, mobilya ve perde kararlarıyla birlikte tasarlanır.
+        </p>
+      </div>
+    </div>
+    <p class="text-muted leading-relaxed max-w-3xl mt-8 text-sm">
+      Tavan, bölme duvar ve aydınlatma kararlarını dekorasyonun bir parçası olarak ele almak için
+      <a href="/hizmetler/ev-dekorasyon" class="text-gold hover:underline">ev dekorasyon</a>,
+      <a href="/hizmetler/ofis-dekorasyon" class="text-gold hover:underline">ofis dekorasyon</a> ve
+      <a href="/hizmetler/dukkan-dekorasyon" class="text-gold hover:underline">dükkan dekorasyon</a> sayfalarımıza bakabilirsiniz.
+      Mutfak için <a href="/hizmetler/mutfak-dolabi" class="text-gold hover:underline">mutfak dolabı</a> ile tezgah altı aydınlatma planı da birlikte kurulabilir.
+    </p>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Alçıpan Uygulamasında Sık Görülen Hatalar</h2>
+    <p class="text-muted leading-relaxed max-w-3xl mb-8">
+      Bu hatalar çoğunlukla tasarım aşamasında yakalanabilir; sahada düzeltmesi ise zordur.
+    </p>
+    <div class="space-y-4">
+      {hatalar.map((h, i) => (
+        <div class="flex gap-5 border border-border p-6 bg-[#FAF6F1]">
+          <p class="font-display text-2xl font-bold text-gold/40 shrink-0">0{i + 1}</p>
+          <div>
+            <h3 class="font-semibold text-charcoal mb-1">{h.t}</h3>
+            <p class="text-muted text-sm leading-relaxed">{h.d}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Alçıpan ve Asma Tavan Sürecimiz</h2>
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+      {surec.map(s => (
+        <div>
+          <p class="font-display text-2xl font-bold text-gold/40 mb-2">{s.no}</p>
+          <h3 class="font-semibold text-charcoal text-sm mb-2">{s.t}</h3>
+          <p class="text-muted text-xs leading-relaxed">{s.d}</p>
+        </div>
+      ))}
+    </div>
+    <p class="text-muted leading-relaxed max-w-3xl mt-8 text-sm">
+      Tavan tasarımını uygulamadan önce görmek isterseniz <a href="/hizmetler/3d-tasarim" class="text-gold hover:underline">3D tasarım</a>
+      çalışmamız aydınlatma ve çerçeve detaylarını görselleştirir. Salon projeleri için
+      <a href="/hizmetler/salon-tasarimi" class="text-gold hover:underline">salon tasarımı</a> sayfamıza da bakabilirsiniz.
+    </p>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Hizmet Verdiğimiz İlçeler</h2>
+    <ServiceAreaLinks names={['Kadıköy', 'Beşiktaş', 'Şişli', 'Ataşehir', 'Üsküdar', 'Bakırköy', 'Maltepe', 'Sarıyer', 'Başakşehir', 'Beylikdüzü']} />
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="w-8 h-px bg-gold"></span>
+      <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Sıkça Sorulan Sorular</span>
+    </div>
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Alçıpan ve asma tavan hakkında</h2>
+    <div class="space-y-4">
+      {faqItems.map(f => (
+        <details class="border border-border bg-[#FAF6F1] p-6 group">
+          <summary class="font-semibold text-charcoal cursor-pointer list-none flex items-start justify-between gap-4">
+            <span>{f.q}</span>
+            <span class="text-gold shrink-0 transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="text-muted text-sm leading-relaxed mt-4">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">İlgili Sayfalar</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Boya ve Badana', href: '/hizmetler/boya-badana' },
+        { label: 'Ev Aydınlatma Rehberi', href: '/blog/ev-aydinlatma-rehberi' },
+        { label: 'Ofis Tadilat', href: '/hizmetler/anahtar-teslim/ofis-tadilat' },
+        { label: 'Ev Tadilat', href: '/hizmetler/anahtar-teslim/ev-tadilat' },
+        { label: 'Ev Dekorasyon', href: '/hizmetler/ev-dekorasyon' },
+        { label: 'İstanbul Hizmet Bölgeleri', href: '/istanbul' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </section>
+
+</ServiceLayout>

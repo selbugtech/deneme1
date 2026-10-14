@@ -5,82 +5,114 @@
       {
         "src": "/img/artas-ofis-2/01-0.webp",
         "srcset": "/img/artas-ofis-2/01-0-800w.webp 800w, /img/artas-ofis-2/01-0-1600w.webp 1600w, /img/artas-ofis-2/01-0.webp 2000w",
-        "original": "0.HEIC"
+        "original": "0.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/artas-ofis-2/02-1.webp",
         "srcset": "/img/artas-ofis-2/02-1-800w.webp 800w, /img/artas-ofis-2/02-1-1600w.webp 1600w, /img/artas-ofis-2/02-1.webp 2000w",
-        "original": "1.HEIC"
+        "original": "1.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/artas-ofis-2/03-3.webp",
         "srcset": "/img/artas-ofis-2/03-3-800w.webp 800w, /img/artas-ofis-2/03-3-1600w.webp 1600w, /img/artas-ofis-2/03-3.webp 2000w",
-        "original": "3.HEIC"
+        "original": "3.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/artas-ofis-2/04-4.webp",
         "srcset": "/img/artas-ofis-2/04-4-800w.webp 800w, /img/artas-ofis-2/04-4-1600w.webp 1600w, /img/artas-ofis-2/04-4.webp 2000w",
-        "original": "4.HEIC"
+        "original": "4.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/artas-ofis-2/05-aa.webp",
         "srcset": "/img/artas-ofis-2/05-aa-800w.webp 800w, /img/artas-ofis-2/05-aa-1600w.webp 1600w, /img/artas-ofis-2/05-aa.webp 2000w",
-        "original": "aa.HEIC"
+        "original": "aa.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/artas-ofis-2/06-aakapak.webp",
         "srcset": "/img/artas-ofis-2/06-aakapak-800w.webp 800w, /img/artas-ofis-2/06-aakapak-1600w.webp 1600w, /img/artas-ofis-2/06-aakapak.webp 2000w",
-        "original": "aakapak.HEIC"
+        "original": "aakapak.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/artas-ofis-2/07-img-2315.webp",
         "srcset": "/img/artas-ofis-2/07-img-2315-800w.webp 800w, /img/artas-ofis-2/07-img-2315-1600w.webp 1600w, /img/artas-ofis-2/07-img-2315.webp 2000w",
-        "original": "IMG_2315.HEIC"
+        "original": "IMG_2315.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/artas-ofis-2/08-img-2324.webp",
         "srcset": "/img/artas-ofis-2/08-img-2324-800w.webp 800w, /img/artas-ofis-2/08-img-2324-1600w.webp 1600w, /img/artas-ofis-2/08-img-2324.webp 2000w",
-        "original": "IMG_2324.HEIC"
+        "original": "IMG_2324.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/artas-ofis-2/09-img-2325.webp",
         "srcset": "/img/artas-ofis-2/09-img-2325-800w.webp 800w, /img/artas-ofis-2/09-img-2325-1600w.webp 1600w, /img/artas-ofis-2/09-img-2325.webp 2000w",
-        "original": "IMG_2325.HEIC"
+        "original": "IMG_2325.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/artas-ofis-2/10-img-2331.webp",
         "srcset": "/img/artas-ofis-2/10-img-2331-800w.webp 800w, /img/artas-ofis-2/10-img-2331-1600w.webp 1600w, /img/artas-ofis-2/10-img-2331.webp 2000w",
-        "original": "IMG_2331.HEIC"
+        "original": "IMG_2331.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/artas-ofis-2/11-img-2332.webp",
         "srcset": "/img/artas-ofis-2/11-img-2332-800w.webp 800w, /img/artas-ofis-2/11-img-2332-1600w.webp 1600w, /img/artas-ofis-2/11-img-2332.webp 2000w",
-        "original": "IMG_2332.HEIC"
+        "original": "IMG_2332.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/artas-ofis-2/12-img-2388.webp",
         "srcset": "/img/artas-ofis-2/12-img-2388-800w.webp 800w, /img/artas-ofis-2/12-img-2388-1600w.webp 1600w, /img/artas-ofis-2/12-img-2388.webp 2000w",
-        "original": "IMG_2388.HEIC"
+        "original": "IMG_2388.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/artas-ofis-2/13-img-2389.webp",
         "srcset": "/img/artas-ofis-2/13-img-2389-800w.webp 800w, /img/artas-ofis-2/13-img-2389-1600w.webp 1600w, /img/artas-ofis-2/13-img-2389.webp 2000w",
-        "original": "IMG_2389.HEIC"
+        "original": "IMG_2389.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/artas-ofis-2/14-img-2395.webp",
         "srcset": "/img/artas-ofis-2/14-img-2395-800w.webp 800w, /img/artas-ofis-2/14-img-2395-1600w.webp 1600w, /img/artas-ofis-2/14-img-2395.webp 2000w",
-        "original": "IMG_2395.HEIC"
+        "original": "IMG_2395.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/artas-ofis-2/15-img-2402.webp",
         "srcset": "/img/artas-ofis-2/15-img-2402-800w.webp 800w, /img/artas-ofis-2/15-img-2402-1600w.webp 1600w, /img/artas-ofis-2/15-img-2402.webp 2000w",
-        "original": "IMG_2402.HEIC"
+        "original": "IMG_2402.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/artas-ofis-2/16-x.webp",
         "srcset": "/img/artas-ofis-2/16-x-800w.webp 800w, /img/artas-ofis-2/16-x-1600w.webp 1600w, /img/artas-ofis-2/16-x.webp 2000w",
-        "original": "x.HEIC"
+        "original": "x.HEIC",
+        "width": 2000,
+        "height": 2667
       }
     ]
   },
@@ -90,57 +122,79 @@
       {
         "src": "/img/artas-ofis/01-1.webp",
         "srcset": "/img/artas-ofis/01-1-800w.webp 800w, /img/artas-ofis/01-1-1600w.webp 1600w, /img/artas-ofis/01-1.webp 2000w",
-        "original": "1.HEIC"
+        "original": "1.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/artas-ofis/02-aakapak.webp",
         "srcset": "/img/artas-ofis/02-aakapak-800w.webp 800w, /img/artas-ofis/02-aakapak-1600w.webp 1600w, /img/artas-ofis/02-aakapak.webp 2000w",
-        "original": "aakapak.HEIC"
+        "original": "aakapak.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/artas-ofis/03-artas2.webp",
         "srcset": "/img/artas-ofis/03-artas2-800w.webp 800w, /img/artas-ofis/03-artas2-1600w.webp 1600w, /img/artas-ofis/03-artas2.webp 2000w",
-        "original": "artas2.HEIC"
+        "original": "artas2.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/artas-ofis/04-artas3.webp",
         "srcset": "/img/artas-ofis/04-artas3-800w.webp 800w, /img/artas-ofis/04-artas3-1600w.webp 1600w, /img/artas-ofis/04-artas3.webp 2000w",
-        "original": "artas3.HEIC"
+        "original": "artas3.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/artas-ofis/05-artas4.webp",
         "srcset": "/img/artas-ofis/05-artas4-800w.webp 800w, /img/artas-ofis/05-artas4-1600w.webp 1600w, /img/artas-ofis/05-artas4.webp 2000w",
-        "original": "artas4.HEIC"
+        "original": "artas4.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/artas-ofis/06-artas5.webp",
         "srcset": "/img/artas-ofis/06-artas5-800w.webp 800w, /img/artas-ofis/06-artas5-1600w.webp 1600w, /img/artas-ofis/06-artas5.webp 2000w",
-        "original": "artas5.HEIC"
+        "original": "artas5.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/artas-ofis/07-artas6.webp",
         "srcset": "/img/artas-ofis/07-artas6-800w.webp 800w, /img/artas-ofis/07-artas6-1600w.webp 1600w, /img/artas-ofis/07-artas6.webp 2000w",
-        "original": "artas6.HEIC"
+        "original": "artas6.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/artas-ofis/08-artas8.webp",
         "srcset": "/img/artas-ofis/08-artas8-800w.webp 800w, /img/artas-ofis/08-artas8-1600w.webp 1600w, /img/artas-ofis/08-artas8.webp 2000w",
-        "original": "artas8.HEIC"
+        "original": "artas8.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/artas-ofis/09-artas9.webp",
         "srcset": "/img/artas-ofis/09-artas9-800w.webp 800w, /img/artas-ofis/09-artas9-1600w.webp 1600w, /img/artas-ofis/09-artas9.webp 2000w",
-        "original": "artas9.HEIC"
+        "original": "artas9.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/artas-ofis/10-artas.webp",
         "srcset": "/img/artas-ofis/10-artas-800w.webp 800w, /img/artas-ofis/10-artas-1600w.webp 1600w, /img/artas-ofis/10-artas.webp 2000w",
-        "original": "artas.HEIC"
+        "original": "artas.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/artas-ofis/11-img-2603.webp",
         "srcset": "/img/artas-ofis/11-img-2603-800w.webp 800w, /img/artas-ofis/11-img-2603-1600w.webp 1600w, /img/artas-ofis/11-img-2603.webp 2000w",
-        "original": "IMG_2603.HEIC"
+        "original": "IMG_2603.HEIC",
+        "width": 2000,
+        "height": 2667
       }
     ]
   },
@@ -150,107 +204,149 @@
       {
         "src": "/img/atakoy/01-1.webp",
         "srcset": "/img/atakoy/01-1-800w.webp 800w, /img/atakoy/01-1-1600w.webp 1600w, /img/atakoy/01-1.webp 2000w",
-        "original": "1.jpg"
+        "original": "1.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/atakoy/02-1a.webp",
         "srcset": "/img/atakoy/02-1a-800w.webp 800w, /img/atakoy/02-1a-1600w.webp 1600w, /img/atakoy/02-1a.webp 2000w",
-        "original": "1a.jpg"
+        "original": "1a.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/atakoy/03-2.webp",
         "srcset": "/img/atakoy/03-2-800w.webp 800w, /img/atakoy/03-2-1600w.webp 1600w, /img/atakoy/03-2.webp 2000w",
-        "original": "2.jpg"
+        "original": "2.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/atakoy/04-3.webp",
         "srcset": "/img/atakoy/04-3-800w.webp 800w, /img/atakoy/04-3-1600w.webp 1600w, /img/atakoy/04-3.webp 2000w",
-        "original": "3.jpg"
+        "original": "3.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/atakoy/05-4.webp",
         "srcset": "/img/atakoy/05-4-800w.webp 800w, /img/atakoy/05-4-1600w.webp 1600w, /img/atakoy/05-4.webp 2000w",
-        "original": "4.jpg"
+        "original": "4.jpg",
+        "width": 2000,
+        "height": 2662
       },
       {
         "src": "/img/atakoy/06-6.webp",
         "srcset": "/img/atakoy/06-6-800w.webp 800w, /img/atakoy/06-6-1600w.webp 1600w, /img/atakoy/06-6.webp 2000w",
-        "original": "6.jpg"
+        "original": "6.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/atakoy/07-img-20220720-214304.webp",
         "srcset": "/img/atakoy/07-img-20220720-214304-800w.webp 800w, /img/atakoy/07-img-20220720-214304-1600w.webp 1600w, /img/atakoy/07-img-20220720-214304.webp 2000w",
-        "original": "IMG_20220720_214304.jpg"
+        "original": "IMG_20220720_214304.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/atakoy/08-img-20220720-214307.webp",
         "srcset": "/img/atakoy/08-img-20220720-214307-800w.webp 800w, /img/atakoy/08-img-20220720-214307-1600w.webp 1600w, /img/atakoy/08-img-20220720-214307.webp 2000w",
-        "original": "IMG_20220720_214307.jpg"
+        "original": "IMG_20220720_214307.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/atakoy/09-img-20220720-214314.webp",
         "srcset": "/img/atakoy/09-img-20220720-214314-800w.webp 800w, /img/atakoy/09-img-20220720-214314-1600w.webp 1600w, /img/atakoy/09-img-20220720-214314.webp 2000w",
-        "original": "IMG_20220720_214314.jpg"
+        "original": "IMG_20220720_214314.jpg",
+        "width": 2000,
+        "height": 2662
       },
       {
         "src": "/img/atakoy/10-img-20220721-222342.webp",
         "srcset": "/img/atakoy/10-img-20220721-222342-800w.webp 800w, /img/atakoy/10-img-20220721-222342-1600w.webp 1600w, /img/atakoy/10-img-20220721-222342.webp 2000w",
-        "original": "IMG_20220721_222342.jpg"
+        "original": "IMG_20220721_222342.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/atakoy/11-img-20220721-222352.webp",
         "srcset": "/img/atakoy/11-img-20220721-222352-800w.webp 800w, /img/atakoy/11-img-20220721-222352-1600w.webp 1600w, /img/atakoy/11-img-20220721-222352.webp 2000w",
-        "original": "IMG_20220721_222352.jpg"
+        "original": "IMG_20220721_222352.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/atakoy/12-img-20220721-222440.webp",
         "srcset": "/img/atakoy/12-img-20220721-222440-800w.webp 800w, /img/atakoy/12-img-20220721-222440-1600w.webp 1600w, /img/atakoy/12-img-20220721-222440.webp 2000w",
-        "original": "IMG_20220721_222440.jpg"
+        "original": "IMG_20220721_222440.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/atakoy/13-img-20220721-222741.webp",
         "srcset": "/img/atakoy/13-img-20220721-222741-800w.webp 800w, /img/atakoy/13-img-20220721-222741-1600w.webp 1600w, /img/atakoy/13-img-20220721-222741.webp 2000w",
-        "original": "IMG_20220721_222741.jpg"
+        "original": "IMG_20220721_222741.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/atakoy/14-img-20220721-222752.webp",
         "srcset": "/img/atakoy/14-img-20220721-222752-800w.webp 800w, /img/atakoy/14-img-20220721-222752-1600w.webp 1600w, /img/atakoy/14-img-20220721-222752.webp 2000w",
-        "original": "IMG_20220721_222752.jpg"
+        "original": "IMG_20220721_222752.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/atakoy/15-img-20220721-222931.webp",
         "srcset": "/img/atakoy/15-img-20220721-222931-800w.webp 800w, /img/atakoy/15-img-20220721-222931-1600w.webp 1600w, /img/atakoy/15-img-20220721-222931.webp 2000w",
-        "original": "IMG_20220721_222931.jpg"
+        "original": "IMG_20220721_222931.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/atakoy/16-img-20220721-222940.webp",
         "srcset": "/img/atakoy/16-img-20220721-222940-800w.webp 800w, /img/atakoy/16-img-20220721-222940-1600w.webp 1600w, /img/atakoy/16-img-20220721-222940.webp 2000w",
-        "original": "IMG_20220721_222940.jpg"
+        "original": "IMG_20220721_222940.jpg",
+        "width": 2000,
+        "height": 2662
       },
       {
         "src": "/img/atakoy/17-img-20220721-222957.webp",
         "srcset": "/img/atakoy/17-img-20220721-222957-800w.webp 800w, /img/atakoy/17-img-20220721-222957-1600w.webp 1600w, /img/atakoy/17-img-20220721-222957.webp 2000w",
-        "original": "IMG_20220721_222957.jpg"
+        "original": "IMG_20220721_222957.jpg",
+        "width": 2000,
+        "height": 2662
       },
       {
         "src": "/img/atakoy/18-img-20220721-223840.webp",
         "srcset": "/img/atakoy/18-img-20220721-223840-800w.webp 800w, /img/atakoy/18-img-20220721-223840-1600w.webp 1600w, /img/atakoy/18-img-20220721-223840.webp 2000w",
-        "original": "IMG_20220721_223840.jpg"
+        "original": "IMG_20220721_223840.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/atakoy/19-img-20220721-224046.webp",
         "srcset": "/img/atakoy/19-img-20220721-224046-800w.webp 800w, /img/atakoy/19-img-20220721-224046-1600w.webp 1600w, /img/atakoy/19-img-20220721-224046.webp 2000w",
-        "original": "IMG_20220721_224046.jpg"
+        "original": "IMG_20220721_224046.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/atakoy/20-img-20220721-224109.webp",
         "srcset": "/img/atakoy/20-img-20220721-224109-800w.webp 800w, /img/atakoy/20-img-20220721-224109-1600w.webp 1600w, /img/atakoy/20-img-20220721-224109.webp 2000w",
-        "original": "IMG_20220721_224109.jpg"
+        "original": "IMG_20220721_224109.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/atakoy/21-img-20220721-224131.webp",
         "srcset": "/img/atakoy/21-img-20220721-224131-800w.webp 800w, /img/atakoy/21-img-20220721-224131-1600w.webp 1600w, /img/atakoy/21-img-20220721-224131.webp 2000w",
-        "original": "IMG_20220721_224131.jpg"
+        "original": "IMG_20220721_224131.jpg",
+        "width": 2000,
+        "height": 2667
       }
     ]
   },
@@ -260,297 +356,415 @@
       {
         "src": "/img/beykoz-pasabahce/01-1.webp",
         "srcset": "/img/beykoz-pasabahce/01-1-800w.webp 800w, /img/beykoz-pasabahce/01-1-1600w.webp 1600w, /img/beykoz-pasabahce/01-1.webp 2000w",
-        "original": "1.HEIC"
+        "original": "1.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/02-2.webp",
         "srcset": "/img/beykoz-pasabahce/02-2-800w.webp 800w, /img/beykoz-pasabahce/02-2-1600w.webp 1600w, /img/beykoz-pasabahce/02-2.webp 2000w",
-        "original": "2.HEIC"
+        "original": "2.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/03-3.webp",
         "srcset": "/img/beykoz-pasabahce/03-3-800w.webp 800w, /img/beykoz-pasabahce/03-3-1600w.webp 1600w, /img/beykoz-pasabahce/03-3.webp 2000w",
-        "original": "3.HEIC"
+        "original": "3.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/04-4.webp",
         "srcset": "/img/beykoz-pasabahce/04-4-800w.webp 800w, /img/beykoz-pasabahce/04-4-1600w.webp 1600w, /img/beykoz-pasabahce/04-4.webp 2000w",
-        "original": "4.HEIC"
+        "original": "4.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/05-5.webp",
         "srcset": "/img/beykoz-pasabahce/05-5-800w.webp 800w, /img/beykoz-pasabahce/05-5-1600w.webp 1600w, /img/beykoz-pasabahce/05-5.webp 2000w",
-        "original": "5.HEIC"
+        "original": "5.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/06-6.webp",
         "srcset": "/img/beykoz-pasabahce/06-6-800w.webp 800w, /img/beykoz-pasabahce/06-6-1600w.webp 1600w, /img/beykoz-pasabahce/06-6.webp 2000w",
-        "original": "6.HEIC"
+        "original": "6.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/07-7.webp",
         "srcset": "/img/beykoz-pasabahce/07-7-800w.webp 800w, /img/beykoz-pasabahce/07-7-1600w.webp 1600w, /img/beykoz-pasabahce/07-7.webp 2000w",
-        "original": "7.HEIC"
+        "original": "7.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/08-8.webp",
         "srcset": "/img/beykoz-pasabahce/08-8-800w.webp 800w, /img/beykoz-pasabahce/08-8-1600w.webp 1600w, /img/beykoz-pasabahce/08-8.webp 2000w",
-        "original": "8.HEIC"
+        "original": "8.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/09-9.webp",
         "srcset": "/img/beykoz-pasabahce/09-9-800w.webp 800w, /img/beykoz-pasabahce/09-9-1600w.webp 1600w, /img/beykoz-pasabahce/09-9.webp 2000w",
-        "original": "9.HEIC"
+        "original": "9.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/10-10.webp",
         "srcset": "/img/beykoz-pasabahce/10-10-800w.webp 800w, /img/beykoz-pasabahce/10-10-1600w.webp 1600w, /img/beykoz-pasabahce/10-10.webp 2000w",
-        "original": "10.HEIC"
+        "original": "10.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/11-11.webp",
         "srcset": "/img/beykoz-pasabahce/11-11-800w.webp 800w, /img/beykoz-pasabahce/11-11-1600w.webp 1600w, /img/beykoz-pasabahce/11-11.webp 2000w",
-        "original": "11.HEIC"
+        "original": "11.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/12-12.webp",
         "srcset": "/img/beykoz-pasabahce/12-12-800w.webp 800w, /img/beykoz-pasabahce/12-12-1600w.webp 1600w, /img/beykoz-pasabahce/12-12.webp 2000w",
-        "original": "12.HEIC"
+        "original": "12.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/13-13.webp",
         "srcset": "/img/beykoz-pasabahce/13-13-800w.webp 800w, /img/beykoz-pasabahce/13-13-1600w.webp 1600w, /img/beykoz-pasabahce/13-13.webp 2000w",
-        "original": "13.HEIC"
+        "original": "13.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/14-14.webp",
         "srcset": "/img/beykoz-pasabahce/14-14-800w.webp 800w, /img/beykoz-pasabahce/14-14-1600w.webp 1600w, /img/beykoz-pasabahce/14-14.webp 2000w",
-        "original": "14.HEIC"
+        "original": "14.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/15-15.webp",
         "srcset": "/img/beykoz-pasabahce/15-15-800w.webp 800w, /img/beykoz-pasabahce/15-15-1600w.webp 1600w, /img/beykoz-pasabahce/15-15.webp 2000w",
-        "original": "15.HEIC"
+        "original": "15.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/16-17.webp",
         "srcset": "/img/beykoz-pasabahce/16-17-800w.webp 800w, /img/beykoz-pasabahce/16-17-1600w.webp 1600w, /img/beykoz-pasabahce/16-17.webp 2000w",
-        "original": "17.HEIC"
+        "original": "17.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/17-18.webp",
         "srcset": "/img/beykoz-pasabahce/17-18-800w.webp 800w, /img/beykoz-pasabahce/17-18-1600w.webp 1600w, /img/beykoz-pasabahce/17-18.webp 2000w",
-        "original": "18.jpg"
+        "original": "18.jpg",
+        "width": 1200,
+        "height": 1600
       },
       {
         "src": "/img/beykoz-pasabahce/18-19.webp",
         "srcset": "/img/beykoz-pasabahce/18-19-800w.webp 800w, /img/beykoz-pasabahce/18-19-1600w.webp 1600w, /img/beykoz-pasabahce/18-19.webp 2000w",
-        "original": "19.HEIC"
+        "original": "19.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/19-20.webp",
         "srcset": "/img/beykoz-pasabahce/19-20-800w.webp 800w, /img/beykoz-pasabahce/19-20-1600w.webp 1600w, /img/beykoz-pasabahce/19-20.webp 2000w",
-        "original": "20.HEIC"
+        "original": "20.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/20-21.webp",
         "srcset": "/img/beykoz-pasabahce/20-21-800w.webp 800w, /img/beykoz-pasabahce/20-21-1600w.webp 1600w, /img/beykoz-pasabahce/20-21.webp 2000w",
-        "original": "21.HEIC"
+        "original": "21.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/21-22.webp",
         "srcset": "/img/beykoz-pasabahce/21-22-800w.webp 800w, /img/beykoz-pasabahce/21-22-1600w.webp 1600w, /img/beykoz-pasabahce/21-22.webp 2000w",
-        "original": "22.HEIC"
+        "original": "22.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/22-23.webp",
         "srcset": "/img/beykoz-pasabahce/22-23-800w.webp 800w, /img/beykoz-pasabahce/22-23-1600w.webp 1600w, /img/beykoz-pasabahce/22-23.webp 2000w",
-        "original": "23.HEIC"
+        "original": "23.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/23-24.webp",
         "srcset": "/img/beykoz-pasabahce/23-24-800w.webp 800w, /img/beykoz-pasabahce/23-24-1600w.webp 1600w, /img/beykoz-pasabahce/23-24.webp 2000w",
-        "original": "24.HEIC"
+        "original": "24.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/24-25.webp",
         "srcset": "/img/beykoz-pasabahce/24-25-800w.webp 800w, /img/beykoz-pasabahce/24-25-1600w.webp 1600w, /img/beykoz-pasabahce/24-25.webp 2000w",
-        "original": "25.HEIC"
+        "original": "25.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/25-26.webp",
         "srcset": "/img/beykoz-pasabahce/25-26-800w.webp 800w, /img/beykoz-pasabahce/25-26-1600w.webp 1600w, /img/beykoz-pasabahce/25-26.webp 2000w",
-        "original": "26.HEIC"
+        "original": "26.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/26-27.webp",
         "srcset": "/img/beykoz-pasabahce/26-27-800w.webp 800w, /img/beykoz-pasabahce/26-27-1600w.webp 1600w, /img/beykoz-pasabahce/26-27.webp 2000w",
-        "original": "27.HEIC"
+        "original": "27.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/27-28.webp",
         "srcset": "/img/beykoz-pasabahce/27-28-800w.webp 800w, /img/beykoz-pasabahce/27-28-1600w.webp 1600w, /img/beykoz-pasabahce/27-28.webp 2000w",
-        "original": "28.HEIC"
+        "original": "28.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/28-28a.webp",
         "srcset": "/img/beykoz-pasabahce/28-28a-800w.webp 800w, /img/beykoz-pasabahce/28-28a-1600w.webp 1600w, /img/beykoz-pasabahce/28-28a.webp 2000w",
-        "original": "28a.HEIC"
+        "original": "28a.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/29-28n.webp",
         "srcset": "/img/beykoz-pasabahce/29-28n-800w.webp 800w, /img/beykoz-pasabahce/29-28n-1600w.webp 1600w, /img/beykoz-pasabahce/29-28n.webp 2000w",
-        "original": "28n.HEIC"
+        "original": "28n.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/30-30.webp",
         "srcset": "/img/beykoz-pasabahce/30-30-800w.webp 800w, /img/beykoz-pasabahce/30-30-1600w.webp 1600w, /img/beykoz-pasabahce/30-30.webp 2000w",
-        "original": "30.HEIC"
+        "original": "30.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/31-31.webp",
         "srcset": "/img/beykoz-pasabahce/31-31-800w.webp 800w, /img/beykoz-pasabahce/31-31-1600w.webp 1600w, /img/beykoz-pasabahce/31-31.webp 2000w",
-        "original": "31.HEIC"
+        "original": "31.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/32-35.webp",
         "srcset": "/img/beykoz-pasabahce/32-35-800w.webp 800w, /img/beykoz-pasabahce/32-35-1600w.webp 1600w, /img/beykoz-pasabahce/32-35.webp 2000w",
-        "original": "35.jpg"
+        "original": "35.jpg",
+        "width": 1200,
+        "height": 1600
       },
       {
         "src": "/img/beykoz-pasabahce/33-38.webp",
         "srcset": "/img/beykoz-pasabahce/33-38-800w.webp 800w, /img/beykoz-pasabahce/33-38-1600w.webp 1600w, /img/beykoz-pasabahce/33-38.webp 2000w",
-        "original": "38.jpg"
+        "original": "38.jpg",
+        "width": 1200,
+        "height": 1600
       },
       {
         "src": "/img/beykoz-pasabahce/34-60.webp",
         "srcset": "/img/beykoz-pasabahce/34-60-800w.webp 800w, /img/beykoz-pasabahce/34-60-1600w.webp 1600w, /img/beykoz-pasabahce/34-60.webp 2000w",
-        "original": "60.jpg"
+        "original": "60.jpg",
+        "width": 1200,
+        "height": 1600
       },
       {
         "src": "/img/beykoz-pasabahce/35-70.webp",
         "srcset": "/img/beykoz-pasabahce/35-70-800w.webp 800w, /img/beykoz-pasabahce/35-70-1600w.webp 1600w, /img/beykoz-pasabahce/35-70.webp 2000w",
-        "original": "70.HEIC"
+        "original": "70.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/36-71.webp",
         "srcset": "/img/beykoz-pasabahce/36-71-800w.webp 800w, /img/beykoz-pasabahce/36-71-1600w.webp 1600w, /img/beykoz-pasabahce/36-71.webp 2000w",
-        "original": "71.HEIC"
+        "original": "71.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/37-73.webp",
         "srcset": "/img/beykoz-pasabahce/37-73-800w.webp 800w, /img/beykoz-pasabahce/37-73-1600w.webp 1600w, /img/beykoz-pasabahce/37-73.webp 2000w",
-        "original": "73.HEIC"
+        "original": "73.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/38-77.webp",
         "srcset": "/img/beykoz-pasabahce/38-77-800w.webp 800w, /img/beykoz-pasabahce/38-77-1600w.webp 1600w, /img/beykoz-pasabahce/38-77.webp 2000w",
-        "original": "77.HEIC"
+        "original": "77.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/39-78.webp",
         "srcset": "/img/beykoz-pasabahce/39-78-800w.webp 800w, /img/beykoz-pasabahce/39-78-1600w.webp 1600w, /img/beykoz-pasabahce/39-78.webp 2000w",
-        "original": "78.HEIC"
+        "original": "78.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/40-80.webp",
         "srcset": "/img/beykoz-pasabahce/40-80-800w.webp 800w, /img/beykoz-pasabahce/40-80-1600w.webp 1600w, /img/beykoz-pasabahce/40-80.webp 2000w",
-        "original": "80.HEIC"
+        "original": "80.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/41-81.webp",
         "srcset": "/img/beykoz-pasabahce/41-81-800w.webp 800w, /img/beykoz-pasabahce/41-81-1600w.webp 1600w, /img/beykoz-pasabahce/41-81.webp 2000w",
-        "original": "81.JPG"
+        "original": "81.JPG",
+        "width": 2000,
+        "height": 2768
       },
       {
         "src": "/img/beykoz-pasabahce/42-82.webp",
         "srcset": "/img/beykoz-pasabahce/42-82-800w.webp 800w, /img/beykoz-pasabahce/42-82-1600w.webp 1600w, /img/beykoz-pasabahce/42-82.webp 2000w",
-        "original": "82.jpg"
+        "original": "82.jpg",
+        "width": 2000,
+        "height": 3624
       },
       {
         "src": "/img/beykoz-pasabahce/43-83.webp",
         "srcset": "/img/beykoz-pasabahce/43-83-800w.webp 800w, /img/beykoz-pasabahce/43-83-1600w.webp 1600w, /img/beykoz-pasabahce/43-83.webp 2000w",
-        "original": "83.HEIC"
+        "original": "83.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/44-83a.webp",
         "srcset": "/img/beykoz-pasabahce/44-83a-800w.webp 800w, /img/beykoz-pasabahce/44-83a-1600w.webp 1600w, /img/beykoz-pasabahce/44-83a.webp 2000w",
-        "original": "83a.HEIC"
+        "original": "83a.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/45-84.webp",
         "srcset": "/img/beykoz-pasabahce/45-84-800w.webp 800w, /img/beykoz-pasabahce/45-84-1600w.webp 1600w, /img/beykoz-pasabahce/45-84.webp 2000w",
-        "original": "84.HEIC"
+        "original": "84.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/46-85.webp",
         "srcset": "/img/beykoz-pasabahce/46-85-800w.webp 800w, /img/beykoz-pasabahce/46-85-1600w.webp 1600w, /img/beykoz-pasabahce/46-85.webp 2000w",
-        "original": "85.HEIC"
+        "original": "85.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/47-86.webp",
         "srcset": "/img/beykoz-pasabahce/47-86-800w.webp 800w, /img/beykoz-pasabahce/47-86-1600w.webp 1600w, /img/beykoz-pasabahce/47-86.webp 2000w",
-        "original": "86.HEIC"
+        "original": "86.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/48-87.webp",
         "srcset": "/img/beykoz-pasabahce/48-87-800w.webp 800w, /img/beykoz-pasabahce/48-87-1600w.webp 1600w, /img/beykoz-pasabahce/48-87.webp 2000w",
-        "original": "87.HEIC"
+        "original": "87.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/49-88.webp",
         "srcset": "/img/beykoz-pasabahce/49-88-800w.webp 800w, /img/beykoz-pasabahce/49-88-1600w.webp 1600w, /img/beykoz-pasabahce/49-88.webp 2000w",
-        "original": "88.HEIC"
+        "original": "88.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/50-89.webp",
         "srcset": "/img/beykoz-pasabahce/50-89-800w.webp 800w, /img/beykoz-pasabahce/50-89-1600w.webp 1600w, /img/beykoz-pasabahce/50-89.webp 2000w",
-        "original": "89.jpg"
+        "original": "89.jpg",
+        "width": 1200,
+        "height": 1600
       },
       {
         "src": "/img/beykoz-pasabahce/51-90.webp",
         "srcset": "/img/beykoz-pasabahce/51-90-800w.webp 800w, /img/beykoz-pasabahce/51-90-1600w.webp 1600w, /img/beykoz-pasabahce/51-90.webp 2000w",
-        "original": "90.HEIC"
+        "original": "90.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/52-91.webp",
         "srcset": "/img/beykoz-pasabahce/52-91-800w.webp 800w, /img/beykoz-pasabahce/52-91-1600w.webp 1600w, /img/beykoz-pasabahce/52-91.webp 2000w",
-        "original": "91.jpg"
+        "original": "91.jpg",
+        "width": 1200,
+        "height": 1600
       },
       {
         "src": "/img/beykoz-pasabahce/53-92.webp",
         "srcset": "/img/beykoz-pasabahce/53-92-800w.webp 800w, /img/beykoz-pasabahce/53-92-1600w.webp 1600w, /img/beykoz-pasabahce/53-92.webp 2000w",
-        "original": "92.HEIC"
+        "original": "92.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/54-img-7563.webp",
         "srcset": "/img/beykoz-pasabahce/54-img-7563-800w.webp 800w, /img/beykoz-pasabahce/54-img-7563-1600w.webp 1600w, /img/beykoz-pasabahce/54-img-7563.webp 2000w",
-        "original": "IMG_7563.HEIC"
+        "original": "IMG_7563.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/55-img-7564.webp",
         "srcset": "/img/beykoz-pasabahce/55-img-7564-800w.webp 800w, /img/beykoz-pasabahce/55-img-7564-1600w.webp 1600w, /img/beykoz-pasabahce/55-img-7564.webp 2000w",
-        "original": "IMG_7564.HEIC"
+        "original": "IMG_7564.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/56-img-7824.webp",
         "srcset": "/img/beykoz-pasabahce/56-img-7824-800w.webp 800w, /img/beykoz-pasabahce/56-img-7824-1600w.webp 1600w, /img/beykoz-pasabahce/56-img-7824.webp 2000w",
-        "original": "IMG_7824.HEIC"
+        "original": "IMG_7824.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/57-img-7826.webp",
         "srcset": "/img/beykoz-pasabahce/57-img-7826-800w.webp 800w, /img/beykoz-pasabahce/57-img-7826-1600w.webp 1600w, /img/beykoz-pasabahce/57-img-7826.webp 2000w",
-        "original": "IMG_7826.HEIC"
+        "original": "IMG_7826.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/58-img-7827.webp",
         "srcset": "/img/beykoz-pasabahce/58-img-7827-800w.webp 800w, /img/beykoz-pasabahce/58-img-7827-1600w.webp 1600w, /img/beykoz-pasabahce/58-img-7827.webp 2000w",
-        "original": "IMG_7827.HEIC"
+        "original": "IMG_7827.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beykoz-pasabahce/59-z.webp",
         "srcset": "/img/beykoz-pasabahce/59-z-800w.webp 800w, /img/beykoz-pasabahce/59-z-1600w.webp 1600w, /img/beykoz-pasabahce/59-z.webp 2000w",
-        "original": "z.jpg"
+        "original": "z.jpg",
+        "width": 2000,
+        "height": 1502
       }
     ]
   },
@@ -560,32 +774,44 @@
       {
         "src": "/img/beykoz-villa/01-1a871748b-ed86-42c2-b86f-7a8bcf10ac31.webp",
         "srcset": "/img/beykoz-villa/01-1a871748b-ed86-42c2-b86f-7a8bcf10ac31-800w.webp 800w, /img/beykoz-villa/01-1a871748b-ed86-42c2-b86f-7a8bcf10ac31-1600w.webp 1600w, /img/beykoz-villa/01-1a871748b-ed86-42c2-b86f-7a8bcf10ac31.webp 2000w",
-        "original": "1a871748b-ed86-42c2-b86f-7a8bcf10ac31.jpg"
+        "original": "1a871748b-ed86-42c2-b86f-7a8bcf10ac31.jpg",
+        "width": 1600,
+        "height": 899
       },
       {
         "src": "/img/beykoz-villa/02-1463ff31c-7773-48a2-8b90-5b1d6277d348.webp",
         "srcset": "/img/beykoz-villa/02-1463ff31c-7773-48a2-8b90-5b1d6277d348-800w.webp 800w, /img/beykoz-villa/02-1463ff31c-7773-48a2-8b90-5b1d6277d348-1600w.webp 1600w, /img/beykoz-villa/02-1463ff31c-7773-48a2-8b90-5b1d6277d348.webp 2000w",
-        "original": "1463ff31c-7773-48a2-8b90-5b1d6277d348.jpg"
+        "original": "1463ff31c-7773-48a2-8b90-5b1d6277d348.jpg",
+        "width": 1600,
+        "height": 899
       },
       {
         "src": "/img/beykoz-villa/03-a53d4e25-7850-44f3-8178-b36f1df25af5.webp",
         "srcset": "/img/beykoz-villa/03-a53d4e25-7850-44f3-8178-b36f1df25af5-800w.webp 800w, /img/beykoz-villa/03-a53d4e25-7850-44f3-8178-b36f1df25af5-1600w.webp 1600w, /img/beykoz-villa/03-a53d4e25-7850-44f3-8178-b36f1df25af5.webp 2000w",
-        "original": "a53d4e25-7850-44f3-8178-b36f1df25af5.jpg"
+        "original": "a53d4e25-7850-44f3-8178-b36f1df25af5.jpg",
+        "width": 1600,
+        "height": 899
       },
       {
         "src": "/img/beykoz-villa/04-ac58c480-c1e4-40ed-8945-82386e2e5884.webp",
         "srcset": "/img/beykoz-villa/04-ac58c480-c1e4-40ed-8945-82386e2e5884-800w.webp 800w, /img/beykoz-villa/04-ac58c480-c1e4-40ed-8945-82386e2e5884-1600w.webp 1600w, /img/beykoz-villa/04-ac58c480-c1e4-40ed-8945-82386e2e5884.webp 2000w",
-        "original": "ac58c480-c1e4-40ed-8945-82386e2e5884.jpg"
+        "original": "ac58c480-c1e4-40ed-8945-82386e2e5884.jpg",
+        "width": 1600,
+        "height": 899
       },
       {
         "src": "/img/beykoz-villa/05-d5e8a42b4-d9cc-4db2-b083-819568902764.webp",
         "srcset": "/img/beykoz-villa/05-d5e8a42b4-d9cc-4db2-b083-819568902764-800w.webp 800w, /img/beykoz-villa/05-d5e8a42b4-d9cc-4db2-b083-819568902764-1600w.webp 1600w, /img/beykoz-villa/05-d5e8a42b4-d9cc-4db2-b083-819568902764.webp 2000w",
-        "original": "d5e8a42b4-d9cc-4db2-b083-819568902764.jpg"
+        "original": "d5e8a42b4-d9cc-4db2-b083-819568902764.jpg",
+        "width": 1500,
+        "height": 844
       },
       {
         "src": "/img/beykoz-villa/06-img-20220825-wa0001.webp",
         "srcset": "/img/beykoz-villa/06-img-20220825-wa0001-800w.webp 800w, /img/beykoz-villa/06-img-20220825-wa0001-1600w.webp 1600w, /img/beykoz-villa/06-img-20220825-wa0001.webp 2000w",
-        "original": "IMG-20220825-WA0001.jpg"
+        "original": "IMG-20220825-WA0001.jpg",
+        "width": 1600,
+        "height": 899
       }
     ]
   },
@@ -595,57 +821,79 @@
       {
         "src": "/img/beylikduzu-villa/01-1e582c394-bce5-4907-9406-d62acd0ac32b.webp",
         "srcset": "/img/beylikduzu-villa/01-1e582c394-bce5-4907-9406-d62acd0ac32b-800w.webp 800w, /img/beylikduzu-villa/01-1e582c394-bce5-4907-9406-d62acd0ac32b-1600w.webp 1600w, /img/beylikduzu-villa/01-1e582c394-bce5-4907-9406-d62acd0ac32b.webp 2000w",
-        "original": "1e582c394-bce5-4907-9406-d62acd0ac32b.jpg"
+        "original": "1e582c394-bce5-4907-9406-d62acd0ac32b.jpg",
+        "width": 1600,
+        "height": 900
       },
       {
         "src": "/img/beylikduzu-villa/02-6a3e0910-d799-43ed-a382-bf309f90e500.webp",
         "srcset": "/img/beylikduzu-villa/02-6a3e0910-d799-43ed-a382-bf309f90e500-800w.webp 800w, /img/beylikduzu-villa/02-6a3e0910-d799-43ed-a382-bf309f90e500-1600w.webp 1600w, /img/beylikduzu-villa/02-6a3e0910-d799-43ed-a382-bf309f90e500.webp 2000w",
-        "original": "6a3e0910-d799-43ed-a382-bf309f90e500.jpg"
+        "original": "6a3e0910-d799-43ed-a382-bf309f90e500.jpg",
+        "width": 1600,
+        "height": 1125
       },
       {
         "src": "/img/beylikduzu-villa/03-09af83e7-f6d3-4623-abf6-7e924f6e0dd4.webp",
         "srcset": "/img/beylikduzu-villa/03-09af83e7-f6d3-4623-abf6-7e924f6e0dd4-800w.webp 800w, /img/beylikduzu-villa/03-09af83e7-f6d3-4623-abf6-7e924f6e0dd4-1600w.webp 1600w, /img/beylikduzu-villa/03-09af83e7-f6d3-4623-abf6-7e924f6e0dd4.webp 2000w",
-        "original": "09af83e7-f6d3-4623-abf6-7e924f6e0dd4.jpg"
+        "original": "09af83e7-f6d3-4623-abf6-7e924f6e0dd4.jpg",
+        "width": 1600,
+        "height": 900
       },
       {
         "src": "/img/beylikduzu-villa/04-51b372ea-0ffa-459e-ba15-7888db838f7a.webp",
         "srcset": "/img/beylikduzu-villa/04-51b372ea-0ffa-459e-ba15-7888db838f7a-800w.webp 800w, /img/beylikduzu-villa/04-51b372ea-0ffa-459e-ba15-7888db838f7a-1600w.webp 1600w, /img/beylikduzu-villa/04-51b372ea-0ffa-459e-ba15-7888db838f7a.webp 2000w",
-        "original": "51b372ea-0ffa-459e-ba15-7888db838f7a.jpg"
+        "original": "51b372ea-0ffa-459e-ba15-7888db838f7a.jpg",
+        "width": 1600,
+        "height": 1006
       },
       {
         "src": "/img/beylikduzu-villa/05-95e0f3dc-57eb-4fcb-834c-37eee92e49a7.webp",
         "srcset": "/img/beylikduzu-villa/05-95e0f3dc-57eb-4fcb-834c-37eee92e49a7-800w.webp 800w, /img/beylikduzu-villa/05-95e0f3dc-57eb-4fcb-834c-37eee92e49a7-1600w.webp 1600w, /img/beylikduzu-villa/05-95e0f3dc-57eb-4fcb-834c-37eee92e49a7.webp 2000w",
-        "original": "95e0f3dc-57eb-4fcb-834c-37eee92e49a7.jpg"
+        "original": "95e0f3dc-57eb-4fcb-834c-37eee92e49a7.jpg",
+        "width": 1600,
+        "height": 1006
       },
       {
         "src": "/img/beylikduzu-villa/06-396a2e47-e740-4ee6-ad38-7553d37704da.webp",
         "srcset": "/img/beylikduzu-villa/06-396a2e47-e740-4ee6-ad38-7553d37704da-800w.webp 800w, /img/beylikduzu-villa/06-396a2e47-e740-4ee6-ad38-7553d37704da-1600w.webp 1600w, /img/beylikduzu-villa/06-396a2e47-e740-4ee6-ad38-7553d37704da.webp 2000w",
-        "original": "396a2e47-e740-4ee6-ad38-7553d37704da.jpg"
+        "original": "396a2e47-e740-4ee6-ad38-7553d37704da.jpg",
+        "width": 1600,
+        "height": 900
       },
       {
         "src": "/img/beylikduzu-villa/07-451e764e-b318-4c7c-b432-1b507be77891.webp",
         "srcset": "/img/beylikduzu-villa/07-451e764e-b318-4c7c-b432-1b507be77891-800w.webp 800w, /img/beylikduzu-villa/07-451e764e-b318-4c7c-b432-1b507be77891-1600w.webp 1600w, /img/beylikduzu-villa/07-451e764e-b318-4c7c-b432-1b507be77891.webp 2000w",
-        "original": "451e764e-b318-4c7c-b432-1b507be77891.jpg"
+        "original": "451e764e-b318-4c7c-b432-1b507be77891.jpg",
+        "width": 1489,
+        "height": 887
       },
       {
         "src": "/img/beylikduzu-villa/08-4652d476-3da4-46aa-b8b5-2feb9612b560.webp",
         "srcset": "/img/beylikduzu-villa/08-4652d476-3da4-46aa-b8b5-2feb9612b560-800w.webp 800w, /img/beylikduzu-villa/08-4652d476-3da4-46aa-b8b5-2feb9612b560-1600w.webp 1600w, /img/beylikduzu-villa/08-4652d476-3da4-46aa-b8b5-2feb9612b560.webp 2000w",
-        "original": "4652d476-3da4-46aa-b8b5-2feb9612b560.jpg"
+        "original": "4652d476-3da4-46aa-b8b5-2feb9612b560.jpg",
+        "width": 880,
+        "height": 553
       },
       {
         "src": "/img/beylikduzu-villa/09-9319aab1-3229-4c5f-a0d3-c0c8b439faa5.webp",
         "srcset": "/img/beylikduzu-villa/09-9319aab1-3229-4c5f-a0d3-c0c8b439faa5-800w.webp 800w, /img/beylikduzu-villa/09-9319aab1-3229-4c5f-a0d3-c0c8b439faa5-1600w.webp 1600w, /img/beylikduzu-villa/09-9319aab1-3229-4c5f-a0d3-c0c8b439faa5.webp 2000w",
-        "original": "9319aab1-3229-4c5f-a0d3-c0c8b439faa5.jpg"
+        "original": "9319aab1-3229-4c5f-a0d3-c0c8b439faa5.jpg",
+        "width": 1600,
+        "height": 1125
       },
       {
         "src": "/img/beylikduzu-villa/10-a9b3ebcf-8bb8-4d46-b81f-94f509cc6e97.webp",
         "srcset": "/img/beylikduzu-villa/10-a9b3ebcf-8bb8-4d46-b81f-94f509cc6e97-800w.webp 800w, /img/beylikduzu-villa/10-a9b3ebcf-8bb8-4d46-b81f-94f509cc6e97-1600w.webp 1600w, /img/beylikduzu-villa/10-a9b3ebcf-8bb8-4d46-b81f-94f509cc6e97.webp 2000w",
-        "original": "a9b3ebcf-8bb8-4d46-b81f-94f509cc6e97.jpg"
+        "original": "a9b3ebcf-8bb8-4d46-b81f-94f509cc6e97.jpg",
+        "width": 1600,
+        "height": 900
       },
       {
         "src": "/img/beylikduzu-villa/11-d2a5ef6c-b59e-4954-9c63-9c1a3c16ca9b.webp",
         "srcset": "/img/beylikduzu-villa/11-d2a5ef6c-b59e-4954-9c63-9c1a3c16ca9b-800w.webp 800w, /img/beylikduzu-villa/11-d2a5ef6c-b59e-4954-9c63-9c1a3c16ca9b-1600w.webp 1600w, /img/beylikduzu-villa/11-d2a5ef6c-b59e-4954-9c63-9c1a3c16ca9b.webp 2000w",
-        "original": "d2a5ef6c-b59e-4954-9c63-9c1a3c16ca9b.jpg"
+        "original": "d2a5ef6c-b59e-4954-9c63-9c1a3c16ca9b.jpg",
+        "width": 1600,
+        "height": 900
       }
     ]
   },
@@ -655,167 +903,233 @@
       {
         "src": "/img/beyoglu-galata/01-1.webp",
         "srcset": "/img/beyoglu-galata/01-1-800w.webp 800w, /img/beyoglu-galata/01-1-1600w.webp 1600w, /img/beyoglu-galata/01-1.webp 2000w",
-        "original": "1.jpg"
+        "original": "1.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beyoglu-galata/02-2.webp",
         "srcset": "/img/beyoglu-galata/02-2-800w.webp 800w, /img/beyoglu-galata/02-2-1600w.webp 1600w, /img/beyoglu-galata/02-2.webp 2000w",
-        "original": "2.jpg"
+        "original": "2.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beyoglu-galata/03-2a.webp",
         "srcset": "/img/beyoglu-galata/03-2a-800w.webp 800w, /img/beyoglu-galata/03-2a-1600w.webp 1600w, /img/beyoglu-galata/03-2a.webp 2000w",
-        "original": "2a.jpg"
+        "original": "2a.jpg",
+        "width": 2000,
+        "height": 2662
       },
       {
         "src": "/img/beyoglu-galata/04-2n.webp",
         "srcset": "/img/beyoglu-galata/04-2n-800w.webp 800w, /img/beyoglu-galata/04-2n-1600w.webp 1600w, /img/beyoglu-galata/04-2n.webp 2000w",
-        "original": "2n.jpg"
+        "original": "2n.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beyoglu-galata/05-3a.webp",
         "srcset": "/img/beyoglu-galata/05-3a-800w.webp 800w, /img/beyoglu-galata/05-3a-1600w.webp 1600w, /img/beyoglu-galata/05-3a.webp 2000w",
-        "original": "3a.jpg"
+        "original": "3a.jpg",
+        "width": 1200,
+        "height": 1600
       },
       {
         "src": "/img/beyoglu-galata/06-4.webp",
         "srcset": "/img/beyoglu-galata/06-4-800w.webp 800w, /img/beyoglu-galata/06-4-1600w.webp 1600w, /img/beyoglu-galata/06-4.webp 2000w",
-        "original": "4.jpg"
+        "original": "4.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beyoglu-galata/07-4a.webp",
         "srcset": "/img/beyoglu-galata/07-4a-800w.webp 800w, /img/beyoglu-galata/07-4a-1600w.webp 1600w, /img/beyoglu-galata/07-4a.webp 2000w",
-        "original": "4a.jpg"
+        "original": "4a.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beyoglu-galata/08-5.webp",
         "srcset": "/img/beyoglu-galata/08-5-800w.webp 800w, /img/beyoglu-galata/08-5-1600w.webp 1600w, /img/beyoglu-galata/08-5.webp 2000w",
-        "original": "5.jpg"
+        "original": "5.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beyoglu-galata/09-7.webp",
         "srcset": "/img/beyoglu-galata/09-7-800w.webp 800w, /img/beyoglu-galata/09-7-1600w.webp 1600w, /img/beyoglu-galata/09-7.webp 2000w",
-        "original": "7.jpg"
+        "original": "7.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beyoglu-galata/10-7a.webp",
         "srcset": "/img/beyoglu-galata/10-7a-800w.webp 800w, /img/beyoglu-galata/10-7a-1600w.webp 1600w, /img/beyoglu-galata/10-7a.webp 2000w",
-        "original": "7a.jpg"
+        "original": "7a.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beyoglu-galata/11-8.webp",
         "srcset": "/img/beyoglu-galata/11-8-800w.webp 800w, /img/beyoglu-galata/11-8-1600w.webp 1600w, /img/beyoglu-galata/11-8.webp 2000w",
-        "original": "8.jpg"
+        "original": "8.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beyoglu-galata/12-9.webp",
         "srcset": "/img/beyoglu-galata/12-9-800w.webp 800w, /img/beyoglu-galata/12-9-1600w.webp 1600w, /img/beyoglu-galata/12-9.webp 2000w",
-        "original": "9.jpg"
+        "original": "9.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beyoglu-galata/13-10.webp",
         "srcset": "/img/beyoglu-galata/13-10-800w.webp 800w, /img/beyoglu-galata/13-10-1600w.webp 1600w, /img/beyoglu-galata/13-10.webp 2000w",
-        "original": "10.jpg"
+        "original": "10.jpg",
+        "width": 2000,
+        "height": 2662
       },
       {
         "src": "/img/beyoglu-galata/14-11aakapak.webp",
         "srcset": "/img/beyoglu-galata/14-11aakapak-800w.webp 800w, /img/beyoglu-galata/14-11aakapak-1600w.webp 1600w, /img/beyoglu-galata/14-11aakapak.webp 2000w",
-        "original": "11aakapak.jpg"
+        "original": "11aakapak.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beyoglu-galata/15-12.webp",
         "srcset": "/img/beyoglu-galata/15-12-800w.webp 800w, /img/beyoglu-galata/15-12-1600w.webp 1600w, /img/beyoglu-galata/15-12.webp 2000w",
-        "original": "12.jpg"
+        "original": "12.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beyoglu-galata/16-13.webp",
         "srcset": "/img/beyoglu-galata/16-13-800w.webp 800w, /img/beyoglu-galata/16-13-1600w.webp 1600w, /img/beyoglu-galata/16-13.webp 2000w",
-        "original": "13.jpg"
+        "original": "13.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beyoglu-galata/17-14.webp",
         "srcset": "/img/beyoglu-galata/17-14-800w.webp 800w, /img/beyoglu-galata/17-14-1600w.webp 1600w, /img/beyoglu-galata/17-14.webp 2000w",
-        "original": "14.jpg"
+        "original": "14.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beyoglu-galata/18-15.webp",
         "srcset": "/img/beyoglu-galata/18-15-800w.webp 800w, /img/beyoglu-galata/18-15-1600w.webp 1600w, /img/beyoglu-galata/18-15.webp 2000w",
-        "original": "15.jpg"
+        "original": "15.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beyoglu-galata/19-15a.webp",
         "srcset": "/img/beyoglu-galata/19-15a-800w.webp 800w, /img/beyoglu-galata/19-15a-1600w.webp 1600w, /img/beyoglu-galata/19-15a.webp 2000w",
-        "original": "15a.jpg"
+        "original": "15a.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beyoglu-galata/20-16.webp",
         "srcset": "/img/beyoglu-galata/20-16-800w.webp 800w, /img/beyoglu-galata/20-16-1600w.webp 1600w, /img/beyoglu-galata/20-16.webp 2000w",
-        "original": "16.jpg"
+        "original": "16.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beyoglu-galata/21-17.webp",
         "srcset": "/img/beyoglu-galata/21-17-800w.webp 800w, /img/beyoglu-galata/21-17-1600w.webp 1600w, /img/beyoglu-galata/21-17.webp 2000w",
-        "original": "17.jpg"
+        "original": "17.jpg",
+        "width": 2000,
+        "height": 2662
       },
       {
         "src": "/img/beyoglu-galata/22-img-20221201-173953.webp",
         "srcset": "/img/beyoglu-galata/22-img-20221201-173953-800w.webp 800w, /img/beyoglu-galata/22-img-20221201-173953-1600w.webp 1600w, /img/beyoglu-galata/22-img-20221201-173953.webp 2000w",
-        "original": "IMG_20221201_173953.jpg"
+        "original": "IMG_20221201_173953.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beyoglu-galata/23-img-20221201-174010-1.webp",
         "srcset": "/img/beyoglu-galata/23-img-20221201-174010-1-800w.webp 800w, /img/beyoglu-galata/23-img-20221201-174010-1-1600w.webp 1600w, /img/beyoglu-galata/23-img-20221201-174010-1.webp 2000w",
-        "original": "IMG_20221201_174010 (1).jpg"
+        "original": "IMG_20221201_174010 (1).jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beyoglu-galata/24-img-20221201-174010.webp",
         "srcset": "/img/beyoglu-galata/24-img-20221201-174010-800w.webp 800w, /img/beyoglu-galata/24-img-20221201-174010-1600w.webp 1600w, /img/beyoglu-galata/24-img-20221201-174010.webp 2000w",
-        "original": "IMG_20221201_174010.jpg"
+        "original": "IMG_20221201_174010.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beyoglu-galata/25-img-20221201-174024.webp",
         "srcset": "/img/beyoglu-galata/25-img-20221201-174024-800w.webp 800w, /img/beyoglu-galata/25-img-20221201-174024-1600w.webp 1600w, /img/beyoglu-galata/25-img-20221201-174024.webp 2000w",
-        "original": "IMG_20221201_174024.jpg"
+        "original": "IMG_20221201_174024.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beyoglu-galata/26-img-20221201-174041.webp",
         "srcset": "/img/beyoglu-galata/26-img-20221201-174041-800w.webp 800w, /img/beyoglu-galata/26-img-20221201-174041-1600w.webp 1600w, /img/beyoglu-galata/26-img-20221201-174041.webp 2000w",
-        "original": "IMG_20221201_174041.jpg"
+        "original": "IMG_20221201_174041.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beyoglu-galata/27-zesk-i7.webp",
         "srcset": "/img/beyoglu-galata/27-zesk-i7-800w.webp 800w, /img/beyoglu-galata/27-zesk-i7-1600w.webp 1600w, /img/beyoglu-galata/27-zesk-i7.webp 2000w",
-        "original": "zesk,i7.jpg"
+        "original": "zesk,i7.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beyoglu-galata/28-zeski2.webp",
         "srcset": "/img/beyoglu-galata/28-zeski2-800w.webp 800w, /img/beyoglu-galata/28-zeski2-1600w.webp 1600w, /img/beyoglu-galata/28-zeski2.webp 2000w",
-        "original": "zeski2.jpg"
+        "original": "zeski2.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beyoglu-galata/29-zeski3.webp",
         "srcset": "/img/beyoglu-galata/29-zeski3-800w.webp 800w, /img/beyoglu-galata/29-zeski3-1600w.webp 1600w, /img/beyoglu-galata/29-zeski3.webp 2000w",
-        "original": "zeski3.jpg"
+        "original": "zeski3.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/beyoglu-galata/30-zeski4.webp",
         "srcset": "/img/beyoglu-galata/30-zeski4-800w.webp 800w, /img/beyoglu-galata/30-zeski4-1600w.webp 1600w, /img/beyoglu-galata/30-zeski4.webp 2000w",
-        "original": "zeski4.jpg"
+        "original": "zeski4.jpg",
+        "width": 2000,
+        "height": 2662
       },
       {
         "src": "/img/beyoglu-galata/31-zeski5.webp",
         "srcset": "/img/beyoglu-galata/31-zeski5-800w.webp 800w, /img/beyoglu-galata/31-zeski5-1600w.webp 1600w, /img/beyoglu-galata/31-zeski5.webp 2000w",
-        "original": "zeski5.jpg"
+        "original": "zeski5.jpg",
+        "width": 2000,
+        "height": 2662
       },
       {
         "src": "/img/beyoglu-galata/32-zeski6.webp",
         "srcset": "/img/beyoglu-galata/32-zeski6-800w.webp 800w, /img/beyoglu-galata/32-zeski6-1600w.webp 1600w, /img/beyoglu-galata/32-zeski6.webp 2000w",
-        "original": "zeski6.jpg"
+        "original": "zeski6.jpg",
+        "width": 2000,
+        "height": 2662
       },
       {
         "src": "/img/beyoglu-galata/33-zeski.webp",
         "srcset": "/img/beyoglu-galata/33-zeski-800w.webp 800w, /img/beyoglu-galata/33-zeski-1600w.webp 1600w, /img/beyoglu-galata/33-zeski.webp 2000w",
-        "original": "zeski.jpg"
+        "original": "zeski.jpg",
+        "width": 2000,
+        "height": 2667
       }
     ]
   },
@@ -825,102 +1139,142 @@
       {
         "src": "/img/caddebostan/01-1.webp",
         "srcset": "/img/caddebostan/01-1-800w.webp 800w, /img/caddebostan/01-1-1600w.webp 1600w, /img/caddebostan/01-1.webp 2000w",
-        "original": "1.jpg"
+        "original": "1.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/caddebostan/02-2.webp",
         "srcset": "/img/caddebostan/02-2-800w.webp 800w, /img/caddebostan/02-2-1600w.webp 1600w, /img/caddebostan/02-2.webp 2000w",
-        "original": "2.jpg"
+        "original": "2.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/caddebostan/03-4.webp",
         "srcset": "/img/caddebostan/03-4-800w.webp 800w, /img/caddebostan/03-4-1600w.webp 1600w, /img/caddebostan/03-4.webp 2000w",
-        "original": "4.jpg"
+        "original": "4.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/caddebostan/04-5.webp",
         "srcset": "/img/caddebostan/04-5-800w.webp 800w, /img/caddebostan/04-5-1600w.webp 1600w, /img/caddebostan/04-5.webp 2000w",
-        "original": "5.jpg"
+        "original": "5.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/caddebostan/05-5a.webp",
         "srcset": "/img/caddebostan/05-5a-800w.webp 800w, /img/caddebostan/05-5a-1600w.webp 1600w, /img/caddebostan/05-5a.webp 2000w",
-        "original": "5a.jpg"
+        "original": "5a.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/caddebostan/06-5b.webp",
         "srcset": "/img/caddebostan/06-5b-800w.webp 800w, /img/caddebostan/06-5b-1600w.webp 1600w, /img/caddebostan/06-5b.webp 2000w",
-        "original": "5b.jpg"
+        "original": "5b.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/caddebostan/07-5c.webp",
         "srcset": "/img/caddebostan/07-5c-800w.webp 800w, /img/caddebostan/07-5c-1600w.webp 1600w, /img/caddebostan/07-5c.webp 2000w",
-        "original": "5c.jpg"
+        "original": "5c.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/caddebostan/08-5d.webp",
         "srcset": "/img/caddebostan/08-5d-800w.webp 800w, /img/caddebostan/08-5d-1600w.webp 1600w, /img/caddebostan/08-5d.webp 2000w",
-        "original": "5d.jpg"
+        "original": "5d.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/caddebostan/09-8.webp",
         "srcset": "/img/caddebostan/09-8-800w.webp 800w, /img/caddebostan/09-8-1600w.webp 1600w, /img/caddebostan/09-8.webp 2000w",
-        "original": "8.jpg"
+        "original": "8.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/caddebostan/10-9.webp",
         "srcset": "/img/caddebostan/10-9-800w.webp 800w, /img/caddebostan/10-9-1600w.webp 1600w, /img/caddebostan/10-9.webp 2000w",
-        "original": "9.jpg"
+        "original": "9.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/caddebostan/11-9a.webp",
         "srcset": "/img/caddebostan/11-9a-800w.webp 800w, /img/caddebostan/11-9a-1600w.webp 1600w, /img/caddebostan/11-9a.webp 2000w",
-        "original": "9a.jpg"
+        "original": "9a.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/caddebostan/12-10.webp",
         "srcset": "/img/caddebostan/12-10-800w.webp 800w, /img/caddebostan/12-10-1600w.webp 1600w, /img/caddebostan/12-10.webp 2000w",
-        "original": "10.jpg"
+        "original": "10.jpg",
+        "width": 2000,
+        "height": 2662
       },
       {
         "src": "/img/caddebostan/13-11.webp",
         "srcset": "/img/caddebostan/13-11-800w.webp 800w, /img/caddebostan/13-11-1600w.webp 1600w, /img/caddebostan/13-11.webp 2000w",
-        "original": "11.jpg"
+        "original": "11.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/caddebostan/14-12.webp",
         "srcset": "/img/caddebostan/14-12-800w.webp 800w, /img/caddebostan/14-12-1600w.webp 1600w, /img/caddebostan/14-12.webp 2000w",
-        "original": "12.jpg"
+        "original": "12.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/caddebostan/15-13.webp",
         "srcset": "/img/caddebostan/15-13-800w.webp 800w, /img/caddebostan/15-13-1600w.webp 1600w, /img/caddebostan/15-13.webp 2000w",
-        "original": "13.jpg"
+        "original": "13.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/caddebostan/16-img-20220104-202903.webp",
         "srcset": "/img/caddebostan/16-img-20220104-202903-800w.webp 800w, /img/caddebostan/16-img-20220104-202903-1600w.webp 1600w, /img/caddebostan/16-img-20220104-202903.webp 2000w",
-        "original": "IMG_20220104_202903.jpg"
+        "original": "IMG_20220104_202903.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/caddebostan/17-img-20220104-224725.webp",
         "srcset": "/img/caddebostan/17-img-20220104-224725-800w.webp 800w, /img/caddebostan/17-img-20220104-224725-1600w.webp 1600w, /img/caddebostan/17-img-20220104-224725.webp 2000w",
-        "original": "IMG_20220104_224725.jpg"
+        "original": "IMG_20220104_224725.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/caddebostan/18-img-20220105-152505.webp",
         "srcset": "/img/caddebostan/18-img-20220105-152505-800w.webp 800w, /img/caddebostan/18-img-20220105-152505-1600w.webp 1600w, /img/caddebostan/18-img-20220105-152505.webp 2000w",
-        "original": "IMG_20220105_152505.jpg"
+        "original": "IMG_20220105_152505.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/caddebostan/19-img-20220105-152741.webp",
         "srcset": "/img/caddebostan/19-img-20220105-152741-800w.webp 800w, /img/caddebostan/19-img-20220105-152741-1600w.webp 1600w, /img/caddebostan/19-img-20220105-152741.webp 2000w",
-        "original": "IMG_20220105_152741.jpg"
+        "original": "IMG_20220105_152741.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/caddebostan/20-img-20220105-152750.webp",
         "srcset": "/img/caddebostan/20-img-20220105-152750-800w.webp 800w, /img/caddebostan/20-img-20220105-152750-1600w.webp 1600w, /img/caddebostan/20-img-20220105-152750.webp 2000w",
-        "original": "IMG_20220105_152750.jpg"
+        "original": "IMG_20220105_152750.jpg",
+        "width": 2000,
+        "height": 2667
       }
     ]
   },
@@ -930,42 +1284,58 @@
       {
         "src": "/img/cafe/01-img-20210827-wa0000.webp",
         "srcset": "/img/cafe/01-img-20210827-wa0000-800w.webp 800w, /img/cafe/01-img-20210827-wa0000-1600w.webp 1600w, /img/cafe/01-img-20210827-wa0000.webp 2000w",
-        "original": "IMG-20210827-WA0000.jpg"
+        "original": "IMG-20210827-WA0000.jpg",
+        "width": 2000,
+        "height": 1600
       },
       {
         "src": "/img/cafe/02-img-20210827-wa0001.webp",
         "srcset": "/img/cafe/02-img-20210827-wa0001-800w.webp 800w, /img/cafe/02-img-20210827-wa0001-1600w.webp 1600w, /img/cafe/02-img-20210827-wa0001.webp 2000w",
-        "original": "IMG-20210827-WA0001.jpg"
+        "original": "IMG-20210827-WA0001.jpg",
+        "width": 2000,
+        "height": 1600
       },
       {
         "src": "/img/cafe/03-img-20210827-wa0002.webp",
         "srcset": "/img/cafe/03-img-20210827-wa0002-800w.webp 800w, /img/cafe/03-img-20210827-wa0002-1600w.webp 1600w, /img/cafe/03-img-20210827-wa0002.webp 2000w",
-        "original": "IMG-20210827-WA0002.jpg"
+        "original": "IMG-20210827-WA0002.jpg",
+        "width": 2000,
+        "height": 1600
       },
       {
         "src": "/img/cafe/04-img-20210827-wa0005.webp",
         "srcset": "/img/cafe/04-img-20210827-wa0005-800w.webp 800w, /img/cafe/04-img-20210827-wa0005-1600w.webp 1600w, /img/cafe/04-img-20210827-wa0005.webp 2000w",
-        "original": "IMG-20210827-WA0005.jpg"
+        "original": "IMG-20210827-WA0005.jpg",
+        "width": 2000,
+        "height": 1600
       },
       {
         "src": "/img/cafe/05-img-20210827-wa0006.webp",
         "srcset": "/img/cafe/05-img-20210827-wa0006-800w.webp 800w, /img/cafe/05-img-20210827-wa0006-1600w.webp 1600w, /img/cafe/05-img-20210827-wa0006.webp 2000w",
-        "original": "IMG-20210827-WA0006.jpg"
+        "original": "IMG-20210827-WA0006.jpg",
+        "width": 2000,
+        "height": 1600
       },
       {
         "src": "/img/cafe/06-img-20210827-wa0007.webp",
         "srcset": "/img/cafe/06-img-20210827-wa0007-800w.webp 800w, /img/cafe/06-img-20210827-wa0007-1600w.webp 1600w, /img/cafe/06-img-20210827-wa0007.webp 2000w",
-        "original": "IMG-20210827-WA0007.jpg"
+        "original": "IMG-20210827-WA0007.jpg",
+        "width": 2000,
+        "height": 1600
       },
       {
         "src": "/img/cafe/07-img-20210827-wa0008.webp",
         "srcset": "/img/cafe/07-img-20210827-wa0008-800w.webp 800w, /img/cafe/07-img-20210827-wa0008-1600w.webp 1600w, /img/cafe/07-img-20210827-wa0008.webp 2000w",
-        "original": "IMG-20210827-WA0008.jpg"
+        "original": "IMG-20210827-WA0008.jpg",
+        "width": 2000,
+        "height": 1600
       },
       {
         "src": "/img/cafe/08-img-20210831-wa0006.webp",
         "srcset": "/img/cafe/08-img-20210831-wa0006-800w.webp 800w, /img/cafe/08-img-20210831-wa0006-1600w.webp 1600w, /img/cafe/08-img-20210831-wa0006.webp 2000w",
-        "original": "IMG-20210831-WA0006.jpg"
+        "original": "IMG-20210831-WA0006.jpg",
+        "width": 1600,
+        "height": 1279
       }
     ]
   },
@@ -975,92 +1345,128 @@
       {
         "src": "/img/hilton-otel/01-1img-20201203-wa0047.webp",
         "srcset": "/img/hilton-otel/01-1img-20201203-wa0047-800w.webp 800w, /img/hilton-otel/01-1img-20201203-wa0047-1600w.webp 1600w, /img/hilton-otel/01-1img-20201203-wa0047.webp 2000w",
-        "original": "1IMG-20201203-WA0047.jpg"
+        "original": "1IMG-20201203-WA0047.jpg",
+        "width": 1067,
+        "height": 614
       },
       {
         "src": "/img/hilton-otel/02-img-20161030-wa0033.webp",
         "srcset": "/img/hilton-otel/02-img-20161030-wa0033-800w.webp 800w, /img/hilton-otel/02-img-20161030-wa0033-1600w.webp 1600w, /img/hilton-otel/02-img-20161030-wa0033.webp 2000w",
-        "original": "IMG-20161030-WA0033.jpg"
+        "original": "IMG-20161030-WA0033.jpg",
+        "width": 960,
+        "height": 1280
       },
       {
         "src": "/img/hilton-otel/03-img-20161030-wa0054.webp",
         "srcset": "/img/hilton-otel/03-img-20161030-wa0054-800w.webp 800w, /img/hilton-otel/03-img-20161030-wa0054-1600w.webp 1600w, /img/hilton-otel/03-img-20161030-wa0054.webp 2000w",
-        "original": "IMG-20161030-WA0054.jpg"
+        "original": "IMG-20161030-WA0054.jpg",
+        "width": 1280,
+        "height": 960
       },
       {
         "src": "/img/hilton-otel/04-img-20220707-wa0027.webp",
         "srcset": "/img/hilton-otel/04-img-20220707-wa0027-800w.webp 800w, /img/hilton-otel/04-img-20220707-wa0027-1600w.webp 1600w, /img/hilton-otel/04-img-20220707-wa0027.webp 2000w",
-        "original": "IMG-20220707-WA0027.jpg"
+        "original": "IMG-20220707-WA0027.jpg",
+        "width": 1600,
+        "height": 1200
       },
       {
         "src": "/img/hilton-otel/05-img-20220707-wa0028.webp",
         "srcset": "/img/hilton-otel/05-img-20220707-wa0028-800w.webp 800w, /img/hilton-otel/05-img-20220707-wa0028-1600w.webp 1600w, /img/hilton-otel/05-img-20220707-wa0028.webp 2000w",
-        "original": "IMG-20220707-WA0028.jpg"
+        "original": "IMG-20220707-WA0028.jpg",
+        "width": 1600,
+        "height": 1200
       },
       {
         "src": "/img/hilton-otel/06-img-20220707-wa0030.webp",
         "srcset": "/img/hilton-otel/06-img-20220707-wa0030-800w.webp 800w, /img/hilton-otel/06-img-20220707-wa0030-1600w.webp 1600w, /img/hilton-otel/06-img-20220707-wa0030.webp 2000w",
-        "original": "IMG-20220707-WA0030.jpg"
+        "original": "IMG-20220707-WA0030.jpg",
+        "width": 1200,
+        "height": 1600
       },
       {
         "src": "/img/hilton-otel/07-img-20220707-wa0032.webp",
         "srcset": "/img/hilton-otel/07-img-20220707-wa0032-800w.webp 800w, /img/hilton-otel/07-img-20220707-wa0032-1600w.webp 1600w, /img/hilton-otel/07-img-20220707-wa0032.webp 2000w",
-        "original": "IMG-20220707-WA0032.jpg"
+        "original": "IMG-20220707-WA0032.jpg",
+        "width": 1280,
+        "height": 960
       },
       {
         "src": "/img/hilton-otel/08-img-20220707-wa0033.webp",
         "srcset": "/img/hilton-otel/08-img-20220707-wa0033-800w.webp 800w, /img/hilton-otel/08-img-20220707-wa0033-1600w.webp 1600w, /img/hilton-otel/08-img-20220707-wa0033.webp 2000w",
-        "original": "IMG-20220707-WA0033.jpg"
+        "original": "IMG-20220707-WA0033.jpg",
+        "width": 1512,
+        "height": 2016
       },
       {
         "src": "/img/hilton-otel/09-img-20220707-wa0036.webp",
         "srcset": "/img/hilton-otel/09-img-20220707-wa0036-800w.webp 800w, /img/hilton-otel/09-img-20220707-wa0036-1600w.webp 1600w, /img/hilton-otel/09-img-20220707-wa0036.webp 2000w",
-        "original": "IMG-20220707-WA0036.jpg"
+        "original": "IMG-20220707-WA0036.jpg",
+        "width": 1600,
+        "height": 1200
       },
       {
         "src": "/img/hilton-otel/10-img-20220707-wa0037.webp",
         "srcset": "/img/hilton-otel/10-img-20220707-wa0037-800w.webp 800w, /img/hilton-otel/10-img-20220707-wa0037-1600w.webp 1600w, /img/hilton-otel/10-img-20220707-wa0037.webp 2000w",
-        "original": "IMG-20220707-WA0037.jpg"
+        "original": "IMG-20220707-WA0037.jpg",
+        "width": 1200,
+        "height": 1600
       },
       {
         "src": "/img/hilton-otel/11-img-20220708-wa0004.webp",
         "srcset": "/img/hilton-otel/11-img-20220708-wa0004-800w.webp 800w, /img/hilton-otel/11-img-20220708-wa0004-1600w.webp 1600w, /img/hilton-otel/11-img-20220708-wa0004.webp 2000w",
-        "original": "IMG-20220708-WA0004.jpg"
+        "original": "IMG-20220708-WA0004.jpg",
+        "width": 1512,
+        "height": 2016
       },
       {
         "src": "/img/hilton-otel/12-img-20220708-wa0005.webp",
         "srcset": "/img/hilton-otel/12-img-20220708-wa0005-800w.webp 800w, /img/hilton-otel/12-img-20220708-wa0005-1600w.webp 1600w, /img/hilton-otel/12-img-20220708-wa0005.webp 2000w",
-        "original": "IMG-20220708-WA0005.jpg"
+        "original": "IMG-20220708-WA0005.jpg",
+        "width": 1200,
+        "height": 1600
       },
       {
         "src": "/img/hilton-otel/13-img-20220708-wa0006.webp",
         "srcset": "/img/hilton-otel/13-img-20220708-wa0006-800w.webp 800w, /img/hilton-otel/13-img-20220708-wa0006-1600w.webp 1600w, /img/hilton-otel/13-img-20220708-wa0006.webp 2000w",
-        "original": "IMG-20220708-WA0006.jpg"
+        "original": "IMG-20220708-WA0006.jpg",
+        "width": 1512,
+        "height": 2016
       },
       {
         "src": "/img/hilton-otel/14-img-20220708-wa0007.webp",
         "srcset": "/img/hilton-otel/14-img-20220708-wa0007-800w.webp 800w, /img/hilton-otel/14-img-20220708-wa0007-1600w.webp 1600w, /img/hilton-otel/14-img-20220708-wa0007.webp 2000w",
-        "original": "IMG-20220708-WA0007.jpg"
+        "original": "IMG-20220708-WA0007.jpg",
+        "width": 1600,
+        "height": 1200
       },
       {
         "src": "/img/hilton-otel/15-img-20220708-wa0008.webp",
         "srcset": "/img/hilton-otel/15-img-20220708-wa0008-800w.webp 800w, /img/hilton-otel/15-img-20220708-wa0008-1600w.webp 1600w, /img/hilton-otel/15-img-20220708-wa0008.webp 2000w",
-        "original": "IMG-20220708-WA0008.jpg"
+        "original": "IMG-20220708-WA0008.jpg",
+        "width": 1512,
+        "height": 2016
       },
       {
         "src": "/img/hilton-otel/16-img-20220708-wa0009.webp",
         "srcset": "/img/hilton-otel/16-img-20220708-wa0009-800w.webp 800w, /img/hilton-otel/16-img-20220708-wa0009-1600w.webp 1600w, /img/hilton-otel/16-img-20220708-wa0009.webp 2000w",
-        "original": "IMG-20220708-WA0009.jpg"
+        "original": "IMG-20220708-WA0009.jpg",
+        "width": 1512,
+        "height": 2016
       },
       {
         "src": "/img/hilton-otel/17-img-20220708-wa0010.webp",
         "srcset": "/img/hilton-otel/17-img-20220708-wa0010-800w.webp 800w, /img/hilton-otel/17-img-20220708-wa0010-1600w.webp 1600w, /img/hilton-otel/17-img-20220708-wa0010.webp 2000w",
-        "original": "IMG-20220708-WA0010.jpg"
+        "original": "IMG-20220708-WA0010.jpg",
+        "width": 1600,
+        "height": 1200
       },
       {
         "src": "/img/hilton-otel/18-img-20220708-wa0011.webp",
         "srcset": "/img/hilton-otel/18-img-20220708-wa0011-800w.webp 800w, /img/hilton-otel/18-img-20220708-wa0011-1600w.webp 1600w, /img/hilton-otel/18-img-20220708-wa0011.webp 2000w",
-        "original": "IMG-20220708-WA0011.jpg"
+        "original": "IMG-20220708-WA0011.jpg",
+        "width": 1280,
+        "height": 960
       }
     ]
   },
@@ -1070,197 +1476,275 @@
       {
         "src": "/img/kadikoy-moda/01-1img-7242.webp",
         "srcset": "/img/kadikoy-moda/01-1img-7242-800w.webp 800w, /img/kadikoy-moda/01-1img-7242-1600w.webp 1600w, /img/kadikoy-moda/01-1img-7242.webp 2000w",
-        "original": "1IMG_7242.HEIC"
+        "original": "1IMG_7242.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/02-img-7013.webp",
         "srcset": "/img/kadikoy-moda/02-img-7013-800w.webp 800w, /img/kadikoy-moda/02-img-7013-1600w.webp 1600w, /img/kadikoy-moda/02-img-7013.webp 2000w",
-        "original": "IMG_7013.HEIC"
+        "original": "IMG_7013.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/03-img-7020.webp",
         "srcset": "/img/kadikoy-moda/03-img-7020-800w.webp 800w, /img/kadikoy-moda/03-img-7020-1600w.webp 1600w, /img/kadikoy-moda/03-img-7020.webp 2000w",
-        "original": "IMG_7020.HEIC"
+        "original": "IMG_7020.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/04-img-7021.webp",
         "srcset": "/img/kadikoy-moda/04-img-7021-800w.webp 800w, /img/kadikoy-moda/04-img-7021-1600w.webp 1600w, /img/kadikoy-moda/04-img-7021.webp 2000w",
-        "original": "IMG_7021.HEIC"
+        "original": "IMG_7021.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/05-img-7025.webp",
         "srcset": "/img/kadikoy-moda/05-img-7025-800w.webp 800w, /img/kadikoy-moda/05-img-7025-1600w.webp 1600w, /img/kadikoy-moda/05-img-7025.webp 2000w",
-        "original": "IMG_7025.HEIC"
+        "original": "IMG_7025.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/06-img-7027.webp",
         "srcset": "/img/kadikoy-moda/06-img-7027-800w.webp 800w, /img/kadikoy-moda/06-img-7027-1600w.webp 1600w, /img/kadikoy-moda/06-img-7027.webp 2000w",
-        "original": "IMG_7027.HEIC"
+        "original": "IMG_7027.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/07-img-7036.webp",
         "srcset": "/img/kadikoy-moda/07-img-7036-800w.webp 800w, /img/kadikoy-moda/07-img-7036-1600w.webp 1600w, /img/kadikoy-moda/07-img-7036.webp 2000w",
-        "original": "IMG_7036.HEIC"
+        "original": "IMG_7036.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/08-img-7049.webp",
         "srcset": "/img/kadikoy-moda/08-img-7049-800w.webp 800w, /img/kadikoy-moda/08-img-7049-1600w.webp 1600w, /img/kadikoy-moda/08-img-7049.webp 2000w",
-        "original": "IMG_7049.HEIC"
+        "original": "IMG_7049.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/09-img-7092.webp",
         "srcset": "/img/kadikoy-moda/09-img-7092-800w.webp 800w, /img/kadikoy-moda/09-img-7092-1600w.webp 1600w, /img/kadikoy-moda/09-img-7092.webp 2000w",
-        "original": "IMG_7092.HEIC"
+        "original": "IMG_7092.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/10-img-7094.webp",
         "srcset": "/img/kadikoy-moda/10-img-7094-800w.webp 800w, /img/kadikoy-moda/10-img-7094-1600w.webp 1600w, /img/kadikoy-moda/10-img-7094.webp 2000w",
-        "original": "IMG_7094.HEIC"
+        "original": "IMG_7094.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/11-img-7096.webp",
         "srcset": "/img/kadikoy-moda/11-img-7096-800w.webp 800w, /img/kadikoy-moda/11-img-7096-1600w.webp 1600w, /img/kadikoy-moda/11-img-7096.webp 2000w",
-        "original": "IMG_7096.HEIC"
+        "original": "IMG_7096.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/12-img-7099.webp",
         "srcset": "/img/kadikoy-moda/12-img-7099-800w.webp 800w, /img/kadikoy-moda/12-img-7099-1600w.webp 1600w, /img/kadikoy-moda/12-img-7099.webp 2000w",
-        "original": "IMG_7099.HEIC"
+        "original": "IMG_7099.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/13-img-7101.webp",
         "srcset": "/img/kadikoy-moda/13-img-7101-800w.webp 800w, /img/kadikoy-moda/13-img-7101-1600w.webp 1600w, /img/kadikoy-moda/13-img-7101.webp 2000w",
-        "original": "IMG_7101.HEIC"
+        "original": "IMG_7101.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/14-img-7105.webp",
         "srcset": "/img/kadikoy-moda/14-img-7105-800w.webp 800w, /img/kadikoy-moda/14-img-7105-1600w.webp 1600w, /img/kadikoy-moda/14-img-7105.webp 2000w",
-        "original": "IMG_7105.HEIC"
+        "original": "IMG_7105.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/15-img-7107.webp",
         "srcset": "/img/kadikoy-moda/15-img-7107-800w.webp 800w, /img/kadikoy-moda/15-img-7107-1600w.webp 1600w, /img/kadikoy-moda/15-img-7107.webp 2000w",
-        "original": "IMG_7107.HEIC"
+        "original": "IMG_7107.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/16-img-7110.webp",
         "srcset": "/img/kadikoy-moda/16-img-7110-800w.webp 800w, /img/kadikoy-moda/16-img-7110-1600w.webp 1600w, /img/kadikoy-moda/16-img-7110.webp 2000w",
-        "original": "IMG_7110.HEIC"
+        "original": "IMG_7110.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/17-img-7113.webp",
         "srcset": "/img/kadikoy-moda/17-img-7113-800w.webp 800w, /img/kadikoy-moda/17-img-7113-1600w.webp 1600w, /img/kadikoy-moda/17-img-7113.webp 2000w",
-        "original": "IMG_7113.HEIC"
+        "original": "IMG_7113.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/18-img-7123.webp",
         "srcset": "/img/kadikoy-moda/18-img-7123-800w.webp 800w, /img/kadikoy-moda/18-img-7123-1600w.webp 1600w, /img/kadikoy-moda/18-img-7123.webp 2000w",
-        "original": "IMG_7123.HEIC"
+        "original": "IMG_7123.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/19-img-7125.webp",
         "srcset": "/img/kadikoy-moda/19-img-7125-800w.webp 800w, /img/kadikoy-moda/19-img-7125-1600w.webp 1600w, /img/kadikoy-moda/19-img-7125.webp 2000w",
-        "original": "IMG_7125.HEIC"
+        "original": "IMG_7125.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/20-img-7126.webp",
         "srcset": "/img/kadikoy-moda/20-img-7126-800w.webp 800w, /img/kadikoy-moda/20-img-7126-1600w.webp 1600w, /img/kadikoy-moda/20-img-7126.webp 2000w",
-        "original": "IMG_7126.HEIC"
+        "original": "IMG_7126.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/21-img-7129.webp",
         "srcset": "/img/kadikoy-moda/21-img-7129-800w.webp 800w, /img/kadikoy-moda/21-img-7129-1600w.webp 1600w, /img/kadikoy-moda/21-img-7129.webp 2000w",
-        "original": "IMG_7129.HEIC"
+        "original": "IMG_7129.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/22-img-7130.webp",
         "srcset": "/img/kadikoy-moda/22-img-7130-800w.webp 800w, /img/kadikoy-moda/22-img-7130-1600w.webp 1600w, /img/kadikoy-moda/22-img-7130.webp 2000w",
-        "original": "IMG_7130.HEIC"
+        "original": "IMG_7130.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/23-img-7132.webp",
         "srcset": "/img/kadikoy-moda/23-img-7132-800w.webp 800w, /img/kadikoy-moda/23-img-7132-1600w.webp 1600w, /img/kadikoy-moda/23-img-7132.webp 2000w",
-        "original": "IMG_7132.HEIC"
+        "original": "IMG_7132.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/24-img-7234.webp",
         "srcset": "/img/kadikoy-moda/24-img-7234-800w.webp 800w, /img/kadikoy-moda/24-img-7234-1600w.webp 1600w, /img/kadikoy-moda/24-img-7234.webp 2000w",
-        "original": "IMG_7234.HEIC"
+        "original": "IMG_7234.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/25-img-7235.webp",
         "srcset": "/img/kadikoy-moda/25-img-7235-800w.webp 800w, /img/kadikoy-moda/25-img-7235-1600w.webp 1600w, /img/kadikoy-moda/25-img-7235.webp 2000w",
-        "original": "IMG_7235.HEIC"
+        "original": "IMG_7235.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/26-img-7236.webp",
         "srcset": "/img/kadikoy-moda/26-img-7236-800w.webp 800w, /img/kadikoy-moda/26-img-7236-1600w.webp 1600w, /img/kadikoy-moda/26-img-7236.webp 2000w",
-        "original": "IMG_7236.HEIC"
+        "original": "IMG_7236.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/27-img-7237.webp",
         "srcset": "/img/kadikoy-moda/27-img-7237-800w.webp 800w, /img/kadikoy-moda/27-img-7237-1600w.webp 1600w, /img/kadikoy-moda/27-img-7237.webp 2000w",
-        "original": "IMG_7237.HEIC"
+        "original": "IMG_7237.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/28-img-7238.webp",
         "srcset": "/img/kadikoy-moda/28-img-7238-800w.webp 800w, /img/kadikoy-moda/28-img-7238-1600w.webp 1600w, /img/kadikoy-moda/28-img-7238.webp 2000w",
-        "original": "IMG_7238.HEIC"
+        "original": "IMG_7238.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/29-img-7239.webp",
         "srcset": "/img/kadikoy-moda/29-img-7239-800w.webp 800w, /img/kadikoy-moda/29-img-7239-1600w.webp 1600w, /img/kadikoy-moda/29-img-7239.webp 2000w",
-        "original": "IMG_7239.HEIC"
+        "original": "IMG_7239.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/30-img-7240.webp",
         "srcset": "/img/kadikoy-moda/30-img-7240-800w.webp 800w, /img/kadikoy-moda/30-img-7240-1600w.webp 1600w, /img/kadikoy-moda/30-img-7240.webp 2000w",
-        "original": "IMG_7240.HEIC"
+        "original": "IMG_7240.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/31-img-7243.webp",
         "srcset": "/img/kadikoy-moda/31-img-7243-800w.webp 800w, /img/kadikoy-moda/31-img-7243-1600w.webp 1600w, /img/kadikoy-moda/31-img-7243.webp 2000w",
-        "original": "IMG_7243.HEIC"
+        "original": "IMG_7243.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/32-img-7244.webp",
         "srcset": "/img/kadikoy-moda/32-img-7244-800w.webp 800w, /img/kadikoy-moda/32-img-7244-1600w.webp 1600w, /img/kadikoy-moda/32-img-7244.webp 2000w",
-        "original": "IMG_7244.HEIC"
+        "original": "IMG_7244.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/33-img-7336.webp",
         "srcset": "/img/kadikoy-moda/33-img-7336-800w.webp 800w, /img/kadikoy-moda/33-img-7336-1600w.webp 1600w, /img/kadikoy-moda/33-img-7336.webp 2000w",
-        "original": "IMG_7336.HEIC"
+        "original": "IMG_7336.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/34-img-7341.webp",
         "srcset": "/img/kadikoy-moda/34-img-7341-800w.webp 800w, /img/kadikoy-moda/34-img-7341-1600w.webp 1600w, /img/kadikoy-moda/34-img-7341.webp 2000w",
-        "original": "IMG_7341.HEIC"
+        "original": "IMG_7341.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/35-img-7344.webp",
         "srcset": "/img/kadikoy-moda/35-img-7344-800w.webp 800w, /img/kadikoy-moda/35-img-7344-1600w.webp 1600w, /img/kadikoy-moda/35-img-7344.webp 2000w",
-        "original": "IMG_7344.HEIC"
+        "original": "IMG_7344.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/36-img-7345.webp",
         "srcset": "/img/kadikoy-moda/36-img-7345-800w.webp 800w, /img/kadikoy-moda/36-img-7345-1600w.webp 1600w, /img/kadikoy-moda/36-img-7345.webp 2000w",
-        "original": "IMG_7345.HEIC"
+        "original": "IMG_7345.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/37-img-7346.webp",
         "srcset": "/img/kadikoy-moda/37-img-7346-800w.webp 800w, /img/kadikoy-moda/37-img-7346-1600w.webp 1600w, /img/kadikoy-moda/37-img-7346.webp 2000w",
-        "original": "IMG_7346.HEIC"
+        "original": "IMG_7346.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/38-img-7349.webp",
         "srcset": "/img/kadikoy-moda/38-img-7349-800w.webp 800w, /img/kadikoy-moda/38-img-7349-1600w.webp 1600w, /img/kadikoy-moda/38-img-7349.webp 2000w",
-        "original": "IMG_7349.HEIC"
+        "original": "IMG_7349.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/kadikoy-moda/39-qimg-7241.webp",
         "srcset": "/img/kadikoy-moda/39-qimg-7241-800w.webp 800w, /img/kadikoy-moda/39-qimg-7241-1600w.webp 1600w, /img/kadikoy-moda/39-qimg-7241.webp 2000w",
-        "original": "QIMG_7241.HEIC"
+        "original": "QIMG_7241.HEIC",
+        "width": 2000,
+        "height": 2667
       }
     ]
   },
@@ -1270,502 +1754,702 @@
       {
         "src": "/img/karisik-projeler/01-1img-20210912-wa0001-copy-copy.webp",
         "srcset": "/img/karisik-projeler/01-1img-20210912-wa0001-copy-copy-800w.webp 800w, /img/karisik-projeler/01-1img-20210912-wa0001-copy-copy-1600w.webp 1600w, /img/karisik-projeler/01-1img-20210912-wa0001-copy-copy.webp 2000w",
-        "original": "1IMG-20210912-WA0001 Copy Copy.JPG"
+        "original": "1IMG-20210912-WA0001 Copy Copy.JPG",
+        "width": 1500,
+        "height": 1000
       },
       {
         "src": "/img/karisik-projeler/02-01-15.webp",
         "srcset": "/img/karisik-projeler/02-01-15-800w.webp 800w, /img/karisik-projeler/02-01-15-1600w.webp 1600w, /img/karisik-projeler/02-01-15.webp 2000w",
-        "original": "01-15.jpg"
+        "original": "01-15.jpg",
+        "width": 1800,
+        "height": 1400
       },
       {
         "src": "/img/karisik-projeler/03-5c0fce42-b7c7-4a9a-afa9-0faa79c25296-copy.webp",
         "srcset": "/img/karisik-projeler/03-5c0fce42-b7c7-4a9a-afa9-0faa79c25296-copy-800w.webp 800w, /img/karisik-projeler/03-5c0fce42-b7c7-4a9a-afa9-0faa79c25296-copy-1600w.webp 1600w, /img/karisik-projeler/03-5c0fce42-b7c7-4a9a-afa9-0faa79c25296-copy.webp 2000w",
-        "original": "5c0fce42-b7c7-4a9a-afa9-0faa79c25296 Copy.JPG"
+        "original": "5c0fce42-b7c7-4a9a-afa9-0faa79c25296 Copy.JPG",
+        "width": 1600,
+        "height": 1062
       },
       {
         "src": "/img/karisik-projeler/04-5e8a42b4-d9cc-4db2-b083-819568902764.webp",
         "srcset": "/img/karisik-projeler/04-5e8a42b4-d9cc-4db2-b083-819568902764-800w.webp 800w, /img/karisik-projeler/04-5e8a42b4-d9cc-4db2-b083-819568902764-1600w.webp 1600w, /img/karisik-projeler/04-5e8a42b4-d9cc-4db2-b083-819568902764.webp 2000w",
-        "original": "5e8a42b4-d9cc-4db2-b083-819568902764.jpg"
+        "original": "5e8a42b4-d9cc-4db2-b083-819568902764.jpg",
+        "width": 1500,
+        "height": 844
       },
       {
         "src": "/img/karisik-projeler/05-6a3e0910-d799-43ed-a382-bf309f90e500.webp",
         "srcset": "/img/karisik-projeler/05-6a3e0910-d799-43ed-a382-bf309f90e500-800w.webp 800w, /img/karisik-projeler/05-6a3e0910-d799-43ed-a382-bf309f90e500-1600w.webp 1600w, /img/karisik-projeler/05-6a3e0910-d799-43ed-a382-bf309f90e500.webp 2000w",
-        "original": "6a3e0910-d799-43ed-a382-bf309f90e500.jpg"
+        "original": "6a3e0910-d799-43ed-a382-bf309f90e500.jpg",
+        "width": 1600,
+        "height": 1125
       },
       {
         "src": "/img/karisik-projeler/06-8a276d2f-fa4b-40b3-82e5-6d4ca1f39986.webp",
         "srcset": "/img/karisik-projeler/06-8a276d2f-fa4b-40b3-82e5-6d4ca1f39986-800w.webp 800w, /img/karisik-projeler/06-8a276d2f-fa4b-40b3-82e5-6d4ca1f39986-1600w.webp 1600w, /img/karisik-projeler/06-8a276d2f-fa4b-40b3-82e5-6d4ca1f39986.webp 2000w",
-        "original": "8a276d2f-fa4b-40b3-82e5-6d4ca1f39986.jpg"
+        "original": "8a276d2f-fa4b-40b3-82e5-6d4ca1f39986.jpg",
+        "width": 1600,
+        "height": 899
       },
       {
         "src": "/img/karisik-projeler/07-09af83e7-f6d3-4623-abf6-7e924f6e0dd4.webp",
         "srcset": "/img/karisik-projeler/07-09af83e7-f6d3-4623-abf6-7e924f6e0dd4-800w.webp 800w, /img/karisik-projeler/07-09af83e7-f6d3-4623-abf6-7e924f6e0dd4-1600w.webp 1600w, /img/karisik-projeler/07-09af83e7-f6d3-4623-abf6-7e924f6e0dd4.webp 2000w",
-        "original": "09af83e7-f6d3-4623-abf6-7e924f6e0dd4.jpg"
+        "original": "09af83e7-f6d3-4623-abf6-7e924f6e0dd4.jpg",
+        "width": 1600,
+        "height": 900
       },
       {
         "src": "/img/karisik-projeler/08-14f98d9b-ee6d-4980-b4a2-47d2862e50ff.webp",
         "srcset": "/img/karisik-projeler/08-14f98d9b-ee6d-4980-b4a2-47d2862e50ff-800w.webp 800w, /img/karisik-projeler/08-14f98d9b-ee6d-4980-b4a2-47d2862e50ff-1600w.webp 1600w, /img/karisik-projeler/08-14f98d9b-ee6d-4980-b4a2-47d2862e50ff.webp 2000w",
-        "original": "14f98d9b-ee6d-4980-b4a2-47d2862e50ff.jpg"
+        "original": "14f98d9b-ee6d-4980-b4a2-47d2862e50ff.jpg",
+        "width": 1600,
+        "height": 899
       },
       {
         "src": "/img/karisik-projeler/09-020a137a-1008-49a1-acc2-70d33673346b.webp",
         "srcset": "/img/karisik-projeler/09-020a137a-1008-49a1-acc2-70d33673346b-800w.webp 800w, /img/karisik-projeler/09-020a137a-1008-49a1-acc2-70d33673346b-1600w.webp 1600w, /img/karisik-projeler/09-020a137a-1008-49a1-acc2-70d33673346b.webp 2000w",
-        "original": "020a137a-1008-49a1-acc2-70d33673346b.jpg"
+        "original": "020a137a-1008-49a1-acc2-70d33673346b.jpg",
+        "width": 1600,
+        "height": 1600
       },
       {
         "src": "/img/karisik-projeler/10-51b372ea-0ffa-459e-ba15-7888db838f7a.webp",
         "srcset": "/img/karisik-projeler/10-51b372ea-0ffa-459e-ba15-7888db838f7a-800w.webp 800w, /img/karisik-projeler/10-51b372ea-0ffa-459e-ba15-7888db838f7a-1600w.webp 1600w, /img/karisik-projeler/10-51b372ea-0ffa-459e-ba15-7888db838f7a.webp 2000w",
-        "original": "51b372ea-0ffa-459e-ba15-7888db838f7a.jpg"
+        "original": "51b372ea-0ffa-459e-ba15-7888db838f7a.jpg",
+        "width": 1600,
+        "height": 1006
       },
       {
         "src": "/img/karisik-projeler/11-95e0f3dc-57eb-4fcb-834c-37eee92e49a7.webp",
         "srcset": "/img/karisik-projeler/11-95e0f3dc-57eb-4fcb-834c-37eee92e49a7-800w.webp 800w, /img/karisik-projeler/11-95e0f3dc-57eb-4fcb-834c-37eee92e49a7-1600w.webp 1600w, /img/karisik-projeler/11-95e0f3dc-57eb-4fcb-834c-37eee92e49a7.webp 2000w",
-        "original": "95e0f3dc-57eb-4fcb-834c-37eee92e49a7.jpg"
+        "original": "95e0f3dc-57eb-4fcb-834c-37eee92e49a7.jpg",
+        "width": 1600,
+        "height": 1006
       },
       {
         "src": "/img/karisik-projeler/12-396a2e47-e740-4ee6-ad38-7553d37704da.webp",
         "srcset": "/img/karisik-projeler/12-396a2e47-e740-4ee6-ad38-7553d37704da-800w.webp 800w, /img/karisik-projeler/12-396a2e47-e740-4ee6-ad38-7553d37704da-1600w.webp 1600w, /img/karisik-projeler/12-396a2e47-e740-4ee6-ad38-7553d37704da.webp 2000w",
-        "original": "396a2e47-e740-4ee6-ad38-7553d37704da.jpg"
+        "original": "396a2e47-e740-4ee6-ad38-7553d37704da.jpg",
+        "width": 1600,
+        "height": 900
       },
       {
         "src": "/img/karisik-projeler/13-424a6903-82a5-4816-8039-8ff491d973e4-copy.webp",
         "srcset": "/img/karisik-projeler/13-424a6903-82a5-4816-8039-8ff491d973e4-copy-800w.webp 800w, /img/karisik-projeler/13-424a6903-82a5-4816-8039-8ff491d973e4-copy-1600w.webp 1600w, /img/karisik-projeler/13-424a6903-82a5-4816-8039-8ff491d973e4-copy.webp 2000w",
-        "original": "424a6903-82a5-4816-8039-8ff491d973e4 Copy.JPG"
+        "original": "424a6903-82a5-4816-8039-8ff491d973e4 Copy.JPG",
+        "width": 882,
+        "height": 887
       },
       {
         "src": "/img/karisik-projeler/14-451e764e-b318-4c7c-b432-1b507be77891.webp",
         "srcset": "/img/karisik-projeler/14-451e764e-b318-4c7c-b432-1b507be77891-800w.webp 800w, /img/karisik-projeler/14-451e764e-b318-4c7c-b432-1b507be77891-1600w.webp 1600w, /img/karisik-projeler/14-451e764e-b318-4c7c-b432-1b507be77891.webp 2000w",
-        "original": "451e764e-b318-4c7c-b432-1b507be77891.jpg"
+        "original": "451e764e-b318-4c7c-b432-1b507be77891.jpg",
+        "width": 1489,
+        "height": 887
       },
       {
         "src": "/img/karisik-projeler/15-463ff31c-7773-48a2-8b90-5b1d6277d348.webp",
         "srcset": "/img/karisik-projeler/15-463ff31c-7773-48a2-8b90-5b1d6277d348-800w.webp 800w, /img/karisik-projeler/15-463ff31c-7773-48a2-8b90-5b1d6277d348-1600w.webp 1600w, /img/karisik-projeler/15-463ff31c-7773-48a2-8b90-5b1d6277d348.webp 2000w",
-        "original": "463ff31c-7773-48a2-8b90-5b1d6277d348.jpg"
+        "original": "463ff31c-7773-48a2-8b90-5b1d6277d348.jpg",
+        "width": 1600,
+        "height": 899
       },
       {
         "src": "/img/karisik-projeler/16-4652d476-3da4-46aa-b8b5-2feb9612b560.webp",
         "srcset": "/img/karisik-projeler/16-4652d476-3da4-46aa-b8b5-2feb9612b560-800w.webp 800w, /img/karisik-projeler/16-4652d476-3da4-46aa-b8b5-2feb9612b560-1600w.webp 1600w, /img/karisik-projeler/16-4652d476-3da4-46aa-b8b5-2feb9612b560.webp 2000w",
-        "original": "4652d476-3da4-46aa-b8b5-2feb9612b560.jpg"
+        "original": "4652d476-3da4-46aa-b8b5-2feb9612b560.jpg",
+        "width": 880,
+        "height": 553
       },
       {
         "src": "/img/karisik-projeler/17-9319aab1-3229-4c5f-a0d3-c0c8b439faa5.webp",
         "srcset": "/img/karisik-projeler/17-9319aab1-3229-4c5f-a0d3-c0c8b439faa5-800w.webp 800w, /img/karisik-projeler/17-9319aab1-3229-4c5f-a0d3-c0c8b439faa5-1600w.webp 1600w, /img/karisik-projeler/17-9319aab1-3229-4c5f-a0d3-c0c8b439faa5.webp 2000w",
-        "original": "9319aab1-3229-4c5f-a0d3-c0c8b439faa5.jpg"
+        "original": "9319aab1-3229-4c5f-a0d3-c0c8b439faa5.jpg",
+        "width": 1600,
+        "height": 1125
       },
       {
         "src": "/img/karisik-projeler/18-80682-copy.webp",
         "srcset": "/img/karisik-projeler/18-80682-copy-800w.webp 800w, /img/karisik-projeler/18-80682-copy-1600w.webp 1600w, /img/karisik-projeler/18-80682-copy.webp 2000w",
-        "original": "80682 Copy.JPG"
+        "original": "80682 Copy.JPG",
+        "width": 1170,
+        "height": 1430
       },
       {
         "src": "/img/karisik-projeler/19-98570-copy-copy.webp",
         "srcset": "/img/karisik-projeler/19-98570-copy-copy-800w.webp 800w, /img/karisik-projeler/19-98570-copy-copy-1600w.webp 1600w, /img/karisik-projeler/19-98570-copy-copy.webp 2000w",
-        "original": "98570 Copy Copy.JPG"
+        "original": "98570 Copy Copy.JPG",
+        "width": 1600,
+        "height": 1600
       },
       {
         "src": "/img/karisik-projeler/20-98572-copy.webp",
         "srcset": "/img/karisik-projeler/20-98572-copy-800w.webp 800w, /img/karisik-projeler/20-98572-copy-1600w.webp 1600w, /img/karisik-projeler/20-98572-copy.webp 2000w",
-        "original": "98572 Copy.JPG"
+        "original": "98572 Copy.JPG",
+        "width": 1600,
+        "height": 1600
       },
       {
         "src": "/img/karisik-projeler/21-350421b5-da9f-4951-9dbc-c49fbf340eb3.webp",
         "srcset": "/img/karisik-projeler/21-350421b5-da9f-4951-9dbc-c49fbf340eb3-800w.webp 800w, /img/karisik-projeler/21-350421b5-da9f-4951-9dbc-c49fbf340eb3-1600w.webp 1600w, /img/karisik-projeler/21-350421b5-da9f-4951-9dbc-c49fbf340eb3.webp 2000w",
-        "original": "350421b5-da9f-4951-9dbc-c49fbf340eb3.jpg"
+        "original": "350421b5-da9f-4951-9dbc-c49fbf340eb3.jpg",
+        "width": 1600,
+        "height": 1152
       },
       {
         "src": "/img/karisik-projeler/22-7930733e-c72c-4f4f-9438-5d3793e207df.webp",
         "srcset": "/img/karisik-projeler/22-7930733e-c72c-4f4f-9438-5d3793e207df-800w.webp 800w, /img/karisik-projeler/22-7930733e-c72c-4f4f-9438-5d3793e207df-1600w.webp 1600w, /img/karisik-projeler/22-7930733e-c72c-4f4f-9438-5d3793e207df.webp 2000w",
-        "original": "7930733e-c72c-4f4f-9438-5d3793e207df.jpg"
+        "original": "7930733e-c72c-4f4f-9438-5d3793e207df.jpg",
+        "width": 1600,
+        "height": 1136
       },
       {
         "src": "/img/karisik-projeler/23-1000001456-copy.webp",
         "srcset": "/img/karisik-projeler/23-1000001456-copy-800w.webp 800w, /img/karisik-projeler/23-1000001456-copy-1600w.webp 1600w, /img/karisik-projeler/23-1000001456-copy.webp 2000w",
-        "original": "1000001456 Copy.JPG"
+        "original": "1000001456 Copy.JPG",
+        "width": 1600,
+        "height": 900
       },
       {
         "src": "/img/karisik-projeler/24-a6aef528-edf4-4800-9f78-dc171965dee9.webp",
         "srcset": "/img/karisik-projeler/24-a6aef528-edf4-4800-9f78-dc171965dee9-800w.webp 800w, /img/karisik-projeler/24-a6aef528-edf4-4800-9f78-dc171965dee9-1600w.webp 1600w, /img/karisik-projeler/24-a6aef528-edf4-4800-9f78-dc171965dee9.webp 2000w",
-        "original": "a6aef528-edf4-4800-9f78-dc171965dee9.jpg"
+        "original": "a6aef528-edf4-4800-9f78-dc171965dee9.jpg",
+        "width": 1600,
+        "height": 899
       },
       {
         "src": "/img/karisik-projeler/25-a9b3ebcf-8bb8-4d46-b81f-94f509cc6e97.webp",
         "srcset": "/img/karisik-projeler/25-a9b3ebcf-8bb8-4d46-b81f-94f509cc6e97-800w.webp 800w, /img/karisik-projeler/25-a9b3ebcf-8bb8-4d46-b81f-94f509cc6e97-1600w.webp 1600w, /img/karisik-projeler/25-a9b3ebcf-8bb8-4d46-b81f-94f509cc6e97.webp 2000w",
-        "original": "a9b3ebcf-8bb8-4d46-b81f-94f509cc6e97.jpg"
+        "original": "a9b3ebcf-8bb8-4d46-b81f-94f509cc6e97.jpg",
+        "width": 1600,
+        "height": 900
       },
       {
         "src": "/img/karisik-projeler/26-a53d4e25-7850-44f3-8178-b36f1df25af5.webp",
         "srcset": "/img/karisik-projeler/26-a53d4e25-7850-44f3-8178-b36f1df25af5-800w.webp 800w, /img/karisik-projeler/26-a53d4e25-7850-44f3-8178-b36f1df25af5-1600w.webp 1600w, /img/karisik-projeler/26-a53d4e25-7850-44f3-8178-b36f1df25af5.webp 2000w",
-        "original": "a53d4e25-7850-44f3-8178-b36f1df25af5.jpg"
+        "original": "a53d4e25-7850-44f3-8178-b36f1df25af5.jpg",
+        "width": 1600,
+        "height": 899
       },
       {
         "src": "/img/karisik-projeler/27-a394828a-8284-4d37-ac20-26386bfab348.webp",
         "srcset": "/img/karisik-projeler/27-a394828a-8284-4d37-ac20-26386bfab348-800w.webp 800w, /img/karisik-projeler/27-a394828a-8284-4d37-ac20-26386bfab348-1600w.webp 1600w, /img/karisik-projeler/27-a394828a-8284-4d37-ac20-26386bfab348.webp 2000w",
-        "original": "a394828a-8284-4d37-ac20-26386bfab348.jpg"
+        "original": "a394828a-8284-4d37-ac20-26386bfab348.jpg",
+        "width": 1600,
+        "height": 1152
       },
       {
         "src": "/img/karisik-projeler/28-a871748b-ed86-42c2-b86f-7a8bcf10ac31.webp",
         "srcset": "/img/karisik-projeler/28-a871748b-ed86-42c2-b86f-7a8bcf10ac31-800w.webp 800w, /img/karisik-projeler/28-a871748b-ed86-42c2-b86f-7a8bcf10ac31-1600w.webp 1600w, /img/karisik-projeler/28-a871748b-ed86-42c2-b86f-7a8bcf10ac31.webp 2000w",
-        "original": "a871748b-ed86-42c2-b86f-7a8bcf10ac31.jpg"
+        "original": "a871748b-ed86-42c2-b86f-7a8bcf10ac31.jpg",
+        "width": 1600,
+        "height": 899
       },
       {
         "src": "/img/karisik-projeler/29-ac58c480-c1e4-40ed-8945-82386e2e5884.webp",
         "srcset": "/img/karisik-projeler/29-ac58c480-c1e4-40ed-8945-82386e2e5884-800w.webp 800w, /img/karisik-projeler/29-ac58c480-c1e4-40ed-8945-82386e2e5884-1600w.webp 1600w, /img/karisik-projeler/29-ac58c480-c1e4-40ed-8945-82386e2e5884.webp 2000w",
-        "original": "ac58c480-c1e4-40ed-8945-82386e2e5884.jpg"
+        "original": "ac58c480-c1e4-40ed-8945-82386e2e5884.jpg",
+        "width": 1600,
+        "height": 899
       },
       {
         "src": "/img/karisik-projeler/30-bf062129-8e78-4ced-8d8a-4c9f2372ae39.webp",
         "srcset": "/img/karisik-projeler/30-bf062129-8e78-4ced-8d8a-4c9f2372ae39-800w.webp 800w, /img/karisik-projeler/30-bf062129-8e78-4ced-8d8a-4c9f2372ae39-1600w.webp 1600w, /img/karisik-projeler/30-bf062129-8e78-4ced-8d8a-4c9f2372ae39.webp 2000w",
-        "original": "bf062129-8e78-4ced-8d8a-4c9f2372ae39.jpg"
+        "original": "bf062129-8e78-4ced-8d8a-4c9f2372ae39.jpg",
+        "width": 752,
+        "height": 562
       },
       {
         "src": "/img/karisik-projeler/31-c3996dd9-5465-4c93-9a82-5c7b9cc19fbd-copy.webp",
         "srcset": "/img/karisik-projeler/31-c3996dd9-5465-4c93-9a82-5c7b9cc19fbd-copy-800w.webp 800w, /img/karisik-projeler/31-c3996dd9-5465-4c93-9a82-5c7b9cc19fbd-copy-1600w.webp 1600w, /img/karisik-projeler/31-c3996dd9-5465-4c93-9a82-5c7b9cc19fbd-copy.webp 2000w",
-        "original": "c3996dd9-5465-4c93-9a82-5c7b9cc19fbd Copy.JPG"
+        "original": "c3996dd9-5465-4c93-9a82-5c7b9cc19fbd Copy.JPG",
+        "width": 1600,
+        "height": 1129
       },
       {
         "src": "/img/karisik-projeler/32-e582c394-bce5-4907-9406-d62acd0ac32b-copy.webp",
         "srcset": "/img/karisik-projeler/32-e582c394-bce5-4907-9406-d62acd0ac32b-copy-800w.webp 800w, /img/karisik-projeler/32-e582c394-bce5-4907-9406-d62acd0ac32b-copy-1600w.webp 1600w, /img/karisik-projeler/32-e582c394-bce5-4907-9406-d62acd0ac32b-copy.webp 2000w",
-        "original": "e582c394-bce5-4907-9406-d62acd0ac32b Copy.JPG"
+        "original": "e582c394-bce5-4907-9406-d62acd0ac32b Copy.JPG",
+        "width": 1600,
+        "height": 900
       },
       {
         "src": "/img/karisik-projeler/33-e582c394-bce5-4907-9406-d62acd0ac32b.webp",
         "srcset": "/img/karisik-projeler/33-e582c394-bce5-4907-9406-d62acd0ac32b-800w.webp 800w, /img/karisik-projeler/33-e582c394-bce5-4907-9406-d62acd0ac32b-1600w.webp 1600w, /img/karisik-projeler/33-e582c394-bce5-4907-9406-d62acd0ac32b.webp 2000w",
-        "original": "e582c394-bce5-4907-9406-d62acd0ac32b.jpg"
+        "original": "e582c394-bce5-4907-9406-d62acd0ac32b.jpg",
+        "width": 1600,
+        "height": 900
       },
       {
         "src": "/img/karisik-projeler/34-fe95ed91-29f2-4d9b-a908-0b24148d2324-copy.webp",
         "srcset": "/img/karisik-projeler/34-fe95ed91-29f2-4d9b-a908-0b24148d2324-copy-800w.webp 800w, /img/karisik-projeler/34-fe95ed91-29f2-4d9b-a908-0b24148d2324-copy-1600w.webp 1600w, /img/karisik-projeler/34-fe95ed91-29f2-4d9b-a908-0b24148d2324-copy.webp 2000w",
-        "original": "fe95ed91-29f2-4d9b-a908-0b24148d2324 Copy.JPG"
+        "original": "fe95ed91-29f2-4d9b-a908-0b24148d2324 Copy.JPG",
+        "width": 1500,
+        "height": 1200
       },
       {
         "src": "/img/karisik-projeler/35-img-20201203-wa0047-copy.webp",
         "srcset": "/img/karisik-projeler/35-img-20201203-wa0047-copy-800w.webp 800w, /img/karisik-projeler/35-img-20201203-wa0047-copy-1600w.webp 1600w, /img/karisik-projeler/35-img-20201203-wa0047-copy.webp 2000w",
-        "original": "IMG-20201203-WA0047 Copy.JPG"
+        "original": "IMG-20201203-WA0047 Copy.JPG",
+        "width": 1067,
+        "height": 614
       },
       {
         "src": "/img/karisik-projeler/36-img-20210111-wa0004.webp",
         "srcset": "/img/karisik-projeler/36-img-20210111-wa0004-800w.webp 800w, /img/karisik-projeler/36-img-20210111-wa0004-1600w.webp 1600w, /img/karisik-projeler/36-img-20210111-wa0004.webp 2000w",
-        "original": "IMG-20210111-WA0004.jpg"
+        "original": "IMG-20210111-WA0004.jpg",
+        "width": 1280,
+        "height": 1600
       },
       {
         "src": "/img/karisik-projeler/37-img-20210111-wa0005.webp",
         "srcset": "/img/karisik-projeler/37-img-20210111-wa0005-800w.webp 800w, /img/karisik-projeler/37-img-20210111-wa0005-1600w.webp 1600w, /img/karisik-projeler/37-img-20210111-wa0005.webp 2000w",
-        "original": "IMG-20210111-WA0005.jpg"
+        "original": "IMG-20210111-WA0005.jpg",
+        "width": 1280,
+        "height": 1600
       },
       {
         "src": "/img/karisik-projeler/38-img-20210325-wa0009-copy.webp",
         "srcset": "/img/karisik-projeler/38-img-20210325-wa0009-copy-800w.webp 800w, /img/karisik-projeler/38-img-20210325-wa0009-copy-1600w.webp 1600w, /img/karisik-projeler/38-img-20210325-wa0009-copy.webp 2000w",
-        "original": "IMG-20210325-WA0009 Copy.JPG"
+        "original": "IMG-20210325-WA0009 Copy.JPG",
+        "width": 1280,
+        "height": 1280
       },
       {
         "src": "/img/karisik-projeler/39-img-20210325-wa0013.webp",
         "srcset": "/img/karisik-projeler/39-img-20210325-wa0013-800w.webp 800w, /img/karisik-projeler/39-img-20210325-wa0013-1600w.webp 1600w, /img/karisik-projeler/39-img-20210325-wa0013.webp 2000w",
-        "original": "IMG-20210325-WA0013.jpg"
+        "original": "IMG-20210325-WA0013.jpg",
+        "width": 1280,
+        "height": 1280
       },
       {
         "src": "/img/karisik-projeler/40-img-20210705-wa0006-copy.webp",
         "srcset": "/img/karisik-projeler/40-img-20210705-wa0006-copy-800w.webp 800w, /img/karisik-projeler/40-img-20210705-wa0006-copy-1600w.webp 1600w, /img/karisik-projeler/40-img-20210705-wa0006-copy.webp 2000w",
-        "original": "IMG-20210705-WA0006 Copy.JPG"
+        "original": "IMG-20210705-WA0006 Copy.JPG",
+        "width": 2000,
+        "height": 1333
       },
       {
         "src": "/img/karisik-projeler/41-img-20210714-wa0062.webp",
         "srcset": "/img/karisik-projeler/41-img-20210714-wa0062-800w.webp 800w, /img/karisik-projeler/41-img-20210714-wa0062-1600w.webp 1600w, /img/karisik-projeler/41-img-20210714-wa0062.webp 2000w",
-        "original": "IMG-20210714-WA0062.jpg"
+        "original": "IMG-20210714-WA0062.jpg",
+        "width": 1600,
+        "height": 1280
       },
       {
         "src": "/img/karisik-projeler/42-img-20210831-wa0008.webp",
         "srcset": "/img/karisik-projeler/42-img-20210831-wa0008-800w.webp 800w, /img/karisik-projeler/42-img-20210831-wa0008-1600w.webp 1600w, /img/karisik-projeler/42-img-20210831-wa0008.webp 2000w",
-        "original": "IMG-20210831-WA0008.jpg"
+        "original": "IMG-20210831-WA0008.jpg",
+        "width": 1600,
+        "height": 1279
       },
       {
         "src": "/img/karisik-projeler/43-img-20210831-wa0009.webp",
         "srcset": "/img/karisik-projeler/43-img-20210831-wa0009-800w.webp 800w, /img/karisik-projeler/43-img-20210831-wa0009-1600w.webp 1600w, /img/karisik-projeler/43-img-20210831-wa0009.webp 2000w",
-        "original": "IMG-20210831-WA0009.jpg"
+        "original": "IMG-20210831-WA0009.jpg",
+        "width": 1600,
+        "height": 1279
       },
       {
         "src": "/img/karisik-projeler/44-img-20210912-wa0002-copy-copy.webp",
         "srcset": "/img/karisik-projeler/44-img-20210912-wa0002-copy-copy-800w.webp 800w, /img/karisik-projeler/44-img-20210912-wa0002-copy-copy-1600w.webp 1600w, /img/karisik-projeler/44-img-20210912-wa0002-copy-copy.webp 2000w",
-        "original": "IMG-20210912-WA0002 Copy Copy.JPG"
+        "original": "IMG-20210912-WA0002 Copy Copy.JPG",
+        "width": 1500,
+        "height": 1000
       },
       {
         "src": "/img/karisik-projeler/45-img-20210919-wa0004-copy-copy.webp",
         "srcset": "/img/karisik-projeler/45-img-20210919-wa0004-copy-copy-800w.webp 800w, /img/karisik-projeler/45-img-20210919-wa0004-copy-copy-1600w.webp 1600w, /img/karisik-projeler/45-img-20210919-wa0004-copy-copy.webp 2000w",
-        "original": "IMG-20210919-WA0004 Copy Copy.JPG"
+        "original": "IMG-20210919-WA0004 Copy Copy.JPG",
+        "width": 2000,
+        "height": 1333
       },
       {
         "src": "/img/karisik-projeler/46-img-20210919-wa0009-copy-copy-copy.webp",
         "srcset": "/img/karisik-projeler/46-img-20210919-wa0009-copy-copy-copy-800w.webp 800w, /img/karisik-projeler/46-img-20210919-wa0009-copy-copy-copy-1600w.webp 1600w, /img/karisik-projeler/46-img-20210919-wa0009-copy-copy-copy.webp 2000w",
-        "original": "IMG-20210919-WA0009 Copy Copy Copy.JPG"
+        "original": "IMG-20210919-WA0009 Copy Copy Copy.JPG",
+        "width": 2000,
+        "height": 1333
       },
       {
         "src": "/img/karisik-projeler/47-img-20210919-wa0024-copy.webp",
         "srcset": "/img/karisik-projeler/47-img-20210919-wa0024-copy-800w.webp 800w, /img/karisik-projeler/47-img-20210919-wa0024-copy-1600w.webp 1600w, /img/karisik-projeler/47-img-20210919-wa0024-copy.webp 2000w",
-        "original": "IMG-20210919-WA0024 Copy.JPG"
+        "original": "IMG-20210919-WA0024 Copy.JPG",
+        "width": 1365,
+        "height": 2048
       },
       {
         "src": "/img/karisik-projeler/48-img-20211012-wa0003-copy.webp",
         "srcset": "/img/karisik-projeler/48-img-20211012-wa0003-copy-800w.webp 800w, /img/karisik-projeler/48-img-20211012-wa0003-copy-1600w.webp 1600w, /img/karisik-projeler/48-img-20211012-wa0003-copy.webp 2000w",
-        "original": "IMG-20211012-WA0003 Copy.JPG"
+        "original": "IMG-20211012-WA0003 Copy.JPG",
+        "width": 1500,
+        "height": 1000
       },
       {
         "src": "/img/karisik-projeler/49-img-20220104-wa0009.webp",
         "srcset": "/img/karisik-projeler/49-img-20220104-wa0009-800w.webp 800w, /img/karisik-projeler/49-img-20220104-wa0009-1600w.webp 1600w, /img/karisik-projeler/49-img-20220104-wa0009.webp 2000w",
-        "original": "IMG-20220104-WA0009.jpg"
+        "original": "IMG-20220104-WA0009.jpg",
+        "width": 2000,
+        "height": 1969
       },
       {
         "src": "/img/karisik-projeler/50-img-20220104-wa0011.webp",
         "srcset": "/img/karisik-projeler/50-img-20220104-wa0011-800w.webp 800w, /img/karisik-projeler/50-img-20220104-wa0011-1600w.webp 1600w, /img/karisik-projeler/50-img-20220104-wa0011.webp 2000w",
-        "original": "IMG-20220104-WA0011.jpg"
+        "original": "IMG-20220104-WA0011.jpg",
+        "width": 1544,
+        "height": 1600
       },
       {
         "src": "/img/karisik-projeler/51-img-20220203-wa0006-copy.webp",
         "srcset": "/img/karisik-projeler/51-img-20220203-wa0006-copy-800w.webp 800w, /img/karisik-projeler/51-img-20220203-wa0006-copy-1600w.webp 1600w, /img/karisik-projeler/51-img-20220203-wa0006-copy.webp 2000w",
-        "original": "IMG-20220203-WA0006 Copy.JPG"
+        "original": "IMG-20220203-WA0006 Copy.JPG",
+        "width": 1600,
+        "height": 960
       },
       {
         "src": "/img/karisik-projeler/52-img-20220204-wa0009-copy.webp",
         "srcset": "/img/karisik-projeler/52-img-20220204-wa0009-copy-800w.webp 800w, /img/karisik-projeler/52-img-20220204-wa0009-copy-1600w.webp 1600w, /img/karisik-projeler/52-img-20220204-wa0009-copy.webp 2000w",
-        "original": "IMG-20220204-WA0009 Copy.JPG"
+        "original": "IMG-20220204-WA0009 Copy.JPG",
+        "width": 2000,
+        "height": 1199
       },
       {
         "src": "/img/karisik-projeler/53-img-20220208-wa0002-copy.webp",
         "srcset": "/img/karisik-projeler/53-img-20220208-wa0002-copy-800w.webp 800w, /img/karisik-projeler/53-img-20220208-wa0002-copy-1600w.webp 1600w, /img/karisik-projeler/53-img-20220208-wa0002-copy.webp 2000w",
-        "original": "IMG-20220208-WA0002 Copy.JPG"
+        "original": "IMG-20220208-WA0002 Copy.JPG",
+        "width": 1600,
+        "height": 960
       },
       {
         "src": "/img/karisik-projeler/54-img-20220208-wa0010.webp",
         "srcset": "/img/karisik-projeler/54-img-20220208-wa0010-800w.webp 800w, /img/karisik-projeler/54-img-20220208-wa0010-1600w.webp 1600w, /img/karisik-projeler/54-img-20220208-wa0010.webp 2000w",
-        "original": "IMG-20220208-WA0010.jpg"
+        "original": "IMG-20220208-WA0010.jpg",
+        "width": 1024,
+        "height": 614
       },
       {
         "src": "/img/karisik-projeler/55-img-20220209-wa0031-copy.webp",
         "srcset": "/img/karisik-projeler/55-img-20220209-wa0031-copy-800w.webp 800w, /img/karisik-projeler/55-img-20220209-wa0031-copy-1600w.webp 1600w, /img/karisik-projeler/55-img-20220209-wa0031-copy.webp 2000w",
-        "original": "IMG-20220209-WA0031 Copy.JPG"
+        "original": "IMG-20220209-WA0031 Copy.JPG",
+        "width": 981,
+        "height": 1189
       },
       {
         "src": "/img/karisik-projeler/56-img-20220209-wa0034-copy.webp",
         "srcset": "/img/karisik-projeler/56-img-20220209-wa0034-copy-800w.webp 800w, /img/karisik-projeler/56-img-20220209-wa0034-copy-1600w.webp 1600w, /img/karisik-projeler/56-img-20220209-wa0034-copy.webp 2000w",
-        "original": "IMG-20220209-WA0034 Copy.JPG"
+        "original": "IMG-20220209-WA0034 Copy.JPG",
+        "width": 863,
+        "height": 807
       },
       {
         "src": "/img/karisik-projeler/57-img-20220212-wa0000-copy.webp",
         "srcset": "/img/karisik-projeler/57-img-20220212-wa0000-copy-800w.webp 800w, /img/karisik-projeler/57-img-20220212-wa0000-copy-1600w.webp 1600w, /img/karisik-projeler/57-img-20220212-wa0000-copy.webp 2000w",
-        "original": "IMG-20220212-WA0000 Copy.JPG"
+        "original": "IMG-20220212-WA0000 Copy.JPG",
+        "width": 1600,
+        "height": 960
       },
       {
         "src": "/img/karisik-projeler/58-img-20220212-wa0008-copy.webp",
         "srcset": "/img/karisik-projeler/58-img-20220212-wa0008-copy-800w.webp 800w, /img/karisik-projeler/58-img-20220212-wa0008-copy-1600w.webp 1600w, /img/karisik-projeler/58-img-20220212-wa0008-copy.webp 2000w",
-        "original": "IMG-20220212-WA0008 Copy.JPG"
+        "original": "IMG-20220212-WA0008 Copy.JPG",
+        "width": 2000,
+        "height": 1199
       },
       {
         "src": "/img/karisik-projeler/59-img-20220321-wa0021-copy-copy.webp",
         "srcset": "/img/karisik-projeler/59-img-20220321-wa0021-copy-copy-800w.webp 800w, /img/karisik-projeler/59-img-20220321-wa0021-copy-copy-1600w.webp 1600w, /img/karisik-projeler/59-img-20220321-wa0021-copy-copy.webp 2000w",
-        "original": "IMG-20220321-WA0021 Copy Copy.JPG"
+        "original": "IMG-20220321-WA0021 Copy Copy.JPG",
+        "width": 686,
+        "height": 576
       },
       {
         "src": "/img/karisik-projeler/60-img-20220321-wa0022-copy.webp",
         "srcset": "/img/karisik-projeler/60-img-20220321-wa0022-copy-800w.webp 800w, /img/karisik-projeler/60-img-20220321-wa0022-copy-1600w.webp 1600w, /img/karisik-projeler/60-img-20220321-wa0022-copy.webp 2000w",
-        "original": "IMG-20220321-WA0022 Copy.JPG"
+        "original": "IMG-20220321-WA0022 Copy.JPG",
+        "width": 1019,
+        "height": 1080
       },
       {
         "src": "/img/karisik-projeler/61-img-20220321-wa0024-copy.webp",
         "srcset": "/img/karisik-projeler/61-img-20220321-wa0024-copy-800w.webp 800w, /img/karisik-projeler/61-img-20220321-wa0024-copy-1600w.webp 1600w, /img/karisik-projeler/61-img-20220321-wa0024-copy.webp 2000w",
-        "original": "IMG-20220321-WA0024 Copy.JPG"
+        "original": "IMG-20220321-WA0024 Copy.JPG",
+        "width": 1024,
+        "height": 576
       },
       {
         "src": "/img/karisik-projeler/62-img-20220321-wa0025.webp",
         "srcset": "/img/karisik-projeler/62-img-20220321-wa0025-800w.webp 800w, /img/karisik-projeler/62-img-20220321-wa0025-1600w.webp 1600w, /img/karisik-projeler/62-img-20220321-wa0025.webp 2000w",
-        "original": "IMG-20220321-WA0025.jpg"
+        "original": "IMG-20220321-WA0025.jpg",
+        "width": 1600,
+        "height": 1333
       },
       {
         "src": "/img/karisik-projeler/63-img-20220321-wa0028.webp",
         "srcset": "/img/karisik-projeler/63-img-20220321-wa0028-800w.webp 800w, /img/karisik-projeler/63-img-20220321-wa0028-1600w.webp 1600w, /img/karisik-projeler/63-img-20220321-wa0028.webp 2000w",
-        "original": "IMG-20220321-WA0028.jpg"
+        "original": "IMG-20220321-WA0028.jpg",
+        "width": 1600,
+        "height": 1333
       },
       {
         "src": "/img/karisik-projeler/64-img-20220501-wa0002.webp",
         "srcset": "/img/karisik-projeler/64-img-20220501-wa0002-800w.webp 800w, /img/karisik-projeler/64-img-20220501-wa0002-1600w.webp 1600w, /img/karisik-projeler/64-img-20220501-wa0002.webp 2000w",
-        "original": "IMG-20220501-WA0002.jpg"
+        "original": "IMG-20220501-WA0002.jpg",
+        "width": 1600,
+        "height": 1200
       },
       {
         "src": "/img/karisik-projeler/65-img-20220609-wa0016.webp",
         "srcset": "/img/karisik-projeler/65-img-20220609-wa0016-800w.webp 800w, /img/karisik-projeler/65-img-20220609-wa0016-1600w.webp 1600w, /img/karisik-projeler/65-img-20220609-wa0016.webp 2000w",
-        "original": "IMG-20220609-WA0016.jpg"
+        "original": "IMG-20220609-WA0016.jpg",
+        "width": 1200,
+        "height": 700
       },
       {
         "src": "/img/karisik-projeler/66-img-20220823-wa0002.webp",
         "srcset": "/img/karisik-projeler/66-img-20220823-wa0002-800w.webp 800w, /img/karisik-projeler/66-img-20220823-wa0002-1600w.webp 1600w, /img/karisik-projeler/66-img-20220823-wa0002.webp 2000w",
-        "original": "IMG-20220823-WA0002.jpg"
+        "original": "IMG-20220823-WA0002.jpg",
+        "width": 1600,
+        "height": 1600
       },
       {
         "src": "/img/karisik-projeler/67-img-20220823-wa0003.webp",
         "srcset": "/img/karisik-projeler/67-img-20220823-wa0003-800w.webp 800w, /img/karisik-projeler/67-img-20220823-wa0003-1600w.webp 1600w, /img/karisik-projeler/67-img-20220823-wa0003.webp 2000w",
-        "original": "IMG-20220823-WA0003.jpg"
+        "original": "IMG-20220823-WA0003.jpg",
+        "width": 1600,
+        "height": 1600
       },
       {
         "src": "/img/karisik-projeler/68-img-20220825-wa0005.webp",
         "srcset": "/img/karisik-projeler/68-img-20220825-wa0005-800w.webp 800w, /img/karisik-projeler/68-img-20220825-wa0005-1600w.webp 1600w, /img/karisik-projeler/68-img-20220825-wa0005.webp 2000w",
-        "original": "IMG-20220825-WA0005.jpg"
+        "original": "IMG-20220825-WA0005.jpg",
+        "width": 1600,
+        "height": 899
       },
       {
         "src": "/img/karisik-projeler/69-img-20220825-wa0006.webp",
         "srcset": "/img/karisik-projeler/69-img-20220825-wa0006-800w.webp 800w, /img/karisik-projeler/69-img-20220825-wa0006-1600w.webp 1600w, /img/karisik-projeler/69-img-20220825-wa0006.webp 2000w",
-        "original": "IMG-20220825-WA0006.jpg"
+        "original": "IMG-20220825-WA0006.jpg",
+        "width": 1600,
+        "height": 899
       },
       {
         "src": "/img/karisik-projeler/70-img-20220910-wa0005.webp",
         "srcset": "/img/karisik-projeler/70-img-20220910-wa0005-800w.webp 800w, /img/karisik-projeler/70-img-20220910-wa0005-1600w.webp 1600w, /img/karisik-projeler/70-img-20220910-wa0005.webp 2000w",
-        "original": "IMG-20220910-WA0005.jpg"
+        "original": "IMG-20220910-WA0005.jpg",
+        "width": 1600,
+        "height": 899
       },
       {
         "src": "/img/karisik-projeler/71-img-20220910-wa0007.webp",
         "srcset": "/img/karisik-projeler/71-img-20220910-wa0007-800w.webp 800w, /img/karisik-projeler/71-img-20220910-wa0007-1600w.webp 1600w, /img/karisik-projeler/71-img-20220910-wa0007.webp 2000w",
-        "original": "IMG-20220910-WA0007.jpg"
+        "original": "IMG-20220910-WA0007.jpg",
+        "width": 1600,
+        "height": 899
       },
       {
         "src": "/img/karisik-projeler/72-img-20220910-wa0010.webp",
         "srcset": "/img/karisik-projeler/72-img-20220910-wa0010-800w.webp 800w, /img/karisik-projeler/72-img-20220910-wa0010-1600w.webp 1600w, /img/karisik-projeler/72-img-20220910-wa0010.webp 2000w",
-        "original": "IMG-20220910-WA0010.jpg"
+        "original": "IMG-20220910-WA0010.jpg",
+        "width": 1600,
+        "height": 899
       },
       {
         "src": "/img/karisik-projeler/73-img-20220915-wa0010-copy.webp",
         "srcset": "/img/karisik-projeler/73-img-20220915-wa0010-copy-800w.webp 800w, /img/karisik-projeler/73-img-20220915-wa0010-copy-1600w.webp 1600w, /img/karisik-projeler/73-img-20220915-wa0010-copy.webp 2000w",
-        "original": "IMG-20220915-WA0010 Copy.JPG"
+        "original": "IMG-20220915-WA0010 Copy.JPG",
+        "width": 1600,
+        "height": 900
       },
       {
         "src": "/img/karisik-projeler/74-img-20220922-wa0014.webp",
         "srcset": "/img/karisik-projeler/74-img-20220922-wa0014-800w.webp 800w, /img/karisik-projeler/74-img-20220922-wa0014-1600w.webp 1600w, /img/karisik-projeler/74-img-20220922-wa0014.webp 2000w",
-        "original": "IMG-20220922-WA0014.jpg"
+        "original": "IMG-20220922-WA0014.jpg",
+        "width": 1600,
+        "height": 899
       },
       {
         "src": "/img/karisik-projeler/75-img-20221003-wa0011.webp",
         "srcset": "/img/karisik-projeler/75-img-20221003-wa0011-800w.webp 800w, /img/karisik-projeler/75-img-20221003-wa0011-1600w.webp 1600w, /img/karisik-projeler/75-img-20221003-wa0011.webp 2000w",
-        "original": "IMG-20221003-WA0011.jpg"
+        "original": "IMG-20221003-WA0011.jpg",
+        "width": 1600,
+        "height": 899
       },
       {
         "src": "/img/karisik-projeler/76-img-20221004-wa0012.webp",
         "srcset": "/img/karisik-projeler/76-img-20221004-wa0012-800w.webp 800w, /img/karisik-projeler/76-img-20221004-wa0012-1600w.webp 1600w, /img/karisik-projeler/76-img-20221004-wa0012.webp 2000w",
-        "original": "IMG-20221004-WA0012.jpg"
+        "original": "IMG-20221004-WA0012.jpg",
+        "width": 1000,
+        "height": 1000
       },
       {
         "src": "/img/karisik-projeler/77-img-20221004-wa0013.webp",
         "srcset": "/img/karisik-projeler/77-img-20221004-wa0013-800w.webp 800w, /img/karisik-projeler/77-img-20221004-wa0013-1600w.webp 1600w, /img/karisik-projeler/77-img-20221004-wa0013.webp 2000w",
-        "original": "IMG-20221004-WA0013.jpg"
+        "original": "IMG-20221004-WA0013.jpg",
+        "width": 1000,
+        "height": 1000
       },
       {
         "src": "/img/karisik-projeler/78-img-20221004-wa0018.webp",
         "srcset": "/img/karisik-projeler/78-img-20221004-wa0018-800w.webp 800w, /img/karisik-projeler/78-img-20221004-wa0018-1600w.webp 1600w, /img/karisik-projeler/78-img-20221004-wa0018.webp 2000w",
-        "original": "IMG-20221004-WA0018.jpg"
+        "original": "IMG-20221004-WA0018.jpg",
+        "width": 1600,
+        "height": 1600
       },
       {
         "src": "/img/karisik-projeler/79-img-20221006-wa0004.webp",
         "srcset": "/img/karisik-projeler/79-img-20221006-wa0004-800w.webp 800w, /img/karisik-projeler/79-img-20221006-wa0004-1600w.webp 1600w, /img/karisik-projeler/79-img-20221006-wa0004.webp 2000w",
-        "original": "IMG-20221006-WA0004.jpg"
+        "original": "IMG-20221006-WA0004.jpg",
+        "width": 1600,
+        "height": 900
       },
       {
         "src": "/img/karisik-projeler/80-img-20221012-wa0005.webp",
         "srcset": "/img/karisik-projeler/80-img-20221012-wa0005-800w.webp 800w, /img/karisik-projeler/80-img-20221012-wa0005-1600w.webp 1600w, /img/karisik-projeler/80-img-20221012-wa0005.webp 2000w",
-        "original": "IMG-20221012-WA0005.jpg"
+        "original": "IMG-20221012-WA0005.jpg",
+        "width": 1600,
+        "height": 900
       },
       {
         "src": "/img/karisik-projeler/81-img-20221017-wa0015.webp",
         "srcset": "/img/karisik-projeler/81-img-20221017-wa0015-800w.webp 800w, /img/karisik-projeler/81-img-20221017-wa0015-1600w.webp 1600w, /img/karisik-projeler/81-img-20221017-wa0015.webp 2000w",
-        "original": "IMG-20221017-WA0015.jpg"
+        "original": "IMG-20221017-WA0015.jpg",
+        "width": 1600,
+        "height": 899
       },
       {
         "src": "/img/karisik-projeler/82-img-20221020-wa0009.webp",
         "srcset": "/img/karisik-projeler/82-img-20221020-wa0009-800w.webp 800w, /img/karisik-projeler/82-img-20221020-wa0009-1600w.webp 1600w, /img/karisik-projeler/82-img-20221020-wa0009.webp 2000w",
-        "original": "IMG-20221020-WA0009.jpg"
+        "original": "IMG-20221020-WA0009.jpg",
+        "width": 1600,
+        "height": 900
       },
       {
         "src": "/img/karisik-projeler/83-img-20221021-wa0002.webp",
         "srcset": "/img/karisik-projeler/83-img-20221021-wa0002-800w.webp 800w, /img/karisik-projeler/83-img-20221021-wa0002-1600w.webp 1600w, /img/karisik-projeler/83-img-20221021-wa0002.webp 2000w",
-        "original": "IMG-20221021-WA0002.jpg"
+        "original": "IMG-20221021-WA0002.jpg",
+        "width": 1600,
+        "height": 900
       },
       {
         "src": "/img/karisik-projeler/84-img-20221021-wa0005.webp",
         "srcset": "/img/karisik-projeler/84-img-20221021-wa0005-800w.webp 800w, /img/karisik-projeler/84-img-20221021-wa0005-1600w.webp 1600w, /img/karisik-projeler/84-img-20221021-wa0005.webp 2000w",
-        "original": "IMG-20221021-WA0005.jpg"
+        "original": "IMG-20221021-WA0005.jpg",
+        "width": 1600,
+        "height": 900
       },
       {
         "src": "/img/karisik-projeler/85-img-20221021-wa0006.webp",
         "srcset": "/img/karisik-projeler/85-img-20221021-wa0006-800w.webp 800w, /img/karisik-projeler/85-img-20221021-wa0006-1600w.webp 1600w, /img/karisik-projeler/85-img-20221021-wa0006.webp 2000w",
-        "original": "IMG-20221021-WA0006.jpg"
+        "original": "IMG-20221021-WA0006.jpg",
+        "width": 1600,
+        "height": 900
       },
       {
         "src": "/img/karisik-projeler/86-img-20221021-wa0007.webp",
         "srcset": "/img/karisik-projeler/86-img-20221021-wa0007-800w.webp 800w, /img/karisik-projeler/86-img-20221021-wa0007-1600w.webp 1600w, /img/karisik-projeler/86-img-20221021-wa0007.webp 2000w",
-        "original": "IMG-20221021-WA0007.jpg"
+        "original": "IMG-20221021-WA0007.jpg",
+        "width": 1600,
+        "height": 900
       },
       {
         "src": "/img/karisik-projeler/87-img-20221027-wa0001.webp",
         "srcset": "/img/karisik-projeler/87-img-20221027-wa0001-800w.webp 800w, /img/karisik-projeler/87-img-20221027-wa0001-1600w.webp 1600w, /img/karisik-projeler/87-img-20221027-wa0001.webp 2000w",
-        "original": "IMG-20221027-WA0001.jpg"
+        "original": "IMG-20221027-WA0001.jpg",
+        "width": 1600,
+        "height": 900
       },
       {
         "src": "/img/karisik-projeler/88-img-20221028-wa0021.webp",
         "srcset": "/img/karisik-projeler/88-img-20221028-wa0021-800w.webp 800w, /img/karisik-projeler/88-img-20221028-wa0021-1600w.webp 1600w, /img/karisik-projeler/88-img-20221028-wa0021.webp 2000w",
-        "original": "IMG-20221028-WA0021.jpg"
+        "original": "IMG-20221028-WA0021.jpg",
+        "width": 1500,
+        "height": 1500
       },
       {
         "src": "/img/karisik-projeler/89-img-20221028-wa0022.webp",
         "srcset": "/img/karisik-projeler/89-img-20221028-wa0022-800w.webp 800w, /img/karisik-projeler/89-img-20221028-wa0022-1600w.webp 1600w, /img/karisik-projeler/89-img-20221028-wa0022.webp 2000w",
-        "original": "IMG-20221028-WA0022.jpg"
+        "original": "IMG-20221028-WA0022.jpg",
+        "width": 1500,
+        "height": 1500
       },
       {
         "src": "/img/karisik-projeler/90-img-20221107-wa0003.webp",
         "srcset": "/img/karisik-projeler/90-img-20221107-wa0003-800w.webp 800w, /img/karisik-projeler/90-img-20221107-wa0003-1600w.webp 1600w, /img/karisik-projeler/90-img-20221107-wa0003.webp 2000w",
-        "original": "IMG-20221107-WA0003.jpg"
+        "original": "IMG-20221107-WA0003.jpg",
+        "width": 1600,
+        "height": 1066
       },
       {
         "src": "/img/karisik-projeler/91-img-20221107-wa0004.webp",
         "srcset": "/img/karisik-projeler/91-img-20221107-wa0004-800w.webp 800w, /img/karisik-projeler/91-img-20221107-wa0004-1600w.webp 1600w, /img/karisik-projeler/91-img-20221107-wa0004.webp 2000w",
-        "original": "IMG-20221107-WA0004.jpg"
+        "original": "IMG-20221107-WA0004.jpg",
+        "width": 1600,
+        "height": 1066
       },
       {
         "src": "/img/karisik-projeler/92-img-20221107-wa0005.webp",
         "srcset": "/img/karisik-projeler/92-img-20221107-wa0005-800w.webp 800w, /img/karisik-projeler/92-img-20221107-wa0005-1600w.webp 1600w, /img/karisik-projeler/92-img-20221107-wa0005.webp 2000w",
-        "original": "IMG-20221107-WA0005.jpg"
+        "original": "IMG-20221107-WA0005.jpg",
+        "width": 1600,
+        "height": 900
       },
       {
         "src": "/img/karisik-projeler/93-img-20221112-wa0025.webp",
         "srcset": "/img/karisik-projeler/93-img-20221112-wa0025-800w.webp 800w, /img/karisik-projeler/93-img-20221112-wa0025-1600w.webp 1600w, /img/karisik-projeler/93-img-20221112-wa0025.webp 2000w",
-        "original": "IMG-20221112-WA0025.jpg"
+        "original": "IMG-20221112-WA0025.jpg",
+        "width": 1500,
+        "height": 1500
       },
       {
         "src": "/img/karisik-projeler/94-img-20221112-wa0028.webp",
         "srcset": "/img/karisik-projeler/94-img-20221112-wa0028-800w.webp 800w, /img/karisik-projeler/94-img-20221112-wa0028-1600w.webp 1600w, /img/karisik-projeler/94-img-20221112-wa0028.webp 2000w",
-        "original": "IMG-20221112-WA0028.jpg"
+        "original": "IMG-20221112-WA0028.jpg",
+        "width": 1500,
+        "height": 1500
       },
       {
         "src": "/img/karisik-projeler/95-img-20221119-wa0002.webp",
         "srcset": "/img/karisik-projeler/95-img-20221119-wa0002-800w.webp 800w, /img/karisik-projeler/95-img-20221119-wa0002-1600w.webp 1600w, /img/karisik-projeler/95-img-20221119-wa0002.webp 2000w",
-        "original": "IMG-20221119-WA0002.jpg"
+        "original": "IMG-20221119-WA0002.jpg",
+        "width": 1600,
+        "height": 900
       },
       {
         "src": "/img/karisik-projeler/96-img-20221119-wa0013.webp",
         "srcset": "/img/karisik-projeler/96-img-20221119-wa0013-800w.webp 800w, /img/karisik-projeler/96-img-20221119-wa0013-1600w.webp 1600w, /img/karisik-projeler/96-img-20221119-wa0013.webp 2000w",
-        "original": "IMG-20221119-WA0013.jpg"
+        "original": "IMG-20221119-WA0013.jpg",
+        "width": 1600,
+        "height": 900
       },
       {
         "src": "/img/karisik-projeler/97-img-20210405-103723-copy.webp",
         "srcset": "/img/karisik-projeler/97-img-20210405-103723-copy-800w.webp 800w, /img/karisik-projeler/97-img-20210405-103723-copy-1600w.webp 1600w, /img/karisik-projeler/97-img-20210405-103723-copy.webp 2000w",
-        "original": "IMG_20210405_103723 Copy.JPG"
+        "original": "IMG_20210405_103723 Copy.JPG",
+        "width": 1500,
+        "height": 1500
       },
       {
         "src": "/img/karisik-projeler/98-img-20210412-174607-copy.webp",
         "srcset": "/img/karisik-projeler/98-img-20210412-174607-copy-800w.webp 800w, /img/karisik-projeler/98-img-20210412-174607-copy-1600w.webp 1600w, /img/karisik-projeler/98-img-20210412-174607-copy.webp 2000w",
-        "original": "IMG_20210412_174607 Copy.JPG"
+        "original": "IMG_20210412_174607 Copy.JPG",
+        "width": 1500,
+        "height": 1500
       },
       {
         "src": "/img/karisik-projeler/99-img-20210831-194501.webp",
         "srcset": "/img/karisik-projeler/99-img-20210831-194501-800w.webp 800w, /img/karisik-projeler/99-img-20210831-194501-1600w.webp 1600w, /img/karisik-projeler/99-img-20210831-194501.webp 2000w",
-        "original": "IMG_20210831_194501.jpg"
+        "original": "IMG_20210831_194501.jpg",
+        "width": 1080,
+        "height": 1096
       },
       {
         "src": "/img/karisik-projeler/100-img-20220609-233423-copy.webp",
         "srcset": "/img/karisik-projeler/100-img-20220609-233423-copy-800w.webp 800w, /img/karisik-projeler/100-img-20220609-233423-copy-1600w.webp 1600w, /img/karisik-projeler/100-img-20220609-233423-copy.webp 2000w",
-        "original": "IMG_20220609_233423 Copy.JPG"
+        "original": "IMG_20220609_233423 Copy.JPG",
+        "width": 1080,
+        "height": 744
       }
     ]
   },
@@ -1775,47 +2459,65 @@
       {
         "src": "/img/kozyatagi-banyo/01-1.webp",
         "srcset": "/img/kozyatagi-banyo/01-1-800w.webp 800w, /img/kozyatagi-banyo/01-1-1600w.webp 1600w, /img/kozyatagi-banyo/01-1.webp 2000w",
-        "original": "1.jpg"
+        "original": "1.jpg",
+        "width": 1200,
+        "height": 1600
       },
       {
         "src": "/img/kozyatagi-banyo/02-aakapak.webp",
         "srcset": "/img/kozyatagi-banyo/02-aakapak-800w.webp 800w, /img/kozyatagi-banyo/02-aakapak-1600w.webp 1600w, /img/kozyatagi-banyo/02-aakapak.webp 2000w",
-        "original": "aakapak.JPG"
+        "original": "aakapak.JPG",
+        "width": 1200,
+        "height": 1600
       },
       {
         "src": "/img/kozyatagi-banyo/03-img-20221122-wa0047.webp",
         "srcset": "/img/kozyatagi-banyo/03-img-20221122-wa0047-800w.webp 800w, /img/kozyatagi-banyo/03-img-20221122-wa0047-1600w.webp 1600w, /img/kozyatagi-banyo/03-img-20221122-wa0047.webp 2000w",
-        "original": "IMG-20221122-WA0047.jpg"
+        "original": "IMG-20221122-WA0047.jpg",
+        "width": 1200,
+        "height": 1600
       },
       {
         "src": "/img/kozyatagi-banyo/04-img-20221122-wa0049.webp",
         "srcset": "/img/kozyatagi-banyo/04-img-20221122-wa0049-800w.webp 800w, /img/kozyatagi-banyo/04-img-20221122-wa0049-1600w.webp 1600w, /img/kozyatagi-banyo/04-img-20221122-wa0049.webp 2000w",
-        "original": "IMG-20221122-WA0049.jpg"
+        "original": "IMG-20221122-WA0049.jpg",
+        "width": 1200,
+        "height": 1600
       },
       {
         "src": "/img/kozyatagi-banyo/05-img-20221122-wa0050.webp",
         "srcset": "/img/kozyatagi-banyo/05-img-20221122-wa0050-800w.webp 800w, /img/kozyatagi-banyo/05-img-20221122-wa0050-1600w.webp 1600w, /img/kozyatagi-banyo/05-img-20221122-wa0050.webp 2000w",
-        "original": "IMG-20221122-WA0050.jpg"
+        "original": "IMG-20221122-WA0050.jpg",
+        "width": 1200,
+        "height": 1600
       },
       {
         "src": "/img/kozyatagi-banyo/06-img-20221122-wa0051.webp",
         "srcset": "/img/kozyatagi-banyo/06-img-20221122-wa0051-800w.webp 800w, /img/kozyatagi-banyo/06-img-20221122-wa0051-1600w.webp 1600w, /img/kozyatagi-banyo/06-img-20221122-wa0051.webp 2000w",
-        "original": "IMG-20221122-WA0051.jpg"
+        "original": "IMG-20221122-WA0051.jpg",
+        "width": 1200,
+        "height": 1600
       },
       {
         "src": "/img/kozyatagi-banyo/07-img-20221122-wa0052.webp",
         "srcset": "/img/kozyatagi-banyo/07-img-20221122-wa0052-800w.webp 800w, /img/kozyatagi-banyo/07-img-20221122-wa0052-1600w.webp 1600w, /img/kozyatagi-banyo/07-img-20221122-wa0052.webp 2000w",
-        "original": "IMG-20221122-WA0052.jpg"
+        "original": "IMG-20221122-WA0052.jpg",
+        "width": 1200,
+        "height": 1600
       },
       {
         "src": "/img/kozyatagi-banyo/08-img-20221122-wa0053.webp",
         "srcset": "/img/kozyatagi-banyo/08-img-20221122-wa0053-800w.webp 800w, /img/kozyatagi-banyo/08-img-20221122-wa0053-1600w.webp 1600w, /img/kozyatagi-banyo/08-img-20221122-wa0053.webp 2000w",
-        "original": "IMG-20221122-WA0053.jpg"
+        "original": "IMG-20221122-WA0053.jpg",
+        "width": 1200,
+        "height": 1600
       },
       {
         "src": "/img/kozyatagi-banyo/09-img-20221122-163451.webp",
         "srcset": "/img/kozyatagi-banyo/09-img-20221122-163451-800w.webp 800w, /img/kozyatagi-banyo/09-img-20221122-163451-1600w.webp 1600w, /img/kozyatagi-banyo/09-img-20221122-163451.webp 2000w",
-        "original": "IMG_20221122_163451.jpg"
+        "original": "IMG_20221122_163451.jpg",
+        "width": 2000,
+        "height": 2667
       }
     ]
   },
@@ -1825,147 +2527,205 @@
       {
         "src": "/img/maltepe/01-1img-20210828-165243.webp",
         "srcset": "/img/maltepe/01-1img-20210828-165243-800w.webp 800w, /img/maltepe/01-1img-20210828-165243-1600w.webp 1600w, /img/maltepe/01-1img-20210828-165243.webp 2000w",
-        "original": "1IMG_20210828_165243.jpg"
+        "original": "1IMG_20210828_165243.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/maltepe/02-img-20210820-134659.webp",
         "srcset": "/img/maltepe/02-img-20210820-134659-800w.webp 800w, /img/maltepe/02-img-20210820-134659-1600w.webp 1600w, /img/maltepe/02-img-20210820-134659.webp 2000w",
-        "original": "IMG_20210820_134659.jpg"
+        "original": "IMG_20210820_134659.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/maltepe/03-img-20210823-125521.webp",
         "srcset": "/img/maltepe/03-img-20210823-125521-800w.webp 800w, /img/maltepe/03-img-20210823-125521-1600w.webp 1600w, /img/maltepe/03-img-20210823-125521.webp 2000w",
-        "original": "IMG_20210823_125521.jpg"
+        "original": "IMG_20210823_125521.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/maltepe/04-img-20210823-125532.webp",
         "srcset": "/img/maltepe/04-img-20210823-125532-800w.webp 800w, /img/maltepe/04-img-20210823-125532-1600w.webp 1600w, /img/maltepe/04-img-20210823-125532.webp 2000w",
-        "original": "IMG_20210823_125532.jpg"
+        "original": "IMG_20210823_125532.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/maltepe/05-img-20210823-125609.webp",
         "srcset": "/img/maltepe/05-img-20210823-125609-800w.webp 800w, /img/maltepe/05-img-20210823-125609-1600w.webp 1600w, /img/maltepe/05-img-20210823-125609.webp 2000w",
-        "original": "IMG_20210823_125609.jpg"
+        "original": "IMG_20210823_125609.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/maltepe/06-img-20210827-110820.webp",
         "srcset": "/img/maltepe/06-img-20210827-110820-800w.webp 800w, /img/maltepe/06-img-20210827-110820-1600w.webp 1600w, /img/maltepe/06-img-20210827-110820.webp 2000w",
-        "original": "IMG_20210827_110820.jpg"
+        "original": "IMG_20210827_110820.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/maltepe/07-img-20210827-110925.webp",
         "srcset": "/img/maltepe/07-img-20210827-110925-800w.webp 800w, /img/maltepe/07-img-20210827-110925-1600w.webp 1600w, /img/maltepe/07-img-20210827-110925.webp 2000w",
-        "original": "IMG_20210827_110925.jpg"
+        "original": "IMG_20210827_110925.jpg",
+        "width": 2000,
+        "height": 2662
       },
       {
         "src": "/img/maltepe/08-img-20210827-111506.webp",
         "srcset": "/img/maltepe/08-img-20210827-111506-800w.webp 800w, /img/maltepe/08-img-20210827-111506-1600w.webp 1600w, /img/maltepe/08-img-20210827-111506.webp 2000w",
-        "original": "IMG_20210827_111506.jpg"
+        "original": "IMG_20210827_111506.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/maltepe/09-img-20210827-111826.webp",
         "srcset": "/img/maltepe/09-img-20210827-111826-800w.webp 800w, /img/maltepe/09-img-20210827-111826-1600w.webp 1600w, /img/maltepe/09-img-20210827-111826.webp 2000w",
-        "original": "IMG_20210827_111826.jpg"
+        "original": "IMG_20210827_111826.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/maltepe/10-img-20210827-112049.webp",
         "srcset": "/img/maltepe/10-img-20210827-112049-800w.webp 800w, /img/maltepe/10-img-20210827-112049-1600w.webp 1600w, /img/maltepe/10-img-20210827-112049.webp 2000w",
-        "original": "IMG_20210827_112049.jpg"
+        "original": "IMG_20210827_112049.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/maltepe/11-img-20210827-112059.webp",
         "srcset": "/img/maltepe/11-img-20210827-112059-800w.webp 800w, /img/maltepe/11-img-20210827-112059-1600w.webp 1600w, /img/maltepe/11-img-20210827-112059.webp 2000w",
-        "original": "IMG_20210827_112059.jpg"
+        "original": "IMG_20210827_112059.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/maltepe/12-img-20210827-112104.webp",
         "srcset": "/img/maltepe/12-img-20210827-112104-800w.webp 800w, /img/maltepe/12-img-20210827-112104-1600w.webp 1600w, /img/maltepe/12-img-20210827-112104.webp 2000w",
-        "original": "IMG_20210827_112104.jpg"
+        "original": "IMG_20210827_112104.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/maltepe/13-img-20210827-112144.webp",
         "srcset": "/img/maltepe/13-img-20210827-112144-800w.webp 800w, /img/maltepe/13-img-20210827-112144-1600w.webp 1600w, /img/maltepe/13-img-20210827-112144.webp 2000w",
-        "original": "IMG_20210827_112144.jpg"
+        "original": "IMG_20210827_112144.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/maltepe/14-img-20210827-112248.webp",
         "srcset": "/img/maltepe/14-img-20210827-112248-800w.webp 800w, /img/maltepe/14-img-20210827-112248-1600w.webp 1600w, /img/maltepe/14-img-20210827-112248.webp 2000w",
-        "original": "IMG_20210827_112248.jpg"
+        "original": "IMG_20210827_112248.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/maltepe/15-img-20210827-112336.webp",
         "srcset": "/img/maltepe/15-img-20210827-112336-800w.webp 800w, /img/maltepe/15-img-20210827-112336-1600w.webp 1600w, /img/maltepe/15-img-20210827-112336.webp 2000w",
-        "original": "IMG_20210827_112336.jpg"
+        "original": "IMG_20210827_112336.jpg",
+        "width": 2000,
+        "height": 2662
       },
       {
         "src": "/img/maltepe/16-img-20210827-112851.webp",
         "srcset": "/img/maltepe/16-img-20210827-112851-800w.webp 800w, /img/maltepe/16-img-20210827-112851-1600w.webp 1600w, /img/maltepe/16-img-20210827-112851.webp 2000w",
-        "original": "IMG_20210827_112851.jpg"
+        "original": "IMG_20210827_112851.jpg",
+        "width": 2000,
+        "height": 2662
       },
       {
         "src": "/img/maltepe/17-img-20210827-113049.webp",
         "srcset": "/img/maltepe/17-img-20210827-113049-800w.webp 800w, /img/maltepe/17-img-20210827-113049-1600w.webp 1600w, /img/maltepe/17-img-20210827-113049.webp 2000w",
-        "original": "IMG_20210827_113049.jpg"
+        "original": "IMG_20210827_113049.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/maltepe/18-img-20210828-164026.webp",
         "srcset": "/img/maltepe/18-img-20210828-164026-800w.webp 800w, /img/maltepe/18-img-20210828-164026-1600w.webp 1600w, /img/maltepe/18-img-20210828-164026.webp 2000w",
-        "original": "IMG_20210828_164026.jpg"
+        "original": "IMG_20210828_164026.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/maltepe/19-img-20210828-164914.webp",
         "srcset": "/img/maltepe/19-img-20210828-164914-800w.webp 800w, /img/maltepe/19-img-20210828-164914-1600w.webp 1600w, /img/maltepe/19-img-20210828-164914.webp 2000w",
-        "original": "IMG_20210828_164914.jpg"
+        "original": "IMG_20210828_164914.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/maltepe/20-img-20210828-164941.webp",
         "srcset": "/img/maltepe/20-img-20210828-164941-800w.webp 800w, /img/maltepe/20-img-20210828-164941-1600w.webp 1600w, /img/maltepe/20-img-20210828-164941.webp 2000w",
-        "original": "IMG_20210828_164941.jpg"
+        "original": "IMG_20210828_164941.jpg",
+        "width": 2000,
+        "height": 2662
       },
       {
         "src": "/img/maltepe/21-img-20210828-165019.webp",
         "srcset": "/img/maltepe/21-img-20210828-165019-800w.webp 800w, /img/maltepe/21-img-20210828-165019-1600w.webp 1600w, /img/maltepe/21-img-20210828-165019.webp 2000w",
-        "original": "IMG_20210828_165019.jpg"
+        "original": "IMG_20210828_165019.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/maltepe/22-img-20210828-165114.webp",
         "srcset": "/img/maltepe/22-img-20210828-165114-800w.webp 800w, /img/maltepe/22-img-20210828-165114-1600w.webp 1600w, /img/maltepe/22-img-20210828-165114.webp 2000w",
-        "original": "IMG_20210828_165114.jpg"
+        "original": "IMG_20210828_165114.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/maltepe/23-img-20210828-165252.webp",
         "srcset": "/img/maltepe/23-img-20210828-165252-800w.webp 800w, /img/maltepe/23-img-20210828-165252-1600w.webp 1600w, /img/maltepe/23-img-20210828-165252.webp 2000w",
-        "original": "IMG_20210828_165252.jpg"
+        "original": "IMG_20210828_165252.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/maltepe/24-img-20210828-181214.webp",
         "srcset": "/img/maltepe/24-img-20210828-181214-800w.webp 800w, /img/maltepe/24-img-20210828-181214-1600w.webp 1600w, /img/maltepe/24-img-20210828-181214.webp 2000w",
-        "original": "IMG_20210828_181214.jpg"
+        "original": "IMG_20210828_181214.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/maltepe/25-img-20210828-181225.webp",
         "srcset": "/img/maltepe/25-img-20210828-181225-800w.webp 800w, /img/maltepe/25-img-20210828-181225-1600w.webp 1600w, /img/maltepe/25-img-20210828-181225.webp 2000w",
-        "original": "IMG_20210828_181225.jpg"
+        "original": "IMG_20210828_181225.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/maltepe/26-img-20210828-181256.webp",
         "srcset": "/img/maltepe/26-img-20210828-181256-800w.webp 800w, /img/maltepe/26-img-20210828-181256-1600w.webp 1600w, /img/maltepe/26-img-20210828-181256.webp 2000w",
-        "original": "IMG_20210828_181256.jpg"
+        "original": "IMG_20210828_181256.jpg",
+        "width": 2000,
+        "height": 2662
       },
       {
         "src": "/img/maltepe/27-img-20210828-181317.webp",
         "srcset": "/img/maltepe/27-img-20210828-181317-800w.webp 800w, /img/maltepe/27-img-20210828-181317-1600w.webp 1600w, /img/maltepe/27-img-20210828-181317.webp 2000w",
-        "original": "IMG_20210828_181317.jpg"
+        "original": "IMG_20210828_181317.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/maltepe/28-img-20210828-181600.webp",
         "srcset": "/img/maltepe/28-img-20210828-181600-800w.webp 800w, /img/maltepe/28-img-20210828-181600-1600w.webp 1600w, /img/maltepe/28-img-20210828-181600.webp 2000w",
-        "original": "IMG_20210828_181600.jpg"
+        "original": "IMG_20210828_181600.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/maltepe/29-img-20210828-181604.webp",
         "srcset": "/img/maltepe/29-img-20210828-181604-800w.webp 800w, /img/maltepe/29-img-20210828-181604-1600w.webp 1600w, /img/maltepe/29-img-20210828-181604.webp 2000w",
-        "original": "IMG_20210828_181604.jpg"
+        "original": "IMG_20210828_181604.jpg",
+        "width": 2000,
+        "height": 2667
       }
     ]
   },
@@ -1975,142 +2735,198 @@
       {
         "src": "/img/mecidiyekoy-dublex/01-1.webp",
         "srcset": "/img/mecidiyekoy-dublex/01-1-800w.webp 800w, /img/mecidiyekoy-dublex/01-1-1600w.webp 1600w, /img/mecidiyekoy-dublex/01-1.webp 2000w",
-        "original": "1.HEIC"
+        "original": "1.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/mecidiyekoy-dublex/02-2a.webp",
         "srcset": "/img/mecidiyekoy-dublex/02-2a-800w.webp 800w, /img/mecidiyekoy-dublex/02-2a-1600w.webp 1600w, /img/mecidiyekoy-dublex/02-2a.webp 2000w",
-        "original": "2a.HEIC"
+        "original": "2a.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/mecidiyekoy-dublex/03-3.webp",
         "srcset": "/img/mecidiyekoy-dublex/03-3-800w.webp 800w, /img/mecidiyekoy-dublex/03-3-1600w.webp 1600w, /img/mecidiyekoy-dublex/03-3.webp 2000w",
-        "original": "3.HEIC"
+        "original": "3.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/mecidiyekoy-dublex/04-4.webp",
         "srcset": "/img/mecidiyekoy-dublex/04-4-800w.webp 800w, /img/mecidiyekoy-dublex/04-4-1600w.webp 1600w, /img/mecidiyekoy-dublex/04-4.webp 2000w",
-        "original": "4.HEIC"
+        "original": "4.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/mecidiyekoy-dublex/05-5.webp",
         "srcset": "/img/mecidiyekoy-dublex/05-5-800w.webp 800w, /img/mecidiyekoy-dublex/05-5-1600w.webp 1600w, /img/mecidiyekoy-dublex/05-5.webp 2000w",
-        "original": "5.HEIC"
+        "original": "5.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/mecidiyekoy-dublex/06-6.webp",
         "srcset": "/img/mecidiyekoy-dublex/06-6-800w.webp 800w, /img/mecidiyekoy-dublex/06-6-1600w.webp 1600w, /img/mecidiyekoy-dublex/06-6.webp 2000w",
-        "original": "6.HEIC"
+        "original": "6.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/mecidiyekoy-dublex/07-7.webp",
         "srcset": "/img/mecidiyekoy-dublex/07-7-800w.webp 800w, /img/mecidiyekoy-dublex/07-7-1600w.webp 1600w, /img/mecidiyekoy-dublex/07-7.webp 2000w",
-        "original": "7.HEIC"
+        "original": "7.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/mecidiyekoy-dublex/08-8.webp",
         "srcset": "/img/mecidiyekoy-dublex/08-8-800w.webp 800w, /img/mecidiyekoy-dublex/08-8-1600w.webp 1600w, /img/mecidiyekoy-dublex/08-8.webp 2000w",
-        "original": "8.HEIC"
+        "original": "8.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/mecidiyekoy-dublex/09-9.webp",
         "srcset": "/img/mecidiyekoy-dublex/09-9-800w.webp 800w, /img/mecidiyekoy-dublex/09-9-1600w.webp 1600w, /img/mecidiyekoy-dublex/09-9.webp 2000w",
-        "original": "9.HEIC"
+        "original": "9.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/mecidiyekoy-dublex/10-11.webp",
         "srcset": "/img/mecidiyekoy-dublex/10-11-800w.webp 800w, /img/mecidiyekoy-dublex/10-11-1600w.webp 1600w, /img/mecidiyekoy-dublex/10-11.webp 2000w",
-        "original": "11.HEIC"
+        "original": "11.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/mecidiyekoy-dublex/11-12.webp",
         "srcset": "/img/mecidiyekoy-dublex/11-12-800w.webp 800w, /img/mecidiyekoy-dublex/11-12-1600w.webp 1600w, /img/mecidiyekoy-dublex/11-12.webp 2000w",
-        "original": "12.JPG"
+        "original": "12.JPG",
+        "width": 2000,
+        "height": 2324
       },
       {
         "src": "/img/mecidiyekoy-dublex/12-13.webp",
         "srcset": "/img/mecidiyekoy-dublex/12-13-800w.webp 800w, /img/mecidiyekoy-dublex/12-13-1600w.webp 1600w, /img/mecidiyekoy-dublex/12-13.webp 2000w",
-        "original": "13.JPG"
+        "original": "13.JPG",
+        "width": 2000,
+        "height": 2922
       },
       {
         "src": "/img/mecidiyekoy-dublex/13-14.webp",
         "srcset": "/img/mecidiyekoy-dublex/13-14-800w.webp 800w, /img/mecidiyekoy-dublex/13-14-1600w.webp 1600w, /img/mecidiyekoy-dublex/13-14.webp 2000w",
-        "original": "14.HEIC"
+        "original": "14.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/mecidiyekoy-dublex/14-15.webp",
         "srcset": "/img/mecidiyekoy-dublex/14-15-800w.webp 800w, /img/mecidiyekoy-dublex/14-15-1600w.webp 1600w, /img/mecidiyekoy-dublex/14-15.webp 2000w",
-        "original": "15.HEIC"
+        "original": "15.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/mecidiyekoy-dublex/15-16.webp",
         "srcset": "/img/mecidiyekoy-dublex/15-16-800w.webp 800w, /img/mecidiyekoy-dublex/15-16-1600w.webp 1600w, /img/mecidiyekoy-dublex/15-16.webp 2000w",
-        "original": "16.HEIC"
+        "original": "16.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/mecidiyekoy-dublex/16-17.webp",
         "srcset": "/img/mecidiyekoy-dublex/16-17-800w.webp 800w, /img/mecidiyekoy-dublex/16-17-1600w.webp 1600w, /img/mecidiyekoy-dublex/16-17.webp 2000w",
-        "original": "17.HEIC"
+        "original": "17.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/mecidiyekoy-dublex/17-21.webp",
         "srcset": "/img/mecidiyekoy-dublex/17-21-800w.webp 800w, /img/mecidiyekoy-dublex/17-21-1600w.webp 1600w, /img/mecidiyekoy-dublex/17-21.webp 2000w",
-        "original": "21.HEIC"
+        "original": "21.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/mecidiyekoy-dublex/18-22.webp",
         "srcset": "/img/mecidiyekoy-dublex/18-22-800w.webp 800w, /img/mecidiyekoy-dublex/18-22-1600w.webp 1600w, /img/mecidiyekoy-dublex/18-22.webp 2000w",
-        "original": "22.HEIC"
+        "original": "22.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/mecidiyekoy-dublex/19-23.webp",
         "srcset": "/img/mecidiyekoy-dublex/19-23-800w.webp 800w, /img/mecidiyekoy-dublex/19-23-1600w.webp 1600w, /img/mecidiyekoy-dublex/19-23.webp 2000w",
-        "original": "23.HEIC"
+        "original": "23.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/mecidiyekoy-dublex/20-24.webp",
         "srcset": "/img/mecidiyekoy-dublex/20-24-800w.webp 800w, /img/mecidiyekoy-dublex/20-24-1600w.webp 1600w, /img/mecidiyekoy-dublex/20-24.webp 2000w",
-        "original": "24.HEIC"
+        "original": "24.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/mecidiyekoy-dublex/21-25.webp",
         "srcset": "/img/mecidiyekoy-dublex/21-25-800w.webp 800w, /img/mecidiyekoy-dublex/21-25-1600w.webp 1600w, /img/mecidiyekoy-dublex/21-25.webp 2000w",
-        "original": "25.HEIC"
+        "original": "25.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/mecidiyekoy-dublex/22-26.webp",
         "srcset": "/img/mecidiyekoy-dublex/22-26-800w.webp 800w, /img/mecidiyekoy-dublex/22-26-1600w.webp 1600w, /img/mecidiyekoy-dublex/22-26.webp 2000w",
-        "original": "26.HEIC"
+        "original": "26.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/mecidiyekoy-dublex/23-27.webp",
         "srcset": "/img/mecidiyekoy-dublex/23-27-800w.webp 800w, /img/mecidiyekoy-dublex/23-27-1600w.webp 1600w, /img/mecidiyekoy-dublex/23-27.webp 2000w",
-        "original": "27.HEIC"
+        "original": "27.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/mecidiyekoy-dublex/24-28.webp",
         "srcset": "/img/mecidiyekoy-dublex/24-28-800w.webp 800w, /img/mecidiyekoy-dublex/24-28-1600w.webp 1600w, /img/mecidiyekoy-dublex/24-28.webp 2000w",
-        "original": "28.HEIC"
+        "original": "28.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/mecidiyekoy-dublex/25-31.webp",
         "srcset": "/img/mecidiyekoy-dublex/25-31-800w.webp 800w, /img/mecidiyekoy-dublex/25-31-1600w.webp 1600w, /img/mecidiyekoy-dublex/25-31.webp 2000w",
-        "original": "31.HEIC"
+        "original": "31.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/mecidiyekoy-dublex/26-32.webp",
         "srcset": "/img/mecidiyekoy-dublex/26-32-800w.webp 800w, /img/mecidiyekoy-dublex/26-32-1600w.webp 1600w, /img/mecidiyekoy-dublex/26-32.webp 2000w",
-        "original": "32.HEIC"
+        "original": "32.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/mecidiyekoy-dublex/27-img-8070-copy.webp",
         "srcset": "/img/mecidiyekoy-dublex/27-img-8070-copy-800w.webp 800w, /img/mecidiyekoy-dublex/27-img-8070-copy-1600w.webp 1600w, /img/mecidiyekoy-dublex/27-img-8070-copy.webp 2000w",
-        "original": "IMG_8070 Copy.JPG"
+        "original": "IMG_8070 Copy.JPG",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/mecidiyekoy-dublex/28-img-8076.webp",
         "srcset": "/img/mecidiyekoy-dublex/28-img-8076-800w.webp 800w, /img/mecidiyekoy-dublex/28-img-8076-1600w.webp 1600w, /img/mecidiyekoy-dublex/28-img-8076.webp 2000w",
-        "original": "IMG_8076.HEIC"
+        "original": "IMG_8076.HEIC",
+        "width": 2000,
+        "height": 2667
       }
     ]
   },
@@ -2120,62 +2936,86 @@
       {
         "src": "/img/nurol-park/01-1img-20211124-wa0008.webp",
         "srcset": "/img/nurol-park/01-1img-20211124-wa0008-800w.webp 800w, /img/nurol-park/01-1img-20211124-wa0008-1600w.webp 1600w, /img/nurol-park/01-1img-20211124-wa0008.webp 2000w",
-        "original": "1IMG-20211124-WA0008.jpg"
+        "original": "1IMG-20211124-WA0008.jpg",
+        "width": 1600,
+        "height": 1200
       },
       {
         "src": "/img/nurol-park/02-img-20211124-wa0006.webp",
         "srcset": "/img/nurol-park/02-img-20211124-wa0006-800w.webp 800w, /img/nurol-park/02-img-20211124-wa0006-1600w.webp 1600w, /img/nurol-park/02-img-20211124-wa0006.webp 2000w",
-        "original": "IMG-20211124-WA0006.jpg"
+        "original": "IMG-20211124-WA0006.jpg",
+        "width": 1600,
+        "height": 1200
       },
       {
         "src": "/img/nurol-park/03-img-20211124-wa0007.webp",
         "srcset": "/img/nurol-park/03-img-20211124-wa0007-800w.webp 800w, /img/nurol-park/03-img-20211124-wa0007-1600w.webp 1600w, /img/nurol-park/03-img-20211124-wa0007.webp 2000w",
-        "original": "IMG-20211124-WA0007.jpg"
+        "original": "IMG-20211124-WA0007.jpg",
+        "width": 1600,
+        "height": 1200
       },
       {
         "src": "/img/nurol-park/04-img-20211124-wa0009.webp",
         "srcset": "/img/nurol-park/04-img-20211124-wa0009-800w.webp 800w, /img/nurol-park/04-img-20211124-wa0009-1600w.webp 1600w, /img/nurol-park/04-img-20211124-wa0009.webp 2000w",
-        "original": "IMG-20211124-WA0009.jpg"
+        "original": "IMG-20211124-WA0009.jpg",
+        "width": 1600,
+        "height": 1200
       },
       {
         "src": "/img/nurol-park/05-img-20211113-193654.webp",
         "srcset": "/img/nurol-park/05-img-20211113-193654-800w.webp 800w, /img/nurol-park/05-img-20211113-193654-1600w.webp 1600w, /img/nurol-park/05-img-20211113-193654.webp 2000w",
-        "original": "IMG_20211113_193654.jpg"
+        "original": "IMG_20211113_193654.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/nurol-park/06-img-20211113-193715.webp",
         "srcset": "/img/nurol-park/06-img-20211113-193715-800w.webp 800w, /img/nurol-park/06-img-20211113-193715-1600w.webp 1600w, /img/nurol-park/06-img-20211113-193715.webp 2000w",
-        "original": "IMG_20211113_193715.jpg"
+        "original": "IMG_20211113_193715.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/nurol-park/07-img-20211113-193720.webp",
         "srcset": "/img/nurol-park/07-img-20211113-193720-800w.webp 800w, /img/nurol-park/07-img-20211113-193720-1600w.webp 1600w, /img/nurol-park/07-img-20211113-193720.webp 2000w",
-        "original": "IMG_20211113_193720.jpg"
+        "original": "IMG_20211113_193720.jpg",
+        "width": 2000,
+        "height": 2662
       },
       {
         "src": "/img/nurol-park/08-img-20211113-193803.webp",
         "srcset": "/img/nurol-park/08-img-20211113-193803-800w.webp 800w, /img/nurol-park/08-img-20211113-193803-1600w.webp 1600w, /img/nurol-park/08-img-20211113-193803.webp 2000w",
-        "original": "IMG_20211113_193803.jpg"
+        "original": "IMG_20211113_193803.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/nurol-park/09-img-20211113-193844.webp",
         "srcset": "/img/nurol-park/09-img-20211113-193844-800w.webp 800w, /img/nurol-park/09-img-20211113-193844-1600w.webp 1600w, /img/nurol-park/09-img-20211113-193844.webp 2000w",
-        "original": "IMG_20211113_193844.jpg"
+        "original": "IMG_20211113_193844.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/nurol-park/10-img-20211113-193917.webp",
         "srcset": "/img/nurol-park/10-img-20211113-193917-800w.webp 800w, /img/nurol-park/10-img-20211113-193917-1600w.webp 1600w, /img/nurol-park/10-img-20211113-193917.webp 2000w",
-        "original": "IMG_20211113_193917.jpg"
+        "original": "IMG_20211113_193917.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/nurol-park/11-img-20211113-194053.webp",
         "srcset": "/img/nurol-park/11-img-20211113-194053-800w.webp 800w, /img/nurol-park/11-img-20211113-194053-1600w.webp 1600w, /img/nurol-park/11-img-20211113-194053.webp 2000w",
-        "original": "IMG_20211113_194053.jpg"
+        "original": "IMG_20211113_194053.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/nurol-park/12-kapak.webp",
         "srcset": "/img/nurol-park/12-kapak-800w.webp 800w, /img/nurol-park/12-kapak-1600w.webp 1600w, /img/nurol-park/12-kapak.webp 2000w",
-        "original": "kapak.jpg"
+        "original": "kapak.jpg",
+        "width": 1600,
+        "height": 1196
       }
     ]
   },
@@ -2185,52 +3025,72 @@
       {
         "src": "/img/ofis/01-1a020a137a-1008-49a1-acc2-70d33673346b-copy.webp",
         "srcset": "/img/ofis/01-1a020a137a-1008-49a1-acc2-70d33673346b-copy-800w.webp 800w, /img/ofis/01-1a020a137a-1008-49a1-acc2-70d33673346b-copy-1600w.webp 1600w, /img/ofis/01-1a020a137a-1008-49a1-acc2-70d33673346b-copy.webp 2000w",
-        "original": "1A020a137a-1008-49a1-acc2-70d33673346b Copy.JPG"
+        "original": "1A020a137a-1008-49a1-acc2-70d33673346b Copy.JPG",
+        "width": 961,
+        "height": 1315
       },
       {
         "src": "/img/ofis/02-3b389fd7-7259-477a-adea-21cec41be6df.webp",
         "srcset": "/img/ofis/02-3b389fd7-7259-477a-adea-21cec41be6df-800w.webp 800w, /img/ofis/02-3b389fd7-7259-477a-adea-21cec41be6df-1600w.webp 1600w, /img/ofis/02-3b389fd7-7259-477a-adea-21cec41be6df.webp 2000w",
-        "original": "3b389fd7-7259-477a-adea-21cec41be6df.jpg"
+        "original": "3b389fd7-7259-477a-adea-21cec41be6df.jpg",
+        "width": 1600,
+        "height": 1066
       },
       {
         "src": "/img/ofis/03-5c0fce42-b7c7-4a9a-afa9-0faa79c25296.webp",
         "srcset": "/img/ofis/03-5c0fce42-b7c7-4a9a-afa9-0faa79c25296-800w.webp 800w, /img/ofis/03-5c0fce42-b7c7-4a9a-afa9-0faa79c25296-1600w.webp 1600w, /img/ofis/03-5c0fce42-b7c7-4a9a-afa9-0faa79c25296.webp 2000w",
-        "original": "5c0fce42-b7c7-4a9a-afa9-0faa79c25296.jpg"
+        "original": "5c0fce42-b7c7-4a9a-afa9-0faa79c25296.jpg",
+        "width": 1600,
+        "height": 1062
       },
       {
         "src": "/img/ofis/04-020a137a-1008-49a1-acc2-70d33673346b.webp",
         "srcset": "/img/ofis/04-020a137a-1008-49a1-acc2-70d33673346b-800w.webp 800w, /img/ofis/04-020a137a-1008-49a1-acc2-70d33673346b-1600w.webp 1600w, /img/ofis/04-020a137a-1008-49a1-acc2-70d33673346b.webp 2000w",
-        "original": "020a137a-1008-49a1-acc2-70d33673346b.jpg"
+        "original": "020a137a-1008-49a1-acc2-70d33673346b.jpg",
+        "width": 1600,
+        "height": 1600
       },
       {
         "src": "/img/ofis/05-113e3083-8035-4e56-8f89-13e4ef6bf4a5.webp",
         "srcset": "/img/ofis/05-113e3083-8035-4e56-8f89-13e4ef6bf4a5-800w.webp 800w, /img/ofis/05-113e3083-8035-4e56-8f89-13e4ef6bf4a5-1600w.webp 1600w, /img/ofis/05-113e3083-8035-4e56-8f89-13e4ef6bf4a5.webp 2000w",
-        "original": "113e3083-8035-4e56-8f89-13e4ef6bf4a5.jpg"
+        "original": "113e3083-8035-4e56-8f89-13e4ef6bf4a5.jpg",
+        "width": 1600,
+        "height": 1062
       },
       {
         "src": "/img/ofis/06-164ba7f0-031d-4e96-817d-95293532427d.webp",
         "srcset": "/img/ofis/06-164ba7f0-031d-4e96-817d-95293532427d-800w.webp 800w, /img/ofis/06-164ba7f0-031d-4e96-817d-95293532427d-1600w.webp 1600w, /img/ofis/06-164ba7f0-031d-4e96-817d-95293532427d.webp 2000w",
-        "original": "164ba7f0-031d-4e96-817d-95293532427d.jpg"
+        "original": "164ba7f0-031d-4e96-817d-95293532427d.jpg",
+        "width": 1600,
+        "height": 1600
       },
       {
         "src": "/img/ofis/07-1446d5c3-d9e3-401a-bfa2-cdb5b9a38a8e.webp",
         "srcset": "/img/ofis/07-1446d5c3-d9e3-401a-bfa2-cdb5b9a38a8e-800w.webp 800w, /img/ofis/07-1446d5c3-d9e3-401a-bfa2-cdb5b9a38a8e-1600w.webp 1600w, /img/ofis/07-1446d5c3-d9e3-401a-bfa2-cdb5b9a38a8e.webp 2000w",
-        "original": "1446d5c3-d9e3-401a-bfa2-cdb5b9a38a8e.jpg"
+        "original": "1446d5c3-d9e3-401a-bfa2-cdb5b9a38a8e.jpg",
+        "width": 1600,
+        "height": 1600
       },
       {
         "src": "/img/ofis/08-23548c23-7195-402c-a29b-dc828aad6065.webp",
         "srcset": "/img/ofis/08-23548c23-7195-402c-a29b-dc828aad6065-800w.webp 800w, /img/ofis/08-23548c23-7195-402c-a29b-dc828aad6065-1600w.webp 1600w, /img/ofis/08-23548c23-7195-402c-a29b-dc828aad6065.webp 2000w",
-        "original": "23548c23-7195-402c-a29b-dc828aad6065.jpg"
+        "original": "23548c23-7195-402c-a29b-dc828aad6065.jpg",
+        "width": 1600,
+        "height": 1600
       },
       {
         "src": "/img/ofis/09-b2dfbba1-7387-4b72-aa73-87648c8bd506.webp",
         "srcset": "/img/ofis/09-b2dfbba1-7387-4b72-aa73-87648c8bd506-800w.webp 800w, /img/ofis/09-b2dfbba1-7387-4b72-aa73-87648c8bd506-1600w.webp 1600w, /img/ofis/09-b2dfbba1-7387-4b72-aa73-87648c8bd506.webp 2000w",
-        "original": "b2dfbba1-7387-4b72-aa73-87648c8bd506.jpg"
+        "original": "b2dfbba1-7387-4b72-aa73-87648c8bd506.jpg",
+        "width": 1600,
+        "height": 1600
       },
       {
         "src": "/img/ofis/10-bb7b5b3b-1b4f-45a9-af2f-c6f92d7c8b0f.webp",
         "srcset": "/img/ofis/10-bb7b5b3b-1b4f-45a9-af2f-c6f92d7c8b0f-800w.webp 800w, /img/ofis/10-bb7b5b3b-1b4f-45a9-af2f-c6f92d7c8b0f-1600w.webp 1600w, /img/ofis/10-bb7b5b3b-1b4f-45a9-af2f-c6f92d7c8b0f.webp 2000w",
-        "original": "bb7b5b3b-1b4f-45a9-af2f-c6f92d7c8b0f.jpg"
+        "original": "bb7b5b3b-1b4f-45a9-af2f-c6f92d7c8b0f.jpg",
+        "width": 1600,
+        "height": 1600
       }
     ]
   },
@@ -2240,57 +3100,79 @@
       {
         "src": "/img/selimpasa-villa/01-1img-20221018-wa0006.webp",
         "srcset": "/img/selimpasa-villa/01-1img-20221018-wa0006-800w.webp 800w, /img/selimpasa-villa/01-1img-20221018-wa0006-1600w.webp 1600w, /img/selimpasa-villa/01-1img-20221018-wa0006.webp 2000w",
-        "original": "1IMG-20221018-WA0006.jpg"
+        "original": "1IMG-20221018-WA0006.jpg",
+        "width": 1600,
+        "height": 900
       },
       {
         "src": "/img/selimpasa-villa/02-img-20221006-wa0001.webp",
         "srcset": "/img/selimpasa-villa/02-img-20221006-wa0001-800w.webp 800w, /img/selimpasa-villa/02-img-20221006-wa0001-1600w.webp 1600w, /img/selimpasa-villa/02-img-20221006-wa0001.webp 2000w",
-        "original": "IMG-20221006-WA0001.jpg"
+        "original": "IMG-20221006-WA0001.jpg",
+        "width": 1600,
+        "height": 900
       },
       {
         "src": "/img/selimpasa-villa/03-img-20221017-wa0016.webp",
         "srcset": "/img/selimpasa-villa/03-img-20221017-wa0016-800w.webp 800w, /img/selimpasa-villa/03-img-20221017-wa0016-1600w.webp 1600w, /img/selimpasa-villa/03-img-20221017-wa0016.webp 2000w",
-        "original": "IMG-20221017-WA0016.jpg"
+        "original": "IMG-20221017-WA0016.jpg",
+        "width": 1600,
+        "height": 899
       },
       {
         "src": "/img/selimpasa-villa/04-img-20221017-wa0017.webp",
         "srcset": "/img/selimpasa-villa/04-img-20221017-wa0017-800w.webp 800w, /img/selimpasa-villa/04-img-20221017-wa0017-1600w.webp 1600w, /img/selimpasa-villa/04-img-20221017-wa0017.webp 2000w",
-        "original": "IMG-20221017-WA0017.jpg"
+        "original": "IMG-20221017-WA0017.jpg",
+        "width": 1600,
+        "height": 899
       },
       {
         "src": "/img/selimpasa-villa/05-img-20221017-wa0018.webp",
         "srcset": "/img/selimpasa-villa/05-img-20221017-wa0018-800w.webp 800w, /img/selimpasa-villa/05-img-20221017-wa0018-1600w.webp 1600w, /img/selimpasa-villa/05-img-20221017-wa0018.webp 2000w",
-        "original": "IMG-20221017-WA0018.jpg"
+        "original": "IMG-20221017-WA0018.jpg",
+        "width": 1600,
+        "height": 899
       },
       {
         "src": "/img/selimpasa-villa/06-img-20221018-wa0007.webp",
         "srcset": "/img/selimpasa-villa/06-img-20221018-wa0007-800w.webp 800w, /img/selimpasa-villa/06-img-20221018-wa0007-1600w.webp 1600w, /img/selimpasa-villa/06-img-20221018-wa0007.webp 2000w",
-        "original": "IMG-20221018-WA0007.jpg"
+        "original": "IMG-20221018-WA0007.jpg",
+        "width": 1600,
+        "height": 900
       },
       {
         "src": "/img/selimpasa-villa/07-img-20221018-wa0008.webp",
         "srcset": "/img/selimpasa-villa/07-img-20221018-wa0008-800w.webp 800w, /img/selimpasa-villa/07-img-20221018-wa0008-1600w.webp 1600w, /img/selimpasa-villa/07-img-20221018-wa0008.webp 2000w",
-        "original": "IMG-20221018-WA0008.jpg"
+        "original": "IMG-20221018-WA0008.jpg",
+        "width": 1600,
+        "height": 900
       },
       {
         "src": "/img/selimpasa-villa/08-img-20221018-wa0015.webp",
         "srcset": "/img/selimpasa-villa/08-img-20221018-wa0015-800w.webp 800w, /img/selimpasa-villa/08-img-20221018-wa0015-1600w.webp 1600w, /img/selimpasa-villa/08-img-20221018-wa0015.webp 2000w",
-        "original": "IMG-20221018-WA0015.jpg"
+        "original": "IMG-20221018-WA0015.jpg",
+        "width": 1600,
+        "height": 900
       },
       {
         "src": "/img/selimpasa-villa/09-img-20221018-wa0016.webp",
         "srcset": "/img/selimpasa-villa/09-img-20221018-wa0016-800w.webp 800w, /img/selimpasa-villa/09-img-20221018-wa0016-1600w.webp 1600w, /img/selimpasa-villa/09-img-20221018-wa0016.webp 2000w",
-        "original": "IMG-20221018-WA0016.jpg"
+        "original": "IMG-20221018-WA0016.jpg",
+        "width": 1600,
+        "height": 900
       },
       {
         "src": "/img/selimpasa-villa/10-img-20221018-wa0017.webp",
         "srcset": "/img/selimpasa-villa/10-img-20221018-wa0017-800w.webp 800w, /img/selimpasa-villa/10-img-20221018-wa0017-1600w.webp 1600w, /img/selimpasa-villa/10-img-20221018-wa0017.webp 2000w",
-        "original": "IMG-20221018-WA0017.jpg"
+        "original": "IMG-20221018-WA0017.jpg",
+        "width": 1600,
+        "height": 900
       },
       {
         "src": "/img/selimpasa-villa/11-img-20221107-wa0005.webp",
         "srcset": "/img/selimpasa-villa/11-img-20221107-wa0005-800w.webp 800w, /img/selimpasa-villa/11-img-20221107-wa0005-1600w.webp 1600w, /img/selimpasa-villa/11-img-20221107-wa0005.webp 2000w",
-        "original": "IMG-20221107-WA0005.jpg"
+        "original": "IMG-20221107-WA0005.jpg",
+        "width": 1600,
+        "height": 900
       }
     ]
   },
@@ -2300,252 +3182,352 @@
       {
         "src": "/img/tepekent/01-1.webp",
         "srcset": "/img/tepekent/01-1-800w.webp 800w, /img/tepekent/01-1-1600w.webp 1600w, /img/tepekent/01-1.webp 2000w",
-        "original": "1.HEIC"
+        "original": "1.HEIC",
+        "width": 2000,
+        "height": 3556
       },
       {
         "src": "/img/tepekent/02-2.webp",
         "srcset": "/img/tepekent/02-2-800w.webp 800w, /img/tepekent/02-2-1600w.webp 1600w, /img/tepekent/02-2.webp 2000w",
-        "original": "2.HEIC"
+        "original": "2.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/tepekent/03-2a.webp",
         "srcset": "/img/tepekent/03-2a-800w.webp 800w, /img/tepekent/03-2a-1600w.webp 1600w, /img/tepekent/03-2a.webp 2000w",
-        "original": "2a.HEIC"
+        "original": "2a.HEIC",
+        "width": 2000,
+        "height": 3556
       },
       {
         "src": "/img/tepekent/04-2b1.webp",
         "srcset": "/img/tepekent/04-2b1-800w.webp 800w, /img/tepekent/04-2b1-1600w.webp 1600w, /img/tepekent/04-2b1.webp 2000w",
-        "original": "2b1.HEIC"
+        "original": "2b1.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/tepekent/05-2b.webp",
         "srcset": "/img/tepekent/05-2b-800w.webp 800w, /img/tepekent/05-2b-1600w.webp 1600w, /img/tepekent/05-2b.webp 2000w",
-        "original": "2b.HEIC"
+        "original": "2b.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/tepekent/06-2c.webp",
         "srcset": "/img/tepekent/06-2c-800w.webp 800w, /img/tepekent/06-2c-1600w.webp 1600w, /img/tepekent/06-2c.webp 2000w",
-        "original": "2c.HEIC"
+        "original": "2c.HEIC",
+        "width": 2000,
+        "height": 3556
       },
       {
         "src": "/img/tepekent/07-2d.webp",
         "srcset": "/img/tepekent/07-2d-800w.webp 800w, /img/tepekent/07-2d-1600w.webp 1600w, /img/tepekent/07-2d.webp 2000w",
-        "original": "2d.HEIC"
+        "original": "2d.HEIC",
+        "width": 2000,
+        "height": 3556
       },
       {
         "src": "/img/tepekent/08-2k.webp",
         "srcset": "/img/tepekent/08-2k-800w.webp 800w, /img/tepekent/08-2k-1600w.webp 1600w, /img/tepekent/08-2k.webp 2000w",
-        "original": "2k.HEIC"
+        "original": "2k.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/tepekent/09-3.webp",
         "srcset": "/img/tepekent/09-3-800w.webp 800w, /img/tepekent/09-3-1600w.webp 1600w, /img/tepekent/09-3.webp 2000w",
-        "original": "3.HEIC"
+        "original": "3.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/tepekent/10-7.webp",
         "srcset": "/img/tepekent/10-7-800w.webp 800w, /img/tepekent/10-7-1600w.webp 1600w, /img/tepekent/10-7.webp 2000w",
-        "original": "7.HEIC"
+        "original": "7.HEIC",
+        "width": 2000,
+        "height": 3556
       },
       {
         "src": "/img/tepekent/11-8.webp",
         "srcset": "/img/tepekent/11-8-800w.webp 800w, /img/tepekent/11-8-1600w.webp 1600w, /img/tepekent/11-8.webp 2000w",
-        "original": "8.HEIC"
+        "original": "8.HEIC",
+        "width": 2000,
+        "height": 3556
       },
       {
         "src": "/img/tepekent/12-9.webp",
         "srcset": "/img/tepekent/12-9-800w.webp 800w, /img/tepekent/12-9-1600w.webp 1600w, /img/tepekent/12-9.webp 2000w",
-        "original": "9.HEIC"
+        "original": "9.HEIC",
+        "width": 2000,
+        "height": 3556
       },
       {
         "src": "/img/tepekent/13-10.webp",
         "srcset": "/img/tepekent/13-10-800w.webp 800w, /img/tepekent/13-10-1600w.webp 1600w, /img/tepekent/13-10.webp 2000w",
-        "original": "10.HEIC"
+        "original": "10.HEIC",
+        "width": 2000,
+        "height": 3556
       },
       {
         "src": "/img/tepekent/14-11.webp",
         "srcset": "/img/tepekent/14-11-800w.webp 800w, /img/tepekent/14-11-1600w.webp 1600w, /img/tepekent/14-11.webp 2000w",
-        "original": "11.HEIC"
+        "original": "11.HEIC",
+        "width": 2000,
+        "height": 3556
       },
       {
         "src": "/img/tepekent/15-15.webp",
         "srcset": "/img/tepekent/15-15-800w.webp 800w, /img/tepekent/15-15-1600w.webp 1600w, /img/tepekent/15-15.webp 2000w",
-        "original": "15.HEIC"
+        "original": "15.HEIC",
+        "width": 2000,
+        "height": 3556
       },
       {
         "src": "/img/tepekent/16-16.webp",
         "srcset": "/img/tepekent/16-16-800w.webp 800w, /img/tepekent/16-16-1600w.webp 1600w, /img/tepekent/16-16.webp 2000w",
-        "original": "16.HEIC"
+        "original": "16.HEIC",
+        "width": 2000,
+        "height": 3556
       },
       {
         "src": "/img/tepekent/17-17.webp",
         "srcset": "/img/tepekent/17-17-800w.webp 800w, /img/tepekent/17-17-1600w.webp 1600w, /img/tepekent/17-17.webp 2000w",
-        "original": "17.HEIC"
+        "original": "17.HEIC",
+        "width": 2000,
+        "height": 3556
       },
       {
         "src": "/img/tepekent/18-18.webp",
         "srcset": "/img/tepekent/18-18-800w.webp 800w, /img/tepekent/18-18-1600w.webp 1600w, /img/tepekent/18-18.webp 2000w",
-        "original": "18.HEIC"
+        "original": "18.HEIC",
+        "width": 2000,
+        "height": 3556
       },
       {
         "src": "/img/tepekent/19-20.webp",
         "srcset": "/img/tepekent/19-20-800w.webp 800w, /img/tepekent/19-20-1600w.webp 1600w, /img/tepekent/19-20.webp 2000w",
-        "original": "20.HEIC"
+        "original": "20.HEIC",
+        "width": 2000,
+        "height": 3556
       },
       {
         "src": "/img/tepekent/20-21.webp",
         "srcset": "/img/tepekent/20-21-800w.webp 800w, /img/tepekent/20-21-1600w.webp 1600w, /img/tepekent/20-21.webp 2000w",
-        "original": "21.HEIC"
+        "original": "21.HEIC",
+        "width": 2000,
+        "height": 3556
       },
       {
         "src": "/img/tepekent/21-22.webp",
         "srcset": "/img/tepekent/21-22-800w.webp 800w, /img/tepekent/21-22-1600w.webp 1600w, /img/tepekent/21-22.webp 2000w",
-        "original": "22.HEIC"
+        "original": "22.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/tepekent/22-23.webp",
         "srcset": "/img/tepekent/22-23-800w.webp 800w, /img/tepekent/22-23-1600w.webp 1600w, /img/tepekent/22-23.webp 2000w",
-        "original": "23.HEIC"
+        "original": "23.HEIC",
+        "width": 2000,
+        "height": 3556
       },
       {
         "src": "/img/tepekent/23-24.webp",
         "srcset": "/img/tepekent/23-24-800w.webp 800w, /img/tepekent/23-24-1600w.webp 1600w, /img/tepekent/23-24.webp 2000w",
-        "original": "24.HEIC"
+        "original": "24.HEIC",
+        "width": 2000,
+        "height": 3556
       },
       {
         "src": "/img/tepekent/24-25.webp",
         "srcset": "/img/tepekent/24-25-800w.webp 800w, /img/tepekent/24-25-1600w.webp 1600w, /img/tepekent/24-25.webp 2000w",
-        "original": "25.HEIC"
+        "original": "25.HEIC",
+        "width": 2000,
+        "height": 3556
       },
       {
         "src": "/img/tepekent/25-26.webp",
         "srcset": "/img/tepekent/25-26-800w.webp 800w, /img/tepekent/25-26-1600w.webp 1600w, /img/tepekent/25-26.webp 2000w",
-        "original": "26.HEIC"
+        "original": "26.HEIC",
+        "width": 2000,
+        "height": 3556
       },
       {
         "src": "/img/tepekent/26-27.webp",
         "srcset": "/img/tepekent/26-27-800w.webp 800w, /img/tepekent/26-27-1600w.webp 1600w, /img/tepekent/26-27.webp 2000w",
-        "original": "27.HEIC"
+        "original": "27.HEIC",
+        "width": 2000,
+        "height": 3556
       },
       {
         "src": "/img/tepekent/27-img-2614.webp",
         "srcset": "/img/tepekent/27-img-2614-800w.webp 800w, /img/tepekent/27-img-2614-1600w.webp 1600w, /img/tepekent/27-img-2614.webp 2000w",
-        "original": "IMG_2614.HEIC"
+        "original": "IMG_2614.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/tepekent/28-img-2615.webp",
         "srcset": "/img/tepekent/28-img-2615-800w.webp 800w, /img/tepekent/28-img-2615-1600w.webp 1600w, /img/tepekent/28-img-2615.webp 2000w",
-        "original": "IMG_2615.HEIC"
+        "original": "IMG_2615.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/tepekent/29-img-2616.webp",
         "srcset": "/img/tepekent/29-img-2616-800w.webp 800w, /img/tepekent/29-img-2616-1600w.webp 1600w, /img/tepekent/29-img-2616.webp 2000w",
-        "original": "IMG_2616.HEIC"
+        "original": "IMG_2616.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/tepekent/30-img-2617.webp",
         "srcset": "/img/tepekent/30-img-2617-800w.webp 800w, /img/tepekent/30-img-2617-1600w.webp 1600w, /img/tepekent/30-img-2617.webp 2000w",
-        "original": "IMG_2617.HEIC"
+        "original": "IMG_2617.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/tepekent/31-img-2622.webp",
         "srcset": "/img/tepekent/31-img-2622-800w.webp 800w, /img/tepekent/31-img-2622-1600w.webp 1600w, /img/tepekent/31-img-2622.webp 2000w",
-        "original": "IMG_2622.HEIC"
+        "original": "IMG_2622.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/tepekent/32-img-2624.webp",
         "srcset": "/img/tepekent/32-img-2624-800w.webp 800w, /img/tepekent/32-img-2624-1600w.webp 1600w, /img/tepekent/32-img-2624.webp 2000w",
-        "original": "IMG_2624.HEIC"
+        "original": "IMG_2624.HEIC",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/tepekent/33-img-3564.webp",
         "srcset": "/img/tepekent/33-img-3564-800w.webp 800w, /img/tepekent/33-img-3564-1600w.webp 1600w, /img/tepekent/33-img-3564.webp 2000w",
-        "original": "IMG_3564.HEIC"
+        "original": "IMG_3564.HEIC",
+        "width": 2000,
+        "height": 3556
       },
       {
         "src": "/img/tepekent/34-img-3565.webp",
         "srcset": "/img/tepekent/34-img-3565-800w.webp 800w, /img/tepekent/34-img-3565-1600w.webp 1600w, /img/tepekent/34-img-3565.webp 2000w",
-        "original": "IMG_3565.HEIC"
+        "original": "IMG_3565.HEIC",
+        "width": 2000,
+        "height": 3556
       },
       {
         "src": "/img/tepekent/35-img-3566.webp",
         "srcset": "/img/tepekent/35-img-3566-800w.webp 800w, /img/tepekent/35-img-3566-1600w.webp 1600w, /img/tepekent/35-img-3566.webp 2000w",
-        "original": "IMG_3566.HEIC"
+        "original": "IMG_3566.HEIC",
+        "width": 2000,
+        "height": 3556
       },
       {
         "src": "/img/tepekent/36-img-3567.webp",
         "srcset": "/img/tepekent/36-img-3567-800w.webp 800w, /img/tepekent/36-img-3567-1600w.webp 1600w, /img/tepekent/36-img-3567.webp 2000w",
-        "original": "IMG_3567.HEIC"
+        "original": "IMG_3567.HEIC",
+        "width": 2000,
+        "height": 3556
       },
       {
         "src": "/img/tepekent/37-img-3570.webp",
         "srcset": "/img/tepekent/37-img-3570-800w.webp 800w, /img/tepekent/37-img-3570-1600w.webp 1600w, /img/tepekent/37-img-3570.webp 2000w",
-        "original": "IMG_3570.HEIC"
+        "original": "IMG_3570.HEIC",
+        "width": 2000,
+        "height": 3556
       },
       {
         "src": "/img/tepekent/38-img-3572.webp",
         "srcset": "/img/tepekent/38-img-3572-800w.webp 800w, /img/tepekent/38-img-3572-1600w.webp 1600w, /img/tepekent/38-img-3572.webp 2000w",
-        "original": "IMG_3572.HEIC"
+        "original": "IMG_3572.HEIC",
+        "width": 2000,
+        "height": 3556
       },
       {
         "src": "/img/tepekent/39-img-3577.webp",
         "srcset": "/img/tepekent/39-img-3577-800w.webp 800w, /img/tepekent/39-img-3577-1600w.webp 1600w, /img/tepekent/39-img-3577.webp 2000w",
-        "original": "IMG_3577.HEIC"
+        "original": "IMG_3577.HEIC",
+        "width": 2000,
+        "height": 3556
       },
       {
         "src": "/img/tepekent/40-img-3578.webp",
         "srcset": "/img/tepekent/40-img-3578-800w.webp 800w, /img/tepekent/40-img-3578-1600w.webp 1600w, /img/tepekent/40-img-3578.webp 2000w",
-        "original": "IMG_3578.HEIC"
+        "original": "IMG_3578.HEIC",
+        "width": 2000,
+        "height": 3556
       },
       {
         "src": "/img/tepekent/41-img-3579.webp",
         "srcset": "/img/tepekent/41-img-3579-800w.webp 800w, /img/tepekent/41-img-3579-1600w.webp 1600w, /img/tepekent/41-img-3579.webp 2000w",
-        "original": "IMG_3579.HEIC"
+        "original": "IMG_3579.HEIC",
+        "width": 2000,
+        "height": 3556
       },
       {
         "src": "/img/tepekent/42-img-3580.webp",
         "srcset": "/img/tepekent/42-img-3580-800w.webp 800w, /img/tepekent/42-img-3580-1600w.webp 1600w, /img/tepekent/42-img-3580.webp 2000w",
-        "original": "IMG_3580.HEIC"
+        "original": "IMG_3580.HEIC",
+        "width": 2000,
+        "height": 3556
       },
       {
         "src": "/img/tepekent/43-img-3581.webp",
         "srcset": "/img/tepekent/43-img-3581-800w.webp 800w, /img/tepekent/43-img-3581-1600w.webp 1600w, /img/tepekent/43-img-3581.webp 2000w",
-        "original": "IMG_3581.HEIC"
+        "original": "IMG_3581.HEIC",
+        "width": 2000,
+        "height": 3556
       },
       {
         "src": "/img/tepekent/44-img-3582.webp",
         "srcset": "/img/tepekent/44-img-3582-800w.webp 800w, /img/tepekent/44-img-3582-1600w.webp 1600w, /img/tepekent/44-img-3582.webp 2000w",
-        "original": "IMG_3582.HEIC"
+        "original": "IMG_3582.HEIC",
+        "width": 2000,
+        "height": 3556
       },
       {
         "src": "/img/tepekent/45-img-3588.webp",
         "srcset": "/img/tepekent/45-img-3588-800w.webp 800w, /img/tepekent/45-img-3588-1600w.webp 1600w, /img/tepekent/45-img-3588.webp 2000w",
-        "original": "IMG_3588.HEIC"
+        "original": "IMG_3588.HEIC",
+        "width": 2000,
+        "height": 3556
       },
       {
         "src": "/img/tepekent/46-img-3600.webp",
         "srcset": "/img/tepekent/46-img-3600-800w.webp 800w, /img/tepekent/46-img-3600-1600w.webp 1600w, /img/tepekent/46-img-3600.webp 2000w",
-        "original": "IMG_3600.HEIC"
+        "original": "IMG_3600.HEIC",
+        "width": 2000,
+        "height": 3556
       },
       {
         "src": "/img/tepekent/47-img-3623.webp",
         "srcset": "/img/tepekent/47-img-3623-800w.webp 800w, /img/tepekent/47-img-3623-1600w.webp 1600w, /img/tepekent/47-img-3623.webp 2000w",
-        "original": "IMG_3623.HEIC"
+        "original": "IMG_3623.HEIC",
+        "width": 2000,
+        "height": 3556
       },
       {
         "src": "/img/tepekent/48-img-3630.webp",
         "srcset": "/img/tepekent/48-img-3630-800w.webp 800w, /img/tepekent/48-img-3630-1600w.webp 1600w, /img/tepekent/48-img-3630.webp 2000w",
-        "original": "IMG_3630.HEIC"
+        "original": "IMG_3630.HEIC",
+        "width": 2000,
+        "height": 3556
       },
       {
         "src": "/img/tepekent/49-img-3631.webp",
         "srcset": "/img/tepekent/49-img-3631-800w.webp 800w, /img/tepekent/49-img-3631-1600w.webp 1600w, /img/tepekent/49-img-3631.webp 2000w",
-        "original": "IMG_3631.HEIC"
+        "original": "IMG_3631.HEIC",
+        "width": 2000,
+        "height": 3556
       },
       {
         "src": "/img/tepekent/50-z.webp",
         "srcset": "/img/tepekent/50-z-800w.webp 800w, /img/tepekent/50-z-1600w.webp 1600w, /img/tepekent/50-z.webp 2000w",
-        "original": "z.HEIC"
+        "original": "z.HEIC",
+        "width": 2000,
+        "height": 2667
       }
     ]
   },
@@ -2555,127 +3537,177 @@
       {
         "src": "/img/zeytinburnu/01-1kapak.webp",
         "srcset": "/img/zeytinburnu/01-1kapak-800w.webp 800w, /img/zeytinburnu/01-1kapak-1600w.webp 1600w, /img/zeytinburnu/01-1kapak.webp 2000w",
-        "original": "1kapak.jpg"
+        "original": "1kapak.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/zeytinburnu/02-1kas.webp",
         "srcset": "/img/zeytinburnu/02-1kas-800w.webp 800w, /img/zeytinburnu/02-1kas-1600w.webp 1600w, /img/zeytinburnu/02-1kas.webp 2000w",
-        "original": "1kas.jpg"
+        "original": "1kas.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/zeytinburnu/03-2.webp",
         "srcset": "/img/zeytinburnu/03-2-800w.webp 800w, /img/zeytinburnu/03-2-1600w.webp 1600w, /img/zeytinburnu/03-2.webp 2000w",
-        "original": "2.jpg"
+        "original": "2.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/zeytinburnu/04-3.webp",
         "srcset": "/img/zeytinburnu/04-3-800w.webp 800w, /img/zeytinburnu/04-3-1600w.webp 1600w, /img/zeytinburnu/04-3.webp 2000w",
-        "original": "3.jpg"
+        "original": "3.jpg",
+        "width": 2000,
+        "height": 2662
       },
       {
         "src": "/img/zeytinburnu/05-3z.webp",
         "srcset": "/img/zeytinburnu/05-3z-800w.webp 800w, /img/zeytinburnu/05-3z-1600w.webp 1600w, /img/zeytinburnu/05-3z.webp 2000w",
-        "original": "3z.jpg"
+        "original": "3z.jpg",
+        "width": 2000,
+        "height": 2662
       },
       {
         "src": "/img/zeytinburnu/06-4.webp",
         "srcset": "/img/zeytinburnu/06-4-800w.webp 800w, /img/zeytinburnu/06-4-1600w.webp 1600w, /img/zeytinburnu/06-4.webp 2000w",
-        "original": "4.jpg"
+        "original": "4.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/zeytinburnu/07-5.webp",
         "srcset": "/img/zeytinburnu/07-5-800w.webp 800w, /img/zeytinburnu/07-5-1600w.webp 1600w, /img/zeytinburnu/07-5.webp 2000w",
-        "original": "5.jpg"
+        "original": "5.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/zeytinburnu/08-6.webp",
         "srcset": "/img/zeytinburnu/08-6-800w.webp 800w, /img/zeytinburnu/08-6-1600w.webp 1600w, /img/zeytinburnu/08-6.webp 2000w",
-        "original": "6.jpg"
+        "original": "6.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/zeytinburnu/09-7.webp",
         "srcset": "/img/zeytinburnu/09-7-800w.webp 800w, /img/zeytinburnu/09-7-1600w.webp 1600w, /img/zeytinburnu/09-7.webp 2000w",
-        "original": "7.jpg"
+        "original": "7.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/zeytinburnu/10-8.webp",
         "srcset": "/img/zeytinburnu/10-8-800w.webp 800w, /img/zeytinburnu/10-8-1600w.webp 1600w, /img/zeytinburnu/10-8.webp 2000w",
-        "original": "8.jpg"
+        "original": "8.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/zeytinburnu/11-9.webp",
         "srcset": "/img/zeytinburnu/11-9-800w.webp 800w, /img/zeytinburnu/11-9-1600w.webp 1600w, /img/zeytinburnu/11-9.webp 2000w",
-        "original": "9.jpg"
+        "original": "9.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/zeytinburnu/12-10.webp",
         "srcset": "/img/zeytinburnu/12-10-800w.webp 800w, /img/zeytinburnu/12-10-1600w.webp 1600w, /img/zeytinburnu/12-10.webp 2000w",
-        "original": "10.jpg"
+        "original": "10.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/zeytinburnu/13-11.webp",
         "srcset": "/img/zeytinburnu/13-11-800w.webp 800w, /img/zeytinburnu/13-11-1600w.webp 1600w, /img/zeytinburnu/13-11.webp 2000w",
-        "original": "11.jpg"
+        "original": "11.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/zeytinburnu/14-12.webp",
         "srcset": "/img/zeytinburnu/14-12-800w.webp 800w, /img/zeytinburnu/14-12-1600w.webp 1600w, /img/zeytinburnu/14-12.webp 2000w",
-        "original": "12.jpg"
+        "original": "12.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/zeytinburnu/15-13.webp",
         "srcset": "/img/zeytinburnu/15-13-800w.webp 800w, /img/zeytinburnu/15-13-1600w.webp 1600w, /img/zeytinburnu/15-13.webp 2000w",
-        "original": "13.jpg"
+        "original": "13.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/zeytinburnu/16-14.webp",
         "srcset": "/img/zeytinburnu/16-14-800w.webp 800w, /img/zeytinburnu/16-14-1600w.webp 1600w, /img/zeytinburnu/16-14.webp 2000w",
-        "original": "14.jpg"
+        "original": "14.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/zeytinburnu/17-15.webp",
         "srcset": "/img/zeytinburnu/17-15-800w.webp 800w, /img/zeytinburnu/17-15-1600w.webp 1600w, /img/zeytinburnu/17-15.webp 2000w",
-        "original": "15.jpg"
+        "original": "15.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/zeytinburnu/18-16.webp",
         "srcset": "/img/zeytinburnu/18-16-800w.webp 800w, /img/zeytinburnu/18-16-1600w.webp 1600w, /img/zeytinburnu/18-16.webp 2000w",
-        "original": "16.jpg"
+        "original": "16.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/zeytinburnu/19-aakapak.webp",
         "srcset": "/img/zeytinburnu/19-aakapak-800w.webp 800w, /img/zeytinburnu/19-aakapak-1600w.webp 1600w, /img/zeytinburnu/19-aakapak.webp 2000w",
-        "original": "aakapak.jpg"
+        "original": "aakapak.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/zeytinburnu/20-img-20230225-153619.webp",
         "srcset": "/img/zeytinburnu/20-img-20230225-153619-800w.webp 800w, /img/zeytinburnu/20-img-20230225-153619-1600w.webp 1600w, /img/zeytinburnu/20-img-20230225-153619.webp 2000w",
-        "original": "IMG_20230225_153619.jpg"
+        "original": "IMG_20230225_153619.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/zeytinburnu/21-img-20230225-153639.webp",
         "srcset": "/img/zeytinburnu/21-img-20230225-153639-800w.webp 800w, /img/zeytinburnu/21-img-20230225-153639-1600w.webp 1600w, /img/zeytinburnu/21-img-20230225-153639.webp 2000w",
-        "original": "IMG_20230225_153639.jpg"
+        "original": "IMG_20230225_153639.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/zeytinburnu/22-img-20230225-153727.webp",
         "srcset": "/img/zeytinburnu/22-img-20230225-153727-800w.webp 800w, /img/zeytinburnu/22-img-20230225-153727-1600w.webp 1600w, /img/zeytinburnu/22-img-20230225-153727.webp 2000w",
-        "original": "IMG_20230225_153727.jpg"
+        "original": "IMG_20230225_153727.jpg",
+        "width": 2000,
+        "height": 2667
       },
       {
         "src": "/img/zeytinburnu/23-img-20230225-153744.webp",
         "srcset": "/img/zeytinburnu/23-img-20230225-153744-800w.webp 800w, /img/zeytinburnu/23-img-20230225-153744-1600w.webp 1600w, /img/zeytinburnu/23-img-20230225-153744.webp 2000w",
-        "original": "IMG_20230225_153744.jpg"
+        "original": "IMG_20230225_153744.jpg",
+        "width": 2000,
+        "height": 2662
       },
       {
         "src": "/img/zeytinburnu/24-img-20230225-153749.webp",
         "srcset": "/img/zeytinburnu/24-img-20230225-153749-800w.webp 800w, /img/zeytinburnu/24-img-20230225-153749-1600w.webp 1600w, /img/zeytinburnu/24-img-20230225-153749.webp 2000w",
-        "original": "IMG_20230225_153749.jpg"
+        "original": "IMG_20230225_153749.jpg",
+        "width": 2000,
+        "height": 2662
       },
       {
         "src": "/img/zeytinburnu/25-img-20230225-180139.webp",
         "srcset": "/img/zeytinburnu/25-img-20230225-180139-800w.webp 800w, /img/zeytinburnu/25-img-20230225-180139-1600w.webp 1600w, /img/zeytinburnu/25-img-20230225-180139.webp 2000w",
-        "original": "IMG_20230225_180139.jpg"
+        "original": "IMG_20230225_180139.jpg",
+        "width": 2000,
+        "height": 2667
       }
     ]
   }

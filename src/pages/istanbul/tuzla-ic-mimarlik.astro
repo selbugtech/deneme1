@@ -1,0 +1,173 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictBlogLinks from '../../components/DistrictBlogLinks.astro';
+import DistrictFAQ from '../../components/DistrictFAQ.astro';
+import ProcessStrip from '../../components/ProcessStrip.astro';
+import DistrictProjects from '../../components/DistrictProjects.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImageW } from '../../lib/cloudinary';
+import { getDistrict } from '../../data/districts';
+
+// İlçe adı ve bulunma hali eki tek kaynaktan: src/data/districts.ts.
+const district = getDistrict('tuzla-ic-mimarlik')!;
+const heroPath = '/images/salon1.png';
+const heroAbs = optimizedImageW(heroPath, 1600);
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "İç mimarlık, tadilat ve ev yenileme",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
+  "areaServed": { "@type": "Place", "name": "Tuzla, İstanbul" },
+  "url": `${CANONICAL_BASE}/istanbul/tuzla-ic-mimarlik`,
+  "description": "Tuzla'da sahil konutları, site daireleri ve villalar için iç mimarlık, ev tadilatı ve dekorasyon.",
+  "image": heroAbs,
+};
+
+const faqItems = [
+  {
+    q: "İçmeler ve Aydınlı gibi sahile yakın evlerde malzeme seçimi nasıl yapılıyor?",
+    a: "Denize yakın konutlarda nem ve tuzlu hava; doğrama, ahşap yüzey, metal aksesuar ve dolap içlerinde zamanla kendini gösterebiliyor. Bu nedenle neme dayanıklı yüzeyleri, havalandırması iyi dolap kurgularını ve uygun donanımı öne alıyoruz. Estetikte ödün vermeden bakım ihtiyacı düşük çözümleri birlikte seçiyoruz.",
+  },
+  {
+    q: "Tuzla'da sanayi ve tersane yakınındaki evlerde tadilat sırasında özel bir dikkat gerekir mi?",
+    a: "Sanayi çevresinde toz ve kirlenme daha çabuk birikebildiği için kolay temizlenen yüzeyler, iyi ses ve hava yalıtımı sağlayan doğrama ve uygun havalandırma çözümleri öne çıkıyor. Tadilatta bu ihtiyaçları keşifte konuşuyor, malzeme önerilerimizi buna göre yapıyoruz.",
+  },
+  {
+    q: "Site yönetimi yük asansörü ve çalışma saatleri konusunda ne istiyor?",
+    a: "Tuzla'daki sitelerin çoğunda tadilat için yazılı bildirim, ekip listesi ve çalışma saati sınırlaması gündeme geliyor. Yük asansörü randevusu ile moloz tahliyesi de bu saatlere bağlı olabiliyor. Takvimi bu kurallara göre kuruyor ve yönetim yazışmalarını sizin adınıza yürütüyoruz.",
+  },
+  {
+    q: "Yazlık veya ikinci konut olarak kullandığım evi nasıl yenilemeliyim?",
+    a: "İkinci konutlarda önceliğimiz esnek kullanım, kolay bakım ve dayanıklılık oluyor. Misafir ağırlamaya uygun oturma ve yatak düzeni, geniş depolama ile sezon dışında kapalı kalan evde sorun çıkarmayacak malzemeler tercih ediliyor. Bu tür projelerde sezon öncesi teslim planlıyoruz.",
+  },
+  {
+    q: "Tepeören, Orhanlı ve Yayla gibi mahallelerdeki müstakil evlerde çalışıyor musunuz?",
+    a: "Evet. Bahçeli, müstakil veya düşük katlı konutlarda iş kapsamı genellikle daha geniş oluyor; bahçe bağlantısı, ısıtma ve katlar arası geçişler de tasarıma dahil ediliyor. Keşifte evin kullanım şeklini dinleyip yalnızca iç mimariyi mi yoksa daha kapsamlı bir yenilemeyi mi planlayacağımızı birlikte belirliyoruz.",
+  },
+];
+---
+
+<ServiceLayout
+  title="Tuzla İç Mimarlık, Ev Tadilatı ve Dekorasyon"
+  description="Tuzla'da sahil konutu, site dairesi ve villa için iç mimarlık, ev tadilatı ve dekorasyon. İçmeler'den Aydıntepe'ye ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/istanbul/tuzla-ic-mimarlik`}
+  h1="Tuzla İç Mimarlık, Ev Tadilatı ve Dekorasyon"
+  eyebrow="İstanbul · Tuzla"
+  lead="Anadolu Yakası'nın en doğusunda, denizle iç içe bir ilçe. Tuzla'da tadilat; sahil, site ve müstakil konut tiplerinin her birine ayrı bir yaklaşım gerektiriyor."
+  heroImage={heroPath}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İstanbul", href: `${CANONICAL_BASE}/istanbul` },
+    { label: "Tuzla" }
+  ]}
+  structuredData={localSchema}
+>
+
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Tuzla'da İç Mimarlık Hizmeti</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Tuzla, Anadolu Yakası'nın en doğu ucunda yer alan, deniz kıyısı ve sanayi bölgelerini bir arada barındıran bir ilçe. İçmeler, Aydıntepe ve Aydınlı gibi mahallelerde sahile yakın konutlar ve site daireleri bulunurken, Tepeören, Orhanlı ve Yayla çevresinde daha müstakil ve bahçeli yerleşimler de var. Tuzla ev tadilatı taleplerinin çeşitliliği bu coğrafi farklılıktan kaynaklanıyor.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Sahile yakın konutlarda ana konu nem ve tuzlu hava. Doğrama, ahşap yüzey, metal aksesuar ve dolap içleri bu koşullardan zamanla etkilenebiliyor. Bu yüzden Tuzla dekorasyon çalışmalarında malzemenin dayanıklılığı ve bakım ihtiyacı, görünüm kadar önem taşıyor. Neme dayanıklı yüzeyler, iyi havalandırılan dolaplar ve kolay temizlenen zeminler sık tercih ettiğimiz çözümler.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Postane, Mimar Sinan, Şifa ve Evliya Çelebi çevresinde ise çoğunlukla apartman ve site daireleri görüyoruz. Sitelerin yönetim planları çalışma saatlerini, yük asansörü kullanımını ve moloz tahliyesini düzenlediği için şantiye takvimini baştan bu kurallara göre oluşturuyoruz. Mutfak ve banyo yenileme, depolama çözümleri ve salonun gerçek kullanıma göre düzenlenmesi bu evlerde en sık talep edilen kalemler.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Tuzla'nın bir başka özelliği yazlık ve ikinci konut kullanımı. Yaz aylarında kalabalık aileleri ve misafirleri ağırlayan evlerde esnek oturma düzeni, geniş depolama ve dayanıklı malzemeler öne çıkıyor. Sezon dışında kapalı kalan evlerde ise güvenlik ve kolay bakım önem kazanıyor. Bu yüzden projeleri sezon öncesi teslim edilecek şekilde planlıyoruz.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Villa ve müstakil evlerde tasarım, bahçe ve teras ile iç mekân arasındaki ilişkiyi de kapsıyor. Katmanlı aydınlatma, ölçüye özel mobilya ve geçişlerin zemin ile akıcı kurgulanması bu projelerin ana başlıkları. Daha geniş bilgi için villa tadilatı rehberimize de bakabilirsiniz.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4">{district.locative} Sunduğumuz Hizmetler</h3>
+      <ul class="space-y-3">
+        {[
+          'Sahil konutları ve yazlıklar için iç mimari tasarım',
+          'Site dairelerinde anahtar teslim ev tadilatı',
+          'Neme dayanıklı malzeme ve dolap çözümleri',
+          'Villa ve müstakil ev yenileme',
+          'Mutfak ve banyo yenileme',
+          'Ölçüye özel mobilya ve depolama',
+          'Site yönetimi izin süreçlerinin takibi',
+          '3D görselleştirme ile tasarım onayı',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+        <p class="text-sm text-charcoal font-medium">Villa tadilatı rehberi</p>
+        <p class="text-muted text-sm mt-2">
+          Müstakil ve villa tipi konutlarda yenileme kapsamının nasıl belirlendiğini ayrı bir yazıda anlattık.
+        </p>
+        <a href="/blog/villa-tadilati-istanbul" class="text-xs text-gold hover:underline mt-2 inline-block">İstanbul villa tadilatı rehberi →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bölge notları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Tuzla'da Bölge Notlarımız</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">İçmeler · Aydıntepe · Aydınlı</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Sahile yakın konut ve site dairelerinin olduğu hat. Nem ve tuzlu hava nedeniyle malzeme dayanıklılığı ve havalandırma tasarımın başında geliyor.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Postane · Mimar Sinan · Şifa · Evliya Çelebi</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Apartman ve site dairelerinin yoğunlaştığı mahalleler. Site yönetim kuralları şantiye takvimini belirliyor; mutfak, banyo ve depolama en sık talepler.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Tepeören · Yayla · Orhanlı</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Daha müstakil ve bahçeli yerleşimler. Bahçe bağlantısı, ısıtma ve katlar arası geçişler iç mimari projenin parçası olarak ele alınıyor.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <DistrictProjects districtSlug="tuzla-ic-mimarlik" />
+
+  <ProcessStrip districtSlug="tuzla-ic-mimarlik" />
+
+  <DistrictFAQ districtName="Tuzla" items={faqItems} />
+
+  <div class="py-12 border-t border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Hizmetlerimiz</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Tüm Hizmetler', href: '/hizmetler' },
+        { label: 'Anahtar Teslim Ev Tadilatı', href: '/hizmetler/anahtar-teslim/ev-tadilat' },
+        { label: 'Villa Tadilatı', href: '/hizmetler/anahtar-teslim/villa-tadilat' },
+        { label: 'Mutfak Yenileme', href: '/hizmetler/mutfak-yenileme' },
+        { label: 'Banyo Yenileme', href: '/hizmetler/banyo-yenileme' },
+        { label: 'Pendik Ev Tadilatı Rehberi', href: '/blog/pendik-ev-tadilati' },
+        { label: 'Pendik İç Mimarlık', href: '/istanbul/pendik-ic-mimarlik' },
+        { label: 'Kartal İç Mimarlık', href: '/istanbul/kartal-ic-mimarlik' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </div>
+
+  <DistrictBlogLinks districtSlug="tuzla-ic-mimarlik" />
+
+  <RelatedDistricts currentSlug="tuzla-ic-mimarlik" />
+
+</ServiceLayout>

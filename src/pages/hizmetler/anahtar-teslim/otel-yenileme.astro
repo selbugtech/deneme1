@@ -9,7 +9,7 @@ const serviceSchema = {
   "@type": "Service",
   "serviceType": "Otel Yenileme",
   "name": "İstanbul Otel Yenileme",
-  "description": "İstanbul'da anahtar teslim otel yenileme. Altyapıya dokunmadan oda, lobi ve ortak alan estetik güncellemesi. Operasyon sürerken hızlı renovasyon.",
+  "description": "İstanbul'da anahtar teslim otel yenileme. Altyapıya dokunmadan oda, lobi ve ortak alanlarda mobilya, kaplama, aydınlatma ve tekstil tazeleme; oda oda uygulama.",
   "provider": { "@type": "Organization", "@id": `${CANONICAL_BASE}/#organization`, "name": "Master İç Mimarlık" },
   "areaServed": [
     { "@type": "City", "name": "İstanbul" },
@@ -25,20 +25,20 @@ const faqSchema = {
   "@type": "FAQPage",
   "mainEntity": [
     { "@type": "Question", "name": "Otel yenileme sırasında faaliyet sürdürülebilir mi?", "acceptedAnswer": { "@type": "Answer", "text": "Evet. Otel yenilemesi altyapıya dokunmadığından operasyon açıkken bölüm bölüm ilerlemek çok daha kolaydır. Her tamamlanan bölüm hemen hizmete girer; tadilata kıyasla çok daha az gelir kaybıyla yenileme tamamlanır. Aşama planı müşterimizle birlikte belirlenir." } },
-    { "@type": "Question", "name": "Otel yenileme ile tadilat arasındaki fark nedir?", "acceptedAnswer": { "@type": "Answer", "text": "Otel yenilemesi; mevcut elektrik, tesisat ve yapısal sisteme dokunmadan oda, lobi ve ortak alanlarda estetik güncelleme yapmayı kapsar. Mobilya, kaplama, boya, aydınlatma ve tekstil değişimi bu kapsamdadır. Tadilat ise elektrik ve HVAC yenileme, duvar müdahalesi gibi teknik altyapı işlerini içerir. Altyapınız sorunsuzsa yenileme çok daha hızlı ve ekonomiktir." } },
-    { "@type": "Question", "name": "Otel yenileme ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Yapısal müdahale içermeyen bir otel yenilemesinde her bölüm için 2–6 hafta yeterli olabilir. Otel büyüklüğüne ve aynı anda kapatılabilecek oda/bölüm sayısına göre toplam süre belirlenir. Tadilata kıyasla çok daha kısa olan bu takvim, gelir kaybını minimize eder." } },
+    { "@type": "Question", "name": "Hangi odalar için yenileme yeterli olur?", "acceptedAnswer": { "@type": "Answer", "text": "Banyo ve tesisat sorunu olmayan, yalnızca mobilya, kaplama, aydınlatma ve tekstili eskimiş odalar yenileme ile tazelenebilir. Su basıncı, sızıntı, iklimlendirme veya elektrik arızası olan odalarda yüzey işleri tek başına yeterli olmaz; bu odalar otel tadilat kapsamında ele alınır. Keşifte oda oda değerlendirme yapıyoruz." } },
+    { "@type": "Question", "name": "Odaları düşük doluluk döneminde tazelemek için nasıl planlama yapıyorsunuz?", "acceptedAnswer": { "@type": "Answer", "text": "Yenileme altyapı işi içermediği için oda başına iş süresi kısa ve tekrarlanabilirdir; böylece düşük doluluk dönemlerinde oda gruplarını sırayla kapatarak ilerlemek mümkündür. Oda sayısına ve aynı anda kapatılabilecek oda adedine göre takvimi keşifte çıkarıyoruz." } },
     { "@type": "Question", "name": "Otel yenileme ROI'si nasıl ölçülür?", "acceptedAnswer": { "@type": "Answer", "text": "Otel yenileme yatırımının getirisi; online platform misafir puanlarındaki artış, ortalama oda fiyatı (ADR) yükselmesi ve doluluk oranı iyileşmesiyle ölçülür. Kısa süreli kapanma ve ekonomik maliyet sayesinde yenileme, tadilata kıyasla genellikle daha hızlı geri döner." } }
   ]
 };
 ---
 
 <ServiceLayout
-  title="İstanbul Otel Yenileme | Hızlı Otel Renovasyonu"
-  description="İstanbul'da anahtar teslim otel yenileme. Altyapıya dokunmadan oda, lobi ve ortak alan estetik güncellemesi. Operasyon sürerken hızlı renovasyon."
+  title="Otel Yenileme İstanbul | Oda ve Lobi Tazeleme"
+  description="İstanbul'da otel yenileme: altyapıya dokunmadan oda, lobi ve ortak alanlarda mobilya, kaplama ve aydınlatma tazeleme; oda oda uygulama. Keşif: 0533 039 15 65"
   canonicalUrl={`${CANONICAL_BASE}/hizmetler/anahtar-teslim/otel-yenileme`}
-  h1="İstanbul Otel Yenileme"
+  h1="İstanbul Otel Yenileme: Oda, Lobi ve Ortak Alan Tazeleme"
   eyebrow="Anahtar Teslim"
-  lead="Altyapısı sağlam ama görünümü eskimiş otellar için hızlı ve ekonomik çözüm. Oda, lobi ve ortak alanları altyapıya dokunmadan yeniliyor, misafir memnuniyetini ve online puanları artırıyoruz."
+  lead="Elektrik ve tesisata dokunmadan oda, lobi ve ortak alanların mobilya, kaplama, aydınlatma ve tekstilini tazeliyoruz. İş oda oda ilerler, tamamlanan bölümler hızla hizmete döner."
   breadcrumb={[
     { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
     { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
@@ -58,15 +58,15 @@ const faqSchema = {
   <!-- Scope -->
   <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
     <div>
-      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Otel Yenileme Hizmetimiz</h2>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Oda Oda İlerleyen Otel Yenileme</h2>
       <p class="text-muted leading-relaxed mb-4">
         Otel yenilemesi; elektrik, tesisat ve yapısal sisteme dokunmadan oda, lobi, restoran ve ortak alanların görsel kimliğini güncellemek demektir. Mobilya değişimi, zemin ve duvar kaplama yenileme, aydınlatma güncelleme, tekstil ve dekor tazeleme gibi işlemler kısa sürede büyük etki yaratır.
       </p>
       <p class="text-muted leading-relaxed mb-4">
-        Otel yenilemesi operasyon açıkken bölüm bölüm yapılabildiğinden misafir kabulünü kesintisiz sürdürebilirsiniz. Her tamamlanan oda veya bölüm hemen hizmete girer. <a href="/hizmetler/3d-tasarim" class="text-gold hover:underline">3D görselleştirme</a> ile yeni görünümü uygulama öncesinde onaylayabilirsiniz.
+        Otel yenilemesi operasyon açıkken bölüm bölüm yapılabildiğinden misafir kabulünü çoğunlukla sürdürebilirsiniz. Her tamamlanan oda veya bölüm hemen hizmete girer. <a href="/hizmetler/3d-tasarim" class="text-gold hover:underline">3D görselleştirme</a> ile yeni görünümü uygulama öncesinde onaylayabilirsiniz.
       </p>
       <p class="text-muted leading-relaxed">
-        Teknik altyapı sorunu varsa veya yapısal müdahale gerekiyorsa <a href="/hizmetler/anahtar-teslim/otel-tadilat" class="text-gold hover:underline">otel tadilat</a> hizmetimiz daha uygun seçenektir. Beyoğlu, Fatih, Beşiktaş ve tüm İstanbul'da hizmet veriyoruz.
+        Elektrik, tesisat veya iklimlendirme değişecekse <a href="/hizmetler/anahtar-teslim/otel-tadilat" class="text-gold hover:underline">altyapı müdahalesi gerektiren otel tadilat</a> sayfasındaki kapsam daha uygundur. Beyoğlu, Fatih, Beşiktaş ve tüm İstanbul'da hizmet veriyoruz.
       </p>
     </div>
     <div>
@@ -99,7 +99,7 @@ const faqSchema = {
   <div class="py-12 border-b border-border">
     <div class="flex items-center gap-3 mb-8">
       <span class="w-8 h-px bg-gold"></span>
-      <h2 class="font-display text-2xl font-bold text-charcoal">Otel Yenileme ile Ne Değişir?</h2>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Altyapıya Dokunmadan Otelde Ne Değişir?</h2>
     </div>
     <div class="grid md:grid-cols-3 gap-8">
       {[
@@ -167,8 +167,8 @@ const faqSchema = {
     <div class="divide-y divide-border">
       {[
         { q: 'Otel yenileme sırasında faaliyet sürdürülebilir mi?', a: 'Evet. Otel yenilemesi altyapıya dokunmadığından operasyon açıkken bölüm bölüm ilerlemek çok daha kolaydır. Her tamamlanan bölüm hemen hizmete girer; tadilata kıyasla çok daha az gelir kaybıyla yenileme tamamlanır. Aşama planı müşterimizle birlikte belirlenir.' },
-        { q: 'Otel yenileme ile tadilat arasındaki fark nedir?', a: 'Otel yenilemesi; mevcut elektrik, tesisat ve yapısal sisteme dokunmadan oda, lobi ve ortak alanlarda estetik güncelleme yapmayı kapsar. Mobilya, kaplama, boya, aydınlatma ve tekstil değişimi bu kapsamdadır. Tadilat ise elektrik ve HVAC yenileme, duvar müdahalesi gibi teknik altyapı işlerini içerir. Altyapınız sorunsuzsa yenileme çok daha hızlı ve ekonomiktir.' },
-        { q: 'Otel yenileme ne kadar sürer?', a: 'Yapısal müdahale içermeyen bir otel yenilemesinde her bölüm için 2–6 hafta yeterli olabilir. Otel büyüklüğüne ve aynı anda kapatılabilecek oda/bölüm sayısına göre toplam süre belirlenir. Tadilata kıyasla çok daha kısa olan bu takvim, gelir kaybını minimize eder.' },
+        { q: 'Hangi odalar için yenileme yeterli olur?', a: 'Banyo ve tesisat sorunu olmayan, yalnızca mobilya, kaplama, aydınlatma ve tekstili eskimiş odalar yenileme ile tazelenebilir. Su basıncı, sızıntı, iklimlendirme veya elektrik arızası olan odalarda yüzey işleri tek başına yeterli olmaz; bu odalar otel tadilat kapsamında ele alınır. Keşifte oda oda değerlendirme yapıyoruz.' },
+        { q: 'Odaları düşük doluluk döneminde tazelemek için nasıl planlama yapıyorsunuz?', a: 'Yenileme altyapı işi içermediği için oda başına iş süresi kısa ve tekrarlanabilirdir; böylece düşük doluluk dönemlerinde oda gruplarını sırayla kapatarak ilerlemek mümkündür. Oda sayısına ve aynı anda kapatılabilecek oda adedine göre takvimi keşifte çıkarıyoruz.' },
         { q: 'Otel yenileme ROI\'si nasıl ölçülür?', a: 'Otel yenileme yatırımının getirisi; online platform misafir puanlarındaki artış, ortalama oda fiyatı (ADR) yükselmesi ve doluluk oranı iyileşmesiyle ölçülür. Kısa süreli kapanma ve ekonomik maliyet sayesinde yenileme, tadilata kıyasla genellikle daha hızlı geri döner.' },
       ].map((faq, i) => (
         <details class="group py-5" open={i === 0}>

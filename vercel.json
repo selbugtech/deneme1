@@ -633,102 +633,102 @@
     },
     {
       "source": "/anadolu-yakasi-ev-tadilat-fiyatlari-2022",
-      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "destination": "/blog/ev-yenileme-maliyeti",
       "permanent": true
     },
     {
       "source": "/anahtar-teslim-ev-tadilat-butcesi",
-      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "destination": "/blog/ev-yenileme-maliyeti",
       "permanent": true
     },
     {
       "source": "/anahtar-teslim-ev-tadilat-fiyat-2021",
-      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "destination": "/blog/ev-yenileme-maliyeti",
       "permanent": true
     },
     {
       "source": "/anahtar-teslim-tadilat-fiyati-hesapla",
-      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "destination": "/blog/ev-yenileme-maliyeti",
       "permanent": true
     },
     {
       "source": "/anasayfa/blog/ev-tadilat-fiyatlari",
-      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "destination": "/blog/ev-yenileme-maliyeti",
       "permanent": true
     },
     {
       "source": "/detayli-ev-tadilat-uygulama-fiyatlari-2022",
-      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "destination": "/blog/ev-yenileme-maliyeti",
       "permanent": true
     },
     {
       "source": "/en-uygun-fiyatli-ev-tadilatlari-istanbul",
-      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "destination": "/blog/ev-yenileme-maliyeti",
       "permanent": true
     },
     {
       "source": "/ev-tadilat-fiyati-hesapla",
-      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "destination": "/blog/ev-yenileme-maliyeti",
       "permanent": true
     },
     {
       "source": "/ev-tadilat-fiyatlari",
-      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "destination": "/blog/ev-yenileme-maliyeti",
       "permanent": true
     },
     {
       "source": "/ev-tadilat-maliyeti-hesaplama",
-      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "destination": "/blog/ev-yenileme-maliyeti",
       "permanent": true
     },
     {
       "source": "/ev-tadilat-maliyeti-hesaplama-2022",
-      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "destination": "/blog/ev-yenileme-maliyeti",
       "permanent": true
     },
     {
       "source": "/guncel-ev-tadilat-fiyatlari-2022",
-      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "destination": "/blog/ev-yenileme-maliyeti",
       "permanent": true
     },
     {
       "source": "/guncel-ev-tadilat-maliyeti-nasil-hesaplanir",
-      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "destination": "/blog/ev-yenileme-maliyeti",
       "permanent": true
     },
     {
       "source": "/her-butceye-uygun-ev-tadilati",
-      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "destination": "/blog/ev-yenileme-maliyeti",
       "permanent": true
     },
     {
       "source": "/konut-tadilat-kredisi-hesaplama-2022",
-      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "destination": "/blog/ev-yenileme-maliyeti",
       "permanent": true
     },
     {
       "source": "/modern-teslim-ev-tadilat-fiyati-hesaplama",
-      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "destination": "/blog/ev-yenileme-maliyeti",
       "permanent": true
     },
     {
       "source": "/rustik-ev-tadilat-fiyati-hesaplama",
-      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "destination": "/blog/ev-yenileme-maliyeti",
       "permanent": true
     },
     {
       "source": "/tadilat-fiyatlari-2022",
-      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "destination": "/blog/ev-yenileme-maliyeti",
       "permanent": true
     },
     {
       "source": "/tadilat-ve-dekorasyon-fiyatlari",
-      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "destination": "/blog/ev-yenileme-maliyeti",
       "permanent": true
     },
     {
       "source": "/uygun-maliyetli-ev-tadilat",
-      "destination": "/blog/ev-yenileme-maliyeti-2025",
+      "destination": "/blog/ev-yenileme-maliyeti",
       "permanent": true
     },
     {
@@ -1439,6 +1439,16 @@
     {
       "source": "/proje/sariyer-villa.html",
       "destination": "/istanbul/sariyer-ic-mimarlik",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ev-yenileme-maliyeti-2025",
+      "destination": "/blog/ev-yenileme-maliyeti",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ic-mimarlik-trendleri-2025",
+      "destination": "/blog/ic-mimarlik-trendleri",
       "permanent": true
     },
     {

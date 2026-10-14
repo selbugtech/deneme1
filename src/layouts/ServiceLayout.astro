@@ -4,10 +4,12 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppFloat from '../components/WhatsAppFloat.astro';
 import Projects from '../components/Projects.astro';
+import RelatedGuides from '../components/RelatedGuides.astro';
 import Contact from '../components/Contact.astro';
 import { CANONICAL_BASE, TEL_URL, WHATSAPP_URL_PROJECT, WHATSAPP_URL_SERVICE } from '../config';
 import { optimizedImageW, srcsetImage } from '../lib/cloudinary';
 import { byGroup, getService } from '../data/services';
+import { relevantProjects } from '../data/projects';
 
 interface Props {
   title: string;
@@ -186,6 +188,8 @@ const allSchema = [
       </div>
     </div>
 
+    <RelatedGuides slug={currentSlug} />
+
     <!-- Related services -->
     <div class="border-t border-border py-16">
       <div class="max-w-6xl mx-auto px-6">
@@ -214,7 +218,7 @@ const allSchema = [
     </div>
 
     <!-- Projects (social proof) — içerikten sonra, dönüşüm bloğunun hemen öncesinde -->
-    <Projects />
+    <Projects list={relevantProjects(new URL(canonicalUrl).pathname)} />
 
     <!-- Contact section (full) -->
     <Contact showMap={contactShowMap} />

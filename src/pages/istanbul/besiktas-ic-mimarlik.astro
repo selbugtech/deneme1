@@ -36,23 +36,27 @@ const faqItems = [
     a: "Levent, Etiler, Bebek, Ortaköy, Arnavutköy, Akatlar, Ulus, Gayrettepe, Balmumcu ve Beşiktaş Merkez başta olmak üzere ilçenin tüm mahallelerinde aktif çalışıyoruz. Tarihi apartmanlar, lüks rezidanslar ve modern site dairelerinde uygulama deneyimimiz var.",
   },
   {
-    q: "Beşiktaş için keşif ve teklif süreci nasıl işliyor?",
-    a: "WhatsApp veya telefon üzerinden randevu alıyor, Beşiktaş'taki adresinize gelerek ücretsiz keşif yapıyoruz. Yerinde ölçü ve fotoğraf çalışmasının ardından 2–3 iş günü içinde detaylı teklif ve mood-board paylaşıyoruz.",
+    q: "Boğaz hattındaki tarihi veya tescilli bir binada tadilat için izin gerekiyor mu?",
+    a: "Bebek, Arnavutköy ve Ortaköy hattında tescilli veya koruma alanında kalan yapılar bulunabiliyor. Bu binalarda cephe, doğrama, çatı ve taşıyıcı sisteme yönelik müdahaleler genellikle koruma kurulu iznine tabi; taşıyıcıya dokunmayan iç mekan yenilemeleri ise daha esnek ilerliyor. Keşifte önce yapının tescil durumuna bakıyor, gereken izin sürecini baştan anlatıyoruz.",
   },
   {
-    q: "Beşiktaş'ta örnek projeleriniz var mı?",
-    a: "Beşiktaş'ta henüz yayımladığımız bir proje yok; tamamladığımız işlerin tamamı projeler sayfamızda. Keşif sırasında dairenizin tipine ve ölçeğine en yakın çalışmalarımızı gösteriyoruz.",
+    q: "Beşiktaş'ta nasıl bir tadilat yaklaşımı izliyorsunuz?",
+    a: "Beşiktaş'ta işler iki ayrı yapı tipinde yoğunlaşıyor: Boğaz hattının eski apartmanları ile Etiler ve Dikilitaş çevresindeki rezidanslar. İlkinde tesisat, zemin ve izin süreçleri; ikincisinde yönetim kuralları ve depolama kurgusu öne çıkıyor. Keşifte dairenizin tipine göre bu kalemleri tek tek ele alıp kapsamı birlikte belirliyoruz. Tamamladığımız çalışmaları projeler sayfamızdan inceleyebilirsiniz.",
+  },
+  {
+    q: "Dik sokaklı ve dar yollu semtlerde malzeme taşıma ile park nasıl çözülüyor?",
+    a: "Ortaköy, Bebek ve Arnavutköy gibi sokak yapısı dar olan yerlerde araç girişi ve park alanı sınırlı olabiliyor. Dolap ve tezgahları modüler parçalar halinde üretiyor, teslimat ve moloz tahliyesi için bina yönetimiyle saat planı yapıyoruz. Gerekirse belediye park izni gibi konuları da şantiye takvimine baştan ekliyoruz.",
   },
 ];
 ---
 
 <ServiceLayout
-  title="Beşiktaş İç Mimarlık ve Ev Yenileme"
-  description="Beşiktaş'ta iç mimarlık, anahtar teslim daire yenileme ve mutfak-banyo tadilatı. Levent, Etiler, Bebek ve Beşiktaş Merkez'de aktif."
+  title="Beşiktaş İç Mimarlık, Ev Tadilatı ve Dekorasyon"
+  description="Beşiktaş'ta iç mimarlık, daire yenileme ve mutfak-banyo tadilatı. Bebek, Etiler, Ortaköy ve Dikilitaş'ta aktif. Ücretsiz keşif: 0533 039 15 65"
   canonicalUrl={`${CANONICAL_BASE}/istanbul/besiktas-ic-mimarlik`}
-  h1="Beşiktaş İç Mimarlık ve Ev Yenileme"
+  h1="Beşiktaş İç Mimarlık, Ev Tadilatı ve Dekorasyon"
   eyebrow="İstanbul · Beşiktaş"
-  lead="Beşiktaş'ın prestijli semtine yakışır, modern ve sofistike mekan tasarımları sunuyoruz. Boğaz manzaralı rezidanslardan tarihi apartmanlara kadar geniş bir yelpazede 8+ yıllık uygulama deneyimimizle yanınızdayız."
+  lead="Beşiktaş'ın prestijli semtine yakışır, modern ve sofistike mekan tasarımları sunuyoruz. Boğaz manzaralı rezidanslardan tarihi apartmanlara kadar geniş bir yelpazede tadilat ve dekorasyonu baştan sona yönetiyoruz."
   heroImage={heroPath}
   breadcrumb={[
     { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
@@ -70,6 +74,9 @@ const faqItems = [
       </p>
       <p class="text-muted leading-relaxed mb-4">
         Beşiktaş'ta yapı stoku iki uçta duruyor. Arnavutköy ve Ortaköy hattındaki tarihi yapılarda zemin, tesisat ve elektrik altyapısını yenilemek öne çıkıyor; Etiler ve Dikilitaş'taki modern rezidanslarda ise planlama ve depolama optimizasyonu belirleyici oluyor.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Beşiktaş'ta tadilat kararı çoğunlukla binanın konumuna ve yaşına bağlı. Bebek, Arnavutköy ve Ortaköy hattında Boğaz'a bakan eski yapılarda cephe ve pencere müdahaleleri izne tabi olabildiği için iç mekan dekorasyonunu bu sınırlara göre kuruyoruz. Etiler ve Dikilitaş çevresinde ise rezidans ve site yönetimlerinin çalışma saati ile yük asansörü kuralları şantiye takvimini belirliyor.
       </p>
       <p class="text-muted leading-relaxed">
         Beşiktaş Merkez, Levent, Etiler, Bebek, Ortaköy, Arnavutköy, Akatlar, Ulus, Gayrettepe ve Balmumcu başta olmak üzere ilçe genelinde hizmet veriyoruz.
@@ -99,6 +106,31 @@ const faqItems = [
     </div>
   </div>
 
+  <!-- Bölge notları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">{district.locative} Bölge Notlarımız</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Bebek · Arnavutköy · Ortaköy</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Boğaz hattının eski ve karakterli yapıları. Tesisat ve zemin yenilemesi sık gündeme geliyor; cephe ve pencere müdahalelerinde izin gereksinimi keşifte kontrol ediliyor, dar sokaklar nedeniyle sevkiyat önceden planlanıyor.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Etiler · Dikilitaş</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Modern rezidans ve apartman dairelerinin yoğun olduğu hat. Plan, depolama ve aydınlatma kurgusu öne çıkıyor; yönetim kuralları çalışma saatlerini ve asansör kullanımını belirliyor.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Abbasağa · Sinanpaşa</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Merkeze yakın, köklü apartman dokusu. Bazı binalarda asansör bulunmadığı için malzeme taşıma modüler üretimle çözülüyor; tesisatın durumuna göre kapsamı sökümden sonra netleştiriyoruz.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <DistrictProjects districtSlug="besiktas-ic-mimarlik" />
 
   <ProcessStrip districtSlug="besiktas-ic-mimarlik" />
@@ -113,6 +145,11 @@ const faqItems = [
         { label: 'Villa Yenileme', href: `${CANONICAL_BASE}/hizmetler/anahtar-teslim/villa-yenileme` },
         { label: 'Ofis Yenileme', href: `${CANONICAL_BASE}/hizmetler/anahtar-teslim/ofis-yenileme` },
         { label: '3D Tasarım', href: `${CANONICAL_BASE}/hizmetler/3d-tasarim` },
+        { label: 'Ev Tadilatı', href: '/hizmetler/anahtar-teslim/ev-tadilat' },
+        { label: 'Mutfak Yenileme', href: '/hizmetler/mutfak-yenileme' },
+        { label: 'Banyo Yenileme', href: '/hizmetler/banyo-yenileme' },
+        { label: 'Beşiktaş Ev Tadilatı Rehberi', href: '/blog/besiktas-ev-tadilati' },
+        { label: 'Şişli İç Mimarlık', href: '/istanbul/sisli-ic-mimarlik' },
       ].map(l => (
         <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
       ))}

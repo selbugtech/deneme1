@@ -1,6 +1,6 @@
 import gallery from './projects-gallery.json';
 
-export type GalleryFile = { src: string; srcset: string; original: string };
+export type GalleryFile = { src: string; srcset: string; original: string; width?: number; height?: number };
 
 export type ProjectMeta = {
   slug: string;
@@ -247,6 +247,7 @@ const META: ProjectMeta[] = [
   },
   {
     slug: 'selimpasa-villa',
+    districtSlug: 'silivri-ic-mimarlik',
     title: 'Selimpaşa Villa',
     category: 'Villa Yenileme',
     categorySlug: 'villa-yenileme',
@@ -483,4 +484,33 @@ export function projectsByDistrict(districtSlug: string): Project[] {
 
 export function getProject(slug: string): Project | undefined {
   return projects.find((p) => p.slug === slug);
+}
+
+/**
+ * Hizmet/ilçe/stil sayfalarının altında gösterilecek 4 ilgili proje.
+ * Eskiden her sayfaya tüm projeler basılıyordu (≈80 sayfada aynı blok, aynı linkler).
+ * Önce sayfanın konusuna uyanlar, sonra sayfa yoluna göre kaydırılmış rotasyonla
+ * tamamlanır; böylece her sayfa farklı bir ilk seçim alır.
+ */
+export function relevantProjects(pathname: string, n = 4): Project[] {
+  const path = pathname.toLowerCase();
+  const pool = projects.filter((p) => p.slug !== 'karisik-projeler');
+  const wantCategories: string[] = [];
+  const districtMatch = path.match(/^\/istanbul\/([^/]+)$/);
+  const first: Project[] = [];
+
+  if (districtMatch) first.push(...projectsByDistrict(districtMatch[1]));
+  if (/villa/.test(path)) wantCategories.push('villa-yenileme');
+  else if (/ofis/.test(path)) wantCategories.push('ofis-yenileme');
+  else if (/otel/.test(path)) wantCategories.push('otel', 'ticari');
+  else if (/cafe|magaza|dukkan|showroom|eczane|klinik|kres|kuafor|spor/.test(path)) wantCategories.push('ticari', 'otel');
+  else wantCategories.push('anahtar-teslim');
+
+  let hash = 0;
+  for (const ch of path) hash = (hash * 31 + ch.charCodeAt(0)) >>> 0;
+  const rotate = <T,>(arr: T[]) => (arr.length ? [...arr.slice(hash % arr.length), ...arr.slice(0, hash % arr.length)] : arr);
+
+  const topical = rotate(pool.filter((p) => wantCategories.includes(p.categorySlug) && !first.includes(p)));
+  const rest = rotate(pool.filter((p) => !first.includes(p) && !topical.includes(p)));
+  return [...first, ...topical, ...rest].slice(0, n);
 }

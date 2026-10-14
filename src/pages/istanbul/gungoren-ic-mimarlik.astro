@@ -1,0 +1,164 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictBlogLinks from '../../components/DistrictBlogLinks.astro';
+import DistrictFAQ from '../../components/DistrictFAQ.astro';
+import ProcessStrip from '../../components/ProcessStrip.astro';
+import DistrictProjects from '../../components/DistrictProjects.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImageW } from '../../lib/cloudinary';
+import { getDistrict } from '../../data/districts';
+
+// İlçe adı ve bulunma hali eki tek kaynaktan: src/data/districts.ts.
+const district = getDistrict('gungoren-ic-mimarlik')!;
+const heroPath = '/images/salon9.jpeg';
+const heroAbs = optimizedImageW(heroPath, 1600);
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "İç mimarlık, tadilat ve ev yenileme",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
+  "areaServed": { "@type": "Place", "name": "Güngören, İstanbul" },
+  "url": `${CANONICAL_BASE}/istanbul/gungoren-ic-mimarlik`,
+  "description": "Güngören'de eski apartman stokunda anahtar teslim yenileme, tesisat kontrolü, mutfak-banyo tadilatı ve depolama çözümleri.",
+  "image": heroAbs,
+};
+
+const faqItems = [
+  {
+    q: "Güngören'deki eski apartman dairesinde tesisat ve elektrik yenilenmeli mi?",
+    a: "Yaşını doldurmuş binalarda bu sorunun cevabı çoğu zaman evet, ancak kapsamı daireye göre değişiyor. Keşifte panoyu, kablo hatlarını, boruları ve ıslak hacim zeminlerini inceliyoruz. Sökümden sonra gerçek durumu fotoğraflarla gösterip hangi hatların yenilenmesinin gerçekten gerektiğini açıklıyoruz.",
+  },
+  {
+    q: "Merter'deki dairelerde ses ve trafik gürültüsü için ne yapılabilir?",
+    a: "Yoğun iş ve ticaret akslarına yakın cephelerde ses konforu sıkça dile getiriliyor. Pencere ve çevresi detaylarına, kapı seçimine ve yatak odasının yerleşimine bakıyor, yapının izin verdiği ölçüde ses konforunu artıracak çözümleri tasarıma ekliyoruz. Beklentinizi baştan netleştirerek ilerliyoruz.",
+  },
+  {
+    q: "Dar ve uzun planlı dairede salon ile mutfak nasıl düzenlenir?",
+    a: "Güngören'deki birçok dairede koridor uzun, odalar sınırlı. Koridoru depolama duvarına çeviriyor, mutfak ile salon arasındaki geçişi ışığı iyileştirecek biçimde ele alıyoruz. Duvar yıkımı gerekiyorsa önce taşıyıcı sisteme bakıp neyin güvenle yapılabileceğini söylüyoruz.",
+  },
+  {
+    q: "Asansörsüz ya da dar merdivenli binada büyük mobilya ve dolap nasıl taşınır?",
+    a: "Dolap ve mutfak elemanlarını parçalı üretip yerinde monte ediyoruz; ağır parçalar için merdiven koruma ve ekipli taşıma planı yapıyoruz. Keşifte kat sayısı ve merdiven genişliğini ölçerek ne sığar, ne sığmaz önceden belirliyoruz.",
+  },
+  {
+    q: "Güngören'de keşif için ne yapmam gerekiyor?",
+    a: "Telefon ya da WhatsApp ile bize yazmanız yeterli. Güngören'in tüm mahallelerinde ücretsiz keşif yapıyoruz. Ölçü aldıktan sonra kapsam, malzeme ve takvimi içeren yazılı bir teklifi iletiyoruz.",
+  },
+];
+---
+
+<ServiceLayout
+  title="Güngören İç Mimarlık, Ev Tadilatı ve Dekorasyon"
+  description="Güngören'de eski apartman stokunda iç mimarlık, ev tadilatı ve anahtar teslim dekorasyon. Merter ve Tozkoparan'da ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/istanbul/gungoren-ic-mimarlik`}
+  h1="Güngören İç Mimarlık, Ev Tadilatı ve Dekorasyon"
+  eyebrow="İstanbul · Güngören"
+  lead="Sıkışık planlı ve genellikle eski apartman stokuyla öne çıkan bir ilçe. Güngören tadilat işlerinde asıl mesele, mevcut yapıyı sağlam altyapı ve işlevsel bir iç düzenle yeniden kazanmak."
+  heroImage={heroPath}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İstanbul", href: `${CANONICAL_BASE}/istanbul` },
+    { label: "Güngören" }
+  ]}
+  structuredData={localSchema}
+>
+
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Güngören'de İç Mimarlık Hizmeti</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Güngören, Merter, Haznedar, Tozkoparan ve Güven gibi mahalleleriyle, İstanbul'un merkezine ve ticaret akslarına yakın konumlanan kompakt bir ilçe. Konut stoku çoğunlukla oturmuş apartmanlardan oluşuyor; bu da Güngören'de ev tadilatı yaptırmak isteyen birçok ailenin benzer bir noktadan yola çıkmasına yol açıyor: yıllardır kullanılan bir daire, eskiyen tesisat ve ihtiyaçlara artık yetmeyen bir plan.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Bu tür dairelerde ilk adım yüzeysel bir yenilemeden çok altyapıyı doğru okumak oluyor. Elektrik panosu, su ve gider hatları, banyo yalıtımı ve duvar zeminlerini keşifte kontrol edip kapsamı buna göre belirliyoruz. Altyapı sağlam olduğunda dekorasyon da kalıcı oluyor; üzerine yapılan boya, dolap ve zemin kaplaması uzun yıllar sorunsuz hizmet veriyor.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Güngören dekorasyon projelerinde sık karşılaştığımız bir diğer konu uzun koridor ve küçük oda düzeni. Burada koridoru depolamaya çeviriyor, mutfak ve salon arasındaki ilişkiyi ışık ve hareket alanı açısından yeniden düşünüyoruz. Süreç yerinde keşif, yazılı kapsam, 3D görsel onayı ve tek ekiple uygulamadan oluşuyor. Dar merdivenli binalarda taşıma ve moloz tahliyesini baştan planlıyoruz; Güngören ev tadilatı rehberimiz de süreci anlatıyor.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4">{district.locative} Sunduğumuz Hizmetler</h3>
+      <ul class="space-y-3">
+        {[
+          'Eski apartman dairelerinde anahtar teslim ev tadilatı',
+          'Elektrik ve sıhhi tesisat durumuna göre kapsam belirleme',
+          'Mutfak ve banyo yenileme, su yalıtımı kontrolü',
+          'Koridor ve küçük odalara ölçüye özel depolama çözümleri',
+          '3D görselleştirme ile tasarım onayı',
+          'Salon, yatak odası ve çocuk odası dekorasyonu',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+        <p class="text-sm text-charcoal font-medium">Güngören keşif görüşmesi</p>
+        <p class="text-muted text-sm mt-2">
+          Tesisat, ıslak hacim ve plan durumunu yerinde inceliyor, kapsamı birlikte netleştiriyoruz. Keşif ücretsiz ve taahhütsüz.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bölge notları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Güngören'de Bölge Notlarımız</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Merter · Mareşal Çakmak</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Ticaret akslarına yakın, hareketli bir hat. Malzeme sevkiyatında trafik ve park düzenine uyum için teslim saatlerini önceden planlıyor, ses konforunu keşifte ayrıca ele alıyoruz.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Haznedar · Tozkoparan · Güven</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Oturmuş apartman dokusunun hakim olduğu mahalleler. Tesisat ve ıslak hacim kontrolü bu bölgedeki keşiflerin ilk sırasında yer alıyor.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Gençosman · Akıncılar</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Dar merdivenli ve asansörsüz bina ihtimali yüksek. Dolap elemanlarını parçalı üretip taşıma ve moloz çıkış planını baştan yapıyoruz.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <DistrictProjects districtSlug="gungoren-ic-mimarlik" />
+
+  <ProcessStrip districtSlug="gungoren-ic-mimarlik" />
+
+  <DistrictFAQ districtName="Güngören" items={faqItems} />
+
+  <div class="py-12 border-t border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Hizmetlerimiz</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Tüm Hizmetler', href: '/hizmetler' },
+        { label: 'Anahtar Teslim Ev Tadilatı', href: '/hizmetler/anahtar-teslim/ev-tadilat' },
+        { label: 'Banyo Yenileme', href: '/hizmetler/banyo-yenileme' },
+        { label: 'Mutfak Yenileme', href: '/hizmetler/mutfak-yenileme' },
+        { label: 'Güngören Ev Tadilatı Rehberi', href: '/blog/gungoren-ev-tadilati' },
+        { label: 'Bağcılar İç Mimarlık', href: '/istanbul/bagcilar-ic-mimarlik' },
+        { label: 'Bahçelievler İç Mimarlık', href: '/istanbul/bahcelievler-ic-mimarlik' },
+        { label: 'Zeytinburnu İç Mimarlık', href: '/istanbul/zeytinburnu-ic-mimarlik' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </div>
+
+  <DistrictBlogLinks districtSlug="gungoren-ic-mimarlik" />
+
+  <RelatedDistricts currentSlug="gungoren-ic-mimarlik" />
+
+</ServiceLayout>

@@ -4,6 +4,9 @@ import sitemap from '@astrojs/sitemap';
 import robotsTxt from 'astro-robots-txt';
 import vercel from '@astrojs/vercel/static';
 import { lastmodFor } from './src/data/sitemap-meta';
+import gallery from './src/data/projects-gallery.json';
+
+const SITE = 'https://www.mastericmimarlik.com';
 
 export default defineConfig({
   integrations: [
@@ -16,7 +19,13 @@ export default defineConfig({
         // Google ikisini aynı URL sayıyor. Eklenti bunu trailingSlash:'never' için
         // serialize'dan SONRA çıktı akışında string değiştirerek yapıyor
         // (@astrojs/sitemap/dist/write-sitemap.js) — buradan değiştirilemiyor.
-        item.lastmod = lastmodFor(new URL(item.url).pathname);
+        const pathname = new URL(item.url).pathname;
+        item.lastmod = lastmodFor(pathname);
+        // Görsel sitemap: proje sayfalarındaki galeri görselleri (sayfa başına ilk 30).
+        // Galeri lightbox ile açıldığı için Google görselleri yalnızca HTML'den zor buluyor.
+        const m = pathname.startsWith('/projeler/') ? [null, pathname.slice('/projeler/'.length)] : null;
+        const files = m && gallery[m[1]]?.files;
+        if (files?.length) item.img = files.slice(0, 30).map((f) => ({ url: `${SITE}${f.src}` }));
         return item;
       },
     }),

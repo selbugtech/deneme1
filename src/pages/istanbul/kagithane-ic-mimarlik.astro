@@ -1,0 +1,163 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictBlogLinks from '../../components/DistrictBlogLinks.astro';
+import DistrictFAQ from '../../components/DistrictFAQ.astro';
+import ProcessStrip from '../../components/ProcessStrip.astro';
+import DistrictProjects from '../../components/DistrictProjects.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImageW } from '../../lib/cloudinary';
+import { getDistrict } from '../../data/districts';
+
+// İlçe adı ve bulunma hali eki tek kaynaktan: src/data/districts.ts.
+const district = getDistrict('kagithane-ic-mimarlik')!;
+const heroPath = '/images/salon8.jpeg';
+const heroAbs = optimizedImageW(heroPath, 1600);
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "İç mimarlık, tadilat ve ev yenileme",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
+  "areaServed": { "@type": "Place", "name": "Kağıthane, İstanbul" },
+  "url": `${CANONICAL_BASE}/istanbul/kagithane-ic-mimarlik`,
+  "description": "Kağıthane'de rezidans ve kentsel dönüşüm daireleri için anahtar teslim yenileme, depolama ve iç mimarlık çözümleri.",
+  "image": heroAbs,
+};
+
+const faqItems = [
+  {
+    q: "Kentsel dönüşümle teslim aldığım dairede önce neyi yaptırmalıyım?",
+    a: "Yeni teslim edilen dairelerde zemin, boya ve mutfak ekipmanı genellikle standart bir paketle geliyor. Çoğu ailede ilk sırada mutfak dolabı düzeninin kişiselleştirilmesi, gömme depolama ve zemin kaplamalarının gözden geçirilmesi yer alıyor. Eşyaları taşımadan önce başlamak hem temizlik hem takvim açısından en rahat yol.",
+  },
+  {
+    q: "Rezidans ve yüksek katlı bloklarda tadilat izni nasıl işliyor?",
+    a: "Kağıthane'deki rezidans ve yüksek katlı sitelerin çoğunda yönetim, tadilat öncesi yazılı başvuru, ekip bilgisi ve çalışma saati sınırlaması istiyor. Yük asansörünün saatleri ve moloz çıkış yolu da önceden belirleniyor. Bu yazışmaları sizin adınıza yürütüyor, şantiye takvimini bu çerçeveye göre kuruyoruz.",
+  },
+  {
+    q: "Seyrantepe ve Çağlayan'daki dairelerde ses yalıtımı konusunda ne önerirsiniz?",
+    a: "Ana arterlere ve iş merkezi trafiğine yakın cephelerde ses konforu sık gündeme geliyor. Cam ve pencere çevresi detaylarına, duvar ve tavan katmanlarına ve kapı seçimine bakıyoruz. Yapının izin verdiği ölçüde yalıtımı tasarımla birlikte ele alıyor, beklentinizi baştan netleştiriyoruz.",
+  },
+  {
+    q: "Dar planlı dairelerde depolamayı nasıl artırıyorsunuz?",
+    a: "Kağıthane'de yoğun yapılaşmanın getirdiği küçük ve kompakt planlarda tavan yüksekliğini, koridor duvarlarını ve kullanılmayan köşeleri depolamaya çeviriyoruz. Ölçüye özel gömme dolaplar, yatak başlığı arkası çözümleri ve mutfakta yüksek dolap kurgusu en çok başvurduğumuz yöntemler.",
+  },
+  {
+    q: "Keşif için Kağıthane'nin hangi bölgelerine geliyorsunuz?",
+    a: "Çağlayan'dan Harmantepe'ye ilçenin tamamında ücretsiz keşif yapıyoruz. WhatsApp veya telefonla müsait olduğunuz saati bildirmeniz yeterli. Keşifte ölçü alıyor, mevcut durumu kaydediyor ve ihtiyaçlarınızı dinledikten sonra yazılı kapsam hazırlıyoruz.",
+  },
+];
+---
+
+<ServiceLayout
+  title="Kağıthane İç Mimarlık, Ev Tadilatı ve Dekorasyon"
+  description="Kağıthane'de rezidans ve kentsel dönüşüm dairelerinde iç mimarlık, ev tadilatı ve dekorasyon. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/istanbul/kagithane-ic-mimarlik`}
+  h1="Kağıthane İç Mimarlık, Ev Tadilatı ve Dekorasyon"
+  eyebrow="İstanbul · Kağıthane"
+  lead="Yeni rezidansların, iş merkezlerinin ve dönüşen mahallelerin iç içe geçtiği bir ilçe. Kağıthane dekorasyon projelerinde asıl iş, standart teslim edilen daireyi gerçek yaşama göre kişiselleştirmek."
+  heroImage={heroPath}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İstanbul", href: `${CANONICAL_BASE}/istanbul` },
+    { label: "Kağıthane" }
+  ]}
+  structuredData={localSchema}
+>
+
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Kağıthane'de İç Mimarlık Hizmeti</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Kağıthane, son yıllarda İstanbul'un en görünür dönüşüm alanlarından biri oldu. Çağlayan, Seyrantepe ve çevresinde yükselen rezidans ve iş merkezleri ile Gürsel, Nurtepe veya Hamidiye gibi daha yerleşik mahalleler aynı ilçede yan yana duruyor. Bu çeşitlilik, Kağıthane'de ev tadilatı talebinin de çok farklı yönlerden gelmesine yol açıyor.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Kentsel dönüşümle yenilenen binalarda teslim edilen daireler çoğunlukla ortak bir paketle geliyor: aynı mutfak, aynı zemin, aynı kapı serisi. Bu, işin başlangıç noktasını belirliyor. Mutfak dolabının günlük kullanıma göre yeniden kurgulanması, gömme depolama eklenmesi ve salonun aydınlık ve ferah hissettirmesi ilk sıradaki kalemler oluyor. Eski ve daha oturmuş binalarda ise tesisat ve ıslak hacimlerin durumu keşifte öne çıkıyor.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Çalışma düzenimiz sade: yerinde keşif, yazılı kapsam, 3D görselle onay ve tek ekiple uygulama. Kağıthane'deki yüksek katlı sitelerde yönetim izinleri, yük asansörü saatleri ve çalışma sınırlamaları takvimi doğrudan etkilediği için bu adımları işin başında netleştiriyoruz. Böylece Kağıthane tadilat sürecinde hem komşularınızla hem yönetimle gereksiz bir sürtüşme yaşamıyorsunuz.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4">{district.locative} Sunduğumuz Hizmetler</h3>
+      <ul class="space-y-3">
+        {[
+          'Rezidans ve site dairelerinde anahtar teslim yenileme',
+          'Kentsel dönüşüm sonrası teslim dairelerin kişiselleştirilmesi',
+          'Ölçüye özel gömme dolap ve depolama çözümleri',
+          'Mutfak ve banyo yenileme',
+          '3D görselleştirme ile tasarım onayı',
+          'Site yönetimi izin ve çalışma düzeni takibi',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+        <p class="text-sm text-charcoal font-medium">Kağıthane keşif görüşmesi</p>
+        <p class="text-muted text-sm mt-2">
+          Dairenizi yerinde inceliyor, ölçüleri alıyor ve yönetimin tadilat kurallarını birlikte gözden geçiriyoruz. Keşif ücretsiz ve taahhütsüz.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bölge notları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Kağıthane'de Bölge Notlarımız</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Çağlayan · Seyrantepe</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Rezidans ve iş merkezi yoğunluğunun hissedildiği hat. Yönetim izinleri, yük asansörü saatleri ve ses konforu bu bölgede şantiye planının merkezinde yer alıyor.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Gürsel · Nurtepe · Hamidiye</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Oturmuş apartman dokusunun ve dönüşen binaların bir arada bulunduğu mahalleler. Eski dairelerde ıslak hacim ve tesisat durumunu keşifte ayrıca inceliyoruz.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Talatpaşa · Çeliktepe · Harmantepe</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Eğimli arazi nedeniyle bazı binalarda dar giriş ve merdiven geçişleri olabiliyor. Büyük mobilya ve dolap elemanlarının taşınma rotasını önceden planlıyoruz.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <DistrictProjects districtSlug="kagithane-ic-mimarlik" />
+
+  <ProcessStrip districtSlug="kagithane-ic-mimarlik" />
+
+  <DistrictFAQ districtName="Kağıthane" items={faqItems} />
+
+  <div class="py-12 border-t border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Hizmetlerimiz</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Tüm Hizmetler', href: '/hizmetler' },
+        { label: 'Anahtar Teslim Ev Tadilatı', href: '/hizmetler/anahtar-teslim/ev-tadilat' },
+        { label: 'Mutfak Yenileme', href: '/hizmetler/mutfak-yenileme' },
+        { label: 'Salon Tasarımı', href: '/hizmetler/salon-tasarimi' },
+        { label: 'Şişli İç Mimarlık', href: '/istanbul/sisli-ic-mimarlik' },
+        { label: 'Beşiktaş İç Mimarlık', href: '/istanbul/besiktas-ic-mimarlik' },
+        { label: 'Sarıyer İç Mimarlık', href: '/istanbul/sariyer-ic-mimarlik' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </div>
+
+  <DistrictBlogLinks districtSlug="kagithane-ic-mimarlik" />
+
+  <RelatedDistricts currentSlug="kagithane-ic-mimarlik" />
+
+</ServiceLayout>

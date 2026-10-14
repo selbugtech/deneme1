@@ -1,0 +1,163 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictBlogLinks from '../../components/DistrictBlogLinks.astro';
+import DistrictFAQ from '../../components/DistrictFAQ.astro';
+import ProcessStrip from '../../components/ProcessStrip.astro';
+import DistrictProjects from '../../components/DistrictProjects.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImageW } from '../../lib/cloudinary';
+import { getDistrict } from '../../data/districts';
+
+// İlçe adı ve bulunma hali eki tek kaynaktan: src/data/districts.ts.
+const district = getDistrict('avcilar-ic-mimarlik')!;
+const heroPath = '/images/salon3.jpeg';
+const heroAbs = optimizedImageW(heroPath, 1600);
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "İç mimarlık, tadilat ve ev yenileme",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
+  "areaServed": { "@type": "Place", "name": "Avcılar, İstanbul" },
+  "url": `${CANONICAL_BASE}/istanbul/avcilar-ic-mimarlik`,
+  "description": "Avcılar'da site ve apartman dairelerinde anahtar teslim yenileme, mutfak-banyo tadilatı ve iç mimarlık çözümleri.",
+  "image": heroAbs,
+};
+
+const faqItems = [
+  {
+    q: "Avcılar'da site içindeki dairede tadilat için yönetimden ne istenir?",
+    a: "Sitelerin çoğunda tadilat başlamadan önce yönetime yazılı bilgi vermek, çalışacak ekibin listesini iletmek ve çalışma saatlerine uymak gerekiyor. Yük asansörü ya da servis girişi varsa malzeme taşıma saatleri de bu çerçevede belirleniyor. Biz şantiye takvimini yönetimin kurallarına göre kuruyor, koridor ve asansör korumasını baştan planlıyoruz.",
+  },
+  {
+    q: "Eski apartman dairesinde tesisata dokunmadan yenileme yapılabilir mi?",
+    a: "Bu, yapının yaşına ve mevcut boruların durumuna bağlı. Avcılar'da farklı dönemlerde yapılmış binalar bir arada olduğu için her dairede aynı sonuç çıkmıyor. Keşifte tesisat hatlarını, ıslak hacim zeminlerini ve pano durumunu görüyor, sökümden sonra gerçek kapsamı size açıkça anlatıyoruz. Gereksiz yere her şeyi yenilemeyi önermiyoruz.",
+  },
+  {
+    q: "Denize ve yola yakın dairelerde nem ve havalandırma sorununa ne yapıyorsunuz?",
+    a: "Sahile yakın ve rüzgar alan cephelerde duvar yüzeylerindeki rutubet, küf ve cam çevrelerindeki yoğuşma sık karşılaşılan şikayetler. Boyaya geçmeden önce nemin kaynağını anlamaya çalışıyor, yüzey hazırlığını ve havalandırma çözümünü projeye dahil ediyoruz. Banyo ve mutfakta nefes alan malzeme seçimi de bu yaklaşımın parçası.",
+  },
+  {
+    q: "Ev tadilatına başlamadan önce hangi belgeleri hazırlamalıyım?",
+    a: "Mülk sahibi değilseniz ev sahibinden yazılı onay almanız, site yönetimi için de kimlik ve iletişim bilgilerini hazır tutmanız yeterli oluyor. Duvar yıkımı gibi yapısal değişiklik düşünüyorsanız önce ilgili kurumlardan izin gerekip gerekmediğini birlikte kontrol ediyoruz.",
+  },
+  {
+    q: "Avcılar'da keşif için nasıl randevu alabilirim?",
+    a: "WhatsApp veya telefonla yazmanız yeterli. Avcılar genelinde ücretsiz keşif yapıyoruz; ölçü alıyor, mevcut durumu fotoğraflıyor ve beklentilerinizi dinliyoruz. Ardından kapsam, malzeme ve takvim üzerinden yazılı bir teklif hazırlıyoruz.",
+  },
+];
+---
+
+<ServiceLayout
+  title="Avcılar İç Mimarlık, Ev Tadilatı ve Dekorasyon"
+  description="Avcılar'da site ve apartman dairelerinde iç mimarlık, ev tadilatı ve dekorasyon. Ambarlı ve Firuzköy'de ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/istanbul/avcilar-ic-mimarlik`}
+  h1="Avcılar İç Mimarlık, Ev Tadilatı ve Dekorasyon"
+  eyebrow="İstanbul · Avcılar"
+  lead="Deniz kıyısından üniversite çevresine uzanan, site ve apartman dairelerinin iç içe geçtiği bir ilçe. Avcılar tadilat projelerinde mesele çoğu zaman yapıyı değil, günlük yaşamı yeniden kurgulamak."
+  heroImage={heroPath}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İstanbul", href: `${CANONICAL_BASE}/istanbul` },
+    { label: "Avcılar" }
+  ]}
+  structuredData={localSchema}
+>
+
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Avcılar'da İç Mimarlık Hizmeti</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Avcılar, Marmara kıyısında Ambarlı'dan Firuzköy'e kadar uzanan, farklı dönemlerde yapılmış konutları bir arada barındıran bir ilçe. Aynı mahallede genellikle hem eski apartmanları hem de daha sonra yapılmış site dairelerini görmek mümkün. Bu çeşitlilik, Avcılar'da ev tadilatı yapılırken tek bir reçeteyle ilerlemeyi mümkün kılmıyor; her bina ve her daire kendi koşullarıyla değerlendiriliyor.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Şehir merkezine ve diğer Avrupa Yakası ilçelerine ulaşım için günlük yoğun bir trafikten geçen aileler, evde geçirdikleri zamanın verimli olmasını istiyor. Bu yüzden Avcılar'daki dekorasyon taleplerinde sıklıkla depolama, aydınlık bir salon, kolay temizlenen yüzeyler ve işlevsel bir mutfak öne çıkıyor. Estetik tercihler elbette önemli, ancak ilk soru çoğunlukla evin gündelik düzenini nasıl rahatlatabileceğimiz oluyor.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Çalışma şeklimiz basit: önce yerinde keşif ve ölçü, ardından kapsamın yazılı çıkarılması, 3D görselle tasarımın onaylanması ve şantiyenin tek ekip tarafından yürütülmesi. Avcılar'da eski binalarda sökümden sonra çıkabilecek sürprizleri baştan konuşuyor, site dairelerinde ise yönetim kurallarına uygun bir takvim hazırlıyoruz. Amacımız, Avcılar tadilat sürecini sizin için öngörülebilir ve sakin tutmak.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4">{district.locative} Sunduğumuz Hizmetler</h3>
+      <ul class="space-y-3">
+        {[
+          'Site ve apartman dairelerinde anahtar teslim ev tadilatı',
+          'Mutfak ve banyo yenileme',
+          'Ölçüye özel dolap, gardırop ve depolama çözümleri',
+          'Salon, yatak odası ve çocuk odası dekorasyonu',
+          '3D görselleştirme ile tasarım onayı',
+          'Site yönetimi izin ve çalışma düzeni takibi',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+        <p class="text-sm text-charcoal font-medium">Avcılar tadilat sürecinde ilk adım</p>
+        <p class="text-muted text-sm mt-2">
+          Mevcut planı, tesisat durumunu ve günlük kullanım alışkanlıklarınızı yerinde birlikte inceliyoruz. Bu görüşme ücretsiz ve herhangi bir taahhüt içermiyor.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bölge notları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Avcılar'da Bölge Notlarımız</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Ambarlı · Firuzköy</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Sahile ve ana arterlere yakın bu hatta rüzgar ve nem etkisi daha belirgin olabiliyor. Duvar yüzeyi hazırlığına ve havalandırmaya bu yüzden baştan zaman ayırıyoruz.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Cihangir · Üniversite · Merkez</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Apartman dairelerinin ağırlıkta olduğu mahalleler. Dar merdiven ve küçük asansörler nedeniyle malzeme sevkiyatını önceden planlıyoruz.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Denizköşkler · Gümüşpala · Yeşilkent</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Site ve çok daireli blokların bulunduğu bölgeler. Yönetim kuralları, ortak alan koruması ve çalışma saatleri şantiye düzenini belirleyen ana başlıklar.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <DistrictProjects districtSlug="avcilar-ic-mimarlik" />
+
+  <ProcessStrip districtSlug="avcilar-ic-mimarlik" />
+
+  <DistrictFAQ districtName="Avcılar" items={faqItems} />
+
+  <div class="py-12 border-t border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Hizmetlerimiz</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Tüm Hizmetler', href: '/hizmetler' },
+        { label: 'Anahtar Teslim Ev Tadilatı', href: '/hizmetler/anahtar-teslim/ev-tadilat' },
+        { label: 'Mutfak Yenileme', href: '/hizmetler/mutfak-yenileme' },
+        { label: 'Banyo Yenileme', href: '/hizmetler/banyo-yenileme' },
+        { label: 'Beylikdüzü İç Mimarlık', href: '/istanbul/beylikduzu-ic-mimarlik' },
+        { label: 'Büyükçekmece İç Mimarlık', href: '/istanbul/buyukcekmece-ic-mimarlik' },
+        { label: 'Küçükçekmece İç Mimarlık', href: '/istanbul/kucukcekmece-ic-mimarlik' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </div>
+
+  <DistrictBlogLinks districtSlug="avcilar-ic-mimarlik" />
+
+  <RelatedDistricts currentSlug="avcilar-ic-mimarlik" />
+
+</ServiceLayout>

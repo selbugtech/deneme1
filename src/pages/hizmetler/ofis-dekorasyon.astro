@@ -1,0 +1,276 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import ServiceAreaLinks from '../../components/ServiceAreaLinks.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImage } from '../../lib/cloudinary';
+
+const heroPath = '/images/ofis2.jpeg';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Ofis Dekorasyon",
+  "name": "İstanbul Ofis Dekorasyon",
+  "description": "Çalışma düzenine, marka kimliğine ve akustik konfora göre planlanan ofis iç mekân dekorasyonu. Açık ofis, toplantı odası ve karşılama alanı kurgusu.",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
+  "areaServed": { "@type": "City", "name": "İstanbul" },
+  "url": `${CANONICAL_BASE}/hizmetler/ofis-dekorasyon`,
+};
+
+const faqItems = [
+  {
+    q: "Ofis dekorasyonu ile ofis tadilatı arasındaki fark nedir?",
+    a: "Ofis dekorasyonu mekânın görünümünü ve kullanım düzenini ele alır: yerleşim, mobilya, aydınlatma, renk, yüzey ve marka kimliği. Tadilat ise elektrik, data, klima, bölme duvar ve zemin gibi teknik altyapıya müdahaleyi de içerir. İki iş çoğu zaman birlikte yürür; ofisinizde altyapı değişikliği gerekiyorsa ofis tadilat sayfamızdaki kapsamı da değerlendirmenizi öneririz.",
+  },
+  {
+    q: "Çalışanlar ofiste iken dekorasyon yapılabilir mi?",
+    a: "Kapsama bağlı olarak evet. Mobilya, aydınlatma ve aksesuar odaklı işler genellikle çalışma düzenini bozmadan yapılabilir. Boya, bölme duvar ve zemin gibi toz ve gürültü üreten işler için ise hafta sonu veya mesai dışı çalışma, bölüm bölüm ilerleme gibi seçenekler planlanır. Yöntemi iş başlamadan birlikte netleştiriyoruz.",
+  },
+  {
+    q: "Açık ofis mi, kapalı ofis mi daha doğru?",
+    a: "Çalışma biçimine göre değişir. İş birliğinin yoğun olduğu ekiplerde açık plan iletişimi kolaylaştırır; odaklanma gerektiren işlerde ise kapalı kabinler veya sessiz alanlar verimi artırır. Çoğu ofiste en dengeli çözüm, açık çalışma alanını küçük toplantı ve odak kabinleriyle destekleyen karma bir plandır.",
+  },
+  {
+    q: "Akustik konfor için neler yapılabilir?",
+    a: "Ses sorunu çoğunlukla yüzeylerin sert olmasından kaynaklanır. Halı, akustik panel, tavan kaplaması ve perde gibi yumuşak yüzeyler yankıyı azaltır; toplantı odalarında bölme duvarın ses yalıtımı ayrıca değerlendirilir. Mekânın kullanımına göre hangi çözümlerin yeterli olacağını keşifte konuşuyoruz.",
+  },
+  {
+    q: "Marka kimliği ofis dekorasyonuna nasıl yansıtılır?",
+    a: "Logo kullanımının ötesinde kurumsal renkler, malzeme seçimi, karşılama alanı ve toplantı odalarının dili marka algısını belirler. Amaç, markanızı tanıtan ama gün boyu çalışan ekibi yormayan dengeli bir atmosfer kurmaktır. Bunu kurumsal rehberiniz varsa ona dayanarak, yoksa sizinle konuşarak belirliyoruz.",
+  },
+  {
+    q: "Kiralık ofiste dekorasyon yaparken nelere dikkat edilmeli?",
+    a: "Kira sözleşmesinde mekâna yapılacak müdahalelerle ilgili hükümler bulunabilir; bu nedenle işe başlamadan önce bina yönetimi ve mülk sahibiyle konuşmak gerekir. Taşınabilir mobilya, aydınlatma ve çıkarılabilir bölme sistemleri, tahliye anında yanınızda götürebileceğiniz çözümler olarak öne çıkar.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const dahil = [
+  'Çalışma düzeni ve ekip yapısı analizi',
+  'Açık ofis, kabin ve toplantı odası yerleşimi',
+  'Karşılama ve bekleme alanı tasarımı',
+  'Marka kimliğine uygun renk ve malzeme paleti',
+  'Ergonomik mobilya ve ölçüye özel ünite seçimi',
+  'Aydınlatma ve akustik konfor önerileri',
+  'Bölme duvar ve tavan yüzey uygulamaları',
+  'Dinlenme ve mutfak alanı düzenlemesi',
+];
+
+const konular = [
+  { t: 'Çalışma biçimini okumak', d: 'Ofis dekorasyonu çalışma biçimine hizmet etmelidir. Ekibin ne kadarının masa başında, ne kadarının toplantıda olduğunu, telefon görüşmesi sıklığını ve ziyaretçi trafiğini konuşmadan yerleşim kurmak, güzel ama verimsiz bir ofis üretir.' },
+  { t: 'Aydınlatma ve göz konforu', d: 'Ekran başında geçen saatlerde parlama ve gölge göz yorgunluğunu artırır. Genel aydınlatmayı masa üstü armatürlerle desteklemek ve ekran karşısına doğrudan ışık gelmesini engellemek temel kuraldır.' },
+  { t: 'Akustik ve mahremiyet', d: 'Toplantı odasında konuşulanın dışarı taşmaması, açık alandaki ses seviyesinin kontrol altında olması iş verimini etkiler. Halı, akustik panel ve tavan çözümleri bu amaçla kullanılır.' },
+  { t: 'Esneklik ve büyüme', d: 'Ekip büyüdüğünde ofisin baştan kurulmasını gerektirmeyecek modüler bir plan, uzun vadede en akılcı yaklaşımdır. Hareketli bölmeler ve yeniden düzenlenebilen çalışma istasyonları buna imkân verir.' },
+];
+
+const hatalar = [
+  { t: 'Karşılama alanını ihmal etmek', d: 'Ziyaretçinin ilk gördüğü alan, markanın ilk izlenimidir. Resepsiyon ve bekleme alanı, ofisin geri kalanından kopuk değil ama özenli olmalıdır.' },
+  { t: 'Mobilyayı ergonomiden bağımsız seçmek', d: 'Sadece görünüşe göre seçilen sandalye ve masa uzun vadede şikâyet doğurur. Yükseklik ayarı ve bel desteği gibi özellikler dekorasyon kararının parçasıdır.' },
+  { t: 'Depolamayı unutmak', d: 'Dosya, ekipman ve kişisel eşya için yer ayrılmadığında masalar kısa sürede dağınıklaşır. Ölçüye özel dolap ve ortak depolama üniteleri baştan planlanmalıdır.' },
+  { t: 'Elektrik ve data noktalarını sonradan düşünmek', d: 'Masaların yerleşimi belli olmadan prizlerin konumu belirlenirse kablo karmaşası kaçınılmaz olur. Yerleşim planı ve teknik noktalar birlikte kurgulanmalıdır.' },
+];
+
+const surec = [
+  { no: '01', t: 'Keşif', d: 'Ofis, çalışma düzeni ve ihtiyaçlar yerinde incelenir.' },
+  { no: '02', t: 'Yerleşim Planı', d: 'Çalışma, toplantı ve ortak alanlar planlanır.' },
+  { no: '03', t: '3D Görsel', d: 'Mekân görselleştirilir; marka dili ve malzemeler onaylanır.' },
+  { no: '04', t: 'Uygulama', d: 'Yüzey, tavan, bölme ve mobilya işleri koordine edilir.' },
+  { no: '05', t: 'Teslim', d: 'Ofis çalışmaya hazır hâlde teslim edilir.' },
+];
+---
+
+<ServiceLayout
+  title="İstanbul Ofis Dekorasyon | Kurumsal Ofis Tasarımı"
+  description="İstanbul ofis dekorasyon: çalışma düzenine ve marka kimliğine göre yerleşim, aydınlatma, akustik ve mobilya kurgusu. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/hizmetler/ofis-dekorasyon`}
+  h1="İstanbul Ofis Dekorasyon"
+  eyebrow="Dekorasyon"
+  lead="Çalışma düzeninize, marka kimliğinize ve akustik konfora göre planlanan ofis iç mekânları. Yerleşimden aydınlatmaya, mobilyadan yüzey uygulamasına tek ekiple çalışıyoruz."
+  heroImage={heroPath}
+  ogImage={optimizedImage(heroPath)}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
+    { label: "Ofis Dekorasyon" }
+  ]}
+  structuredData={[serviceSchema, faqSchema]}
+>
+
+  <section class="py-12 border-b border-border">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-3xl font-bold text-charcoal mb-4">İstanbul'da Ofis Dekorasyonu</h2>
+        <p class="text-muted leading-relaxed mb-4">
+          Ofis, günün büyük bölümünün geçtiği ve markanın ziyaretçiyle ilk karşılaştığı yerdir. İyi dekore edilmiş
+          bir ofis iki şeyi birlikte yapar: çalışanın verimli ve rahat olmasını sağlar, ziyaretçiye de şirketin
+          nasıl çalıştığına dair net bir izlenim verir. Bu iki hedefi dengelemek, projenin asıl konusudur.
+        </p>
+        <p class="text-muted leading-relaxed mb-4">
+          Çalışmaya yerleşim planıyla başlıyoruz. Masaların konumu, toplantı odalarının yeri, ortak alanların
+          erişimi ve ekipler arası iletişim hattı, estetik kararlardan önce belirlenir. Ardından renk, malzeme ve
+          aydınlatma kararları bu plana göre alınır; böylece güzel görünen ama kullanımı zor ofisler ortaya çıkmaz.
+        </p>
+        <p class="text-muted leading-relaxed">
+          Levent, Maslak, Şişli ve Kadıköy gibi iş merkezlerinde farklı ölçeklerde ofislerle çalışıyoruz: birkaç
+          kişilik ekiplerden kat ofislerine kadar. Küçük ofislerde her metrekarenin çok amaçlı kullanımı, geniş
+          ofislerde ise ekiplerin birbirini rahatsız etmeden çalışabileceği bölgeleme öne çıkar.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-charcoal mb-4">Hizmete dahil olanlar</h3>
+        <ul class="space-y-3">
+          {dahil.map(item => (
+            <li class="flex items-start gap-3 text-sm text-muted">
+              <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+                <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+          <p class="text-sm text-charcoal font-medium">Altyapı değişikliği gerekiyor mu?</p>
+          <p class="text-muted text-sm mt-2">
+            Elektrik, data ve bölme duvar gibi teknik işler için
+            <a href="/hizmetler/anahtar-teslim/ofis-tadilat" class="text-gold hover:underline">ofis tadilat</a>,
+            yalnızca estetik güncelleme için
+            <a href="/hizmetler/anahtar-teslim/ofis-yenileme" class="text-gold hover:underline">ofis yenileme</a>
+            sayfalarımıza bakabilirsiniz.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Ofis Dekorasyonunda Belirleyici Konular</h2>
+    <p class="text-muted leading-relaxed max-w-3xl mb-8">
+      Aşağıdaki konular ofisin hem görünümünü hem günlük kullanımını doğrudan etkiler; keşifte her birini mekâna göre ele alıyoruz.
+    </p>
+    <div class="grid md:grid-cols-2 gap-6">
+      {konular.map(k => (
+        <div class="border border-border p-7 bg-[#FAF6F1]">
+          <h3 class="font-display text-lg font-bold text-charcoal mb-2">{k.t}</h3>
+          <p class="text-muted text-sm leading-relaxed">{k.d}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Ofisin Bölümlerine Göre Yaklaşım</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div>
+        <h3 class="font-semibold text-charcoal mb-2">Karşılama ve bekleme</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Resepsiyon, markanın ilk izlenimidir. Karşılama masası, bekleme oturması ve aydınlatma bu alanın dilini
+          oluşturur. Malzeme seçimi hem özenli görünmeli hem de yoğun kullanıma dayanmalıdır.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-charcoal mb-2">Çalışma alanı</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Çalışma alanında ergonomi, aydınlatma ve akustik birlikte düşünülür. Masaların ışığa göre konumu, kablo
+          düzeni ve ekipler arası mesafe verimi belirleyen unsurlardır. Tavan ve bölme çözümleri için
+          <a href="/hizmetler/alcipan-asma-tavan" class="text-gold hover:underline">alçıpan ve asma tavan</a>
+          hizmetimizi inceleyebilirsiniz.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-charcoal mb-2">Toplantı ve ortak alanlar</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Toplantı odalarında ses yalıtımı ve görüntü sistemleri için hazırlık, ortak alanda ise rahat bir mutfak
+          ve dinlenme köşesi planlanır. Ofis projelerinde izlediğimiz yöntemi
+          <a href="/blog/ofis-tadilat" class="text-gold hover:underline">ofis tadilat yazımızda</a> daha ayrıntılı bulabilirsiniz.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Ofis Dekorasyonunda Sık Yapılan Hatalar</h2>
+    <p class="text-muted leading-relaxed max-w-3xl mb-8">
+      Çoğu ofis memnuniyetsizliği, tasarım aşamasında düşünülmeyen birkaç konudan kaynaklanıyor.
+    </p>
+    <div class="space-y-4">
+      {hatalar.map((h, i) => (
+        <div class="flex gap-5 border border-border p-6 bg-[#FAF6F1]">
+          <p class="font-display text-2xl font-bold text-gold/40 shrink-0">0{i + 1}</p>
+          <div>
+            <h3 class="font-semibold text-charcoal mb-1">{h.t}</h3>
+            <p class="text-muted text-sm leading-relaxed">{h.d}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Ofis Dekorasyon Sürecimiz</h2>
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+      {surec.map(s => (
+        <div>
+          <p class="font-display text-2xl font-bold text-gold/40 mb-2">{s.no}</p>
+          <h3 class="font-semibold text-charcoal text-sm mb-2">{s.t}</h3>
+          <p class="text-muted text-xs leading-relaxed">{s.d}</p>
+        </div>
+      ))}
+    </div>
+    <p class="text-muted leading-relaxed max-w-3xl mt-8 text-sm">
+      Uygulama öncesinde mekânı görselleştirmek isterseniz <a href="/hizmetler/3d-tasarim" class="text-gold hover:underline">3D tasarım</a>
+      çalışmasından, mekân bazlı yönlendirme için <a href="/hizmetler/ic-mimarlik-danismanligi" class="text-gold hover:underline">iç mimarlık danışmanlığından</a> yararlanabilirsiniz.
+    </p>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Hizmet Verdiğimiz İlçeler</h2>
+    <ServiceAreaLinks names={['Levent', 'Şişli', 'Beşiktaş', 'Kadıköy', 'Ataşehir', 'Maltepe', 'Bakırköy', 'Üsküdar']} />
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="w-8 h-px bg-gold"></span>
+      <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Sıkça Sorulan Sorular</span>
+    </div>
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Ofis dekorasyon hakkında</h2>
+    <div class="space-y-4">
+      {faqItems.map(f => (
+        <details class="border border-border bg-[#FAF6F1] p-6 group">
+          <summary class="font-semibold text-charcoal cursor-pointer list-none flex items-start justify-between gap-4">
+            <span>{f.q}</span>
+            <span class="text-gold shrink-0 transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="text-muted text-sm leading-relaxed mt-4">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">İlgili Sayfalar</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Ofis Tadilat', href: '/hizmetler/anahtar-teslim/ofis-tadilat' },
+        { label: 'Ofis Yenileme', href: '/hizmetler/anahtar-teslim/ofis-yenileme' },
+        { label: 'Dükkan Dekorasyon', href: '/hizmetler/dukkan-dekorasyon' },
+        { label: 'Mimari Proje', href: '/hizmetler/mimari-proje' },
+        { label: 'Alçıpan ve Asma Tavan', href: '/hizmetler/alcipan-asma-tavan' },
+        { label: 'İstanbul Hizmet Bölgeleri', href: '/istanbul' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </section>
+
+</ServiceLayout>

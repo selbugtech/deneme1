@@ -1,0 +1,174 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictBlogLinks from '../../components/DistrictBlogLinks.astro';
+import DistrictFAQ from '../../components/DistrictFAQ.astro';
+import ProcessStrip from '../../components/ProcessStrip.astro';
+import DistrictProjects from '../../components/DistrictProjects.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImageW } from '../../lib/cloudinary';
+import { getDistrict } from '../../data/districts';
+
+// İlçe adı ve bulunma hali eki tek kaynaktan: src/data/districts.ts.
+const district = getDistrict('arnavutkoy-ic-mimarlik')!;
+const heroPath = '/images/salon1.png';
+const heroAbs = optimizedImageW(heroPath, 1600);
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "İç mimarlık, tadilat ve ev yenileme",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
+  "areaServed": { "@type": "Place", "name": "Arnavutköy, İstanbul" },
+  "url": `${CANONICAL_BASE}/istanbul/arnavutkoy-ic-mimarlik`,
+  "description": "Arnavutköy'de yeni site ve toplu konut daireleri için iç mimarlık, ev tadilatı ve dekorasyon.",
+  "image": heroAbs,
+};
+
+const faqItems = [
+  {
+    q: "Toplu konut projesinden yeni teslim aldığım daireyi nasıl kişiselleştirebilirim?",
+    a: "Toplu konut daireleri genellikle standart bir plan ve malzeme paketiyle teslim ediliyor. Bu yüzden ilk bakılan kalemler mutfak dolap kurgusu, gömme depolama, zemin ve duvar yüzeyleri ile aydınlatma oluyor. Taşınmadan önce başlamak en rahat senaryo; ev boşken hem ekip hem de siz daha az zorlanıyorsunuz.",
+  },
+  {
+    q: "Taşoluk veya Hadımköy'deki sitede yük asansörü ve çalışma saati kısıtları nasıl işliyor?",
+    a: "Site yönetimlerinin çoğu tadilat için yazılı bildirim, ekip listesi ve belirli çalışma saatleri istiyor. Yük asansörü kullanımı ve moloz tahliyesi de saat aralıklarına bağlanabiliyor. Şantiye takvimini bu kurallara göre kuruyor, gerekli yönetim yazışmalarını sizin adınıza yürütüyoruz.",
+  },
+  {
+    q: "Bolluca ve Karlıbayır'daki bina stoku tadilat kapsamını etkiler mi?",
+    a: "Yapı yaşı ve inşaat kalitesi site site değişebiliyor. Daha yeni binalarda altyapıya genellikle dokunmak gerekmiyor, eski binalarda ise tesisat ve elektrik hattını görüp kapsamı söküm sonrası netleştirmek daha sağlıklı. Bu nedenle keşifte binanın durumunu inceliyor ve kapsamı net bir çerçeveye oturtuyoruz.",
+  },
+  {
+    q: "Arnavutköy'de ölçüye özel mobilya ve dolap üretimi için teslimat sorun olur mu?",
+    a: "Merkeze uzak bölgelerde teslimat tek seferde ve doğru sırayla planlandığında sorun olmuyor. Dolap, tezgah ve kapı gibi ölçüye özel parçaları ölçüleri sahada kesinleştirdikten sonra üretime alıyor, kurulum günlerini şantiye takvimine göre ayarlıyoruz.",
+  },
+  {
+    q: "Boğazköy ve Arnavutköy Merkez gibi daha müstakil yerleşimlerde tadilat yapıyor musunuz?",
+    a: "Evet. Müstakil ev veya bahçeli konutlarda iş, bir site dairesine göre daha geniş kapsamlı olabiliyor; çatı, bahçe giriş ve ısıtma gibi başlıklar da konuşuluyor. Keşifte evin kullanım biçimini dinliyor, yalnızca iç mimariyi mi yoksa daha geniş bir yenilemeyi mi planlayacağımızı birlikte belirliyoruz.",
+  },
+];
+---
+
+<ServiceLayout
+  title="Arnavutköy İç Mimarlık, Ev Tadilatı ve Dekorasyon"
+  description="Arnavutköy'de yeni site ve toplu konut dairelerinde iç mimarlık, ev tadilatı ve dekorasyon. Hadımköy ve Taşoluk'ta ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/istanbul/arnavutkoy-ic-mimarlik`}
+  h1="Arnavutköy İç Mimarlık, Ev Tadilatı ve Dekorasyon"
+  eyebrow="İstanbul · Arnavutköy"
+  lead="Hızla yeni konut projeleriyle dolan, geniş bir ilçe. Arnavutköy'de asıl iş, standart teslim edilen dairelere kendi kullanımınıza göre karakter kazandırmak."
+  heroImage={heroPath}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İstanbul", href: `${CANONICAL_BASE}/istanbul` },
+    { label: "Arnavutköy" }
+  ]}
+  structuredData={localSchema}
+>
+
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Arnavutköy'de İç Mimarlık Hizmeti</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Arnavutköy, İstanbul'un kuzeybatısında yüzölçümü bakımından geniş, yeni konut projelerinin hızla çoğaldığı bir ilçe. Hadımköy, Taşoluk, Bolluca ve Karlıbayır çevresinde özellikle yeni site ve toplu konut daireleri dikkat çekiyor. Birçok aile bu daireleri anahtar teslim aldıktan sonra evi kendi yaşantısına uydurmak için tadilat ve dekorasyon yoluna gidiyor.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Yeni teslim edilen dairelerin ortak özelliği, standart plan ve standart malzeme paketi. Aynı sitedeki yüzlerce dairenin mutfak dolabı, zemin kaplaması ve aydınlatması birbirine çok benziyor. Bu yüzden Arnavutköy ev tadilatı taleplerinde en çok şunları görüyoruz: mutfak dolabının gerçek kullanıma göre yeniden kurgulanması, gömme depolama alanları eklenmesi, salon ve yatak odasının düzeninin kişiselleştirilmesi ve ışıklandırmanın katmanlı hale getirilmesi.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Yeni binalarda altyapı çoğunlukla sağlam olduğu için işler kapsamlı yıkımdan çok yüzey, dolap ve mobilya ağırlıklı ilerliyor. Bu da süreci hem hızlandırıyor hem de ev içindeki toz ve gürültüyü azaltıyor. Buna karşılık sitelerin yönetim planı çalışma saatlerini, yük asansörü kullanımını ve moloz tahliyesini düzenlediği için şantiye takvimi bu kurallara göre hazırlanıyor.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Arnavutköy'ün bir başka özelliği mesafe. Şehir merkezine ve üretim atölyelerine uzak olması, sevkiyat planını işin önemli bir parçası haline getiriyor. Ölçüye özel dolap, tezgah ve kapı gibi üretimleri tek seferde ve doğru sırada getirecek şekilde programlıyor, ekibin sahada boş beklemesini engelliyoruz.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Boğazköy ve Arnavutköy Merkez gibi daha müstakil dokuya sahip yerlerde ise bahçeli ve tek katlı konutlarla da çalışıyoruz. Bu tip evlerde ısıtma, bahçe girişi ve iç mekân akışı gibi konular da dekorasyon planının içine dahil oluyor.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4">{district.locative} Sunduğumuz Hizmetler</h3>
+      <ul class="space-y-3">
+        {[
+          'Yeni site ve toplu konut dairelerinde anahtar teslim ev tadilatı',
+          'Ölçüye özel dolap ve gömme depolama çözümleri',
+          'Mutfak kurgusunun yeniden tasarlanması',
+          'Salon, yatak odası ve çocuk odası dekorasyonu',
+          'Katmanlı aydınlatma planı',
+          'Site yönetimi izin ve yük asansörü süreçlerinin takibi',
+          'Taşınmadan önce planlı şantiye takvimi',
+          '3D görselleştirme ile tasarım onayı',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+        <p class="text-sm text-charcoal font-medium">Komşu ilçedeki rehberimiz</p>
+        <p class="text-muted text-sm mt-2">
+          Yeni konut stokunun yoğun olduğu Başakşehir için hazırladığımız ev tadilatı rehberi, toplu konut dairelerinde sık karşılaşılan kalemleri anlatıyor.
+        </p>
+        <a href="/blog/basaksehir-ev-tadilati" class="text-xs text-gold hover:underline mt-2 inline-block">Başakşehir ev tadilatı rehberi →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bölge notları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Arnavutköy'de Bölge Notlarımız</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Hadımköy · Taşoluk</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Yeni site ve toplu konut projelerinin öne çıktığı hat. Standart teslim edilen dairelerde depolama, mutfak ve zemin kalemleri en sık gündeme geliyor.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Bolluca · Karlıbayır</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Bina yaşı ve yapı kalitesinin siteden siteye değişebildiği bölge. Kapsamı keşifte binanın durumuna bakarak, gerekirse söküm sonrası netleştiriyoruz.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Boğazköy · Arnavutköy Merkez</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Daha müstakil, bahçeli ve düşük katlı konutların da görüldüğü yerleşim. Isıtma, bahçe girişi ve iç mekân akışı dekorasyon planının parçası.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <DistrictProjects districtSlug="arnavutkoy-ic-mimarlik" />
+
+  <ProcessStrip districtSlug="arnavutkoy-ic-mimarlik" />
+
+  <DistrictFAQ districtName="Arnavutköy" items={faqItems} />
+
+  <div class="py-12 border-t border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Hizmetlerimiz</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Tüm Hizmetler', href: '/hizmetler' },
+        { label: 'Anahtar Teslim Ev Tadilatı', href: '/hizmetler/anahtar-teslim/ev-tadilat' },
+        { label: 'Anahtar Teslim Ev Yenileme', href: '/hizmetler/anahtar-teslim/ev-yenileme' },
+        { label: 'Mutfak Yenileme', href: '/hizmetler/mutfak-yenileme' },
+        { label: 'Salon Tasarımı', href: '/hizmetler/salon-tasarimi' },
+        { label: 'Başakşehir Ev Tadilatı Rehberi', href: '/blog/basaksehir-ev-tadilati' },
+        { label: 'Başakşehir İç Mimarlık', href: '/istanbul/basaksehir-ic-mimarlik' },
+        { label: 'Esenyurt İç Mimarlık', href: '/istanbul/esenyurt-ic-mimarlik' },
+        { label: 'Büyükçekmece İç Mimarlık', href: '/istanbul/buyukcekmece-ic-mimarlik' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </div>
+
+  <DistrictBlogLinks districtSlug="arnavutkoy-ic-mimarlik" />
+
+  <RelatedDistricts currentSlug="arnavutkoy-ic-mimarlik" />
+
+</ServiceLayout>

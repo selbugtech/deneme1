@@ -1,0 +1,279 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import ServiceAreaLinks from '../../components/ServiceAreaLinks.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImage } from '../../lib/cloudinary';
+
+const heroPath = '/images/mutfak4.jpeg';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Mutfak Dolabı",
+  "name": "Mutfak Dolabı İstanbul",
+  "description": "Mutfağın ölçüsüne göre tasarlanan, çekmece ve mekanizma detaylarıyla ölçüye özel mutfak dolabı tasarımı, üretimi ve montajı.",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
+  "areaServed": { "@type": "City", "name": "İstanbul" },
+  "url": `${CANONICAL_BASE}/hizmetler/mutfak-dolabi`,
+};
+
+const faqItems = [
+  {
+    q: "Ölçüye özel mutfak dolabı hazır dolaptan nasıl ayrılır?",
+    a: "Hazır dolaplar standart modüllerden oluşur; mutfağın ölçüsü bu modüllere tam uymazsa kenarlarda boşluk veya dolgu parçaları kalır. Ölçüye özel mutfak dolabı ise duvar, kolon ve tesisat çıkıntılarına göre tasarlanır; böylece alan kayıpsız değerlendirilir. Çekmece düzeni, iç organizasyon ve kapak detayları da kullanım alışkanlığınıza göre belirlenebilir.",
+  },
+  {
+    q: "Dolap için hangi malzemeler kullanılır?",
+    a: "Gövde için genellikle nem ve darbeye dayanıklı levha malzemeler, kapak için boyalı, lamine, akrilik veya ahşap kaplama gibi seçenekler tercih edilir. Hangisinin uygun olduğu bütçenin yanı sıra mutfağın kullanım yoğunluğuna, buharlı ortama ve temizlik alışkanlığına göre değişir. Keşifte numuneleri göstererek avantaj ve sınırlamalarını açıklıyoruz.",
+  },
+  {
+    q: "Ölçü ne zaman alınmalı?",
+    a: "Ölçü, zemin ve duvar kaplamaları netleştikten sonra alınmalıdır; çünkü seramik ve boya kalınlığı net ölçüyü değiştirebilir. Eski dolaplar yerinde dururken alınan ölçü yaklaşık olarak fikir verir ama üretim için kesin değildir. Bu nedenle kesin ölçüyü uygulamanın uygun aşamasında yeniden alıp teyit ediyoruz.",
+  },
+  {
+    q: "Mekanizma ve aksesuar seçimi neden önemli?",
+    a: "Dolabın günlük kullanımını menteşe, çekmece rayı, kapak açılış sistemleri ve iç organizasyon aksesuarları belirler. Yumuşak kapanan, tam açılan çekmeceler ve köşe dolap mekanizmaları kullanım rahatlığını artırır. Mekanizmaların kalitesi dolabın ömrüne de doğrudan etki ettiğinden, görünmeyen bu parçalara özellikle dikkat ediyoruz.",
+  },
+  {
+    q: "Üretim ve montaj ne kadar sürer?",
+    a: "Süre, tasarımın karmaşıklığına, seçilen malzemeye ve atölyenin iş yüküne bağlıdır. Tasarım onayından sonra üretim, ardından montaj yapılır. Tezgah ve ankastre ürünlerle birlikte koordine edilen mutfaklarda toplam takvimi keşiften sonra, kapsam netleşince paylaşıyoruz. Üretim süresince diğer yüzey işleri paralel ilerletilerek bekleme azaltılır.",
+  },
+  {
+    q: "Mutfak dolabı değişimi için tüm mutfağı yenilemek gerekir mi?",
+    a: "Hayır. Gövdeler sağlamsa kapak ve tezgah yenileme gibi daha sınırlı çözümler mümkündür; gövdeler yıpranmışsa veya plan işlevsel değilse dolapları komple yenilemek daha doğru olur. Altyapıya da müdahale gerekiyorsa mutfak yenileme sayfamızdaki kapsamı değerlendirmenizi öneririz.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const dahil = [
+  'Yerinde ölçü ve mevcut tesisat değerlendirmesi',
+  'Çalışma üçgenine göre plan şeması',
+  '3D görselle dolap ve kapak onayı',
+  'Gövde, kapak ve tezgah altı detay tasarımı',
+  'Çekmece, köşe ve iç organizasyon mekanizmaları',
+  'Ankastre fırın, ocak ve bulaşık makinesi uyumu',
+  'Üretim ve yerinde montaj',
+  'Tezgah altı ve dolap içi aydınlatma',
+];
+
+const konular = [
+  { t: 'Plan ve çalışma düzeni', d: 'Ocak, eviye ve buzdolabı arasındaki mesafe mutfakta kaç adım atıldığını belirler. Dolap planı bu üçgene göre kurulur; sık kullanılan eşyalar ocak ve eviye yakınında, nadir kullanılanlar üst ve köşe bölümlerde konumlandırılır.' },
+  { t: 'Malzeme ve nem', d: 'Mutfak buhar, ısı ve nemin yoğun olduğu bir ortamdır. Gövde ve kenar bantlarının nem dayanımı, eviye altı dolapların korunması ve kapak malzemesinin temizlenebilirliği uzun ömür için belirleyicidir.' },
+  { t: 'Mekanizma kalitesi', d: 'Çekmece rayları, menteşeler ve kaldırma sistemleri günde onlarca kez kullanılır. Yumuşak kapanma ve sağlam taşıma kapasitesi, ilk günden çok yıllar sonra fark edilen bir kalite göstergesidir.' },
+  { t: 'Ankastre uyum', d: 'Ankastre fırın, bulaşık makinesi ve buzdolabı için nişlerin ürün ölçüsüne göre hazırlanması gerekir. Ürünler seçilmeden dolap üretimine geçmemek, sonradan uyumsuzluk yaşanmasını önler.' },
+];
+
+const hatalar = [
+  { t: 'Ürünleri seçmeden dolap sipariş etmek', d: 'Ankastre cihazların ölçüleri farklılık gösterir. Cihazlar belirlenmeden verilen dolap ölçüsü, montaj sırasında değişiklik gerektirebilir.' },
+  { t: 'Köşeleri verimsiz bırakmak', d: 'Köşe dolaplar doğru mekanizma ile kullanılabilir hâle gelir; aksi hâlde derinde kalan eşyalara ulaşılamaz ve alan boşa gider.' },
+  { t: 'Üst dolap yüksekliğini standart bırakmak', d: 'Kullanıcının boyuna göre ayarlanmayan üst dolaplar zor erişilir. Yükseklik ve derinlik, kullanıcıya göre belirlenmelidir.' },
+  { t: 'Depolamayı sadece dolapla sınırlamak', d: 'Çekmece içi organizatör, kaldırılabilir çöp kovası ve baharatlık gibi küçük çözümler de planın parçasıdır.' },
+];
+
+const surec = [
+  { no: '01', t: 'Keşif ve Ölçü', d: 'Mutfak ve tesisat noktaları yerinde incelenir.' },
+  { no: '02', t: 'Plan ve 3D', d: 'Yerleşim ve kapak seçenekleri görselle onaylanır.' },
+  { no: '03', t: 'Kesin Ölçü', d: 'Kaplamalar tamamlandıktan sonra kesin ölçü alınır.' },
+  { no: '04', t: 'Üretim', d: 'Dolap gövde ve kapakları atölyede üretilir.' },
+  { no: '05', t: 'Montaj', d: 'Montaj, ayar ve ankastre uyumu yerinde tamamlanır.' },
+];
+---
+
+<ServiceLayout
+  title="Mutfak Dolabı İstanbul | Ölçüye Özel Mutfak Dolabı"
+  description="Mutfak dolabı İstanbul: ölçüye özel tasarım, dayanıklı malzeme, kaliteli mekanizma ve yerinde montaj tek elden. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/hizmetler/mutfak-dolabi`}
+  h1="Mutfak Dolabı İstanbul: Ölçüye Özel Tasarım"
+  eyebrow="Oda Bazlı Hizmet"
+  lead="Mutfağınızın ölçüsüne, kullanım alışkanlıklarınıza ve ankastre ürünlerinize göre tasarlanan mutfak dolabı. Tasarım, üretim ve montaj tek ekipte."
+  heroImage={heroPath}
+  ogImage={optimizedImage(heroPath)}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
+    { label: "Mutfak Dolabı" }
+  ]}
+  structuredData={[serviceSchema, faqSchema]}
+>
+
+  <section class="py-12 border-b border-border">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-3xl font-bold text-charcoal mb-4">İstanbul'da Ölçüye Özel Mutfak Dolabı</h2>
+        <p class="text-muted leading-relaxed mb-4">
+          Mutfak dolabı, mutfağın hem en çok yer kaplayan hem de en çok kullanılan parçasıdır. Çekmecelerin açılış
+          kolaylığı, eşyaların nerede durduğu, köşelerin ne kadar verimli kullanıldığı ve kapakların ne kadar
+          kolay temizlendiği günlük hayatta sürekli hissedilir. Bu nedenle dolap, bir görünüş meselesi olmanın ötesinde bir kullanım tasarımıdır.
+        </p>
+        <p class="text-muted leading-relaxed mb-4">
+          İstanbul'daki dairelerde mutfaklar çoğunlukla standart olmayan ölçülerde gelir: kolon çıkıntıları, eğri
+          duvarlar, tesisat bacaları ve farklı tavan yükseklikleri sık görülür. Hazır modüllerin bu mutfaklarda bıraktığı
+          boşluklar ölçüye özel üretimle kapanır. Dolap, duvara ve tezgaha tam oturur; her santimetre depolama olarak değerlendirilir.
+        </p>
+        <p class="text-muted leading-relaxed">
+          Sürece keşifle başlıyor, mutfağı yaşam alışkanlıklarınızı dinleyerek planlıyoruz. Ne kadar pişiriyorsunuz,
+          kaç kişi aynı anda mutfakta çalışıyor, hangi ankastre ürünler yer alacak? Sonra dolap gövdesi, kapak ve mekanizma
+          kararlarını bu cevaplara göre alıyor, tasarımı 3D görselle onaylatıyoruz.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-charcoal mb-4">Hizmete dahil olanlar</h3>
+        <ul class="space-y-3">
+          {dahil.map(item => (
+            <li class="flex items-start gap-3 text-sm text-muted">
+              <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+                <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+          <p class="text-sm text-charcoal font-medium">Yalnızca dolap mı, yoksa tüm mutfak mı?</p>
+          <p class="text-muted text-sm mt-2">
+            Tezgah, zemin ve altyapıyı da yenilemek istiyorsanız
+            <a href="/hizmetler/mutfak-yenileme" class="text-gold hover:underline">mutfak yenileme</a>
+            sayfamıza bakın. Fikir toplamak için
+            <a href="/blog/mutfak-dekorasyon-fikirleri" class="text-gold hover:underline">mutfak dekorasyon fikirleri</a>
+            yazımız faydalı olabilir.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Mutfak Dolabında Kararı Belirleyen Konular</h2>
+    <p class="text-muted leading-relaxed max-w-3xl mb-8">
+      Aşağıdaki dört başlık, dolabın hem ilk günkü hem uzun vadeli performansını belirler. Keşifte her birini mutfağınıza göre ele alıyoruz.
+    </p>
+    <div class="grid md:grid-cols-2 gap-6">
+      {konular.map(k => (
+        <div class="border border-border p-7 bg-[#FAF6F1]">
+          <h3 class="font-display text-lg font-bold text-charcoal mb-2">{k.t}</h3>
+          <p class="text-muted text-sm leading-relaxed">{k.d}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Mutfak Düzenine Göre Dolap Kurgusu</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div>
+        <h3 class="font-semibold text-charcoal mb-2">Tek sıra ve paralel</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Dar ve uzun mutfaklarda tek sıra veya paralel düzen, dolaşımı rahat tutar. Üst dolaplar tavana kadar
+          uzatılarak depolama artırılabilir; en üst raflar nadir kullanılan eşyalara ayrılır.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-charcoal mb-2">L ve U düzen</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          L ve U düzenlerde köşe, planın en kritik noktasıdır. Köşede doğru mekanizma kullanılmadığında hacim
+          boşa gider; çıkış yapan sepetler ve dönen raflar bu sorunu çözer.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-charcoal mb-2">Açık plan ve ada</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Salonla bütünleşen mutfaklarda dolap, salonun mobilya diliyle uyumlu olmalıdır. Ada veya yarım duvar
+          kullanılacaksa çevresindeki dolaşım payı ve su-elektrik hatları önceden planlanır.
+        </p>
+      </div>
+    </div>
+    <p class="text-muted leading-relaxed max-w-3xl mt-8 text-sm">
+      Mutfağın duvar ve tavan yüzeyleri için <a href="/hizmetler/boya-badana" class="text-gold hover:underline">boya ve badana</a>,
+      tavanda ışık çözümleri için <a href="/hizmetler/alcipan-asma-tavan" class="text-gold hover:underline">alçıpan ve asma tavan</a>
+      hizmetlerimiz dolapla birlikte planlanabilir. Dolap ölçüleri ve mutfak yenilemesinin diğer ayrıntıları için
+      <a href="/blog/mutfak-yenileme-istanbul" class="text-gold hover:underline">mutfak yenileme rehberimizi</a> okuyabilirsiniz.
+    </p>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Mutfak Dolabında Sık Görülen Hatalar</h2>
+    <p class="text-muted leading-relaxed max-w-3xl mb-8">
+      Yenilenmiş mutfaklarda memnuniyetsizliğin çoğu, tasarım aşamasında düzeltilebilecek dört konuda toplanıyor.
+    </p>
+    <div class="space-y-4">
+      {hatalar.map((h, i) => (
+        <div class="flex gap-5 border border-border p-6 bg-[#FAF6F1]">
+          <p class="font-display text-2xl font-bold text-gold/40 shrink-0">0{i + 1}</p>
+          <div>
+            <h3 class="font-semibold text-charcoal mb-1">{h.t}</h3>
+            <p class="text-muted text-sm leading-relaxed">{h.d}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Mutfak Dolabı Sürecimiz</h2>
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+      {surec.map(s => (
+        <div>
+          <p class="font-display text-2xl font-bold text-gold/40 mb-2">{s.no}</p>
+          <h3 class="font-semibold text-charcoal text-sm mb-2">{s.t}</h3>
+          <p class="text-muted text-xs leading-relaxed">{s.d}</p>
+        </div>
+      ))}
+    </div>
+    <p class="text-muted leading-relaxed max-w-3xl mt-8 text-sm">
+      Mutfağın salonla ilişkisi için <a href="/hizmetler/salon-tasarimi" class="text-gold hover:underline">salon tasarımı</a>,
+      uygulamadan önce görselleştirmek için <a href="/hizmetler/3d-tasarim" class="text-gold hover:underline">3D tasarım</a> hizmetlerimize göz atabilirsiniz.
+    </p>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Hizmet Verdiğimiz İlçeler</h2>
+    <ServiceAreaLinks names={['Kadıköy', 'Beşiktaş', 'Şişli', 'Ataşehir', 'Üsküdar', 'Bakırköy', 'Maltepe', 'Beylikdüzü', 'Başakşehir']} />
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="w-8 h-px bg-gold"></span>
+      <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Sıkça Sorulan Sorular</span>
+    </div>
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Mutfak dolabı hakkında</h2>
+    <div class="space-y-4">
+      {faqItems.map(f => (
+        <details class="border border-border bg-[#FAF6F1] p-6 group">
+          <summary class="font-semibold text-charcoal cursor-pointer list-none flex items-start justify-between gap-4">
+            <span>{f.q}</span>
+            <span class="text-gold shrink-0 transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="text-muted text-sm leading-relaxed mt-4">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">İlgili Sayfalar</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Mutfak Yenileme', href: '/hizmetler/mutfak-yenileme' },
+        { label: 'Mutfak Dekorasyon Fikirleri', href: '/blog/mutfak-dekorasyon-fikirleri' },
+        { label: 'Mutfak Yenileme Rehberi', href: '/blog/mutfak-yenileme-istanbul' },
+        { label: 'Giyinme Odası Tasarımı', href: '/hizmetler/giyinme-odasi-tasarimi' },
+        { label: 'Banyo Yenileme', href: '/hizmetler/banyo-yenileme' },
+        { label: 'İstanbul Hizmet Bölgeleri', href: '/istanbul' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </section>
+
+</ServiceLayout>

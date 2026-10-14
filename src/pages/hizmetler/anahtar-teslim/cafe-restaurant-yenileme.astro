@@ -9,7 +9,7 @@ const serviceSchema = {
   "@type": "Service",
   "serviceType": "Cafe ve Restaurant Yenileme",
   "name": "İstanbul Cafe ve Restaurant Yenileme",
-  "description": "İstanbul'da anahtar teslim cafe, restoran ve bar yenileme. Altyapıya dokunmadan estetik güncelleme, konsept yenileme ve hızlı mekan tazelemesi.",
+  "description": "İstanbul'da anahtar teslim cafe, restoran ve bar yenileme. Mutfak ve elektrik altyapısına dokunmadan salon konsepti, aydınlatma ve dekor tazeleme; kısa kapalı kalma süresi.",
   "provider": { "@type": "Organization", "@id": `${CANONICAL_BASE}/#organization`, "name": "Master İç Mimarlık" },
   "areaServed": { "@type": "City", "name": "İstanbul" },
   "url": `${CANONICAL_BASE}/hizmetler/anahtar-teslim/cafe-restaurant-yenileme`
@@ -19,21 +19,21 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Cafe yenileme ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Altyapıya dokunmayan bir cafe veya restoran yenilemesi genellikle 2–4 haftada tamamlanabilir. Yalnızca boya, zemin ve dekor değişimi gibi minimal projeler daha kısa sürebilir. Bu süre tadilat projelerine kıyasla çok daha kısadır ve işletmenizin daha çabuk yeniden açılmasını sağlar." } },
-    { "@type": "Question", "name": "Yenileme ile tadilat arasındaki fark nedir?", "acceptedAnswer": { "@type": "Answer", "text": "Yenileme; mevcut elektrik, havalandırma ve mutfak altyapısına dokunmadan estetik güncelleme yapmak demektir — duvar, zemin, aydınlatma ve mobilya değişimleri bu kapsamdadır. Tadilat ise mutfak altyapısı, elektrik güçlendirme veya yapısal değişiklik içerir. Altyapınız sorunsuzsa yenileme çok daha hızlı ve ekonomik bir seçenektir." } },
+    { "@type": "Question", "name": "Cafe yenileme sezon veya açılış tarihine yetiştirilebilir mi?", "acceptedAnswer": { "@type": "Answer", "text": "Mutfak ve elektrik altyapısına dokunulmadığı için iş kalemleri kısa ve ayrı ayrı planlanabilir; kapalı gün veya mesai sonrası çalışma ile belirli bir tarihe yetiştirmek çoğunlukla mümkündür. Kapsama göre takvimi keşifte birlikte çıkarıyoruz." } },
+    { "@type": "Question", "name": "Mutfağa dokunmadan salon konseptini yenilemek mümkün mü?", "acceptedAnswer": { "@type": "Answer", "text": "Evet. Müşterinin gördüğü salon, bar önü, teras ve girişteki duvar, zemin, aydınlatma, mobilya ve dekor yenilenir; mutfak ekipmanı, havalandırma ve elektrik hatlarına dokunulmaz. Mutfak tarafı da değişecekse o kısım cafe ve restoran tadilat kapsamında ele alınır." } },
     { "@type": "Question", "name": "İşletme açıkken yenileme yapılabilir mi?", "acceptedAnswer": { "@type": "Answer", "text": "Cafe ve restoran yenilemelerinde bölgeli uygulama ile işletme açıkken çalışmak genellikle mümkündür. Zemin veya boyama gibi kapsamlı işler için kapalı saatlerde veya hafta sonu çalışmayı tercih edebiliriz. İşletmenizin kesintisiz sürmesini hedefleyerek takvimi buna göre planlıyoruz." } },
-    { "@type": "Question", "name": "Restoran yenileme bütçesi nasıl belirlenir?", "acceptedAnswer": { "@type": "Answer", "text": "Bütçe; mekanın büyüklüğü, seçilen malzeme ve dekor kalitesi ile yenileme kapsamına göre belirlenir. Altyapı müdahalesi olmadığından yenileme, tadilata kıyasla çok daha ekonomiktir. Ücretsiz keşif ziyaretimizde tüm kalemleri içeren şeffaf bütçe sunuyoruz." } }
+    { "@type": "Question", "name": "Konsept yenilemede mevcut menü ve marka nasıl dikkate alınır?", "acceptedAnswer": { "@type": "Answer", "text": "Yeni atmosfer; menünüzün, hedef müşterinizin ve marka dilinizin üzerine kurulur. Renk, aydınlatma sıcaklığı, oturma düzeni ve dekor tercihleri 3D görselle birlikte değerlendirilir, onaydan sonra uygulanır." } }
   ]
 };
 ---
 
 <ServiceLayout
-  title="İstanbul Cafe ve Restaurant Yenileme | Hızlı Mekan Tazelemesi"
-  description="İstanbul'da cafe, restoran ve bar yenileme. Altyapıya dokunmadan hızlı ve ekonomik estetik güncelleme. Beşiktaş, Kadıköy, Nişantaşı."
+  title="Cafe ve Restaurant Yenileme İstanbul | Konsept"
+  description="İstanbul'da cafe, restoran ve bar yenileme: mutfağa ve elektriğe dokunmadan salon konsepti, aydınlatma ve dekor tazeleme. Keşif: 0533 039 15 65"
   canonicalUrl={`${CANONICAL_BASE}/hizmetler/anahtar-teslim/cafe-restaurant-yenileme`}
-  h1="İstanbul Cafe ve Restaurant Yenileme"
+  h1="İstanbul Cafe ve Restaurant Yenileme: Konsept Tazeleme"
   eyebrow="Anahtar Teslim"
-  lead="Altyapısı sağlam ama görünümü eskimiş cafe ve restoranlar için hızlı ve ekonomik çözüm. Zemin, aydınlatma, mobilya ve dekor güncellemeleriyle mekanı kısa sürede yeniliyoruz, işletmeniz minimum kapalı kalıyor."
+  lead="Mutfak ve elektrik altyapısına dokunmadan salonun konseptini, aydınlatmasını, mobilyasını ve dekorunu tazeliyoruz. Kapalı kalma süresi kısa olur, mekân yeni bir atmosferle yeniden açılır."
   breadcrumb={[
     { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
     { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
@@ -52,7 +52,7 @@ const faqSchema = {
   <!-- Scope -->
   <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
     <div>
-      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Cafe & Restaurant Yenileme Hizmetimiz</h2>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Konsept ve Atmosfer Odaklı Yenileme</h2>
       <p class="text-muted leading-relaxed mb-4">
         Cafe ve restoran yenilemesi; işletmenizin mevcut altyapısına, mutfak düzenine ve elektrik sistemine dokunmadan estetik görünümü güncellemek demektir. Duvar kaplaması, zemin, aydınlatma armatürleri, mobilya ve dekor değişimiyle mekanın ambiyansı kısa sürede köklü biçimde dönüştürülebilir.
       </p>
@@ -60,7 +60,7 @@ const faqSchema = {
         İşletmenizin kapalı kalma süresini minimumda tutmak önceliğimizdir. Bölgeli uygulama ve mesai dışı çalışma seçenekleriyle çoğu zaman işletme faaliyetlerini durdurmadan yenileme yapılabilir. <a href="/hizmetler/3d-tasarim" class="text-gold hover:underline">3D görselleştirme</a> ile yeni konsepti uygulamadan önce onaylayabilirsiniz.
       </p>
       <p class="text-muted leading-relaxed">
-        Mutfak altyapısı, elektrik veya yapısal müdahale gerekiyorsa <a href="/hizmetler/anahtar-teslim/cafe-restaurant-tadilat" class="text-gold hover:underline">cafe ve restoran tadilat</a> hizmetimiz daha uygun seçenektir. Beşiktaş, Kadıköy, Nişantaşı, Levent ve tüm İstanbul'da hizmet veriyoruz.
+        Mutfak altyapısı, elektrik veya havalandırma değişecekse <a href="/hizmetler/anahtar-teslim/cafe-restaurant-tadilat" class="text-gold hover:underline">mutfak ve elektrik altyapısı değişen cafe ve restoran tadilat</a> sayfasındaki kapsam daha uygundur. Beşiktaş, Kadıköy, Nişantaşı, Levent ve tüm İstanbul'da hizmet veriyoruz.
       </p>
     </div>
     <div>
@@ -93,13 +93,13 @@ const faqSchema = {
   <div class="py-12 border-b border-border">
     <div class="flex items-center gap-3 mb-8">
       <span class="w-8 h-px bg-gold"></span>
-      <h2 class="font-display text-2xl font-bold text-charcoal">Cafe Yenileme ile Ne Değişir?</h2>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Altyapıya Dokunmadan Cafe ve Restoranda Ne Değişir?</h2>
     </div>
     <div class="grid md:grid-cols-3 gap-8">
       {[
         {
           title: 'Atmosfer Müşteri Kararını Etkiler',
-          desc: 'Araştırmalar, mekan ambiyansının ortalama oturuş süresini ve harcama miktarını doğrudan etkilediğini göstermektedir. Doğru aydınlatma rengi ve sıcaklığı, zemin ve duvar malzemeleri müşteri deneyimini yenileme ile büyük ölçüde iyileştirilebilir.',
+          desc: 'Mekan ambiyansı, müşterinin içeride kalmak isteyip istemediğini etkileyen unsurlardan biridir. Aydınlatma rengi ve sıcaklığı, zemin ve duvar malzemeleri yenileme ile müşteri deneyimini olumlu yönde değiştirebilir.',
         },
         {
           title: 'Sosyal Medya Görünürlüğü Artıyor',
@@ -160,10 +160,10 @@ const faqSchema = {
     </div>
     <div class="divide-y divide-border">
       {[
-        { q: 'Cafe yenileme ne kadar sürer?', a: 'Altyapıya dokunmayan bir cafe veya restoran yenilemesi genellikle 2–4 haftada tamamlanabilir. Yalnızca boya, zemin ve dekor değişimi gibi minimal projeler daha kısa sürebilir. Bu süre tadilat projelerine kıyasla çok daha kısadır ve işletmenizin daha çabuk yeniden açılmasını sağlar.' },
-        { q: 'Yenileme ile tadilat arasındaki fark nedir?', a: 'Yenileme; mevcut elektrik, havalandırma ve mutfak altyapısına dokunmadan estetik güncelleme yapmak demektir — duvar, zemin, aydınlatma ve mobilya değişimleri bu kapsamdadır. Tadilat ise mutfak altyapısı, elektrik güçlendirme veya yapısal değişiklik içerir. Altyapınız sorunsuzsa yenileme çok daha hızlı ve ekonomik bir seçenektir.' },
+        { q: 'Cafe yenileme sezon veya açılış tarihine yetiştirilebilir mi?', a: 'Mutfak ve elektrik altyapısına dokunulmadığı için iş kalemleri kısa ve ayrı ayrı planlanabilir; kapalı gün veya mesai sonrası çalışma ile belirli bir tarihe yetiştirmek çoğunlukla mümkündür. Kapsama göre takvimi keşifte birlikte çıkarıyoruz.' },
+        { q: 'Mutfağa dokunmadan salon konseptini yenilemek mümkün mü?', a: 'Evet. Müşterinin gördüğü salon, bar önü, teras ve girişteki duvar, zemin, aydınlatma, mobilya ve dekor yenilenir; mutfak ekipmanı, havalandırma ve elektrik hatlarına dokunulmaz. Mutfak tarafı da değişecekse o kısım cafe ve restoran tadilat kapsamında ele alınır.' },
         { q: 'İşletme açıkken yenileme yapılabilir mi?', a: 'Cafe ve restoran yenilemelerinde bölgeli uygulama ile işletme açıkken çalışmak genellikle mümkündür. Zemin veya boyama gibi kapsamlı işler için kapalı saatlerde veya hafta sonu çalışmayı tercih edebiliriz. İşletmenizin kesintisiz sürmesini hedefleyerek takvimi buna göre planlıyoruz.' },
-        { q: 'Restoran yenileme bütçesi nasıl belirlenir?', a: 'Bütçe; mekanın büyüklüğü, seçilen malzeme ve dekor kalitesi ile yenileme kapsamına göre belirlenir. Altyapı müdahalesi olmadığından yenileme, tadilata kıyasla çok daha ekonomiktir. Ücretsiz keşif ziyaretimizde tüm kalemleri içeren şeffaf bütçe sunuyoruz.' },
+        { q: 'Konsept yenilemede mevcut menü ve marka nasıl dikkate alınır?', a: 'Yeni atmosfer; menünüzün, hedef müşterinizin ve marka dilinizin üzerine kurulur. Renk, aydınlatma sıcaklığı, oturma düzeni ve dekor tercihleri 3D görselle birlikte değerlendirilir, onaydan sonra uygulanır.' },
       ].map((faq, i) => (
         <details class="group py-5" open={i === 0}>
           <summary class="flex items-start justify-between cursor-pointer list-none gap-4">

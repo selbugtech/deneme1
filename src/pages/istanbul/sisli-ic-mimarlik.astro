@@ -36,8 +36,12 @@ const faqItems = [
     a: "Mecidiyeköy, Fulya, Esentepe, Bomonti, Feriköy, Cumhuriyet, Halaskargazi, Gayrettepe, 19 Mayıs ve Şişli Merkez başta olmak üzere ilçe genelinde aktif çalışıyoruz. Ticari mekanlar için Şişli'nin merkezi konumu nedeniyle ofis ve butik tasarım deneyimimiz özellikle güçlüdür.",
   },
   {
-    q: "Şişli için keşif ve teklif süreci nasıl işliyor?",
-    a: "WhatsApp veya telefon üzerinden randevu alıyor, Şişli'deki adresinize gelerek ücretsiz keşif yapıyoruz. Yerinde ölçü ve fotoğraf çalışmasının ardından 2–3 iş günü içinde detaylı teklif ve mood-board paylaşıyoruz.",
+    q: "Şişli'deki rezidans ve plaza yanı binalarda tadilat için hangi kurallar gündeme geliyor?",
+    a: "Rezidans yönetimleri genellikle yazılı izin, ekip listesi ve çalışma saati sınırı istiyor; yük asansörü kullanımı da belirli aralıklara bağlanabiliyor. Mecidiyeköy ve Esentepe çevresindeki yoğun trafik nedeniyle sevkiyat ve moloz tahliyesi de bu saatlere göre planlanıyor. Gerekli yönetim yazışmalarını ve komşu bilgilendirmesini şantiye takvimine baştan ekliyoruz.",
+  },
+  {
+    q: "Ofis veya butik gibi ticari bir mekanı iş akışını bozmadan yenilemek mümkün mü?",
+    a: "Çoğu zaman evet. Mesai sonrası veya hafta sonu çalışma, bölümlere ayırarak aşamalı ilerleme ve gürültülü işleri önceden bir araya toplama gibi yöntemlerle kesintiyi azaltmaya çalışıyoruz. Ticari mekanlarda bina yönetiminin saat ve yükleme kuralları da takvimi belirliyor; bunu keşifte netleştiriyoruz.",
   },
   {
     q: "Şişli'de örnek projeleriniz var mı?",
@@ -47,10 +51,10 @@ const faqItems = [
 ---
 
 <ServiceLayout
-  title="Şişli İç Mimarlık ve Ev Yenileme"
-  description="Şişli'de iç mimarlık, anahtar teslim daire yenileme ve ticari mekan tasarımı. Mecidiyeköy, Fulya, Bomonti ve Şişli Merkez'de aktif."
+  title="Şişli İç Mimarlık, Ev Tadilatı ve Dekorasyon"
+  description="Şişli'de iç mimarlık, daire yenileme ve ticari mekan tadilatı. Mecidiyeköy, Fulya, Bomonti ve Şişli Merkez'de aktif. Ücretsiz keşif: 0533 039 15 65"
   canonicalUrl={`${CANONICAL_BASE}/istanbul/sisli-ic-mimarlik`}
-  h1="Şişli İç Mimarlık ve Ev Yenileme"
+  h1="Şişli İç Mimarlık, Ev Tadilatı ve Dekorasyon"
   eyebrow="İstanbul · Şişli"
   lead="Şişli'nin merkezi konumundaki daire, rezidans ve ticari mekanlara modern ve işlevsel iç mekan çözümleri sunuyoruz. Hem konut hem ticari proje deneyimimizle her ihtiyaca cevap veriyoruz."
   heroImage={heroPath}
@@ -70,6 +74,9 @@ const faqItems = [
       </p>
       <p class="text-muted leading-relaxed mb-4">
         Mecidiyeköy ve Fulya'daki yeni rezidans dairelerinde planlama ve depolama optimizasyonu, Bomonti ve Feriköy'deki tarihi apartman dairelerinde ise restorasyon odaklı yenilemeler ön plana çıkıyor. Şişli Merkez ve Cumhuriyet civarında ofis-butik tasarımları için marka kimliği odaklı çalışıyoruz.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Şişli'de konut ve ticari kullanım çoğu zaman aynı sokakta, hatta aynı binada iç içe. Bu yüzden tadilat planında yalnızca daireyi değil, binanın kullanım biçimini de hesaba katıyoruz: iş günlerinde ofis katlarının yoğunluğu, rezidanslarda ise komşu bildirimi ve yönetim kuralları çalışma saatlerini şekillendiriyor. Mecidiyeköy'de tamamladığımız <a href="/projeler/mecidiyekoy-dublex" class="text-gold hover:underline">dubleks yenilemesini</a> proje sayfasında inceleyebilirsiniz.
       </p>
       <p class="text-muted leading-relaxed">
         Şişli Merkez, Mecidiyeköy, Fulya, Esentepe, Bomonti, Feriköy, Cumhuriyet, Halaskargazi, Gayrettepe ve 19 Mayıs başta olmak üzere ilçe genelinde hizmet veriyoruz.
@@ -99,6 +106,31 @@ const faqItems = [
     </div>
   </div>
 
+  <!-- Bölge notları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">{district.locative} Bölge Notlarımız</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Mecidiyeköy · Esentepe</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          İş hayatının yoğun olduğu, rezidans ve ofis katlarının yan yana durduğu hat. Yük asansörü ve çalışma saati kuralları takvimi belirliyor; sevkiyat trafik yoğunluğuna göre planlanıyor.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Fulya · Bomonti</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Yeni rezidanslarla eski apartmanların bir arada bulunduğu karma bölge. Yeni dairelerde depolama ve plan, eski binalarda ise tesisat ve elektrik kontrolü ön planda.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Şişli Merkez</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Ofis, butik ve konutun iç içe geçtiği merkez. Ticari mekanlarda mesai sonrası çalışma planı, dairelerde ise komşu bildirimi ve yönetim yazışması süreci kolaylaştırıyor.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <DistrictProjects districtSlug="sisli-ic-mimarlik" />
 
   <ProcessStrip districtSlug="sisli-ic-mimarlik" />
@@ -113,6 +145,11 @@ const faqItems = [
         { label: 'Villa Yenileme', href: `${CANONICAL_BASE}/hizmetler/anahtar-teslim/villa-yenileme` },
         { label: 'Ofis Yenileme', href: `${CANONICAL_BASE}/hizmetler/anahtar-teslim/ofis-yenileme` },
         { label: '3D Tasarım', href: `${CANONICAL_BASE}/hizmetler/3d-tasarim` },
+        { label: 'Ev Tadilatı', href: '/hizmetler/anahtar-teslim/ev-tadilat' },
+        { label: 'Ofis Tadilatı', href: '/hizmetler/anahtar-teslim/ofis-tadilat' },
+        { label: 'Mutfak Yenileme', href: '/hizmetler/mutfak-yenileme' },
+        { label: 'Şişli Ev Tadilatı Rehberi', href: '/blog/sisli-ev-tadilati' },
+        { label: 'Nişantaşı İç Mimarlık', href: '/istanbul/nisantasi-ic-mimarlik' },
       ].map(l => (
         <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
       ))}

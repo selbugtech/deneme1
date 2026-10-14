@@ -71,7 +71,7 @@ const rightProjects = projects.filter((_, i) => i % 2 === 1);
                 src={p.heroImage}
                 srcset={p.heroSrcset}
                 sizes="(min-width:768px) 50vw, 100vw"
-                alt={p.title}
+                alt={`${p.title} — ${p.category}, ${p.location}`}
                 loading="lazy"
                 decoding="async"
                 class="w-full aspect-[5/3] object-cover transition-transform duration-500 group-hover:scale-105"
@@ -96,7 +96,7 @@ const rightProjects = projects.filter((_, i) => i % 2 === 1);
                 src={p.heroImage}
                 srcset={p.heroSrcset}
                 sizes="(min-width:768px) 50vw, 100vw"
-                alt={p.title}
+                alt={`${p.title} — ${p.category}, ${p.location}`}
                 loading="lazy"
                 decoding="async"
                 class="w-full aspect-[5/3] object-cover transition-transform duration-500 group-hover:scale-105"

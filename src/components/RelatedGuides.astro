@@ -1,0 +1,56 @@
+---
+// Hizmet sayfalarından ilgili rehber yazılara bağlam bloğu. Rehber yazıların çoğu
+// yalnızca /blog listesinden link alıyordu; hizmet sayfaları da rehberlere hiç
+// link vermiyordu. Başlıklar blog-posts.ts'ten gelir (tek kaynak).
+import { allPosts } from '../data/blog-posts';
+
+interface Props {
+  /** Hizmet sayfasının slug'ı (yolun son segmenti) */
+  slug: string;
+}
+const { slug } = Astro.props;
+
+const MAP: Record<string, string[]> = {
+  'ev-tadilat': ['ev-tadilati-asama-asama-surec', 'tadilat-izni-ve-yonetim-onayi', 'ev-yenileme-maliyeti', 'ev-tadilati-ipuclari'],
+  'ev-yenileme': ['ev-yenileme-maliyeti', 'anahtar-teslim-ev-yenileme-nedir', 'ev-tadilati-asama-asama-surec', 'zemin-kaplama-secimi-parke-laminat-seramik'],
+  'villa-tadilat': ['villa-tadilati-istanbul', 'tadilat-izni-ve-yonetim-onayi', 'beykoz-pasabahce-villa-yenileme-vaka-calismasi'],
+  'villa-yenileme': ['villa-tadilati-istanbul', 'beykoz-pasabahce-villa-yenileme-vaka-calismasi', 'ev-yenileme-maliyeti'],
+  'ofis-tadilat': ['ofis-tadilat', 'tadilat-izni-ve-yonetim-onayi'],
+  'ofis-yenileme': ['ofis-tadilat', 'ev-yenileme-maliyeti'],
+  'otel-tadilat': ['otel-tadilat', 'tadilat-izni-ve-yonetim-onayi'],
+  'otel-yenileme': ['otel-tadilat'],
+  'mutfak-yenileme': ['mutfak-yenileme-istanbul', 'mutfak-tezgahi-secimi-kuvars-granit-laminat', 'mutfak-dekorasyon-fikirleri'],
+  'mutfak-dolabi': ['mutfak-tezgahi-secimi-kuvars-granit-laminat', 'mutfak-yenileme-istanbul', 'mutfak-dekorasyon-fikirleri'],
+  'banyo-yenileme': ['banyo-yenileme-rehberi', 'banyo-su-yalitimi-ve-planlama'],
+  'ic-mimarlik-danismanligi': ['ic-mimar-danismanlik-ucreti', 'ic-mimar-fiyatlari'],
+  'ev-dekorasyon': ['ev-aydinlatma-rehberi', 'salon-dekorasyon-fikirleri', 'kucuk-daire-dekorasyon-fikirleri', 'ic-mimarlik-trendleri'],
+  'salon-tasarimi': ['salon-dekorasyon-fikirleri', 'ev-aydinlatma-rehberi'],
+  'yatak-odasi-tasarimi': ['yatak-odasi-dekorasyon-fikirleri'],
+  'giyinme-odasi-tasarimi': ['giyinme-odasi-tasarimi'],
+  'boya-badana': ['ev-tadilati-asama-asama-surec'],
+  'alcipan-asma-tavan': ['ev-aydinlatma-rehberi', 'ev-tadilati-asama-asama-surec'],
+  'mimari-proje': ['tadilat-izni-ve-yonetim-onayi', 'ev-tadilati-asama-asama-surec'],
+};
+
+const posts = (MAP[slug] ?? [])
+  .map((s) => allPosts.find((p) => p.slug === s))
+  .filter((p): p is NonNullable<typeof p> => Boolean(p));
+---
+
+{posts.length > 0 && (
+  <div class="border-t border-border py-12">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="w-8 h-px bg-gold"></span>
+        <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">İlgili Rehberler</span>
+      </div>
+      <ul class="grid md:grid-cols-2 gap-x-10 gap-y-3">
+        {posts.map((p) => (
+          <li>
+            <a href={`/blog/${p.slug}`} class="text-sm text-charcoal hover:text-gold transition-colors underline-offset-4 hover:underline">{p.title}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+)}

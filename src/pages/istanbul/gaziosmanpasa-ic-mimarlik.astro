@@ -1,0 +1,164 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictBlogLinks from '../../components/DistrictBlogLinks.astro';
+import DistrictFAQ from '../../components/DistrictFAQ.astro';
+import ProcessStrip from '../../components/ProcessStrip.astro';
+import DistrictProjects from '../../components/DistrictProjects.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImageW } from '../../lib/cloudinary';
+import { getDistrict } from '../../data/districts';
+
+// İlçe adı ve bulunma hali eki tek kaynaktan: src/data/districts.ts.
+const district = getDistrict('gaziosmanpasa-ic-mimarlik')!;
+const heroPath = '/images/salon2.jpeg';
+const heroAbs = optimizedImageW(heroPath, 1600);
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "İç mimarlık, tadilat ve ev yenileme",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
+  "areaServed": { "@type": "Place", "name": "Gaziosmanpaşa, İstanbul" },
+  "url": `${CANONICAL_BASE}/istanbul/gaziosmanpasa-ic-mimarlik`,
+  "description": "Gaziosmanpaşa'da apartman daireleri ve kentsel dönüşüm sonrası konutlar için anahtar teslim yenileme ve iç mimarlık.",
+  "image": heroAbs,
+};
+
+const faqItems = [
+  {
+    q: "Gaziosmanpaşa'da kentsel dönüşümle yenilenen binadaki dairemi nasıl kişiselleştirebilirim?",
+    a: "Dönüşüm sonrası teslim edilen dairelerde plan ve malzeme paketi çoğunlukla standart oluyor. Biz önce günlük kullanımınıza bakıyoruz: mutfak düzeni, gardırop kapasitesi, salonun oturma ve yemek ihtiyacı. Sonra bunları ölçüye özel dolap ve yüzey kararlarıyla dairenize taşıyoruz. Taşınmadan önce başlamak en rahat ve temiz yöntem.",
+  },
+  {
+    q: "Eski apartmanda duvar yıkımı ve plan değişikliği mümkün mü?",
+    a: "Yapıya ve taşıyıcı sisteme bağlı. Mutfak ile salon arasını açmak gibi talepleri önce yerinde inceliyor, taşıyıcı elemanlara dokunmadan neyin yapılabileceğini söylüyoruz. Gerekirse ilgili kurum ve yönetim süreçlerini sizinle birlikte takip ediyoruz. Emin olmadığımız bir müdahaleyi önermiyoruz.",
+  },
+  {
+    q: "Gaziosmanpaşa'da asansörsüz apartmanlarda tadilat nasıl yürüyor?",
+    a: "Asansörsüz binalarda en büyük konu malzeme taşıma ve moloz tahliyesi. Moloz için merdiven koruma ve belirli saat aralıkları kullanıyor, dolap elemanlarını parçalı üretiyoruz. Komşuların rahatsız olmaması için çalışma saatlerini bina ile önceden konuşmanızı da öneriyoruz.",
+  },
+  {
+    q: "Banyoyu yenilerken alt kat komşuya sızıntı riskini nasıl azaltıyorsunuz?",
+    a: "Apartmanda ıslak hacim yenilemenin en hassas noktası su yalıtımı. Söküm sonrası zemini inceliyor, yalıtım katmanını ve gider bağlantılarını işin parçası olarak planlıyoruz. Fayansı kapatmadan önce zeminin durumunu fotoğraflıyor, süreci şeffaf tutuyoruz.",
+  },
+  {
+    q: "Gaziosmanpaşa'da keşif için hangi bilgileri hazırlamalıyım?",
+    a: "Daire planı ya da kat bilgisi varsa paylaşmanız yeterli; yoksa yerinde biz ölçeriz. Ayrıca neleri değiştirmek, neleri korumak istediğinizi kısaca not etmeniz keşfi verimli kılar. WhatsApp veya telefonla randevu alabilirsiniz.",
+  },
+];
+---
+
+<ServiceLayout
+  title="Gaziosmanpaşa İç Mimarlık, Ev Tadilatı ve Dekorasyon"
+  description="Gaziosmanpaşa'da apartman ve kentsel dönüşüm dairelerinde iç mimarlık, ev tadilatı ve dekorasyon. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/istanbul/gaziosmanpasa-ic-mimarlik`}
+  h1="Gaziosmanpaşa İç Mimarlık, Ev Tadilatı ve Dekorasyon"
+  eyebrow="İstanbul · Gaziosmanpaşa"
+  lead="Apartman dairelerinin ve dönüşen yapıların birlikte bulunduğu bir ilçe. Gaziosmanpaşa tadilat projelerinde amaç, mevcut planı daha ferah, işlevsel ve bakımı kolay bir eve çevirmek."
+  heroImage={heroPath}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İstanbul", href: `${CANONICAL_BASE}/istanbul` },
+    { label: "Gaziosmanpaşa" }
+  ]}
+  structuredData={localSchema}
+>
+
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Gaziosmanpaşa'da İç Mimarlık Hizmeti</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Gaziosmanpaşa, Karadeniz, Yıldıztabya, Bağlarbaşı ve Sarıgöl gibi mahallelerde geniş bir apartman dokusuna sahip. Son yıllarda kentsel dönüşüm kapsamında yenilenen binaların sayısı arttı; dolayısıyla ilçede hem oturmuş eski dairelerde hem de yeni teslim edilmiş dairelerde ev tadilatı yapılıyor. İki durumun ihtiyaçları birbirinden oldukça farklı.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Eski apartman dairelerinde en sık gündeme gelen konular tesisat, ıslak hacim yalıtımı ve iç mekân akışı oluyor. Mutfak ile salonun ilişkisi, dar koridorların kullanılabilir hale getirilmesi ve banyonun yenilenmesi öne çıkıyor. Yeni teslim dairelerde ise işin ağırlığı kişiselleştirmeye kayıyor: standart mutfak dolabı, standart zemin ve sınırlı depolama yerine dairenin gerçek kullanıcısına göre hazırlanmış çözümler isteniyor.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Gaziosmanpaşa dekorasyon projelerimizde önce keşif yapıyor, kapsamı yazılı çıkarıyor, tasarımı 3D görselle onaylatıyor ve uygulamayı tek ekiple yürütüyoruz. Özellikle asansörsüz veya dar girişli binalarda taşıma ve moloz tahliyesini baştan planlıyor, komşularınızı mümkün olduğunca az etkileyen bir şantiye düzeni kuruyoruz. Gaziosmanpaşa ev tadilatı rehberimiz de süreci merak edenler için hazır.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4">{district.locative} Sunduğumuz Hizmetler</h3>
+      <ul class="space-y-3">
+        {[
+          'Apartman dairelerinde anahtar teslim ev tadilatı',
+          'Kentsel dönüşüm sonrası teslim dairelerin kişiselleştirilmesi',
+          'Banyo ve mutfak yenileme, su yalıtımı kontrolü',
+          'Ölçüye özel dolap ve depolama çözümleri',
+          '3D görselleştirme ile tasarım onayı',
+          'Salon, yatak odası ve çocuk odası dekorasyonu',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+        <p class="text-sm text-charcoal font-medium">Gaziosmanpaşa keşif görüşmesi</p>
+        <p class="text-muted text-sm mt-2">
+          Dairenizi yerinde inceliyor, ölçüleri alıyor ve neyi korumak, neyi yenilemek istediğinizi birlikte netleştiriyoruz. Keşif ücretsiz ve taahhütsüz.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bölge notları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Gaziosmanpaşa'da Bölge Notlarımız</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Karadeniz · Yıldıztabya</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Apartman bloklarının yoğun olduğu hat. Yenilenen ve eski binaların yan yana bulunması nedeniyle her daireye ayrı bir keşif ve kapsam çalışması yapıyoruz.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Bağlarbaşı · Merkez · Pazariçi</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Çarşıya ve yoğun trafik akslarına yakın mahalleler. Malzeme sevkiyatının park ve trafik düzenine uyması için teslim saatlerini önceden planlıyoruz.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Sarıgöl · Karayolları</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Eski dairelerde ıslak hacim ve tesisat durumunu keşifte ayrıca kontrol ediyor, kapsamı sökümden sonra gerekçeleriyle netleştiriyoruz.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <DistrictProjects districtSlug="gaziosmanpasa-ic-mimarlik" />
+
+  <ProcessStrip districtSlug="gaziosmanpasa-ic-mimarlik" />
+
+  <DistrictFAQ districtName="Gaziosmanpaşa" items={faqItems} />
+
+  <div class="py-12 border-t border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Hizmetlerimiz</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Tüm Hizmetler', href: '/hizmetler' },
+        { label: 'Anahtar Teslim Ev Tadilatı', href: '/hizmetler/anahtar-teslim/ev-tadilat' },
+        { label: 'Banyo Yenileme', href: '/hizmetler/banyo-yenileme' },
+        { label: 'Mutfak Yenileme', href: '/hizmetler/mutfak-yenileme' },
+        { label: 'Gaziosmanpaşa Ev Tadilatı Rehberi', href: '/blog/gaziosmanpasa-ev-tadilati' },
+        { label: 'Kağıthane İç Mimarlık', href: '/istanbul/kagithane-ic-mimarlik' },
+        { label: 'Sultangazi İç Mimarlık', href: '/istanbul/sultangazi-ic-mimarlik' },
+        { label: 'Bayrampaşa İç Mimarlık', href: '/istanbul/bayrampasa-ic-mimarlik' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </div>
+
+  <DistrictBlogLinks districtSlug="gaziosmanpasa-ic-mimarlik" />
+
+  <RelatedDistricts currentSlug="gaziosmanpasa-ic-mimarlik" />
+
+</ServiceLayout>

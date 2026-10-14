@@ -42,7 +42,7 @@ const CHANGELOG: Change[] = [
       'banyo-yenileme-rehberi',
       'ev-aydinlatma-rehberi',
       'ev-tadilati-ipuclari',
-      'ev-yenileme-maliyeti-2025',
+      'ev-yenileme-maliyeti',
       'giyinme-odasi-tasarimi',
       'ic-mimar-danismanlik-ucreti',
       'ic-mimar-fiyatlari',
@@ -55,6 +55,25 @@ const CHANGELOG: Change[] = [
       'villa-tadilati-istanbul',
       'yatak-odasi-dekorasyon-fikirleri',
     ].map((slug) => `/blog/${slug}`),
+  },
+  {
+    date: '2026-10-14',
+    note: 'Arama optimizasyonu: ana sayfa metni ve SSS, ilçe sayfaları (tadilat/dekorasyon, genişletilmiş içerik, 13 yeni ilçe), hizmet sayfaları ve çift ayrıştırma, stil sayfaları, proje künyesi',
+    paths: [
+      '/',
+      '/istanbul',
+      ...districts.map((d) => `/istanbul/${d.slug}`),
+      '/hizmetler',
+      '/ic-mimarlik',
+      '/projeler',
+      ...['modern', 'minimalist', 'klasik', 'iskandinav', 'endustriyel'].map((x) => `/ic-mimarlik/${x}`),
+      ...['ev', 'villa', 'ofis', 'magaza-dukkan', 'cafe-restaurant', 'otel'].flatMap((x) => [`/hizmetler/anahtar-teslim/${x}-tadilat`, `/hizmetler/anahtar-teslim/${x}-yenileme`]),
+    ],
+  },
+  {
+    date: '2026-10-14',
+    note: 'Blog: maliyet yazıları yeniden yazıldı, iç linkler eklendi',
+    paths: ['ic-mimar-fiyatlari', 'ic-mimar-danismanlik-ucreti', 'ev-yenileme-maliyeti', 'ofis-tadilat', 'otel-tadilat', 'villa-tadilati-istanbul', 'istanbul-daire-ic-mimarlik', 'banyo-yenileme-rehberi', 'mutfak-yenileme-istanbul', 'ev-tadilati-ipuclari', 'anahtar-teslim-ev-yenileme-nedir', 'ic-mimarlik-trendleri'].map((x) => `/blog/${x}`),
   },
 ];
 

@@ -36,23 +36,27 @@ const faqItems = [
     a: "Moda, Caddebostan, Fenerbahçe, Göztepe, Suadiye, Bostancı, Kalamış, Erenköy, Sahrayıcedit ve Kadıköy Merkez başta olmak üzere ilçenin tamamında aktif çalışıyoruz. Her mahallenin yapı stoku farklı olduğu için uygulama planını daireye özel kuruyoruz.",
   },
   {
-    q: "Kadıköy için keşif ve teklif süreci nasıl işliyor?",
-    a: "WhatsApp veya telefon üzerinden randevu alıyor, Kadıköy'deki adresinize gelerek ücretsiz keşif yapıyoruz. Ölçü, fotoğraf ve ihtiyaç görüşmesinin ardından 2–3 iş günü içinde detaylı tekliflerimizi ve mood-board sunumumuzu paylaşıyoruz.",
+    q: "Moda ve Caddebostan'daki eski apartman dairelerinde tadilata başlamadan önce neye bakıyorsunuz?",
+    a: "Önce elektrik panosuna, sıhhi tesisat hatlarına ve ıslak hacim zeminlerine bakıyoruz; eski binalarda bunlar çoğunlukla yenilenmesi gereken kalemler. Bazı yapılar tescilli olabildiği için cephe, pencere ve ortak alanı ilgilendiren müdahalelerde izin gereksinimini keşifte kontrol ediyor, iç mekan tadilatını buna göre kurguluyoruz. Kapsamı sökümden sonra netleştiriyoruz.",
+  },
+  {
+    q: "Kadıköy'de dar sokaklarda malzeme ve moloz taşıma nasıl yönetiliyor?",
+    a: "Moda ve Göztepe gibi eski dokulu mahallelerde dar sokak ve sınırlı park alanı, sevkiyat planını belirleyen ana unsur. Dolap ve tezgahları modüler üretip bina yönetimiyle teslimat saati ayarlıyor, moloz tahliyesini de bu saatlere göre planlıyoruz. Asansörsüz binalarda malzeme merdivenden taşındığı için bunu takvime baştan ekliyoruz.",
   },
   {
     q: "Kadıköy'de örnek projeleriniz var mı?",
-    a: "Caddebostan ve Moda'daki klasik apartman dairelerinden Bostancı ve Suadiye'deki yeni site dairelerine kadar çeşitli referanslarımız var. Keşif sırasında size benzer tipte tamamladığımız projelerin görsellerini ve müşteri yorumlarını paylaşıyoruz.",
+    a: "Evet. Caddebostan ve Moda'da birer daire ile bir banyo yenileme çalışmamızı proje sayfalarında yayımladık. Keşif sırasında dairenizin tipine ve ölçeğine en yakın örnekleri gösteriyoruz.",
   },
 ];
 ---
 
 <ServiceLayout
-  title="Kadıköy İç Mimarlık ve Ev Yenileme"
-  description="Kadıköy'de iç mimarlık, anahtar teslim daire yenileme ve mutfak-banyo tadilatı. Moda, Caddebostan, Fenerbahçe ve Göztepe'de aktif."
+  title="Kadıköy İç Mimarlık, Ev Tadilatı ve Dekorasyon"
+  description="Kadıköy'de iç mimarlık, daire yenileme ve mutfak-banyo tadilatı. Moda, Caddebostan, Fenerbahçe ve Göztepe'de aktif. Ücretsiz keşif: 0533 039 15 65"
   canonicalUrl={`${CANONICAL_BASE}/istanbul/kadikoy-ic-mimarlik`}
-  h1="Kadıköy İç Mimarlık ve Ev Yenileme"
+  h1="Kadıköy İç Mimarlık, Ev Tadilatı ve Dekorasyon"
   eyebrow="İstanbul · Kadıköy"
-  lead="Kadıköy'ün kendine özgü karakterine uygun, modern ve yaşanabilir mekanlar tasarlıyoruz. Anadolu yakasının en dinamik ilçesinde 8+ yıllık uygulama deneyimimizle hizmet veriyoruz."
+  lead="Kadıköy'ün kendine özgü karakterine uygun, modern ve yaşanabilir mekanlar tasarlıyoruz. Anadolu yakasının en dinamik ilçesinde tadilattan dekorasyona işi baştan sona yönetiyoruz."
   heroImage={heroPath}
   breadcrumb={[
     { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
@@ -70,6 +74,9 @@ const faqItems = [
       </p>
       <p class="text-muted leading-relaxed mb-4">
         Moda ve Caddebostan'daki klasik apartman dairelerinde özgün dokuyu koruyan restorasyon ağırlıklı uygulamalar yaparken, Bostancı ve Suadiye'deki yeni nesil site dairelerinde planlama ve depolama optimizasyonu öne çıkıyor.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Kadıköy'de tadilat ve dekorasyon kararları çoğu zaman binanın yaşına göre şekilleniyor. Eski apartmanlarda tesisat ve elektrik hattı genellikle keşifte ilk kontrol ettiğimiz kalem oluyor; yeni dönem sitelerde ise öncelik çoğunlukla depolama ve ışık kurgusuna kayıyor. Caddebostan'da <a href="/projeler/caddebostan" class="text-gold hover:underline">daire</a> ve Moda'da <a href="/projeler/kadikoy-moda" class="text-gold hover:underline">daire</a> çalışmalarımızı proje sayfalarında inceleyebilirsiniz.
       </p>
       <p class="text-muted leading-relaxed">
         Moda, Caddebostan, Fenerbahçe, Göztepe, Suadiye, Bostancı, Kalamış, Erenköy ve Sahrayıcedit başta olmak üzere Kadıköy genelinde hizmet veriyoruz.
@@ -99,6 +106,31 @@ const faqItems = [
     </div>
   </div>
 
+  <!-- Bölge notları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">{district.locative} Bölge Notlarımız</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Moda · Fenerbahçe</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Köklü apartman dokusunun yoğun olduğu hat. Eski binalarda tesisat ve elektrik genellikle yenileme kapsamına giriyor; dar sokaklar nedeniyle malzeme sevkiyatı ve moloz tahliyesi önceden planlanıyor.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Caddebostan · Göztepe · Erenköy</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Geniş balkonlu, yüksek tavanlı klasik daireler çoğunlukta. Özgün detayı korurken mutfak, banyo ve depolamayı güncellemek bu hatta en sık çalıştığımız tadilat ve dekorasyon kurgusu.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Suadiye · Bostancı · Sahrayıcedit</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Görece yeni apartman ve site daireleri. Planlama, depolama ve ışık öne çıkıyor; site yönetimiyle çalışma saati ve asansör kullanımı baştan netleştiriliyor.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <DistrictProjects districtSlug="kadikoy-ic-mimarlik" />
 
   <ProcessStrip districtSlug="kadikoy-ic-mimarlik" />
@@ -113,6 +145,11 @@ const faqItems = [
         { label: 'Villa Yenileme', href: `${CANONICAL_BASE}/hizmetler/anahtar-teslim/villa-yenileme` },
         { label: 'Ofis Yenileme', href: `${CANONICAL_BASE}/hizmetler/anahtar-teslim/ofis-yenileme` },
         { label: '3D Tasarım', href: `${CANONICAL_BASE}/hizmetler/3d-tasarim` },
+        { label: 'Ev Tadilatı', href: '/hizmetler/anahtar-teslim/ev-tadilat' },
+        { label: 'Mutfak Yenileme', href: '/hizmetler/mutfak-yenileme' },
+        { label: 'Banyo Yenileme', href: '/hizmetler/banyo-yenileme' },
+        { label: 'Kadıköy Ev Tadilatı Rehberi', href: '/blog/kadikoy-ev-tadilati' },
+        { label: 'Üsküdar İç Mimarlık', href: '/istanbul/uskudar-ic-mimarlik' },
       ].map(l => (
         <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
       ))}

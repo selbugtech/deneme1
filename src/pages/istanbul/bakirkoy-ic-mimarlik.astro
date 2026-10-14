@@ -36,8 +36,12 @@ const faqItems = [
     a: "Ataköy, Yeşilköy, Yeşilyurt, Florya, Bakırköy Merkez, Cevizlik, Zuhuratbaba, Şenlikköy ve Kartaltepe başta olmak üzere Bakırköy genelinde aktif olarak çalışıyoruz. Sahil siteleri ve eski Bakırköy apartmanları için ayrı uygulama yaklaşımlarımız bulunmaktadır.",
   },
   {
-    q: "Bakırköy için keşif ve teklif süreci nasıl işliyor?",
-    a: "Telefon veya WhatsApp üzerinden randevu alıyor, Bakırköy'deki adresinize gelerek ücretsiz keşif yapıyoruz. Ölçüleri yerinde alıp ihtiyacınızı dinledikten sonra 2–3 iş günü içinde detaylı teklifimizi ve örnek görselleri paylaşıyoruz.",
+    q: "Ataköy ve Florya gibi sahil sitelerinde tadilatta nelere dikkat ediyorsunuz?",
+    a: "Denize yakın konum nem ve tuzlu havayı beraberinde getirebildiği için banyo, balkon ve pencere çevresinde nem dayanımı yüksek kaplama ve doğru havalandırma kurgusunu ilk konuştuğumuz konular arasında tutuyoruz. Site yönetimlerinin çalışma saati ve asansör kuralları da çoğunlukla yazılı olduğundan, şantiye takvimini bu kurallara göre çıkarıyoruz.",
+  },
+  {
+    q: "Eski bir Bakırköy apartmanında tesisat ve elektrik yenilemek gerekir mi?",
+    a: "Binanın yaşına ve daha önce yapılmış yenilemelere bağlı. Keşifte pano, tesisat hatları ve ıslak hacim zeminlerinin durumuna bakıyor, yenileme gerekip gerekmediğini fotoğraf ve ölçülerle açıklıyoruz. Kesin kapsam çoğu zaman sökümden sonra netleşiyor.",
   },
   {
     q: "Bakırköy'de örnek projeleriniz var mı?",
@@ -47,12 +51,12 @@ const faqItems = [
 ---
 
 <ServiceLayout
-  title="Bakırköy İç Mimarlık ve Ev Yenileme"
-  description="Bakırköy'de iç mimarlık, anahtar teslim daire yenileme ve mutfak-banyo tadilatı. Ataköy, Yeşilköy, Yeşilyurt ve Bakırköy Merkez'de aktif."
+  title="Bakırköy İç Mimarlık, Ev Tadilatı ve Dekorasyon"
+  description="Bakırköy'de iç mimarlık, daire yenileme ve mutfak-banyo tadilatı. Ataköy, Yeşilköy, Yeşilyurt ve Florya'da aktif. Ücretsiz keşif: 0533 039 15 65"
   canonicalUrl={`${CANONICAL_BASE}/istanbul/bakirkoy-ic-mimarlik`}
-  h1="Bakırköy İç Mimarlık ve Ev Yenileme"
+  h1="Bakırköy İç Mimarlık, Ev Tadilatı ve Dekorasyon"
   eyebrow="İstanbul · Bakırköy"
-  lead="Bakırköy'ün köklü apartmanlarından Ataköy ve Yeşilköy sahil sitelerine kadar geniş bir yelpazede iç mimarlık ve anahtar teslim ev yenileme hizmeti sunuyoruz. Avrupa yakasının deniz kıyısındaki bu ilçede 8+ yıllık uygulama deneyimimizle yanınızdayız."
+  lead="Bakırköy'ün köklü apartmanlarından Ataköy ve Yeşilköy sahil sitelerine kadar geniş bir yelpazede iç mimarlık ve anahtar teslim ev yenileme hizmeti sunuyoruz. Avrupa yakasının deniz kıyısındaki bu ilçede tadilat ve dekorasyonu baştan sona yönetiyoruz."
   heroImage={heroPath}
   breadcrumb={[
     { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
@@ -70,6 +74,9 @@ const faqItems = [
       </p>
       <p class="text-muted leading-relaxed mb-4">
         Sahil sitelerindeki dairelerde nem ve havalandırma yönetimi, eski Bakırköy apartmanlarında ise tesisat ve elektrik altyapısının yenilenmesi öncelikli konulardır. Bu detayları keşif aşamasında değerlendirerek hem estetik hem teknik açıdan kalıcı çözümler üretiyoruz.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Denize yakın konum, Bakırköy'de dekorasyon malzemesi seçimini doğrudan etkiliyor. Banyo ve balkon çevresinde nem direnci yüksek kaplamalar, ahşap ve metal detaylarda ise bakım kolaylığı çoğunlukla belirleyici oluyor. Ataköy'de tamamladığımız <a href="/projeler/atakoy" class="text-gold hover:underline">daire yenilemesini</a> proje sayfasında inceleyebilirsiniz.
       </p>
       <p class="text-muted leading-relaxed">
         Bakırköy Merkez, Ataköy, Yeşilköy, Yeşilyurt, Florya, Cevizlik, Zuhuratbaba ve Şenlikköy başta olmak üzere ilçe genelinde hizmet veriyoruz.
@@ -99,6 +106,31 @@ const faqItems = [
     </div>
   </div>
 
+  <!-- Bölge notları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">{district.locative} Bölge Notlarımız</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Ataköy · Florya</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Sahil bandındaki site daireleri. Nem ve havalandırma kurgusu, yönetimin çalışma saati ve asansör kuralları şantiye planının temelini oluşturuyor.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Yeşilköy · Yeşilyurt</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Müstakil ev ve alçak katlı yapıların bulunduğu, daha sakin bir hat. Salon-bahçe geçişi, depolama ve ısı konforu gibi başlıklar tadilat kapsamında sık gündeme geliyor.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Bakırköy Merkez</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Klasik apartman dokusu. Tesisat ve elektrik altyapısı keşifte ilk bakılan kalem; kapsamı sökümden sonra netleştirip planı daireye özel kuruyoruz.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <DistrictProjects districtSlug="bakirkoy-ic-mimarlik" />
 
   <ProcessStrip districtSlug="bakirkoy-ic-mimarlik" />
@@ -113,6 +145,11 @@ const faqItems = [
         { label: 'Villa Yenileme', href: `${CANONICAL_BASE}/hizmetler/anahtar-teslim/villa-yenileme` },
         { label: 'Ofis Yenileme', href: `${CANONICAL_BASE}/hizmetler/anahtar-teslim/ofis-yenileme` },
         { label: '3D Tasarım', href: `${CANONICAL_BASE}/hizmetler/3d-tasarim` },
+        { label: 'Ev Tadilatı', href: '/hizmetler/anahtar-teslim/ev-tadilat' },
+        { label: 'Banyo Yenileme', href: '/hizmetler/banyo-yenileme' },
+        { label: 'Giyinme Odası Tasarımı', href: '/hizmetler/giyinme-odasi-tasarimi' },
+        { label: 'Bakırköy Ev Tadilatı Rehberi', href: '/blog/bakirkoy-ev-tadilati' },
+        { label: 'Zeytinburnu İç Mimarlık', href: '/istanbul/zeytinburnu-ic-mimarlik' },
       ].map(l => (
         <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
       ))}

@@ -36,8 +36,12 @@ const faqItems = [
     a: "Zekeriyaköy'deki villa siteleri başta olmak üzere Göktürk, Kemerburgaz, Demirciköy ve Uskumruköy gibi kuzey İstanbul'un villa bölgelerinde aktif çalışıyoruz. Her villa farklı projedir; ilk keşifte yapı raporu ve uygulama planını birlikte oluşturuyoruz.",
   },
   {
-    q: "Zekeriyaköy için keşif ve teklif süreci nasıl işliyor?",
-    a: "WhatsApp veya telefon üzerinden randevu alıyor, Zekeriyaköy'deki villanıza gelerek ücretsiz keşif yapıyoruz. Ölçü, fotoğraf ve ihtiyaç görüşmesinin ardından 3–5 iş günü içinde detaylı teklif ve villaya özel mood-board paylaşıyoruz.",
+    q: "Villa sitelerinde tadilat için güvenlik ve site yönetimi tarafında ne gerekiyor?",
+    a: "Güvenlikli villa sitelerinde genellikle ekip ve araç giriş listesi, ağır malzeme sevkiyatı için kapı izni ve çalışma saati bilgilendirmesi isteniyor. Bazı sitelerde moloz tahliyesi için ayrı güzergâh ve saat belirleniyor. Bu yazışmaları işe başlamadan önce tamamlıyor, şantiye takvimini site kurallarına göre kuruyoruz.",
+  },
+  {
+    q: "Çok katlı bir villada tadilatı aşamalı yapmak mümkün mü?",
+    a: "Kapsama ve yaşam planına bağlı olarak katları sırayla yenilemek mümkün olabiliyor. Ancak tesisat, elektrik ve ısıtma gibi ortak hatlar tüm evi ilgilendirdiği için bu kalemleri tek seferde ele almak çoğu zaman daha verimli. Keşifte iki senaryoyu takvim ve toz-gürültü açısından birlikte değerlendiriyoruz.",
   },
   {
     q: "Zekeriyaköy'de örnek projeleriniz var mı?",
@@ -47,12 +51,12 @@ const faqItems = [
 ---
 
 <ServiceLayout
-  title="Zekeriyaköy Villa Yenileme ve İç Mimarlık"
-  description="Zekeriyaköy'de villa yenileme ve lüks iç mimarlık hizmetleri. Göktürk, Kemerburgaz ve kuzey İstanbul villa bölgelerinde aktif. Ücretsiz keşif: 0533 039 15 65"
+  title="Zekeriyaköy Villa Tadilatı, Yenileme ve İç Mimarlık"
+  description="Zekeriyaköy'de villa tadilatı, yenileme ve lüks iç mimarlık. Göktürk, Kemerburgaz ve Uskumruköy'de aktif. Ücretsiz keşif: 0533 039 15 65"
   canonicalUrl={`${CANONICAL_BASE}/istanbul/zekeriyakoy-ic-mimarlik`}
-  h1="Zekeriyaköy Villa Yenileme ve İç Mimarlık"
+  h1="Zekeriyaköy Villa Tadilatı, Yenileme ve İç Mimarlık"
   eyebrow="İstanbul · Zekeriyaköy"
-  lead="Zekeriyaköy'ün lüks villa dokusuna yakışır, doğayla bütünleşik ve sofistike yaşam alanları tasarlıyoruz. Müstakil villa projelerinde 8+ yıllık uygulama deneyimimizle yanınızdayız."
+  lead="Zekeriyaköy'ün lüks villa dokusuna yakışır, doğayla bütünleşik ve sofistike yaşam alanları tasarlıyoruz. Müstakil villa projelerinde tadilat ve dekorasyonu baştan sona yönetiyoruz."
   heroImage={heroPath}
   breadcrumb={[
     { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
@@ -70,6 +74,9 @@ const faqItems = [
       </p>
       <p class="text-muted leading-relaxed mb-4">
         Zekeriyaköy'de işlerin çoğu müstakil villa ve bahçeli konut. Bu ölçekte salon, mutfak, yatak odaları, giyinme odaları, çalışma odası ve banyolar tek bir tasarım kurgusu içinde ele alınıyor; 3D görselleştirmeyi de bu yüzden uygulama öncesinde mutlaka çıkarıyoruz.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Villa tadilatı, apartman dairesinden farklı olarak yalnızca iç mekanla sınırlı kalmıyor: ısıtma-soğutma tesisatı, çatı ve teras birleşimleri, bahçe geçişleri ve çok katlı merdiven kurgusu tasarımın parçası. Bu yüzden keşifte villayı katlarıyla, dış alanlarıyla ve mevcut tesisat durumuyla birlikte inceliyor, dekorasyon kararlarını ondan sonra kesinleştiriyoruz.
       </p>
       <p class="text-muted leading-relaxed">
         Zekeriyaköy, Göktürk, Kemerburgaz, Demirciköy ve Uskumruköy başta olmak üzere kuzey İstanbul'un villa bölgelerinde hizmet veriyoruz.
@@ -99,6 +106,31 @@ const faqItems = [
     </div>
   </div>
 
+  <!-- Bölge notları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">{district.locative} Bölge Notlarımız</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Zekeriyaköy Merkez</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Villa sitelerinin yoğunlaştığı çekirdek bölge. Güvenlikli girişler nedeniyle ekip ve malzeme giriş izinleri önceden alınıyor; salon, mutfak ve yatak odaları tek bir tasarım kurgusunda ele alınıyor.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Göktürk · Kemerburgaz</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Site ve müstakil konutların bir arada bulunduğu hat. Yapı tipine göre keşifte tesisat, ısıtma ve dış alan geçişlerine bakılıyor; ağır malzeme sevkiyatı site kurallarına göre planlanıyor.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Uskumruköy</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Doğayla iç içe, genellikle daha sakin villa yerleşimleri. Bahçe ve teras bağlantısı, doğal ışık ve depolama dekorasyon kararlarında öne çıkıyor.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <DistrictProjects districtSlug="zekeriyakoy-ic-mimarlik" />
 
   <ProcessStrip districtSlug="zekeriyakoy-ic-mimarlik" />
@@ -113,6 +145,11 @@ const faqItems = [
         { label: 'Villa Yenileme', href: `${CANONICAL_BASE}/hizmetler/anahtar-teslim/villa-yenileme` },
         { label: 'Ofis Yenileme', href: `${CANONICAL_BASE}/hizmetler/anahtar-teslim/ofis-yenileme` },
         { label: '3D Tasarım', href: `${CANONICAL_BASE}/hizmetler/3d-tasarim` },
+        { label: 'Villa Tadilatı', href: '/hizmetler/anahtar-teslim/villa-tadilat' },
+        { label: 'Salon Tasarımı', href: '/hizmetler/salon-tasarimi' },
+        { label: 'Giyinme Odası Tasarımı', href: '/hizmetler/giyinme-odasi-tasarimi' },
+        { label: 'Zekeriyaköy İç Mimarlık Ofisleri', href: '/blog/zekeriyakoy-ic-mimarlik-ofisleri' },
+        { label: 'Sarıyer İç Mimarlık', href: '/istanbul/sariyer-ic-mimarlik' },
       ].map(l => (
         <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
       ))}

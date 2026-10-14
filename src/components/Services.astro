@@ -4,6 +4,7 @@ import { byGroup } from '../data/services';
 const services = byGroup('ana');
 const tadilat = byGroup('tadilat');
 const oda = byGroup('oda');
+const dekorasyon = byGroup('dekorasyon');
 ---
 
 <section id="hizmetler" class="py-24 bg-[#F5EFE6]">
@@ -39,11 +40,19 @@ const oda = byGroup('oda');
     </div>
 
     <!-- Popüler hizmetler: ana sayfadan ev/ofis/villa/mağaza ve oda sayfalarına doğrudan link -->
-    <div class="mt-14 grid md:grid-cols-2 gap-10">
+    <div class="mt-14 grid md:grid-cols-3 gap-10">
       <div>
         <h3 class="text-xs tracking-[0.25em] uppercase text-muted mb-4">Tadilat Hizmetleri</h3>
         <div class="flex flex-wrap gap-2">
           {tadilat.map(s => (
+            <a href={s.href} class="px-3 py-1.5 border border-border text-charcoal text-xs font-medium hover:border-gold hover:text-gold transition-colors">{s.title}</a>
+          ))}
+        </div>
+      </div>
+      <div>
+        <h3 class="text-xs tracking-[0.25em] uppercase text-muted mb-4">Dekorasyon & Proje</h3>
+        <div class="flex flex-wrap gap-2">
+          {dekorasyon.map(s => (
             <a href={s.href} class="px-3 py-1.5 border border-border text-charcoal text-xs font-medium hover:border-gold hover:text-gold transition-colors">{s.title}</a>
           ))}
         </div>

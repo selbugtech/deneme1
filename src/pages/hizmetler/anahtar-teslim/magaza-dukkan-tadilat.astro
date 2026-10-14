@@ -9,7 +9,7 @@ const serviceSchema = {
   "@type": "Service",
   "serviceType": "Mağaza ve Dükkan Tadilat",
   "name": "İstanbul Mağaza ve Dükkan Tadilat",
-  "description": "İstanbul'da anahtar teslim mağaza ve dükkan tadilat. Elektrik, tesisat, vitrin sistemi ve yapısal müdahale dahil kapsamlı perakende mekan dönüşümü.",
+  "description": "İstanbul'da anahtar teslim mağaza ve dükkan tadilat. Elektrik, tesisat, vitrin ve ön cephe sistemi ile zemin müdahaleleri; izin ve iş sırası planıyla kapsamlı perakende mekan dönüşümü.",
   "provider": { "@type": "Organization", "@id": `${CANONICAL_BASE}/#organization`, "name": "Master İç Mimarlık" },
   "areaServed": { "@type": "City", "name": "İstanbul" },
   "url": `${CANONICAL_BASE}/hizmetler/anahtar-teslim/magaza-dukkan-tadilat`
@@ -19,8 +19,8 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Mağaza tadilat ne kadar sürer?", "acceptedAnswer": { "@type": "Answer", "text": "Ortalama bir mağaza tadilatı (60–150 m²) 4–7 hafta içinde tamamlanmaktadır. Elektrik altyapısı güçlendirme veya yapısal müdahale gerektiren projeler daha uzun sürebilir. Kapalı kalma süresini minimize etmek için detaylı uygulama planı oluşturuyoruz." } },
-    { "@type": "Question", "name": "Mağaza tadilat bütçesi nasıl belirlenir?", "acceptedAnswer": { "@type": "Answer", "text": "Bütçe; mekanın büyüklüğü, mevcut yapı ve altyapı durumu ile seçilen malzeme kalitesine göre belirlenir. Vitrin sistemi değişimi, elektrik güçlendirme ve zemin yenileme gibi kapsamlı işler maliyeti artırır. Ücretsiz keşif ziyaretimizde projenize özel şeffaf bütçe sunuyoruz." } },
+    { "@type": "Question", "name": "Kiracı olarak mağaza tadilatı için hangi izinler gerekir?", "acceptedAnswer": { "@type": "Answer", "text": "Kiracıysanız mal sahibinin yazılı onayı, AVM veya çarşı içindeyse yönetimin tadilat kuralları ve onayı gerekebilir; tabela, cephe ve vitrin değişiklikleri için belediye veya site yönetimi kuralları da geçerli olabilir. Elektrik ve tesisat müdahaleli işlerde bu adımlar planlamaya baştan dahil edilir. Kapsamı keşifte birlikte netleştiriyoruz." } },
+    { "@type": "Question", "name": "Vitrin ve elektrik altyapısı neden iş sırasının başında netleşmeli?", "acceptedAnswer": { "@type": "Answer", "text": "Aydınlatma yükü, kasa ve ödeme noktaları, kamera ve tabela hatları elektrik planına; vitrin ve ön cephe de binanın sınırlarına bağlıdır. Bunlar zemin ve duvar kaplamalarından önce kararlaştırılmazsa sonradan kırma ve yeniden uygulama gerekebilir. Bu nedenle altyapı ve vitrin kararlarını iş sırasının başına koyuyoruz." } },
     { "@type": "Question", "name": "Hangi mağaza türleri için hizmet veriyorsunuz?", "acceptedAnswer": { "@type": "Answer", "text": "Giyim mağazaları, butikler, eczaneler, güzellik salonları, elektronik mağazaları, spor malzemeleri ve her türlü perakende mekan için hizmet veriyoruz. Her sektörün kendine özgü ürün sergileme ve müşteri deneyimi ihtiyaçlarını dikkate alıyoruz." } },
     { "@type": "Question", "name": "Tadilat süresince mağaza açık kalabilir mi?", "acceptedAnswer": { "@type": "Answer", "text": "Elektrik altyapısı veya vitrin değişimi gibi kapsamlı işlerde kısa süreli kapanma gerekebilir. Kısmi tadilatlarda bölgeli uygulama ile mağazayı açık tutmak mümkündür. Kapalı kalma süresini minimize edecek en verimli takvimi keşif ziyaretimizde birlikte planlıyoruz." } }
   ]
@@ -28,12 +28,12 @@ const faqSchema = {
 ---
 
 <ServiceLayout
-  title="İstanbul Mağaza ve Dükkan Tadilat"
-  description="İstanbul'da mağaza ve dükkan tadilat. Elektrik, vitrin sistemi ve yapısal müdahale dahil kapsamlı perakende mekan dönüşümü. Nişantaşı, Levent, Kadıköy."
+  title="Mağaza ve Dükkan Tadilat İstanbul | Altyapı"
+  description="İstanbul'da mağaza ve dükkan tadilat: elektrik, tesisat, vitrin-cephe ve zemin müdahaleleri; kiracı izinleri ve iş sırası planı. Keşif: 0533 039 15 65"
   canonicalUrl={`${CANONICAL_BASE}/hizmetler/anahtar-teslim/magaza-dukkan-tadilat`}
-  h1="İstanbul Mağaza ve Dükkan Tadilat"
+  h1="İstanbul Mağaza ve Dükkan Tadilat: Altyapı ve Vitrin"
   eyebrow="Anahtar Teslim"
-  lead="Elektrik altyapısından vitrin sistemine, zemin değişiminden yapısal düzenlemeye kadar teknik müdahale gerektiren kapsamlı mağaza dönüşümleri. Marka kimliğini yansıtan, müşteri yolculuğunu optimize eden perakende mekanlar."
+  lead="Elektrik kapasitesine, vitrin ve ön cephe sistemine, zemin ve duvarlara dokunan kapsamlı mağaza ve dükkan dönüşümleri. Mal sahibi ve yönetim onayları, iş sırası ve kapalı kalma planı baştan netleştirilir."
   breadcrumb={[
     { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
     { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
@@ -53,15 +53,15 @@ const faqSchema = {
   <!-- Scope -->
   <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
     <div>
-      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Mağaza & Dükkan Tadilat Hizmetimiz</h2>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Altyapı ve Vitrin Müdahaleli Mağaza Tadilat</h2>
       <p class="text-muted leading-relaxed mb-4">
-        Mağaza tadilat; yalnızca yeni bir boya veya raf değişimini değil, elektrik altyapısının güçlendirilmesini, vitrin sisteminin yenilenmesini, zemin ve duvar kaplama değişimini ya da mekânın baştan kurgulanmasını kapsayabilir. Özellikle farklı bir sektörden devralınan veya eski bir mekânda açılan mağazalar bu tür kapsamlı müdahale gerektirir.
+        Mağaza tadilat; elektrik kapasitesinin ve aydınlatma hatlarının güçlendirilmesi, vitrin ve ön cephe sisteminin yenilenmesi, zemin ve duvar yüzeylerinin söküm sonrası baştan kurulması ya da mekânın yeniden planlanması gibi işleri kapsar. Özellikle farklı bir sektörden devralınan veya eski bir mekânda açılan mağazalar için gerekir.
       </p>
       <p class="text-muted leading-relaxed mb-4">
         Vitrin tasarımından iç mekana, ürün raflarından kasa alanına kadar tüm detayları marka kimliğiniz ve satış hedeflerinize göre optimize ediyoruz. <a href="/hizmetler/3d-tasarim" class="text-gold hover:underline">3D görselleştirme</a> ile mağazanın yeni görünümünü uygulamadan önce onaylayabilirsiniz.
       </p>
       <p class="text-muted leading-relaxed">
-        Yalnızca estetik güncelleme istiyorsanız <a href="/hizmetler/anahtar-teslim/magaza-dukkan-yenileme" class="text-gold hover:underline">mağaza yenileme</a> hizmetimiz daha hızlı ve ekonomik bir seçenek olabilir. Nişantaşı, Levent, Kadıköy, Beşiktaş ve tüm İstanbul'da hizmet veriyoruz.
+        Elektrik ve vitrin sistemi değişmeyecekse <a href="/hizmetler/anahtar-teslim/magaza-dukkan-yenileme" class="text-gold hover:underline">altyapıya dokunmadan mağaza ve dükkan yenileme</a> ile raf, boya ve aydınlatmayı daha kısa sürede tazeleyebilirsiniz. Vitrin ve iç mekân dekorasyonu için <a href="/hizmetler/dukkan-dekorasyon" class="text-gold hover:underline">dükkan dekorasyon</a> sayfamıza göz atabilirsiniz. Nişantaşı, Levent, Kadıköy, Beşiktaş ve tüm İstanbul'da hizmet veriyoruz.
       </p>
     </div>
     <div>
@@ -94,7 +94,7 @@ const faqSchema = {
   <div class="py-12 border-b border-border">
     <div class="flex items-center gap-3 mb-8">
       <span class="w-8 h-px bg-gold"></span>
-      <h2 class="font-display text-2xl font-bold text-charcoal">Mağaza Tadilat Ne Zaman Gerekir?</h2>
+      <h2 class="font-display text-2xl font-bold text-charcoal">Mağazada Altyapı ve Vitrin Müdahalesi Ne Zaman Gerekir?</h2>
     </div>
     <div class="grid md:grid-cols-3 gap-8">
       {[
@@ -161,8 +161,8 @@ const faqSchema = {
     </div>
     <div class="divide-y divide-border">
       {[
-        { q: 'Mağaza tadilat ne kadar sürer?', a: 'Ortalama bir mağaza tadilatı (60–150 m²) 4–7 hafta içinde tamamlanmaktadır. Elektrik altyapısı güçlendirme veya yapısal müdahale gerektiren projeler daha uzun sürebilir. Kapalı kalma süresini minimize etmek için detaylı uygulama planı oluşturuyoruz.' },
-        { q: 'Mağaza tadilat bütçesi nasıl belirlenir?', a: 'Bütçe; mekanın büyüklüğü, mevcut yapı ve altyapı durumu ile seçilen malzeme kalitesine göre belirlenir. Vitrin sistemi değişimi, elektrik güçlendirme ve zemin yenileme gibi kapsamlı işler maliyeti artırır. Ücretsiz keşif ziyaretimizde projenize özel şeffaf bütçe sunuyoruz.' },
+        { q: 'Kiracı olarak mağaza tadilatı için hangi izinler gerekir?', a: 'Kiracıysanız mal sahibinin yazılı onayı, AVM veya çarşı içindeyse yönetimin tadilat kuralları ve onayı gerekebilir; tabela, cephe ve vitrin değişiklikleri için belediye veya site yönetimi kuralları da geçerli olabilir. Elektrik ve tesisat müdahaleli işlerde bu adımlar planlamaya baştan dahil edilir. Kapsamı keşifte birlikte netleştiriyoruz.' },
+        { q: 'Vitrin ve elektrik altyapısı neden iş sırasının başında netleşmeli?', a: 'Aydınlatma yükü, kasa ve ödeme noktaları, kamera ve tabela hatları elektrik planına; vitrin ve ön cephe de binanın sınırlarına bağlıdır. Bunlar zemin ve duvar kaplamalarından önce kararlaştırılmazsa sonradan kırma ve yeniden uygulama gerekebilir. Bu nedenle altyapı ve vitrin kararlarını iş sırasının başına koyuyoruz.' },
         { q: 'Hangi mağaza türleri için hizmet veriyorsunuz?', a: 'Giyim mağazaları, butikler, eczaneler, güzellik salonları, elektronik mağazaları, spor malzemeleri ve her türlü perakende mekan için hizmet veriyoruz. Her sektörün kendine özgü ürün sergileme ve müşteri deneyimi ihtiyaçlarını dikkate alıyoruz.' },
         { q: 'Tadilat süresince mağaza açık kalabilir mi?', a: 'Elektrik altyapısı veya vitrin değişimi gibi kapsamlı işlerde kısa süreli kapanma gerekebilir. Kısmi tadilatlarda bölgeli uygulama ile mağazayı açık tutmak mümkündür. Kapalı kalma süresini minimize edecek en verimli takvimi keşif ziyaretimizde birlikte planlıyoruz.' },
       ].map((faq, i) => (

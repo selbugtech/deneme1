@@ -1,0 +1,281 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import ServiceAreaLinks from '../../components/ServiceAreaLinks.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImage } from '../../lib/cloudinary';
+
+const heroPath = '/images/salon3.jpeg';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Boya Badana",
+  "name": "Boya Badana İstanbul",
+  "description": "Alçı, astar, saten ve dekoratif boya uygulamalarıyla ev, ofis ve dükkanlarda temiz, düzgün ve dayanıklı duvar yüzeyleri.",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
+  "areaServed": { "@type": "City", "name": "İstanbul" },
+  "url": `${CANONICAL_BASE}/hizmetler/boya-badana`,
+};
+
+const faqItems = [
+  {
+    q: "Boya badana işlemi hangi aşamalardan oluşur?",
+    a: "İşlem, yüzey hazırlığı ile başlar: eski boyanın durumu kontrol edilir, kabaran veya dökülen kısımlar kazınır, çatlak ve çukurlar macun ya da alçı ile onarılır, zımparalanır. Ardından astar sürülür ve son kat boya uygulanır. Yüzey hazırlığı boyadan daha belirleyicidir; çünkü iyi hazırlanmamış bir yüzeyde en kaliteli boya bile düzgün görünmez.",
+  },
+  {
+    q: "Boya badana sırasında evde kalınabilir mi?",
+    a: "Genelde mümkündür ama rahat değildir. Zımpara tozu ve boya kokusu özellikle ilk günlerde rahatsız edici olabilir. Eşyaların korunması ve odaların sırayla ilerlenmesiyle evde kalmak mümkündür; hamile, bebek veya hassas kişiler için boyalı odaların iyi havalandırılması ve gerekirse kısa süreli başka yerde kalınması önerilir.",
+  },
+  {
+    q: "Saten boya, plastik boya ve dekoratif boya arasında nasıl seçim yapılır?",
+    a: "Plastik boya mat ve pürüzsüz bir yüzey verir, çoğu oda için uygundur. Saten boya hafif parlak olduğundan silinebilirliği yüksektir ve mutfak, çocuk odası, koridor gibi yoğun kullanılan alanlarda tercih edilir. Dekoratif boyalar ise dokulu, desenli veya efektli yüzeyler yaratır ve genellikle tek bir vurgu duvarında kullanılır.",
+  },
+  {
+    q: "Eski boyanın üzerine direkt boya yapılabilir mi?",
+    a: "Yüzey sağlamsa ve boya uyumluysa evet; ancak kabaran, dökülen veya nemli kısımlar varsa önce bunların sebebi giderilmelidir. Nem kaynaklı lekeleri sadece boya ile kapatmak kalıcı çözüm değildir, lekeler zamanla tekrar çıkabilir. Bu nedenle boyadan önce yüzeyi inceler ve gerekirse nemin kaynağını tespit etmeyi öneririz.",
+  },
+  {
+    q: "Alçı ve saten alçı uygulaması neden yapılır?",
+    a: "Duvar yüzeylerindeki kaba pürüz ve dalgalanmaları gidermek ve boya için düz bir zemin hazırlamak amacıyla uygulanır. Yeni yapılan duvarlarda veya düzgünlüğü bozulmuş eski duvarlarda alçı ve ardından saten alçı sıvama ile ışık altında bile fark edilmeyen pürüzsüz bir yüzey elde edilir.",
+  },
+  {
+    q: "Renk seçiminde nelere dikkat edilmeli?",
+    a: "Renk, odanın aldığı ışığa, tavan yüksekliğine ve mobilya rengine göre farklı algılanır. Küçük numunelerle doğal ışıkta gün içinde deneme yapmak en güvenli yöntemdir. Karar vermekte zorlanırsanız renk önerileri ve palet uyumu konusunda destek veriyoruz.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const dahil = [
+  'Yerinde keşif ve yüzey durumu tespiti',
+  'Eski boya kazıma ve yüzey hazırlığı',
+  'Çatlak ve çukur onarımı, macun ve alçı uygulaması',
+  'Saten alçı ile pürüzsüz yüzey hazırlığı',
+  'Astar ve plastik boya uygulaması',
+  'Saten ve silinebilir boya uygulaması',
+  'Dekoratif boya ve dokulu yüzeyler',
+  'Eşya koruma ve işlem sonrası temizlik',
+];
+
+const konular = [
+  { t: 'Yüzey hazırlığı', d: 'Boyanın ömrünü ve görünümünü belirleyen en önemli aşamadır. Toz, yağ ve gevşek boya kalıntıları temizlenmeden uygulanan boya tutunmaz. Pürüzler ve çatlaklar giderilmeden yapılan boya ise ışık altında bütün kusurları gösterir.' },
+  { t: 'Nem ve küf', d: 'Duvarda nem lekesi, kabarma veya küf varsa önce kaynağın bulunması gerekir. Sızıntı, yalıtım eksikliği veya havalandırma sorunu çözülmeden yapılan boya kısa sürede bozulur. Gerekli görülürse ilgili uzman değerlendirmesi önerilir.' },
+  { t: 'Boya türü seçimi', d: 'Odanın kullanımı boya türünü belirler. Yoğun kullanılan yüzeylerde silinebilir saten, yatak odası ve salonda mat yüzeyler, ıslak hacimlerde nem dirençli ürünler tercih edilir.' },
+  { t: 'Işık ve renk algısı', d: 'Aynı renk farklı ışıkta farklı görünür. Doğal ışık, ampul rengi ve komşu yüzeyler algıyı değiştirir. Numuneyi odanın kendi ışığında görmeden karar vermemek gerekir.' },
+];
+
+const hatalar = [
+  { t: 'Yüzey hazırlığını geçmek', d: 'En sık hata, hazırlığı atlayıp doğrudan boyamaya geçmektir. Bu, kabarma, çatlama ve düzensiz görünüm olarak geri döner.' },
+  { t: 'Renk numunesine bakmadan karar vermek', d: 'Katalogdaki veya ekrandaki renk gerçek duvarda farklı görünür. Küçük bir alanda deneme yapmak sürpriz yaşamayı önler.' },
+  { t: 'Boya sırasını yanlış planlamak', d: 'Boya, genellikle alçıpan, elektrik ve tavan işleri bittikten sonra ancak zemin ve mobilya montajından önce yapılmalıdır. Sıra bozulursa rötuş ihtiyacı artar.' },
+  { t: 'Havalandırmayı ihmal etmek', d: 'Boya sonrası odanın yeterince havalandırılmaması koku ve kuruma süresi sorununa yol açar. Kuruma süresi, ürün ve ortam koşullarına göre değişir.' },
+];
+
+const surec = [
+  { no: '01', t: 'Keşif', d: 'Yüzeyler incelenir, sorunlu alanlar tespit edilir.' },
+  { no: '02', t: 'Koruma', d: 'Zemin ve eşyalar korunur, bantlama yapılır.' },
+  { no: '03', t: 'Hazırlık', d: 'Kazıma, onarım, alçı ve zımpara uygulanır.' },
+  { no: '04', t: 'Boya', d: 'Astar ve boya katları uygulanır.' },
+  { no: '05', t: 'Kontrol ve Teslim', d: 'Rötuşlar yapılır, temizlik sonrası teslim edilir.' },
+];
+---
+
+<ServiceLayout
+  title="Boya Badana İstanbul | Alçı, Saten ve Dekoratif Boya"
+  description="Boya badana İstanbul: yüzey hazırlığı, alçı, saten ve dekoratif boya uygulamaları ile düzgün ve dayanıklı duvarlar. Ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/hizmetler/boya-badana`}
+  h1="Boya Badana İstanbul: Alçı, Saten ve Dekoratif Boya"
+  eyebrow="Oda Bazlı Hizmet"
+  lead="Yüzey hazırlığından son kat boyaya kadar ev, ofis ve dükkânlarda temiz, düzgün ve dayanıklı duvarlar. Alçı, saten ve dekoratif boya uygulamaları tek ekiple."
+  heroImage={heroPath}
+  ogImage={optimizedImage(heroPath)}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
+    { label: "Boya Badana" }
+  ]}
+  structuredData={[serviceSchema, faqSchema]}
+>
+
+  <section class="py-12 border-b border-border">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-3xl font-bold text-charcoal mb-4">İstanbul'da Boya Badana Hizmeti</h2>
+        <p class="text-muted leading-relaxed mb-4">
+          Boya badana, bir mekânın en hızlı ve görünür biçimde yenilenen işlerinden biridir. Ancak sonucu belirleyen,
+          son kattaki renkten çok altındaki hazırlıktır. Düzgün bir yüzey, doğru astar ve uygun boya türü bir araya
+          geldiğinde duvarlar yıllarca temiz ve dengeli görünür; hazırlık eksik kaldığında ise ilk kusur aylar içinde ortaya çıkar.
+        </p>
+        <p class="text-muted leading-relaxed mb-4">
+          Bu yüzden işe boya sürmekle değil duvarı okumakla başlıyoruz. Eski boyanın durumu, nem izi, çatlak, kabarma
+          ve düzgünlük bozukluğu tek tek incelenir. Gerekli yerlerde kazıma, macun, alçı ve saten alçı uygulamaları
+          yapılır; ancak yüzey hazır olduğunda astar ve boya katlarına geçilir.
+        </p>
+        <p class="text-muted leading-relaxed">
+          İstanbul'da hem eski apartman dairelerinde hem yeni sitelerde çalışıyoruz. Eski binalarda genellikle
+          çok katlı eski boya, nem lekeleri ve yer yer dökülen sıvalar; yeni binalarda ise sıfır duvar ve renk seçimi
+          öne çıkıyor. Boya işini ayrı bir iş olarak veya <a href="/hizmetler/anahtar-teslim/ev-tadilat" class="text-gold hover:underline">ev tadilat</a>
+          kapsamında bir iş kalemi olarak alabilirsiniz.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-charcoal mb-4">Hizmete dahil olanlar</h3>
+        <ul class="space-y-3">
+          {dahil.map(item => (
+            <li class="flex items-start gap-3 text-sm text-muted">
+              <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+                <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+          <p class="text-sm text-charcoal font-medium">Renk kararında destek ister misiniz?</p>
+          <p class="text-muted text-sm mt-2">
+            Renk ve mekân uyumu için
+            <a href="/hizmetler/ev-dekorasyon" class="text-gold hover:underline">ev dekorasyon</a>
+            ve <a href="/hizmetler/ic-mimarlik-danismanligi" class="text-gold hover:underline">iç mimarlık danışmanlığı</a>
+            hizmetlerimizden yararlanabilirsiniz.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Boya Badanada Belirleyici Konular</h2>
+    <p class="text-muted leading-relaxed max-w-3xl mb-8">
+      Aşağıdaki konular boya işinin hem görünümünü hem ömrünü etkiler; keşifte hepsini duvarlar üzerinde değerlendiriyoruz.
+    </p>
+    <div class="grid md:grid-cols-2 gap-6">
+      {konular.map(k => (
+        <div class="border border-border p-7 bg-[#FAF6F1]">
+          <h3 class="font-display text-lg font-bold text-charcoal mb-2">{k.t}</h3>
+          <p class="text-muted text-sm leading-relaxed">{k.d}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Alçı, Saten ve Dekoratif Boya Farkı</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div>
+        <h3 class="font-semibold text-charcoal mb-2">Alçı ve saten alçı</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Duvarın düzgünlüğünü sağlayan hazırlık katmanıdır. Özellikle yeni duvarlarda veya pürüzlü eski yüzeylerde,
+          boyadan önce yapılan alçı ve saten alçı uygulaması yüzeyi pürüzsüz kılar.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-charcoal mb-2">Plastik ve saten boya</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Plastik boya mat bir görünüm verir ve çoğu oda için uygundur. Saten boya hafif parlaktır, silinebilirliği
+          yüksektir; mutfak, koridor ve çocuk odalarında temizlik kolaylığı sağlar.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-charcoal mb-2">Dekoratif boya</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Dokulu, efektli veya desenli yüzeyler yaratır. Tüm odada kullanmak yerine tek bir vurgu duvarında
+          uygulanması çoğu zaman daha dengeli sonuç verir; mekâna karakter katar.
+        </p>
+      </div>
+    </div>
+    <p class="text-muted leading-relaxed max-w-3xl mt-8 text-sm">
+      Boya, tavan ve duvar işleriyle birlikte düşünülmelidir. Tavan ve bölme yüzeyleri için
+      <a href="/hizmetler/alcipan-asma-tavan" class="text-gold hover:underline">alçıpan ve asma tavan</a>,
+      mutfak dolaplarının renk uyumu için <a href="/hizmetler/mutfak-dolabi" class="text-gold hover:underline">mutfak dolabı</a>
+      sayfalarımıza bakabilirsiniz. Daha kapsamlı bir yenileme planlıyorsanız
+      <a href="/hizmetler/anahtar-teslim/ev-yenileme" class="text-gold hover:underline">ev yenileme</a>
+      hizmetimiz boya işini diğer yüzey işleriyle birlikte yönetir.
+    </p>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Boya Badanada Sık Görülen Hatalar</h2>
+    <p class="text-muted leading-relaxed max-w-3xl mb-8">
+      Boya sonrası memnuniyetsizliklerin büyük kısmı aşağıdaki dört konuda toplanıyor.
+    </p>
+    <div class="space-y-4">
+      {hatalar.map((h, i) => (
+        <div class="flex gap-5 border border-border p-6 bg-[#FAF6F1]">
+          <p class="font-display text-2xl font-bold text-gold/40 shrink-0">0{i + 1}</p>
+          <div>
+            <h3 class="font-semibold text-charcoal mb-1">{h.t}</h3>
+            <p class="text-muted text-sm leading-relaxed">{h.d}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Boya Badana Sürecimiz</h2>
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+      {surec.map(s => (
+        <div>
+          <p class="font-display text-2xl font-bold text-gold/40 mb-2">{s.no}</p>
+          <h3 class="font-semibold text-charcoal text-sm mb-2">{s.t}</h3>
+          <p class="text-muted text-xs leading-relaxed">{s.d}</p>
+        </div>
+      ))}
+    </div>
+    <p class="text-muted leading-relaxed max-w-3xl mt-8 text-sm">
+      Renk ve ışık ilişkisi hakkında daha fazla bilgi için <a href="/blog/salon-dekorasyon-fikirleri" class="text-gold hover:underline">salon dekorasyon fikirleri</a>
+      ve <a href="/blog/yatak-odasi-dekorasyon-fikirleri" class="text-gold hover:underline">yatak odası dekorasyon fikirleri</a> yazılarımıza göz atabilirsiniz.
+    </p>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Hizmet Verdiğimiz İlçeler</h2>
+    <ServiceAreaLinks names={['Kadıköy', 'Beşiktaş', 'Şişli', 'Ataşehir', 'Üsküdar', 'Bakırköy', 'Maltepe', 'Esenyurt', 'Pendik', 'Kartal']} />
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="w-8 h-px bg-gold"></span>
+      <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Sıkça Sorulan Sorular</span>
+    </div>
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Boya badana hakkında</h2>
+    <div class="space-y-4">
+      {faqItems.map(f => (
+        <details class="border border-border bg-[#FAF6F1] p-6 group">
+          <summary class="font-semibold text-charcoal cursor-pointer list-none flex items-start justify-between gap-4">
+            <span>{f.q}</span>
+            <span class="text-gold shrink-0 transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="text-muted text-sm leading-relaxed mt-4">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">İlgili Sayfalar</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Ev Tadilat', href: '/hizmetler/anahtar-teslim/ev-tadilat' },
+        { label: 'Ev Dekorasyon', href: '/hizmetler/ev-dekorasyon' },
+        { label: 'Alçıpan ve Asma Tavan', href: '/hizmetler/alcipan-asma-tavan' },
+        { label: 'Ev Tadilatı İpuçları', href: '/blog/ev-tadilati-ipuclari' },
+        { label: 'Ofis Dekorasyon', href: '/hizmetler/ofis-dekorasyon' },
+        { label: 'İstanbul Hizmet Bölgeleri', href: '/istanbul' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </section>
+
+</ServiceLayout>

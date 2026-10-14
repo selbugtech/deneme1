@@ -1,0 +1,261 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import ServiceAreaLinks from '../../components/ServiceAreaLinks.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImage } from '../../lib/cloudinary';
+
+const heroPath = '/images/salon8.jpeg';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Villa Dekorasyon",
+  "name": "İstanbul Villa Dekorasyon",
+  "description": "Geniş hacimli villalarda katlar, ortak alanlar ve odalar arasında tutarlı iç mekân, aydınlatma ve özel mobilya kurgusu sunan villa dekorasyon hizmeti.",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
+  "areaServed": { "@type": "City", "name": "İstanbul" },
+  "url": `${CANONICAL_BASE}/hizmetler/villa-dekorasyon`,
+};
+
+const faqItems = [
+  {
+    q: "Villa dekorasyonu daire dekorasyonundan nasıl ayrılır?",
+    a: "Villada ölçek büyüdüğü için kararların sayısı ve birbirine bağımlılığı da artar. Çok katlı yerleşim, merdiven ve çift yükseklikli alanlar, bahçe ile iç mekân ilişkisi, geniş cam yüzeyler ve uzun perde hatları gibi konular daire dekorasyonunda yoktur. Bu nedenle villa projelerinde önce bütün evin ortak bir dili belirlenir, ardından odalar bu dile göre detaylandırılır.",
+  },
+  {
+    q: "Villanın tamamını aynı anda mı dekore etmek gerekir?",
+    a: "Hayır. Çoğu villa projesi fazlara bölünerek yürütülür: önce yaşam alanları ve giriş, sonra yatak odaları ve diğer alanlar gibi. Ancak genel konsept ve malzeme paleti baştan belirlenir; böylece sonraki fazlarda eklenen parçalar mevcut düzenle uyumlu kalır.",
+  },
+  {
+    q: "Boğaz ve orman çevresindeki villalarda özel bir dikkat gerekir mi?",
+    a: "Nem, güneş ışığı ve rüzgâr gibi çevresel faktörler malzeme seçimini etkiler. Deniz veya orman kenarındaki villalarda nemden etkilenmeyen kaplamalar, güneşten solmayan kumaşlar ve iyi havalandırılan dolap içleri tercih edilir. Ayrıca manzaraya açılan cephelerde perde ve ışık kontrolü ayrıca planlanır.",
+  },
+  {
+    q: "Özel mobilya ve dolap tasarımı yapıyor musunuz?",
+    a: "Evet. Villalarda hazır mobilyanın karşılayamadığı ölçüler ve alanlar sık görülür: merdiven altı, giyinme odası, kitaplık duvarı ve geniş mutfaklar bunların başında gelir. Bu alanlar için ölçüye özel tasarım yapıp üretim ve montajını da koordine ediyoruz.",
+  },
+  {
+    q: "Villa dekorasyonunda 3D çalışma gerekli mi?",
+    a: "Büyük hacimlerde kararların görsel üzerinde verilmesi önemlidir; çünkü yanlış seçilen bir kumaş, avize ya da kaplama büyük yüzeylerde çok daha belirgin sonuç verir. 3D görselleştirme ile renk, doku ve ışık ilişkisini uygulamadan önce görüp onaylayabilirsiniz.",
+  },
+  {
+    q: "Dekorasyon sırasında villada yaşamaya devam edebilir miyim?",
+    a: "Villanın büyüklüğü fazlı çalışmaya imkân verdiği için çoğu zaman mümkündür. Çalışılan bölüm kapatılır, diğer katlar kullanılmaya devam eder. Toz ve gürültü üreten işler için gün ve saat planı önceden paylaşılır; kapsamlı yüzey ve zemin işlerinde geçici taşınma daha rahat bir seçenek olabilir.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const dahil = [
+  'Yerinde keşif ve kat bazlı alan analizi',
+  'Villanın bütününü kapsayan konsept dosyası',
+  'Salon, yemek alanı ve ortak alan kurgusu',
+  'Merdiven, giriş holü ve çift yükseklik düzenlemeleri',
+  'Ölçüye özel mobilya, dolap ve kitaplık tasarımı',
+  'Katmanlı aydınlatma ve dekoratif armatür seçimi',
+  'Perde, halı ve tekstil planlaması',
+  'Bahçe ve teras ile iç mekân bağlantısı',
+];
+
+const alanlar = [
+  { t: 'Giriş holü ve merdiven', d: 'Villanın ilk izlenimi giriş holünde oluşur. Merdiven korkuluğu, avize ve zemin kaplaması bu alanın karakterini belirler. Çift yükseklikli girişlerde avize ölçeği ve aydınlatma bakımı da baştan düşünülmelidir.' },
+  { t: 'Salon ve yemek alanı', d: 'Geniş salonlarda mobilyayı duvara dayamak yerine gruplar hâlinde konumlandırmak sohbet alanları oluşturur. Yemek alanı, mutfak ve bahçeyle ilişkisine göre yerleştirilir.' },
+  { t: 'Yatak odaları ve banyolar', d: 'Ebeveyn odası çoğunlukla giyinme odası ve banyoyla birlikte bir süit gibi kurgulanır. Misafir ve çocuk odalarında ise depolama ve esneklik öne çıkar.' },
+  { t: 'Teras, bahçe bağlantısı', d: 'İç mekân malzemesi ile dış mekân malzemesinin geçişi, kapı eşikleri ve gece aydınlatması bütünlüğü belirler. Cam yüzeylerin yanında perde ve ışık kontrolü de bu başlığa dahildir.' },
+];
+
+const hatalar = [
+  { t: 'Ölçeği küçük seçmek', d: 'Geniş hacimde küçük mobilya ve ufak armatürler kaybolur. Parçaların boyutu, mekânın ölçeğine göre seçilmelidir; bunu görselleştirmeden anlamak zordur.' },
+  { t: 'Katlar arasında kopukluk', d: 'Her katı farklı bir konsepte bağlamak villayı birbirinden kopuk bölümlere ayırır. Ortak bir malzeme ve renk dili, geçişleri akıcı kılar.' },
+  { t: 'Aydınlatmayı yalnızca avizeye bırakmak', d: 'Avize atmosfer yaratır ama tek başına yeterli değildir. Gizli ışık, duvar aplikleri ve vurgu aydınlatması birlikte kurgulanmalıdır.' },
+  { t: 'Depolamayı küçümsemek', d: 'Geniş evlerde de eşya çoğalır. Merdiven altı, hol ve giyinme alanlarında ölçüye özel depolama, düzenin sürdürülebilmesini sağlar.' },
+];
+
+const surec = [
+  { no: '01', t: 'Keşif', d: 'Tüm katlar gezilir, beklentiler ve yaşam düzeni konuşulur.' },
+  { no: '02', t: 'Konsept', d: 'Villanın ortak dili, renk ve malzeme paleti belirlenir.' },
+  { no: '03', t: '3D Görsel', d: 'Ana alanlar görselleştirilir, kararlar onaylanır.' },
+  { no: '04', t: 'Fazlı Uygulama', d: 'Katlar ve bölümler plana göre sırayla tamamlanır.' },
+  { no: '05', t: 'Stilizasyon', d: 'Son aksesuar ve aydınlatma ayarıyla teslim yapılır.' },
+];
+---
+
+<ServiceLayout
+  title="İstanbul Villa Dekorasyon | Villa İç Mekân Tasarımı"
+  description="İstanbul villa dekorasyon: katlar ve ortak alanlarda tutarlı kurgu, ölçüye özel mobilya ve katmanlı aydınlatma. Ücretsiz keşif için arayın: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/hizmetler/villa-dekorasyon`}
+  h1="İstanbul Villa Dekorasyon"
+  eyebrow="Dekorasyon"
+  lead="Geniş hacimli villalarda katlar ve ortak alanlar arasında tutarlı bir iç mekân dili kuruyoruz. Konsept, ölçüye özel mobilya ve aydınlatma tek ekipte buluşuyor."
+  heroImage={heroPath}
+  ogImage={optimizedImage(heroPath)}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "Hizmetler", href: `${CANONICAL_BASE}/hizmetler` },
+    { label: "Villa Dekorasyon" }
+  ]}
+  structuredData={[serviceSchema, faqSchema]}
+>
+
+  <section class="py-12 border-b border-border">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-3xl font-bold text-charcoal mb-4">İstanbul'da Villa Dekorasyonu</h2>
+        <p class="text-muted leading-relaxed mb-4">
+          Villa dekorasyonu, daire dekorasyonunun büyütülmüş hâli değildir. Hacim büyüdükçe kararlar birbirine
+          daha sıkı bağlanır: bir katta seçilen zemin malzemesi merdivenle, merdiven holle, hol de salonla
+          konuşmak zorundadır. Bu yüzden villa projelerinde odalara geçmeden önce bütün evin ortak dilini kuruyoruz.
+        </p>
+        <p class="text-muted leading-relaxed mb-4">
+          Zekeriyaköy, Acıbadem, Sarıyer ve Boğaz hattındaki villalarda gördüğümüz ortak ihtiyaç, geniş alanların
+          sıcak ve yaşanır kalmasıdır. Çok yüksek tavanlar, büyük cam yüzeyler ve uzun koridorlar etkileyici görünür;
+          ancak doğru mobilya ölçeği, katmanlı aydınlatma ve doku çeşitliliği olmadan soğuk bir izlenim bırakabilir.
+        </p>
+        <p class="text-muted leading-relaxed">
+          Çalışma düzenimiz fazlıdır. Önce giriş, salon ve yemek alanı gibi ortak alanları, ardından yatak odaları ve
+          yardımcı alanları ele alırız. Her fazın sonunda hem uygulama hem görsel olarak ilerleme paylaşılır; böylece
+          büyük projeler kontrolden çıkmadan, tek bir bütün olarak ilerler.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-charcoal mb-4">Hizmete dahil olanlar</h3>
+        <ul class="space-y-3">
+          {dahil.map(item => (
+            <li class="flex items-start gap-3 text-sm text-muted">
+              <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+                <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+          <p class="text-sm text-charcoal font-medium">Yapısal müdahale de gerekiyor mu?</p>
+          <p class="text-muted text-sm mt-2">
+            Dekorasyonla birlikte altyapı ve yapısal çalışma planlıyorsanız
+            <a href="/hizmetler/anahtar-teslim/villa-tadilat" class="text-gold hover:underline">villa tadilat</a>
+            ve <a href="/hizmetler/anahtar-teslim/villa-yenileme" class="text-gold hover:underline">villa yenileme</a>
+            sayfalarımıza göz atın.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Villada Alan Alan Dekorasyon Kararları</h2>
+    <p class="text-muted leading-relaxed max-w-3xl mb-8">
+      Villanın farklı bölümleri farklı sorular sorar. Aşağıda en sık ele aldığımız dört alanı ve her birinde
+      dikkat ettiğimiz noktaları özetledik.
+    </p>
+    <div class="grid md:grid-cols-2 gap-6">
+      {alanlar.map(k => (
+        <div class="border border-border p-7 bg-[#FAF6F1]">
+          <h3 class="font-display text-lg font-bold text-charcoal mb-2">{k.t}</h3>
+          <p class="text-muted text-sm leading-relaxed">{k.d}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Özel Mobilya ve Detay Çözümleri</h2>
+    <div class="grid md:grid-cols-2 gap-10">
+      <p class="text-muted leading-relaxed">
+        Villalarda hazır mobilyanın karşılayamadığı ölçüler çoktur. Merdiven altındaki boşluk, kolon aralarındaki
+        nişler, kitaplık duvarı veya geniş bir giyinme alanı ancak ölçüye özel tasarımla verimli kullanılır. Bu
+        çalışmalar için <a href="/hizmetler/giyinme-odasi-tasarimi" class="text-gold hover:underline">giyinme odası tasarımı</a>
+        ve <a href="/hizmetler/mutfak-dolabi" class="text-gold hover:underline">ölçüye özel mutfak dolabı</a> hizmetlerimizi birlikte değerlendiriyoruz.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Yüzey ve tavan detayları da bütünlüğün parçasıdır. Tavanda gizli ışık ve kartonpiyer çözümleri için
+        <a href="/hizmetler/alcipan-asma-tavan" class="text-gold hover:underline">alçıpan ve asma tavan</a>,
+        duvar yüzeyleri için <a href="/hizmetler/boya-badana" class="text-gold hover:underline">boya ve badana</a>
+        sayfalarımıza bakabilirsiniz. Villa projeleri hakkında ayrıntılı bilgi için
+        <a href="/blog/villa-tadilati-istanbul" class="text-gold hover:underline">villa tadilatı rehberimizi</a> okuyabilirsiniz.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Villa Dekorasyonunda Sık Görülen Hatalar</h2>
+    <p class="text-muted leading-relaxed max-w-3xl mb-8">
+      Büyük hacimlerde yapılan hatalar daha görünür ve düzeltmesi daha zordur. Bunları tasarım aşamasında yakalamak için çalışıyoruz.
+    </p>
+    <div class="space-y-4">
+      {hatalar.map((h, i) => (
+        <div class="flex gap-5 border border-border p-6 bg-[#FAF6F1]">
+          <p class="font-display text-2xl font-bold text-gold/40 shrink-0">0{i + 1}</p>
+          <div>
+            <h3 class="font-semibold text-charcoal mb-1">{h.t}</h3>
+            <p class="text-muted text-sm leading-relaxed">{h.d}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Villa Dekorasyon Sürecimiz</h2>
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+      {surec.map(s => (
+        <div>
+          <p class="font-display text-2xl font-bold text-gold/40 mb-2">{s.no}</p>
+          <h3 class="font-semibold text-charcoal text-sm mb-2">{s.t}</h3>
+          <p class="text-muted text-xs leading-relaxed">{s.d}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Hizmet Verdiğimiz İlçeler</h2>
+    <ServiceAreaLinks names={['Zekeriyaköy', 'Acıbadem', 'Sarıyer', 'Beykoz', 'Üsküdar', 'Beşiktaş', 'Büyükçekmece', 'Bakırköy', 'Levent']} />
+  </section>
+
+  <section class="py-12 border-b border-border">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="w-8 h-px bg-gold"></span>
+      <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Sıkça Sorulan Sorular</span>
+    </div>
+    <h2 class="font-display text-3xl font-bold text-charcoal mb-8">Villa dekorasyon hakkında</h2>
+    <div class="space-y-4">
+      {faqItems.map(f => (
+        <details class="border border-border bg-[#FAF6F1] p-6 group">
+          <summary class="font-semibold text-charcoal cursor-pointer list-none flex items-start justify-between gap-4">
+            <span>{f.q}</span>
+            <span class="text-gold shrink-0 transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="text-muted text-sm leading-relaxed mt-4">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="py-12">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">İlgili Sayfalar</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Ev Dekorasyon', href: '/hizmetler/ev-dekorasyon' },
+        { label: 'Villa Tadilatı Rehberi', href: '/blog/villa-tadilati-istanbul' },
+        { label: 'Villa Yenileme', href: '/hizmetler/anahtar-teslim/villa-yenileme' },
+        { label: 'Ev Aydınlatma Rehberi', href: '/blog/ev-aydinlatma-rehberi' },
+        { label: '3D Tasarım', href: '/hizmetler/3d-tasarim' },
+        { label: 'İstanbul Hizmet Bölgeleri', href: '/istanbul' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </section>
+
+</ServiceLayout>

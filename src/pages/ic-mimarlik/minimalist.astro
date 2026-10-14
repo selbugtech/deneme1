@@ -1,5 +1,6 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import StyleNextSteps from '../../components/StyleNextSteps.astro';
 import { CANONICAL_BASE } from '../../config';
 import { optimizedImage, ogImageUrl } from '../../lib/cloudinary';
 import { styles } from '../../data/styles';
@@ -211,5 +212,7 @@ const hatalar = [
       ))}
     </div>
   </section>
+
+  <StyleNextSteps styleName="Minimalist" />
 
 </ServiceLayout>

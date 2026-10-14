@@ -1,0 +1,174 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictBlogLinks from '../../components/DistrictBlogLinks.astro';
+import DistrictFAQ from '../../components/DistrictFAQ.astro';
+import ProcessStrip from '../../components/ProcessStrip.astro';
+import DistrictProjects from '../../components/DistrictProjects.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImageW } from '../../lib/cloudinary';
+import { getDistrict } from '../../data/districts';
+
+// İlçe adı ve bulunma hali eki tek kaynaktan: src/data/districts.ts.
+const district = getDistrict('sancaktepe-ic-mimarlik')!;
+const heroPath = '/images/salon1.png';
+const heroAbs = optimizedImageW(heroPath, 1600);
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "İç mimarlık, tadilat ve ev yenileme",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
+  "areaServed": { "@type": "Place", "name": "Sancaktepe, İstanbul" },
+  "url": `${CANONICAL_BASE}/istanbul/sancaktepe-ic-mimarlik`,
+  "description": "Sancaktepe'de site ve toplu konut daireleri için iç mimarlık, ev tadilatı ve dekorasyon.",
+  "image": heroAbs,
+};
+
+const faqItems = [
+  {
+    q: "Samandıra ve Sarıgazi'deki site dairelerinde tadilat için yönetimden izin gerekiyor mu?",
+    a: "Çoğu sitede tadilat öncesi yönetime yazılı bildirim, ekip listesi ve çalışma saatlerine uyum isteniyor; bazı sitelerde güvence bedeli gibi uygulamalar da olabiliyor. İzin süreçlerini ve yük asansörü randevularını sizin adınıza takip ediyor, şantiye takvimini bu kurallara göre planlıyoruz.",
+  },
+  {
+    q: "Kentsel dönüşümle teslim aldığım dairede ne yaptırmalıyım?",
+    a: "Dönüşüm sonrası teslim edilen dairelerde genellikle standart bir paket geliyor. Mutfak dolap düzeni, gömme depolama, zemin ve duvar yüzeyleri ile aydınlatma planı çoğu ailenin ilk önceliği oluyor. Taşınmadan önce başlamak hem süreci hem de maliyetleri daha öngörülebilir kılıyor.",
+  },
+  {
+    q: "Daireyi kiraya vermeyi düşünüyorum, dekorasyon nasıl planlanmalı?",
+    a: "Kiralık konutlarda dayanıklılık, kolay temizlik ve nötr bir tasarım dili öne çıkıyor. Sağlam zemin, kolay bakım yapılabilen mutfak ve banyo yüzeyleri ile sade renk paleti işi kolaylaştırıyor. Keşifte kiracı profilini ve beklentilerinizi konuşup dekorasyonu buna göre kurguluyoruz.",
+  },
+  {
+    q: "Yenidoğan, Abdurrahmangazi ve Akpınar'da kullanıma yönelik depolama çözümleri üretiyor musunuz?",
+    a: "Evet. Sancaktepe'deki dairelerde depolama alanı ihtiyacı sık görülüyor; giriş, yatak odası ve koridor gibi kullanılmayan boşlukları ölçüye özel dolaplarla değerlendiriyoruz. Ölçü sahada alınıyor ve üretim daireye göre yapılıyor.",
+  },
+  {
+    q: "Sancaktepe'de ulaşım ve sevkiyat tadilat süresini etkiler mi?",
+    a: "Trafik yoğunluğu nedeniyle malzeme teslimatları genellikle sabah erken saatlere veya trafiğin hafif olduğu aralıklara planlanıyor. Böylece hem sitedeki çalışma saatlerine hem de sevkiyat güvenliğine uyum sağlanıyor. Keşif randevusunu WhatsApp veya telefonla alabilirsiniz.",
+  },
+];
+---
+
+<ServiceLayout
+  title="Sancaktepe İç Mimarlık, Ev Tadilatı ve Dekorasyon"
+  description="Sancaktepe'de site ve toplu konut dairelerinde iç mimarlık, ev tadilatı ve dekorasyon. Samandıra, Sarıgazi ve Yenidoğan'da keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/istanbul/sancaktepe-ic-mimarlik`}
+  h1="Sancaktepe İç Mimarlık, Ev Tadilatı ve Dekorasyon"
+  eyebrow="İstanbul · Sancaktepe"
+  lead="Anadolu Yakası'nın genç ve büyümeye devam eden ilçelerinden biri. Sancaktepe'de tadilat, çoğunlukla site ve toplu konut dairelerini kişiselleştirmek anlamına geliyor."
+  heroImage={heroPath}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İstanbul", href: `${CANONICAL_BASE}/istanbul` },
+    { label: "Sancaktepe" }
+  ]}
+  structuredData={localSchema}
+>
+
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Sancaktepe'de İç Mimarlık Hizmeti</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Sancaktepe, Anadolu Yakası'nın doğusunda, son yıllarda konut üretiminin yoğunlaştığı ilçelerden biri. Samandıra ve Sarıgazi çevresinde site ve toplu konut projeleri öne çıkarken, Yenidoğan, Abdurrahmangazi ve Akpınar gibi mahallelerde farklı dönemlere ait apartman stoku da görülüyor. Bu çeşitlilik, Sancaktepe ev tadilatı taleplerinin tek bir tip iş olmadığını gösteriyor.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Toplu konut ve site daireleri çoğunlukla standart plan ve malzeme paketiyle teslim ediliyor. Aynı sitede birbirine çok benzeyen dairelerin bulunması, iç mekânı kişiselleştirme ihtiyacını artırıyor. Bu daireler için en sık yaptığımız çalışmalar mutfak dolap ve tezgahının yeniden kurgulanması, gömme depolama alanlarının eklenmesi, zemin ve duvar yüzeylerinin güncellenmesi ve ışıklandırmanın yeniden düzenlenmesi.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Kentsel dönüşümle teslim alınan daireler de bu ilçedeki önemli bir grup. Dönüşüm sonrası taşınan aileler genellikle yeni evde hem eski eşyalarını hem de yeni ihtiyaçlarını bir arada düşünmek zorunda kalıyor. Bu noktada ölçüye özel dolap, esnek oturma düzeni ve depolama çözümleri öne çıkıyor. Taşınmadan önce başlayan bir tadilat, hem ekip için hem aile için en rahat zamanlama.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Sancaktepe'de yatırım amaçlı alınan veya kiraya verilen daireler de az değil. Bu evlerde dayanıklılık, kolay temizlenen yüzeyler ve nötr bir dekorasyon dili önceliği alıyor. Evin kendi kullanımı için mi yoksa kiralık olarak mı değerlendirileceği, malzeme ve tasarım kararlarını doğrudan etkiliyor; bu ayrımı keşifte ilk konuştuğumuz konulardan biri.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Sitelerin yönetim planları çalışma saatlerini, yük asansörü kullanımını ve moloz tahliyesini düzenlediği için şantiye takvimini baştan bu kurallarla kuruyoruz. Gerekli yönetim yazışmalarını sizin adınıza yürüterek sürecin sorunsuz ilerlemesini sağlıyoruz.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4">{district.locative} Sunduğumuz Hizmetler</h3>
+      <ul class="space-y-3">
+        {[
+          'Site ve toplu konut dairelerinde anahtar teslim yenileme',
+          'Kentsel dönüşüm sonrası daire dekorasyonu',
+          'Ölçüye özel dolap ve depolama çözümleri',
+          'Mutfak ve banyo yenileme',
+          'Kiralık veya yatırım dairesi için dayanıklı iç mimari',
+          'Salon, yatak odası ve çocuk odası tasarımı',
+          'Site yönetimi izin süreçlerinin takibi',
+          '3D görselleştirme ile tasarım onayı',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+        <p class="text-sm text-charcoal font-medium">Komşu ilçedeki rehberimiz</p>
+        <p class="text-muted text-sm mt-2">
+          Pendik için hazırladığımız ev tadilatı rehberi, Anadolu Yakası'nın doğusundaki konut stokunda sık karşılaşılan kalemleri ve süreci anlatıyor.
+        </p>
+        <a href="/blog/pendik-ev-tadilati" class="text-xs text-gold hover:underline mt-2 inline-block">Pendik ev tadilatı rehberi →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bölge notları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Sancaktepe'de Bölge Notlarımız</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Samandıra · Sarıgazi</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Site ve toplu konut projelerinin yoğun olduğu hat. Standart teslim edilen dairelerde depolama, mutfak ve yüzey yenilemeleri öne çıkıyor.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Yenidoğan · Abdurrahmangazi · Akpınar</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Farklı dönemlere ait apartman stokunun bir arada bulunduğu mahalleler. Bina yaşına göre tesisat ve elektrik durumu keşifte kontrol ediliyor.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Veysel Karani · Meclis · Osmangazi</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Dönüşüm sonrası teslim edilen ve kiraya verilen dairelerin de görüldüğü yerleşim. Kullanım amacına göre dayanıklılık ve tasarım dengesi kuruluyor.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <DistrictProjects districtSlug="sancaktepe-ic-mimarlik" />
+
+  <ProcessStrip districtSlug="sancaktepe-ic-mimarlik" />
+
+  <DistrictFAQ districtName="Sancaktepe" items={faqItems} />
+
+  <div class="py-12 border-t border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Hizmetlerimiz</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Tüm Hizmetler', href: '/hizmetler' },
+        { label: 'Anahtar Teslim Ev Tadilatı', href: '/hizmetler/anahtar-teslim/ev-tadilat' },
+        { label: 'Anahtar Teslim Ev Yenileme', href: '/hizmetler/anahtar-teslim/ev-yenileme' },
+        { label: 'Banyo Yenileme', href: '/hizmetler/banyo-yenileme' },
+        { label: 'Çocuk Odası Tasarımı', href: '/hizmetler/cocuk-odasi-tasarimi' },
+        { label: 'Pendik Ev Tadilatı Rehberi', href: '/blog/pendik-ev-tadilati' },
+        { label: 'Ümraniye İç Mimarlık', href: '/istanbul/umraniye-ic-mimarlik' },
+        { label: 'Çekmeköy İç Mimarlık', href: '/istanbul/cekmekoy-ic-mimarlik' },
+        { label: 'Pendik İç Mimarlık', href: '/istanbul/pendik-ic-mimarlik' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </div>
+
+  <DistrictBlogLinks districtSlug="sancaktepe-ic-mimarlik" />
+
+  <RelatedDistricts currentSlug="sancaktepe-ic-mimarlik" />
+
+</ServiceLayout>

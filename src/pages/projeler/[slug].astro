@@ -17,7 +17,9 @@ export const prerender = true;
 
 const { slug } = Astro.params;
 const project = getProject(slug!)!;
-const related = projects.filter((p) => p.slug !== slug).slice(0, 3);
+// Her projede aynı üç projeyi göstermek yerine listede sıradaki üçünü (dairesel) göster.
+const idx = projects.findIndex((p) => p.slug === slug);
+const related = [1, 2, 3].map((k) => projects[(idx + k) % projects.length]).filter((p) => p.slug !== slug);
 
 const projectSchema = {
   "@context": "https://schema.org",
@@ -25,6 +27,10 @@ const projectSchema = {
   "name": project.title,
   "description": project.description[0],
   "dateCreated": project.year,
+  "image": project.gallery.slice(0, 12).map((g) => `${CANONICAL_BASE}${g.src}`),
+  "keywords": project.services.join(', '),
+  "about": project.category,
+  "areaServed": { "@type": "AdministrativeArea", "name": project.location },
   "locationCreated": {
     "@type": "Place",
     "address": {
@@ -121,9 +127,11 @@ const breadcrumbSchema = {
               src={img.src}
               srcset={img.srcset}
               sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
-              alt={`${project.title} — fotoğraf ${i + 1}`}
-              loading={i < 2 ? 'eager' : 'lazy'}
-              decoding={i < 2 ? 'sync' : 'async'}
+              alt={`${project.title} — ${project.category}, ${project.location} (fotoğraf ${i + 1}/${project.gallery.length})`}
+              width={img.width}
+              height={img.height}
+              loading={i === 0 ? 'eager' : 'lazy'}
+              decoding="async"
               class="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.03]"
             />
             <div class="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/25 transition-colors duration-300 flex items-center justify-center">
@@ -170,6 +178,13 @@ const breadcrumbSchema = {
         </div>
 
         <div>
+          <h2 class="text-xs tracking-[0.3em] uppercase text-white/30 mb-4">Proje Künyesi</h2>
+          <dl class="grid grid-cols-2 gap-x-4 gap-y-3 mb-8 text-sm">
+            <div><dt class="text-white/30 text-xs">Konum</dt><dd class="text-white/70">{project.location}</dd></div>
+            <div><dt class="text-white/30 text-xs">Yıl</dt><dd class="text-white/70">{project.year}</dd></div>
+            <div><dt class="text-white/30 text-xs">Alan</dt><dd class="text-white/70">{project.area}</dd></div>
+            <div><dt class="text-white/30 text-xs">Süre</dt><dd class="text-white/70">{project.duration}</dd></div>
+          </dl>
           <h2 class="text-xs tracking-[0.3em] uppercase text-white/30 mb-4">Uygulanan Hizmetler</h2>
           <ul class="space-y-2">
             {project.services.map(s => (

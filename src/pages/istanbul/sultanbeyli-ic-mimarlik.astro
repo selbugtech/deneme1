@@ -1,0 +1,174 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import RelatedDistricts from '../../components/RelatedDistricts.astro';
+import DistrictBlogLinks from '../../components/DistrictBlogLinks.astro';
+import DistrictFAQ from '../../components/DistrictFAQ.astro';
+import ProcessStrip from '../../components/ProcessStrip.astro';
+import DistrictProjects from '../../components/DistrictProjects.astro';
+import { CANONICAL_BASE } from '../../config';
+import { optimizedImageW } from '../../lib/cloudinary';
+import { getDistrict } from '../../data/districts';
+
+// İlçe adı ve bulunma hali eki tek kaynaktan: src/data/districts.ts.
+const district = getDistrict('sultanbeyli-ic-mimarlik')!;
+const heroPath = '/images/salon1.png';
+const heroAbs = optimizedImageW(heroPath, 1600);
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "İç mimarlık, tadilat ve ev yenileme",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
+  "areaServed": { "@type": "Place", "name": "Sultanbeyli, İstanbul" },
+  "url": `${CANONICAL_BASE}/istanbul/sultanbeyli-ic-mimarlik`,
+  "description": "Sultanbeyli'de apartman dairesi yenileme, ev tadilatı ve dekorasyon hizmetleri.",
+  "image": heroAbs,
+};
+
+const faqItems = [
+  {
+    q: "Apartman dairesinde tadilata başlarken komşularla nasıl bir süreç izlenmeli?",
+    a: "Apartman yaşamında gürültü ve toz en çok komşuları etkiliyor. Çalışma saatlerini, moloz tahliyesini ve ortak alan kullanımını işe başlamadan apartman yönetimi veya komşularla konuşmak süreci çok kolaylaştırıyor. Merdiven ve asansör gibi ortak alanları koruma altına alıp her gün temizleyerek ilerliyoruz.",
+  },
+  {
+    q: "Mehmet Akif ve Hamidiye'deki eski apartmanlarda tesisat yenilemesi gerekir mi?",
+    a: "Yapı yaşı daireden daireye değişiyor. Eski binalarda su ve elektrik hatları çoğunlukla keşifte kontrol edilen ilk kalemler. Gizli kalan kısımlar söküm sonrası görüldüğü için kapsamı iki aşamada netleştiriyoruz; böylece beklenmedik bir kalem çıktığında sizi hazırlıksız yakalamıyoruz.",
+  },
+  {
+    q: "Dar sokaklı mahallelerde malzeme sevkiyatı ve moloz tahliyesi nasıl yapılıyor?",
+    a: "Dar ve yoğun sokaklarda büyük araçların yanaşması zor olabiliyor. Malzemeleri küçük parçalar halinde ve uygun zamanlarda getiriyor, moloz tahliyesini sakin saatlere planlıyoruz. Bina girişi ve merdiven kullanımına göre taşıma yöntemini önceden belirliyoruz.",
+  },
+  {
+    q: "Bütçem sınırlı, hangi kalemlere öncelik vermeliyim?",
+    a: "Ev tadilatında önceliği genellikle ıslak hacimler, mutfak ve elektrik-tesisat gibi kullanım ömrünü belirleyen kalemlere veriyoruz; boya, aydınlatma ve mobilya değişiklikleri sonraki aşamada yapılabiliyor. Keşifte öncelikleri sizinle sıralıyor ve işi aşamalara bölerek planlayabiliyoruz.",
+  },
+  {
+    q: "Yavuz Selim, Necip Fazıl veya Battalgazi'de keşif için adresime gelir misiniz?",
+    a: "Evet, ilçe genelinde yerinde keşif yapıyoruz. Ölçü alıyor, fotoğraf çekiyor ve ihtiyaç listesini birlikte çıkarıyoruz. Randevu için WhatsApp veya telefonla ulaşabilirsiniz.",
+  },
+];
+---
+
+<ServiceLayout
+  title="Sultanbeyli İç Mimarlık, Ev Tadilatı ve Dekorasyon"
+  description="Sultanbeyli'de apartman dairesi yenileme, ev tadilatı ve dekorasyon. Mehmet Akif, Hamidiye ve Mecidiye'de ücretsiz keşif: 0533 039 15 65"
+  canonicalUrl={`${CANONICAL_BASE}/istanbul/sultanbeyli-ic-mimarlik`}
+  h1="Sultanbeyli İç Mimarlık, Ev Tadilatı ve Dekorasyon"
+  eyebrow="İstanbul · Sultanbeyli"
+  lead="Yoğun ve genç bir nüfusa sahip, ağırlıklı olarak apartman dairelerinden oluşan bir ilçe. Sultanbeyli'de ev tadilatı çoğunlukla yaşam alanını yenilemek ve verimli kullanmak demek."
+  heroImage={heroPath}
+  breadcrumb={[
+    { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
+    { label: "İstanbul", href: `${CANONICAL_BASE}/istanbul` },
+    { label: "Sultanbeyli" }
+  ]}
+  structuredData={localSchema}
+>
+
+  <div class="grid md:grid-cols-2 gap-12 py-12 border-b border-border">
+    <div>
+      <h2 class="font-display text-3xl font-bold text-charcoal mb-4">Sultanbeyli'de İç Mimarlık Hizmeti</h2>
+      <p class="text-muted leading-relaxed mb-4">
+        Sultanbeyli, Anadolu Yakası'nın güneydoğusunda, nüfus yoğunluğu yüksek ve genç ailelerin çoğunlukta olduğu bir ilçe. Yapı stokunun büyük bölümünü farklı dönemlerde yapılmış apartman daireleri oluşturuyor. Mehmet Akif, Hamidiye, Mecidiye ve Battalgazi gibi mahallelerde yaşayan aileler, evlerini hem yeniden düzenlemek hem de metrekareyi daha verimli kullanmak için Sultanbeyli ev tadilatı çözümlerine yöneliyor.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Apartman dairesi yenilemelerinde ilk adım, mevcut durumun doğru okunması. Su ve elektrik hatları, ıslak hacim zeminleri, duvar ve tavan yüzeyleri keşifte kontrol ediliyor; gizli kalan bölümler söküm sonrası ortaya çıktığında kapsam netleştiriliyor. Bu iki aşamalı yaklaşım, tadilat sırasında sürprizleri azaltıyor ve bütçenizi kontrol altında tutmanıza yardımcı oluyor.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Evlerin boyutu genellikle ailenin ihtiyacına göre sınırlı olduğundan, ölçüye özel çözümler çoğu zaman en büyük farkı yaratıyor. Giriş holündeki ayakkabılık ve dolap, yatak odasındaki gardırop, çocuk odasındaki çalışma ve oyun köşesi, mutfaktaki yeni tezgah-dolap kurgusu bir dairede kullanılabilir alanı belirgin biçimde artırabiliyor. Dekorasyonda renkler, aydınlatma ve doğru ölçekte mobilya da evi olduğundan geniş gösteren unsurlar.
+      </p>
+      <p class="text-muted leading-relaxed mb-4">
+        Apartman yaşamının bir gerçeği de komşuluk. Tadilat gürültüsü, merdiven kirliliği ve moloz tahliyesi çevreyi etkilediği için çalışma saatlerini apartman yönetimiyle önceden konuşuyor, ortak alanları koruma altına alıp her gün temizliyoruz. Dar sokaklarda büyük araçların yanaşamaması gibi sevkiyat zorluklarını da önceden planlıyoruz.
+      </p>
+      <p class="text-muted leading-relaxed">
+        Her ev ve her bütçe farklı. Bu yüzden işi tek seferde komple yenileme olarak değil, gerekirse aşamalara bölerek de planlayabiliyoruz. Önce ıslak hacim ve elektrik-tesisat gibi temel kalemler, sonra yüzey ve dekorasyon ayrıntıları. Keşifte önceliklerinizi sizinle sıralıyor, ardından uygulanabilir bir sıra öneriyoruz.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-charcoal mb-4">{district.locative} Sunduğumuz Hizmetler</h3>
+      <ul class="space-y-3">
+        {[
+          'Apartman dairelerinde anahtar teslim ev yenileme',
+          'Mutfak ve banyo yenileme',
+          'Küçük ve orta metrekareli dairelerde ölçüye özel dolap',
+          'Salon, yatak odası ve çocuk odası tasarımı',
+          'Aşamalı tadilat planlaması',
+          'Apartman yönetimi ve komşu süreçlerinin takibi',
+          'Ortak alanların korunması ve günlük temizlik',
+          '3D görselleştirme ile tasarım onayı',
+        ].map(item => (
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-4 h-4 mt-0.5 shrink-0 bg-gold/15 rounded-full flex items-center justify-center">
+              <svg class="w-2.5 h-2.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            {item}
+          </li>
+        ))}
+      </ul>
+      <div class="mt-6 p-4 bg-gold/5 border border-gold/20">
+        <p class="text-sm text-charcoal font-medium">Komşu ilçedeki rehberimiz</p>
+        <p class="text-muted text-sm mt-2">
+          Pendik için hazırladığımız ev tadilatı rehberi, Anadolu Yakası'nın güneydoğusunda apartman dairesi yenilerken dikkat edilecek noktaları özetliyor.
+        </p>
+        <a href="/blog/pendik-ev-tadilati" class="text-xs text-gold hover:underline mt-2 inline-block">Pendik ev tadilatı rehberi →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bölge notları -->
+  <section class="py-12 border-b border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Sultanbeyli'de Bölge Notlarımız</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Mehmet Akif · Hamidiye · Mecidiye</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Apartman dairelerinin yoğun olduğu mahalleler. Yapı yaşı değişken olduğundan tesisat ve elektrik durumu keşifte kontrol ediliyor.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Battalgazi · Necip Fazıl</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Genç ailelerin yoğun olduğu bölge. Çocuk odası, depolama ve mutfak yenileme en çok gündeme gelen başlıklar.
+        </p>
+      </div>
+      <div class="border border-border p-6 bg-[#FAF6F1]">
+        <h3 class="font-display text-base font-bold text-charcoal mb-2">Yavuz Selim · Turgut Reis · Hasanpaşa</h3>
+        <p class="text-muted text-sm leading-relaxed">
+          Dar sokak yapısının sevkiyatı etkileyebildiği yerleşim. Malzeme ve moloz taşımasını uygun saat ve parçalara bölerek planlıyoruz.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <DistrictProjects districtSlug="sultanbeyli-ic-mimarlik" />
+
+  <ProcessStrip districtSlug="sultanbeyli-ic-mimarlik" />
+
+  <DistrictFAQ districtName="Sultanbeyli" items={faqItems} />
+
+  <div class="py-12 border-t border-border">
+    <h2 class="font-display text-2xl font-bold text-charcoal mb-6">Diğer Hizmetlerimiz</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { label: 'Tüm Hizmetler', href: '/hizmetler' },
+        { label: 'Anahtar Teslim Ev Yenileme', href: '/hizmetler/anahtar-teslim/ev-yenileme' },
+        { label: 'Anahtar Teslim Ev Tadilatı', href: '/hizmetler/anahtar-teslim/ev-tadilat' },
+        { label: 'Mutfak Yenileme', href: '/hizmetler/mutfak-yenileme' },
+        { label: 'Çocuk Odası Tasarımı', href: '/hizmetler/cocuk-odasi-tasarimi' },
+        { label: 'Pendik Ev Tadilatı Rehberi', href: '/blog/pendik-ev-tadilati' },
+        { label: 'Pendik İç Mimarlık', href: '/istanbul/pendik-ic-mimarlik' },
+        { label: 'Kartal İç Mimarlık', href: '/istanbul/kartal-ic-mimarlik' },
+        { label: 'Çekmeköy İç Mimarlık', href: '/istanbul/cekmekoy-ic-mimarlik' },
+      ].map(l => (
+        <a href={l.href} class="px-4 py-2 border border-border text-sm text-charcoal hover:border-gold hover:text-gold transition-colors">{l.label}</a>
+      ))}
+    </div>
+  </div>
+
+  <DistrictBlogLinks districtSlug="sultanbeyli-ic-mimarlik" />
+
+  <RelatedDistricts currentSlug="sultanbeyli-ic-mimarlik" />
+
+</ServiceLayout>
