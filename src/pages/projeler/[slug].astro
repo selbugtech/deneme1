@@ -178,14 +178,14 @@ const breadcrumbSchema = {
         </div>
 
         <div>
-          <h2 class="text-xs tracking-[0.3em] uppercase text-white/30 mb-4">Proje Künyesi</h2>
+          <h2 class="text-xs tracking-[0.3em] uppercase text-white/55 mb-4">Proje Künyesi</h2>
           <dl class="grid grid-cols-2 gap-x-4 gap-y-3 mb-8 text-sm">
-            <div><dt class="text-white/30 text-xs">Konum</dt><dd class="text-white/70">{project.location}</dd></div>
-            <div><dt class="text-white/30 text-xs">Yıl</dt><dd class="text-white/70">{project.year}</dd></div>
-            <div><dt class="text-white/30 text-xs">Alan</dt><dd class="text-white/70">{project.area}</dd></div>
-            <div><dt class="text-white/30 text-xs">Süre</dt><dd class="text-white/70">{project.duration}</dd></div>
+            <div><dt class="text-white/55 text-xs">Konum</dt><dd class="text-white/70">{project.location}</dd></div>
+            <div><dt class="text-white/55 text-xs">Yıl</dt><dd class="text-white/70">{project.year}</dd></div>
+            <div><dt class="text-white/55 text-xs">Alan</dt><dd class="text-white/70">{project.area}</dd></div>
+            <div><dt class="text-white/55 text-xs">Süre</dt><dd class="text-white/70">{project.duration}</dd></div>
           </dl>
-          <h2 class="text-xs tracking-[0.3em] uppercase text-white/30 mb-4">Uygulanan Hizmetler</h2>
+          <h2 class="text-xs tracking-[0.3em] uppercase text-white/55 mb-4">Uygulanan Hizmetler</h2>
           <ul class="space-y-2">
             {project.services.map(s => (
               <li class="flex items-start gap-3 text-sm text-white/60">
@@ -197,7 +197,7 @@ const breadcrumbSchema = {
 
           {district && (
             <div class="mt-8 pt-8 border-t border-white/10">
-              <p class="text-xs tracking-[0.3em] uppercase text-white/30 mb-3">Bölge</p>
+              <p class="text-xs tracking-[0.3em] uppercase text-white/55 mb-3">Bölge</p>
               <a
                 href={`/istanbul/${district.slug}`}
                 class="inline-flex items-center gap-2 text-sm text-gold hover:underline"
@@ -205,13 +205,13 @@ const breadcrumbSchema = {
                 {district.locative} iç mimarlık hizmetlerimiz
                 <span aria-hidden="true">→</span>
               </a>
-              <p class="text-white/40 text-xs leading-relaxed mt-2">
+              <p class="text-white/55 text-xs leading-relaxed mt-2">
                 {district.name} genelinde tamamladığımız diğer çalışmaları ve bölgeye özgü notlarımızı ilçe sayfasında bulabilirsiniz.
               </p>
             </div>
           )}
           <div class="mt-10 pt-8 border-t border-white/10">
-            <p class="text-xs tracking-wide text-white/30 mb-4 uppercase">Bu proje gibi bir çalışma ister misiniz?</p>
+            <p class="text-xs tracking-wide text-white/55 mb-4 uppercase">Bu proje gibi bir çalışma ister misiniz?</p>
             <a
               href={`https://wa.me/905330391565?text=Merhaba%2C%20${encodeURIComponent(project.title)}%20projesi%20gibi%20bir%20%C3%A7al%C4%B1%C5%9Fma%20yapmak%20istiyorum.`}
               target="_blank"
@@ -271,7 +271,7 @@ const breadcrumbSchema = {
         </button>
         <img id="lightbox-img" src="" srcset="" sizes="100vw" alt="" class="max-h-[82vh] max-w-full object-contain shadow-2xl select-none" style="touch-action: pan-y;" draggable="false" />
         <p id="lightbox-caption" class="mt-4 text-white/50 text-sm text-center"></p>
-        <p id="lightbox-counter" class="mt-1 text-white/30 text-xs tracking-wide"></p>
+        <p id="lightbox-counter" class="mt-1 text-white/55 text-xs tracking-wide"></p>
       </div>
     </div>
 
@@ -380,7 +380,7 @@ const breadcrumbSchema = {
             <span class="w-8 h-px bg-gold"></span>
             <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Diğer Projeler</span>
           </div>
-          <a href="/projeler" class="text-xs text-white/30 hover:text-gold transition-colors tracking-wide">Tümünü Gör →</a>
+          <a href="/projeler" class="text-xs text-white/55 hover:text-gold transition-colors tracking-wide">Tümünü Gör →</a>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           {related.map(p => (
@@ -413,13 +413,13 @@ const breadcrumbSchema = {
           <span class="w-8 h-px bg-gold"></span>
         </div>
         <h2 class="font-display text-3xl font-bold text-white mb-4">Hayalinizdeki Mekanı Tasarlayalım</h2>
-        <p class="text-white/40 mb-8 max-w-md mx-auto leading-relaxed">Ücretsiz keşif ve fiyat teklifi için WhatsApp'tan yazın ya da arayın. En kısa sürede size dönüyoruz.</p>
+        <p class="text-white/55 mb-8 max-w-md mx-auto leading-relaxed">Ücretsiz keşif ve fiyat teklifi için WhatsApp'tan yazın ya da arayın. En kısa sürede size dönüyoruz.</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="https://wa.me/905330391565?text=Merhaba%2C%20proje%20hakk%C4%B1nda%20g%C3%B6r%C3%BC%C5%9Fmek%20istiyorum."
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center justify-center gap-3 bg-[#25D366] text-white px-10 py-4 text-sm font-semibold hover:bg-[#1EBD5A] transition-colors"
+            class="inline-flex items-center justify-center gap-3 bg-[#168441] text-white px-10 py-4 text-sm font-semibold hover:bg-[#117536] transition-colors"
           >
             WhatsApp'tan Yaz
           </a>

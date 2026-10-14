@@ -226,6 +226,7 @@ const allStructuredData = [
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify(allStructuredData).replace(/<\//g, '<\\/')} />
 
+    {/* GTM yorumda: kullanıcı kararı (aktif reklam yok, veriye bakan yok). Yeniden açmak için aşağıdaki bloğu geri alın.
     <!-- Google Tag Manager — idle callback ile ertele (FCP/LCP engelleme yok) -->
     <script is:inline>
       (function(){
@@ -244,12 +245,15 @@ const allStructuredData = [
       })();
     </script>
     <!-- End Google Tag Manager -->
+    */}
   </head>
   <body class="bg-warm-white text-charcoal font-sans antialiased">
+    {/* GTM noscript yorumda (yukarıya bakın)
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KKHH7KWV"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+    */}
 
     <slot />
 
@@ -318,6 +322,14 @@ const allStructuredData = [
 <style is:global>
   html { scroll-behavior: auto; overflow-x: hidden; }
   body { overflow-x: hidden; }
+
+  /* Kontrast: açık zeminde küçük altın yazı (#A8894A, 3.2:1) yetersiz. Koyu altın yalnızca
+     açık alanlarda; koyu bölgeler (.dark-zone hero'lar, .bg-charcoal) bu kuralın dışında. */
+  main .text-gold:not(.dark-zone *, .bg-charcoal *, [class~="bg-[#111110]"] *, [class~="bg-gold"] *) { color: #7f6329; }
+  /* Metin içi linkler yalnızca renkle ayırt edilmesin (link-in-text-block) */
+  main p a.text-gold, main li a.text-gold { text-decoration: underline; text-underline-offset: 2px; }
+  /* text-muted koyu zeminde (açık zemin için koyulaştırıldı) */
+  .bg-charcoal .text-muted, [class~="bg-[#111110]"] .text-muted, .dark-zone .text-muted { color: #9a9a94; }
 
   /* Tutarlı klavye odak göstergesi — tüm etkileşimli öğeler için */
   :focus-visible {

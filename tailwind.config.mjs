@@ -7,7 +7,7 @@ export default {
         gold: '#A8894A',
         'warm-white': '#FAFAF8',
         charcoal: '#1C1C1A',
-        muted: '#787874',
+        muted: '#666662',
         border: '#E8E4DF',
       },
       fontFamily: {
