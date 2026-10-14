@@ -220,6 +220,13 @@ for (const p of pages) {
   for (const u of direct) {
     if (!fileSet.has(safeDecodeURI(decode(u)))) markBroken(u, p.url);
   }
+  // Görseller kendi sunucumuzda (img-opt): her /img-opt/... başvurusu (src, srcset, preload,
+  // og:image, JSON-LD) gerçek bir dosyaya gitmeli; Cloudinary'ye geri düşülmemeli.
+  if (p.html.includes('res.cloudinary.com')) error('Görsel', p.url, "Cloudinary URL'si kaldı (görseller kendi sunucumuzdan verilmeli)");
+  for (const m of p.html.matchAll(/(?:https:\/\/www\.mastericmimarlik\.com)?(\/img-opt\/[A-Za-z0-9._-]+)/g)) {
+    if (!fileSet.has(m[1])) markBroken(m[1], p.url);
+  }
+  for (const m of p.html.matchAll(/"image"\s*:\s*"(\/[^"]+)"/g)) error('Yapısal veri', p.url, `JSON-LD image mutlak değil: ${m[1]}`);
   for (const m of p.html.matchAll(CLOUDINARY_ORIGIN)) {
     const origin = safeDecodeURI(decode(m[1]));
     if (!fileSet.has(origin)) markBroken(`${origin} (Cloudinary kaynağı)`, p.url);

@@ -6,7 +6,7 @@ import DistrictFAQ from '../../components/DistrictFAQ.astro';
 import ProcessStrip from '../../components/ProcessStrip.astro';
 import DistrictProjects from '../../components/DistrictProjects.astro';
 import { CANONICAL_BASE } from '../../config';
-import { optimizedImageW } from '../../lib/cloudinary';
+import { optimizedImageW, ogImageUrl } from '../../lib/images';
 import { getDistrict } from '../../data/districts';
 import { getProject } from '../../data/projects';
 
@@ -14,7 +14,7 @@ import { getProject } from '../../data/projects';
 // Elle yazılan ek Türkçe'de sessizce yanlış olabiliyor (Bağcılar'de → Bağcılar'da).
 const district = getDistrict('buyukcekmece-ic-mimarlik')!;
 const heroPath = '/images/merdiven1.jpeg';
-const heroAbs = optimizedImageW(heroPath, 1600);
+const heroAbs = ogImageUrl(heroPath);
 const refProject = getProject('tepekent');
 
 const localSchema = {

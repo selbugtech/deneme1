@@ -1,4 +1,4 @@
-import { optimizedImage } from '../lib/cloudinary';
+import { optimizedImage } from '../lib/images';
 
 // Tüm blog yazılarının tek kaynağı.
 // /blog listesi ve BlogPost.astro'daki "ilgili yazılar" bu diziden beslenir.

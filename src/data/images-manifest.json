@@ -1,0 +1,391 @@
+{
+  "/images/banyo1.webp": {
+    "key": "banyo1",
+    "width": 5999,
+    "height": 4000,
+    "widths": [
+      400,
+      600,
+      800,
+      1200,
+      1600,
+      1920
+    ]
+  },
+  "/images/giyinmeodasi.jpeg": {
+    "key": "giyinmeodasi",
+    "width": 1600,
+    "height": 1333,
+    "widths": [
+      400,
+      600,
+      800,
+      1200,
+      1600
+    ]
+  },
+  "/images/merdiven1.jpeg": {
+    "key": "merdiven1",
+    "width": 1500,
+    "height": 844,
+    "widths": [
+      400,
+      600,
+      800,
+      1200,
+      1500
+    ]
+  },
+  "/images/merdiven2.jpeg": {
+    "key": "merdiven2",
+    "width": 1600,
+    "height": 900,
+    "widths": [
+      400,
+      600,
+      800,
+      1200,
+      1600
+    ]
+  },
+  "/images/merdiven3.jpeg": {
+    "key": "merdiven3",
+    "width": 1600,
+    "height": 900,
+    "widths": [
+      400,
+      600,
+      800,
+      1200,
+      1600
+    ]
+  },
+  "/images/mutfak1.jpeg": {
+    "key": "mutfak1",
+    "width": 1500,
+    "height": 1500,
+    "widths": [
+      400,
+      600,
+      800,
+      1200,
+      1500
+    ]
+  },
+  "/images/mutfak3.jpeg": {
+    "key": "mutfak3",
+    "width": 1600,
+    "height": 900,
+    "widths": [
+      400,
+      600,
+      800,
+      1200,
+      1600
+    ]
+  },
+  "/images/mutfak4.jpeg": {
+    "key": "mutfak4",
+    "width": 1600,
+    "height": 900,
+    "widths": [
+      400,
+      600,
+      800,
+      1200,
+      1600
+    ]
+  },
+  "/images/ofis.jpeg": {
+    "key": "ofis",
+    "width": 1600,
+    "height": 1600,
+    "widths": [
+      400,
+      600,
+      800,
+      1200,
+      1600
+    ]
+  },
+  "/images/ofis2.jpeg": {
+    "key": "ofis2",
+    "width": 1600,
+    "height": 1600,
+    "widths": [
+      400,
+      600,
+      800,
+      1200,
+      1600
+    ]
+  },
+  "/images/oturmaodasi.jpeg": {
+    "key": "oturmaodasi",
+    "width": 1600,
+    "height": 899,
+    "widths": [
+      400,
+      600,
+      800,
+      1200,
+      1600
+    ]
+  },
+  "/images/restoran1.jpeg": {
+    "key": "restoran1",
+    "width": 1600,
+    "height": 900,
+    "widths": [
+      400,
+      600,
+      800,
+      1200,
+      1600
+    ]
+  },
+  "/images/salon1.png": {
+    "key": "salon1",
+    "width": 1536,
+    "height": 1024,
+    "widths": [
+      400,
+      600,
+      800,
+      1200,
+      1536
+    ]
+  },
+  "/images/salon2.jpeg": {
+    "key": "salon2",
+    "width": 1600,
+    "height": 899,
+    "widths": [
+      400,
+      600,
+      800,
+      1200,
+      1600
+    ]
+  },
+  "/images/salon3.jpeg": {
+    "key": "salon3",
+    "width": 1600,
+    "height": 900,
+    "widths": [
+      400,
+      600,
+      800,
+      1200,
+      1600
+    ]
+  },
+  "/images/salon4.jpeg": {
+    "key": "salon4",
+    "width": 1600,
+    "height": 900,
+    "widths": [
+      400,
+      600,
+      800,
+      1200,
+      1600
+    ]
+  },
+  "/images/salon5.jpeg": {
+    "key": "salon5",
+    "width": 1600,
+    "height": 900,
+    "widths": [
+      400,
+      600,
+      800,
+      1200,
+      1600
+    ]
+  },
+  "/images/salon6.jpeg": {
+    "key": "salon6",
+    "width": 1600,
+    "height": 900,
+    "widths": [
+      400,
+      600,
+      800,
+      1200,
+      1600
+    ]
+  },
+  "/images/salon7.jpeg": {
+    "key": "salon7",
+    "width": 1600,
+    "height": 899,
+    "widths": [
+      400,
+      600,
+      800,
+      1200,
+      1600
+    ]
+  },
+  "/images/salon8.jpeg": {
+    "key": "salon8",
+    "width": 1600,
+    "height": 899,
+    "widths": [
+      400,
+      600,
+      800,
+      1200,
+      1600
+    ]
+  },
+  "/images/salon9.jpeg": {
+    "key": "salon9",
+    "width": 1600,
+    "height": 899,
+    "widths": [
+      400,
+      600,
+      800,
+      1200,
+      1600
+    ]
+  },
+  "/images/salonvemutfak.jpeg": {
+    "key": "salonvemutfak",
+    "width": 1600,
+    "height": 900,
+    "widths": [
+      400,
+      600,
+      800,
+      1200,
+      1600
+    ]
+  },
+  "/images/toplantiodasi1.jpeg": {
+    "key": "toplantiodasi1",
+    "width": 1600,
+    "height": 1575,
+    "widths": [
+      400,
+      600,
+      800,
+      1200,
+      1600
+    ]
+  },
+  "/images/yatakodasi.jpeg": {
+    "key": "yatakodasi",
+    "width": 1600,
+    "height": 899,
+    "widths": [
+      400,
+      600,
+      800,
+      1200,
+      1600
+    ]
+  },
+  "/images/yatakodasi1.jpeg": {
+    "key": "yatakodasi1",
+    "width": 1600,
+    "height": 899,
+    "widths": [
+      400,
+      600,
+      800,
+      1200,
+      1600
+    ]
+  },
+  "/images/yatakodasi2.jpeg": {
+    "key": "yatakodasi2",
+    "width": 1600,
+    "height": 1152,
+    "widths": [
+      400,
+      600,
+      800,
+      1200,
+      1600
+    ]
+  },
+  "/beforeafter/atakoyoncesi.jpg": {
+    "key": "atakoyoncesi",
+    "width": 3000,
+    "height": 4000,
+    "widths": [
+      400,
+      600,
+      800,
+      1200,
+      1600,
+      1920
+    ]
+  },
+  "/beforeafter/atakoysonrasi.jpg": {
+    "key": "atakoysonrasi",
+    "width": 3000,
+    "height": 4000,
+    "widths": [
+      400,
+      600,
+      800,
+      1200,
+      1600,
+      1920
+    ]
+  },
+  "/beforeafter/beyoglugalataoncesi.jpg": {
+    "key": "beyoglugalataoncesi",
+    "width": 3000,
+    "height": 4000,
+    "widths": [
+      400,
+      600,
+      800,
+      1200,
+      1600,
+      1920
+    ]
+  },
+  "/beforeafter/beyoglugalatasonrasi.jpg": {
+    "key": "beyoglugalatasonrasi",
+    "width": 3000,
+    "height": 4000,
+    "widths": [
+      400,
+      600,
+      800,
+      1200,
+      1600,
+      1920
+    ]
+  },
+  "/beforeafter/villaoncesi.jpg": {
+    "key": "villaoncesi",
+    "width": 3024,
+    "height": 4032,
+    "widths": [
+      400,
+      600,
+      800,
+      1200,
+      1600,
+      1920
+    ]
+  },
+  "/beforeafter/villasonrasi.jpg": {
+    "key": "villasonrasi",
+    "width": 962,
+    "height": 1283,
+    "widths": [
+      400,
+      600,
+      800,
+      962
+    ]
+  }
+}

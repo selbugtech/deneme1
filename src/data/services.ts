@@ -2,7 +2,7 @@
 // Buraya eklenen bir hizmet otomatik olarak footer'da, /hizmetler hub sayfasında
 // ve ServiceLayout'un "Diğer Hizmetler" bölümünde görünür.
 
-import { optimizedImage } from '../lib/cloudinary';
+import { optimizedImage } from '../lib/images';
 
 export type ServiceGroup = 'ana' | 'anahtar-teslim' | 'tadilat' | 'oda' | 'mekan' | 'dekorasyon';
 

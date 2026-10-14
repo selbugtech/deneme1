@@ -1,7 +1,7 @@
 // İç mimarlık stil / konsept sayfalarının tek kaynağı.
 // Buraya eklenen bir stil otomatik olarak footer'da ve /ic-mimarlik hub sayfasında görünür.
 
-import { optimizedImage } from '../lib/cloudinary';
+import { optimizedImage } from '../lib/images';
 
 export type StyleItem = {
   /** /ic-mimarlik/<slug> */

@@ -46,5 +46,3 @@ export const GOOGLE_REVIEW_COUNT = 173;
 // bildiriyordu. Facebook 600x315 altini buyuk kart olarak kullanmaz.
 export const OG_IMAGE_PATH = '/images/salon1.png';
 
-// Cloudinary görsel optimizasyonu
-export const CLOUDINARY_CLOUD = 'dabltkglz';
