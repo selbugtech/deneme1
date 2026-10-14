@@ -17,9 +17,9 @@ const heroAbs = optimizedImageW(heroPath, 1600);
 
 const localSchema = {
   "@context": "https://schema.org",
-  "@type": "InteriorDesigner",
-  "name": "Master İç Mimarlık",
-  "@id": `${CANONICAL_BASE}/#business`,
+  "@type": "Service",
+  "serviceType": "İç mimarlık, tadilat ve ev yenileme",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
   "areaServed": { "@type": "Place", "name": "Zekeriyaköy, İstanbul" },
   "url": `${CANONICAL_BASE}/istanbul/zekeriyakoy-ic-mimarlik`,
   "description": "Zekeriyaköy ve çevresinde villa yenileme, lüks müstakil ev iç mimarlığı ve anahtar teslim tadilat hizmetleri.",

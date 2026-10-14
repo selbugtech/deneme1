@@ -19,31 +19,6 @@ const aboutSchema = {
   "mainEntity": { "@id": `${CANONICAL_BASE}/#organization` },
 };
 
-const orgSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": `${CANONICAL_BASE}/#organization`,
-  "name": SITE_NAME,
-  "url": `${CANONICAL_BASE}/`,
-  "foundingLocation": { "@type": "Place", "name": "İstanbul, Türkiye" },
-  "areaServed": { "@type": "City", "name": "İstanbul" },
-  "knowsAbout": [
-    "İç mimari tasarım",
-    "Anahtar teslim yenileme",
-    "Konut ve villa tadilatı",
-    "Ticari mekan iç mimarlığı",
-    "3D görselleştirme",
-    "Şantiye yönetimi",
-  ],
-  "sameAs": [
-    "https://www.instagram.com/mastericmimarlik/",
-    "https://www.facebook.com/master.mmrlk",
-    "https://tr.pinterest.com/mastericmimarlik/",
-    "https://www.youtube.com/channel/UC1vs1O0VUe_VNZIpo8B1KzA",
-    "https://x.com/mastericmimar",
-  ],
-};
-
 const faqItems = [
   {
     q: "Master İç Mimarlık ne kadar süredir çalışıyor?",
@@ -110,7 +85,7 @@ const degerler = [
     { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
     { label: "Hakkımızda" }
   ]}
-  structuredData={[aboutSchema, orgSchema, faqSchema]}
+  structuredData={[aboutSchema, faqSchema]}
 >
 
   <!-- Biz kimiz -->

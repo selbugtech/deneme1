@@ -162,6 +162,29 @@ for (const p of pages) {
   }
 }
 
+// ——— 3b) JSON-LD @id çakışması, çift robots, fiyat ———
+// Aynı @id'yi farklı özelliklerle tanımlayan birden çok düğüm (ör. #business'ı hem
+// Layout hem sayfa basıyor) Google'ın varlık birleştirmesinde alanların birbirini
+// ezmesine yol açar. @id'yi yalnızca Layout tanımlar; sayfalar { "@id": ... }
+// referansı verir. Sitede fiyat/TL yazılmaz (priceRange dahil).
+
+for (const p of pages) {
+  const defined = new Map();
+  for (const m of p.html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi)) {
+    let data;
+    try { data = JSON.parse(m[1]); } catch { error('Yapısal veri', p.url, 'JSON-LD ayrıştırılamadı'); continue; }
+    for (const node of Array.isArray(data) ? data : [data]) {
+      if (node?.priceRange) error('Fiyat', p.url, `priceRange "${node.priceRange}" — sitede fiyat yazılmaz`);
+      const id = node?.['@id'];
+      if (!id || Object.keys(node).filter((k) => k !== '@context').length <= 1) continue; // salt referans
+      defined.set(id, (defined.get(id) ?? 0) + 1);
+    }
+  }
+  for (const [id, n] of defined) if (n > 1) error('Yapısal veri', p.url, `@id birden çok kez tanımlı (${n}×): ${id}`);
+  const robotsTags = (p.html.match(/<meta[^>]*\bname="robots"/gi) ?? []).length;
+  if (robotsTags > 1) error('Robots', p.url, `${robotsTags} adet meta robots`);
+}
+
 // ——— 4) Kırık iç linkler ———
 
 const brokenLinks = new Map();

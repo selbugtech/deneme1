@@ -5,7 +5,8 @@ import Footer from '../components/Footer.astro';
 import WhatsAppFloat from '../components/WhatsAppFloat.astro';
 import Projects from '../components/Projects.astro';
 import Contact from '../components/Contact.astro';
-import { CANONICAL_BASE, TEL_URL, WHATSAPP_URL_PROJECT } from '../config';
+import { CANONICAL_BASE, OG_IMAGE_PATH, TEL_URL, WHATSAPP_URL_PROJECT } from '../config';
+import { ogImageUrl } from '../lib/cloudinary';
 import { allPosts } from '../data/blog-posts';
 import { getDistrict } from '../data/districts';
 
@@ -27,6 +28,7 @@ const { title, description, canonicalUrl, publishDate, readingTime = '5 dk okuma
 // kaydırılır ki her makalede aynı 3 öneri tekrarlanmasın.
 const currentSlug = canonicalUrl.split('/').pop() ?? '';
 const currentIndex = allPosts.findIndex(p => p.slug === currentSlug);
+const postMeta = currentIndex >= 0 ? allPosts[currentIndex] : undefined;
 const currentTag = currentIndex >= 0 ? allPosts[currentIndex].tag : '';
 
 // Blog → ilçe geri linki. DistrictBlogLinks ilçe → blog yönünü kuruyor; bu da
@@ -61,18 +63,11 @@ const articleSchema = {
     "name": "Master İç Mimarlık",
     "@id": `${CANONICAL_BASE}/#organization`
   },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Master İç Mimarlık",
-    "logo": {
-      "@type": "ImageObject",
-      "url": `${CANONICAL_BASE}/favicon.png`
-    }
-  },
+  "publisher": { "@id": `${CANONICAL_BASE}/#organization` },
   "datePublished": publishDate,
-  "dateModified": publishDate,
+  "dateModified": postMeta?.updated ?? publishDate,
   "url": canonicalUrl,
-  "image": ogImage ?? heroImage ?? `${CANONICAL_BASE}/og-image.png`,
+  "image": ogImageUrl(ogImage ?? heroImage ?? OG_IMAGE_PATH),
   "inLanguage": "tr-TR",
   "mainEntityOfPage": {
     "@type": "WebPage",

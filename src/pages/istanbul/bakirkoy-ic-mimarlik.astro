@@ -17,9 +17,9 @@ const heroAbs = optimizedImageW(heroPath, 1600);
 
 const localSchema = {
   "@context": "https://schema.org",
-  "@type": "InteriorDesigner",
-  "name": "Master İç Mimarlık",
-  "@id": `${CANONICAL_BASE}/#business`,
+  "@type": "Service",
+  "serviceType": "İç mimarlık, tadilat ve ev yenileme",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
   "areaServed": { "@type": "Place", "name": "Bakırköy, İstanbul" },
   "url": `${CANONICAL_BASE}/istanbul/bakirkoy-ic-mimarlik`,
   "description": "Bakırköy ve çevresinde anahtar teslim daire yenileme, mutfak-banyo tadilatı ve iç mimarlık danışmanlığı.",

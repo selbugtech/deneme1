@@ -17,9 +17,9 @@ const heroAbs = optimizedImageW(heroPath, 1600);
 
 const localSchema = {
   "@context": "https://schema.org",
-  "@type": "InteriorDesigner",
-  "name": "Master İç Mimarlık",
-  "@id": `${CANONICAL_BASE}/#business`,
+  "@type": "Service",
+  "serviceType": "İç mimarlık, tadilat ve ev yenileme",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
   "areaServed": { "@type": "Place", "name": "Bağcılar, İstanbul" },
   "url": `${CANONICAL_BASE}/istanbul/bagcilar-ic-mimarlik`,
   "description": "Bağcılar'da anahtar teslim daire yenileme, kentsel dönüşüm sonrası iç mimarlık ve kapsamlı tadilat.",

@@ -19,9 +19,9 @@ const refProject = getProject('beykoz-pasabahce');
 
 const localSchema = {
   "@context": "https://schema.org",
-  "@type": "InteriorDesigner",
-  "name": "Master İç Mimarlık",
-  "@id": `${CANONICAL_BASE}/#business`,
+  "@type": "Service",
+  "serviceType": "İç mimarlık, tadilat ve ev yenileme",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
   "areaServed": { "@type": "Place", "name": "Beykoz, İstanbul" },
   "url": `${CANONICAL_BASE}/istanbul/beykoz-ic-mimarlik`,
   "description": "Beykoz'da villa yenileme, Boğaz hattı konut tadilatı ve anahtar teslim iç mimarlık hizmeti.",

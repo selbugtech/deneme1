@@ -17,9 +17,9 @@ const heroAbs = optimizedImageW(heroPath, 1600);
 
 const localSchema = {
   "@context": "https://schema.org",
-  "@type": "InteriorDesigner",
-  "name": "Master İç Mimarlık",
-  "@id": `${CANONICAL_BASE}/#business`,
+  "@type": "Service",
+  "serviceType": "İç mimarlık, tadilat ve ev yenileme",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
   "areaServed": { "@type": "Place", "name": "Esenyurt, İstanbul" },
   "url": `${CANONICAL_BASE}/istanbul/esenyurt-ic-mimarlik`,
   "description": "Esenyurt'ta anahtar teslim daire yenileme, rezidans iç mimarlığı ve depolama çözümleri.",

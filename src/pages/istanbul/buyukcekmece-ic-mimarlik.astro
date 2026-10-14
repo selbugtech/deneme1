@@ -19,9 +19,9 @@ const refProject = getProject('tepekent');
 
 const localSchema = {
   "@context": "https://schema.org",
-  "@type": "InteriorDesigner",
-  "name": "Master İç Mimarlık",
-  "@id": `${CANONICAL_BASE}/#business`,
+  "@type": "Service",
+  "serviceType": "İç mimarlık, tadilat ve ev yenileme",
+  "provider": { "@id": `${CANONICAL_BASE}/#business` },
   "areaServed": { "@type": "Place", "name": "Büyükçekmece, İstanbul" },
   "url": `${CANONICAL_BASE}/istanbul/buyukcekmece-ic-mimarlik`,
   "description": "Büyükçekmece'de villa yenileme, sahil konutu tadilatı ve anahtar teslim iç mimarlık hizmeti.",

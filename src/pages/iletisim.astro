@@ -18,38 +18,6 @@ const contactSchema = {
   "mainEntity": { "@id": `${CANONICAL_BASE}/#business` },
 };
 
-const localSchema = {
-  "@context": "https://schema.org",
-  "@type": "InteriorDesigner",
-  "@id": `${CANONICAL_BASE}/#business`,
-  "name": SITE_NAME,
-  "url": `${CANONICAL_BASE}/iletisim`,
-  "telephone": SITE_PHONE,
-  "email": EMAIL,
-  "image": optimizedImage(heroPath),
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Akasya A Kule, No: 25/A, Çeçen Sok., Acıbadem",
-    "addressLocality": "Üsküdar",
-    "addressRegion": "İstanbul",
-    "postalCode": "34660",
-    "addressCountry": "TR",
-  },
-  "geo": { "@type": "GeoCoordinates", "latitude": 41.001739, "longitude": 29.0543556 },
-  "hasMap": GOOGLE_MAPS_URL,
-  "openingHoursSpecification": [
-    // 7/24. Google yapisal veride tum gun acik icin 00:00-23:59 bekliyor.
-    // Google Isletme Profili de "24 saat acik" gosteriyor; ikisi tutarli olmali.
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-      "opens": "00:00",
-      "closes": "23:59"
-    }
-  ],
-  "areaServed": { "@type": "City", "name": "İstanbul" },
-};
-
 const faqItems = [
   {
     q: "Ücretsiz keşif randevusunu nasıl alabilirim?",
@@ -102,7 +70,7 @@ const socials = [
     { label: "Ana Sayfa", href: `${CANONICAL_BASE}/` },
     { label: "İletişim" }
   ]}
-  structuredData={[contactSchema, localSchema, faqSchema]}
+  structuredData={[contactSchema, faqSchema]}
 >
 
   <!-- Kanallar -->

@@ -77,6 +77,15 @@ const organizationSchema = {
   },
   "email": EMAIL,
   "sameAs": SAME_AS,
+  "foundingLocation": { "@type": "Place", "name": "İstanbul, Türkiye" },
+  "knowsAbout": [
+    "İç mimari tasarım",
+    "Anahtar teslim yenileme",
+    "Konut ve villa tadilatı",
+    "Ticari mekan iç mimarlığı",
+    "3D görselleştirme",
+    "Şantiye yönetimi"
+  ],
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": SITE_PHONE,
@@ -100,7 +109,6 @@ const localBusinessSchema = {
   "hasMap": GOOGLE_MAPS_URL,
   "sameAs": SAME_AS,
   "parentOrganization": { "@id": `${CANONICAL_BASE}/#organization` },
-  "priceRange": "₺₺₺",
   "openingHoursSpecification": [
     // 7/24. Google yapisal veride tum gun acik icin 00:00-23:59 bekliyor.
     // Google Isletme Profili de "24 saat acik" gosteriyor; ikisi tutarli olmali.

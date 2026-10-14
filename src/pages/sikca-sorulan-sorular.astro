@@ -109,82 +109,6 @@ const allFaqs = categories.flatMap(c => c.faqs);
 
 // ── LD+JSON Schemas ─────────────────────────────────────────────────────────
 
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": `${CANONICAL_BASE}/#organization`,
-  "name": "Master İç Mimarlık",
-  "url": CANONICAL_BASE,
-  "logo": {
-    "@type": "ImageObject",
-    "url": `${CANONICAL_BASE}/favicon.png`
-  },
-  "telephone": "+905330391565",
-  "email": "mastericmimarlik@gmail.com",
-  "sameAs": [
-    "https://wa.me/905330391565"
-  ]
-};
-
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
-  "@id": `${CANONICAL_BASE}/#localbusiness`,
-  "name": "Master İç Mimarlık",
-  "description": "İstanbul'da anahtar teslim iç mimarlık, daire ve villa yenileme hizmetleri. 8+ yıl deneyim, 150+ tamamlanan proje.",
-  "url": CANONICAL_BASE,
-  "telephone": "+905330391565",
-  "priceRange": "₺₺₺",
-  "image": `${CANONICAL_BASE}/og-image.png`,
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "İstanbul",
-    "addressCountry": "TR"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 41.001739,
-    "longitude": 29.0543556
-  },
-  "areaServed": [
-    { "@type": "City", "name": "İstanbul" },
-    { "@type": "AdministrativeArea", "name": "Beşiktaş" },
-    { "@type": "AdministrativeArea", "name": "Kadıköy" },
-    { "@type": "AdministrativeArea", "name": "Levent" },
-    { "@type": "AdministrativeArea", "name": "Nişantaşı" },
-    { "@type": "AdministrativeArea", "name": "Zekeriyaköy" },
-    { "@type": "AdministrativeArea", "name": "Ataşehir" }
-  ],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "İç Mimarlık Hizmetleri",
-    "itemListElement": [
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Daire İç Mimarlığı ve Yenileme" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Villa Tadilat ve Tasarım" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Anahtar Teslim Tadilat" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mutfak ve Banyo Yenileme" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "3D İç Mimarlık Görselleştirme" } }
-    ]
-  },
-  "openingHoursSpecification": [
-    // 7/24. Google yapisal veride tum gun acik icin 00:00-23:59 bekliyor.
-    // Google Isletme Profili de "24 saat acik" gosteriyor; ikisi tutarli olmali.
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-      "opens": "00:00",
-      "closes": "23:59"
-    }
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+905330391565",
-    "contactType": "customer service",
-    "availableLanguage": "Turkish",
-    "contactOption": "TollFree"
-  }
-};
-
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -228,7 +152,7 @@ const webPageSchema = {
   title="Sıkça Sorulan Sorular — İç Mimarlık & Ev Yenileme"
   description="İstanbul'da iç mimarlık ve anahtar teslim ev yenileme maliyetleri, tadilat süreci ve hizmet bölgeleri hakkında sık sorulan sorular. 8+ yıl deneyim, 150+ proje."
   canonicalUrl={`${CANONICAL_BASE}/sikca-sorulan-sorular`}
-  structuredData={[organizationSchema, localBusinessSchema, faqSchema, breadcrumbSchema, webPageSchema]}
+  structuredData={[faqSchema, breadcrumbSchema, webPageSchema]}
 >
   <Header />
 

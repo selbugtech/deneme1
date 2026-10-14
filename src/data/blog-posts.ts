@@ -8,6 +8,8 @@ export interface BlogPostMeta {
   title: string;
   slug: string;
   date: string;
+  /** İçerik gerçekten güncellendiğinde ISO tarih — Article şemasında dateModified olur */
+  updated?: string;
   readingTime: string;
   tag: string;
   image: string;
@@ -79,7 +81,7 @@ export const allPosts: BlogPostMeta[] = [
     excerpt: '1+1 ve 2+1 daireler için alan kazandıran küçük daire dekorasyon fikirleri. Akıllı depolama, çok fonksiyonlu mobilya ve görsel büyütme çözümleri.',
   },
   {
-    title: 'Esenyurt Ev Tadilati — Güvenilir Tadilat & Yenileme Hizmeti',
+    title: 'Esenyurt Ev Tadilatı — Güvenilir Tadilat & Yenileme Hizmeti',
     slug: 'esenyurt-ev-tadilati',
     date: '2026-04-15',
     readingTime: '7 dk',
@@ -88,7 +90,7 @@ export const allPosts: BlogPostMeta[] = [
     excerpt: 'Esenyurt\'ta ev tadilati, mutfak yenileme, banyo tadilatı ve daire renovasyonu. Pınar, Akevler, Kıraç ve Yeşilkent\'te profesyonel hizmet.',
   },
   {
-    title: 'Bağcılar Ev Tadilati — Güvenilir Tadilat & Yenileme Hizmeti',
+    title: 'Bağcılar Ev Tadilatı — Güvenilir Tadilat & Yenileme Hizmeti',
     slug: 'bagcilar-ev-tadilati',
     date: '2026-04-15',
     readingTime: '7 dk',
@@ -97,7 +99,7 @@ export const allPosts: BlogPostMeta[] = [
     excerpt: 'Bağcılar\'da ev tadilati, mutfak yenileme, banyo tadilatı ve daire renovasyonu. Yıldıztepe, Kirazlı, Mahmutbey ve Demirkapı\'da profesyonel hizmet.',
   },
   {
-    title: 'Beylikdüzü Ev Tadilati — Güvenilir Tadilat & Yenileme Hizmeti',
+    title: 'Beylikdüzü Ev Tadilatı — Güvenilir Tadilat & Yenileme Hizmeti',
     slug: 'beylikduzu-ev-tadilati',
     date: '2026-04-15',
     readingTime: '7 dk',
@@ -106,7 +108,7 @@ export const allPosts: BlogPostMeta[] = [
     excerpt: 'Beylikdüzü\'nde ev tadilati, mutfak yenileme, banyo tadilatı ve daire renovasyonu. Cumhuriyet, Adnan Kahveci, Barış ve Gürpınar\'da profesyonel hizmet.',
   },
   {
-    title: 'Küçükçekmece Ev Tadilati — Güvenilir Tadilat & Yenileme Hizmeti',
+    title: 'Küçükçekmece Ev Tadilatı — Güvenilir Tadilat & Yenileme Hizmeti',
     slug: 'kucukcekmece-ev-tadilati',
     date: '2026-04-15',
     readingTime: '7 dk',
@@ -115,7 +117,7 @@ export const allPosts: BlogPostMeta[] = [
     excerpt: 'Küçükçekmece\'de ev tadilati, mutfak yenileme, banyo tadilatı ve daire renovasyonu. Atakent, Halkalı, Sefaköy ve İnönü\'de profesyonel hizmet.',
   },
   {
-    title: 'Bahçelievler Ev Tadilati — Güvenilir Tadilat & Yenileme Hizmeti',
+    title: 'Bahçelievler Ev Tadilatı — Güvenilir Tadilat & Yenileme Hizmeti',
     slug: 'bahcelievler-ev-tadilati',
     date: '2026-04-15',
     readingTime: '7 dk',
@@ -124,7 +126,7 @@ export const allPosts: BlogPostMeta[] = [
     excerpt: 'Bahçelievler\'de ev tadilati, mutfak yenileme, banyo tadilatı ve daire renovasyonu. Kocasinan, Yenibosna, Şirinevler ve Soğanlı\'da profesyonel hizmet.',
   },
   {
-    title: 'Gaziosmanpaşa Ev Tadilati — Güvenilir Tadilat & Yenileme Hizmeti',
+    title: 'Gaziosmanpaşa Ev Tadilatı — Güvenilir Tadilat & Yenileme Hizmeti',
     slug: 'gaziosmanpasa-ev-tadilati',
     date: '2026-04-15',
     readingTime: '7 dk',
@@ -133,7 +135,7 @@ export const allPosts: BlogPostMeta[] = [
     excerpt: 'Gaziosmanpaşa\'da ev tadilati, mutfak yenileme, banyo tadilatı ve daire renovasyonu. Karadeniz, Barbaros, Mevlana ve Yıldıztabya\'da profesyonel hizmet.',
   },
   {
-    title: 'Zeytinburnu Ev Tadilati — Güvenilir Tadilat & Yenileme Hizmeti',
+    title: 'Zeytinburnu Ev Tadilatı — Güvenilir Tadilat & Yenileme Hizmeti',
     slug: 'zeytinburnu-ev-tadilati',
     date: '2026-04-15',
     readingTime: '7 dk',
@@ -142,7 +144,7 @@ export const allPosts: BlogPostMeta[] = [
     excerpt: 'Zeytinburnu\'nda ev tadilati, mutfak yenileme, banyo tadilatı ve daire renovasyonu. Telsiz, Kazlıçeşme, Seyitnizam ve Gökalp\'te profesyonel hizmet.',
   },
   {
-    title: 'Başakşehir Ev Tadilati — Güvenilir Tadilat & Yenileme Hizmeti',
+    title: 'Başakşehir Ev Tadilatı — Güvenilir Tadilat & Yenileme Hizmeti',
     slug: 'basaksehir-ev-tadilati',
     date: '2026-04-15',
     readingTime: '7 dk',
@@ -151,7 +153,7 @@ export const allPosts: BlogPostMeta[] = [
     excerpt: 'Başakşehir\'de ev tadilati, mutfak yenileme, banyo tadilatı ve daire renovasyonu. Kayabaşı, Altınşehir, Güvercintepe ve 4-5. Etap\'ta profesyonel hizmet.',
   },
   {
-    title: 'Sultangazi Ev Tadilati — Güvenilir Tadilat & Yenileme Hizmeti',
+    title: 'Sultangazi Ev Tadilatı — Güvenilir Tadilat & Yenileme Hizmeti',
     slug: 'sultangazi-ev-tadilati',
     date: '2026-04-15',
     readingTime: '7 dk',
@@ -160,7 +162,7 @@ export const allPosts: BlogPostMeta[] = [
     excerpt: 'Sultangazi\'de ev tadilati, mutfak yenileme, banyo tadilatı ve daire renovasyonu. Cebeci, Sultançiftliği, Habibler ve Gazi\'de profesyonel hizmet.',
   },
   {
-    title: 'Güngören Ev Tadilati — Güvenilir Tadilat & Yenileme Hizmeti',
+    title: 'Güngören Ev Tadilatı — Güvenilir Tadilat & Yenileme Hizmeti',
     slug: 'gungoren-ev-tadilati',
     date: '2026-04-15',
     readingTime: '7 dk',
@@ -169,7 +171,7 @@ export const allPosts: BlogPostMeta[] = [
     excerpt: 'Güngören\'de ev tadilati, mutfak yenileme, banyo tadilatı ve daire renovasyonu. Güneştepe, Akıncılar, Tozkoparan ve Haznedar\'da profesyonel hizmet.',
   },
   {
-    title: 'Kadıköy Ev Tadilati — Güvenilir Tadilat & Yenileme Hizmeti',
+    title: 'Kadıköy Ev Tadilatı — Güvenilir Tadilat & Yenileme Hizmeti',
     slug: 'kadikoy-ev-tadilati',
     date: '2026-04-15',
     readingTime: '7 dk',
@@ -178,7 +180,7 @@ export const allPosts: BlogPostMeta[] = [
     excerpt: 'Kadıköy\'de ev tadilati, mutfak yenileme, banyo tadilatı ve daire renovasyonu. Moda, Caferağa, Fenerbahçe ve Göztepe\'de profesyonel hizmet.',
   },
   {
-    title: 'Beşiktaş Ev Tadilati — Güvenilir Tadilat & Yenileme Hizmeti',
+    title: 'Beşiktaş Ev Tadilatı — Güvenilir Tadilat & Yenileme Hizmeti',
     slug: 'besiktas-ev-tadilati',
     date: '2026-04-15',
     readingTime: '7 dk',
@@ -187,7 +189,7 @@ export const allPosts: BlogPostMeta[] = [
     excerpt: 'Beşiktaş\'ta ev tadilati, mutfak yenileme, banyo tadilatı ve daire renovasyonu. Levent, Bebek, Balmumcu ve Etiler\'de profesyonel hizmet.',
   },
   {
-    title: 'Üsküdar Ev Tadilati — Güvenilir Tadilat & Yenileme Hizmeti',
+    title: 'Üsküdar Ev Tadilatı — Güvenilir Tadilat & Yenileme Hizmeti',
     slug: 'uskudar-ev-tadilati',
     date: '2026-04-15',
     readingTime: '7 dk',
@@ -196,7 +198,7 @@ export const allPosts: BlogPostMeta[] = [
     excerpt: 'Üsküdar\'da ev tadilati, mutfak yenileme, banyo tadilatı ve daire renovasyonu. Çengelköy, Kuzguncuk, Beylerbeyi ve Altunizade\'de profesyonel hizmet.',
   },
   {
-    title: 'Maltepe Ev Tadilati — Güvenilir Tadilat & Yenileme Hizmeti',
+    title: 'Maltepe Ev Tadilatı — Güvenilir Tadilat & Yenileme Hizmeti',
     slug: 'maltepe-ev-tadilati',
     date: '2026-04-15',
     readingTime: '7 dk',
@@ -205,7 +207,7 @@ export const allPosts: BlogPostMeta[] = [
     excerpt: 'Maltepe\'de ev tadilati, mutfak yenileme, banyo tadilatı ve daire renovasyonu. Küçükyalı, Cevizli, Altayçeşme ve Bağlarbaşı\'nda profesyonel hizmet.',
   },
   {
-    title: 'Ataşehir Ev Tadilati — Güvenilir Tadilat & Yenileme Hizmeti',
+    title: 'Ataşehir Ev Tadilatı — Güvenilir Tadilat & Yenileme Hizmeti',
     slug: 'atasehir-ev-tadilati',
     date: '2026-04-15',
     readingTime: '7 dk',
@@ -214,7 +216,7 @@ export const allPosts: BlogPostMeta[] = [
     excerpt: 'Ataşehir\'de ev tadilati, mutfak yenileme, banyo tadilatı ve daire renovasyonu. İçerenköy, Kayışdağı, Barbaros ve Yenisahra\'da profesyonel hizmet.',
   },
   {
-    title: 'Bakırköy Ev Tadilati — Güvenilir Tadilat & Yenileme Hizmeti',
+    title: 'Bakırköy Ev Tadilatı — Güvenilir Tadilat & Yenileme Hizmeti',
     slug: 'bakirkoy-ev-tadilati',
     date: '2026-04-15',
     readingTime: '7 dk',
@@ -223,7 +225,7 @@ export const allPosts: BlogPostMeta[] = [
     excerpt: 'Bakırköy\'de ev tadilati, mutfak yenileme, banyo tadilatı ve daire renovasyonu. Ataköy, Florya, Yeşilköy ve Sakızağacı\'nda profesyonel hizmet.',
   },
   {
-    title: 'Şişli Ev Tadilati — Güvenilir Tadilat & Yenileme Hizmeti',
+    title: 'Şişli Ev Tadilatı — Güvenilir Tadilat & Yenileme Hizmeti',
     slug: 'sisli-ev-tadilati',
     date: '2026-04-15',
     readingTime: '7 dk',
@@ -232,7 +234,7 @@ export const allPosts: BlogPostMeta[] = [
     excerpt: 'Şişli\'de ev tadilati, mutfak yenileme, banyo tadilatı ve daire renovasyonu. Nişantaşı, Bomonti, Kurtuluş ve Mecidiyeköy\'de profesyonel hizmet.',
   },
   {
-    title: 'Kartal Ev Tadilati — Güvenilir Tadilat & Yenileme Hizmeti',
+    title: 'Kartal Ev Tadilatı — Güvenilir Tadilat & Yenileme Hizmeti',
     slug: 'kartal-ev-tadilati',
     date: '2026-04-15',
     readingTime: '7 dk',
@@ -241,7 +243,7 @@ export const allPosts: BlogPostMeta[] = [
     excerpt: 'Kartal\'da ev tadilati, mutfak yenileme, banyo tadilatı ve daire renovasyonu. Uğur Mumcu, Orhantepe, Yakacık ve Soğanlık\'ta profesyonel hizmet.',
   },
   {
-    title: 'Pendik Ev Tadilati — Güvenilir Tadilat & Yenileme Hizmeti',
+    title: 'Pendik Ev Tadilatı — Güvenilir Tadilat & Yenileme Hizmeti',
     slug: 'pendik-ev-tadilati',
     date: '2026-04-15',
     readingTime: '7 dk',
@@ -250,7 +252,7 @@ export const allPosts: BlogPostMeta[] = [
     excerpt: 'Pendik\'te ev tadilati, mutfak yenileme, banyo tadilatı ve daire renovasyonu. Kurtköy, Sapanbağları, Kaynarca ve Velibaba\'da profesyonel hizmet.',
   },
   {
-    title: 'Fatih Ev Tadilati — Güvenilir Tadilat & Yenileme Hizmeti',
+    title: 'Fatih Ev Tadilatı — Güvenilir Tadilat & Yenileme Hizmeti',
     slug: 'fatih-ev-tadilati',
     date: '2026-04-15',
     readingTime: '7 dk',
@@ -259,7 +261,7 @@ export const allPosts: BlogPostMeta[] = [
     excerpt: 'Fatih\'te ev tadilati, mutfak yenileme, banyo tadilatı ve daire renovasyonu. Balat, Fener, Samatya ve Kocamustafapaşa\'da profesyonel hizmet.',
   },
   {
-    title: 'Sarıyer Ev Tadilati — Güvenilir Tadilat & Yenileme Hizmeti',
+    title: 'Sarıyer Ev Tadilatı — Güvenilir Tadilat & Yenileme Hizmeti',
     slug: 'sariyer-ev-tadilati',
     date: '2026-04-15',
     readingTime: '7 dk',
@@ -268,7 +270,7 @@ export const allPosts: BlogPostMeta[] = [
     excerpt: 'Sarıyer\'de ev tadilati, mutfak yenileme, banyo tadilatı ve daire renovasyonu. Tarabya, Yeniköy, İstinye ve Emirgan\'da profesyonel hizmet.',
   },
   {
-    title: 'Beyoğlu Ev Tadilati — Güvenilir Tadilat & Yenileme Hizmeti',
+    title: 'Beyoğlu Ev Tadilatı — Güvenilir Tadilat & Yenileme Hizmeti',
     slug: 'beyoglu-ev-tadilati',
     date: '2026-04-15',
     readingTime: '7 dk',
@@ -315,7 +317,7 @@ export const allPosts: BlogPostMeta[] = [
   {
     title: 'Fatih İç Mimarlık Ofisleri ve Tadilat Hizmetleri',
     slug: 'fatih-ic-mimarlik-ofisleri',
-    date: '2025-05-13',
+    date: '2026-05-13',
     readingTime: '8 dk',
     tag: 'Semt Rehberi',
     image: optimizedImage('/images/mutfak1.jpeg'),
@@ -324,7 +326,7 @@ export const allPosts: BlogPostMeta[] = [
   {
     title: 'Beyoğlu İç Mimarlık Ofisleri ve Tadilat Hizmetleri',
     slug: 'beyoglu-ic-mimarlik-ofisleri',
-    date: '2025-05-10',
+    date: '2026-05-10',
     readingTime: '7 dk',
     tag: 'Semt Rehberi',
     image: optimizedImage('/images/salon7.jpeg'),
@@ -333,7 +335,7 @@ export const allPosts: BlogPostMeta[] = [
   {
     title: 'Maslak İç Mimarlık Ofisleri ve Tadilat Hizmetleri',
     slug: 'maslak-ic-mimarlik-ofisleri',
-    date: '2025-05-07',
+    date: '2026-05-07',
     readingTime: '7 dk',
     tag: 'Semt Rehberi',
     image: optimizedImage('/images/oturmaodasi.jpeg'),
@@ -342,7 +344,7 @@ export const allPosts: BlogPostMeta[] = [
   {
     title: 'Maltepe İç Mimarlık Ofisleri ve Tadilat Hizmetleri',
     slug: 'maltepe-ic-mimarlik-ofisleri',
-    date: '2025-05-04',
+    date: '2026-05-04',
     readingTime: '6 dk',
     tag: 'Semt Rehberi',
     image: optimizedImage('/images/salon3.jpeg'),
@@ -351,7 +353,7 @@ export const allPosts: BlogPostMeta[] = [
   {
     title: 'Acıbadem İç Mimarlık Ofisleri ve Tadilat Hizmetleri',
     slug: 'acibadem-ic-mimarlik-ofisleri',
-    date: '2025-05-01',
+    date: '2026-05-01',
     readingTime: '6 dk',
     tag: 'Semt Rehberi',
     image: optimizedImage('/images/salon2.jpeg'),
@@ -360,7 +362,7 @@ export const allPosts: BlogPostMeta[] = [
   {
     title: 'Zekeriyaköy İç Mimarlık Ofisleri ve Tadilat Hizmetleri',
     slug: 'zekeriyakoy-ic-mimarlik-ofisleri',
-    date: '2025-04-28',
+    date: '2026-04-28',
     readingTime: '7 dk',
     tag: 'Semt Rehberi',
     image: optimizedImage('/images/salon4.jpeg'),
@@ -369,7 +371,7 @@ export const allPosts: BlogPostMeta[] = [
   {
     title: 'Ataşehir İç Mimarlık Ofisleri ve Tadilat Hizmetleri',
     slug: 'atasehir-ic-mimarlik-ofisleri',
-    date: '2025-04-25',
+    date: '2026-04-25',
     readingTime: '6 dk',
     tag: 'Semt Rehberi',
     image: optimizedImage('/images/salon5.jpeg'),
@@ -378,7 +380,7 @@ export const allPosts: BlogPostMeta[] = [
   {
     title: 'Sarıyer İç Mimarlık Ofisleri ve Tadilat Hizmetleri',
     slug: 'sariyer-ic-mimarlik-ofisleri',
-    date: '2025-04-22',
+    date: '2026-04-22',
     readingTime: '8 dk',
     tag: 'Semt Rehberi',
     image: optimizedImage('/images/mutfak1.jpeg'),
@@ -387,7 +389,7 @@ export const allPosts: BlogPostMeta[] = [
   {
     title: 'Bakırköy İç Mimarlık Ofisleri ve Tadilat Hizmetleri',
     slug: 'bakirkoy-ic-mimarlik-ofisleri',
-    date: '2025-04-19',
+    date: '2026-04-19',
     readingTime: '6 dk',
     tag: 'Semt Rehberi',
     image: optimizedImage('/images/salon7.jpeg'),
@@ -396,7 +398,7 @@ export const allPosts: BlogPostMeta[] = [
   {
     title: 'Üsküdar İç Mimarlık Ofisleri ve Tadilat Hizmetleri',
     slug: 'uskudar-ic-mimarlik-ofisleri',
-    date: '2025-04-16',
+    date: '2026-04-16',
     readingTime: '7 dk',
     tag: 'Semt Rehberi',
     image: optimizedImage('/images/oturmaodasi.jpeg'),
@@ -405,7 +407,7 @@ export const allPosts: BlogPostMeta[] = [
   {
     title: 'Şişli İç Mimarlık Ofisleri ve Tadilat Hizmetleri',
     slug: 'sisli-ic-mimarlik-ofisleri',
-    date: '2025-04-13',
+    date: '2026-04-13',
     readingTime: '6 dk',
     tag: 'Semt Rehberi',
     image: optimizedImage('/images/salon3.jpeg'),
@@ -414,7 +416,7 @@ export const allPosts: BlogPostMeta[] = [
   {
     title: 'Levent İç Mimarlık Ofisleri ve Tadilat Hizmetleri',
     slug: 'levent-ic-mimarlik-ofisleri',
-    date: '2025-04-10',
+    date: '2026-04-10',
     readingTime: '6 dk',
     tag: 'Semt Rehberi',
     image: optimizedImage('/images/salon2.jpeg'),
@@ -423,7 +425,7 @@ export const allPosts: BlogPostMeta[] = [
   {
     title: 'Nişantaşı İç Mimarlık Ofisleri ve Tadilat Hizmetleri',
     slug: 'nisantasi-ic-mimarlik-ofisleri',
-    date: '2025-04-07',
+    date: '2026-04-07',
     readingTime: '7 dk',
     tag: 'Semt Rehberi',
     image: optimizedImage('/images/salon4.jpeg'),
@@ -432,7 +434,7 @@ export const allPosts: BlogPostMeta[] = [
   {
     title: 'Kadıköy İç Mimarlık Ofisleri ve Tadilat Hizmetleri',
     slug: 'kadikoy-ic-mimarlik-ofisleri',
-    date: '2025-04-04',
+    date: '2026-04-04',
     readingTime: '6 dk',
     tag: 'Semt Rehberi',
     image: optimizedImage('/images/salon5.jpeg'),
@@ -441,7 +443,7 @@ export const allPosts: BlogPostMeta[] = [
   {
     title: 'Beşiktaş İç Mimarlık Ofisleri ve Tadilat Hizmetleri',
     slug: 'besiktas-ic-mimarlik-ofisleri',
-    date: '2025-04-01',
+    date: '2026-04-01',
     readingTime: '7 dk',
     tag: 'Semt Rehberi',
     image: optimizedImage('/images/mutfak1.jpeg'),
@@ -450,7 +452,7 @@ export const allPosts: BlogPostMeta[] = [
   {
     title: 'Ev Tadilat Rehberi — Başlamadan Önce Bilmeniz Gerekenler',
     slug: 'ev-tadilati-ipuclari',
-    date: '2025-03-25',
+    date: '2026-03-25',
     readingTime: '8 dk',
     tag: 'Rehber',
     image: optimizedImage('/images/salon2.jpeg'),
@@ -459,7 +461,7 @@ export const allPosts: BlogPostMeta[] = [
   {
     title: 'İstanbul Daire İç Mimarlık — Doğru İç Mimar Nasıl Seçilir?',
     slug: 'istanbul-daire-ic-mimarlik',
-    date: '2025-03-15',
+    date: '2026-03-15',
     readingTime: '6 dk',
     tag: 'Bilgi',
     image: optimizedImage('/images/salon5.jpeg'),
@@ -468,7 +470,7 @@ export const allPosts: BlogPostMeta[] = [
   {
     title: 'Mutfak Yenileme İstanbul — Tadilat Fikirleri ve Maliyet Rehberi',
     slug: 'mutfak-yenileme-istanbul',
-    date: '2025-03-05',
+    date: '2026-03-05',
     readingTime: '7 dk',
     tag: 'Rehber',
     image: optimizedImage('/images/mutfak1.jpeg'),
@@ -477,7 +479,7 @@ export const allPosts: BlogPostMeta[] = [
   {
     title: 'Villa Tadilat İstanbul — Lüks Villa Yenileme Rehberi 2026',
     slug: 'villa-tadilati-istanbul',
-    date: '2025-02-20',
+    date: '2026-02-20',
     readingTime: '8 dk',
     tag: 'Rehber',
     image: optimizedImage('/images/salon7.jpeg'),
@@ -486,7 +488,7 @@ export const allPosts: BlogPostMeta[] = [
   {
     title: '2026 İç Mimarlık Trendleri — İstanbul Perspektifinden',
     slug: 'ic-mimarlik-trendleri-2025',
-    date: '2025-02-10',
+    date: '2026-02-10',
     readingTime: '6 dk',
     tag: 'Trendler',
     image: optimizedImage('/images/salon4.jpeg'),
@@ -495,7 +497,7 @@ export const allPosts: BlogPostMeta[] = [
   {
     title: 'Anahtar Teslim Ev Yenileme Nedir? Avantajları ve Süreci',
     slug: 'anahtar-teslim-ev-yenileme-nedir',
-    date: '2025-01-25',
+    date: '2026-01-25',
     readingTime: '5 dk',
     tag: 'Bilgi',
     image: optimizedImage('/images/salon3.jpeg'),
@@ -504,7 +506,7 @@ export const allPosts: BlogPostMeta[] = [
   {
     title: 'Ev Yenileme Maliyeti 2026 — İstanbul Güncel Rehber',
     slug: 'ev-yenileme-maliyeti-2025',
-    date: '2025-01-10',
+    date: '2026-01-10',
     readingTime: '7 dk',
     tag: 'Rehber',
     image: optimizedImage('/images/oturmaodasi.jpeg'),

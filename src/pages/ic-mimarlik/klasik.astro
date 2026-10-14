@@ -1,7 +1,7 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import { CANONICAL_BASE } from '../../config';
-import { optimizedImage } from '../../lib/cloudinary';
+import { optimizedImage, ogImageUrl } from '../../lib/cloudinary';
 import { styles } from '../../data/styles';
 
 const heroPath = '/images/salon8.jpeg';
@@ -14,6 +14,10 @@ const articleSchema = {
   "description": "Klasik iç mimarlığın simetri ve oran anlayışı, malzeme paleti ve yüksek tavanlı İstanbul dairelerinde uygulanışı.",
   "author": { "@id": `${CANONICAL_BASE}/#organization` },
   "publisher": { "@id": `${CANONICAL_BASE}/#organization` },
+  "datePublished": "2026-08-31",
+  "dateModified": "2026-08-31",
+  "inLanguage": "tr-TR",
+  "image": ogImageUrl(heroPath),
   "mainEntityOfPage": `${CANONICAL_BASE}/ic-mimarlik/klasik`,
 };
 
