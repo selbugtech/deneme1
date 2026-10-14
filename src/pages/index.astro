@@ -11,12 +11,26 @@ import Projects from '../components/Projects.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppFloat from '../components/WhatsAppFloat.astro';
+import HomeIntro from '../components/HomeIntro.astro';
+import { homeFaqs } from '../data/home-faq';
 import { CANONICAL_BASE } from '../config';
 import { optimizedImageW, srcsetImage } from '../lib/cloudinary';
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: homeFaqs.map(f => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
 ---
 
 <Layout
+  title="İstanbul İç Mimarlık, Tadilat ve Dekorasyon"
+  description="İstanbul'da iç mimarlık, anahtar teslim ev ve villa tadilatı, ofis, mağaza ve cafe yenileme. Ücretsiz keşif ve 3D tasarım. 0533 039 15 65"
+  structuredData={faqSchema}
   canonicalUrl={`${CANONICAL_BASE}/`}
   lcpImage={optimizedImageW('/images/salon1.png', 800)}
   lcpImageSrcset={srcsetImage('/images/salon1.png', [400, 800, 1200, 1920])}
@@ -41,6 +55,7 @@ import { optimizedImageW, srcsetImage } from '../lib/cloudinary';
     <BeforeAfter />
     */}
     <Services />
+    <HomeIntro />
     <HomeServiceAreas />
     <Contact />
   </main>

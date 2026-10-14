@@ -1,0 +1,62 @@
+---
+// Ana sayfa metin bloğu: sayfada paragraf içerik yoktu (yalnızca kartlar ve etiketler).
+// hakkimizda.astro ile kopya olmaması için kurumsal anlatı değil, hizmet/arama niyeti odaklı.
+import { homeFaqs } from '../data/home-faq';
+
+
+---
+
+<section class="py-20 bg-warm-white">
+  <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-14">
+
+    <div>
+      <div class="flex items-center gap-3 mb-4">
+        <span class="w-8 h-px bg-gold"></span>
+        <span class="text-xs tracking-[0.3em] uppercase text-gold font-medium">Master İç Mimarlık</span>
+      </div>
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-charcoal mb-5 leading-tight">
+        İstanbul'da iç mimarlık, tadilat ve dekorasyon
+      </h2>
+      <div class="space-y-4 text-muted leading-relaxed">
+        <p>
+          Mekânınızı tek bir ekiple, tasarımdan teslime kadar yönetiyoruz. <a href="/hizmetler/anahtar-teslim/ev-tadilat" class="text-gold hover:underline">Ev tadilatı</a>
+          ve <a href="/hizmetler/anahtar-teslim/villa-tadilat" class="text-gold hover:underline">villa tadilatının</a> yanı sıra
+          <a href="/hizmetler/anahtar-teslim/ofis-tadilat" class="text-gold hover:underline">ofis</a>,
+          <a href="/hizmetler/anahtar-teslim/magaza-dukkan-tadilat" class="text-gold hover:underline">mağaza ve dükkân</a>,
+          <a href="/hizmetler/anahtar-teslim/cafe-restaurant-tadilat" class="text-gold hover:underline">cafe ve restoran</a> ile
+          <a href="/hizmetler/anahtar-teslim/otel-tadilat" class="text-gold hover:underline">otel</a> projelerinde çalışıyoruz.
+        </p>
+        <p>
+          Süreç ücretsiz keşifle başlar. Ardından <a href="/hizmetler/3d-tasarim" class="text-gold hover:underline">3D tasarım</a>
+          ve uygulama projesi hazırlanır; elektrik, tesisat, zemin, mutfak ve banyo gibi işler tek planda koordine edilir.
+          Mutfak ve banyo gibi oda bazlı işler için <a href="/hizmetler/mutfak-yenileme" class="text-gold hover:underline">mutfak yenileme</a>
+          ve <a href="/hizmetler/banyo-yenileme" class="text-gold hover:underline">banyo yenileme</a> sayfalarımıza göz atabilirsiniz.
+        </p>
+        <p>
+          Hangi stilin size uyduğuna karar veremiyorsanız <a href="/ic-mimarlik" class="text-gold hover:underline">iç mimarlık stilleri</a>
+          rehberimiz ve <a href="/projeler" class="text-gold hover:underline">tamamladığımız projeler</a> iyi bir başlangıç. Bölgenize özel
+          bilgi için <a href="/istanbul" class="text-gold hover:underline">İstanbul hizmet bölgeleri</a> sayfasını inceleyebilirsiniz.
+        </p>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="font-display text-2xl md:text-3xl font-bold text-charcoal mb-6">Sık sorulan sorular</h2>
+      <div class="divide-y divide-border border-y border-border">
+        {homeFaqs.map(f => (
+          <details class="group py-4">
+            <summary class="cursor-pointer list-none flex items-start justify-between gap-4 font-medium text-charcoal">
+              {f.q}
+              <span class="text-gold shrink-0 transition-transform group-open:rotate-45 text-xl leading-none" aria-hidden="true">+</span>
+            </summary>
+            <p class="mt-3 text-sm text-muted leading-relaxed">{f.a}</p>
+          </details>
+        ))}
+      </div>
+      <p class="mt-4 text-sm text-muted">
+        Daha fazlası için <a href="/sikca-sorulan-sorular" class="text-gold hover:underline">sıkça sorulan sorular</a> sayfamıza bakın.
+      </p>
+    </div>
+
+  </div>
+</section>

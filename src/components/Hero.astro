@@ -74,14 +74,23 @@ const slides = [
 
       <!-- Heading -->
       <h1 class="font-display text-[2.2rem] sm:text-5xl md:text-6xl lg:text-[4.4rem] xl:text-[4.8rem] font-bold leading-[1.05] text-white mb-5 reveal reveal-d1">
-        Anahtar Teslim<br />
+        <span class="sr-only">İstanbul İç Mimarlık — </span>Anahtar Teslim<br />
         <em class="not-italic text-gold">Tadilat <span style="font-family: Garamond, 'EB Garamond', 'Cormorant Garamond', Georgia, 'Times New Roman', serif; font-style: italic; font-weight: 400;">&amp;</span> Yenileme</em>
       </h1>
       <div class="flex flex-wrap items-center gap-x-2 gap-y-2 mb-5 reveal reveal-d1">
-        {['Ev', 'Villa', 'Mağaza', 'Ofis'].map((item) => (
-          <span class="inline-block bg-white/10 border border-white/25 text-white text-xs sm:text-sm tracking-[0.15em] uppercase font-semibold px-3 py-1.5 backdrop-blur-sm">
-            {item}
-          </span>
+        {[
+          { label: 'Ev', href: '/hizmetler/anahtar-teslim/ev-tadilat' },
+          { label: 'Villa', href: '/hizmetler/anahtar-teslim/villa-tadilat' },
+          { label: 'Mağaza', href: '/hizmetler/anahtar-teslim/magaza-dukkan-tadilat' },
+          { label: 'Ofis', href: '/hizmetler/anahtar-teslim/ofis-tadilat' },
+        ].map((item) => (
+          <a
+            href={item.href}
+            class="inline-block bg-white/10 border border-white/25 text-white text-xs sm:text-sm tracking-[0.15em] uppercase font-semibold px-3 py-1.5 backdrop-blur-sm hover:bg-gold hover:border-gold transition-colors"
+            aria-label={`${item.label} tadilatı`}
+          >
+            {item.label}
+          </a>
         ))}
       </div>
       <!-- Free site visit badge -->

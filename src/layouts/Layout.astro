@@ -1,6 +1,6 @@
 ---
 import { SEO } from 'astro-seo';
-import { CANONICAL_BASE, OG_IMAGE_PATH, SITE_NAME, SITE_PHONE } from '../config';
+import { CANONICAL_BASE, OG_IMAGE_PATH, SITE_NAME, SITE_PHONE, EMAIL, GOOGLE_MAPS_URL, SAME_AS } from '../config';
 import { ogImageUrl } from '../lib/cloudinary';
 
 interface Props {
@@ -22,7 +22,7 @@ const {
   // marka adına harcanıyordu. Yeni hali ana sayfa H1'iyle aynı; marka eki aşağıda
   // otomatik ekleniyor → "İstanbul İç Mimarlık ve Ev Yenileme | Master İç Mimarlık".
   title: rawTitle = 'İstanbul İç Mimarlık ve Ev Yenileme',
-  description = 'İstanbul\'da iç mimarlık, anahtar teslim ev ve villa yenileme, mağaza ve ofis tadilatı. 27 ilçede ücretsiz keşif ve 3D tasarım. 0533 039 15 65',
+  description = 'İstanbul\'da iç mimarlık, anahtar teslim ev ve villa yenileme, mağaza ve ofis tadilatı. Her ilçede ücretsiz keşif ve 3D tasarım. 0533 039 15 65',
   canonicalUrl,
   ogImage = OG_IMAGE_PATH,
   ogType = 'website',
@@ -70,12 +70,17 @@ const organizationSchema = {
   "url": `${CANONICAL_BASE}/`,
   "logo": {
     "@type": "ImageObject",
-    "url": `${CANONICAL_BASE}/favicon.png`,
-    "contentUrl": `${CANONICAL_BASE}/favicon.png`
+    "url": `${CANONICAL_BASE}/icon-512.png`,
+    "contentUrl": `${CANONICAL_BASE}/icon-512.png`,
+    "width": 512,
+    "height": 512
   },
+  "email": EMAIL,
+  "sameAs": SAME_AS,
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": SITE_PHONE,
+    "email": EMAIL,
     "contactType": "customer service",
     "availableLanguage": "Turkish"
   }
@@ -87,10 +92,14 @@ const localBusinessSchema = {
   "@id": `${CANONICAL_BASE}/#business`,
   "name": SITE_NAME,
   "url": `${CANONICAL_BASE}/`,
-  "logo": `${CANONICAL_BASE}/favicon.png`,
+  "logo": `${CANONICAL_BASE}/icon-512.png`,
   "image": ogImageAbs,
   "description": "İstanbul'da anahtar teslim ev yenileme, villa yenileme, mağaza ve ofis yenileme hizmetleri.",
   "telephone": SITE_PHONE,
+  "email": EMAIL,
+  "hasMap": GOOGLE_MAPS_URL,
+  "sameAs": SAME_AS,
+  "parentOrganization": { "@id": `${CANONICAL_BASE}/#organization` },
   "priceRange": "₺₺₺",
   "openingHoursSpecification": [
     // 7/24. Google yapisal veride tum gun acik icin 00:00-23:59 bekliyor.
@@ -169,13 +178,17 @@ const allStructuredData = [
       extend={{
         meta: [
           { name: 'author', content: SITE_NAME },
-          { name: 'robots', content: 'index, follow' },
         ],
       }}
     />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/icon-48.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Cloudinary: LCP görseli ve proje görselleri buradan geliyor -->
+    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
 
     <!-- LCP image preload — responsive (mobilde küçük, masaüstünde büyük boyut) -->
     {lcpImage && (
@@ -284,7 +297,8 @@ const allStructuredData = [
         document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
       }
       if ('requestIdleCallback' in window) {
-        requestIdleCallback(_initReveal);
+        // timeout: ana thread GTM/gtag ile meşgulse hero metni (opacity 0) geç görünmesin
+        requestIdleCallback(_initReveal, { timeout: 400 });
       } else {
         setTimeout(_initReveal, 0);
       }

@@ -22,6 +22,17 @@ export const GOOGLE_MAPS_CID = '14342074565546867204';
 export const GOOGLE_MAPS_URL = `https://maps.google.com/?cid=${GOOGLE_MAPS_CID}`;
 export const GOOGLE_MAPS_EMBED_URL = `https://maps.google.com/maps?cid=${GOOGLE_MAPS_CID}&hl=tr&z=17&output=embed`;
 
+// Sosyal profiller + Google Haritalar kaydı: JSON-LD `sameAs` (entity doğrulaması)
+// ve footer ile tutarlı olmalı. Footer'daki linklerle birebir aynı tutun.
+export const SAME_AS = [
+  'https://www.facebook.com/master.mmrlk',
+  'https://x.com/mastericmimar',
+  'https://www.instagram.com/mastericmimarlik/',
+  'https://tr.pinterest.com/mastericmimarlik/',
+  'https://www.youtube.com/channel/UC1vs1O0VUe_VNZIpo8B1KzA',
+  `https://maps.google.com/?cid=14342074565546867204`,
+];
+
 // ————— Google puanı: ELLE güncellenir —————
 // Google İşletme Profili'nden okuyup buradan güncelleyin.
 // Otomatik çekilmiyor; Google, işletmenin kendi hakkındaki aggregateRating'ini

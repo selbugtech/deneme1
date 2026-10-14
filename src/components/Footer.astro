@@ -1,14 +1,14 @@
 ---
-import { optimizedImage } from '../lib/cloudinary';
 import { TEL_URL, WHATSAPP_URL, EMAIL_URL } from '../config';
 import { byGroup } from '../data/services';
-import { bySide } from '../data/districts';
+import { bySide, districts } from '../data/districts';
 import { styles } from '../data/styles';
 
 const year = new Date().getFullYear();
 
 const anaServices = byGroup('ana');
 const anahtarTeslim = byGroup('anahtar-teslim');
+const tadilat = byGroup('tadilat');
 const odaServices = byGroup('oda');
 const mekanServices = byGroup('mekan');
 const anadolu = bySide('anadolu');
@@ -30,7 +30,7 @@ const kurumsal = [
       <!-- Logo & tagline -->
       <div>
         <div class="flex items-center gap-3 mb-3">
-          <img src={optimizedImage('/favicon.png')} alt="Master İç Mimarlık" class="w-8 h-8 shrink-0 object-contain" />
+          <img src="/icon-48.png" alt="Master İç Mimarlık" width="32" height="32" loading="lazy" class="w-8 h-8 shrink-0 object-contain" />
           <div class="leading-none">
             <span class="block font-display font-semibold text-base text-white tracking-wide">Master</span>
             <span class="block text-[10px] tracking-[0.25em] uppercase text-white/40 mt-0.5">İç Mimarlık</span>
@@ -77,6 +77,12 @@ const kurumsal = [
             <li><a href={s.href} class="text-xs text-white/50 hover:text-gold transition-colors">{s.title}</a></li>
           ))}
           {anahtarTeslim.map(s => (
+            <li><a href={s.href} class="text-xs text-white/50 hover:text-gold transition-colors">{s.title}</a></li>
+          ))}
+        </ul>
+        <h3 class="text-[10px] tracking-[0.25em] uppercase text-gold mt-8 mb-4">Tadilat</h3>
+        <ul class="space-y-2.5">
+          {tadilat.map(s => (
             <li><a href={s.href} class="text-xs text-white/50 hover:text-gold transition-colors">{s.title}</a></li>
           ))}
         </ul>
@@ -180,7 +186,12 @@ const kurumsal = [
 
     <div class="mt-6 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-3">
       <p class="text-white/25 text-xs">© {year} Master İç Mimarlık. Tüm hakları saklıdır.</p>
-      <p class="text-white/25 text-xs text-center md:text-right">Beşiktaş · Kadıköy · Levent · Nişantaşı · Zekeriyaköy · Ataşehir · Şişli</p>
+      <p class="text-white/25 text-xs text-center md:text-right">
+        {['besiktas','kadikoy','levent','nisantasi','zekeriyakoy','atasehir','sisli'].map((k, i) => {
+          const d = districts.find(x => x.slug === k + '-ic-mimarlik');
+          return d ? <>{i > 0 && ' · '}<a href={`/istanbul/${d.slug}`} class="hover:text-gold transition-colors">{d.name}</a></> : null;
+        })}
+      </p>
     </div>
   </div>
 </footer>
