@@ -254,20 +254,21 @@ const allStructuredData = [
     <slot />
 
     <script>
-      // Google Ads + GA4 — tarayıcı boşta kaldığında yükle (FCP/LCP engelleme yok)
+      // GA4 (Ads yorumda) — tarayıcı boşta kaldığında yükle (FCP/LCP engelleme yok)
       function _loadTracking() {
-        // Google Ads (gtag.js)
-        var s = document.createElement('script');
-        s.async = true;
-        s.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18023437304';
-        s.onload = function() {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          window.gtag = gtag;
-          gtag('js', new Date());
-          gtag('config', 'AW-18023437304');
-        };
-        document.head.appendChild(s);
+        // Google Ads (gtag.js) — YORUMDA: sitede aktif reklam yok (kullanıcı kararı).
+        // Yeniden açmak için aşağıdaki bloğun yorumunu kaldırın.
+        // var s = document.createElement('script');
+        // s.async = true;
+        // s.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18023437304';
+        // s.onload = function() {
+        // window.dataLayer = window.dataLayer || [];
+        // function gtag(){dataLayer.push(arguments);}
+        // window.gtag = gtag;
+        // gtag('js', new Date());
+        // gtag('config', 'AW-18023437304');
+        // };
+        // document.head.appendChild(s);
 
         // Google Analytics GA4 (G-G7QH86RT87)
         var ga = document.createElement('script');
