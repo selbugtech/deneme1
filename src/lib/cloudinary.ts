@@ -69,3 +69,12 @@ export function ogImageUrl(path: string): string {
   // CLOUDINARY_CLOUD tanımsızsa optimizedImage yolu olduğu gibi döndürür.
   return url.startsWith('http') ? url : `${SITE_ORIGIN}${path}`;
 }
+
+/**
+ * Önceden sarılmış Cloudinary fetch URL'sine genişlik sınırı ekler (küçük resimler için).
+ * blog-posts.ts'teki image alanları sınırsız boyutta sarılıyor; ilgili yazı kartlarında
+ * 1,2 MB'lık görseller 100 px'lik alanda yükleniyordu. Cloudinary dışı yollara dokunmaz.
+ */
+export function thumbImage(url: string, width = 480): string {
+  return url.includes('/f_auto,q_auto/') ? url.replace('/f_auto,q_auto/', `/f_auto,q_auto,w_${width}/`) : url;
+}

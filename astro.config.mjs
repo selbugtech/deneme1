@@ -40,6 +40,8 @@ export default defineConfig({
   // redirect / response kullanımı sıfır, endpoint ve form yok, 125 sayfadan 124'ü
   // zaten açık canonicalUrl geçiyor. SSR her istekte serverless fonksiyon
   // çalıştırıyordu (Cache-Control: max-age=0) — statikte hepsi CDN'den servis edilir.
+  // Tek CSS dosyası (~32 KB) render'ı engelliyordu (mobil FCP). Satır içi: ek istek yok.
+  build: { inlineStylesheets: 'always' },
   output: 'static',
   adapter: vercel(),
 });

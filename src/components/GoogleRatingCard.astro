@@ -49,7 +49,9 @@ const inner = isBand
 const strong = isDark ? 'text-white' : 'text-charcoal';
 const soft = isDark ? 'text-white/55' : 'text-muted';
 
-const ariaLabel = `Google Haritalar'da Master İç Mimarlık — 5 üzerinden ${GOOGLE_RATING}, ${GOOGLE_REVIEW_COUNT} yorum`;
+const ariaLabel = isHero
+  ? `Google Puanı ${GOOGLE_RATING} ${GOOGLE_REVIEW_COUNT} yorum — Google Haritalar'da Master İç Mimarlık`
+  : `Google Haritalar'da Master İç Mimarlık — 5 üzerinden ${GOOGLE_RATING}, ${GOOGLE_REVIEW_COUNT} yorum`;
 ---
 
 <a
