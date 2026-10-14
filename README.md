@@ -4,11 +4,11 @@
 
 ## Stack
 
-- **Astro 4** — `output: 'server'` (SSR)
+- **Astro 4** — `output: 'static'` (tam statik)
 - **Tailwind CSS 3**
-- **Vercel** — `@astrojs/vercel/serverless` adaptörü; deploy Vercel'in git entegrasyonuyla otomatik yapılır
-- **Cloudinary** — `image/fetch` modunda görsel optimizasyonu (`src/lib/cloudinary.ts`)
-- **Google Places API** — canlı puan ve yorumlar (`src/lib/google-places.ts`)
+- **Vercel** — `@astrojs/vercel/static` adaptörü; deploy Vercel'in git entegrasyonuyla otomatik yapılır
+- **Görseller** — kaynaklar `public/images`, üretilen WebP varyantlar `public/img-opt` (`npm run images:site`); yardımcılar `src/lib/images.ts`
+- **Google puanı** — elle güncellenir (`src/config.ts`)
 
 ## Komutlar
 
@@ -28,7 +28,7 @@ Sayfa içerikleri `.astro` dosyalarında, listeler ise tek kaynaklı veri modül
 
 | Dosya | İçerik |
 |---|---|
-| `src/config.ts` | Domain, telefon, e-posta, WhatsApp, Cloudinary hesabı |
+| `src/config.ts` | Domain, telefon, e-posta, WhatsApp, Google puanı |
 | `src/data/services.ts` | Tüm hizmetler (ana / anahtar-teslim / tadilat / mekan / oda) |
 | `src/data/districts.ts` | İstanbul ilçeleri — ad, yaka, bulunma hali eki, mahalleler |
 | `src/data/styles.ts` | İç mimarlık stil sayfaları |
@@ -45,8 +45,8 @@ src/
   layouts/      Layout (SEO + JSON-LD), ServiceLayout (hizmet/ilçe/stil), BlogPost
   pages/        hizmetler/ · istanbul/ · ic-mimarlik/ · blog/ · projeler/
   data/         tek kaynaklı içerik listeleri
-  lib/          cloudinary, google-places
-scripts/        build-images.mjs (görsel pipeline)
+  lib/          images (görsel yardımcıları)
+scripts/        build-images.mjs (proje galerileri), build-site-images.mjs (site görselleri), seo-check.mjs
 public/
   images/       kaynak fotoğraflar (build girdisi)
   img/          üretilen WebP türevleri (runtime'da kullanılan)

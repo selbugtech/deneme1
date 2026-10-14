@@ -200,11 +200,8 @@ for (const [target, from] of brokenLinks) {
 }
 
 // ——— 5) Kırık görsel yolları ———
-// Doğrudan site yolları (/img/..., /images/...) ve Cloudinary fetch URL'lerinin
-// arkasındaki kaynak dosya birlikte kontrol ediliyor: Cloudinary görseli canlı
-// siteden çektiği için kaynak dosya yayında yoksa görsel sessizce boş çıkar.
+// Site yolları (/img/..., /img-opt/..., /images/...) gerçek bir dosyaya gitmeli.
 
-const CLOUDINARY_ORIGIN = /res\.cloudinary\.com\/[^/]+\/image\/fetch\/[^/]+\/https?:\/\/www\.mastericmimarlik\.com(\/[^"'\s,)]+)/g;
 const brokenImages = new Map();
 const markBroken = (file, page) => brokenImages.set(file, new Set([...(brokenImages.get(file) ?? []), page]));
 
@@ -220,17 +217,11 @@ for (const p of pages) {
   for (const u of direct) {
     if (!fileSet.has(safeDecodeURI(decode(u)))) markBroken(u, p.url);
   }
-  // Görseller kendi sunucumuzda (img-opt): her /img-opt/... başvurusu (src, srcset, preload,
-  // og:image, JSON-LD) gerçek bir dosyaya gitmeli; Cloudinary'ye geri düşülmemeli.
-  if (p.html.includes('res.cloudinary.com')) error('Görsel', p.url, "Cloudinary URL'si kaldı (görseller kendi sunucumuzdan verilmeli)");
+  // Her /img-opt/... başvurusu (src, srcset, preload, og:image, JSON-LD) gerçek bir dosyaya gitmeli.
   for (const m of p.html.matchAll(/(?:https:\/\/www\.mastericmimarlik\.com)?(\/img-opt\/[A-Za-z0-9._-]+)/g)) {
     if (!fileSet.has(m[1])) markBroken(m[1], p.url);
   }
   for (const m of p.html.matchAll(/"image"\s*:\s*"(\/[^"]+)"/g)) error('Yapısal veri', p.url, `JSON-LD image mutlak değil: ${m[1]}`);
-  for (const m of p.html.matchAll(CLOUDINARY_ORIGIN)) {
-    const origin = safeDecodeURI(decode(m[1]));
-    if (!fileSet.has(origin)) markBroken(`${origin} (Cloudinary kaynağı)`, p.url);
-  }
 }
 for (const [file, from] of brokenImages) {
   error('Kırık görsel', file, `${from.size} sayfada (ör. ${[...from][0]})`);

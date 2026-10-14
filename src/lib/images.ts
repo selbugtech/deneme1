@@ -2,7 +2,7 @@ import manifest from '../data/images-manifest.json';
 import { SITE_ORIGIN } from '../config';
 
 /**
- * Site görselleri artık Cloudinary fetch yerine kendi sunucumuzdan geliyor.
+ * Site görselleri kendi sunucumuzdan servis edilir.
  * scripts/build-site-images.mjs her kaynak görseli (public/images, public/beforeafter)
  * 400…1920 px WebP olarak public/img-opt/ altına üretir ve src/data/images-manifest.json'a
  * yazar. Buradaki yardımcılar o manifestten en uygun genişliği seçer.

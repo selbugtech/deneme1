@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Site görsellerini (public/images, public/beforeafter) kendi sunucumuzdan servis
- * edilecek şekilde optimize eder. Cloudinary fetch'inin yerine geçer.
+ * edilecek şekilde optimize eder.
  *
  *   node scripts/build-site-images.mjs            # eksik çıktıları üret
  *   node scripts/build-site-images.mjs --force    # hepsini yeniden üret

@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "images": "node scripts/build-images.mjs",
+    "images:site": "node scripts/build-site-images.mjs",
     "build": "astro build",
     "preview": "astro preview",
     "redirects:sync": "node scripts/sync-redirects.mjs",
